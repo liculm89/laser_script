@@ -1,0 +1,802 @@
+
+Wednesday, November 11, 2015 11:36:53 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:36:54 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:37:19 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:37:19 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:37:38 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:37:38 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:38:00 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:38:01 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:38:16 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:38:16 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:39:17 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:39:17 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:40:25 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:40:25 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:40:45 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:40:45 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:41:36 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:41:36 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:43:56 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:43:56 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:44:15 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:44:15 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:44:30 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:44:30 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:44:45 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:44:45 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:46:14 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:46:14 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:52:42 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:52:42 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:56:50 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:56:50 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:56:50 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:56:50 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:56:51 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:56:51 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:58:12 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:58:12 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:58:12 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:58:12 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Wednesday, November 11, 2015 11:58:12 - Selected P.N.:979523843
+Wednesday, November 11, 2015 11:58:12 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,logotest,1~230V 50Hz
+Monday, November 16, 2015 16:28:49 - Selected P.N.:979523843
+Monday, November 16, 2015 16:28:49 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Monday, November 16, 2015 16:29:14 - Selected P.N.:979523844
+Monday, November 16, 2015 16:29:14 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Monday, November 16, 2015 16:36:20 - Selected P.N.:979523843
+Monday, November 16, 2015 16:36:20 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Monday, November 16, 2015 16:39:36 - Selected P.N.:979523843
+Monday, November 16, 2015 16:39:36 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Monday, November 16, 2015 16:42:55 - Selected P.N.:979523843
+Monday, November 16, 2015 16:42:55 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Monday, November 16, 2015 16:43:47 - Selected P.N.:979523843
+Monday, November 16, 2015 16:43:48 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Monday, November 16, 2015 16:49:33 - Selected P.N.:979523843
+Monday, November 16, 2015 16:49:33 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Monday, November 16, 2015 17:03:35 - Selected P.N.:1122
+Monday, November 16, 2015 17:04:04 - Selected P.N.:979523843
+Monday, November 16, 2015 17:04:04 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Monday, November 16, 2015 17:05:43 - Selected P.N.:979523843
+Monday, November 16, 2015 17:05:43 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Monday, November 23, 2015 12:23:45 - Selected P.N.:undefined
+Tuesday, November 24, 2015 15:26:24 - Selected P.N.:12312
+Tuesday, November 24, 2015 15:26:30 - Selected P.N.:12312
+Tuesday, November 24, 2015 15:28:35 - Selected P.N.:
+Tuesday, November 24, 2015 15:29:02 - Selected P.N.:
+Tuesday, November 24, 2015 15:31:13 - Selected P.N.:
+Tuesday, November 24, 2015 15:31:36 - Selected P.N.:
+Tuesday, November 24, 2015 15:31:46 - Selected P.N.:
+Tuesday, November 24, 2015 15:32:04 - Selected P.N.:
+Tuesday, November 24, 2015 15:32:30 - Selected P.N.:
+Tuesday, November 24, 2015 15:32:30 - Result:  - Error:  
+Tuesday, November 24, 2015 15:33:49 - Selected P.N.:
+Tuesday, November 24, 2015 15:33:49 - Result:  - Error:  
+Tuesday, November 24, 2015 15:34:44 - Selected P.N.:
+Tuesday, November 24, 2015 15:34:59 - Selected P.N.:
+Tuesday, November 24, 2015 15:35:10 - Selected P.N.:
+Tuesday, November 24, 2015 15:35:23 - Selected P.N.:
+Tuesday, November 24, 2015 15:37:44 - Selected P.N.:
+Tuesday, November 24, 2015 15:38:47 - Selected P.N.:
+Tuesday, November 24, 2015 15:39:09 - Selected P.N.:
+Tuesday, November 24, 2015 15:41:12 - Selected P.N.:
+Tuesday, November 24, 2015 15:42:06 - Selected P.N.:
+Tuesday, November 24, 2015 15:42:26 - Selected P.N.:
+Tuesday, November 24, 2015 15:44:02 - Selected P.N.:undefined
+Tuesday, November 24, 2015 15:44:27 - Selected P.N.:
+Tuesday, November 24, 2015 15:44:43 - Selected P.N.:
+Tuesday, November 24, 2015 15:44:54 - Selected P.N.:
+Tuesday, November 24, 2015 15:45:21 - Selected P.N.:
+Tuesday, November 24, 2015 15:45:27 - Selected P.N.:
+Tuesday, November 24, 2015 15:45:48 - Selected P.N.:
+Tuesday, November 24, 2015 15:46:17 - Selected P.N.:
+Tuesday, November 24, 2015 15:46:48 - Selected P.N.:QSLineEdit(name = "")
+Tuesday, November 24, 2015 15:46:54 - Selected P.N.:QSLineEdit(name = "")
+Tuesday, November 24, 2015 15:47:13 - Selected P.N.:
+Tuesday, November 24, 2015 15:48:10 - Selected P.N.:
+Tuesday, November 24, 2015 16:02:17 - Selected P.N.:undefined
+Tuesday, November 24, 2015 16:02:48 - Selected P.N.:undefined
+Tuesday, November 24, 2015 16:04:06 - Selected P.N.:undefined
+Tuesday, November 24, 2015 16:26:31 - Selected P.N.:134
+Tuesday, November 24, 2015 16:26:58 - Selected P.N.:31442
+Tuesday, November 24, 2015 16:28:11 - Selected P.N.:44453
+Tuesday, November 24, 2015 16:28:11 - Result:  - Error:  
+Tuesday, November 24, 2015 16:29:59 - Selected P.N.:54545
+Tuesday, November 24, 2015 16:29:59 - Result:  - Error:  
+Tuesday, November 24, 2015 16:30:34 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:30:34 - Result:  - Error:  
+Tuesday, November 24, 2015 16:30:36 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:30:36 - Result:  - Error:  
+Tuesday, November 24, 2015 16:30:36 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:30:37 - Result:  - Error:  
+Tuesday, November 24, 2015 16:30:37 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:30:37 - Result:  - Error:  
+Tuesday, November 24, 2015 16:30:37 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:30:37 - Result:  - Error:  
+Tuesday, November 24, 2015 16:30:37 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:30:37 - Result:  - Error:  
+Tuesday, November 24, 2015 16:30:48 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:30:48 - Result:  - Error:  
+Tuesday, November 24, 2015 16:30:54 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:30:54 - Result:  - Error:  
+Tuesday, November 24, 2015 16:30:56 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:30:56 - Result:  - Error:  
+Tuesday, November 24, 2015 16:31:20 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:31:47 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:31:47 - Result:  - Error:  
+Tuesday, November 24, 2015 16:32:04 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:32:04 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Tuesday, November 24, 2015 16:33:06 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:33:06 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Tuesday, November 24, 2015 16:33:11 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:33:11 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Tuesday, November 24, 2015 16:33:22 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:33:23 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Tuesday, November 24, 2015 16:37:00 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:37:00 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Tuesday, November 24, 2015 16:37:03 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:37:03 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Tuesday, November 24, 2015 16:37:51 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:37:52 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Tuesday, November 24, 2015 16:38:26 - Selected P.N.:979523843
+Tuesday, November 24, 2015 16:38:26 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, November 24, 2015 16:42:36 - Selected P.N.:979523843
+Tuesday, November 24, 2015 16:42:36 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, November 24, 2015 16:42:42 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:42:42 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Tuesday, November 24, 2015 16:43:12 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:43:12 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Tuesday, November 24, 2015 16:45:23 - Selected P.N.:979523843
+Tuesday, November 24, 2015 16:45:23 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, November 24, 2015 16:47:22 - Selected P.N.:979523843
+Tuesday, November 24, 2015 16:47:23 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, November 24, 2015 16:47:32 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:47:32 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Tuesday, November 24, 2015 16:48:07 - Selected P.N.:979523844
+Tuesday, November 24, 2015 16:48:07 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Tuesday, November 24, 2015 16:53:34 - Selected P.N.:979523843
+Tuesday, November 24, 2015 16:53:34 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, November 24, 2015 17:03:56 - Selected P.N.:1131
+Tuesday, November 24, 2015 17:03:56 - Result:  - Error:  
+Tuesday, November 24, 2015 17:05:28 - Selected P.N.:1313
+Tuesday, November 24, 2015 17:05:28 - Result:  - Error:  
+Tuesday, November 24, 2015 17:06:28 - Selected P.N.:979523843
+Tuesday, November 24, 2015 17:06:28 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, November 24, 2015 17:08:09 - Selected P.N.:979523843
+Tuesday, November 24, 2015 17:08:09 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, November 24, 2015 17:08:24 - Selected P.N.:979523843
+Tuesday, November 24, 2015 17:08:24 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, November 24, 2015 17:08:52 - Selected P.N.:979523843
+Tuesday, November 24, 2015 17:08:52 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, November 24, 2015 17:12:23 - Selected P.N.:979523843
+Tuesday, November 24, 2015 17:12:23 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, November 24, 2015 17:13:06 - Selected P.N.:31242
+Tuesday, November 24, 2015 17:13:06 - Result:  - Error:  
+Tuesday, November 24, 2015 17:13:31 - Selected P.N.:242424
+Tuesday, November 24, 2015 17:13:31 - Result:  - Error:  
+Tuesday, November 24, 2015 17:13:56 - Selected P.N.:2323
+Tuesday, November 24, 2015 17:13:56 - Result:  - Error:  
+Tuesday, November 24, 2015 17:14:21 - Selected P.N.:12424
+Tuesday, November 24, 2015 17:14:21 - Result:  - Error:  
+Tuesday, November 24, 2015 17:14:49 - Selected P.N.:21313
+Tuesday, November 24, 2015 17:14:49 - Result:  - Error:  
+Tuesday, November 24, 2015 17:19:37 - Selected P.N.:123413
+Tuesday, November 24, 2015 17:19:37 - Result:  - Error:  
+Tuesday, November 24, 2015 17:20:47 - Selected P.N.:2313123
+Tuesday, November 24, 2015 17:20:47 - Result:  - Error:  
+Tuesday, November 24, 2015 17:22:41 - Selected P.N.:31245235
+Tuesday, November 24, 2015 17:22:41 - Result:  - Error:  
+Tuesday, November 24, 2015 17:22:44 - Selected P.N.:31245235
+Tuesday, November 24, 2015 17:22:44 - Result:  - Error:  
+Tuesday, November 24, 2015 17:22:47 - Selected P.N.:31245235
+Tuesday, November 24, 2015 17:22:47 - Result:  - Error:  
+Tuesday, November 24, 2015 17:22:48 - Selected P.N.:31245235
+Tuesday, November 24, 2015 17:22:48 - Result:  - Error:  
+Tuesday, November 24, 2015 17:22:49 - Selected P.N.:31245235
+Tuesday, November 24, 2015 17:22:49 - Result:  - Error:  
+Tuesday, November 24, 2015 17:22:50 - Selected P.N.:31245235
+Tuesday, November 24, 2015 17:22:50 - Result:  - Error:  
+Tuesday, November 24, 2015 17:22:51 - Selected P.N.:31245235
+Tuesday, November 24, 2015 17:22:51 - Result:  - Error:  
+Tuesday, November 24, 2015 17:22:51 - Selected P.N.:31245235
+Tuesday, November 24, 2015 17:22:51 - Result:  - Error:  
+Tuesday, November 24, 2015 17:22:51 - Selected P.N.:31245235
+Tuesday, November 24, 2015 17:22:51 - Result:  - Error:  
+Tuesday, November 24, 2015 17:22:52 - Selected P.N.:31245235
+Tuesday, November 24, 2015 17:22:52 - Result:  - Error:  
+Tuesday, November 24, 2015 17:22:52 - Selected P.N.:31245235
+Tuesday, November 24, 2015 17:22:52 - Result:  - Error:  
+Tuesday, November 24, 2015 17:23:51 - Selected P.N.:321452
+Tuesday, November 24, 2015 17:23:51 - Result:  - Error:  
+Tuesday, November 24, 2015 17:23:53 - Selected P.N.:321452
+Tuesday, November 24, 2015 17:23:53 - Result:  - Error:  
+Tuesday, November 24, 2015 17:23:56 - Selected P.N.:321452
+Tuesday, November 24, 2015 17:23:56 - Result:  - Error:  
+Tuesday, November 24, 2015 17:23:57 - Selected P.N.:321452
+Tuesday, November 24, 2015 17:23:57 - Result:  - Error:  
+Tuesday, November 24, 2015 17:23:58 - Selected P.N.:321452
+Tuesday, November 24, 2015 17:23:58 - Result:  - Error:  
+Tuesday, November 24, 2015 17:23:58 - Selected P.N.:321452
+Tuesday, November 24, 2015 17:23:58 - Result:  - Error:  
+Tuesday, November 24, 2015 17:23:58 - Selected P.N.:321452
+Tuesday, November 24, 2015 17:23:58 - Result:  - Error:  
+Tuesday, November 24, 2015 17:24:36 - Selected P.N.:2431242
+Tuesday, November 24, 2015 17:24:36 - Result:  - Error:  
+Tuesday, November 24, 2015 17:24:39 - Selected P.N.:2431242
+Tuesday, November 24, 2015 17:24:39 - Result:  - Error:  
+Tuesday, November 24, 2015 17:24:41 - Selected P.N.:2431242
+Tuesday, November 24, 2015 17:24:41 - Result:  - Error:  
+Tuesday, November 24, 2015 17:24:42 - Selected P.N.:2431242
+Tuesday, November 24, 2015 17:24:42 - Result:  - Error:  
+Tuesday, November 24, 2015 17:24:44 - Selected P.N.:2431242
+Tuesday, November 24, 2015 17:24:44 - Result:  - Error:  
+Tuesday, November 24, 2015 17:24:47 - Selected P.N.:2431242
+Tuesday, November 24, 2015 17:24:47 - Result:  - Error:  
+Tuesday, November 24, 2015 17:25:03 - Selected P.N.:132
+Tuesday, November 24, 2015 17:25:03 - Result:  - Error:  
+Tuesday, November 24, 2015 17:25:04 - Selected P.N.:132
+Tuesday, November 24, 2015 17:25:04 - Result:  - Error:  
+Tuesday, November 24, 2015 17:25:05 - Selected P.N.:132
+Tuesday, November 24, 2015 17:25:05 - Result:  - Error:  
+Tuesday, November 24, 2015 17:25:06 - Selected P.N.:132
+Tuesday, November 24, 2015 17:25:06 - Result:  - Error:  
+Tuesday, November 24, 2015 17:25:08 - Selected P.N.:132
+Tuesday, November 24, 2015 17:25:08 - Result:  - Error:  
+Tuesday, November 24, 2015 17:25:09 - Selected P.N.:132
+Tuesday, November 24, 2015 17:25:09 - Result:  - Error:  
+Tuesday, November 24, 2015 17:25:10 - Selected P.N.:132
+Tuesday, November 24, 2015 17:25:10 - Result:  - Error:  
+Tuesday, November 24, 2015 17:25:10 - Selected P.N.:132
+Tuesday, November 24, 2015 17:25:10 - Result:  - Error:  
+Tuesday, November 24, 2015 17:25:10 - Selected P.N.:132
+Tuesday, November 24, 2015 17:25:10 - Result:  - Error:  
+Tuesday, November 24, 2015 17:25:11 - Selected P.N.:132
+Tuesday, November 24, 2015 17:25:11 - Result:  - Error:  
+Tuesday, November 24, 2015 17:25:11 - Selected P.N.:132
+Tuesday, November 24, 2015 17:25:11 - Result:  - Error:  
+Tuesday, November 24, 2015 17:32:27 - Selected P.N.:979523843
+Tuesday, November 24, 2015 17:32:27 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, November 24, 2015 17:33:45 - Selected P.N.:979523843
+Tuesday, November 24, 2015 17:33:45 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, November 24, 2015 17:37:21 - Selected P.N.:312421
+Tuesday, November 24, 2015 17:37:21 - Result:  - Error:  
+Tuesday, November 24, 2015 17:40:39 - Selected P.N.:979523843
+Tuesday, November 24, 2015 17:40:39 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, November 24, 2015 17:42:49 - Selected P.N.:979523843
+Tuesday, November 24, 2015 17:42:49 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, November 24, 2015 17:44:11 - Selected P.N.:979523843
+Tuesday, November 24, 2015 17:44:11 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 15:39:28 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:39:34 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:39:36 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:40:08 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:40:13 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:40:20 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:40:23 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:40:24 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:41:07 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:41:12 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:41:13 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:41:20 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:53:09 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:53:09 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 15:53:25 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:53:26 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 15:55:22 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:55:22 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 15:55:38 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:55:38 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 15:55:57 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:55:57 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 15:57:04 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:57:05 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 15:57:20 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:57:21 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 15:57:38 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:57:38 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 15:59:42 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:59:43 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 15:59:44 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:59:44 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 15:59:48 - Selected P.N.:979523843
+Saturday, November 28, 2015 15:59:49 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 16:01:03 - Selected P.N.:979523843
+Saturday, November 28, 2015 16:01:03 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 16:02:41 - Selected P.N.:979523843
+Saturday, November 28, 2015 16:02:41 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 16:02:46 - Selected P.N.:979523843
+Saturday, November 28, 2015 16:02:46 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 16:02:46 - Selected P.N.:979523843
+Saturday, November 28, 2015 16:02:47 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 16:03:09 - Selected P.N.:979523843
+Saturday, November 28, 2015 16:03:09 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 16:03:10 - Selected P.N.:979523843
+Saturday, November 28, 2015 16:03:10 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 16:03:14 - Selected P.N.:979523843
+Saturday, November 28, 2015 16:03:14 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 17:04:13 - Selected P.N.:979523843
+Saturday, November 28, 2015 17:04:14 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Saturday, November 28, 2015 17:06:52 - Selected P.N.:979523844
+Saturday, November 28, 2015 17:06:53 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Saturday, November 28, 2015 17:09:27 - Selected P.N.:979523843
+Saturday, November 28, 2015 17:09:27 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:18:36 - Selected P.N.:979523844
+Sunday, November 29, 2015 19:18:38 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Sunday, November 29, 2015 19:19:41 - Selected P.N.:979523844
+Sunday, November 29, 2015 19:19:41 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Sunday, November 29, 2015 19:20:05 - Selected P.N.:979523844
+Sunday, November 29, 2015 19:20:05 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Sunday, November 29, 2015 19:33:12 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:33:12 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:33:18 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:33:18 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:33:34 - Selected P.N.:979523845
+Sunday, November 29, 2015 19:33:34 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 19:35:32 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:35:32 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:35:35 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:35:35 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:35:35 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:35:36 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:35:37 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:35:38 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:35:40 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:35:41 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:36:29 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:36:29 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:36:31 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:36:31 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:38:09 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:38:09 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:38:12 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:38:12 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:38:14 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:38:14 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:38:33 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:38:33 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:38:33 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:38:33 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:38:35 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:38:35 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:38:36 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:38:36 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:39:13 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:39:13 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:39:38 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:39:38 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:40:59 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:40:59 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:42:03 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:42:03 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:46:34 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:46:35 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:46:35 - Selected P.N.:979523843
+Sunday, November 29, 2015 19:46:35 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Sunday, November 29, 2015 19:47:10 - Selected P.N.:979523845
+Sunday, November 29, 2015 19:47:10 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 19:48:06 - Selected P.N.:979523845
+Sunday, November 29, 2015 19:48:06 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 19:51:23 - Selected P.N.:979523845
+Sunday, November 29, 2015 19:51:23 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 19:51:24 - Selected P.N.:979523845
+Sunday, November 29, 2015 19:51:24 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 19:53:03 - Selected P.N.:979523845
+Sunday, November 29, 2015 19:53:04 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 19:58:02 - Selected P.N.:979523845
+Sunday, November 29, 2015 19:58:02 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 19:58:02 - Selected P.N.:979523845
+Sunday, November 29, 2015 19:58:03 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:09:14 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:09:14 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:09:15 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:09:15 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:09:23 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:09:24 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:11:02 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:11:03 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:11:03 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:11:04 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:12:34 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:12:35 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:12:35 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:12:36 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:14:37 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:14:38 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:14:55 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:14:56 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:17:12 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:17:13 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:17:14 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:17:14 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:17:14 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:17:15 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:18:21 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:18:21 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:20:13 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:20:14 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:21:29 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:21:29 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:23:45 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:23:45 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:24:25 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:24:25 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:24:28 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:24:29 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:25:21 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:25:22 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:25:25 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:25:25 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:25:26 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:25:26 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:25:27 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:25:27 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:25:27 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:25:27 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:25:28 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:25:28 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:26:35 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:26:36 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Sunday, November 29, 2015 20:26:36 - Selected P.N.:979523845
+Sunday, November 29, 2015 20:26:37 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Wednesday, December 02, 2015 11:15:05 - Selected P.N.:979523845
+Wednesday, December 02, 2015 11:15:07 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Wednesday, December 02, 2015 11:17:16 - Selected P.N.:979523845
+Wednesday, December 02, 2015 11:17:17 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Wednesday, December 02, 2015 11:17:35 - Selected P.N.:979523845
+Wednesday, December 02, 2015 11:17:35 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Wednesday, December 02, 2015 11:18:00 - Selected P.N.:979523843
+Wednesday, December 02, 2015 11:18:00 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Wednesday, December 02, 2015 11:18:14 - Selected P.N.:979523843
+Wednesday, December 02, 2015 11:18:14 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Wednesday, December 02, 2015 11:18:25 - Selected P.N.:979523843
+Wednesday, December 02, 2015 11:18:25 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Wednesday, December 02, 2015 11:19:36 - Selected P.N.:979523843
+Wednesday, December 02, 2015 11:19:36 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Wednesday, December 02, 2015 11:21:25 - Selected P.N.:979523843
+Wednesday, December 02, 2015 11:21:25 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Wednesday, December 02, 2015 11:21:33 - Selected P.N.:979523843
+Wednesday, December 02, 2015 11:21:33 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Wednesday, December 02, 2015 11:21:50 - Selected P.N.:979523844
+Wednesday, December 02, 2015 11:21:51 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Wednesday, December 02, 2015 11:27:28 - Selected P.N.:979523845
+
+Wednesday, December 02, 2015 11:27:28 - Result:  - Error:  
+Wednesday, December 02, 2015 11:27:34 - Selected P.N.:979523845
+
+Wednesday, December 02, 2015 11:27:34 - Result:  - Error:  
+Wednesday, December 02, 2015 11:27:39 - Selected P.N.:979523845
+
+Wednesday, December 02, 2015 11:27:39 - Result:  - Error:  
+Wednesday, December 02, 2015 11:28:15 - Selected P.N.:979523845
+Wednesday, December 02, 2015 11:28:15 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Wednesday, December 02, 2015 11:29:34 - Selected P.N.:979523845
+Wednesday, December 02, 2015 11:29:35 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Wednesday, December 02, 2015 11:30:50 - Selected P.N.:979523845
+Wednesday, December 02, 2015 11:30:50 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Wednesday, December 02, 2015 11:34:07 - Selected P.N.:979523843
+Wednesday, December 02, 2015 11:34:07 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Wednesday, December 02, 2015 11:34:08 - Selected P.N.:979523843
+Wednesday, December 02, 2015 11:34:09 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Wednesday, December 02, 2015 11:37:21 - Selected P.N.:979523844
+Wednesday, December 02, 2015 11:37:21 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Wednesday, December 02, 2015 11:39:22 - Selected P.N.:979523844
+Wednesday, December 02, 2015 11:39:23 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Wednesday, December 02, 2015 11:45:35 - Selected P.N.:979523843
+Wednesday, December 02, 2015 11:45:35 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Wednesday, December 02, 2015 11:50:50 - Selected P.N.:979523843
+Wednesday, December 02, 2015 11:50:50 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Wednesday, December 02, 2015 14:09:21 - Selected P.N.:979523844
+Wednesday, December 02, 2015 14:09:21 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Wednesday, December 02, 2015 14:12:07 - Selected P.N.:979523844
+Wednesday, December 02, 2015 14:12:07 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Wednesday, December 02, 2015 14:43:15 - Selected P.N.:979523844
+Wednesday, December 02, 2015 14:43:15 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Wednesday, December 02, 2015 14:43:21 - Selected P.N.:979523844
+Wednesday, December 02, 2015 14:43:21 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Thursday, December 03, 2015 10:36:03 - Selected P.N.:979523843
+Thursday, December 03, 2015 10:36:03 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Monday, December 07, 2015 12:20:33 - Selected P.N.:979523847
+Monday, December 07, 2015 12:20:42 - Selected P.N.:979523847
+Monday, December 07, 2015 12:21:19 - Selected P.N.:979523844
+Monday, December 07, 2015 12:21:28 - Selected P.N.:979523844
+Monday, December 07, 2015 12:23:00 - Selected P.N.:979523841
+Monday, December 07, 2015 12:25:00 - Selected P.N.:979523841
+Monday, December 07, 2015 12:25:00 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 12:25:28 - Selected P.N.:979523842
+Monday, December 07, 2015 12:25:28 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Monday, December 07, 2015 12:31:22 - Selected P.N.:979523843
+Monday, December 07, 2015 12:31:22 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Monday, December 07, 2015 12:31:46 - Selected P.N.:979523841
+Monday, December 07, 2015 12:31:46 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 12:31:57 - Selected P.N.:979523842
+Monday, December 07, 2015 12:31:57 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Monday, December 07, 2015 12:32:08 - Selected P.N.:979523843
+Monday, December 07, 2015 12:32:08 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Monday, December 07, 2015 12:32:26 - Selected P.N.:979523844
+Monday, December 07, 2015 12:32:26 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Monday, December 07, 2015 12:33:02 - Selected P.N.:979523844
+Monday, December 07, 2015 12:33:02 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Monday, December 07, 2015 12:33:12 - Selected P.N.:979523844
+Monday, December 07, 2015 12:33:12 - Read: 979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Monday, December 07, 2015 14:46:07 - Selected P.N.:979523841
+Monday, December 07, 2015 14:46:07 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 14:46:52 - Selected P.N.:979523841
+Monday, December 07, 2015 14:46:53 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 14:46:57 - Selected P.N.:979523841
+Monday, December 07, 2015 14:46:58 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 14:47:05 - Selected P.N.:979523841
+Monday, December 07, 2015 14:47:05 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 14:47:11 - Selected P.N.:979523841
+Monday, December 07, 2015 14:47:11 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 15:04:56 - Selected P.N.:979523841
+Monday, December 07, 2015 15:04:56 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 15:04:59 - Selected P.N.:979523841
+Monday, December 07, 2015 15:05:00 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 15:05:04 - Selected P.N.:979523841
+Monday, December 07, 2015 15:05:04 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 15:05:49 - Selected P.N.:979523841
+Monday, December 07, 2015 15:05:49 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 15:06:51 - Selected P.N.:979523841
+Monday, December 07, 2015 15:06:52 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 15:06:54 - Selected P.N.:979523841
+Monday, December 07, 2015 15:06:55 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 15:07:19 - Selected P.N.:979523841
+Monday, December 07, 2015 15:07:20 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 15:07:35 - Selected P.N.:979523841
+Monday, December 07, 2015 15:07:35 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 15:07:40 - Selected P.N.:979523841
+Monday, December 07, 2015 15:07:41 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 15:08:32 - Selected P.N.:979523841
+Monday, December 07, 2015 15:08:32 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 15:08:39 - Selected P.N.:979523841
+Monday, December 07, 2015 15:08:39 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 15:10:15 - Selected P.N.:979523842
+Monday, December 07, 2015 15:10:15 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Monday, December 07, 2015 15:10:21 - Selected P.N.:979523842
+Monday, December 07, 2015 15:10:22 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Monday, December 07, 2015 15:11:25 - Selected P.N.:979523847
+Monday, December 07, 2015 15:11:25 - Read: 979523847,870524247,NMT PLUS ,20/80-130,0.07,0.5,6,57,0.21,1,1,grundfos,1~230V 50Hz
+Monday, December 07, 2015 15:11:35 - Selected P.N.:979523847
+Monday, December 07, 2015 15:11:36 - Read: 979523847,870524247,NMT PLUS ,20/80-130,0.07,0.5,6,57,0.21,1,1,grundfos,1~230V 50Hz
+Monday, December 07, 2015 15:11:42 - Selected P.N.:979523847
+Monday, December 07, 2015 15:11:43 - Read: 979523847,870524247,NMT PLUS ,20/80-130,0.07,0.5,6,57,0.21,1,1,grundfos,1~230V 50Hz
+Monday, December 07, 2015 15:17:39 - Selected P.N.:979523842
+Monday, December 07, 2015 15:17:40 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Monday, December 07, 2015 15:17:46 - Selected P.N.:979523842
+Monday, December 07, 2015 15:17:47 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Monday, December 07, 2015 15:18:09 - Selected P.N.:97952384
+
+Monday, December 07, 2015 15:18:09 - Result:  - Error:  
+Monday, December 07, 2015 15:18:15 - Selected P.N.:97952384
+Monday, December 07, 2015 15:18:15 - Result:  - Error:  
+Monday, December 07, 2015 15:18:20 - Selected P.N.:97952384
+Monday, December 07, 2015 15:18:20 - Result:  - Error:  
+Monday, December 07, 2015 15:19:06 - Selected P.N.:979523842
+Monday, December 07, 2015 15:19:07 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Monday, December 07, 2015 15:19:10 - Selected P.N.:979523842
+Monday, December 07, 2015 15:19:11 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Monday, December 07, 2015 15:19:18 - Selected P.N.:979523842
+Monday, December 07, 2015 15:19:19 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Monday, December 07, 2015 15:21:43 - Selected P.N.:979523842
+Monday, December 07, 2015 15:21:43 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Monday, December 07, 2015 15:22:03 - Selected P.N.:979523842
+Monday, December 07, 2015 15:22:04 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Monday, December 07, 2015 15:22:23 - Selected P.N.:979523842
+Monday, December 07, 2015 15:22:24 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Monday, December 07, 2015 15:22:46 - Selected P.N.:979523841
+Monday, December 07, 2015 15:22:46 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 15:22:59 - Selected P.N.:979523841
+Monday, December 07, 2015 15:23:00 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Monday, December 07, 2015 15:23:40 - Selected P.N.:979523847
+Monday, December 07, 2015 15:23:41 - Read: 979523847,870524247,NMT PLUS ,20/80-130,0.07,0.5,6,57,0.21,1,1,grundfos,1~230V 50Hz
+Monday, December 07, 2015 15:23:50 - Selected P.N.:979523847
+Monday, December 07, 2015 15:23:51 - Read: 979523847,870524247,NMT PLUS ,20/80-130,0.07,0.5,6,57,0.21,1,1,grundfos,1~230V 50Hz
+Monday, December 07, 2015 15:24:00 - Selected P.N.:979523847
+Monday, December 07, 2015 15:24:00 - Read: 979523847,870524247,NMT PLUS ,20/80-130,0.07,0.5,6,57,0.21,1,1,grundfos,1~230V 50Hz
+Tuesday, December 08, 2015 12:52:50 - Selected P.N.:979523845
+Tuesday, December 08, 2015 12:52:52 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Tuesday, December 08, 2015 12:53:17 - Selected P.N.:979523846
+Tuesday, December 08, 2015 12:53:17 - Read: 979523846,870524246,NMT PLUS ,15/80-130,0.07,0.5,6,57,0.21,1,1,unichem,1~230V 50Hz
+Tuesday, December 08, 2015 12:53:46 - Selected P.N.:979523841
+Tuesday, December 08, 2015 12:53:47 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Tuesday, December 08, 2015 13:05:56 - Selected P.N.:979523841
+
+Tuesday, December 08, 2015 13:05:56 - Result:  - Error:  
+Tuesday, December 08, 2015 13:07:25 - Selected P.N.:979523847
+Tuesday, December 08, 2015 13:07:25 - Read: 979523847,870524247,NMT PLUS ,20/80-130,0.07,0.5,6,57,0.21,1,1,grundfos,1~230V 50Hz
+Tuesday, December 08, 2015 13:17:44 - Selected P.N.:979523843
+Tuesday, December 08, 2015 13:17:45 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, December 08, 2015 13:17:53 - Selected P.N.:979523843
+Tuesday, December 08, 2015 13:17:53 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, December 08, 2015 13:17:55 - Selected P.N.:979523843
+Tuesday, December 08, 2015 13:17:56 - Read: 979523843,870524243,NMT PLUS ,15/60-130,0.06,0.32,4,36,0.19,1,1,vw,1~230V 50Hz
+Tuesday, December 08, 2015 13:20:58 - Selected P.N.:979523845
+Tuesday, December 08, 2015 13:20:58 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Tuesday, December 08, 2015 13:20:59 - Selected P.N.:979523845
+Tuesday, December 08, 2015 13:20:59 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Tuesday, December 08, 2015 13:23:28 - Selected P.N.:979523845
+Tuesday, December 08, 2015 13:23:28 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Tuesday, December 08, 2015 13:25:08 - Selected P.N.:979523845
+Tuesday, December 08, 2015 13:25:09 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Tuesday, December 08, 2015 13:26:40 - Selected P.N.:979523845
+Tuesday, December 08, 2015 13:26:41 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Tuesday, December 08, 2015 13:51:34 - Selected P.N.:979523848
+Tuesday, December 08, 2015 13:51:35 - Read: 979523848,870524248,NMT PLUS ,25/80-130,0.07,0.5,6,57,0.21,1,1,imp.jpg,1~230V 50Hz
+Tuesday, December 08, 2015 14:16:52 - Selected P.N.:979523847
+Tuesday, December 08, 2015 14:16:53 - Read: 979523847,870524247,NMT PLUS ,20/80-130,0.07,0.5,6,57,0.21,1,1,grundfos,1~230V 50Hz
+Tuesday, December 08, 2015 14:16:59 - Selected P.N.:979523847
+Tuesday, December 08, 2015 14:17:00 - Read: 979523847,870524247,NMT PLUS ,20/80-130,0.07,0.5,6,57,0.21,1,1,grundfos,1~230V 50Hz
+Tuesday, December 08, 2015 14:38:09 - Selected P.N.:979523845
+Tuesday, December 08, 2015 14:38:10 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Tuesday, December 08, 2015 14:42:47 - Selected P.N.:979523845
+Tuesday, December 08, 2015 14:42:48 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Tuesday, December 08, 2015 14:43:16 - Selected P.N.:979523845
+Tuesday, December 08, 2015 14:43:17 - Read: 979523845,870524245,NMT PLUS ,25/60-130,0.06,0.32,4,36,0.18,1,1,IMPPUMPS,1~230V 50Hz
+Tuesday, December 08, 2015 14:44:45 - Selected P.N.:979523850
+Tuesday, December 08, 2015 14:44:46 - Read: 979523850,870524250,NMT PLUS ,25/40-180,0.05,0.2,3,21,0.15,1,1,imp.jpg,1~230V 50Hz
+Tuesday, December 08, 2015 14:51:08 - Selected P.N.:979523846
+Tuesday, December 08, 2015 14:51:09 - Read: 979523846,870524246,NMT PLUS ,15/80-130,0.07,0.5,6,57,0.21,1,1,unichem,1~230V 50Hz
+Tuesday, December 08, 2015 14:53:16 - Selected P.N.:979523842
+Tuesday, December 08, 2015 14:53:16 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Tuesday, December 08, 2015 14:54:33 - Selected P.N.:979523842
+Tuesday, December 08, 2015 14:54:33 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Tuesday, December 08, 2015 14:58:56 - Selected P.N.:979523951
+Tuesday, December 08, 2015 14:58:56 - Read: 979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Wednesday, December 09, 2015 15:00:04 - Selected P.N.:979523842
+
+Wednesday, December 09, 2015 15:00:04 - Result:  - Error:  
+Wednesday, December 09, 2015 15:00:07 - Selected P.N.:979523842
+
+Wednesday, December 09, 2015 15:00:07 - Result:  - Error:  
+Wednesday, December 09, 2015 15:00:08 - Selected P.N.:979523842
+
+Wednesday, December 09, 2015 15:00:08 - Result:  - Error:  
+Wednesday, December 09, 2015 15:00:08 - Selected P.N.:979523842
+
+Wednesday, December 09, 2015 15:00:08 - Result:  - Error:  
+Wednesday, December 09, 2015 15:00:09 - Selected P.N.:979523842
+
+Wednesday, December 09, 2015 15:00:09 - Result:  - Error:  
+Wednesday, December 09, 2015 15:00:12 - Selected P.N.:979523842
+
+Wednesday, December 09, 2015 15:00:12 - Result:  - Error:  
+Tuesday, December 13, 2016 10:04:28 - Selected P.N.:h
+Tuesday, December 13, 2016 10:04:28 - Result:  - Error:  
+Tuesday, December 13, 2016 10:04:30 - Selected P.N.:1
+Tuesday, December 13, 2016 10:04:30 - Result:  - Error:  
+Tuesday, December 13, 2016 10:04:43 - Selected P.N.:979523951
+Tuesday, December 13, 2016 10:04:43 - Read: 979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Tuesday, December 13, 2016 10:04:51 - Selected P.N.:979523951
+Tuesday, December 13, 2016 10:04:52 - Read: 979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Tuesday, December 13, 2016 10:26:24 - Selected P.N.:979523951
+Tuesday, December 13, 2016 10:26:25 - Read: 979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Tuesday, December 13, 2016 13:03:06 - Selected P.N.:979523951
+Tuesday, December 13, 2016 13:03:08 - Read: 979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Tuesday, December 13, 2016 13:03:19 - Selected P.N.:979523951
+Tuesday, December 13, 2016 13:03:19 - Read: 979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Tuesday, December 13, 2016 13:07:01 - Selected P.N.:979523951
+Tuesday, December 13, 2016 13:07:02 - Read: 979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Tuesday, December 13, 2016 13:07:47 - Selected P.N.:979523951
+Tuesday, December 13, 2016 13:07:47 - Read: 979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Tuesday, December 13, 2016 13:07:55 - Selected P.N.:979523951
+
+Tuesday, December 13, 2016 13:07:55 - Result:  - Error:  
+Tuesday, December 13, 2016 13:07:56 - Selected P.N.:979523951
+
+Tuesday, December 13, 2016 13:07:56 - Result:  - Error:  
+Tuesday, December 13, 2016 13:07:59 - Selected P.N.:979523951
+Tuesday, December 13, 2016 13:07:59 - Read: 979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Tuesday, December 13, 2016 13:08:00 - Selected P.N.:979523951
+Tuesday, December 13, 2016 13:08:00 - Read: 979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Tuesday, December 13, 2016 13:08:02 - Selected P.N.:97952395
+Tuesday, December 13, 2016 13:08:02 - Result:  - Error:  
+Tuesday, December 13, 2016 13:08:04 - Selected P.N.:979523951
+Tuesday, December 13, 2016 13:08:04 - Read: 979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Tuesday, December 13, 2016 13:16:02 - Selected P.N.:80
+Tuesday, December 13, 2016 13:16:02 - Result:  - Error:  
+Tuesday, December 13, 2016 13:16:03 - Selected P.N.:80
+Tuesday, December 13, 2016 13:16:03 - Result:  - Error:  
+Tuesday, December 13, 2016 13:16:03 - Selected P.N.:80
+Tuesday, December 13, 2016 13:16:03 - Result:  - Error:  
+Tuesday, December 13, 2016 13:50:11 - Selected P.N.:97952395
+Tuesday, December 13, 2016 13:50:12 - Result:  - Error:  
+Tuesday, December 13, 2016 13:50:19 - Selected P.N.:97952395
+Tuesday, December 13, 2016 13:50:20 - Result:  - Error:  
+Tuesday, December 13, 2016 13:50:21 - Selected P.N.:97952395
+Tuesday, December 13, 2016 13:50:21 - Result:  - Error:  
+Tuesday, December 13, 2016 13:50:22 - Selected P.N.:97952395
+Tuesday, December 13, 2016 13:50:22 - Result:  - Error:  
+Tuesday, December 13, 2016 13:50:22 - Selected P.N.:97952395
+Tuesday, December 13, 2016 13:50:22 - Result:  - Error:  
+Tuesday, December 13, 2016 13:50:22 - Selected P.N.:97952395
+Tuesday, December 13, 2016 13:50:22 - Result:  - Error:  
+Tuesday, December 13, 2016 13:50:26 - Selected P.N.:97952395
+Tuesday, December 13, 2016 13:50:27 - Result:  - Error:  
+Tuesday, December 13, 2016 13:50:50 - Selected P.N.:97952395
+Tuesday, December 13, 2016 13:50:50 - Result:  - Error:  
+Tuesday, December 13, 2016 13:50:51 - Selected P.N.:97952395
+Tuesday, December 13, 2016 13:50:51 - Result:  - Error:  
+Tuesday, December 13, 2016 13:51:13 - Selected P.N.:979523951
+Tuesday, December 13, 2016 13:51:14 - Read: 979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Tuesday, December 13, 2016 13:52:14 - Selected P.N.:979523951
+Tuesday, December 13, 2016 13:52:15 - Read: 979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Tuesday, December 13, 2016 14:11:34 - Selected P.N.:979523841
+
+Tuesday, December 13, 2016 14:11:35 - Result:  - Error:  
+Tuesday, December 13, 2016 14:11:42 - Selected P.N.:979523841
+
+Tuesday, December 13, 2016 14:11:42 - Result:  - Error:  
+Tuesday, December 13, 2016 14:13:23 - Selected P.N.:979523841
+
+Tuesday, December 13, 2016 14:13:23 - Result:  - Error:  
+Tuesday, December 13, 2016 14:13:26 - Selected P.N.:979523841
+Tuesday, December 13, 2016 14:13:27 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Tuesday, December 13, 2016 14:17:05 - Selected P.N.:979523841
+Tuesday, December 13, 2016 14:17:06 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Tuesday, December 13, 2016 14:17:50 - Selected P.N.:979523841
+Tuesday, December 13, 2016 14:17:50 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Tuesday, December 13, 2016 14:18:19 - Selected P.N.:979523841
+Tuesday, December 13, 2016 14:18:19 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Tuesday, December 13, 2016 14:19:34 - Selected P.N.:979523841
+Tuesday, December 13, 2016 14:19:34 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Tuesday, December 13, 2016 14:19:40 - Selected P.N.:979523841
+Tuesday, December 13, 2016 14:19:40 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Tuesday, December 13, 2016 14:25:25 - Selected P.N.:979523841
+
+Tuesday, December 13, 2016 14:25:25 - Result:  - Error:  
+Tuesday, December 13, 2016 14:25:29 - Selected P.N.:979523841
+
+Tuesday, December 13, 2016 14:25:29 - Result:  - Error:  
+Tuesday, December 13, 2016 14:25:30 - Selected P.N.:979523841
+
+Tuesday, December 13, 2016 14:25:30 - Result:  - Error:  
+Tuesday, December 13, 2016 14:25:31 - Selected P.N.:979523841
+
+Tuesday, December 13, 2016 14:25:31 - Result:  - Error:  
+Tuesday, December 13, 2016 14:25:31 - Selected P.N.:979523841
+
+Tuesday, December 13, 2016 14:25:31 - Result:  - Error:  
+Tuesday, December 13, 2016 14:25:32 - Selected P.N.:979523841
+
+Tuesday, December 13, 2016 14:25:32 - Result:  - Error:  
+Tuesday, December 13, 2016 14:25:36 - Selected P.N.:979523841
+Tuesday, December 13, 2016 14:25:36 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Tuesday, December 13, 2016 14:25:57 - Selected P.N.:979523841
+Tuesday, December 13, 2016 14:25:57 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Tuesday, December 13, 2016 14:28:42 - Selected P.N.:979523841
+Tuesday, December 13, 2016 14:28:43 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Tuesday, December 13, 2016 14:31:20 - Selected P.N.:979523841
+Tuesday, December 13, 2016 14:31:20 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Tuesday, December 13, 2016 14:31:31 - Selected P.N.:979523841
+Tuesday, December 13, 2016 14:31:31 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Tuesday, December 13, 2016 14:32:08 - Selected P.N.:979523841
+Tuesday, December 13, 2016 14:32:09 - Read: 979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz
+Tuesday, December 13, 2016 14:33:24 - Selected P.N.:870524245
+Tuesday, December 13, 2016 14:33:24 - Result:  - Error:  
+Tuesday, December 13, 2016 14:33:28 - Selected P.N.:870524245
+Tuesday, December 13, 2016 14:33:28 - Result:  - Error:  
+Tuesday, December 13, 2016 14:33:37 - Selected P.N.:870524245
+Tuesday, December 13, 2016 14:33:37 - Result:  - Error:  
+Tuesday, December 13, 2016 14:33:41 - Selected P.N.:870524245
+Tuesday, December 13, 2016 14:33:41 - Result:  - Error:  
+Tuesday, December 13, 2016 14:33:43 - Selected P.N.:870524245
+Tuesday, December 13, 2016 14:33:43 - Result:  - Error:  
+Tuesday, December 13, 2016 14:33:44 - Selected P.N.:870524245
+Tuesday, December 13, 2016 14:33:44 - Result:  - Error:  
+Tuesday, December 13, 2016 14:33:44 - Selected P.N.:870524245
+Tuesday, December 13, 2016 14:33:44 - Result:  - Error:  
+Tuesday, December 13, 2016 14:33:45 - Selected P.N.:870524245
+Tuesday, December 13, 2016 14:33:45 - Result:  - Error:  
+Tuesday, December 13, 2016 14:34:21 - Selected P.N.:870524242
+Tuesday, December 13, 2016 14:34:21 - Result:  - Error:  
+Tuesday, December 13, 2016 14:34:42 - Selected P.N.:979523842
+Tuesday, December 13, 2016 14:34:42 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Tuesday, December 13, 2016 14:34:57 - Selected P.N.:979523842
+Tuesday, December 13, 2016 14:34:57 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Tuesday, December 13, 2016 14:35:47 - Selected P.N.:979523842
+Tuesday, December 13, 2016 14:35:47 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Tuesday, December 13, 2016 14:36:14 - Selected P.N.:979523842
+Tuesday, December 13, 2016 14:36:15 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
+Tuesday, December 13, 2016 14:36:48 - Selected P.N.:979523951
+Tuesday, December 13, 2016 14:36:49 - Read: 979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
