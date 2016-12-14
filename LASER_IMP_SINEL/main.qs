@@ -1,6 +1,12 @@
 // Excel File path
-var xlsPath = "D:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
-var logPath = "D:\\LASER_IMP_SINEL\\writeLog.txt";
+var xlsPath ="F:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
+var logPath= "F:\\LASER_IMP_SINEL\\writeLog.txt";
+
+//var xlsPath = "D:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
+//var logPath = "D:\\LASER_IMP_SINEL\\writeLog.txt";
+
+
+
 // Varibales
 var h_Document,hDb, fw;
 var txt_selected_logo = "Izbran logo: ";
@@ -54,6 +60,10 @@ function main()
   //System.sigClose.connect( Close );
         var  dialog = new Dialog("IMP_Sinel",Dialog.D_NONE,false,0x00040000);
         dialog.caption = "Vnesite P.N.";
+        
+        
+        dialog.okButtonText = "Done"
+        dialog.cancelButtonText = "Abort";
         //dialog.okButtonText = "Potrdi"
         //dialog.cancelButtonText = "Preklici";
 	

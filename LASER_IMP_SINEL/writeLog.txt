@@ -800,3 +800,4 @@ Tuesday, December 13, 2016 14:36:14 - Selected P.N.:979523842
 Tuesday, December 13, 2016 14:36:15 - Read: 979523842,870524242,NMT PLUS ,25/40-130,0.05,0.2,3,21,0.16,1,1,volvo,1~230V 50Hz
 Tuesday, December 13, 2016 14:36:48 - Selected P.N.:979523951
 Tuesday, December 13, 2016 14:36:49 - Read: 979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Wednesday, December 14, 2016 08:10:57 - Selected P.N.:8784568
