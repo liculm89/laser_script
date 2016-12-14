@@ -55,7 +55,23 @@ function main()
   System["sigLaserError(int)"].connect(onLaserError);
   System.sigClose.connect(onClose);
   // TODO
-  print( "Ready !" );
+  //print( "Ready !" );
+ /* 
+  var part_list_file = new File("F:\\LASER_IMP_SINEL\\parts_list.txt");
+  part_list_file.open(File.ReadOnly);
+  var part_list = []
+  var i = 0;		   
+ while (!part_list_file.eof )
+  {
+    part_list[i] = part_list_file.readLine();
+    i = i + 1;
+  }
+ box = new ComboBox("Select type:", part_list);
+
+*/
+      
+  
+  
   
   //System.sigClose.connect( Close );
         var  dialog = new Dialog("IMP_Sinel",Dialog.D_NONE,false,0x00040000);
@@ -71,6 +87,7 @@ function main()
         pna = new LineEdit;
         pna.label = "Prosim vnesite P.N.: ";
         dialog.add( pna );
+        //dialog.add(box);
 	
         num = new NumberEdit("Prosim vnesite količino: ", 1);
         num.decimals = 0;
