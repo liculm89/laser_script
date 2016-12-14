@@ -54,8 +54,7 @@ function main()
   System.sigLaserEnd.connect(onLaserEnd);
   System["sigLaserError(int)"].connect(onLaserError);
   System.sigClose.connect(onClose);
-  // TODO
-  //print( "Ready !" );
+  
  /* 
   var part_list_file = new File("F:\\LASER_IMP_SINEL\\parts_list.txt");
   part_list_file.open(File.ReadOnly);
@@ -64,14 +63,10 @@ function main()
  while (!part_list_file.eof )
   {
     part_list[i] = part_list_file.readLine();
-    i = i + 1;
+    i  += 1;
   }
  box = new ComboBox("Select type:", part_list);
-
 */
-      
-  
-  
   
   //System.sigClose.connect( Close );
         var  dialog = new Dialog("IMP_Sinel",Dialog.D_NONE,false,0x00040000);
@@ -128,6 +123,7 @@ function testMe()
 function onLneChange(text) {
   print("onLneChange("+text+")");
 }
+
 function onOutOfRange () {
   print("onOutOfRange()");
 }
@@ -215,7 +211,8 @@ if(pn != "" )
 	   //var obj_l = h_Document.getLaserObject("obj_l");
 	   //obj_l.text = l;
 	   var logo = h_Document.getLaserImported("logo");
-	   logo.importFile("D:\\LASER_IMP_SINEL\\Predloge\\" + l + ".xlp"); 
+	   //logo.importFile("D:\\LASER_IMP_SINEL\\Predloge\\" + l + ".xlp"); 
+	   logo.importFile("F:\\LASER_IMP_SINEL\\Predloge\\" + l + ".xlp"); 
 	   
 	   selectedLogo.text = txt_selected_logo + l;
 	   
