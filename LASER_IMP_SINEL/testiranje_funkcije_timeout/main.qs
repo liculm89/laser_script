@@ -1,3 +1,34 @@
+var Timer = function()
+{
+    this.timeout = 1000;
+    this.Enable = new Boolean(false);
+    this.Tick;
+    var timerId = 0;
+    var thisObject;
+    
+    this.Start = function()
+{	
+	this.Enable = new Boolean(true);
+	thisObject = this;
+	print("started");
+	
+	if ( thisObject.Enable)
+	{
+	    thisObject.timerId = start_timer(thisObject.timeout, thisObject);
+	   
+	    //thisObject.timerId 
+	    // thisObject.Tick();
+	}
+	
+    };
+    
+    this.Stop = function()
+   {
+	thisObject.Enable = new Boolean(false);
+	clearInterval(thisObject.timerId);
+    };
+};
+
 function onQueryStart()
 {
   // TODO
@@ -37,21 +68,28 @@ function onClose()
 
 
 
-function delay_func(ID)
+function delay_func(ID, obj)
 {
-  print("Delay reached");
-  
+  //print("Delay reached");
+  obj.Tick();
   print ("...killing timer..ID:", ID);
   System.killTimer(ID);
   System["sigTimer(int)"].disconnect(delay_func);
 }
 
-function start_timer(ms)
+function start_timer(ms, obj)
 {    
-    print("timer delay: ", ms, " ms" );
-     System["sigTimer(int)"].connect(delay_func);
+     print("timer delay: ", ms, " ms" );
+    // obj.Tick();
+     System["sigTimer(int)"].connect(delay_func(System.sigTimer.ID,obj));
      timer1 = System.setTimer(ms);
 }
+
+
+  function timer_tick()
+  {
+      print("tick");
+  }
 
 function main()
 {
@@ -63,8 +101,33 @@ function main()
   System.sigClose.connect(onClose);
   // TODO
   
-  print( "Starting timer ..." );
+  //print( "Starting timer ..." );
   
-  start_timer(2000);
+  //start_timer(2000);
+  
+ /* 
+  for( i = 0; i < 10; i++) {
+   print(i);
+   start_timer(1500);
+  }
+*/  
+  var obj = new Timer();
+  
+  
+  
+  obj.timeout = 3000;
+  
+  obj.Tick = timer_tick;
+
+
+  //obj.Tick = timer_tick();
+
+  
+  obj.Start();
+  
+  
 }
+
+
+
 
