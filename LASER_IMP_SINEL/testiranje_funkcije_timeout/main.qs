@@ -67,15 +67,11 @@ function onClose()
   // TODO
 }
 
-
-
-
 function delay_func(ID)
 {
     if(timer2 == ID)
     {
 	print ("delay reached");
-	print (ID);
 	killT(ID, delay_func);
     }
   }
@@ -84,41 +80,34 @@ function delay_func2(ID)
 {
     if (timer3 == ID)
     {  
-	print ("delay reached2"); 
-	print (ID);
+	print ("delay 2  reached"); 
 	killT(ID, delay_func2);
     }
 }
 
 function start_timer(ms, funkc, n)
 {    
-     print("starting timer delay: ", ms, " ms" );
-    
+     print("starting timer delay: ", ms, " ms" );  
      System["sigTimer(int)"].connect(funkc);
      //timer = System.setTimer(ms);
         
 }
-
 
   function timer_tick(ID)
   {
       if (timer1 == ID)
       {
 	  print("tick");
-	  print(ID);
 	  killT(ID, timer_tick);
-      }
-  
+      }  
   }
 
   function killT(ID, func)
   {
- //print ("...killing timer..ID:", ID);
+  print ("...killing timer..ID:", ID);
   System.killTimer(ID);
   //System["sigTimer(int)"].disconnect(func);
   }
-  
-  
   
 function main()
 {
@@ -130,8 +119,8 @@ function main()
   System.sigClose.connect(onClose);
   // TODO
   
-  
   //f = delay_func;
+  
   
   timer1 = System.setTimer(1000);
   start_timer(1000, timer_tick);
@@ -141,11 +130,6 @@ function main()
  
   timer3 = System.setTimer(6000);
   start_timer(6000, delay_func2);
-
-  
-  //start_timer(200, delay_func);
-  
-
   
 }
 
