@@ -1,3 +1,4 @@
+/*
 var Timer = function()
 {
     this.timeout = 1000;
@@ -28,6 +29,7 @@ var Timer = function()
 	clearInterval(thisObject.timerId);
     };
 };
+*/
 
 function onQueryStart()
 {
@@ -68,29 +70,56 @@ function onClose()
 
 
 
-function delay_func(ID, obj)
+function delay_func(ID)
 {
-  //print("Delay reached");
-  obj.Tick();
-  print ("...killing timer..ID:", ID);
-  System.killTimer(ID);
-  System["sigTimer(int)"].disconnect(delay_func);
-}
-
-function start_timer(ms, obj)
-{    
-     print("timer delay: ", ms, " ms" );
-    // obj.Tick();
-     System["sigTimer(int)"].connect(delay_func(System.sigTimer.ID,obj));
-     timer1 = System.setTimer(ms);
-}
-
-
-  function timer_tick()
-  {
-      print("tick");
+    if(timer2 == ID)
+    {
+	print ("delay reached");
+	print (ID);
+	killT(ID, delay_func);
+    }
   }
 
+function delay_func2(ID)
+{
+    if (timer3 == ID)
+    {  
+	print ("delay reached2"); 
+	print (ID);
+	killT(ID, delay_func2);
+    }
+}
+
+function start_timer(ms, funkc, n)
+{    
+     print("starting timer delay: ", ms, " ms" );
+    
+     System["sigTimer(int)"].connect(funkc);
+     //timer = System.setTimer(ms);
+        
+}
+
+
+  function timer_tick(ID)
+  {
+      if (timer1 == ID)
+      {
+	  print("tick");
+	  print(ID);
+	  killT(ID, timer_tick);
+      }
+  
+  }
+
+  function killT(ID, func)
+  {
+ //print ("...killing timer..ID:", ID);
+  System.killTimer(ID);
+  //System["sigTimer(int)"].disconnect(func);
+  }
+  
+  
+  
 function main()
 {
   System.sigQueryStart.connect(onQueryStart);
@@ -101,30 +130,22 @@ function main()
   System.sigClose.connect(onClose);
   // TODO
   
-  //print( "Starting timer ..." );
   
-  //start_timer(2000);
+  //f = delay_func;
   
- /* 
-  for( i = 0; i < 10; i++) {
-   print(i);
-   start_timer(1500);
-  }
-*/  
-  var obj = new Timer();
-  
-  
-  
-  obj.timeout = 3000;
-  
-  obj.Tick = timer_tick;
+  timer1 = System.setTimer(1000);
+  start_timer(1000, timer_tick);
 
-
-  //obj.Tick = timer_tick();
+  timer2 = System.setTimer(3000);
+  start_timer(3000, delay_func);
+ 
+  timer3 = System.setTimer(6000);
+  start_timer(6000, delay_func2);
 
   
-  obj.Start();
+  //start_timer(200, delay_func);
   
+
   
 }
 
