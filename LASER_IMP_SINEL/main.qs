@@ -1,4 +1,4 @@
-// Excel File path
+﻿// Excel File path
 var xlsPath ="F:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
 var logPath= "F:\\LASER_IMP_SINEL\\writeLog.txt";
 
