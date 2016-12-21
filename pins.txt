@@ -1,0 +1,29 @@
+
+Eox, Arex, New VLASE
+Male panel socket SUB-D 25
+Pin	 Signal	 Instruction	 Event
+1	 EXT_12V	 Not accessible
+2	 OUTPUT 0	 IoPort.setPort(0, 0x1);
+3	 OUTPUT 2	 IoPort.setPort(0, 0x4);
+4	 OUTPUT 4	 IoPort.setPort(0, 0x10);
+5	 OUTPUT 6	 IoPort.setPort(0, 0x40);
+6	 OUTPUT 8	 IoPort.setPort(0, 0x100);
+7	 INPUT 0	 If (IoPort.GetPort(0) & 0x1) {}	 IoPort.sigInputChange(0, nBits)
+8	 INPUT 1	 If (IoPort.GetPort(0) & 0x2) {}	 IoPort.sigInputChange(0, nBits)
+9	 INPUT 2	 If (IoPort.GetPort(0) & 0x4) {}	 IoPort.sigInputChange(0, nBits)
+10	 INPUT 3	 If (IoPort.GetPort(0) & 0x8) {}	 IoPort.sigInputChange(0, nBits)
+11	 INPUT 4	 If (IoPort.GetPort(0) & 0x10) {}	 IoPort.sigInputChange(0, nBits)
+12	 INPUT 5	 If (IoPort.GetPort(0) & 0x20) {}	 IoPort.sigInputChange(0, nBits)
+13	 GND	 Not accessible
+14	 OUTPUT 12	 IoPort.setPort(0, 0x1000);
+15	 OUTPUT 1	 IoPort.setPort(0, 0x2);
+16	 OUTPUT 3	 IoPort.setPort(0, 0x8);
+17	 OUTPUT 5	 IoPort.setPort(0, 0x20);
+18	 OUTPUT 7	 IoPort.setPort(0, 0x80);
+19	 INPUT 9 (Fast)	 If (IoPort.GetPort(0) & 0x200) {}	 IoPort.sigInputChange(0, nBits)
+20	 INPUT 8 (Fast)	 If (IoPort.GetPort(0) & 0x100) {}	 IoPort.sigInputChange(0, nBits)
+21	 INPUT 7 (Fast)	 If (IoPort.GetPort(0) & 0x80) {}	 IoPort.sigInputChange(0, nBits)
+22	 INPUT 6	 If (IoPort.GetPort(0) & 0x40) {}	 IoPort.sigInputChange(0, nBits)
+23	 OUTPUT 9	 IoPort.setPort(0, 0x200);
+24	 OUTPUT 11	 IoPort.setPort(0, 0x800);
+25	 GND	 Not accessible
