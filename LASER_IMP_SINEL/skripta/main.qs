@@ -14,8 +14,8 @@ var txt_selected_logo = "Izbran logo: ";
 var txt_num_writes = "Število zapisov (od zagona): ";
 
 
-
-
+var auto_ON = 0;
+var marking_active = 0;
 
 function onQueryStart()
 {
@@ -27,10 +27,11 @@ function onLaserStop()
 }
 function onLaserStart()
 {
-  
+    marking_active = 1;
 }
 function onLaserEnd()
 {
+  marking_active = 0;
   System.incrementCounter("num_writes");
 }
 function onLaserError(error)
@@ -53,18 +54,6 @@ function onClose()
   // TODO
 }
 
-function portchanged()
-{
-    
-    if(IoPort.getPort(0) & I_PIN_9)
-   {
-	print ("pin 9");
-	print("Axis z pos:", Axis.getPosition(2));
-	
-	
-     }
-}
-
 
 /*---------------------------------------------------------
   Postavljanje globalnih varijabli PIN-ova
@@ -82,9 +71,17 @@ const O_PIN_17 = 0x20; const O_PIN_18 = 0x80;
 const O_PIN_23 = 0x200; const O_PIN_24 = 0x800;
 
 //Definiranje varijabli 
-const sb1_v = 25;
+var sb1_v = 25;
 
-
+function portchanged()
+{
+    
+    if(IoPort.getPort(0) & I_PIN_9)
+   {
+	print ("pin 9");
+	print("Axis z pos:", Axis.getPosition(2));	
+     }
+}
 
 function onLneChange(text) {
   print("onLneChange("+text+")");
@@ -121,7 +118,6 @@ if(pn != "" )
 	    {
 		objects[i] = res[0][i];
 	    }
-	    print(objects);
 	    
 	    // Select the right template
 	    h_Document = new LaserDoc;   
@@ -142,8 +138,9 @@ if(pn != "" )
 	   }
 	   
 	   var l = objects[ (objects.length - 2)];
+	   var m = objects[(objects.length - 1)];
 	   var logo = h_Document.getLaserImported("logo");
-	   //logo.importFile("D:\\LASER_IMP_SINEL\\Predloge\\" + l + ".xlp"); 
+
 	   //logo.importFile("D:\\LASER_IMP_SINEL\\Predloge\\" + l + ".xlp"); 
 	   logo.importFile("F:\\LASER_IMP_SINEL\\Predloge\\" + l + ".xlp"); 
 	   
@@ -182,11 +179,8 @@ function writeLog(currentNum)
     outFile.open(File.Append);
     
     outFile.write( "\r\n" + today.toLocaleString() + " - " + currentNum );
-
     outFile.close();
 }
-
-
 
 function move_up()
 {
@@ -223,47 +217,47 @@ function gen_dialog(part_list)
   /*--------------------------
      GUI - automatski mod
      ------------------------*/
-   dialog.newTab("Automatic");
+   dialog.newTab("Automatic mode");
    
    
    /*--------------------------
      GUI - manualni mod
      ------------------------*/
-   dialog.newTab("Manual");
+   dialog.newTab("Manual mode");
    
+   //grupa "settings"
    gb = new GroupBox();gb.title = "Settings";
    dialog.add(gb);
    
    lbl1 = new Label(); lbl1.text = "Z axis current position: " + Axis.getPosition(2);  
    gb.add(lbl1);  
-  
-   
+
+  //grupa "laser pos"
+  gb_lp = new GroupBox(); gb_lp.title = "Laser position";
   sb1 = new SpinBox("Move distance:", 25);  sb1["sigValueChanged(int)"].connect(sb1_ch);
-  dialog.add(sb1);
+  gb_lp.add(sb1);
   
   var btn = PushButton ("Move up");
   btn["sigPressed()"].connect(move_up);
-  dialog.add(btn);
+  gb_lp.add(btn);
   
   var btn2 = PushButton ("Move down");
   btn2["sigPressed()"].connect(move_down);
-  dialog.add(btn2);
+  gb_lp.add(btn2);
   
   var btn3 = PushButton ("STOP!");
   btn3["sigPressed()"].connect(stop_axis);
-  dialog.add(btn3);
-       
+  gb_lp.add(btn3);
+  dialog.add(gb_lp);
   
    dialog.okButtonText = "Done"
    dialog.cancelButtonText = "Abort";
        
     gb_mark = new GroupBox("Laser Marking");
-    dialog.add(gb_mark);
+   
     cmb = new ComboBox("Select type", part_list);
     gb_mark.add(cmb);
-   
-       
-	
+   	
     num = new NumberEdit("Prosim vnesite količino: ", 1);
     num.decimals = 0;  num.minimum = 1;
       
@@ -277,10 +271,31 @@ function gen_dialog(part_list)
     var btn = PushButton ("ZAPIŠI!");
     btn["sigPressed()"].connect(readFile);
     gb_mark.add(btn);
-   
+     
+    dialog.add(gb_mark);
+     
     dialog.show();     
     
+    time_ms = 100;
+    timer1 = System.setTimer(time_ms);
+    start_timer(time_ms, gui_update);
 }
+
+function start_timer(ms, funkc, n)
+{    
+     print("starting timer delay: ", ms, " ms" );  
+     System["sigTimer(int)"].connect(funkc);
+     //timer = System.setTimer(ms);        
+}
+
+function gui_update(ID)
+{
+    if (timer1 == ID)
+      {	
+	//print("update");
+	lbl1.text = "Z axis current position: " + Axis.getPosition(2);  
+      }
+ }
 
 const num_writes;
 function main()
@@ -296,7 +311,6 @@ function main()
   
   System.makeCounterVariable("num_writes", 0, 0, nm, 1, 1, 0, 3, 10, true );
   
-  
   IoPort.checkPort(0);
   IoPort.sigInputChange.connect(portchanged);
   
@@ -309,7 +323,7 @@ function main()
     if(hDb2.open())
     {	
 	part_list = [];
-	print("opened");
+	//print("opened");
 	var res = hDb2.exec("SELECT * FROM [List1$]" );
 	for (i = 0; i < res.length; i++)
 	{	   
@@ -322,7 +336,7 @@ function main()
 	     writeLog("Result: " + res + " - Error: " + hDb2.lastError());
 	}
     
-  //pozivanje funcije koja podiže GUI aplikaciju
+  //pozivanje funcije koja generira GUI aplikaciju
   gen_dialog(part_list);
    
 }

@@ -838,3 +838,13 @@ Thursday, December 22, 2016 09:38:23 - Selected P.N.:979523951
 Thursday, December 22, 2016 09:38:24 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
 Thursday, December 22, 2016 09:40:58 - Selected P.N.:979523951
 Thursday, December 22, 2016 09:40:58 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Thursday, December 22, 2016 10:43:40 - Selected P.N.:979523951
+Thursday, December 22, 2016 10:43:40 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Thursday, December 22, 2016 10:44:31 - Selected P.N.:979523951
+Thursday, December 22, 2016 10:44:31 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Thursday, December 22, 2016 11:48:32 - Selected P.N.:979523951
+Thursday, December 22, 2016 11:48:32 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Thursday, December 22, 2016 11:55:48 - Selected P.N.:979523951
+Thursday, December 22, 2016 11:55:48 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Thursday, December 22, 2016 11:55:53 - Selected P.N.:979523951
+Thursday, December 22, 2016 11:55:53 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
