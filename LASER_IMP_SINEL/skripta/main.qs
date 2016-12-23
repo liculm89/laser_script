@@ -14,8 +14,7 @@ var txt_selected_logo = "Izbran logo: ";
 var txt_num_writes = "Število zapisov (od zagona): ";
 
 var auto_mode = "OFF";
-var marking_status = "INACTIVE";
-
+var laser_status = "INACTIVE";
 
 var z_axis_active = 0;
 var sb1_v = 25;
@@ -56,16 +55,19 @@ function onQueryStart()
 }
 function onLaserStop()
 {
-   makring_status = "INACTIVE";
-  // TODO
+    
+   laser_status ="INACTIVE"; 
+
 }
 function onLaserStart()
 {
-    marking_status = "ACTIVE";
+    laser_status="ACTIVE";
+
 }
 function onLaserEnd()
 {
-  marking_status = "INACTIVE";
+  
+   laser_status ="INACTIVE";
   System.incrementCounter("num_writes");
 }
 function onLaserError(error)
@@ -108,7 +110,7 @@ function onOutOfRange () {
 
 function readFile_auto()
 {
-    if(auto_mode =="OFF" &&  marking_status!= "ACTIVE")
+    if(auto_mode == "OFF" &&  laser_status != "ACTIVE")
     {	
 	auto_mode = "ON";
 	readFile();
@@ -118,25 +120,24 @@ function readFile_auto()
 
 function readFile_manual()
 {
-    if(auto_mode == "OFF")
+    if(auto_mode == "OFF" && laser_status != "ACTIVE")
     {
 	readFile();
     }
     else { error_auto_mode(); }
 }
 
-function stop_auto(){    
+function stop_auto(){      
 	auto_mode = "OFF";
 	System.stopLaser();
-	marking_status = "INACTIVE";
-	print ("Laser stoped");
-}
+	laser_status = "INACTIVE";
+    }
 
 function stop_m_manual(){
     if(auto_mode == "OFF")
     {
 	System.stopLaser();
-	marking_status = "INACTIVE"; 
+	laser_status = "INACTIVE"; 
     }
     else { error_auto_mode(); }
 }
@@ -218,7 +219,6 @@ if(pn != "" )
 	     writeLog("Result: " + res + " - Error: " + hDb.lastError());
 	}
      }
-    
     hDb.close();
     }
 
@@ -307,7 +307,7 @@ function gen_dialog(part_list)
     lbl_auto_status = new Label(); lbl_auto_status.text = "Auto mode: " + auto_mode;
     status_box.add(lbl_auto_status);
     
-    lbl_marking = new Label(); lbl_marking.text = "Marking :" + marking_status;
+    lbl_marking = new Label(); lbl_marking.text = "Laser status :" + laser_status;
     status_box.add(lbl_marking);
    
    
@@ -360,7 +360,7 @@ function gen_dialog(part_list)
     gb_mark.add(selectedLogo);
        
     var btn = PushButton ("ZAPIŠI!");
-    btn["sigPressed()"].connect(readFile);
+    btn["sigPressed()"].connect(readFile_manual);
     gb_mark.add(btn);
     
     var btn_stop_m = PushButton ("STOP MARKING!");
@@ -375,8 +375,16 @@ function gen_dialog(part_list)
     lbl_auto_status_m = new Label(); lbl_auto_status.text = "Auto mode: " + auto_mode;
     status_box.add(lbl_auto_status_m);
     
-    lbl_marking_m = new Label(); lbl_marking.text = "Marking :" + marking_status;
+    lbl_marking_m = new Label(); lbl_marking.text = "Laser status :" + laser_status;
     status_box.add(lbl_marking_m);
+    
+    
+    /*-----------------
+      I/O Status tab
+      -------------------*/
+    dialog.newTab("I/O Status");
+    
+    
     
     dialog.show();     
     
@@ -396,11 +404,9 @@ function gui_update(ID)
 {
     if (timer1 == ID)
       {	
-	//print("update");
 	lbl1.text = "Z axis current position: " + Math.round(Axis.getPosition(2));
                 lbl_auto_status_m.text= lbl_auto_status.text = "Auto mode: " + auto_mode;
-	lbl_marking_m.text = lbl_marking.text = "Marking :" + marking_status;
-	
+	lbl_marking_m.text = lbl_marking.text = "Laser status :" + laser_status;	
       }
  }
 
