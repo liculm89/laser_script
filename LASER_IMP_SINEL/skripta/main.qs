@@ -8,7 +8,6 @@ var logPath= "F:\\LASER_IMP_SINEL\\writeLog.txt";
 //var xlsPath = "D:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
 //var logPath = "D:\\LASER_IMP_SINEL\\writeLog.txt";
 
-
 var h_Document,hDb, fw;
 var txt_selected_logo = "Izbran logo: ";
 var txt_num_writes = "Število zapisov (od zagona): ";
@@ -45,7 +44,7 @@ I_PIN 9 - Glava lasera gore		-INPUT
 I_PIN 10 - Optički senzor			-INPUT
 I_PIN 11 - Laserska barijera dolje		-INPUT
 I_PIN 12 - Laserska barijera gore		-INPUT
-I_PIN 16 - Z os direction			-INPUT
+O_PIN 16 - Z os direction			-OUTPUT
 I_PIN 19 - Reset tipkalo			-INPUT
 I_PIN 20 - Regulator fault			-INPUT
 I_PIN 21 - Total stop input                     	-INPUT
@@ -54,25 +53,33 @@ O_PIN 23 - Cilindar dolje                       	-OUTPUT
 
 //flags
 
-bar_gore= 0;
-bar_dolje = 0;
+var bar_gore= 0;
+var bar_dolje = 0;
 
-sen_linija = 0;
-sen_bar_gore = 0;
-sen_bar_dolje = 0;
-sen_laser_gore = 0;
-sen_laser_dolje = 0;
-sen_optika = 0;
+var sen_linija = 0;
+var sen_laser_gore = 0;
+var sen_laser_dolje = 0;
+var sen_optika = 0;
+var sen_bar_dolje = 0;
+var sen_bar_gore = 0;
 
-reg_fault = 0;
-total_stop = 0;
-reset_tipka = 0;
+var reset_tipka = 0;
+var reg_fault = 0;
+var total_stop = 0;
 
 
-function init()
+
+function set_flags()
 {
-    
-    
+    if(IoPort.getPort(0) & I_PIN_7){ sen_linija = 1;} else{sen_linija=0;}
+    if(IoPort.getPort(0) & I_PIN_8){ sen_laser_dolje = 1;} else{sen_laser_dolje =0;}
+    if(IoPort.getPort(0) & I_PIN_9){ sen_laser_gore = 1;} else{sen_laser_gore =0;}     
+    if(IoPort.getPort(0) & I_PIN_10){ sen_optika = 1;} else{sen_optika =0;}
+    if(IoPort.getPort(0) & I_PIN_11){ sen_bar_dolje = 1;} else{sen_bar_dolje =0;}     
+    if(IoPort.getPort(0) & I_PIN_12){ sen_bar_gore = 1;} else{sen_bar_gore =0;}       
+    if(IoPort.getPort(0) & I_PIN_19){ reset_tipka = 1;} else{reset_tipka =0;}
+    if(IoPort.getPort(0) & I_PIN_20){ reg_fault = 1;} else{reg_fault =0;}
+    if(IoPort.getPort(0) & I_PIN_20){ total_stop = 1;} else{total_stop =0;}       
 }
 
 
@@ -119,14 +126,13 @@ function onClose()
 
 function portchanged()
 {
-    
     if(IoPort.getPort(0) & I_PIN_9)
    {           	
 	print ("pin 9");
 	print("Axis z pos:", Axis.getPosition(2));	
     }
     
-    
+    set_flags();
 }
 
 function onLneChange(text) {
@@ -139,7 +145,7 @@ function onOutOfRange () {
 
 function readFile_auto()
 {
-    if(auto_mode == "OFF" &&  laser_status != "ACTIVE")
+    if(auto_mode == "OFF" &&  laser_status != "ACTIVE"  && total_stop == 0)
     {	
 	auto_mode = "ON";
 	readFile();
@@ -149,7 +155,7 @@ function readFile_auto()
 
 function readFile_manual()
 {
-    if(auto_mode == "OFF" && laser_status != "ACTIVE")
+    if(auto_mode == "OFF" && laser_status != "ACTIVE" && total_stop == 0)
     {
 	readFile();
     }
@@ -270,6 +276,7 @@ function move_up()
     {
 	print( "Current Z axis poz: " + Math.round(Axis.getPosition(2)));
 	Axis.move(2, (Axis.getPosition(2) + sb1_v) );
+	Axis.stopMoreAxis(2);
     }
     else { error_auto_mode(); }
 }
@@ -280,6 +287,7 @@ function move_down()
     {
 	print( "Current Z axis poz: " + Math.round(Axis.getPosition(2)));
 	Axis.move(2, (Axis.getPosition(2) - sb1_v) );
+	Axis.stopMoreAxis(2);
     }
     else { error_auto_mode(); }
 }
@@ -299,8 +307,7 @@ function barrier_up()
 {
       if (auto_mode == "OFF")
     {
-	   
-	  
+	   	  
 	   print("barrier up"); 
 	   IoPort.setPort(0, O_PIN_4);
 	   bar_gore = 1;
@@ -311,7 +318,9 @@ function barrier_up()
 function barrier_down()
 {
      if (auto_mode == "OFF")
-    {
+    {	
+	 IoPort.setPort(0, O_PIN_23);
+	 bar_dolje = 1;
 	 print("barrier down");
      }
       else { error_auto_mode(); }
@@ -330,7 +339,7 @@ function gen_dialog(part_list)
 {
   var dialog = new Dialog ("Laser control",Dialog.D_OK,false, 0x00040000);
   dialog.okButtonText = "Done"; dialog.cancelButtonText = "Abort";
-  dialog.setFixedSize(400,650);
+  dialog.setFixedSize(450,650);
   /*--------------------------
      GUI - automatski mod
      ------------------------*/
@@ -352,6 +361,7 @@ function gen_dialog(part_list)
     btn_auto_stop["sigPressed()"].connect(stop_auto);
     auto_box.add(btn_auto_stop);
   
+    dialog.addSpace(350);
     status_box = new GroupBox(); status_box.title= "Status";
     dialog.add(status_box);
     
@@ -393,6 +403,7 @@ function gen_dialog(part_list)
   
    dialog.okButtonText = "Done"
    dialog.cancelButtonText = "Abort";
+   
    //groupa " laser barrier"
    gb_lb = new GroupBox(); gb_lb.title ="Laser barrier";
    
@@ -405,7 +416,7 @@ function gen_dialog(part_list)
    gb_lb.add(btn_bar_down);
 	   
     dialog.add(gb_lb);
-   
+  
    //manual laser marking group    
     gb_mark = new GroupBox("Manual Laser Marking");
    
@@ -447,13 +458,47 @@ function gen_dialog(part_list)
       -------------------*/
     dialog.newTab("I/O Status");
     
+    //groupbox inputs
+    gb_inputs = new GroupBox(); gb_inputs.title = "Inputs status";
+    dialog.add(gb_inputs);
+    lb_sen_linija = new Label(); lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
+    gb_inputs.add(lb_sen_linija);
     
+    lb_sen_bar_gore = new Label(); lb_sen_bar_gore.text = "Senzor laserske barijere gore:" + get_stat(sen_bar_gore);
+    gb_inputs.add(lb_sen_bar_gore);
+    
+    lb_sen_bar_dolje = new Label(); lb_sen_bar_dolje.text = "Senzor laserske barijere dolje:" + get_stat(sen_bar_dolje);
+    gb_inputs.add(lb_sen_bar_dolje);
+    
+    lb_sen_laser_gore = new Label(); lb_sen_laser_gore.text = "Senzor laserske glave gore:" + get_stat(sen_laser_gore);
+    gb_inputs.add(lb_sen_laser_gore);
+    
+    lb_sen_laser_dolje = new Label(); lb_sen_laser_dolje.text = "Senzor laserske barijere dolje:" + get_stat(sen_laser_dolje);
+    gb_inputs.add(lb_sen_laser_dolje);
+    
+    lb_sen_optika = new Label(); lb_sen_optika.text = "Optički senzor:" + get_stat(sen_optika);
+    gb_inputs.add(lb_sen_optika);
+    
+    lb_reg_fault = new Label(); lb_reg_fault.text = "Regulator fault:" + get_stat(reg_fault);
+    gb_inputs.add(lb_reg_fault);
+    
+    lb_total_stop = new Label(); lb_total_stop.text = "Total stop:" + get_stat(total_stop);
+    gb_inputs.add(lb_total_stop);
+    
+    lb_reset_tipka = new Label(); lb_reset_tipka.text = "Reset tipka:" + get_stat(reset_tipka);
+    gb_inputs.add(lb_reset_tipka);
     
     dialog.show();     
     
     time_ms = 100;
     timer1 = System.setTimer(time_ms);
     start_timer(time_ms, gui_update);
+}
+
+function get_stat(input)
+{
+    if(input){stat= "Active";} else {stat="Inactive";}
+    return stat;
 }
 
 function start_timer(ms, funkc, n)
@@ -470,6 +515,15 @@ function gui_update(ID)
 	lbl1.text = "Z axis current position: " + Math.round(Axis.getPosition(2));
                 lbl_auto_status_m.text= lbl_auto_status.text = "Auto mode: " + auto_mode;
 	lbl_marking_m.text = lbl_marking.text = "Laser status :" + laser_status;	
+	
+	 lb_sen_bar_gore.text = "Senzor laserske barijere gore:" + get_stat(sen_bar_gore);
+	 lb_sen_bar_dolje.text = "Senzor laserske barijere dolje:" + get_stat(sen_bar_dolje);
+	 lb_sen_laser_gore.text = "Senzor laserske glave gore:" + get_stat(sen_laser_gore);
+	 lb_sen_laser_dolje.text = "Senzor laserske barijere dolje:" + get_stat(sen_laser_dolje);
+	 lb_sen_optika.text = "Optički senzor:" + get_stat(sen_optika);
+	 lb_reg_fault.text = "Regulator fault:" + get_stat(reg_fault);
+	 lb_total_stop.text = "Total stop:" + get_stat(total_stop);
+	 lb_reset_tipka.text = "Reset tipka:" + get_stat(reset_tipka); 
       }
  }
 
@@ -482,17 +536,14 @@ function main()
   System.sigLaserEnd.connect(onLaserEnd);
   System["sigLaserError(int)"].connect(onLaserError);
   System.sigClose.connect(onClose);
-   
-  
   
   var nm;
-  
   System.makeCounterVariable("num_writes", 0, 0, nm, 1, 1, 0, 3, 10, true );
   
   IoPort.checkPort(0);
   IoPort.sigInputChange.connect(portchanged);
   
-  init();
+  set_flags();
   
   /*------------------------------------------------
     Generiranje liste komada iz excel tabele
