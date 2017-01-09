@@ -37,17 +37,44 @@ const O_PIN_23 = 0x200; const O_PIN_24 = 0x800;
 /*
 Popis funkcija pinova
 O_PIN 3 - Z os step			- OUTPUT
+O_PIN 4 - Cilindar gore                       	- OUTPUT
 O_PIN 6 - Z os Current off			- OUTPUT
 I_PIN 7 - Senzor prisutnosti linije		- INPUT
 I_PIN 8 - Glava lasera dolje		-INPUT
 I_PIN 9 - Glava lasera gore		-INPUT
 I_PIN 10 - Optički senzor			-INPUT
 I_PIN 11 - Laserska barijera dolje		-INPUT
-O_PIN 12 - Laserska barijera gore		-OUTPUT
+I_PIN 12 - Laserska barijera gore		-INPUT
 I_PIN 16 - Z os direction			-INPUT
 I_PIN 19 - Reset tipkalo			-INPUT
 I_PIN 20 - Regulator fault			-INPUT
+I_PIN 21 - Total stop input                     	-INPUT
+O_PIN 23 - Cilindar dolje                       	-OUTPUT
 */
+
+//flags
+
+bar_gore= 0;
+bar_dolje = 0;
+
+sen_linija = 0;
+sen_bar_gore = 0;
+sen_bar_dolje = 0;
+sen_laser_gore = 0;
+sen_laser_dolje = 0;
+sen_optika = 0;
+
+reg_fault = 0;
+total_stop = 0;
+reset_tipka = 0;
+
+
+function init()
+{
+    
+    
+}
+
 
 function onQueryStart()
 {
@@ -82,7 +109,7 @@ function onLaserError(error)
       // if the board was not properly loaded
       MessageBox.critical( "Board initialization error", MessageBox.Ok );
       break;
-    // TODO
+    
   }
 }
 function onClose()
@@ -98,6 +125,8 @@ function portchanged()
 	print ("pin 9");
 	print("Axis z pos:", Axis.getPosition(2));	
     }
+    
+    
 }
 
 function onLneChange(text) {
@@ -266,6 +295,28 @@ function stop_axis()
     else { error_auto_mode(); }
  }
 
+function barrier_up()
+{
+      if (auto_mode == "OFF")
+    {
+	   
+	  
+	   print("barrier up"); 
+	   IoPort.setPort(0, O_PIN_4);
+	   bar_gore = 1;
+     }
+      else { error_auto_mode(); }
+}
+
+function barrier_down()
+{
+     if (auto_mode == "OFF")
+    {
+	 print("barrier down");
+     }
+      else { error_auto_mode(); }
+ }
+
 function sb1_ch(value)
 {
     //print(value);
@@ -279,7 +330,7 @@ function gen_dialog(part_list)
 {
   var dialog = new Dialog ("Laser control",Dialog.D_OK,false, 0x00040000);
   dialog.okButtonText = "Done"; dialog.cancelButtonText = "Abort";
-  dialog.setFixedSize(400,550);
+  dialog.setFixedSize(400,650);
   /*--------------------------
      GUI - automatski mod
      ------------------------*/
@@ -309,7 +360,6 @@ function gen_dialog(part_list)
     
     lbl_marking = new Label(); lbl_marking.text = "Laser status :" + laser_status;
     status_box.add(lbl_marking);
-   
    
     /*--------------------------
      GUI - manualni mod
@@ -343,7 +393,20 @@ function gen_dialog(part_list)
   
    dialog.okButtonText = "Done"
    dialog.cancelButtonText = "Abort";
-       
+   //groupa " laser barrier"
+   gb_lb = new GroupBox(); gb_lb.title ="Laser barrier";
+   
+   var btn_bar_up = PushButton("Barrier up");
+   btn_bar_up["sigPressed()"].connect(barrier_up);
+   gb_lb.add(btn_bar_up);
+ 	   
+   var btn_bar_down = PushButton("Barrier down");
+   btn_bar_down["sigPressed()"].connect(barrier_down);
+   gb_lb.add(btn_bar_down);
+	   
+    dialog.add(gb_lb);
+   
+   //manual laser marking group    
     gb_mark = new GroupBox("Manual Laser Marking");
    
     cmb = new ComboBox("Select type", part_list);
@@ -420,12 +483,16 @@ function main()
   System["sigLaserError(int)"].connect(onLaserError);
   System.sigClose.connect(onClose);
    
+  
+  
   var nm;
   
   System.makeCounterVariable("num_writes", 0, 0, nm, 1, 1, 0, 3, 10, true );
   
   IoPort.checkPort(0);
   IoPort.sigInputChange.connect(portchanged);
+  
+  init();
   
   /*------------------------------------------------
     Generiranje liste komada iz excel tabele
