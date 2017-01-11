@@ -150,11 +150,28 @@ function readFile_auto()
 	if(auto_mode == "OFF" &&  laser_status != "ACTIVE") 
 	{	
 	   auto_mode = "ON";
+	   
+	   //referenciranje, pozicioniranje i onda readfile();
+	   /*
+	     laser_reference();
+	     barrier_down();
+	     laser_moveto_pos();
+	   */
 	   readFile();
                  }
                 else {error_manual_mode(); }
       }
     else{error_total_stop();}
+}
+
+function laser_moveto_pos()
+{
+    print("laser moving");
+    /*while(sen_optika = 1)
+    {
+	Axis.move(2, (Axis.getPosition(2)-1));
+    
+    }*/
 }
 
 function readFile_manual()
