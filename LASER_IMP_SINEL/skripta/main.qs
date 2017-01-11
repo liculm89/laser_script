@@ -67,7 +67,7 @@ var reset_tipka = 0;
 var reg_fault = 0;
 var total_stop = 0;
 
-
+var laser_marking = 0;
 
 function set_flags()
 {
@@ -91,6 +91,7 @@ function onLaserStop()
 {
     
    laser_status ="INACTIVE"; 
+   //laser_marking = 0;
 
 }
 function onLaserStart()
@@ -101,8 +102,10 @@ function onLaserStart()
 function onLaserEnd()
 {
   
-   laser_status ="INACTIVE";
-  System.incrementCounter("num_writes");
+  laser_status ="INACTIVE";
+  //laser_marking = 0;
+  //print("laser movement end");
+  //System.incrementCounter("num_writes");
 }
 function onLaserError(error)
 {
@@ -143,25 +146,47 @@ function onOutOfRange () {
   print("onOutOfRange()");
 }
 
-function readFile_auto()
+var timer2_id = 0;
+
+function start_auto_mode()
 {
-    if(total_stop == 0)
-    {
-	if(auto_mode == "OFF" &&  laser_status != "ACTIVE") 
-	{	
-	   auto_mode = "ON";
-	   
-	   //referenciranje, pozicioniranje i onda readfile();
-	   /*
-	     laser_reference();
-	     barrier_down();
-	     laser_moveto_pos();
-	   */
-	   readFile();
-                 }
-                else {error_manual_mode(); }
-      }
-    else{error_total_stop();}
+    if(auto_mode == "OFF")
+    {	
+	//print("button pressed")
+	auto_mode = "ON";
+	time2_ms = 50;
+	timer2 = System.setTimer(time_ms);
+	start_timer(time2_ms, readFile_auto);
+
+    }
+    else{error_manual_mode();}
+}
+function readFile_auto(ID)
+{
+   
+    if(laser_marking == 0)
+    {	//print("laser_marking: ") + laser_marking
+	if(total_stop == 0)
+	{
+	    if(laser_status == "INACTIVE") 
+	    {	
+		
+		laser_marking = 1;
+		//referenciranje, pozicioniranje i onda readfile();
+		/*
+	                 laser_reference();
+	                 barrier_down();
+	                 laser_moveto_pos();	     
+	                */
+		readFile();
+	                //barrier_up();
+		//laser_marking = 0;
+			
+	    }
+	    else {error_manual_mode(); }
+	}
+	else{error_total_stop();}
+    }
 }
 
 function laser_moveto_pos()
@@ -176,21 +201,26 @@ function laser_moveto_pos()
 
 function readFile_manual()
 {
-      if(total_stop == 0)
-    {
-	  if(auto_mode == "OFF" && laser_status != "ACTIVE")
-	  {
-	      readFile();
-	  }
-	  else { error_auto_mode(); }
-      }
-      else{error_total_stop();}
+	if(total_stop == 0)
+	{
+	    if(auto_mode == "OFF" && laser_status != "ACTIVE")
+	    {
+		readFile();
+	    }
+	    else { error_auto_mode(); }
+	}
+	else{error_total_stop();}
+  
 }
 
-function stop_auto(){      
+function stop_auto(ID)
+{      
 	auto_mode = "OFF";
 	System.stopLaser();
 	laser_status = "INACTIVE";
+	System.killTimer(timer2);
+	System["sigTimer(int)"].disconnect(readFile_auto);
+	print("timer2 killed");
     }
 
 function stop_m_manual(){
@@ -219,6 +249,7 @@ function error_total_stop()
 
 function readFile()
 {  
+    print("reading and generating");
     //var nm = num.value;
     nm = 1;
     var pn = cmb.currentItem;
@@ -413,7 +444,8 @@ function gen_dialog(part_list)
     auto_box.add(selectedLogo_a);
     
     var btn_auto_mode = PushButton ("START AUTO MODE");
-    btn_auto_mode["sigPressed()"].connect(readFile_auto);
+    //btn_auto_mode["sigPressed()"].connect(readFile_auto);
+    btn_auto_mode["sigPressed()"].connect(start_auto_mode);
     btn_auto_mode.font = font2;  btn_auto_mode.setFixedSize(200,60);
     auto_box.add(btn_auto_mode);
     
