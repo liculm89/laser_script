@@ -5,4 +5,8 @@
  <company></company>
  <version></version>
  <script>main.qs</script>
+ <script>errors.qs</script>
+ <script>gui.qs</script>
+ <script>auto_mode.qs</script>
+ <script>manual_mode.qs</script>
 </project>

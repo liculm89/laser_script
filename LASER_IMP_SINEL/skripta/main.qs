@@ -1,8 +1,9 @@
 /*---------------------------------
-  file paths, etc...
+ Template and log file paths, 
   ----------------------------------*/
-
+var tmplPath ="F:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath ="F:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
+var logoPath ="D:\\LASER_IMP_SINEL\\Predloge\\" ;
 var logPath= "F:\\LASER_IMP_SINEL\\writeLog.txt";
 
 //var xlsPath = "D:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
@@ -22,12 +23,12 @@ var sb1_v = 25;
   Postavljanje globalnih varijabli PIN-ova
   --------------------------------------------------------*/
 
-//Input PIN-ovi
+//Input PINs
 const I_PIN_7 = 0x1; const I_PIN_8 = 0x2; const I_PIN_9 = 0x4; 
 const I_PIN_10 = 0x8; const I_PIN_11 = 0x10; const I_PIN_12 = 0x20; 
 const I_PIN_19 = 0x200; const  I_PIN_20 = 0x100;  const  I_PIN_21 = 0x80;  const  I_PIN_22 = 0x40;
 
-//Output PIN-ovi
+//Output PINs
 const O_PIN_2 = 0x1; const O_PIN_3 = 0x4; const O_PIN_4 = 0x10; const O_PIN_5 = 0x40; 
 const O_PIN_6 = 0x100; const O_PIN_14 = 0x1000; const O_PIN_15 = 0x2; const O_PIN_16 = 0x08; 
 const O_PIN_17 = 0x20; const O_PIN_18 = 0x80; 
@@ -51,7 +52,7 @@ I_PIN 21 - Total stop input                     	-INPUT
 O_PIN 23 - Cilindar dolje                       	-OUTPUT
 */
 
-//flags
+//Flags declaration
 
 var bar_gore= 0;
 var bar_dolje = 0;
@@ -68,185 +69,85 @@ var reg_fault = 0;
 var total_stop = 0;
 
 var laser_marking = 0;
+var laser_in_working_pos = 0;
 
+//Timers declaration
+time_ms = 100;
+timer1 = System.setTimer(time_ms);
+
+time2_ms = 50;
+timer2 = System.setTimer(time_ms);
+
+time3_ms = 50;
+timer3 = System.setTimer(time3_ms);
+
+/*
+  Function is triggered periodicaly with "timer1", reads inputs and sets flags
+  */
 function set_flags()
 {
     if(IoPort.getPort(0) & I_PIN_7){ sen_linija = 1;} else{sen_linija=0;}
-    if(IoPort.getPort(0) & I_PIN_8){ sen_laser_dolje = 1;} else{sen_laser_dolje =0;}
-    if(IoPort.getPort(0) & I_PIN_9){ sen_laser_gore = 1;} else{sen_laser_gore =0;}     
-    if(IoPort.getPort(0) & I_PIN_10){ sen_optika = 1;} else{sen_optika =0;}
-    if(IoPort.getPort(0) & I_PIN_11){ sen_bar_dolje = 1;} else{sen_bar_dolje =0;}     
-    if(IoPort.getPort(0) & I_PIN_12){ sen_bar_gore = 1;} else{sen_bar_gore =0;}       
-    if(IoPort.getPort(0) & I_PIN_19){ reset_tipka = 1;} else{reset_tipka =0;}
-    if(IoPort.getPort(0) & I_PIN_20){ reg_fault = 1;} else{reg_fault =0;}
-    if(IoPort.getPort(0) & I_PIN_21){ total_stop = 1;} else{total_stop =0;}       
+    if(IoPort.getPort(0) & I_PIN_8){ sen_laser_dolje = 1;} else{sen_laser_dolje = 0;}
+    if(IoPort.getPort(0) & I_PIN_9){ sen_laser_gore = 1;} else{sen_laser_gore = 0;}     
+    if(IoPort.getPort(0) & I_PIN_10){ sen_optika = 1;} else{sen_optika = 0;}
+    if(IoPort.getPort(0) & I_PIN_11){ sen_bar_dolje = 1;} else{sen_bar_dolje = 0;}     
+    if(IoPort.getPort(0) & I_PIN_12){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}       
+    if(IoPort.getPort(0) & I_PIN_19){ reset_tipka = 1;} else{reset_tipka = 0;}
+    if(IoPort.getPort(0) & I_PIN_20){ reg_fault = 1;} else{reg_fault = 0;}
+    if(IoPort.getPort(0) & I_PIN_21){ total_stop = 0;} else{total_stop = 1;}       
 }
 
 
 function onQueryStart()
 {
-  // TODO
+  
 }
+
+/*
+  Function is triggered when laser marking is interupted
+  */
 function onLaserStop()
 {
-    
+   print("laser stoped"); 
    laser_status ="INACTIVE"; 
-   //laser_marking = 0;
+   laser_marking = 0;
 
 }
+
+/*
+  Function is triggered when one of axis starts(moving) and on start of laser marking process
+  */
 function onLaserStart()
 {
     laser_status="ACTIVE";
 
 }
+
+/*
+  Function is triggered when one of axis stops movement or when marking proces i finished
+  */
 function onLaserEnd()
 {
   
   laser_status ="INACTIVE";
-  //laser_marking = 0;
-  //print("laser movement end");
+  laser_marking = 0;
   //System.incrementCounter("num_writes");
 }
-function onLaserError(error)
-{
-  switch(error)
-  {
-    case System.DSP_IN_HANG:
-      System.resetBoard();
-      break;
-    case System.DSP_ERROR_INIT:
-      // This event is triggered each time the script engine starts
-      // if the board was not properly loaded
-      MessageBox.critical( "Board initialization error", MessageBox.Ok );
-      break;
-    
-  }
-}
+
 function onClose()
 {
-  // TODO
+ 
 }
 
-function portchanged()
-{
-    if(IoPort.getPort(0) & I_PIN_9)
-   {           	
-	//print ("pin 9");
-	//print("Axis z pos:", Axis.getPosition(2));	
-    }
-    
-    set_flags();
-}
+function onLneChange(text) 
+{print("onLneChange("+text+")");}
 
-function onLneChange(text) {
-  print("onLneChange("+text+")");
-}
+function onOutOfRange () 
+{print("onOutOfRange()");}
 
-function onOutOfRange () {
-  print("onOutOfRange()");
-}
-
-var timer2_id = 0;
-
-function start_auto_mode()
-{
-    if(auto_mode == "OFF")
-    {	
-	//print("button pressed")
-	auto_mode = "ON";
-	time2_ms = 50;
-	timer2 = System.setTimer(time_ms);
-	start_timer(time2_ms, readFile_auto);
-
-    }
-    else{error_manual_mode();}
-}
-function readFile_auto(ID)
-{
-   
-    if(laser_marking == 0)
-    {	//print("laser_marking: ") + laser_marking
-	if(total_stop == 0)
-	{
-	    if(laser_status == "INACTIVE") 
-	    {	
-		
-		laser_marking = 1;
-		//referenciranje, pozicioniranje i onda readfile();
-		/*
-	                 laser_reference();
-	                 barrier_down();
-	                 laser_moveto_pos();	     
-	                */
-		readFile();
-	                //barrier_up();
-		//laser_marking = 0;
-			
-	    }
-	    else {error_manual_mode(); }
-	}
-	else{error_total_stop();}
-    }
-}
-
-function laser_moveto_pos()
-{
-    print("laser moving");
-    /*while(sen_optika = 1)
-    {
-	Axis.move(2, (Axis.getPosition(2)-1));
-    
-    }*/
-}
-
-function readFile_manual()
-{
-	if(total_stop == 0)
-	{
-	    if(auto_mode == "OFF" && laser_status != "ACTIVE")
-	    {
-		readFile();
-	    }
-	    else { error_auto_mode(); }
-	}
-	else{error_total_stop();}
-  
-}
-
-function stop_auto(ID)
-{      
-	auto_mode = "OFF";
-	System.stopLaser();
-	laser_status = "INACTIVE";
-	System.killTimer(timer2);
-	System["sigTimer(int)"].disconnect(readFile_auto);
-	print("timer2 killed");
-    }
-
-function stop_m_manual(){
-    if(auto_mode == "OFF")
-    {
-	System.stopLaser();
-	laser_status = "INACTIVE"; 
-    }
-    else { error_auto_mode(); }
-}
-
-function error_auto_mode()
-{
-    MessageBox.critical( "First stop auto mode!", MessageBox.Ok );
-}
-
-function error_manual_mode()
-{
-    MessageBox.critical( "Wait until marking is finished!", MessageBox.Ok );
-}
-
-function error_total_stop()
-{
-    MessageBox.critical( "Total stop is active!", MessageBox.Ok );
-}
-
+/*-----------------------------------------------------------------------------------------------
+  Template reading, laser document creation and execution function
+  -----------------------------------------------------------------------------------------------*/
 function readFile()
 {  
     print("reading and generating");
@@ -276,11 +177,9 @@ if(pn != "" )
 	    {
 		objects[i] = res[0][i];
 	    }
-	    // Select the right template
+
 	    h_Document = new LaserDoc;   
-	   // h_Document.load("C:\\LASER_IMP\\Predloge\\" + l + ".XLP");
-	    //h_Document.load("D:\\LASER_IMP_SINEL\\IMP_SINEL.XLP");
-	    h_Document.load("F:\\LASER_IMP_SINEL\\IMP_SINEL.XLP");
+	    h_Document.load(tmplPath);
 	
 	    print("Read:" + objects);
 	    writeLog("Read:" + objects);
@@ -297,8 +196,9 @@ if(pn != "" )
 	   var m = objects[(objects.length - 1)];
 	   var logo = h_Document.getLaserImported("logo");
 	   
+	   logo.importFile(logoPath + l + ".xlp");
 	   //logo.importFile("D:\\LASER_IMP_SINEL\\Predloge\\" + l + ".xlp"); 
-	   logo.importFile("F:\\LASER_IMP_SINEL\\Predloge\\" + l + ".xlp"); 
+	   //logo.importFile("F:\\LASER_IMP_SINEL\\Predloge\\" + l + ".xlp"); 
 	   
 	   selectedLogo.text = selectedLogo_a.text = txt_selected_logo + l;
 	   	   
@@ -319,7 +219,7 @@ if(pn != "" )
     hDb.close();
     }
 
-
+//Log creating/appending function
 function writeLog(currentNum)
 {
     var today = new Date();
@@ -332,348 +232,33 @@ function writeLog(currentNum)
     outFile.close();
 }
 
-function laser_reference()
-{
-    if(sen_bar_dolje == 1)
-    { 
-	 IoPort.resetPort(0, O_PIN_23);
-	 bar_dolje = 0;
-	 rint("barrier up"); 
-	 IoPort.setPort(0, O_PIN_4);
-	 bar_gore = 1;
-    }
-   
-    print("laser is moving to reference pos");
-    /*
-    while(sen_laser_dolje==0)
-    {
-	Axis.move(2, (Axis.getPosition(2)+1));
-    }
-   */
-}
-
-function move_up()
-{ 
-    if (auto_mode == "OFF")
-    {
-	print( "Current Z axis poz: " + Math.round(Axis.getPosition(2)));
-	Axis.move(2, (Axis.getPosition(2) + sb1_v) );
-    }
-    else { error_auto_mode(); }
-}
-
-function move_down()
-{
-    if (auto_mode == "OFF")
-    {
-	print( "Current Z axis poz: " + Math.round(Axis.getPosition(2)));
-	Axis.move(2, (Axis.getPosition(2) - sb1_v) );
-	//Axis.stopMoreAxis(2);
-    }
-    else { error_auto_mode(); }
-}
-
-function stop_axis()
-{	
-    if (auto_mode == "OFF")
-    {
-	print( "Current Z axis poz: " + Math.round(Axis.getPosition(2)));
-	Axis.stop(2);
-	print ("Stop!");
-    }
-    else { error_auto_mode(); }
- }
-
-function barrier_up()
-{
-     if (auto_mode == "OFF")
-    {	   	
-	   IoPort.resetPort(0, O_PIN_23);
-	   bar_dolje = 0;
-	   print("barrier up"); 
-	   IoPort.setPort(0, O_PIN_4);
-	   bar_gore = 1;
-     }
-      else { error_auto_mode(); }
-}
-
-function barrier_down()
-{
-     if (auto_mode == "OFF")
-    {	
-	 IoPort.resetPort(0, O_PIN_4);
-	 bar_gore = 0;
-	 IoPort.setPort(0, O_PIN_23);
-	 bar_dolje = 1;
-	 print("barrier down");
-     }
-      else { error_auto_mode(); }
- }
-
-function sb1_ch(value)
-{
-    //print(value);
-    sb1_v = value;
-}
-
-/*-----------------------------------
-  Kreiranje GUI aplikacije
-  -----------------------------------*/
-function gen_dialog(part_list)
-{
-  var dialog = new Dialog ("Laser control",Dialog.D_OK,false, 0x00040000);
-  dialog.okButtonText = "Done"; dialog.cancelButtonText = "Abort";
-  dialog.setFixedSize(500,700);
-  /*--------------------------
-     GUI - automatski mod
-     ------------------------*/
-    font1 = "MS Shell Dlg 2,15,-1,5,50,0,0,0,0,0";
-    font2 = "Courier New,15,-1,5,80,0,0,0,0,0";
-    font_lbls=  "Courier New,12,-1,5,60,0,0,0,0,0";
-    font_manual_btns =  "Courier New,12,-1,5,80,0,0,0,0,0";
-  
-    dialog.newTab("Automatic mode");
-    auto_box = new GroupBox(); auto_box.title = "Automatic laser marking";
-    dialog.add(auto_box);
-    
-    cmb_a = new ComboBox("Select type:", part_list);
-    cmb_a.font = font2;
-    auto_box.add(cmb_a);    
-
-    selectedLogo_a =  new Label(txt_selected_logo + "/"); 
-    auto_box.add(selectedLogo_a);
-    
-    var btn_auto_mode = PushButton ("START AUTO MODE");
-    //btn_auto_mode["sigPressed()"].connect(readFile_auto);
-    btn_auto_mode["sigPressed()"].connect(start_auto_mode);
-    btn_auto_mode.font = font2;  btn_auto_mode.setFixedSize(200,60);
-    auto_box.add(btn_auto_mode);
-    
-    var btn_auto_stop = PushButton ("STOP AUTO MODE" ); 
-    btn_auto_stop["sigPressed()"].connect(stop_auto);
-    btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(200,60);
-    auto_box.add(btn_auto_stop);
-  
-    dialog.addSpace(350);
-    status_box = new GroupBox(); status_box.title= "Status";
-    dialog.add(status_box);
-    
-    lbl_auto_status = new Label(); lbl_auto_status.text = "Auto mode: " + auto_mode;
-    lbl_auto_status.font = font_lbls;
-    status_box.add(lbl_auto_status);
-    
-    
-    lbl_marking = new Label(); lbl_marking.text = "Laser status :" + laser_status;
-    lbl_marking.font =  font_lbls;
-    status_box.add(lbl_marking);
-   
-    /*--------------------------
-     GUI - manualni mod
-     ------------------------*/
-   dialog.newTab("Manual mode");
-   
-   //grupa "settings"
-   gb = new GroupBox();gb.title = "Settings";
-   dialog.add(gb);
-   
-   lbl1 = new Label(); lbl1.text = "Z axis current position: " + Axis.getPosition(2);  
-   gb.add(lbl1);  
-   
-   sb1 = new SpinBox("Move distance:", 25);  sb1["sigValueChanged(int)"].connect(sb1_ch);
-   gb.add(sb1);
-  
-   gb_las_r = new GroupBox(); gb_las_r.title ="Laser reference";
-   btn_laser_ref = PushButton ("Move laser to reference position");
-   btn_laser_ref["sigPressed()"].connect(laser_reference);
-   btn_laser_ref.font = font_manual_btns; btn_laser_ref.setFixedSize(400,40);
-   gb_las_r.add(btn_laser_ref);
-   
-   dialog.add(gb_las_r);
-   
-  //grupa "laser pos"
-  gb_lp = new GroupBox(); gb_lp.title = "Laser position";
- 
-  var btn = PushButton ("Move up");
-  btn["sigPressed()"].connect(move_up);
-  btn.font = font_manual_btns; btn.setFixedSize(120,40);
-  gb_lp.add(btn);
-  
-  gb_lp.newColumn();
-  var btn2 = PushButton ("Move down");
-  btn2["sigPressed()"].connect(move_down);
-  btn2.font = font_manual_btns; btn2.setFixedSize(120,40);
-  gb_lp.add(btn2);
-  
-  gb_lp.newColumn();
-  var btn3 = PushButton ("STOP!");
-  btn3["sigPressed()"].connect(stop_axis);
-  btn3.font = font_manual_btns; btn3.setFixedSize(120,40);
-  gb_lp.add(btn3);  
-  dialog.add(gb_lp);
-  
-   dialog.okButtonText = "Done"
-   dialog.cancelButtonText = "Abort";
-   
-   //groupa " laser barrier"
-   gb_lb = new GroupBox(); gb_lb.title ="Laser barrier";
-   
-   var btn_bar_up = PushButton("Barrier up");
-   btn_bar_up["sigPressed()"].connect(barrier_up);
-   btn_bar_up.font = font_manual_btns; btn_bar_up.setFixedSize(140,40);
-   gb_lb.add(btn_bar_up);
-  
-   gb_lb.newColumn();
-   var btn_bar_down = PushButton("Barrier down");
-   btn_bar_down["sigPressed()"].connect(barrier_down);
-   btn_bar_down.font = font_manual_btns; btn_bar_down.setFixedSize(140,40);
-   gb_lb.add(btn_bar_down);
-
-   dialog.add(gb_lb);
-  
-   //manual laser marking group    
-    gb_mark = new GroupBox("Manual Laser Marking");
-   
-    cmb = new ComboBox("Select type", part_list);
-    cmb.font = font_manual_btns;
-    gb_mark.add(cmb);
-   
-    /*
-    num = new NumberEdit("Prosim vnesite količino: ", 1);
-    num.decimals = 0;  num.minimum = 1;
-      
-    num["sigNumberChanged(double)"].connect(onLneChange);
-    num["sigOutOfRange()"].connect(onOutOfRange);
-    gb_mark.add( num );	
-	*/
-    
-    selectedLogo = new Label(txt_selected_logo + "/"); 
-    gb_mark.add(selectedLogo);
-       
-    var btn = PushButton ("ZAPIŠI!");
-    btn["sigPressed()"].connect(readFile_manual);
-    btn.setFixedSize(200,60);
-    btn.font =  font_manual_btns;
-    gb_mark.add(btn);
-    
-    var btn_stop_m = PushButton ("STOP MARKING!");
-    btn_stop_m["sigPressed()"].connect(stop_m_manual);
-    btn_stop_m.setFixedSize(200,60);
-    btn_stop_m.font = font_manual_btns;
-    gb_mark.add(btn_stop_m);
-     
-    dialog.add(gb_mark);
-    
-    status_box = new GroupBox(); status_box.title= "Status";
-    dialog.add(status_box);
-    
-    lbl_auto_status_m = new Label(); lbl_auto_status.text = "Auto mode: " + auto_mode;
-    lbl_auto_status_m.font = font_lbls;
-    status_box.add(lbl_auto_status_m);
-    
-    lbl_marking_m = new Label(); lbl_marking.text = "Laser status :" + laser_status;
-    lbl_marking_m.font = font_lbls;
-    status_box.add(lbl_marking_m);
-    
-    
-    /*-----------------
-      I/O Status tab
-      -------------------*/
-    dialog.newTab("I/O Status");
-    
-    //groupbox inputs
-    gb_inputs = new GroupBox(); gb_inputs.title = "Inputs status";
-    dialog.add(gb_inputs);
-    lb_sen_linija = new Label(); lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
-    lb_sen_linija.font = font_lbls;
-    gb_inputs.add(lb_sen_linija);
-    
-    lb_sen_bar_gore = new Label(); lb_sen_bar_gore.text = "Senzor laserske barijere gore: " + get_stat(sen_bar_gore);
-    lb_sen_bar_gore.font = font_lbls;
-    gb_inputs.add(lb_sen_bar_gore);
-    
-    lb_sen_bar_dolje = new Label(); lb_sen_bar_dolje.text = "Senzor laserske barijere dolje: " + get_stat(sen_bar_dolje);
-    lb_sen_bar_dolje.font = font_lbls;
-    gb_inputs.add(lb_sen_bar_dolje);
-    
-    lb_sen_laser_gore = new Label(); lb_sen_laser_gore.text = "Senzor laserske glave gore: " + get_stat(sen_laser_gore);
-    lb_sen_laser_gore.font = font_lbls;
-    gb_inputs.add(lb_sen_laser_gore);
-    
-    lb_sen_laser_dolje = new Label(); lb_sen_laser_dolje.text = "Senzor laserske glave dolje: " + get_stat(sen_laser_dolje);
-    lb_sen_laser_dolje.font = font_lbls;
-    gb_inputs.add(lb_sen_laser_dolje);
-    
-    lb_sen_optika = new Label(); lb_sen_optika.text = "Optički senzor: " + get_stat(sen_optika);
-    lb_sen_optika.font = font_lbls;
-    gb_inputs.add(lb_sen_optika);
-    
-    lb_reg_fault = new Label(); lb_reg_fault.text = "Regulator fault: " + get_stat(reg_fault);
-    lb_reg_fault.font = font_lbls;
-    gb_inputs.add(lb_reg_fault);
-    
-    lb_total_stop = new Label(); lb_total_stop.text = "Total stop: " + get_stat(total_stop);
-    lb_total_stop.font = font_lbls;
-    gb_inputs.add(lb_total_stop);
-    
-    lb_reset_tipka = new Label(); lb_reset_tipka.text = "Reset tipka: " + get_stat(reset_tipka);
-    lb_reset_tipka.font = font_lbls;
-    gb_inputs.add(lb_reset_tipka);
-    
-    //groupbox outputs
-    gb_outputs = new GroupBox(); gb_outputs.title="Output status";
-    dialog.add(gb_outputs);
-    
-    lb_bar_gore = new Label(); lb_bar_gore.text = "Barijera gore: " + get_stat(bar_gore);
-    lb_bar_gore.font = font_lbls;
-    gb_outputs.add(lb_bar_gore);
-    
-    lb_bar_dolje = new Label(); lb_bar_dolje.text = "Barijera dolje: " + get_stat(bar_dolje);
-    lb_bar_dolje.font = font_lbls;
-    gb_outputs.add(lb_bar_dolje);
-    
-    dialog.show();     
-    
-    time_ms = 100;
-    timer1 = System.setTimer(time_ms);
-    start_timer(time_ms, gui_update);
-}
-
-function get_stat(input)
-{
-    if(input == 1 ){stat= "Active";} else {stat="Inactive";}
-    return stat;
-}
-
-function start_timer(ms, funkc, n)
-{    
-     print("starting timer delay: ", ms, " ms" );  
-     System["sigTimer(int)"].connect(funkc);
-     //timer = System.setTimer(ms);        
-}
-
-function gui_update(ID)
-{
-    if (timer1 == ID)
-      {	
-	lbl1.text = "Z axis current position: " + Math.round(Axis.getPosition(2));
-                lbl_auto_status_m.text= lbl_auto_status.text = "Auto mode: " + auto_mode;
-	lbl_marking_m.text = lbl_marking.text = "Laser status :" + laser_status;	
-	
-	 lb_sen_bar_gore.text = "Senzor laserske barijere gore:" + get_stat(sen_bar_gore);
-	 lb_sen_bar_dolje.text = "Senzor laserske barijere dolje:" + get_stat(sen_bar_dolje);
-	 lb_sen_laser_gore.text = "Senzor laserske glave gore:" + get_stat(sen_laser_gore);
-	 lb_sen_laser_dolje.text = "Senzor laserske glave dolje:" + get_stat(sen_laser_dolje);
-	 lb_sen_optika.text = "Optički senzor:" + get_stat(sen_optika);
-	 lb_reg_fault.text = "Regulator fault:" + get_stat(reg_fault);
-	 lb_total_stop.text = "Total stop:" + get_stat(total_stop);
-	 lb_reset_tipka.text = "Reset tipka:" + get_stat(reset_tipka); 
-	 
-	 lb_bar_gore.text = "Barijera gore:" + get_stat(bar_gore);
-	 lb_bar_dolje.text = "Barijera dolje:" + get_stat(bar_dolje);
-      }
- }
 
 const num_writes;
+
+  /*------------------------------------------------
+    Generiranje liste komada iz excel tabele
+    ------------------------------------------------*/
+function parts_list_gen()
+{
+  
+   hDb2 = new Db("QODBC");
+   hDb2.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + xlsPath;    
+   
+    if(hDb2.open())
+    {	
+	part_list = [];
+	var res = hDb2.exec("SELECT * FROM [List1$]" );
+	for (i = 0; i < res.length; i++){part_list[i] = res[i][0];}	
+    }
+    else
+    {
+	print("Result: " + res + " - Error: " + hDb2.lastError());
+	writeLog("Result: " + res + " - Error: " + hDb2.lastError());
+     }
+}
+
+var part_list;
+
 function main()
 {
   System.sigQueryStart.connect(onQueryStart);
@@ -689,28 +274,16 @@ function main()
   IoPort.checkPort(0);
   IoPort.sigInputChange.connect(set_flags);
   
+  
   barrier_up();
   
+  //manually set_flags only for debuging
   set_flags();
   
-  /*------------------------------------------------
-    Generiranje liste komada iz excel tabele
-    ------------------------------------------------*/
-   hDb2 = new Db("QODBC");
-   hDb2.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + xlsPath;    
-   
-    if(hDb2.open())
-    {	
-	part_list = [];
-	var res = hDb2.exec("SELECT * FROM [List1$]" );
-	for (i = 0; i < res.length; i++){part_list[i] = res[i][0];}	
-    }
-    else
-    {
-	print("Result: " + res + " - Error: " + hDb2.lastError());
-	writeLog("Result: " + res + " - Error: " + hDb2.lastError());
-     }
-    
+  Axis.reset(2);
+  
+  parts_list_gen(); 
+  
   //pozivanje funcije koja generira GUI aplikaciju
   gen_dialog(part_list);
  
