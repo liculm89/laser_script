@@ -4,7 +4,9 @@ function start_auto_mode()
     {	
 	auto_mode = "ON";
 	laser_ref_auto();
-	start_timer(time5_ms, wait_for_pump);
+	
+	System["sigTimer(int)"].connect(wait_for_pump);
+	//start_timer(time5_ms, );
 	
 	/*if( IoPort.getPort(0) & I_PIN_9)
 	{
@@ -18,6 +20,7 @@ function start_auto_mode()
     }
     else{error_manual_mode();}
 }
+var nom = 0;
 
 function wait_for_pump(ID)
 {
@@ -25,8 +28,12 @@ function wait_for_pump(ID)
     {
          print("pump found!");
          if( laser_in_working_pos == 0)
-	 {
-	     start_timer(time3_ms, laser_moveto_pos_auto);
+	    {
+	     for(nom ;nom<1 ; nom++){ 
+		 System["sigTimer(int)"].connect(laser_moveto_pos_auto);
+	    // start_timer(time3_ms,);
+	     
+	        }
 	 }
 	 else
 	 {
@@ -49,7 +56,7 @@ function laser_moveto_pos_auto(ID)
 	else
 	{	
 	    print("laser is in working pos");
-	    var laser_in_working_pos = 1;
+	    laser_in_working_pos = 1;
 	    print("killing timer move_to_pos");
 	    //System.killTimer(timer3);
 	    System["sigTimer(int)"].disconnect(laser_moveto_pos_auto);
@@ -74,6 +81,7 @@ function laser_ref_auto()
 
 function barrier_up_auto()
 {   	
+    print(auto_mode);
     IoPort.resetPort(0, O_PIN_23);
     bar_dolje = 0;
     IoPort.setPort(0, O_PIN_4);

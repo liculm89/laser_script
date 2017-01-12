@@ -88,7 +88,7 @@ timer3 = System.setTimer(time3_ms);
 time4_ms = 4000;
 timer4 = System.setTimer(time4_ms);
 
-time5_ms = 100;
+time5_ms = 300;
 timer5 = System.setTimer(time5_ms);
 
 time6_ms = 4500;

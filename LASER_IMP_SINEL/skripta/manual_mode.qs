@@ -103,10 +103,28 @@ function stop_axis()
     else { error_auto_mode(); }
  }
 
+function barrier_up_new()
+{
+    print(auto_mode);
+    if(auto_mode == "OFF")
+    {
+	IoPort.resetPort(0, O_PIN_23);
+	bar_dolje = 0;
+	print("barrier up");
+	IoPort.setPort(0, O_PIN_4);
+	bar_gore=1;
+    }
+    else
+    {
+	error_auto_mode();
+    }
+    
+}
+/*
 function barrier_up()
 {
-    
-     if (auto_mode == "OFF")
+    print(auto_mode);
+     if (!auto_mode == "ON")
     {	   	
 	 IoPort.resetPort(0, O_PIN_23);
 	 bar_dolje = 0; 
@@ -114,11 +132,17 @@ function barrier_up()
 	 IoPort.setPort(0, O_PIN_4);
 	 bar_gore = 1;
      }
-      else { error_auto_mode(); }
+     if( auto_mode == "ON" )
+     {
+	 print("auto mode on");
+	 error_auto_mode(); 
+     }
+      //else { }
 }
-
+*/
 function barrier_down()
 {
+     print(auto_mode);
      if (auto_mode == "OFF")
     {	
 	 IoPort.resetPort(0, O_PIN_4);

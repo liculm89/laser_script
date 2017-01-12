@@ -104,10 +104,16 @@ function gen_dialog(part_list)
    //groupa " laser barrier"
    gb_lb = new GroupBox(); gb_lb.title ="Laser barrier";
    
+   var btn_barriera_up = PushButton("Barrier New UP");
+   btn_barriera_up["sigPressed()"].connect(barrier_up_new);
+   btn_barriera_up.font = font_manual_btns; btn_barriera_up.setFixedSize(140,40);
+   gb_lb.add(btn_barriera_up);
+   /*
    var btn_bar_up = PushButton("Barrier up");
    btn_bar_up["sigPressed()"].connect(barrier_up);
    btn_bar_up.font = font_manual_btns; btn_bar_up.setFixedSize(140,40);
    gb_lb.add(btn_bar_up);
+   */
   
    gb_lb.newColumn();
    var btn_bar_down = PushButton("Barrier down");
@@ -234,6 +240,8 @@ function gui_update(ID)
                 lbl_auto_status_m.text= lbl_auto_status.text = "Auto mode: " + auto_mode;
 	lbl_marking_m.text = lbl_marking.text = "Laser status :" + laser_status;	
 	
+	
+	 lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);	
 	 lb_sen_bar_gore.text = "Senzor laserske barijere gore:" + get_stat(sen_bar_gore);
 	 lb_sen_bar_dolje.text = "Senzor laserske barijere dolje:" + get_stat(sen_bar_dolje);
 	 lb_sen_laser_gore.text = "Senzor laserske glave gore:" + get_stat(sen_laser_gore);
