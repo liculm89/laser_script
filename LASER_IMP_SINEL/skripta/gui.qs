@@ -80,16 +80,16 @@ function gen_dialog(part_list)
   //grupa "laser pos"
   gb_lp = new GroupBox(); gb_lp.title = "Laser position";
  
-  var btn = PushButton ("Move up");
-  btn["sigPressed()"].connect(move_up);
-  btn.font = font_manual_btns; btn.setFixedSize(120,40);
-  gb_lp.add(btn);
+  var btn_mu = PushButton ("Move up");
+  btn_mu["sigPressed()"].connect(move_up);
+  btn_mu.font = font_manual_btns; btn_mu.setFixedSize(120,40);
+  gb_lp.add(btn_mu);
   
   gb_lp.newColumn();
-  var btn2 = PushButton ("Move down");
-  btn2["sigPressed()"].connect(move_down);
-  btn2.font = font_manual_btns; btn2.setFixedSize(120,40);
-  gb_lp.add(btn2);
+  var btn_md = PushButton ("Move down");
+  btn_md["sigPressed()"].connect(move_down);
+  btn_md.font = font_manual_btns; btn_md.setFixedSize(120,40);
+  gb_lp.add(btn_md);
   
   gb_lp.newColumn();
   var btn3 = PushButton ("STOP!");

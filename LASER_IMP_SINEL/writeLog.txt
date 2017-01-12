@@ -1320,3 +1320,9 @@ Wednesday, January 11, 2017 22:07:15 - Selected P.N.:979523844
 Wednesday, January 11, 2017 22:07:15 - Read:979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
 Wednesday, January 11, 2017 22:07:19 - Selected P.N.:979523844
 Wednesday, January 11, 2017 22:07:19 - Read:979523844,870524244,NMT PLUS ,20/60-130,0.06,0.32,4,36,0.18,1,1,skoda,1~230V 50Hz
+Thursday, January 12, 2017 10:05:28 - Selected P.N.:979523951
+Thursday, January 12, 2017 10:05:28 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Thursday, January 12, 2017 10:07:39 - Selected P.N.:979523951
+Thursday, January 12, 2017 10:07:39 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Thursday, January 12, 2017 10:08:08 - Selected P.N.:979523951
+Thursday, January 12, 2017 10:08:08 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz

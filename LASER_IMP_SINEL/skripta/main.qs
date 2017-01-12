@@ -1,13 +1,17 @@
 /*---------------------------------
  Template and log file paths, 
   ----------------------------------*/
-var tmplPath ="F:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
-var xlsPath ="F:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
-var logoPath ="D:\\LASER_IMP_SINEL\\Predloge\\" ;
-var logPath= "F:\\LASER_IMP_SINEL\\writeLog.txt";
+/*
+var tmplPath ="G:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
+var xlsPath ="G:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
+var logoPath ="G:\\LASER_IMP_SINEL\\Predloge\\" ;
+var logPath= "G:\\LASER_IMP_SINEL\\writeLog.txt";
+*/
 
-//var xlsPath = "D:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
-//var logPath = "D:\\LASER_IMP_SINEL\\writeLog.txt";
+var tmplPath ="D:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
+var xlsPath ="D:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
+var logoPath ="D:\\LASER_IMP_SINEL\\Predloge\\" ;
+var logPath= "D:\\LASER_IMP_SINEL\\writeLog.txt";
 
 var h_Document,hDb, fw;
 var txt_selected_logo = "Izbran logo: ";
@@ -72,15 +76,23 @@ var laser_marking = 0;
 var laser_in_working_pos = 0;
 
 //Timers declaration
-time_ms = 100;
+time_ms = 10;
 timer1 = System.setTimer(time_ms);
 
-time2_ms = 50;
-timer2 = System.setTimer(time_ms);
+time2_ms = 1000;
+timer2 = System.setTimer(time2_ms);
 
-time3_ms = 50;
+time3_ms = 250;
 timer3 = System.setTimer(time3_ms);
 
+time4_ms = 4000;
+timer4 = System.setTimer(time4_ms);
+
+time5_ms = 100;
+timer5 = System.setTimer(time5_ms);
+
+time6_ms = 4500;
+timer6 = System.setTimer(time6_ms);
 /*
   Function is triggered periodicaly with "timer1", reads inputs and sets flags
   */
@@ -93,7 +105,7 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_11){ sen_bar_dolje = 1;} else{sen_bar_dolje = 0;}     
     if(IoPort.getPort(0) & I_PIN_12){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}       
     if(IoPort.getPort(0) & I_PIN_19){ reset_tipka = 1;} else{reset_tipka = 0;}
-    if(IoPort.getPort(0) & I_PIN_20){ reg_fault = 1;} else{reg_fault = 0;}
+    if(IoPort.getPort(0) & I_PIN_20){ reg_fault = 0;} else{reg_fault = 1;}
     if(IoPort.getPort(0) & I_PIN_21){ total_stop = 0;} else{total_stop = 1;}       
 }
 
@@ -111,7 +123,6 @@ function onLaserStop()
    print("laser stoped"); 
    laser_status ="INACTIVE"; 
    laser_marking = 0;
-
 }
 
 /*
@@ -120,15 +131,13 @@ function onLaserStop()
 function onLaserStart()
 {
     laser_status="ACTIVE";
-
 }
 
 /*
   Function is triggered when one of axis stops movement or when marking proces i finished
   */
 function onLaserEnd()
-{
-  
+{  
   laser_status ="INACTIVE";
   laser_marking = 0;
   //System.incrementCounter("num_writes");
@@ -208,6 +217,7 @@ if(pn != "" )
 	    print( "Document marking..." );		
 	    h_Document.update();	    
 	    h_Document.execute();
+	    start_timer(time6_ms, reset_laser_marking);
 	    }
 	}
 	else
@@ -218,6 +228,15 @@ if(pn != "" )
      }
     hDb.close();
     }
+
+function reset_laser_marking(ID)
+{
+    if(timer6 == ID)
+    {
+	laser_marking = 0;
+	System["sigTimer(int)"].disconnect(reset_laser_marking);
+    }
+}
 
 //Log creating/appending function
 function writeLog(currentNum)
@@ -275,7 +294,7 @@ function main()
   IoPort.sigInputChange.connect(set_flags);
   
   
-  barrier_up();
+  //barrier_up();
   
   //manually set_flags only for debuging
   set_flags();

@@ -1,7 +1,7 @@
 
 function readFile_manual()
 {
-	if(total_stop == 1)
+	if(total_stop == 0)
 	{
 	    if(auto_mode == "OFF" && laser_status != "ACTIVE")
 	    {
@@ -29,13 +29,13 @@ function search_working_pos()
 
 function laser_moveto_pos(ID)
 {  
-    if ( timer3 = ID)
+    if ( timer3 == ID)
     {
 	print("tick move_to_pos");
 	if(IoPort.getPort(0) & I_PIN_10)
 	{
-	    print("laser moving")
-                    Axis.move(2, (Axis.getPosition(2)-5));
+	    print("laser moving");
+                    Axis.move(2, (Axis.getPosition(2)-1));
 	}
 	else
 	{	
@@ -53,7 +53,7 @@ function laser_reference()
     if(sen_bar_dolje == 1)
     { 	 
 	print("rising barrier");
-	barrier_up();
+	//barrier_up();
 	Axis.reset(2);
      }   
     else
@@ -66,22 +66,28 @@ function laser_reference()
 
 function move_up()
 { 
+    //print("move up");
+    //Axis.move(2, (Axis.getPosition(2) + sb1_v) );
+    
     if (auto_mode == "OFF")
     {
-	print( "Current Z axis poz: " + Math.round(Axis.getPosition(2)));
+	print( "Current Z axis poz before: " + Math.round(Axis.getPosition(2)));
 	Axis.move(2, (Axis.getPosition(2) + sb1_v) );
 	laser_in_working_pos = 0;
+	print( "Current Z axis poz after: " + Math.round(Axis.getPosition(2)));
     }
     else { error_auto_mode(); }
+    
 }
 
 function move_down()
 {
     if (auto_mode == "OFF")
     {
-	print( "Current Z axis poz: " + Math.round(Axis.getPosition(2)));
+	print( "Current Z axis poz before: " + Math.round(Axis.getPosition(2)));
 	Axis.move(2, (Axis.getPosition(2) - sb1_v) );
 	laser_in_working_pos = 0;
+                print( "Current Z axis poz after: " + Math.round(Axis.getPosition(2)));
     }
     else { error_auto_mode(); }
 }
@@ -102,11 +108,11 @@ function barrier_up()
     
      if (auto_mode == "OFF")
     {	   	
-	   IoPort.resetPort(0, O_PIN_23);
-	   bar_dolje = 0;
-	   print("barrier up");    
-	   IoPort.setPort(0, O_PIN_4);
-	   bar_gore = 1;
+	 IoPort.resetPort(0, O_PIN_23);
+	 bar_dolje = 0; 
+	 print("barrier up");
+	 IoPort.setPort(0, O_PIN_4);
+	 bar_gore = 1;
      }
       else { error_auto_mode(); }
 }
