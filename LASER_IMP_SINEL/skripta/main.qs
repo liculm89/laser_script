@@ -91,7 +91,7 @@ timer4 = System.setTimer(time4_ms);
 time5_ms = 300;
 timer5 = System.setTimer(time5_ms);
 
-time6_ms = 4500;
+time6_ms = 8500;
 timer6 = System.setTimer(time6_ms);
 /*
   Function is triggered periodicaly with "timer1", reads inputs and sets flags
@@ -107,12 +107,16 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_19){ reset_tipka = 1;} else{reset_tipka = 0;}
     if(IoPort.getPort(0) & I_PIN_20){ reg_fault = 0;} else{reg_fault = 1;}
     if(IoPort.getPort(0) & I_PIN_21){ total_stop = 0;} else{total_stop = 1;}       
+
+    
 }
 
+function halt_all()
+{
+}
 
 function onQueryStart()
-{
-  
+{  
 }
 
 /*
@@ -229,14 +233,6 @@ if(pn != "" )
     hDb.close();
     }
 
-function reset_laser_marking(ID)
-{
-    if(timer6 == ID)
-    {
-	laser_marking = 0;
-	System["sigTimer(int)"].disconnect(reset_laser_marking);
-    }
-}
 
 //Log creating/appending function
 function writeLog(currentNum)
@@ -292,6 +288,7 @@ function main()
   
   IoPort.checkPort(0);
   IoPort.sigInputChange.connect(set_flags);
+  
   
   
   //barrier_up();

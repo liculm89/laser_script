@@ -6,7 +6,7 @@ function gen_dialog(part_list)
    var dialog = new Dialog ("Laser control",Dialog.D_OK,false, 0x00040000);
    dialog.okButtonText = "Done"; dialog.cancelButtonText = "Abort";
    dialog.setFixedSize(500,720);
-  /*--------------------------
+   /*--------------------------
      GUI - automatski mod
      ------------------------*/
     font1 = "MS Shell Dlg 2,15,-1,5,50,0,0,0,0,0";
@@ -104,18 +104,13 @@ function gen_dialog(part_list)
    //groupa " laser barrier"
    gb_lb = new GroupBox(); gb_lb.title ="Laser barrier";
    
-   var btn_barriera_up = PushButton("Barrier New UP");
-   btn_barriera_up["sigPressed()"].connect(barrier_up_new);
+   var btn_barriera_up = PushButton("Barrier up");
+   btn_barriera_up["sigPressed()"].connect(barrier_up);
    btn_barriera_up.font = font_manual_btns; btn_barriera_up.setFixedSize(140,40);
    gb_lb.add(btn_barriera_up);
-   /*
-   var btn_bar_up = PushButton("Barrier up");
-   btn_bar_up["sigPressed()"].connect(barrier_up);
-   btn_bar_up.font = font_manual_btns; btn_bar_up.setFixedSize(140,40);
-   gb_lb.add(btn_bar_up);
-   */
   
    gb_lb.newColumn();
+   
    var btn_bar_down = PushButton("Barrier down");
    btn_bar_down["sigPressed()"].connect(barrier_down);
    btn_bar_down.font = font_manual_btns; btn_bar_down.setFixedSize(140,40);

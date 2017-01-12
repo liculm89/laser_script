@@ -99,11 +99,12 @@ function stop_axis()
 	print( "Current Z axis poz: " + Math.round(Axis.getPosition(2)));
 	Axis.stop(2);
 	print ("Stop!");
+	disconnect_timers();
     }
     else { error_auto_mode(); }
  }
 
-function barrier_up_new()
+function barrier_up()
 {
     print(auto_mode);
     if(auto_mode == "OFF")
@@ -120,26 +121,7 @@ function barrier_up_new()
     }
     
 }
-/*
-function barrier_up()
-{
-    print(auto_mode);
-     if (!auto_mode == "ON")
-    {	   	
-	 IoPort.resetPort(0, O_PIN_23);
-	 bar_dolje = 0; 
-	 print("barrier up");
-	 IoPort.setPort(0, O_PIN_4);
-	 bar_gore = 1;
-     }
-     if( auto_mode == "ON" )
-     {
-	 print("auto mode on");
-	 error_auto_mode(); 
-     }
-      //else { }
-}
-*/
+
 function barrier_down()
 {
      print(auto_mode);
@@ -147,10 +129,17 @@ function barrier_down()
     {	
 	 IoPort.resetPort(0, O_PIN_4);
 	 bar_gore = 0; 
-	  print("barrier down");
+         print("barrier down");
 	 IoPort.setPort(0, O_PIN_23);
 	 bar_dolje = 1;
 	
      }
       else { error_auto_mode(); }
+ }
+
+ function disconnect_timers()
+ {
+   
+    System["sigTimer(int)"].disconnect(laser_moveto_pos);
+ 
  }
