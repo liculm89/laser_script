@@ -24,7 +24,29 @@ function stop_m_manual(){
 
 function search_working_pos()
 {    
-    start_timer(time3_ms, laser_moveto_pos);   
+    Axis.move(2, (Axis.getPosition(2) - 150) );
+    start_timer(time7_ms, stop_search);   
+}
+
+function stop_search(ID)
+{
+    if(timer7 == ID)
+    {
+	if(IoPort.getPort(0) & I_PIN_10)
+	{ 
+	       
+	    print("Laser is moving to working position");
+	}
+	else
+	{
+	     print("pump in laser focus");
+	    Axis.stop(2);
+	    laser_in_working_pos = 1;
+	    System["sigTimer(int)"].disconnect(stop_search);
+	
+	}
+    
+    }
 }
 
 function laser_moveto_pos(ID)
@@ -40,7 +62,7 @@ function laser_moveto_pos(ID)
 	else
 	{	
 	    print("laser is in working pos");
-	    var laser_in_working_pos = 1;
+	    laser_in_working_pos = 1;
 	    print("killing timer move_to_pos");
 	    //System.killTimer(timer3);
 	    System["sigTimer(int)"].disconnect(laser_moveto_pos);
@@ -50,7 +72,10 @@ function laser_moveto_pos(ID)
 
 function laser_reference()
 {
-    if(sen_bar_dolje == 1)
+    
+    //barrier_up();
+    Axis.reset(2);
+    /*if(sen_bar_dolje == 1)
     { 	 
 	print("rising barrier");
 	//barrier_up();
@@ -59,7 +84,7 @@ function laser_reference()
     else
     {
 	Axis.reset(2);
-    }
+    }*/
     print("laser is moving to reference pos");
 
 }
@@ -112,6 +137,7 @@ function barrier_up()
 	IoPort.resetPort(0, O_PIN_23);
 	bar_dolje = 0;
 	print("barrier up");
+	IoPort.setPort(0, O_PIN_5);
 	IoPort.setPort(0, O_PIN_4);
 	bar_gore=1;
     }
@@ -127,12 +153,12 @@ function barrier_down()
      print(auto_mode);
      if (auto_mode == "OFF")
     {	
+	 IoPort.resetPort(0, O_PIN_5);
 	 IoPort.resetPort(0, O_PIN_4);
 	 bar_gore = 0; 
-         print("barrier down");
+                 print("barrier down");
 	 IoPort.setPort(0, O_PIN_23);
 	 bar_dolje = 1;
-	
      }
       else { error_auto_mode(); }
  }
@@ -140,6 +166,6 @@ function barrier_down()
  function disconnect_timers()
  {
    
-    System["sigTimer(int)"].disconnect(laser_moveto_pos);
+    //System["sigTimer(int)"].disconnect(laser_moveto_pos);
  
  }

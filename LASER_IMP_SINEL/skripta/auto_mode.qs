@@ -20,7 +20,7 @@ function wait_for_pump(ID)
 	     for(nom ;nom<1 ; nom++)
              {   
                  barrier_down_auto();
-		 System["sigTimer(int)"].connect(laser_moveto_pos_auto);
+	System["sigTimer(int)"].connect(laser_moveto_pos_auto);
              }
 	 }
 	 else
@@ -61,9 +61,9 @@ function readFile_auto()
   readFile();			   
 }
 
-
 function laser_ref_auto()
 {
+    //barrier_up_auto();
     Axis.reset(2);
     print("laser is moving to reference pos");	    	    
 }
@@ -73,14 +73,16 @@ function barrier_up_auto()
     print(auto_mode);
     IoPort.resetPort(0, O_PIN_23);
     bar_dolje = 0;
-    IoPort.setPort(0, O_PIN_4);
+    //IoPort.setPort(0, O_PIN_2);
+    IoPort.setPort(0, O_PIN_5);
     bar_gore = 1;
     print("barrier up"); 
 }
 
 function barrier_down_auto() 
 {
-    IoPort.resetPort(0, O_PIN_4);
+    //IoPort.resetPort(0, O_PIN_2);
+    IoPort.resetPort(0, O_PIN_5);
     bar_gore = 0;
     IoPort.setPort(0, O_PIN_23);
     bar_dolje = 1;

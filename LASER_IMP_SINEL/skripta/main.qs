@@ -93,6 +93,9 @@ timer5 = System.setTimer(time5_ms);
 
 time6_ms = 8500;
 timer6 = System.setTimer(time6_ms);
+
+time7_ms = 20;
+timer7 = System.setTimer(time7_ms);
 /*
   Function is triggered periodicaly with "timer1", reads inputs and sets flags
   */
