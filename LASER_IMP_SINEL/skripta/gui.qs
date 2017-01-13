@@ -19,6 +19,7 @@ function gen_dialog(part_list)
     dialog.add(auto_box);
     
     cmb_a = new ComboBox("Select type:", part_list);
+    //cmb_a.label.font = font2;
     cmb_a.font = font2;
     auto_box.add(cmb_a);    
 
@@ -59,9 +60,11 @@ function gen_dialog(part_list)
    dialog.add(gb);
    
    lbl1 = new Label(); lbl1.text = "Z axis current position: " + Axis.getPosition(2);  
+   lbl1.font = font_lbls; 
    gb.add(lbl1);  
    
-   sb1 = new SpinBox("Move distance:", 25);  sb1["sigValueChanged(int)"].connect(sb1_ch);
+    sb1 = new SpinBox("Move distance:", 25);  sb1["sigValueChanged(int)"].connect(sb1_ch);
+    sb1.font = font_lbls;
    gb.add(sb1);
   
    gb_las_r = new GroupBox(); gb_las_r.title ="Laser reference";

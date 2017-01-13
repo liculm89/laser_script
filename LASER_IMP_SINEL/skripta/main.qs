@@ -98,7 +98,7 @@ timer4 = System.setTimer(time4_ms);
 time5_ms = 300;
 timer5 = System.setTimer(time5_ms);
 
-time6_ms = 8500;
+time6_ms = 10000;
 timer6 = System.setTimer(time6_ms);
 
 time7_ms = 20;
@@ -106,6 +106,9 @@ timer7 = System.setTimer(time7_ms);
 
 time8_ms = 600;
 timer8 = System.setTimer(time8_ms);
+
+time9_ms = 30;
+timer9 = System.setTimer(time8_ms);
 
 /*
   Function is triggered periodicaly with "timer1", reads inputs and sets flags
@@ -125,6 +128,7 @@ function set_flags()
 
 function halt_all()
 {
+    //System.killTimer(timer2);
 }
 
 function onQueryStart()
@@ -138,7 +142,7 @@ function onLaserStop()
 {
    print("laser stoped"); 
    laser_status ="INACTIVE"; 
-   laser_marking = 0;
+   //laser_marking = 0;
 }
 
 /*
@@ -155,6 +159,7 @@ function onLaserStart()
 function onLaserEnd()
 {  
   laser_status ="INACTIVE";
+  print("on laser end");
   laser_marking = 0;
   //System.incrementCounter("num_writes");
 }

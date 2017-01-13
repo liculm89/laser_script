@@ -46,29 +46,6 @@ function stop_search(ID)
     }
 }
 
-/*
-function laser_moveto_pos(ID)
-{  
-    if ( timer3 == ID)
-    {
-	print("tick move_to_pos");
-	if(IoPort.getPort(0) & I_PIN_10)
-	{
-	    print("laser moving");
-                    Axis.move(2, (Axis.getPosition(2)-1));
-	}
-	else
-	{	
-	    print("laser is in working pos");
-	    laser_in_working_pos = 1;
-	    print("killing timer move_to_pos");
-	    //System.killTimer(timer3);
-	    System["sigTimer(int)"].disconnect(laser_moveto_pos);
-	}
-    }
-}
-*/
-
 function laser_reference()
 {
     if(auto_mode == "OFF")
@@ -86,8 +63,6 @@ function laser_reference()
 
 function move_up()
 { 
-    //print("move up");
-    //Axis.move(2, (Axis.getPosition(2) + sb1_v) );
     
     if (auto_mode == "OFF")
     {
