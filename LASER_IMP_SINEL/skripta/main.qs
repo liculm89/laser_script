@@ -110,6 +110,9 @@ timer8 = System.setTimer(time8_ms);
 time9_ms = 30;
 timer9 = System.setTimer(time8_ms);
 
+time10_ms = 500;
+timer10 = System.setTimer(time10_ms);
+
 /*
   Function is triggered periodicaly with "timer1", reads inputs and sets flags
   */
@@ -158,6 +161,12 @@ function onLaserStart()
   */
 function onLaserEnd()
 {  
+   
+    if(auto_mode == "ON")
+    {
+	barrier_up_auto();
+	 start_timer(time10_ms, reset_laser_marking);
+    }
   laser_status ="INACTIVE";
   print("on laser end");
   laser_marking = 0;
@@ -238,7 +247,7 @@ if(pn != "" )
 	    print( "Document marking..." );		
 	    h_Document.update();	    
 	    h_Document.execute();
-	    start_timer(time6_ms, reset_laser_marking);
+	  
 	    }
 	}
 	else

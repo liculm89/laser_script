@@ -22,6 +22,17 @@ function wait_for_pump(ID)
 {
   if(timer5 == ID && auto_mode=="ON" && IoPort.getPort(0) & I_PIN_7)
     {
+      
+        for(nom ;nom<1 ; nom++)
+      {
+	    if( laser_in_working_pos == 0 )
+	    {
+		barrier_down_auto();
+		start_timer(time9_ms,wait_for_barrier);
+	    }
+	    
+       }
+      /*
          print("pump senzor active!");
          if( laser_in_working_pos == 0 )
          {
@@ -36,6 +47,7 @@ function wait_for_pump(ID)
            {   	     
 
             }
+	    */
      }
     
 }
@@ -129,9 +141,8 @@ function stop_auto(ID)
 
 function reset_laser_marking(ID)
 {
-    if(timer6 == ID)
+    if(timer10 == ID && !(IoPort.getPort(0) & I_PIN_7))
     {
-                barrier_up_auto();
 	laser_marking = 0;
 	laser_in_working_position = 0;
 	nom = 0; 
@@ -140,9 +151,9 @@ function reset_laser_marking(ID)
 }
 
 
-function start_timer(ms, funkc, n)
+function start_timer(ms, funkc)
 {    
-     print("starting timer delay: ", ms, " ms" );  
+    print("starting timer delay: " + ms + " ms");  
      System["sigTimer(int)"].connect(funkc);
 }
 
