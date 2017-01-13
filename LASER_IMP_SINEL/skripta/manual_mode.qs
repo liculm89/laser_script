@@ -21,10 +21,10 @@ function stop_m_manual(){
     else { error_auto_mode(); }
 }
 
-
 function search_working_pos()
-{    
-    Axis.move(2, (Axis.getPosition(2) - 150) );
+{  
+    barrier_down();
+    Axis.move(2, (Axis.getPosition(2) - 150));
     start_timer(time7_ms, stop_search);   
 }
 
@@ -33,8 +33,7 @@ function stop_search(ID)
     if(timer7 == ID)
     {
 	if(IoPort.getPort(0) & I_PIN_10)
-	{ 
-	       
+	{ 	       
 	    print("Laser is moving to working position");
 	}
 	else
@@ -42,13 +41,12 @@ function stop_search(ID)
 	     print("pump in laser focus");
 	    Axis.stop(2);
 	    laser_in_working_pos = 1;
-	    System["sigTimer(int)"].disconnect(stop_search);
-	
+	    System["sigTimer(int)"].disconnect(stop_search);	
 	}
-    
     }
 }
 
+/*
 function laser_moveto_pos(ID)
 {  
     if ( timer3 == ID)
@@ -69,23 +67,20 @@ function laser_moveto_pos(ID)
 	}
     }
 }
+*/
 
 function laser_reference()
 {
-    
-    //barrier_up();
-    Axis.reset(2);
-    /*if(sen_bar_dolje == 1)
-    { 	 
-	print("rising barrier");
-	//barrier_up();
+    if(auto_mode == "OFF")
+    {
+	barrier_up();
 	Axis.reset(2);
-     }   
+	print("laser is moving to reference pos");
+    }
     else
     {
-	Axis.reset(2);
-    }*/
-    print("laser is moving to reference pos");
+	error_auto_mode();
+    }
 
 }
 
@@ -138,7 +133,7 @@ function barrier_up()
 	bar_dolje = 0;
 	print("barrier up");
 	IoPort.setPort(0, O_PIN_5);
-	IoPort.setPort(0, O_PIN_4);
+	//IoPort.setPort(0, O_PIN_4);
 	bar_gore=1;
     }
     else
@@ -154,7 +149,7 @@ function barrier_down()
      if (auto_mode == "OFF")
     {	
 	 IoPort.resetPort(0, O_PIN_5);
-	 IoPort.resetPort(0, O_PIN_4);
+	 //IoPort.resetPort(0, O_PIN_4);
 	 bar_gore = 0; 
                  print("barrier down");
 	 IoPort.setPort(0, O_PIN_23);

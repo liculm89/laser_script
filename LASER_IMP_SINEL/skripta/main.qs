@@ -54,6 +54,13 @@ I_PIN 19 - Reset tipkalo			-INPUT
 I_PIN 20 - Regulator fault			-INPUT
 I_PIN 21 - Total stop input                     	-INPUT
 O_PIN 23 - Cilindar dolje                       	-OUTPUT
+
+
+***
+novo
+***
+Zamjena PINOVA 11 i 21
+
 */
 
 //Flags declaration
@@ -96,6 +103,10 @@ timer6 = System.setTimer(time6_ms);
 
 time7_ms = 20;
 timer7 = System.setTimer(time7_ms);
+
+time8_ms = 600;
+timer8 = System.setTimer(time8_ms);
+
 /*
   Function is triggered periodicaly with "timer1", reads inputs and sets flags
   */
@@ -106,12 +117,10 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_9){ sen_laser_gore = 1;} else{sen_laser_gore = 0;}     
     if(IoPort.getPort(0) & I_PIN_10){ sen_optika = 1;} else{sen_optika = 0;}
     if(IoPort.getPort(0) & I_PIN_11){ sen_bar_dolje = 1;} else{sen_bar_dolje = 0;}     
-    if(IoPort.getPort(0) & I_PIN_12){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}       
+    if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}       
     if(IoPort.getPort(0) & I_PIN_19){ reset_tipka = 1;} else{reset_tipka = 0;}
     if(IoPort.getPort(0) & I_PIN_20){ reg_fault = 0;} else{reg_fault = 1;}
-    if(IoPort.getPort(0) & I_PIN_21){ total_stop = 0;} else{total_stop = 1;}       
-
-    
+    if(IoPort.getPort(0) & I_PIN_12){ total_stop = 1;} else{total_stop = 0;}       
 }
 
 function halt_all()

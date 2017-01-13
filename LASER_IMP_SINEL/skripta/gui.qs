@@ -137,11 +137,13 @@ function gen_dialog(part_list)
     selectedLogo = new Label(txt_selected_logo + "/"); 
     gb_mark.add(selectedLogo);
        
+    gb_mark.newColumn();
     var btn = PushButton ("ZAPIŠI!");
     btn["sigPressed()"].connect(readFile_manual);
     btn.setFixedSize(150,50);
     btn.font =  font_manual_btns;
     gb_mark.add(btn);
+    
     
     var btn_stop_m = PushButton ("STOP MARKING!");
     btn_stop_m["sigPressed()"].connect(stop_m_manual);
