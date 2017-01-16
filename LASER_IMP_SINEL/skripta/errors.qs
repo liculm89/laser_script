@@ -1,14 +1,14 @@
 function onLaserError(error)
 {
-  switch(error)
-  {
+    switch(error)
+    {
     case System.DSP_IN_HANG:
-      System.resetBoard();
-      break;
+        System.resetBoard();
+        break;
     case System.DSP_ERROR_INIT:
-      MessageBox.critical( "Board initialization error", MessageBox.Ok );
-      break;    
-  }
+        MessageBox.critical( "Board initialization error", MessageBox.Ok );
+        break;
+    }
 }
 
 function error_auto_mode()
@@ -18,7 +18,7 @@ function error_auto_mode()
 
 function error_auto_aoff()
 {
-        MessageBox.critical( "Auto mode already off", MessageBox.Ok );
+    MessageBox.critical( "Auto mode already off", MessageBox.Ok );
 }
 
 function error_manual_mode()
@@ -33,5 +33,10 @@ function error_total_stop()
 
 function error_laser_not_rdy()
 {
-    MassageBox.critical("Laser is not ready!", MessageBox.Ok);
+    MessageBox.critical("Laser is not ready!", MessageBox.Ok);
+}
+
+function error_cant_find_pump()
+{
+    MessageBox.critical("Pump not found! Going back to refence position", MessageBox.Ok);
 }
