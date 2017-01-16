@@ -113,6 +113,14 @@ timer9 = System.setTimer(time8_ms);
 time10_ms = 500;
 timer10 = System.setTimer(time10_ms);
 
+time11_ms = 60;
+timer11 = System.setTimer(time11_ms);
+
+time12_ms = 100;
+timer12 = System.setTimer(time12_ms);
+
+System["sigTimer(int)"].connect(pump_counter);
+
 /*
   Function is triggered periodicaly with "timer1", reads inputs and sets flags
   */
