@@ -79,47 +79,50 @@ var reset_tipka = 0;
 var reg_fault = 0;
 var total_stop = 0;
 
+var laser_rdy = 0;
 var laser_marking = 0;
 var laser_in_working_pos = 0;
 
 //Timers declaration
 time_ms = 10;
-timer1 = System.setTimer(time_ms);
+timer1 = System.setTimer(time_ms);  // gui_update();
 
+time5_ms = 300;
+timer5 = System.setTimer(time5_ms); //wait_for_pump();
+
+time6_ms = 85000;
+timer6 = System.setTimer(time6_ms); // barrier_up_after_marking();
+
+time7_ms = 20;
+timer7 = System.setTimer(time7_ms); // stop_search(); stop_search_auto();
+
+time9_ms = 600;
+timer9 = System.setTimer(time9_ms); //wait_for_barrier();
+
+time10_ms = 500;
+timer10 = System.setTimer(time10_ms); //reset_laser_marking();
+
+time11_ms = 60;
+timer11 = System.setTimer(time11_ms);  //pump_not_present();
+
+time12_ms = 100;
+timer12 = System.setTimer(time12_ms);  //pump_counter();
+
+/*
 time2_ms = 1000;
-timer2 = System.setTimer(time2_ms);
+timer2 = System.setTimer(time2_ms);  
 
 time3_ms = 250;
 timer3 = System.setTimer(time3_ms);
 
 time4_ms = 4000;
 timer4 = System.setTimer(time4_ms);
-
-time5_ms = 300;
-timer5 = System.setTimer(time5_ms);
-
-time6_ms = 10000;
-timer6 = System.setTimer(time6_ms);
-
-time7_ms = 20;
-timer7 = System.setTimer(time7_ms);
-
+ 
 time8_ms = 600;
 timer8 = System.setTimer(time8_ms);
 
-time9_ms = 30;
-timer9 = System.setTimer(time8_ms);
+*/
 
-time10_ms = 500;
-timer10 = System.setTimer(time10_ms);
-
-time11_ms = 60;
-timer11 = System.setTimer(time11_ms);
-
-time12_ms = 100;
-timer12 = System.setTimer(time12_ms);
-
-System["sigTimer(int)"].connect(pump_counter);
 
 /*
   Function is triggered periodicaly with "timer1", reads inputs and sets flags
@@ -135,7 +138,40 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_19){ reset_tipka = 1;} else{reset_tipka = 0;}
     if(IoPort.getPort(0) & I_PIN_20){ reg_fault = 0;} else{reg_fault = 1;}
     if(IoPort.getPort(0) & I_PIN_12){ total_stop = 1;} else{total_stop = 0;}       
+    if(System.isLaserReady){laser_rdy = 1;}else{laser_rdy = 0;}
 }
+
+var senz_state = 0;
+var last_senz_state = 0;
+var brojac = 0;
+var pump_present = 0;
+function pump_counter(ID)
+{
+    //print("tick");
+    if(timer12 == ID)
+    {
+	//print("timer tick");
+	if(IoPort.getPort(0) & I_PIN_7){senz_state = 1; } else{senz_state = 0;}
+	
+	if(senz_state != last_senz_state)
+	{
+	    if(senz_state == 1)
+	    {
+		brojac++;
+		print("broja pumpi: " + brojac);
+		pump_present = 1;
+	     }
+	    else
+	    {
+		print("pump left");
+		pump_present = 0;
+	    }
+	}
+	last_senz_state = senz_state;
+    }
+    
+}
+
 
 function halt_all()
 {
@@ -169,11 +205,10 @@ function onLaserStart()
   */
 function onLaserEnd()
 {  
-   
-    if(auto_mode == "ON")
+    if(auto_mode == "ON" && pump_present == 0)
     {
 	barrier_up_auto();
-	 start_timer(time10_ms, reset_laser_marking);
+	start_timer(time10_ms, reset_laser_marking);
     }
   laser_status ="INACTIVE";
   print("on laser end");
@@ -333,9 +368,13 @@ function main()
   Axis.reset(2);
   
   parts_list_gen(); 
+  start_timer(time12_ms, pump_counter);
+  
   
   //pozivanje funcije koja generira GUI aplikaciju
   gen_dialog(part_list);
+
+  //System["sigTimer(int)"].connect(pump_counter);
  
 }
 

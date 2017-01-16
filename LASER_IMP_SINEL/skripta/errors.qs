@@ -30,3 +30,8 @@ function error_total_stop()
 {
     MessageBox.critical( "Total stop is active!", MessageBox.Ok );
 }
+
+function error_laser_not_rdy()
+{
+    MassageBox.critical("Laser is not ready!", MessageBox.Ok);
+}

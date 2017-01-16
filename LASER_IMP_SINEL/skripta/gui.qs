@@ -36,6 +36,14 @@ function gen_dialog(part_list)
     btn_auto_stop["sigPressed()"].connect(stop_auto);
     btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(200,60);
     auto_box.add(btn_auto_stop);
+    
+    lbl_laser_rdy = new Label(); lbl_laser_rdy.text = "Laser ready: " + get_laser_stat(laser_rdy);
+    lbl_laser_rdy.font = font_lbls;
+    auto_box.add(lbl_laser_rdy);
+    
+    lbl_counter = new Label(); lbl_counter.text = "Pump count:" + brojac;
+    lbl_counter.font = font_lbls;
+    auto_box.add(lbl_counter);
   
     dialog.addSpace(350);
     status_box = new GroupBox(); status_box.title= "Status";
@@ -253,6 +261,9 @@ function gui_update(ID)
 	 
 	 lb_bar_gore.text = "Barijera gore:" + get_stat(bar_gore);
 	 lb_bar_dolje.text = "Barijera dolje:" + get_stat(bar_dolje);
+	 
+	 lbl_laser_rdy.text = "Laser ready: " + get_laser_stat(laser_rdy);
+	 lbl_counter.txt = "Pump count:" + brojac;
       }
  }
 
@@ -265,6 +276,12 @@ function sb1_ch(value)
 function get_stat(input)
 {
     if(input == 1 ){stat= "Active";} else {stat="Inactive";}
+    return stat;
+}
+
+function get_laser_stat(input)
+{
+    if(input == 1){stat = "Ready";} else { stat = "Not ready!"}
     return stat;
 }
 
