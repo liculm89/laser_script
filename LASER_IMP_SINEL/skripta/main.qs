@@ -90,7 +90,7 @@ timer1 = System.setTimer(time_ms);  // gui_update();
 time5_ms = 300;
 timer5 = System.setTimer(time5_ms); //wait_for_pump();
 
-time6_ms = 85000;
+time6_ms = 8500;
 timer6 = System.setTimer(time6_ms); // barrier_up_after_marking();
 
 time7_ms = 20;
