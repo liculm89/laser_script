@@ -28,7 +28,7 @@ function search_working_pos()
 {  
     barrier_down();
     Axis.move(2, (Axis.getPosition(2) - 150));
-    start_timer(time7_ms, stop_search);   
+    start_timer(timer7, stop_search);   
 }
 
 function stop_search(ID)
@@ -140,6 +140,12 @@ function barrier_down()
 
  function disconnect_timers()
  {
-   
+     
+    timer_list.forEach(function (item)
+     { 	   	
+	   System["sigTimer(int)"].disconnect(item);
+	   //timer_list.pop();
+       });
+       timer_list = [];
     //System["sigTimer(int)"].disconnect(laser_moveto_pos);
  }

@@ -105,6 +105,7 @@ timer11 = System.setTimer(time11_ms); //pump_not_present();
 time12_ms = 100;
 timer12 = System.setTimer(time12_ms); //pump_counter();
 
+var timer_list = [];
 /*
   Function is triggered periodicaly with "timer1", reads inputs and sets flags
   */
@@ -185,7 +186,7 @@ function onLaserEnd()
     {
         barrier_up_auto();
     }
-    start_timer(time10_ms, reset_laser_marking);
+    start_timer(timer10, reset_laser_marking);
     laser_status ="INACTIVE";
     print("on laser end");
     laser_marking = 0;
@@ -327,8 +328,9 @@ function init_func()
     }
 
     parts_list_gen();
-
-    start_timer(time12_ms, pump_counter);
+    
+    System["sigTimer(int)"].connect(pump_counter);
+    //start_timer(timer12, pump_counter);
 }
 
 function main()

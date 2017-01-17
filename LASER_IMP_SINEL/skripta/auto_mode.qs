@@ -1,9 +1,7 @@
 function start_auto_mode()
 {
     if(total_stop == 0)
-    {
-        if(laser_rdy == 1)
-        {
+    {  
             if(auto_mode == "OFF")
             {
                 auto_mode = "ON";
@@ -16,11 +14,7 @@ function start_auto_mode()
                 error_manual_mode();
             }
         }
-        else
-        {
-            error_laser_not_rdy();
-        }
-    }
+    
     else
     {
         error_total_stop();
@@ -55,11 +49,11 @@ function wait_for_pump(ID)
                 if(laser_in_working_pos == 0)
                 {
                     barrier_down_auto();
-                    start_timer(time9_ms,wait_for_barrier);
+                    start_timer(timer9,wait_for_barrier);
                 }
                 else
                 {
-                    start_timer(time9_ms,wait_for_barrier);
+                    start_timer(timer9,wait_for_barrier);
                 }
             }
         }
@@ -94,13 +88,13 @@ function laser_move_timed()
     if(laser_in_working_pos == 0)
 	{	    
         Axis.move(2, (Axis.getPosition(2) - search_distance));
-	    start_timer(time7_ms, stop_search_auto);   
+	    start_timer(timer7, stop_search_auto);   
 	}
 	else
 	{
 	    print("laser already in pos");
 	    readFile_auto();
-	    start_timer(time11_ms, pump_not_present);	    
+	    start_timer(timer11, pump_not_present);	    
 	}  
 }
 
@@ -131,7 +125,7 @@ function stop_search_auto(ID)
             Axis.stop(2);
             readFile_auto();
             laser_in_working_pos = 1;
-            start_timer(time11_ms, pump_not_present);
+            start_timer(timer11, pump_not_present);
             System["sigTimer(int)"].disconnect(stop_search_auto);
         }
     }
@@ -163,14 +157,17 @@ function pump_not_present(ID)
 
 function readFile_auto()
 {    
-    if(laser_rdy == 1)
+    if(total_stop == 0)
     {
         print("Reading file");
         laser_marking = 1;
         readFile();
-        start_timer(time6_ms, barrier_up_afer_marking);
+        start_timer(timer6, barrier_up_afer_marking);
     }
-    else{ error_laser_not_rdy(); }
+    else
+    {
+	error_total_stop(); 
+    }
 }
 
 function barrier_up_afer_marking(ID)
@@ -237,10 +234,11 @@ function reset_laser_marking(ID)
     }
 }
 
-function start_timer(ms, funkc)
+function start_timer(timer, funkc)
 {    
-    print("starting timer delay: " + ms + " ms");  
-     System["sigTimer(int)"].connect(funkc);
+    print("connecting timer:" + timer);  
+    System["sigTimer(int)"].connect(funkc);
+    timer_list.push(funkc);
 }
 
 

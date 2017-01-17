@@ -233,8 +233,8 @@ function gen_dialog(part_list)
     gb_outputs.add(lb_bar_dolje);
     
     dialog.show();
-
-    start_timer(time_ms, gui_update);
+    
+    System["sigTimer(int)"].connect(gui_update);
     dialog.exec();
 }
 
@@ -263,7 +263,7 @@ function gui_update(ID)
         lb_bar_dolje.text = "Barijera dolje:" + get_stat(bar_dolje);
 
         lbl_laser_rdy.text = "Laser ready: " + get_laser_stat(laser_rdy);
-        lbl_counter.txt = "Pump count:" + brojac;
+        lbl_counter.text = "Pump count:" + brojac;
     }
 }
 
