@@ -117,16 +117,36 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_10){ sen_optika = 1;} else{sen_optika = 0;}
     if(IoPort.getPort(0) & I_PIN_11){ sen_bar_dolje = 1;} else{sen_bar_dolje = 0;}
     if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
-    if(IoPort.getPort(0) & I_PIN_19){ reset_tipka = 1;} else{reset_tipka = 0;}
     if(IoPort.getPort(0) & I_PIN_20){ reg_fault = 0;} else{reg_fault = 1;}
-    if(IoPort.getPort(0) & I_PIN_12){ total_stop = 1;} else{total_stop = 0;}
-    if(System.isLaserReady()){laser_rdy = 1;}else{laser_rdy = 0;}
+    if(System.isLaserReady()){laser_rdy = 1;}else{laser_rdy = 0;}   
+   
+    if(IoPort.getPort(0) & I_PIN_19)
+    { 
+	reset_tipka = 1;
+	reset_button_func();
+    } 
+    else
+    {
+	reset_tipka = 0;
+    } 
+
+     if(IoPort.getPort(0) & I_PIN_12)
+    { 
+	total_stop = 1;
+	disconnect_timers();
+	error_total_stop();
+     }
+     else
+    {
+	total_stop = 0;
+    }
 }
 
 var senz_state = 0;
 var last_senz_state = 0;
 var brojac = 0;
 var pump_present = 0;
+
 function pump_counter(ID)
 {
     if(timer12 == ID)
@@ -149,11 +169,6 @@ function pump_counter(ID)
         }
         last_senz_state = senz_state;
     }
-}
-
-function halt_all()
-{
-    //System.killTimer(timer2);
 }
 
 function onQueryStart()

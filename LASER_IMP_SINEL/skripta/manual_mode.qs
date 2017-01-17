@@ -4,7 +4,7 @@ function readFile_manual()
 	{
 	    if(auto_mode == "OFF" && laser_status != "ACTIVE")
 	    {
-            readFile();
+		readFile();
 	    }
 	    else { error_auto_mode(); }
 	}
@@ -151,19 +151,14 @@ function barrier_down()
 
  function disconnect_timers()
  {
-    
-     
      if (timer_list != 0)
      {
-	print("timer_list[0]:" + timer_list[0]);
+	//print("timer_list[0]:" + timer_list[0]);
 	  timer_list.forEach(function (item)
 	{ 	   	
 	   System["sigTimer(int)"].disconnect(item);
 	   //timer_list.pop();
                   });
 	  timer_list = [];
-     
      }
-	 
-   
  }

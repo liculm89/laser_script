@@ -235,6 +235,30 @@ function reset_laser_marking(ID)
     }
 }
 
+function total_stop_func()
+{
+    
+}
+
+function reset_button_func()
+{
+    System.stopLaser();
+    laser_marking = 0;
+    laser_in_working_pos = 0;
+    nom = 0;
+    if(auto_mode == "ON")
+    {
+	auto_mode = "OFF";
+	disconnect_timers();
+	start_auto_mode();
+    }
+    else
+    {	
+	disconnect_timers();
+                laser_reference();
+    }
+}
+
 function start_timer(timer, funkc)
 {    
     print("connecting timer:" + timer);  
