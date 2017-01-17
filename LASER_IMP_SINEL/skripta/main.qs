@@ -1,5 +1,5 @@
 /*---------------------------------
- Template and log file paths, 
+ Template and log file paths,
   ----------------------------------*/
 /*
 var tmplPath ="G:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
@@ -19,12 +19,14 @@ var txt_num_writes = "Število zapisov (od zagona): ";
 
 var auto_mode = "OFF";
 var laser_status = "INACTIVE";
+var last_error = "no errors";
 
 var z_axis_active = 0;
 var sb1_v = 25;
 var part_list;
+var min_pos = 10;
 var search_distance = 110;
-var home_pos = 400;
+var home_pos = 120;
 var current_pos = 0;
 const num_writes;
 
@@ -34,7 +36,7 @@ const num_writes;
 /*
 Popis funkcija pinova
 O_PIN 3 - Z os step                 - OUTPUT
-O_PIN 4 - Cilindar gore             - OUTPUT
+O_PIN 5 - Cilindar gore             - OUTPUT
 O_PIN 6 - Z os Current off			- OUTPUT
 O_PIN 16 - Z os direction			- OUTPUT
 O_PIN 23 - Cilindar dolje           - OUTPUT
@@ -81,31 +83,51 @@ var laser_in_working_pos = 0;
 
 
 //Timers declaration
-time_ms = 10;
-timer1 = System.setTimer(time_ms);    //gui_update();
+var time_ms = 10;
+var timer1 = System.setTimer(time_ms);    //gui_update();
 
-time5_ms = 300;
-timer5 = System.setTimer(time5_ms);   //wait_for_pump();
+var time5_ms = 300;
+var timer5 = System.setTimer(time5_ms);   //wait_for_pump();
 
-time6_ms = 7000;
-timer6 = System.setTimer(time6_ms);   //barrier_up_after_marking();
+var time6_ms = 7000;
+var timer6 = System.setTimer(time6_ms);   //barrier_up_after_marking();
 
-time7_ms = 20;
-timer7 = System.setTimer(time7_ms);   //stop_search(); stop_search_auto();
+var time7_ms = 20;
+var timer7 = System.setTimer(time7_ms);   //stop_search(); stop_search_auto();
 
-time9_ms = 600;
-timer9 = System.setTimer(time9_ms);   //wait_for_barrier();
+var time9_ms = 600;
+var timer9 = System.setTimer(time9_ms);   //wait_for_barrier();
 
-time10_ms = 500;
-timer10 = System.setTimer(time10_ms); //reset_laser_marking();
+var time10_ms = 500;
+var timer10 = System.setTimer(time10_ms);     //reset_laser_marking();
 
-time11_ms = 60;
-timer11 = System.setTimer(time11_ms); //pump_not_present();
+var time11_ms = 60;
+var timer11 = System.setTimer(time11_ms); //pump_not_present();
 
-time12_ms = 100;
-timer12 = System.setTimer(time12_ms); //pump_counter();
+var time12_ms = 100;
+var timer12 = System.setTimer(time12_ms);     //pump_counter();
 
 var timer_list = [];
+
+function start_timer(timer, func)
+{
+    print("connecting timer:" + timer);
+    System["sigTimer(int)"].connect(func);
+    timer_list.push(func);
+}
+
+function disconnect_timers()
+{
+    if (timer_list != 0)
+    {
+        timer_list.forEach(function (item)
+        {
+            System["sigTimer(int)"].disconnect(item);
+        });
+        timer_list.lenght = 0;
+    }
+}
+
 /*
   Function is triggered periodicaly with "timer1", reads inputs and sets flags
   */
@@ -118,30 +140,30 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_11){ sen_bar_dolje = 1;} else{sen_bar_dolje = 0;}
     if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
     if(IoPort.getPort(0) & I_PIN_20){ reg_fault = 0;} else{reg_fault = 1;}
-    if(System.isLaserReady()){laser_rdy = 1;}else{laser_rdy = 0;}   
-   
+    if(System.isLaserReady()){laser_rdy = 1;}else{laser_rdy = 0;}
+
     if(IoPort.getPort(0) & I_PIN_19)
-    { 
-	    print("reset pressed ******************");
-	    reset_tipka = 1;
-	    reset_button_func();
-    } 
+    {
+        print("reset pressed ******************");
+        reset_tipka = 1;
+        reset_button_func();
+    }
     else
     {
-	    reset_tipka = 0;
-    } 
-
-     if(IoPort.getPort(0) & I_PIN_12)
-    { 
-	    total_stop = 1;
-	    disconnect_timers();
-	    total_stop_func();
-	    //error_total_stop();
+        reset_tipka = 0;
     }
-     else
+
+    if(IoPort.getPort(0) & I_PIN_12)
     {
-	    total_stop = 0;
-	   // total_stop_func();
+        total_stop = 1;
+        disconnect_timers();
+        total_stop_func();
+        //error_total_stop();
+    }
+    else
+    {
+        total_stop = 0;
+        // total_stop_func();
     }
 }
 
@@ -203,9 +225,8 @@ function onLaserEnd()
     if(auto_mode == "ON" && pump_present == 0)
     {
         barrier_up_auto();
-        start_timer(timer10, reset_laser_marking);
     }
-
+    start_timer(timer10, reset_laser_marking);
     laser_status ="INACTIVE";
     print("on laser end");
     laser_marking = 0;
@@ -364,4 +385,3 @@ function main()
     //gui initialization
     gen_dialog(part_list);
 }
-

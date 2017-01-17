@@ -13,30 +13,49 @@ function onLaserError(error)
 
 function error_auto_mode()
 {
-    MessageBox.critical( "First stop auto mode!", MessageBox.Ok );
+    var mesg_txt = "First stop auto mode!";
+    MessageBox.critical( mesg_txt, MessageBox.Ok );
+    last_error = mesg_txt;
 }
 
 function error_auto_aoff()
 {
-    MessageBox.critical( "Auto mode already off", MessageBox.Ok );
+    var mesg_txt = "Auto mode already off";
+    MessageBox.critical( mesg_txt, MessageBox.Ok );
+    last_error = mesg_txt;
 }
 
 function error_manual_mode()
 {
-    MessageBox.critical( "Wait until marking is finished!", MessageBox.Ok );
+    var mesg_txt = "Wait until marking is finished!";
+    MessageBox.critical( mesg_txt, MessageBox.Ok );
+    last_error = mesg_txt;
 }
 
 function error_total_stop()
 {
-    MessageBox.critical( "Total stop is active!", MessageBox.Ok );
+    var mesg_txt ="Total stop is active!";
+    MessageBox.critical( mesg_txt, MessageBox.Ok );
+    last_error = mesg_txt;
 }
 
 function error_laser_not_rdy()
 {
-    MessageBox.critical("Laser is not ready!", MessageBox.Ok);
+    var mesg_txt = "Laser is not ready!";
+    MessageBox.critical( mesg_txt, MessageBox.Ok);
+    last_error = mesg_txt;
 }
 
 function error_cant_find_pump()
 {
-    MessageBox.critical("Pump not found! Going back to refence position", MessageBox.Ok);
+    var mesg_txt = "Pump not found! Going back to refence position";
+    MessageBox.critical( mesg_txt, MessageBox.Ok);
+    last_error = mesg_txt;
+}
+
+function error_min_pos()
+{
+    var mesg_txt = "Laser is in lowest position!";
+    MessageBox.critical( mesg_txt, MessageBox.Ok);
+    last_error = mesg_txt;
 }
