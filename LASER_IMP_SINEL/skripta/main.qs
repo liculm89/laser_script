@@ -122,23 +122,23 @@ function set_flags()
    
     if(IoPort.getPort(0) & I_PIN_19)
     { 
-	reset_tipka = 1;
-	reset_button_func();
+	    reset_tipka = 1;
+	    reset_button_func();
     } 
     else
     {
-	reset_tipka = 0;
+	    reset_tipka = 0;
     } 
 
      if(IoPort.getPort(0) & I_PIN_12)
     { 
-	total_stop = 1;
-	disconnect_timers();
-	error_total_stop();
-     }
+	    total_stop = 1;
+	    disconnect_timers();
+	    error_total_stop();
+    }
      else
     {
-	total_stop = 0;
+	    total_stop = 0;
     }
 }
 
@@ -342,9 +342,8 @@ function init_func()
     {
         barrier_up();
     }
-
-    parts_list_gen();
     
+    parts_list_gen();
     System["sigTimer(int)"].connect(pump_counter);
     //start_timer(timer12, pump_counter);
 }

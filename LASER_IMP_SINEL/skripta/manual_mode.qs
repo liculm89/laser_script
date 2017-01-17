@@ -76,32 +76,46 @@ function laser_reference()
 
 function move_up()
 { 
-    if (auto_mode == "OFF")
+    if(total_stop == 0)
     {
-        print( "Current Z axis poz before: " + Math.round(Axis.getPosition(2)));
-        Axis.move(2, (Axis.getPosition(2) + sb1_v) );
-        laser_in_working_pos = 0;
-        print( "Current Z axis poz after: " + Math.round(Axis.getPosition(2)));
+	if (auto_mode == "OFF")
+	{
+	    print( "Current Z axis poz before: " + Math.round(Axis.getPosition(2)));
+	    Axis.move(2, (Axis.getPosition(2) + sb1_v) );
+	    laser_in_working_pos = 0;
+	    print( "Current Z axis poz after: " + Math.round(Axis.getPosition(2)));
+	}
+	else
+	{
+	    error_auto_mode();
+	}
     }
     else
     {
-        error_auto_mode();
+	error_total_stop();
     }
 }
 
 function move_down()
 {
-    if (auto_mode == "OFF")
+      if(total_stop == 0)
     {
-        print( "Current Z axis poz before: " + Math.round(Axis.getPosition(2)));
-        Axis.move(2, (Axis.getPosition(2) - sb1_v) );
-        laser_in_working_pos = 0;
-        print( "Current Z axis poz after: " + Math.round(Axis.getPosition(2)));
-    }
-    else
-    {
-        error_auto_mode();
-    }
+	  if (auto_mode == "OFF")
+	  {
+	      print( "Current Z axis poz before: " + Math.round(Axis.getPosition(2)));
+	      Axis.move(2, (Axis.getPosition(2) - sb1_v) );
+	      laser_in_working_pos = 0;
+	      print( "Current Z axis poz after: " + Math.round(Axis.getPosition(2)));
+	  }
+	  else
+	  {
+	      error_auto_mode();
+	  }
+      }
+      else
+      {
+	  error_total_stop();
+      }
 }
 
 function stop_axis()
@@ -121,32 +135,46 @@ function stop_axis()
 
 function barrier_up()
 {
-    if(auto_mode == "OFF")
+    if(total_stop == 0)
     {
-        IoPort.resetPort(0, O_PIN_23);
-        bar_dolje = 0;
-        IoPort.setPort(0, O_PIN_5);
-        bar_gore=1;
+	if(auto_mode == "OFF")
+	{
+	    IoPort.resetPort(0, O_PIN_23);
+	    bar_dolje = 0;
+	    IoPort.setPort(0, O_PIN_5);
+	    bar_gore=1;
+	}
+	else
+	{
+	    error_auto_mode();
+	}
     }
     else
     {
-        error_auto_mode();
+	error_total_stop();
     }
 }
 
 function barrier_down()
 {
-     if (auto_mode == "OFF")
-     {
-         IoPort.resetPort(0, O_PIN_5);
-         bar_gore = 0;
-         IoPort.setPort(0, O_PIN_23);
-         bar_dolje = 1;
-     }
-     else
-     {
-         error_auto_mode();
-     }
+     if(total_stop == 0)
+    {
+	 if (auto_mode == "OFF")
+	 {
+	                  IoPort.resetPort(0, O_PIN_5);
+		  bar_gore = 0;
+		  IoPort.setPort(0, O_PIN_23);
+		  bar_dolje = 1;
+                 }
+                 else
+                {
+		     error_auto_mode();
+                 }
+       }
+       else
+    {
+	error_total_stop();
+    }
  }
 
  function disconnect_timers()
