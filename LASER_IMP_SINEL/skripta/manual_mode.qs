@@ -37,15 +37,26 @@ function stop_search(ID)
     {
         if(IoPort.getPort(0) & I_PIN_10)
         {
-            print("Laser is moving to working position");
-        }
-        else
-        {
-            print("pump in laser focus");
-            Axis.stop(2);
-            laser_in_working_pos = 1;
-            System["sigTimer(int)"].disconnect(stop_search);
-        }
+	    current_pos = Axis.getPosition(2);
+	    if((home_pos - current_pos) <= search_distance)
+	    {
+		//print("Laser is moving to working position");
+	    }
+	    else
+	    {
+		Axis.stop(2);
+		//laser_in_working_pos = 1;
+		error_cant_find_pump();
+		laser_reference();
+		System["sigTimer(int)"].disconnect(stop_search);
+	    }
+           }
+	else
+	{
+	    Axis.stop(2);
+	    laser_in_working_pos = 1;
+	    System["sigTimer(int)"].disconnect(stop_search);
+	}
     }
 }
 
@@ -140,12 +151,19 @@ function barrier_down()
 
  function disconnect_timers()
  {
+    
      
-    timer_list.forEach(function (item)
-     { 	   	
+     if (timer_list != 0)
+     {
+	print("timer_list[0]:" + timer_list[0]);
+	  timer_list.forEach(function (item)
+	{ 	   	
 	   System["sigTimer(int)"].disconnect(item);
 	   //timer_list.pop();
-       });
-       timer_list = [];
-    //System["sigTimer(int)"].disconnect(laser_moveto_pos);
+                  });
+	  timer_list = [];
+     
+     }
+	 
+   
  }

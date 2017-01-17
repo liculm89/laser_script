@@ -23,7 +23,7 @@ var laser_status = "INACTIVE";
 var z_axis_active = 0;
 var sb1_v = 25;
 var part_list;
-var search_distance = 200;
+var search_distance = 110;
 var home_pos = 400;
 var current_pos = 0;
 const num_writes;
@@ -87,7 +87,7 @@ timer1 = System.setTimer(time_ms);    //gui_update();
 time5_ms = 300;
 timer5 = System.setTimer(time5_ms);   //wait_for_pump();
 
-time6_ms = 8500;
+time6_ms = 7000;
 timer6 = System.setTimer(time6_ms);   //barrier_up_after_marking();
 
 time7_ms = 20;
@@ -185,8 +185,9 @@ function onLaserEnd()
     if(auto_mode == "ON" && pump_present == 0)
     {
         barrier_up_auto();
+        start_timer(timer10, reset_laser_marking);
     }
-    start_timer(timer10, reset_laser_marking);
+
     laser_status ="INACTIVE";
     print("on laser end");
     laser_marking = 0;

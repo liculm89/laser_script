@@ -87,7 +87,7 @@ function laser_move_timed()
 {   
     if(laser_in_working_pos == 0)
 	{	    
-        Axis.move(2, (Axis.getPosition(2) - search_distance));
+	    Axis.move(2, (Axis.getPosition(2) - search_distance));
 	    start_timer(timer7, stop_search_auto);   
 	}
 	else
@@ -161,6 +161,7 @@ function readFile_auto()
     {
         print("Reading file");
         laser_marking = 1;
+        timer6 = System.setTimer(time6_ms);
         readFile();
         start_timer(timer6, barrier_up_afer_marking);
     }
@@ -180,7 +181,7 @@ function barrier_up_afer_marking(ID)
             laser_marking = 0;
             laser_in_working_pos = 0;
         }
-        System["sigTimer(int)"].disconnect(barrier_up_after_marking);
+        System["sigTimer(int)"].disconnect(barrier_up_afer_marking);
     }
 }
 
