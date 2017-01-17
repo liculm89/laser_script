@@ -249,6 +249,7 @@ function total_stop_func()
     System.stopLaser();
     laser_marking = 0;
     laser_in_working_pos = 0;
+    error_total_stop();
     if(auto_mode == "ON")
     {
         auto_mode = "OFF";
@@ -269,8 +270,9 @@ function reset_button_func()
     if(auto_mode == "ON")
     {
 	    auto_mode = "OFF";
-	    disconnect_timers();
-	    start_auto_mode();
+	    //start_auto_mode();
+	    Axis.reset(2);
+	    disconnect_timers();   
     }
     else
     {	

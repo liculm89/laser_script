@@ -122,6 +122,7 @@ function set_flags()
    
     if(IoPort.getPort(0) & I_PIN_19)
     { 
+	    print("reset pressed ******************");
 	    reset_tipka = 1;
 	    reset_button_func();
     } 
@@ -134,11 +135,13 @@ function set_flags()
     { 
 	    total_stop = 1;
 	    disconnect_timers();
-	    error_total_stop();
+	    total_stop_func();
+	    //error_total_stop();
     }
      else
     {
 	    total_stop = 0;
+	   // total_stop_func();
     }
 }
 

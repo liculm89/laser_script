@@ -28,6 +28,7 @@ function search_working_pos()
 {  
     barrier_down();
     Axis.move(2, (Axis.getPosition(2) - 150));
+    timer7 = System.setTimer(time7_ms);
     start_timer(timer7, stop_search);   
 }
 
@@ -181,7 +182,7 @@ function barrier_down()
  {
      if (timer_list != 0)
      {
-	//print("timer_list[0]:" + timer_list[0]);
+	  //print("timer_list[0]:" + timer_list[0]);
 	  timer_list.forEach(function (item)
 	{ 	   	
 	   System["sigTimer(int)"].disconnect(item);
