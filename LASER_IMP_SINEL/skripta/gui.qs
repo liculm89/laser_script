@@ -41,11 +41,15 @@ function gen_dialog(part_list)
     lbl_laser_rdy.font = font_lbls;
     auto_box.add(lbl_laser_rdy);
     
+    lbl_laser_moving = new Label(); lbl_laser_moving.text = "Laser motor: " + get_motor_status( laser_moving );
+    lbl_laser_moving.font = font_lbls;
+    auto_box.add(lbl_laser_moving);
+    
     lbl_counter = new Label(); lbl_counter.text = "Pump count:" + brojac;
     lbl_counter.font = font_lbls;
     auto_box.add(lbl_counter);
 
-    dialog.addSpace(350);
+    dialog.addSpace(200);
     status_box = new GroupBox(); status_box.title= "Status";
     dialog.add(status_box);
     
@@ -252,6 +256,7 @@ function gui_update(ID)
         lbl_auto_status_m.text= lbl_auto_status.text = "Auto mode: " + auto_mode;
         lbl_marking_m.text = lbl_marking.text = "Laser status :" + laser_status;
         lbl_last_error.text = "Last error:" + last_error;
+        lbl_laser_moving.text = "Laser motor: " + get_motor_status(laser_moving);
 
         lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
         lb_sen_bar_gore.text = "Senzor laserske barijere gore:" + get_stat(sen_bar_gore);
@@ -289,4 +294,9 @@ function get_laser_stat(input)
     return stat;
 }
 
+function get_motor_status(input)
+{
+    if(input == 1 ){stat= "Moving";} else {stat="Stoped";}
+    return stat;
+}
 

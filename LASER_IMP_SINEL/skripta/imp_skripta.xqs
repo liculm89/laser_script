@@ -9,4 +9,5 @@
  <script>gui.qs</script>
  <script>auto_mode.qs</script>
  <script>manual_mode.qs</script>
+ <script>laser_events.qs</script>
 </project>

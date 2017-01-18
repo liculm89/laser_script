@@ -24,7 +24,7 @@ var last_error = "no errors";
 var z_axis_active = 0;
 var sb1_v = 25;
 var part_list;
-var min_pos = 10;
+var min_pos = -15;
 var search_distance = 110;
 var home_pos = 120;
 var current_pos = 0;
@@ -116,15 +116,32 @@ function start_timer(timer, func)
     timer_list.push(func);
 }
 
+function disconnect_func(func)
+{
+   if (timer_list != 0)
+    {  
+       System["sigTimer(int)"].disconnect(func);
+       timer_list.forEach(function (item)
+             {
+	  if (func == item)
+	  {
+	     timer_list.splice(item, 1);
+	 }
+              });
+      print("disconnect func timer list ----------------------:"+timer_list);
+    }    
+}
+
 function disconnect_timers()
 {
     if (timer_list != 0)
     {
         timer_list.forEach(function (item)
-        {
+           {print("funkcija **********************:"+ item);
             System["sigTimer(int)"].disconnect(item);
+            timer_list.splice(item, 1);
         });
-        timer_list.lenght = 0;
+        //timer_list.lenght = 0;
     }
 }
 
@@ -140,7 +157,7 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_11){ sen_bar_dolje = 1;} else{sen_bar_dolje = 0;}
     if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
     if(IoPort.getPort(0) & I_PIN_20){ reg_fault = 0;} else{reg_fault = 1;}
-    if(System.isLaserReady()){laser_rdy = 1;}else{laser_rdy = 0;}
+//    if(System.isLaserReady()){laser_rdy = 1;}else{laser_rdy = 0;}
 
     if(IoPort.getPort(0) & I_PIN_19)
     {
@@ -165,6 +182,9 @@ function set_flags()
         total_stop = 0;
         // total_stop_func();
     }
+    
+    laser_status_int = System.getDeviceStatus();
+    laser_state_var = check_laser_state(laser_status_int);
 }
 
 var senz_state = 0;
@@ -194,6 +214,27 @@ function pump_counter(ID)
         }
         last_senz_state = senz_state;
     }
+}
+
+var laser_poz_before = Axis.getPosition(2);
+var laser_poz_cur =  Axis.getPosition(2);
+var laser_moving = 0;
+
+function laser_movement(ID)
+{
+     if(timer5 == ID)
+    {
+        laser_poz_cur = Axis.getPosition(2);
+	if(laser_poz_cur != laser_poz_before)
+               {
+	    laser_moving = 1;
+                }
+	else
+	{
+	    laser_moving = 0;
+                 }
+    laser_poz_before = laser_poz_cur;
+    } 
 }
 
 function onQueryStart()
@@ -226,6 +267,7 @@ function onLaserEnd()
     {
         barrier_up_auto();
     }
+    timer10 = System.setTimer(time10_ms);
     start_timer(timer10, reset_laser_marking);
     laser_status ="INACTIVE";
     print("on laser end");
@@ -369,8 +411,11 @@ function init_func()
     
     parts_list_gen();
     System["sigTimer(int)"].connect(pump_counter);
+    System["sigTimer(int)"].connect(laser_movement);
     //start_timer(timer12, pump_counter);
 }
+
+var laser_status_int = 0;
 
 function main()
 {
@@ -378,10 +423,15 @@ function main()
     System.sigLaserStop.connect(onLaserStop);
     System.sigLaserStart.connect(onLaserStart);
     System.sigLaserEnd.connect(onLaserEnd);
+    System["sigLaserEvent(int)"].connect(get_laser_events);
     System["sigLaserError(int)"].connect(onLaserError);
     System.sigClose.connect(onClose);
 
     init_func();
-    //gui initialization
+    
+    laser_status_int = System.getDeviceStatus();
+    check_laser_state(laser_status_int);
+    
+    
     gen_dialog(part_list);
 }

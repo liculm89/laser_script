@@ -54,14 +54,16 @@ function stop_search(ID)
                 Axis.stop(2);
                 error_cant_find_pump();
                 laser_reference();
-                System["sigTimer(int)"].disconnect(stop_search);
+	disconnect_func(stop_search);	
+                //System["sigTimer(int)"].disconnect(stop_search);
             }
         }
         else
         {
             Axis.stop(2);
             laser_in_working_pos = 1;
-            System["sigTimer(int)"].disconnect(stop_search);
+            disconnect_func(stop_search);    
+            //System["sigTimer(int)"].disconnect(stop_search);
         }
     }
 }
@@ -108,8 +110,10 @@ function move_down()
     {
         if (auto_mode == "OFF")
         {
-            if(!(IoPort.getPort(0) & I_PIN_8))
-            {
+            current_pos = Axis.getPosition(2);
+            if(!(IoPort.getPort(0) & I_PIN_8) && (current_pos - sb1_v >= min_pos))
+            {  
+		
                 Axis.move(2, (Axis.getPosition(2) - sb1_v) );
                 laser_in_working_pos = 0;
                 print( "Current Z axis poz after: " + Math.round(Axis.getPosition(2)));
