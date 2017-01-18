@@ -58,7 +58,7 @@ function gen_dialog(part_list)
     lbl_marking.font =  font_lbls;
     status_box.add(lbl_marking);
 
-    lbl_last_error = new Label(); lbl_last_error.txt = "Last error:" + last_error;
+    lbl_last_error = new Label(); lbl_last_error.text = "Last error:" + last_error;
     lbl_last_error.font = font_lbls;
     status_box.add(lbl_last_error);
 
@@ -251,7 +251,7 @@ function gui_update(ID)
         lbl1.text = "Z axis current position: " + Math.round(Axis.getPosition(2));
         lbl_auto_status_m.text= lbl_auto_status.text = "Auto mode: " + auto_mode;
         lbl_marking_m.text = lbl_marking.text = "Laser status :" + laser_status;
-        lbl_last_error.txt = "Last error:" + last_error;
+        lbl_last_error.text = "Last error:" + last_error;
 
         lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
         lb_sen_bar_gore.text = "Senzor laserske barijere gore:" + get_stat(sen_bar_gore);
