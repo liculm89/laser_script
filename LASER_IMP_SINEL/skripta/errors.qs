@@ -31,7 +31,7 @@ function error_auto_aoff()
 
 function error_manual_mode()
 {
-    var mesg_txt = "Wait until marking is finished!";
+    var mesg_txt = "Auto mode already started, or laser marking started in manual mode";
     MessageBox.critical( mesg_txt, MessageBox.Ok );
     last_error = mesg_txt;
 }

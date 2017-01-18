@@ -13,6 +13,7 @@ var xlsPath ="D:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
 var logoPath ="D:\\LASER_IMP_SINEL\\Predloge\\" ;
 var logPath= "D:\\LASER_IMP_SINEL\\writeLog.txt";
 
+
 var h_Document,hDb, fw;
 var txt_selected_logo = "Izbran logo: ";
 var txt_num_writes = "Število zapisov (od zagona): ";

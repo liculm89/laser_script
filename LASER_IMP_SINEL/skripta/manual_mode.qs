@@ -124,7 +124,7 @@ function move_up()
     }
 }
 
-function max_pos_reached()
+function max_pos_reached(ID)
 {
     if(timer7 == ID)
     {
