@@ -4,16 +4,16 @@ function readFile_manual()
     {
         if(auto_mode == "OFF" )
         {
-	    if(laser_status == "Ready for marking")
-	    {
-		readFile();
-	    }
-	    else
-	    {
-		error_key_sequence();
-	    }
-       }
-         else
+            if(laser_status == "Ready for marking")
+            {
+                readFile();
+            }
+            else
+            {
+                error_key_sequence();
+            }
+        }
+        else
         {
             error_auto_mode();
         }
@@ -24,19 +24,34 @@ function readFile_manual()
     }
 }
 
+function laser_reference()
+{
+    if(auto_mode == "OFF")
+    {
+        barrier_up();
+        Axis.reset(2);
+        print("laser is moving to reference pos");
+    }
+    else
+    {
+        error_auto_mode();
+    }
+}
+
 function stop_m_manual()
 {
     
     if(auto_mode == "OFF")
     {
-	if(laser_status == "Marking is active")
-	{
-	   System.stopLaser();      
-	}
-	else
-	{
-	    print("Marking is not active");
-	}
+        if(laser_status == "Marking is active" || laser_status == "Moving...")
+        {
+            System.stopLaser();
+            disconnect_timers();
+        }
+        else
+        {
+            print("Laser and motor are not active");
+        }
     }
     else
     {
@@ -68,31 +83,15 @@ function stop_search(ID)
                 Axis.stop(2);
                 error_cant_find_pump();
                 laser_reference();
-	disconnect_func(stop_search);	
-                //System["sigTimer(int)"].disconnect(stop_search);
+                disconnect_func(stop_search);
             }
         }
         else
         {
             Axis.stop(2);
             laser_in_working_pos = 1;
-            disconnect_func(stop_search);    
-            //System["sigTimer(int)"].disconnect(stop_search);
+            disconnect_func(stop_search);
         }
-    }
-}
-
-function laser_reference()
-{
-    if(auto_mode == "OFF")
-    {
-        barrier_up();
-        Axis.reset(2);
-        print("laser is moving to reference pos");
-    }
-    else
-    {
-        error_auto_mode();
     }
 }
 
@@ -102,10 +101,17 @@ function move_up()
     {
         if (auto_mode == "OFF")
         {
-            print( "Current Z axis poz before: " + Math.round(Axis.getPosition(2)));
-            Axis.move(2, (Axis.getPosition(2) + sb1_v) );
-            laser_in_working_pos = 0;
-            print( "Current Z axis poz after: " + Math.round(Axis.getPosition(2)));
+            if(!(IoPort.getPort(0) & I_PIN_9))
+            {
+                Axis.move(2, (Axis.getPosition(2) + sb1_v) );
+                laser_in_working_pos = 0;
+                timer7 = System.setTimer(time7_ms);
+                start_timer(timer7, max_pos_reached);
+            }
+            else
+            {
+                error_max_pos();
+            }
         }
         else
         {
@@ -118,6 +124,19 @@ function move_up()
     }
 }
 
+function max_pos_reached()
+{
+    if(timer7 == ID)
+    {
+        if(IoPort.getPort(0) & I_PIN_9)
+        {
+            Axis.stop(2);
+            error_max_pos();
+            disconnect_func(max_pos_reached);
+        }
+    }
+}
+
 function move_down()
 {
     if(total_stop == 0)
@@ -125,12 +144,12 @@ function move_down()
         if (auto_mode == "OFF")
         {
             current_pos = Axis.getPosition(2);
-            if(!(IoPort.getPort(0) & I_PIN_8) && (current_pos - sb1_v >= min_pos))
-            {  
-		
+            if(!(IoPort.getPort(0) & I_PIN_8))
+            {
                 Axis.move(2, (Axis.getPosition(2) - sb1_v) );
+                timer7 = System.setTimer(time7_ms);
+                start_timer(timer7, min_pos_reached);
                 laser_in_working_pos = 0;
-                print( "Current Z axis poz after: " + Math.round(Axis.getPosition(2)));
             }
             else
             {
@@ -148,11 +167,23 @@ function move_down()
     }
 }
 
+function min_pos_reached(ID)
+{
+    if(timer7 == ID)
+    {
+        if(IoPort.getPort(0) & I_PIN_8)
+        {
+            Axis.stop(2);
+            error_min_pos();
+            disconnect_func(min_pos_reached);
+        }
+    }
+}
+
 function stop_axis()
 {	
     if (auto_mode == "OFF")
     {
-        print( "Current Z axis poz: " + Math.round(Axis.getPosition(2)));
         Axis.stop(2);
         print ("Stop!");
         disconnect_timers();
@@ -206,5 +237,3 @@ function barrier_down()
         error_total_stop();
     }
 }
-
-

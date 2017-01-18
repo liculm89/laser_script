@@ -21,12 +21,12 @@ function gen_dialog(part_list)
     lbl_auto_status = new Label(); lbl_auto_status.text = "Auto mode: " + auto_mode;
     lbl_auto_status.font = font_lbls;
     auto_box.add(lbl_auto_status);
-      
+
     lbl_marking = new Label(); lbl_marking.text = "Laser status :" + laser_status;
     lbl_marking.font =  font_lbls;
     auto_box.add(lbl_marking);
     
-    cmb_box = new GroupBox(); 
+    cmb_box = new GroupBox();
     auto_box.add(cmb_box);
     
     lbl_select_type = new Label(); lbl_select_type.text = "Select type:";
@@ -56,22 +56,16 @@ function gen_dialog(part_list)
     btn_auto_stop["sigPressed()"].connect(stop_auto);
     btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(200,60);
     cmb_buttons_auto.add(btn_auto_stop);
-    
-   /* lbl_laser_rdy = new Label(); lbl_laser_rdy.text = "Laser ready: " + get_laser_stat(laser_rdy);
-    lbl_laser_rdy.font = font_lbls;
-    auto_box.add(lbl_laser_rdy);*/
-  
+
     dialog.addSpace(200);
     status_box = new GroupBox(); status_box.title= "Status";
     dialog.add(status_box);
     
-
-      
     lbl_laser_moving = new Label(); lbl_laser_moving.text = "Laser motor: " + get_motor_status( laser_moving );
     lbl_laser_moving.font = font_lbls;
     status_box.add(lbl_laser_moving);
     
-     lbl_counter = new Label(); lbl_counter.text = "Pump count:" + brojac;
+    lbl_counter = new Label(); lbl_counter.text = "Pump count:" + brojac;
     lbl_counter.font = font_lbls;
     status_box.add(lbl_counter);
 
@@ -264,9 +258,12 @@ function gui_update(ID)
 
     if (timer1 == ID)
     {
+        //check_laser_state(System.getDeviceStatus());
         //print("tick");
         lbl1.text = "Z axis current position: " + Math.round(Axis.getPosition(2));
         lbl_auto_status_m.text= lbl_auto_status.text = "Auto mode: " + auto_mode;
+
+        check_laser_state(System.getDeviceStatus());
         lbl_marking_m.text = lbl_marking.text = "Laser status :" + laser_status;
         lbl_last_error.text = "Last error:" + last_error;
         lbl_laser_moving.text = "Laser motor: " + get_motor_status(laser_moving);
@@ -284,7 +281,6 @@ function gui_update(ID)
         lb_bar_gore.text = "Barijera gore:" + get_stat(bar_gore);
         lb_bar_dolje.text = "Barijera dolje:" + get_stat(bar_dolje);
 
-        //lbl_laser_rdy.text = "Laser ready: " + get_laser_stat(laser_rdy);
         lbl_counter.text = "Pump count:" + brojac;
     }
 }
@@ -312,4 +308,3 @@ function get_motor_status(input)
     if(input == 1 ){stat= "Moving";} else {stat="Holding position";}
     return stat;
 }
-

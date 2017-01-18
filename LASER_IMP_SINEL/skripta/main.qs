@@ -1,18 +1,18 @@
 /*---------------------------------
  Template and log file paths,
   ----------------------------------*/
-
+/*
 var tmplPath ="G:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath ="G:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
 var logoPath ="G:\\LASER_IMP_SINEL\\Predloge\\" ;
 var logPath= "G:\\LASER_IMP_SINEL\\writeLog.txt";
+*/
 
-/*
 var tmplPath ="D:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath ="D:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
 var logoPath ="D:\\LASER_IMP_SINEL\\Predloge\\" ;
 var logPath= "D:\\LASER_IMP_SINEL\\writeLog.txt";
-*/
+
 var h_Document,hDb, fw;
 var txt_selected_logo = "Izbran logo: ";
 var txt_num_writes = "Število zapisov (od zagona): ";
@@ -76,13 +76,10 @@ var sen_bar_gore = 0;
 var reset_tipka = 0;
 var reg_fault = 0;
 var total_stop = 0;
-var laser_rdy = 0;
+
 var laser_marking = 0;
 var laser_in_working_pos = 0;
 
-/*
-  Function is triggered periodicaly with "timer1", reads inputs and sets flags
-  */
 function set_flags()
 {
     if(IoPort.getPort(0) & I_PIN_7){ sen_linija = 1;} else{sen_linija=0;}
@@ -92,7 +89,6 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_11){ sen_bar_dolje = 1;} else{sen_bar_dolje = 0;}
     if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
     if(IoPort.getPort(0) & I_PIN_20){ reg_fault = 0;} else{reg_fault = 1;}
-//    if(System.isLaserReady()){laser_rdy = 1;}else{laser_rdy = 0;}
 
     if(IoPort.getPort(0) & I_PIN_19)
     {
@@ -104,22 +100,17 @@ function set_flags()
     {
         reset_tipka = 0;
     }
-
+    
     if(IoPort.getPort(0) & I_PIN_12)
     {
         total_stop = 1;
-        disconnect_timers();
         total_stop_func();
-        //error_total_stop();
     }
     else
     {
         total_stop = 0;
-        // total_stop_func();
     }
-    
-    laser_status_int = System.getDeviceStatus();
-    laser_state_var = check_laser_state(laser_status_int);
+    check_laser_state( System.getDeviceStatus());
 }
 
 var senz_state = 0;
@@ -157,19 +148,19 @@ var laser_moving = 0;
 
 function laser_movement(ID)
 {
-     if(timer5 == ID)
+    if(timer5 == ID)
     {
         laser_poz_cur = Axis.getPosition(2);
-	if(laser_poz_cur != laser_poz_before)
-               {
-	    laser_moving = 1;
-                }
-	else
-	{
-	    laser_moving = 0;
-                 }
-    laser_poz_before = laser_poz_cur;
-    } 
+        if(laser_poz_cur != laser_poz_before)
+        {
+            laser_moving = 1;
+        }
+        else
+        {
+            laser_moving = 0;
+        }
+        laser_poz_before = laser_poz_cur;
+    }
 }
 
 function onLneChange(text) 
@@ -251,7 +242,7 @@ function readFile()
 function writeLog(currentNum)
 {
     var today = new Date();
-    print("Writing to log:" + currentNum);
+    //print("Writing to log:" + currentNum);
     var outFile = new File(logPath);
     outFile.open(File.Append);
     outFile.write( "\r\n" + today.toLocaleString() + " - " + currentNum );
@@ -291,6 +282,7 @@ function init_func()
 
     //manually set_flags, debuging only
     set_flags();
+    
     if(!(IoPort.getPort(0) & I_PIN_9))
     {
         Axis.reset(2);
@@ -302,13 +294,9 @@ function init_func()
     }
     
     parts_list_gen();
-    
-    laser_status_int = System.getDeviceStatus();
-    check_laser_state(laser_status_int);
-    
+
     System["sigTimer(int)"].connect(pump_counter);
     System["sigTimer(int)"].connect(laser_movement);
-    //start_timer(timer12, pump_counter);
 }
 
 function main()

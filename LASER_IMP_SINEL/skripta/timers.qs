@@ -30,35 +30,49 @@ function start_timer(timer, func)
 {
     print("connecting timer:" + timer);
     System["sigTimer(int)"].connect(func);
-    timer_list.push(func);
+
+    var count = 0;
+    timer_list.forEach(function (item)
+    {
+        if(func === item)
+        {
+            print("timer already on list")
+            count++;
+        }
+    });
+
+    if(count == 0)
+    {
+        timer_list.push(func);
+    }
 }
 
 function disconnect_func(func)
 {
-   if (timer_list != 0)
-    {  
-       System["sigTimer(int)"].disconnect(func);
-       timer_list.forEach(function (item)
-             {
-	  if (func == item)
-	  {
-	     timer_list.splice(item, 1);
-	  }
-              });
-      print("disconnect func timer list ----------------------:"+timer_list);
-    }    
+    if (timer_list != 0)
+    {
+        System["sigTimer(int)"].disconnect(func);
+        timer_list.forEach(function (item, index)
+        {
+            if (func === item)
+            {
+                timer_list.splice(index, 1);
+            }
+        });
+        print("disconnect func timer list ----------------------:"+timer_list);
+    }
 }
 
 function disconnect_timers()
 {
     if (timer_list != 0)
     {
-        timer_list.forEach(function (item)
-           {
-	    print("funkcija **********************:"+ item);
-	    System["sigTimer(int)"].disconnect(item);
-	    timer_list.splice(item, 1);
-           });
+        timer_list.forEach(function (item, index)
+        {
+            print("funkcija **********************:"+ item);
+            System["sigTimer(int)"].disconnect(item);
+            timer_list.splice(index, 1);
+        });
         
     }
 }

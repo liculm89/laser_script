@@ -70,3 +70,10 @@ function error_min_pos()
     MessageBox.critical( mesg_txt, MessageBox.Ok);
     last_error = mesg_txt;
 }
+
+function error_max_pos()
+{
+    var mesg_txt = "Laser is in highest position!";
+    MessageBox.critical( mesg_txt, MessageBox.Ok);
+    last_error = mesg_txt;
+}
