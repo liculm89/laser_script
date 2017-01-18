@@ -1,18 +1,18 @@
 /*---------------------------------
  Template and log file paths,
   ----------------------------------*/
-/*
+
 var tmplPath ="G:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath ="G:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
 var logoPath ="G:\\LASER_IMP_SINEL\\Predloge\\" ;
 var logPath= "G:\\LASER_IMP_SINEL\\writeLog.txt";
-*/
 
+/*
 var tmplPath ="D:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath ="D:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
 var logoPath ="D:\\LASER_IMP_SINEL\\Predloge\\" ;
 var logPath= "D:\\LASER_IMP_SINEL\\writeLog.txt";
-
+*/
 var h_Document,hDb, fw;
 var txt_selected_logo = "Izbran logo: ";
 var txt_num_writes = "Število zapisov (od zagona): ";
@@ -20,6 +20,7 @@ var txt_num_writes = "Število zapisov (od zagona): ";
 var auto_mode = "OFF";
 var laser_status = "INACTIVE";
 var last_error = "no errors";
+var laser_status_int = 0;
 
 var z_axis_active = 0;
 var sb1_v = 25;
@@ -62,8 +63,6 @@ const O_PIN_6 = 0x100; const O_PIN_14 = 0x1000; const O_PIN_15 = 0x2; const O_PI
 const O_PIN_17 = 0x20; const O_PIN_18 = 0x80; 
 const O_PIN_23 = 0x200; const O_PIN_24 = 0x800;
 
-
-
 //Flags declaration
 var nom = 0;
 var bar_gore= 0;
@@ -80,70 +79,6 @@ var total_stop = 0;
 var laser_rdy = 0;
 var laser_marking = 0;
 var laser_in_working_pos = 0;
-
-
-//Timers declaration
-var time_ms = 10;
-var timer1 = System.setTimer(time_ms);    //gui_update();
-
-var time5_ms = 300;
-var timer5 = System.setTimer(time5_ms);   //wait_for_pump();
-
-var time6_ms = 7000;
-var timer6 = System.setTimer(time6_ms);   //barrier_up_after_marking();
-
-var time7_ms = 20;
-var timer7 = System.setTimer(time7_ms);   //stop_search(); stop_search_auto();
-
-var time9_ms = 600;
-var timer9 = System.setTimer(time9_ms);   //wait_for_barrier();
-
-var time10_ms = 500;
-var timer10 = System.setTimer(time10_ms);     //reset_laser_marking();
-
-var time11_ms = 60;
-var timer11 = System.setTimer(time11_ms); //pump_not_present();
-
-var time12_ms = 100;
-var timer12 = System.setTimer(time12_ms);     //pump_counter();
-
-var timer_list = [];
-
-function start_timer(timer, func)
-{
-    print("connecting timer:" + timer);
-    System["sigTimer(int)"].connect(func);
-    timer_list.push(func);
-}
-
-function disconnect_func(func)
-{
-   if (timer_list != 0)
-    {  
-       System["sigTimer(int)"].disconnect(func);
-       timer_list.forEach(function (item)
-             {
-	  if (func == item)
-	  {
-	     timer_list.splice(item, 1);
-	 }
-              });
-      print("disconnect func timer list ----------------------:"+timer_list);
-    }    
-}
-
-function disconnect_timers()
-{
-    if (timer_list != 0)
-    {
-        timer_list.forEach(function (item)
-           {print("funkcija **********************:"+ item);
-            System["sigTimer(int)"].disconnect(item);
-            timer_list.splice(item, 1);
-        });
-        //timer_list.lenght = 0;
-    }
-}
 
 /*
   Function is triggered periodicaly with "timer1", reads inputs and sets flags
@@ -235,49 +170,6 @@ function laser_movement(ID)
                  }
     laser_poz_before = laser_poz_cur;
     } 
-}
-
-function onQueryStart()
-{  
-}
-
-/*
-  Function is triggered when laser marking is stoped with System call
-  */
-function onLaserStop()
-{
-    print("laser stoped");
-    laser_status ="INACTIVE";
-}
-
-/*
-  Function is triggered when one of axis starts(moving) and on start of laser marking process
-  */
-function onLaserStart()
-{
-    laser_status="ACTIVE";
-}
-
-/*
-  Function is triggered when one of axis stops movement or when marking proces i finished
-  */
-function onLaserEnd()
-{  
-    if(auto_mode == "ON" && pump_present == 0)
-    {
-        barrier_up_auto();
-    }
-    timer10 = System.setTimer(time10_ms);
-    start_timer(timer10, reset_laser_marking);
-    laser_status ="INACTIVE";
-    print("on laser end");
-    laser_marking = 0;
-    //System.incrementCounter("num_writes");
-}
-
-function onClose()
-{
-
 }
 
 function onLneChange(text) 
@@ -410,12 +302,14 @@ function init_func()
     }
     
     parts_list_gen();
+    
+    laser_status_int = System.getDeviceStatus();
+    check_laser_state(laser_status_int);
+    
     System["sigTimer(int)"].connect(pump_counter);
     System["sigTimer(int)"].connect(laser_movement);
     //start_timer(timer12, pump_counter);
 }
-
-var laser_status_int = 0;
 
 function main()
 {
@@ -427,11 +321,6 @@ function main()
     System["sigLaserError(int)"].connect(onLaserError);
     System.sigClose.connect(onClose);
 
-    init_func();
-    
-    laser_status_int = System.getDeviceStatus();
-    check_laser_state(laser_status_int);
-    
-    
+    init_func(); 
     gen_dialog(part_list);
 }

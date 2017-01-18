@@ -2,11 +2,18 @@ function readFile_manual()
 {
     if(total_stop == 0)
     {
-        if(auto_mode == "OFF" && laser_status != "ACTIVE")
+        if(auto_mode == "OFF" )
         {
-            readFile();
-        }
-        else
+	    if(laser_status == "Ready for marking")
+	    {
+		readFile();
+	    }
+	    else
+	    {
+		error_key_sequence();
+	    }
+       }
+         else
         {
             error_auto_mode();
         }
@@ -19,10 +26,17 @@ function readFile_manual()
 
 function stop_m_manual()
 {
+    
     if(auto_mode == "OFF")
     {
-        System.stopLaser();
-        laser_status = "INACTIVE";
+	if(laser_status == "Marking is active")
+	{
+	   System.stopLaser();      
+	}
+	else
+	{
+	    print("Marking is not active");
+	}
     }
     else
     {

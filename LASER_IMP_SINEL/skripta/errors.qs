@@ -45,8 +45,15 @@ function error_total_stop()
 
 function error_laser_not_rdy()
 {
-    var mesg_txt = "Laser is not ready!";
-    MessageBox.critical( mesg_txt, MessageBox.Ok);
+    var mesg_txt = "Restart";
+    MessageBox.critical( label = "Laser not ready", mesg_txt, MessageBox.Ok);
+    last_error = mesg_txt;
+}
+
+function error_key_sequence()
+{
+    var mesg_txt = "Reset key sequence";
+    MessageBox.critical( mesg_txt, MessageBox.Ok, title ='Laser not ready');
     last_error = mesg_txt;
 }
 

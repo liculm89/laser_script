@@ -2,21 +2,26 @@ function start_auto_mode()
 {
     if(total_stop == 0)
     {
-        if(auto_mode == "OFF")
-        {
-            auto_mode = "ON";
-            laser_in_working_pos = 0;
-            laser_ref_auto();
-            timer5 = System.setTimer(time5_ms);
-            start_timer(timer5, wait_for_pump);
-            //System["sigTimer(int)"].connect(wait_for_pump);
-        }
-        else
-        {
-            error_manual_mode();
-        }
-    }
-    
+	if(auto_mode == "OFF")
+	    {
+	               if(laser_status == "Ready for marking")
+	               {
+			   auto_mode = "ON";
+			   laser_in_working_pos = 0;
+			   laser_ref_auto();
+			   timer5 = System.setTimer(time5_ms);
+			   start_timer(timer5, wait_for_pump);
+		}
+		else
+		{
+		    error_key_sequence();
+		 }
+	    }
+	    else
+	    {
+		error_manual_mode();
+	    }
+     }
     else
     {
         error_total_stop();
@@ -76,7 +81,6 @@ function wait_for_barrier(ID)
         {
             laser_move_timed();
             disconnect_func(wait_for_barrier);
-            //System["sigTimer(int)"].disconnect(wait_for_barrier);
         }
     }
     else
@@ -123,7 +127,6 @@ function stop_search_auto(ID)
                 barrier_up_auto();
                 error_cant_find_pump();
 	disconnect_func(stop_search_auto);
-               // System["sigTimer(int)"].disconnect(stop_search_auto);
             }
         }
         else
@@ -134,14 +137,13 @@ function stop_search_auto(ID)
             laser_in_working_pos = 1;
             timer11 = System.setTimer(time11_ms);
             start_timer(timer11, pump_not_present);
-	    disconnect_func(stop_search_auto);
-            //System["sigTimer(int)"].disconnect(stop_search_auto);
+            disconnect_func(stop_search_auto);
+            ;
         }
     }
     if(timer7 == ID && auto_mode =="OFF")
     {
-	disconnect_func(stop_search_auto);
-        //System["sigTimer(int)"].disconnect(stop_search_auto);
+         disconnect_func(stop_search_auto);
     }
 }
 
@@ -222,7 +224,7 @@ function stop_auto(ID)
     {
         auto_mode = "OFF";
         System.stopLaser();
-        laser_status = "INACTIVE";
+       // laser_status = "INACTIVE";
         laser_marking = 0;
         nom= 0;
         disconnect_func(wait_for_pump);
@@ -246,9 +248,8 @@ function reset_laser_marking(ID)
         laser_in_working_pos = 0;
         nom = 0;
         disconnect_func(reset_laser_marking);	
-        //System["sigTimer(int)"].disconnect(reset_laser_marking);
     }
-    if(auto_mode =="OFF")
+    if((timer10 == ID) && (auto_mode =="OFF"))
     {
         disconnect_func(reset_laser_marking);
     }
@@ -278,30 +279,25 @@ function reset_button_func()
     laser_marking = 0;
     laser_in_working_pos = 0;
     nom = 0;
+    disconnect_timers();
     if(auto_mode == "ON")
     {
         auto_mode = "OFF";
-    	
-        disconnect_timers();
-        laser_reference();
         timer11 = System.setTimer(time11_ms);
         start_timer(timer11, reset_auto);
         //start_auto_mode();
     }
     else
     {
-        disconnect_timers();
+        //disconnect_timers();
         laser_reference();
     }
 }
-
-
 
 function reset_auto(ID)
 {
     if((timer11 == ID) && (IoPort.getPort(0) & I_PIN_9))
     {
-
 	start_auto_mode();
 	disconnect_func(reset_auto);
     }

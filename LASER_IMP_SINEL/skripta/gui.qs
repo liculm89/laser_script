@@ -5,7 +5,7 @@ function gen_dialog(part_list)
 {  
     var dialog = new Dialog ("Laser control",Dialog.D_OK,false, 0x00040000);
     dialog.okButtonText = "Done"; dialog.cancelButtonText = "Abort";
-    dialog.setFixedSize(500,720);
+    dialog.setFixedSize(600,720);
     /*--------------------------
      GUI - automatski mod
      ------------------------*/
@@ -17,50 +17,63 @@ function gen_dialog(part_list)
     dialog.newTab("Automatic mode");
     auto_box = new GroupBox(); auto_box.title = "Automatic laser marking";
     dialog.add(auto_box);
-
-    cmb_a = new ComboBox("Select type:", part_list);
+    
+    lbl_auto_status = new Label(); lbl_auto_status.text = "Auto mode: " + auto_mode;
+    lbl_auto_status.font = font_lbls;
+    auto_box.add(lbl_auto_status);
+      
+    lbl_marking = new Label(); lbl_marking.text = "Laser status :" + laser_status;
+    lbl_marking.font =  font_lbls;
+    auto_box.add(lbl_marking);
+    
+    cmb_box = new GroupBox(); 
+    auto_box.add(cmb_box);
+    
+    lbl_select_type = new Label(); lbl_select_type.text = "Select type:";
+    lbl_select_type.font = font_lbls;
+    cmb_box.add(lbl_select_type);
+    
+    cmb_box.newColumn();
+    cmb_a = new ComboBox("",part_list);
     //cmb_a.label.font = font2;
     cmb_a.font = font2;
-    auto_box.add(cmb_a);
+    cmb_box.add(cmb_a);
 
     selectedLogo_a =  new Label(txt_selected_logo + "/");
+    selectedLogo_a.font = font_lbls;
     auto_box.add(selectedLogo_a);
-
+    
+    cmb_buttons_auto = new GroupBox();
+    auto_box.add(cmb_buttons_auto);
+    
     var btn_auto_mode = new PushButton("START AUTO MODE");
     //btn_auto_mode["sigPressed()"].connect(readFile_auto);
     btn_auto_mode["sigPressed()"].connect(start_auto_mode);
     btn_auto_mode.font = font2;  btn_auto_mode.setFixedSize(200,60);
-    auto_box.add(btn_auto_mode);
+    cmb_buttons_auto.add(btn_auto_mode);
     
     var btn_auto_stop = new PushButton("STOP AUTO MODE");
     btn_auto_stop["sigPressed()"].connect(stop_auto);
     btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(200,60);
-    auto_box.add(btn_auto_stop);
+    cmb_buttons_auto.add(btn_auto_stop);
     
-    lbl_laser_rdy = new Label(); lbl_laser_rdy.text = "Laser ready: " + get_laser_stat(laser_rdy);
+   /* lbl_laser_rdy = new Label(); lbl_laser_rdy.text = "Laser ready: " + get_laser_stat(laser_rdy);
     lbl_laser_rdy.font = font_lbls;
-    auto_box.add(lbl_laser_rdy);
-    
-    lbl_laser_moving = new Label(); lbl_laser_moving.text = "Laser motor: " + get_motor_status( laser_moving );
-    lbl_laser_moving.font = font_lbls;
-    auto_box.add(lbl_laser_moving);
-    
-    lbl_counter = new Label(); lbl_counter.text = "Pump count:" + brojac;
-    lbl_counter.font = font_lbls;
-    auto_box.add(lbl_counter);
-
+    auto_box.add(lbl_laser_rdy);*/
+  
     dialog.addSpace(200);
     status_box = new GroupBox(); status_box.title= "Status";
     dialog.add(status_box);
     
-    lbl_auto_status = new Label(); lbl_auto_status.text = "Auto mode: " + auto_mode;
-    lbl_auto_status.font = font_lbls;
-    status_box.add(lbl_auto_status);
+
+      
+    lbl_laser_moving = new Label(); lbl_laser_moving.text = "Laser motor: " + get_motor_status( laser_moving );
+    lbl_laser_moving.font = font_lbls;
+    status_box.add(lbl_laser_moving);
     
-    
-    lbl_marking = new Label(); lbl_marking.text = "Laser status :" + laser_status;
-    lbl_marking.font =  font_lbls;
-    status_box.add(lbl_marking);
+     lbl_counter = new Label(); lbl_counter.text = "Pump count:" + brojac;
+    lbl_counter.font = font_lbls;
+    status_box.add(lbl_counter);
 
     lbl_last_error = new Label(); lbl_last_error.text = "Last error:" + last_error;
     lbl_last_error.font = font_lbls;
@@ -271,7 +284,7 @@ function gui_update(ID)
         lb_bar_gore.text = "Barijera gore:" + get_stat(bar_gore);
         lb_bar_dolje.text = "Barijera dolje:" + get_stat(bar_dolje);
 
-        lbl_laser_rdy.text = "Laser ready: " + get_laser_stat(laser_rdy);
+        //lbl_laser_rdy.text = "Laser ready: " + get_laser_stat(laser_rdy);
         lbl_counter.text = "Pump count:" + brojac;
     }
 }
@@ -290,13 +303,13 @@ function get_stat(input)
 
 function get_laser_stat(input)
 {
-    if(input == 1){stat = "Ready";} else { stat = "Not ready!"}
+    if(input == 1){stat = "Ready for marking";} else { stat = "Not ready for marking!"}
     return stat;
 }
 
 function get_motor_status(input)
 {
-    if(input == 1 ){stat= "Moving";} else {stat="Stoped";}
+    if(input == 1 ){stat= "Moving";} else {stat="Holding position";}
     return stat;
 }
 
