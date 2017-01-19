@@ -229,22 +229,29 @@ function total_stop_func()
 
 function reset_button_func()
 {
-    if(auto_mode == "ON")
+    if(total_stop == 0)
     {
-        System.stopLaser();
-        disconnect_timers();
-        laser_marking = 0;
-        laser_in_working_pos = 0;
-        nom = 0;
-        auto_mode = "OFF";
-        timer11 = System.setTimer(time11_ms);
-        start_timer(timer11, reset_auto);
+	if(auto_mode == "ON")
+	{
+	    System.stopLaser();
+	    disconnect_timers();
+	    laser_marking = 0;
+	    laser_in_working_pos = 0;
+	    nom = 0;
+	    auto_mode = "OFF";
+	    timer11 = System.setTimer(time11_ms);
+	    start_timer(timer11, reset_auto);
+	}
+	if(auto_mode == "OFF")
+	{
+	    System.stopLaser();
+	    disconnect_timers();
+	    laser_reference();
+	}
     }
-    if(auto_mode == "OFF")
+    else
     {
-        System.stopLaser();
-        disconnect_timers();
-        laser_reference();
+	error_total_stop();
     }
 }
 

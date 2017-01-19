@@ -180,6 +180,7 @@ function min_pos_reached(ID)
     }
 }
 
+
 function stop_axis()
 {	
     if (auto_mode == "OFF")

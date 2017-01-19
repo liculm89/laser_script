@@ -1,9 +1,11 @@
 /*-----------------------------------
   Kreiranje GUI aplikacije
   -----------------------------------*/
+ var dialog = new Dialog ("Laser control",Dialog.D_NONE,false, 0x00040000);
+
 function gen_dialog(part_list)
 {  
-    var dialog = new Dialog ("Laser control",Dialog.D_OK,false, 0x00040000);
+   
     dialog.okButtonText = "Done"; dialog.cancelButtonText = "Abort";
     dialog.setFixedSize(600,720);
     /*--------------------------
@@ -11,7 +13,7 @@ function gen_dialog(part_list)
      ------------------------*/
     font1 = "MS Shell Dlg 2,15,-1,5,50,0,0,0,0,0";
     font2 = "Courier New,15,-1,5,80,0,0,0,0,0";
-    font_lbls=  "Courier New,12,-1,5,60,0,0,0,0,0";
+    font_lbls=  "Courier New,12,-1,5,80,0,0,0,0,0";
     font_manual_btns =  "Courier New,12,-1,5,80,0,0,0,0,0";
 
     dialog.newTab("Automatic mode");
@@ -56,8 +58,15 @@ function gen_dialog(part_list)
     btn_auto_stop["sigPressed()"].connect(stop_auto);
     btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(200,60);
     cmb_buttons_auto.add(btn_auto_stop);
-
-    dialog.addSpace(200);
+   
+    gb_shutdown = new GroupBox();
+    dialog.add(gb_shutdown);
+    var btn_shut_down = new PushButton("SHUT DOWN");
+    btn_shut_down["sigPressed()"].connect(shut_down);
+    btn_shut_down.font = font2; btn_shut_down.setFixedSize(200,60);
+    gb_shutdown.add(btn_shut_down);
+    
+    dialog.addSpace(100);
     status_box = new GroupBox(); status_box.title= "Status";
     dialog.add(status_box);
     
@@ -68,6 +77,11 @@ function gen_dialog(part_list)
     lbl_counter = new Label(); lbl_counter.text = "Pump count:" + brojac;
     lbl_counter.font = font_lbls;
     status_box.add(lbl_counter);
+    
+    var btn_pump_count = new PushButton("Reset pump count");
+    btn_pump_count["sigPressed()"].connect(reset_pump_count);
+    btn_pump_count.font = font2; btn_pump_count.setFixedSize(200,60);
+    status_box.add(btn_pump_count)
 
     lbl_last_error = new Label(); lbl_last_error.text = "Last error:" + last_error;
     lbl_last_error.font = font_lbls;
@@ -307,4 +321,18 @@ function get_motor_status(input)
 {
     if(input == 1 ){stat= "Moving";} else {stat="Holding position";}
     return stat;
+}
+
+function shut_down()
+{
+    print("Shutdown started");
+    disconnect_timers();
+    sb1_v = 150;
+    move_down();
+    dialog.close();
+}
+
+function reset_pump_count()
+{
+    brojac = 0;
 }
