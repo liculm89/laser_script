@@ -126,12 +126,12 @@ function move_up()
 
 function max_pos_reached(ID)
 {
-    if(timer7 == ID)
+    if(timer7 == ID && auto_mode == "ON")
     {
         if(IoPort.getPort(0) & I_PIN_9)
         {
             Axis.stop(2);
-            error_max_pos();
+            //error_max_pos();
             disconnect_func(max_pos_reached);
         }
     }
@@ -173,9 +173,12 @@ function min_pos_reached(ID)
     {
         if(IoPort.getPort(0) & I_PIN_8)
         {
-            Axis.stop(2);
-            error_min_pos();
+            print("minimium pos reached");    
+            Axis.stop(2);           
+            //System["sigTimer(int)"].disconnect(min_pos_reached);
+            //disconnect_timers();    
             disconnect_func(min_pos_reached);
+            //error_min_pos();
         }
     }
 }

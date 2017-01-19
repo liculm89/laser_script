@@ -28,13 +28,13 @@ var timer_list = [];
 
 function start_timer(timer, func)
 {
-    print("connecting timer:" + timer);
+    //print("connecting timer:" + timer);
     System["sigTimer(int)"].connect(func);
 
     var count = 0;
     timer_list.forEach(function (item)
     {
-        if(func === item)
+        if(func == item)
         {
             print("timer already on list")
             count++;
@@ -54,12 +54,12 @@ function disconnect_func(func)
         System["sigTimer(int)"].disconnect(func);
         timer_list.forEach(function (item, index)
         {
-            if (func === item)
+            if (func == item)
             {
                 timer_list.splice(index, 1);
             }
         });
-        print("disconnect func timer list ----------------------:"+timer_list);
+        //print("disconnect func timer list ----------------------:"+timer_list);
     }
 }
 
@@ -69,7 +69,7 @@ function disconnect_timers()
     {
         timer_list.forEach(function (item, index)
         {
-            print("funkcija **********************:"+ item);
+            //print("funkcija **********************:"+ item);
             System["sigTimer(int)"].disconnect(item);
             timer_list.splice(index, 1);
         });

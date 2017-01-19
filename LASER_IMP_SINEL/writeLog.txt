@@ -1344,3 +1344,7 @@ Wednesday, January 18, 2017 22:17:32 - Selected P.N.:979523951
 Wednesday, January 18, 2017 22:17:32 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
 Wednesday, January 18, 2017 22:17:36 - Selected P.N.:979523951
 Wednesday, January 18, 2017 22:17:37 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Thursday, January 19, 2017 10:46:18 - Selected P.N.:979523951
+Thursday, January 19, 2017 10:46:19 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Thursday, January 19, 2017 10:51:46 - Selected P.N.:979523841
+Thursday, January 19, 2017 10:51:46 - Read:979523841,870524241,NMT PLUS ,20/40-130,0.05,0.2,3,21,0.16,1,1,IBM,1~230V 50Hz

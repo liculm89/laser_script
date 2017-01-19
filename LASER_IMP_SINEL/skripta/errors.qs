@@ -8,10 +8,14 @@ function onLaserError(error)
     case System.DSP_ERROR_INIT:
         MessageBox.critical( "Board initialization error", MessageBox.Ok );
         break;
-    case System.DSP_DSP_INTERLOCK_ERROR:
+    case System.DSP_INTERLOCK_ERROR:
         msg_txt = "Interlock error, reset laser";
         MessageBox.critical( msg_txt, MessageBox.Ok );
-        last_error = msg_txt;	  		  
+        last_error = msg_txt;	
+    case System.DSP_TEMPERATURE_ERROR:
+        msg_txt = "Temperature error, press total stop to reset laser";
+        MessageBox.critical( msg_txt, MessageBox.Ok );
+        last_error = msg_txt;	
     }
 }
 

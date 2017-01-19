@@ -14,19 +14,11 @@ function onLaserEnd()
 
     if(auto_mode == "ON")
     {
-        //if(pump_present == 0)
-        //{
-        //    barrier_up_auto();
-        //}
-        print("on laser end, auto");
         laser_marking = 0;
-        //timer10 = System.setTimer(time10_ms);
-        //start_timer(timer10, reset_laser_marking);
     }
     
     if(auto_mode == "OFF")
     {
-        print("on laser end, manual");
         laser_marking = 0;
     }
 }

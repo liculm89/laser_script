@@ -196,13 +196,6 @@ function reset_laser_marking(ID)
 {
     if((timer10 == ID) && (pump_present == 0))
     {
-        /*
-        if(IoPort.getPort(0) & I_PIN_11)
-        {
-            barrier_up_auto();
-        }*/
-        //laser_marking = 0;
-        //laser_in_working_pos = 0;
         nom = 0;
         disconnect_func(reset_laser_marking);
     }
@@ -222,8 +215,9 @@ function total_stop_func()
     }
     if(auto_mode == "OFF")
     {
-        System.stopLaser();
+        System.stopLaser();	
         disconnect_timers();
+	error_total_stop();
     }
 }
 

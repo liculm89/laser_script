@@ -26,6 +26,7 @@ var laser_status_int = 0;
 var z_axis_active = 0;
 var sb1_v = 25;
 var part_list;
+var logos_list;
 var min_pos = -15;
 var search_distance = 110;
 var home_pos = 120;
@@ -93,7 +94,6 @@ function set_flags()
 
     if(IoPort.getPort(0) & I_PIN_19)
     {
-        print("reset pressed ******************");
         reset_tipka = 1;
         reset_button_func();
     }
@@ -215,7 +215,7 @@ function readFile()
                     obj.text = objects[i];
                 }
 
-                var l = objects[ (objects.length - 2)];
+                var l = objects[(objects.length - 2)];
                 var m = objects[(objects.length - 1)];
                 var logo = h_Document.getLaserImported("logo");
 
@@ -251,29 +251,6 @@ function writeLog(currentNum)
 }
 
 
-
-/*------------------------------------------------
-    Generiranje liste komada iz excel tabele
-    ------------------------------------------------*/
-function parts_list_gen()
-{
-
-    hDb2 = new Db("QODBC");
-    hDb2.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + xlsPath;
-    if(hDb2.open())
-    {
-        part_list = [];
-        var res = hDb2.exec("SELECT * FROM [List1$]" );
-        for (i = 0; i < res.length; i++){part_list[i] = res[i][0];}
-    }
-    else
-    {
-        print("Result: " + res + " - Error: " + hDb2.lastError());
-        writeLog("Result: " + res + " - Error: " + hDb2.lastError());
-    }
-    hDb2.close();
-}
-
 function init_func()
 {
     var nm;
@@ -295,7 +272,6 @@ function init_func()
     }
     
     parts_list_gen();
-
     System["sigTimer(int)"].connect(pump_counter);
     System["sigTimer(int)"].connect(laser_movement);
 }
