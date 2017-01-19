@@ -105,8 +105,8 @@ function move_up()
             {
                 Axis.move(2, (Axis.getPosition(2) + sb1_v) );
                 laser_in_working_pos = 0;
-                timer7 = System.setTimer(time7_ms);
-                start_timer(timer7, max_pos_reached);
+                timer5 = System.setTimer(time5_ms);
+                start_timer(timer5, max_pos_reached);
             }
             else
             {
@@ -126,7 +126,7 @@ function move_up()
 
 function max_pos_reached(ID)
 {
-    if(timer7 == ID && auto_mode == "ON")
+    if(timer5 == ID && auto_mode == "ON")
     {
         if(IoPort.getPort(0) & I_PIN_9)
         {
@@ -143,12 +143,12 @@ function move_down()
     {
         if (auto_mode == "OFF")
         {
-            current_pos = Axis.getPosition(2);
             if(!(IoPort.getPort(0) & I_PIN_8))
             {
+	print("move down");	
                 Axis.move(2, (Axis.getPosition(2) - sb1_v) );
-                timer7 = System.setTimer(time7_ms);
-                start_timer(timer7, min_pos_reached);
+                timer5 = System.setTimer(time5_ms);
+                start_timer(timer5, min_pos_reached);
                 laser_in_working_pos = 0;
             }
             else
@@ -169,16 +169,13 @@ function move_down()
 
 function min_pos_reached(ID)
 {
-    if(timer7 == ID)
+    if(timer5 == ID)
     {
         if(IoPort.getPort(0) & I_PIN_8)
         {
             print("minimium pos reached");    
             Axis.stop(2);           
-            //System["sigTimer(int)"].disconnect(min_pos_reached);
-            //disconnect_timers();    
             disconnect_func(min_pos_reached);
-            //error_min_pos();
         }
     }
 }

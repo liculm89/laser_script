@@ -60,7 +60,7 @@ function gen_dialog(part_list)
     btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(300,60);
     cmb_buttons_auto.add(btn_auto_stop);
    
-    dialog.addSpace(80);
+    dialog.addSpace(50);
     gb_pump_count = new GroupBox();
     
     

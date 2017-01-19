@@ -93,7 +93,7 @@ function stop_search_auto(ID)
             current_pos = Axis.getPosition(2);
             if((home_pos - current_pos) <= search_distance)
             {
-                print("Laser is moving to working position");
+                //print("Laser is moving to working position");
             }
             else
             {
@@ -164,7 +164,7 @@ function barrier_up_auto()
     bar_dolje = 0;
     IoPort.setPort(0, O_PIN_5);
     bar_gore = 1;
-    print("barrier up");
+    //print("barrier up");
 }
 
 function barrier_down_auto() 
@@ -173,7 +173,7 @@ function barrier_down_auto()
     bar_gore = 0;
     IoPort.setPort(0, O_PIN_23);
     bar_dolje = 1;
-    print("barrier down");
+    //print("barrier down");
 }
 
 function stop_auto(ID)
@@ -211,13 +211,13 @@ function total_stop_func()
         laser_in_working_pos = 0;
         nom = 0;
         auto_mode = "OFF";
-        error_total_stop();
+        //error_total_stop();
     }
     if(auto_mode == "OFF")
     {
         System.stopLaser();	
         disconnect_timers();
-	error_total_stop();
+        //error_total_stop();
     }
 }
 
@@ -233,8 +233,8 @@ function reset_button_func()
 	    laser_in_working_pos = 0;
 	    nom = 0;
 	    auto_mode = "OFF";
-	    timer11 = System.setTimer(time11_ms);
-	    start_timer(timer11, reset_auto);
+	    timer10 = System.setTimer(time10_ms);
+	    start_timer(timer10, reset_auto);
 	}
 	if(auto_mode == "OFF")
 	{
@@ -251,8 +251,9 @@ function reset_button_func()
 
 function reset_auto(ID)
 {
-    if((timer11 == ID) && (IoPort.getPort(0) & I_PIN_9))
+    if((timer10 == ID) && (IoPort.getPort(0) & I_PIN_9))
     {
+	print("starting auto mode!");
         start_auto_mode();
         disconnect_func(reset_auto);
     }

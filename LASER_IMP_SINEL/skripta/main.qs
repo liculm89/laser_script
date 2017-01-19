@@ -1,18 +1,18 @@
 /*---------------------------------
  Template and log file paths,
   ----------------------------------*/
-
+/*
 var tmplPath ="G:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath ="G:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
 var logoPath ="G:\\LASER_IMP_SINEL\\Predloge\\" ;
 var logPath= "G:\\LASER_IMP_SINEL\\writeLog.txt";
 
-/*
+*/
 var tmplPath ="D:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath ="D:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
 var logoPath ="D:\\LASER_IMP_SINEL\\Predloge\\" ;
 var logPath= "D:\\LASER_IMP_SINEL\\writeLog.txt";
-*/
+
 
 var h_Document,hDb, fw;
 var txt_selected_logo = "Izbran logo: ";
@@ -178,7 +178,19 @@ function readFile()
     print("reading and generating");
     //var nm = num.value;
     nm = 1;
-    var pn = cmb.currentItem;
+    
+    if(auto_mode == "ON")
+    {
+	var pn = cmb_a.currentItem;
+    }
+    else
+    {
+	var pn = cmb.currentItem;
+    }
+    
+    
+    
+    
     System.makeCounterVariable("num_writes", 0, 0, nm, 1, 1, 0, 3, 10, true );
 
     if(pn != "" )
