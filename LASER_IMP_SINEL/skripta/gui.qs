@@ -301,7 +301,7 @@ function gen_dialog(part_list)
     gb_ver = new GroupBox("Version");
     dialog.add(gb_ver);
    
-    lbl_title = new Label("Laser control v0.9rc1");
+    lbl_title = new Label("Laser control v0.9rc2");
     lbl_title.font = font_albls;
     gb_ver.add(lbl_title);
     
