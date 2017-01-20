@@ -21,10 +21,6 @@ function gen_dialog(part_list)
     lbl_auto_status = new Label(); lbl_auto_status.text = "Auto mode: " + auto_mode;
     lbl_auto_status.font = font_lbls;
     auto_box.add(lbl_auto_status);
-
-    lbl_marking = new Label(); lbl_marking.text = "Laser status:" + laser_status;
-    lbl_marking.font =  font_lbls;
-    auto_box.add(lbl_marking);
     
     gb_cmb_box = new GroupBox();
     auto_box.add(gb_cmb_box);
@@ -86,6 +82,10 @@ function gen_dialog(part_list)
     
     status_box = new GroupBox(); status_box.title= "Status";
     dialog.add(status_box);
+    
+    lbl_marking = new Label(); lbl_marking.text = "Laser status:" + laser_status;
+    lbl_marking.font =  font_lbls;
+    status_box.add(lbl_marking);
     
     lbl_laser_moving = new Label(); lbl_laser_moving.text = "Laser motor: " + get_motor_status( laser_moving );
     lbl_laser_moving.font = font_lbls;
@@ -235,7 +235,7 @@ function gen_dialog(part_list)
     lbl_marking_m.font = font_lbls;
     status_box.add(lbl_marking_m);
     
-    
+    if(debug_mode){ 
     /*-----------------
       I/O Status tab
       -------------------*/
@@ -291,6 +291,73 @@ function gen_dialog(part_list)
     lb_bar_dolje = new Label(); lb_bar_dolje.text = "Barijera dolje: " + get_stat(bar_dolje);
     lb_bar_dolje.font = font_lbls;
     gb_outputs.add(lb_bar_dolje);
+}
+    /*
+      About tab
+      */
+    dialog.newTab("About");
+    font_albls=  "Courier New,9,-1,5,50,0,0,0,0,0";
+   
+    gb_ver = new GroupBox("Version");
+    dialog.add(gb_ver);
+   
+    lbl_title = new Label("Laser control v0.9rc1");
+    lbl_title.font = font_albls;
+    gb_ver.add(lbl_title);
+    
+    lbl_dscp = new Label("Laser engine script for automatic pump covers marking using VLASE laser.               ");
+    lbl_dscp.font = font_albls;
+    gb_ver.add(lbl_dscp);
+    
+    lbl_cu = new Label("Created in Lighter Suite 6.2.3.15944");
+    lbl_cu.font = font_albls;
+    gb_ver.add(lbl_cu);
+    
+    lbl_licence = new Label("Licence: GNU General Public Licence, GPL-3.0");
+    lbl_licence.font = font_albls;
+    gb_ver.add(lbl_licence);
+    
+    
+    dialog.addSpace(180);
+    gb_contact = new GroupBox("Contact");
+    dialog.add(gb_contact);
+    
+    lbl_name = new Label("SINEL Ltd.");
+    lbl_name.font = font_albls;
+    lbl_name.alignment =1;
+    gb_contact.add(lbl_name);
+  
+    
+    lbl_dsc = new Label("Sinel, company for industrial automation, service and trade, limited.            ");
+    lbl_dsc.font = font_albls;
+    gb_contact.add(lbl_dsc);
+    
+    lbl_addr = new Label("Rudarska 3 p.p. 101, 52220 Labin, Croatia");
+    lbl_addr.font = font_albls;
+    gb_contact.add(lbl_addr);
+    
+    
+    lbl_phone = new Label("Phone: +385 (0) 52 884 000");
+    lbl_phone.font = font_albls;
+    gb_contact.add(lbl_phone);
+    
+    lbl_fax = new Label("Fax: +385 (0) 52 884 019");
+    lbl_fax.font = font_albls;
+    gb_contact.add(lbl_fax);
+    
+    lbl_email = new Label("email: sinel@sinel.hr");
+    lbl_email.font = font_albls;
+    gb_contact.add(lbl_email);
+    
+    lbl_web = new Label("web: www.sinel.hr");
+    lbl_web.font =font_albls;
+    gb_contact.add(lbl_web);
+    
+    gb_logo = new GroupBox("Logo");
+    dialog.add(gb_logo);
+    lbl_sinel_logo = new Label();
+    lbl_sinel_logo.loadImage(resPath + "sinel logo.png", aspectRatioMode = 1, w=150, h = 550);
+    gb_logo.add(lbl_sinel_logo);
     
     dialog.show();
     
@@ -312,20 +379,21 @@ function gui_update(ID)
         lbl_marking_m.text = lbl_marking.text = "Laser status:" + laser_status;
         lbl_last_error.text = "Last error:" + last_error;
         lbl_laser_moving.text = "Laser motor: " + get_motor_status(laser_moving);
+	
+        if(debug_mode){ 
+	    lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
+	    lb_sen_bar_gore.text = "Senzor laserske barijere gore:" + get_stat(sen_bar_gore);
+	    lb_sen_bar_dolje.text = "Senzor laserske barijere dolje:" + get_stat(sen_bar_dolje);
+	    lb_sen_laser_gore.text = "Senzor laserske glave gore:" + get_stat(sen_laser_gore);
+	    lb_sen_laser_dolje.text = "Senzor laserske glave dolje:" + get_stat(sen_laser_dolje);
+	    lb_sen_optika.text = "Optički senzor:" + get_stat(sen_optika);
+	    lb_reg_fault.text = "Regulator fault:" + get_stat(reg_fault);
+	    lb_total_stop.text = "Total stop:" + get_stat(total_stop);
+	    lb_reset_tipka.text = "Reset tipka:" + get_stat(reset_tipka);
 
-        lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
-        lb_sen_bar_gore.text = "Senzor laserske barijere gore:" + get_stat(sen_bar_gore);
-        lb_sen_bar_dolje.text = "Senzor laserske barijere dolje:" + get_stat(sen_bar_dolje);
-        lb_sen_laser_gore.text = "Senzor laserske glave gore:" + get_stat(sen_laser_gore);
-        lb_sen_laser_dolje.text = "Senzor laserske glave dolje:" + get_stat(sen_laser_dolje);
-        lb_sen_optika.text = "Optički senzor:" + get_stat(sen_optika);
-        lb_reg_fault.text = "Regulator fault:" + get_stat(reg_fault);
-        lb_total_stop.text = "Total stop:" + get_stat(total_stop);
-        lb_reset_tipka.text = "Reset tipka:" + get_stat(reset_tipka);
-
-        lb_bar_gore.text = "Barijera gore:" + get_stat(bar_gore);
-        lb_bar_dolje.text = "Barijera dolje:" + get_stat(bar_dolje);
-
+	    lb_bar_gore.text = "Barijera gore:" + get_stat(bar_gore);
+	    lb_bar_dolje.text = "Barijera dolje:" + get_stat(bar_dolje);
+        }
         lbl_counter.text = "Pumps counter:" + brojac;
     }
 }

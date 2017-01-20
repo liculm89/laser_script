@@ -61,7 +61,7 @@ function check_laser_state(state)
         laser_status = "Warming up";
         break;
     case System.LASER_WAIT:
-        laser_status =" Waiting...";
+        laser_status =" Waiting for key sequence";
         break;
     case System.LASER_STAND_BY:
         laser_status ="Stand by";

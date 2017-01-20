@@ -1,19 +1,20 @@
 /*---------------------------------
  Template and log file paths,
   ----------------------------------*/
-/*
+
 var tmplPath ="G:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath ="G:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
 var logoPath ="G:\\LASER_IMP_SINEL\\Predloge\\" ;
 var logPath= "G:\\LASER_IMP_SINEL\\writeLog.txt";
-*/
+var resPath = "G:\\LASER_IMP_SINEL\\res\\";
 
+/*
 var tmplPath ="D:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath ="D:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
 var logoPath ="D:\\LASER_IMP_SINEL\\Predloge\\" ;
 var logPath= "D:\\LASER_IMP_SINEL\\writeLog.txt";
-
-
+var resPath = "D:\\LASER_IMP_SINEL\\res\\";
+*/
 var h_Document,hDb, fw;
 var part_list, logos_list = [];
 var txt_selected_logo = "Izbran logo: ";
@@ -61,7 +62,7 @@ function readFile()
                 h_Document = new LaserDoc;
                 h_Document.load(tmplPath);
 
-                print("Read:" + objects);
+	if(debug_mode){ print("Read:" + objects);}
                 writeLog("Read:" + objects);
 
                 laser_objects = ["obj_a", "obj_b", "obj_c", "obj_d", "obj_e", "obj_f", "obj_g", "obj_h", "obj_i", "obj_j", "obj_k", "obj_l", "obj_m"] ;
@@ -77,8 +78,7 @@ function readFile()
                 var logo = h_Document.getLaserImported("logo");
 
                 logo.importFile(logoPath + l + ".xlp");
-                selectedLogo.text = selectedLogo_a.text = txt_selected_logo + l;
-
+		
                 var obj_m = h_Document.getLaserObject(laser_objects[(laser_objects.length-1)]);
                 obj_m.text = m;
 

@@ -12,4 +12,5 @@
  <script>laser_events.qs</script>
  <script>timers.qs</script>
  <script>filesIO.qs</script>
+ <resource>sinel logo.png</resource>
 </project>
