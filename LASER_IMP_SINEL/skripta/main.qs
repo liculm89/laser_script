@@ -201,7 +201,7 @@ function main()
 	gen_dialog(part_list);
     }
     else
-    {  
+    {  	 stop_axis();
 	 error_init_fail();
     }
   
