@@ -372,11 +372,11 @@ function parts_list_gen()
 	    part_list[i] = res[i][0];
 	    logos_list[i] = res[i][11];
 	}
-    //print(logos_list);
+    
     }
     else
     {
-        print("Result: " + res + " - Error: " + hDb2.lastError());
+        if(debug_mode){ print("Result: " + res + " - Error: " + hDb2.lastError());}
         writeLog("Result: " + res + " - Error: " + hDb2.lastError());
     }
     hDb2.close();
@@ -407,6 +407,8 @@ function logo_selection_m(selected)
 
 function logo_init(curr_item, label)
 {
+    if( part_list != 0)
+    {	
     part_list.forEach(function (item, index)
         {
             if ( item == curr_item)
@@ -414,7 +416,7 @@ function logo_init(curr_item, label)
 	label.text = txt_selected_logo + logos_list[index];
             }
         });
-
+}
 }
 
 function shut_down()

@@ -30,7 +30,7 @@ function laser_reference()
     {
         barrier_up();
         Axis.reset(2);
-        print("laser is moving to reference pos");
+        if(debug_mode){ print("Laser is moving to reference pos");}
     }
     else
     {
@@ -50,7 +50,7 @@ function stop_m_manual()
         }
         else
         {
-            print("Laser and motor are not active");
+	    if(debug_mode){ print("Laser and motor are not active");}
         }
     }
     else
@@ -144,8 +144,7 @@ function move_down()
         if (auto_mode == "OFF")
         {
             if(!(IoPort.getPort(0) & I_PIN_8))
-            {
-	print("move down");	
+            {	
                 Axis.move(2, (Axis.getPosition(2) - sb1_v) );
                 timer5 = System.setTimer(time5_ms);
                 start_timer(timer5, min_pos_reached);
@@ -173,7 +172,7 @@ function min_pos_reached(ID)
     {
         if(IoPort.getPort(0) & I_PIN_8)
         {
-            print("minimium pos reached");    
+             if(debug_mode){ print("minimium pos reached");}    
             Axis.stop(2);           
             disconnect_func(min_pos_reached);
         }
@@ -186,7 +185,7 @@ function stop_axis()
     if (auto_mode == "OFF")
     {
         Axis.stop(2);
-        print ("Stop!");
+        if(debug_mode){ print ("Stop!");}
         disconnect_timers();
     }
     else

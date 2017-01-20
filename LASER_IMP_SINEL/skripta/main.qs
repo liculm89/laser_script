@@ -1,40 +1,5 @@
-/*---------------------------------
- Template and log file paths,
-  ----------------------------------*/
-/*
-var tmplPath ="G:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
-var xlsPath ="G:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
-var logoPath ="G:\\LASER_IMP_SINEL\\Predloge\\" ;
-var logPath= "G:\\LASER_IMP_SINEL\\writeLog.txt";
-
-*/
-var tmplPath ="D:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
-var xlsPath ="D:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
-var logoPath ="D:\\LASER_IMP_SINEL\\Predloge\\" ;
-var logPath= "D:\\LASER_IMP_SINEL\\writeLog.txt";
-
-
-var h_Document,hDb, fw;
-var txt_selected_logo = "Izbran logo: ";
-var txt_num_writes = "Število zapisov (od zagona): ";
-
-var auto_mode = "OFF";
-var laser_status = "INACTIVE";
-var last_error = "no errors";
-var laser_status_int = 0;
-
-var z_axis_active = 0;
-var sb1_v = 25;
-var part_list;
-var logos_list;
-var min_pos = -15;
-var search_distance = 110;
-var home_pos = 120;
-var current_pos = 0;
-const num_writes;
-
 /*---------------------------------------------------------
-  Postavljanje globalnih varijabli PIN-ova
+ Inputs and outputs
   --------------------------------------------------------*/
 /*
 Popis funkcija pinova
@@ -53,7 +18,6 @@ I_PIN 19 - Reset tipkalo			- INPUT
 I_PIN 20 - Regulator fault			- INPUT
 I_PIN 11 - Total stop input         - INPUT
 */
-
 //Input PINs
 const I_PIN_7 = 0x1; const I_PIN_8 = 0x2; const I_PIN_9 = 0x4;
 const I_PIN_10 = 0x8; const I_PIN_11 = 0x10; const I_PIN_12 = 0x20; 
@@ -65,23 +29,28 @@ const O_PIN_6 = 0x100; const O_PIN_14 = 0x1000; const O_PIN_15 = 0x2; const O_PI
 const O_PIN_17 = 0x20; const O_PIN_18 = 0x80; 
 const O_PIN_23 = 0x200; const O_PIN_24 = 0x800;
 
-//Flags declaration
-var nom = 0;
-var bar_gore= 0;
-var bar_dolje = 0;
-var sen_linija = 0;
-var sen_laser_gore = 0;
-var sen_laser_dolje = 0;
-var sen_optika = 0;
-var sen_bar_dolje = 0;
-var sen_bar_gore = 0;
-var reset_tipka = 0;
-var reg_fault = 0;
-var total_stop = 0;
+/*-------------------------------------------
+Flags and variables declaration
+--------------------------------------------*/
+var auto_mode = "OFF";
+var laser_status = "INACTIVE";
+var last_error = "no errors";
 
-var laser_marking = 0;
-var laser_in_working_pos = 0;
+var nom, bar_gore, bar_dolje, sen_linija, sen_laser_gore, sen_laser_dolje = 0;
+var sen_optika, sen_bar_dolje, sen_bar_gore, reset_tipka, reg_fault, total_stop = 0;
+var laser_marking, laser_in_working_pos = 0;
 
+var z_axis_active = 0;
+var sb1_v = 25;
+var min_pos = 5;
+var search_distance = 110;
+var home_pos = 120;
+var current_pos = 0;
+const num_writes;
+
+/*
+  Read inputs and sets flags
+  */
 function set_flags()
 {
     if(IoPort.getPort(0) & I_PIN_7){ sen_linija = 1;} else{sen_linija=0;}
@@ -111,14 +80,14 @@ function set_flags()
     {
         total_stop = 0;
     }
-    check_laser_state( System.getDeviceStatus());
+    check_laser_state(System.getDeviceStatus());
 }
 
-var senz_state = 0;
-var last_senz_state = 0;
+var senz_state, last_senz_state, pump_present = 0;
 var brojac = 0;
-var pump_present = 0;
-
+/*
+  Counts pumps and sets pump_present flag
+  */
 function pump_counter(ID)
 {
     if(timer12 == ID)
@@ -130,12 +99,12 @@ function pump_counter(ID)
             if(senz_state == 1)
             {
                 brojac++;
-                print("pump counter: " + brojac);
+	if(debug_mode){ print("pump counter: " + brojac);}
                 pump_present = 1;
             }
             else
             {
-                print("pump left");
+	if(debug_mode){ print("pump left");}
                 pump_present = 0;
             }
         }
@@ -147,6 +116,9 @@ var laser_poz_before = Axis.getPosition(2);
 var laser_poz_cur =  Axis.getPosition(2);
 var laser_moving = 0;
 
+/*
+  Checks if laser is moving
+  */
 function laser_movement(ID)
 {
     if(timer5 == ID)
@@ -170,122 +142,42 @@ function onLneChange(text)
 function onOutOfRange () 
 {print("onOutOfRange()");}
 
-/*-----------------------------------------------------------------------------------------------
-  Template reading, laser document creation and execution function
-  -----------------------------------------------------------------------------------------------*/
-function readFile()
-{  
-    print("reading and generating");
-    //var nm = num.value;
-    nm = 1;
-    
-    if(auto_mode == "ON")
-    {
-	var pn = cmb_a.currentItem;
-    }
-    else
-    {
-	var pn = cmb.currentItem;
-    }
-    
-    
-    
-    
-    System.makeCounterVariable("num_writes", 0, 0, nm, 1, 1, 0, 3, 10, true );
-
-    if(pn != "" )
-    {
-        print("Selected P.N.: " + pn );
-        print("Number of copies.: " + nm );
-        writeLog("Selected P.N.:" + pn);
-        hDb = new Db("QODBC");
-        hDb.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + xlsPath;
-
-        if(hDb.open())
-        {
-            print("entered");
-            var res = hDb.exec("SELECT * FROM [List1$] WHERE PN LIKE '" + pn + "'");
-            var objects = [];
-
-            if (typeof res[0] == "object")
-            {
-                for ( i = 0; i < res[0].length; i ++)
-                {
-                    objects[i] = res[0][i];
-                }
-                h_Document = new LaserDoc;
-                h_Document.load(tmplPath);
-
-                print("Read:" + objects);
-                writeLog("Read:" + objects);
-
-                laser_objects = ["obj_a", "obj_b", "obj_c", "obj_d", "obj_e", "obj_f", "obj_g", "obj_h", "obj_i", "obj_j", "obj_k", "obj_l", "obj_m"] ;
-
-                for( i = 0; i < (laser_objects.length - 2) ; i++)
-                {
-                    var obj =  h_Document.getLaserObject(laser_objects[i]);
-                    obj.text = objects[i];
-                }
-
-                var l = objects[(objects.length - 2)];
-                var m = objects[(objects.length - 1)];
-                var logo = h_Document.getLaserImported("logo");
-
-                logo.importFile(logoPath + l + ".xlp");
-                selectedLogo.text = selectedLogo_a.text = txt_selected_logo + l;
-
-                var obj_m = h_Document.getLaserObject(laser_objects[(laser_objects.length-1)]);
-                obj_m.text = m;
-
-                print( "Document marking..." );
-                h_Document.update();
-                h_Document.execute();
-            }
-        }
-        else
-        {
-            print("Result: " + res + " - Error: " + hDb.lastError());
-            writeLog("Result: " + res + " - Error: " + hDb.lastError());
-        }
-    }        hDb.close();
-}
-
-
-//Log creating/appending function
-function writeLog(currentNum)
-{
-    var today = new Date();
-    //print("Writing to log:" + currentNum);
-    var outFile = new File(logPath);
-    outFile.open(File.Append);
-    outFile.write( "\r\n" + today.toLocaleString() + " - " + currentNum );
-    outFile.close();
-}
 
 
 function init_func()
 {
     var nm;
     System.makeCounterVariable("num_writes", 0, 0, nm, 1, 1, 0, 3, 10, true );
+    //Connects function set_flags() to trigger on input signal change
     IoPort.checkPort(0);
     IoPort.sigInputChange.connect(set_flags);
-
-    //manually set_flags, debuging only
+    
+    //Initial flags setup
     set_flags();
     
+    //If laser is not referenced, initiate laser referencing
     if(!(IoPort.getPort(0) & I_PIN_9))
     {
         Axis.reset(2);
     }
-
+    
+    //If barrier is not up,rises barrier
     if(IoPort.getPort(0) & I_PIN_11)
     {
         barrier_up();
     }
     
+    //Generates parts_list[] from excel database
     parts_list_gen();
+    
+    //Pump counter and laser movement functions connection
     System["sigTimer(int)"].connect(pump_counter);
     System["sigTimer(int)"].connect(laser_movement);
+
+    if (typeof part_list != "undefined")
+    {return 1;}
+    else
+    {return 0;}
 }
 
 function main()
@@ -297,7 +189,21 @@ function main()
     System["sigLaserEvent(int)"].connect(get_laser_events);
     System["sigLaserError(int)"].connect(onLaserError);
     System.sigClose.connect(onClose);
-
+    //sets debugging on=1 and off=0
+    debug_mode = 0;
+    
+     //Starts GUI application
     init_func(); 
-    gen_dialog(part_list);
+    init_passed= init_func();
+    if(init_passed)
+    {
+	if(debug_mode){ print("Init passed");}
+	gen_dialog(part_list);
+    }
+    else
+    {  
+	 error_init_fail();
+    }
+  
+  
 }

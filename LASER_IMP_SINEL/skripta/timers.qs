@@ -36,13 +36,14 @@ function start_timer(timer, func)
     {
         if(func == item)
         {
-            print("timer already on list")
+            if(debug_mode){ print("timer already on list");}    
             count++;
         }
     });
 
     if(count == 0)
     {
+        if(debug_mode){ print("adding timer to list");}	
         timer_list.push(func);
     }
 }
@@ -59,7 +60,6 @@ function disconnect_func(func)
                 timer_list.splice(index, 1);
             }
         });
-        //print("disconnect func timer list ----------------------:"+timer_list);
     }
 }
 
@@ -69,7 +69,6 @@ function disconnect_timers()
     {
         timer_list.forEach(function (item, index)
         {
-            //print("funkcija **********************:"+ item);
             System["sigTimer(int)"].disconnect(item);
             timer_list.splice(index, 1);
         });

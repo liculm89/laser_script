@@ -11,4 +11,5 @@
  <script>manual_mode.qs</script>
  <script>laser_events.qs</script>
  <script>timers.qs</script>
+ <script>filesIO.qs</script>
 </project>

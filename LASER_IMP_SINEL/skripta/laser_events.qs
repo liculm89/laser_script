@@ -11,16 +11,7 @@ function onLaserStart()
   */
 function onLaserEnd()
 {  
-
-    if(auto_mode == "ON")
-    {
-        laser_marking = 0;
-    }
-    
-    if(auto_mode == "OFF")
-    {
-        laser_marking = 0;
-    }
+     laser_marking = 0;
 }
 
 /*
@@ -28,8 +19,7 @@ function onLaserEnd()
   */
 function onLaserStop()
 {
-    print("laser stoped");
-    //laser_status ="INACTIVE";
+    if(debug_mode){ print("laser stoped");}
 }
 
 
@@ -54,13 +44,11 @@ function get_laser_events(event)
         break;
     case System.EVENT_LASER_WARM_UP:
         print("laser is warming up");
-        print("Laser warm_up: " + System.LASER_WARM_UP)
         break;
-
     }
 }
 
-var laser_state_msg = "Unknown";
+var laser_state_msg = "No errors";
 
 function check_laser_state(state)
 {

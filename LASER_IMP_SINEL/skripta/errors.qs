@@ -81,3 +81,9 @@ function error_max_pos()
     MessageBox.critical( mesg_txt, MessageBox.Ok);
     last_error = mesg_txt;
 }
+
+function error_init_fail()
+{
+    var mesg_txt = "Initialization failed, database file missing or corrupted";
+     MessageBox.critical( mesg_txt, MessageBox.Ok);
+}
