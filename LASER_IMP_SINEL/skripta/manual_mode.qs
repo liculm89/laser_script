@@ -30,7 +30,7 @@ function laser_reference()
     {
         barrier_up();
         Axis.reset(2);
-        if(debug_mode){ print("Laser is moving to reference pos");}
+        if(debug_mode){print("Laser is moving to reference pos");}
     }
     else
     {
@@ -69,14 +69,14 @@ function search_working_pos()
 
 function stop_search(ID)
 {
-    if(timer7 == ID)
+    if(timers[1] == ID)
     {
         if(IoPort.getPort(0) & I_PIN_10)
         {
             current_pos = Axis.getPosition(2);
             if((home_pos - current_pos) <= search_distance)
             {
-                //print("Laser is moving to working position");
+                if(debug_mode){print("Laser is moving to working position");}
             }
             else
             {
@@ -105,8 +105,8 @@ function move_up()
             {
                 Axis.move(2, (Axis.getPosition(2) + sb1_v) );
                 laser_in_working_pos = 0;
-                timer5 = System.setTimer(time5_ms);
-                start_timer(timer5, max_pos_reached);
+                timers[4] = System.setTimer(times[4]);
+                start_timer(timers[4], max_pos_reached);
             }
             else
             {

@@ -31,7 +31,6 @@ function gen_dialog(part_list)
     
     gb_cmb_box.newColumn();
     cmb_a = new ComboBox("",part_list);
-    //cmb_a.label.font = font2;
     cmb_a.font = font2;
     gb_cmb_box.add(cmb_a);
     cmb_a["sigIndexChanged(int)"].connect(logo_selection);
@@ -58,7 +57,6 @@ function gen_dialog(part_list)
    
     dialog.addSpace(50);
     gb_pump_count = new GroupBox();
-    
     
     lbl_counter = new Label(); lbl_counter.text = "Pumps counter:" + brojac;
     lbl_counter.font = font_lbls;
@@ -90,8 +88,6 @@ function gen_dialog(part_list)
     lbl_laser_moving = new Label(); lbl_laser_moving.text = "Laser motor: " + get_motor_status( laser_moving );
     lbl_laser_moving.font = font_lbls;
     status_box.add(lbl_laser_moving);
-    
-  
     
     lbl_last_error = new Label(); lbl_last_error.text = "Last error:" + last_error;
     lbl_last_error.font = font_lbls;
@@ -188,21 +184,11 @@ function gen_dialog(part_list)
     cmb["sigIndexChanged(int)"].connect(logo_selection_m);
     lbl_select_m = new Label(); lbl_select_m.text = ("Select type:");
     lbl_select_m.font =font_manual_btns;
-    gb_select_m.add(lbl_select_m);
-						  
+    gb_select_m.add(lbl_select_m);					  
     
     gb_select_m.newColumn();
     gb_select_m.add(cmb);
-    
-    /*
-    num = new NumberEdit("Prosim vnesite količino: ", 1);
-    num.decimals = 0;  num.minimum = 1;
 
-    num["sigNumberChanged(double)"].connect(onLneChange);
-    num["sigOutOfRange()"].connect(onOutOfRange);
-    gb_mark.add( num );
-    */
-    
     selectedLogo = new Label(txt_selected_logo + "/");
     selectedLogo.font = font_lbls;
     logo_init(cmb.currentItem, selectedLogo);
@@ -213,8 +199,7 @@ function gen_dialog(part_list)
     btn["sigPressed()"].connect(readFile_manual);
     btn.setFixedSize(160,50);
     btn.font =  font_manual_btns;
-    gb_mark.add(btn);
-    
+    gb_mark.add(btn);   
     
     var btn_stop_m = new PushButton("STOP MARKING!");
     btn_stop_m["sigPressed()"].connect(stop_m_manual);
@@ -316,8 +301,7 @@ function gen_dialog(part_list)
     lbl_licence = new Label("Licence: GNU General Public Licence, GPL-3.0");
     lbl_licence.font = font_albls;
     gb_ver.add(lbl_licence);
-    
-    
+
     dialog.addSpace(180);
     gb_contact = new GroupBox("Contact");
     dialog.add(gb_contact);
@@ -327,7 +311,6 @@ function gen_dialog(part_list)
     lbl_name.alignment =1;
     gb_contact.add(lbl_name);
   
-    
     lbl_dsc = new Label("Sinel, company for industrial automation, service and trade, limited.            ");
     lbl_dsc.font = font_albls;
     gb_contact.add(lbl_dsc);
@@ -335,7 +318,6 @@ function gen_dialog(part_list)
     lbl_addr = new Label("Rudarska 3 p.p. 101, 52220 Labin, Croatia");
     lbl_addr.font = font_albls;
     gb_contact.add(lbl_addr);
-    
     
     lbl_phone = new Label("Phone: +385 (0) 52 884 000");
     lbl_phone.font = font_albls;
@@ -367,40 +349,36 @@ function gen_dialog(part_list)
 
 function gui_update(ID)
 {
-
-    if (timer1 == ID)
+    if (timers[0] == ID)
     {
-        //check_laser_state(System.getDeviceStatus());
-        //print("tick");
         lbl1.text = "Z axis current position: " + Math.round(Axis.getPosition(2));
         lbl_auto_status_m.text= lbl_auto_status.text = "Auto mode: " + auto_mode;
-
         check_laser_state(System.getDeviceStatus());
         lbl_marking_m.text = lbl_marking.text = "Laser status:" + laser_status;
         lbl_last_error.text = "Last error:" + last_error;
         lbl_laser_moving.text = "Laser motor: " + get_motor_status(laser_moving);
-	
-        if(debug_mode){ 
-	    lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
-	    lb_sen_bar_gore.text = "Senzor laserske barijere gore:" + get_stat(sen_bar_gore);
-	    lb_sen_bar_dolje.text = "Senzor laserske barijere dolje:" + get_stat(sen_bar_dolje);
-	    lb_sen_laser_gore.text = "Senzor laserske glave gore:" + get_stat(sen_laser_gore);
-	    lb_sen_laser_dolje.text = "Senzor laserske glave dolje:" + get_stat(sen_laser_dolje);
-	    lb_sen_optika.text = "Optički senzor:" + get_stat(sen_optika);
-	    lb_reg_fault.text = "Regulator fault:" + get_stat(reg_fault);
-	    lb_total_stop.text = "Total stop:" + get_stat(total_stop);
-	    lb_reset_tipka.text = "Reset tipka:" + get_stat(reset_tipka);
-
-	    lb_bar_gore.text = "Barijera gore:" + get_stat(bar_gore);
-	    lb_bar_dolje.text = "Barijera dolje:" + get_stat(bar_dolje);
-        }
         lbl_counter.text = "Pumps counter:" + brojac;
+
+        if(debug_mode)
+        {
+            lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
+            lb_sen_bar_gore.text = "Senzor laserske barijere gore:" + get_stat(sen_bar_gore);
+            lb_sen_bar_dolje.text = "Senzor laserske barijere dolje:" + get_stat(sen_bar_dolje);
+            lb_sen_laser_gore.text = "Senzor laserske glave gore:" + get_stat(sen_laser_gore);
+            lb_sen_laser_dolje.text = "Senzor laserske glave dolje:" + get_stat(sen_laser_dolje);
+            lb_sen_optika.text = "Optički senzor:" + get_stat(sen_optika);
+            lb_reg_fault.text = "Regulator fault:" + get_stat(reg_fault);
+            lb_total_stop.text = "Total stop:" + get_stat(total_stop);
+            lb_reset_tipka.text = "Reset tipka:" + get_stat(reset_tipka);
+            lb_bar_gore.text = "Barijera gore:" + get_stat(bar_gore);
+            lb_bar_dolje.text = "Barijera dolje:" + get_stat(bar_dolje);
+        }
+
     }
 }
 
 function sb1_ch(value)
 {
-    //print(value);
     sb1_v = value;
 }
 
@@ -422,7 +400,6 @@ function get_motor_status(input)
     return stat;
 }
 
-
 /*------------------------------------------------
     Generiranje liste komada iz excel tabele
     ------------------------------------------------*/
@@ -436,11 +413,11 @@ function parts_list_gen()
         logos_list = [];
         var res = hDb2.exec("SELECT * FROM [List1$]" );
         for (i = 0; i < res.length; i++)
-	{
-	    part_list[i] = res[i][0];
-	    logos_list[i] = res[i][11];
-	}
-    
+        {
+            part_list[i] = res[i][0];
+            logos_list[i] = res[i][11];
+        }
+
     }
     else
     {
@@ -453,46 +430,43 @@ function parts_list_gen()
 function logo_selection(selected)
 {
     logos_list.forEach(function (item, index)
+    {
+        if (index == selected)
         {
-            if ( index == selected)
-            {
-	selectedLogo_a.text = txt_selected_logo + item;
-            }
-        });
+            selectedLogo_a.text = txt_selected_logo + item;
+        }
+    });
 }
 
 function logo_selection_m(selected)
 {
     logos_list.forEach(function (item, index)
+    {
+        if (index == selected)
         {
-            if ( index == selected)
-             {
-	selectedLogo.text =txt_selected_logo + item;
-            }
-        });
+            selectedLogo.text = txt_selected_logo + item;
+        }
+    });
 }
-
 
 function logo_init(curr_item, label)
 {
     if( part_list != 0)
-    {	
-    part_list.forEach(function (item, index)
+    {
+        part_list.forEach(function (item, index)
         {
-            if ( item == curr_item)
+            if (item == curr_item)
             {
-	label.text = txt_selected_logo + logos_list[index];
+                label.text = txt_selected_logo + logos_list[index];
             }
         });
-}
+    }
 }
 
 function shut_down()
 {
     print("Shutdown started");
     disconnect_timers();
-    sb1_v = 150;
-    move_down();
     dialog.OK();
 }
 

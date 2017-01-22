@@ -7,11 +7,11 @@ function start_auto_mode()
             if(laser_status == "Ready for marking")
             {
                 auto_mode = "ON";
-	if(debug_mode){ print("Auto mode started");}
+                if(debug_mode){ print("Auto mode started");}
                 laser_in_working_pos = 0;
                 laser_ref_auto();
-                timer5 = System.setTimer(time5_ms);
-                start_timer(timer5, wait_for_pump);
+                timers[4] = System.setTimer(times[4]);
+                start_timer(timers[4], wait_for_pump);
             }
             else
             {
@@ -28,7 +28,6 @@ function start_auto_mode()
         error_total_stop();
     }
 }
-
 
 function stop_auto(ID)
 {      	
@@ -57,7 +56,7 @@ function laser_ref_auto()
 
 function wait_for_pump(ID)
 {
-    if((timer5 == ID) && (auto_mode == "ON") && (pump_present == 1))
+    if((timers[4] == ID) && (auto_mode == "ON") && (pump_present == 1))
     {
         if(debug_mode)
 	{ 
@@ -69,13 +68,13 @@ function wait_for_pump(ID)
             if(laser_in_working_pos == 0)
             {
                 barrier_down_auto();
-                timer9 = System.setTimer(time9_ms);
-                start_timer(timer9,wait_for_barrier);
+                timers[6] = System.setTimer(times[6]);
+                start_timer(timers[6],wait_for_barrier);
             }
             else
             {
-                timer9 = System.setTimer(time9_ms);
-                start_timer(timer9,wait_for_barrier);
+                timers[6] = System.setTimer(times[6]);
+                start_timer(timers[6],wait_for_barrier);
             }
         }
     }
@@ -83,7 +82,7 @@ function wait_for_pump(ID)
 
 function wait_for_barrier(ID)
 {
-    if((timer9 == ID) && (IoPort.getPort(0) & I_PIN_11))
+    if((timers[6] == ID) && (IoPort.getPort(0) & I_PIN_11))
     {
         laser_move_timed();
         disconnect_func(wait_for_barrier);
@@ -95,27 +94,28 @@ function laser_move_timed()
     if(laser_in_working_pos == 0)
     {
         Axis.move(2, (Axis.getPosition(2) - search_distance));
-        timer7 = System.setTimer(time7_ms);
-        start_timer(timer7, stop_search_auto);
+        timers[1] = System.setTimer(time[1]);
+        start_timer(timers[1], stop_search_auto);
     }
     if(laser_in_working_pos == 1)
     {
         if(debug_mode){ print("Laser already in pos");}
         readFile_auto();
-        start_timer(timer11, pump_not_present);
+        timers[2] = System.setTimer(times[2]);
+        start_timer(timers[2], pump_not_present);
     }
 }
 
 function stop_search_auto(ID)
 {
-    if(timer7 == ID && auto_mode == "ON")
+    if(timers[1] == ID && auto_mode == "ON")
     {
         if(IoPort.getPort(0) & I_PIN_10)
         {
             current_pos = Axis.getPosition(2);
             if((home_pos - current_pos) <= search_distance)
             {
-                //print("Laser is moving to working position");
+                if(debug_mode){print("Laser is moving to working pos...");}
             }
             else
             {
@@ -128,7 +128,7 @@ function stop_search_auto(ID)
         }
         else
         {
-             if(debug_mode){ print("Pump in laser focus");}
+            if(debug_mode){ print("Pump in laser focus");}
             Axis.stop(2);
             readFile_auto();
             laser_in_working_pos = 1;
@@ -141,7 +141,7 @@ function stop_search_auto(ID)
 
 function pump_not_present(ID)
 {
-    if(timer11 == ID && pump_present == 0 && auto_mode == "ON")
+    if(timers[2] == ID && pump_present == 0 && auto_mode == "ON")
     {
         System.stopLaser();
         if(IoPort.getPort(0) & I_PIN_11)
@@ -159,22 +159,22 @@ function readFile_auto()
 {    
     if(debug_mode){ print("Read file started");}
     laser_marking = 1;
-    timer6 = System.setTimer(time6_ms);
-    start_timer(timer6, barrier_up_afer_marking);
+    timers[7] = System.setTimer(times[7]);
+    start_timer(timers[7], barrier_up_afer_marking);
     readFile();
 }
     
 function barrier_up_afer_marking(ID)
 {
-    if(timer6 == ID)
+    if(timers[7] == ID)
     {
         if(IoPort.getPort(0) & I_PIN_11)
         {
             barrier_up_auto();
             laser_marking = 0;
             laser_in_working_pos = 0;
-            timer10 = System.setTimer(time10_ms);
-            start_timer(timer10, reset_laser_marking);
+            timers[5] = System.setTimer(times[5]);
+            start_timer(timers[5], reset_laser_marking);
         }
         disconnect_func(barrier_up_afer_marking);
     }
@@ -198,7 +198,7 @@ function barrier_down_auto()
 
 function reset_laser_marking(ID)
 {
-    if((timer10 == ID) && (pump_present == 0))
+    if((timers[5] == ID) && (pump_present == 0))
     {
         nom = 0;
         disconnect_func(reset_laser_marking);
@@ -225,7 +225,7 @@ function total_stop_func()
 
 function reset_auto(ID)
 {
-    if((timer10 == ID) && (IoPort.getPort(0) & I_PIN_9))
+    if((timers[5] == ID) && (IoPort.getPort(0) & I_PIN_9))
     {
         if(debug_mode){ print("Reseting auto mode!");}
         start_auto_mode();
@@ -245,8 +245,8 @@ function reset_button_func()
 	    laser_in_working_pos = 0;
 	    nom = 0;
 	    auto_mode = "OFF";
-	    timer10 = System.setTimer(time10_ms);
-	    start_timer(timer10, reset_auto);
+        timers[5] = System.setTimer(times[5]);
+        start_timer(timers[5], reset_auto);
 	}
 	if(auto_mode == "OFF")
 	{

@@ -1,20 +1,14 @@
 /*---------------------------------
- Template and log file paths,
+ Template and log file paths
   ----------------------------------*/
+drive_loc = "G:"
 
-var tmplPath ="G:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
-var xlsPath ="G:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
-var logoPath ="G:\\LASER_IMP_SINEL\\Predloge\\" ;
-var logPath= "G:\\LASER_IMP_SINEL\\writeLog.txt";
-var resPath = "G:\\LASER_IMP_SINEL\\res\\";
+var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
+var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
+var logoPath =drive_loc + "\\LASER_IMP_SINEL\\Predloge\\" ;
+var logPath= drive_loc + "\\LASER_IMP_SINEL\\writeLog.txt";
+var resPath = drive_loc + "\\LASER_IMP_SINEL\\res\\";
 
-/*
-var tmplPath ="D:\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
-var xlsPath ="D:\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
-var logoPath ="D:\\LASER_IMP_SINEL\\Predloge\\" ;
-var logPath= "D:\\LASER_IMP_SINEL\\writeLog.txt";
-var resPath = "D:\\LASER_IMP_SINEL\\res\\";
-*/
 var h_Document,hDb, fw;
 var part_list, logos_list = [];
 var txt_selected_logo = "Izbran logo: ";
@@ -26,19 +20,17 @@ var txt_num_writes = "Število zapisov (od zagona): ";
 function readFile()
 {  
     print("reading and generating");
-    //var nm = num.value;
     nm = 1;
     
     if(auto_mode == "ON")
     {
-	var pn = cmb_a.currentItem;
+        var pn = cmb_a.currentItem;
     }
     else
     {
-	var pn = cmb.currentItem;
+        var pn = cmb.currentItem;
     }
     
-    System.makeCounterVariable("num_writes", 0, 0, nm, 1, 1, 0, 3, 10, true );
     if(pn != "" )
     {
         print("Selected P.N.: " + pn );
@@ -62,7 +54,7 @@ function readFile()
                 h_Document = new LaserDoc;
                 h_Document.load(tmplPath);
 
-	if(debug_mode){ print("Read:" + objects);}
+                if(debug_mode){print("Read:" + objects);}
                 writeLog("Read:" + objects);
 
                 laser_objects = ["obj_a", "obj_b", "obj_c", "obj_d", "obj_e", "obj_f", "obj_g", "obj_h", "obj_i", "obj_j", "obj_k", "obj_l", "obj_m"] ;
@@ -78,7 +70,7 @@ function readFile()
                 var logo = h_Document.getLaserImported("logo");
 
                 logo.importFile(logoPath + l + ".xlp");
-		
+
                 var obj_m = h_Document.getLaserObject(laser_objects[(laser_objects.length-1)]);
                 obj_m.text = m;
 
@@ -100,9 +92,9 @@ function readFile()
 function writeLog(currentNum)
 {
     var today = new Date();
-    //print("Writing to log:" + currentNum);
+    if(debug_mode){print("Writing to log:" + currentNum);}
     var outFile = new File(logPath);
     outFile.open(File.Append);
-    outFile.write( "\r\n" + today.toLocaleString() + " - " + currentNum );
+    outFile.write("\r\n" + today.toLocaleString() + " - " + currentNum);
     outFile.close();
 }

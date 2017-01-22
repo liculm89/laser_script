@@ -1,3 +1,6 @@
+//sets debugging on=1 and off=0
+debug_mode = 0;
+
 /*---------------------------------------------------------
  Inputs and outputs
   --------------------------------------------------------*/
@@ -80,6 +83,7 @@ function set_flags()
     {
         total_stop = 0;
     }
+
     check_laser_state(System.getDeviceStatus());
 }
 
@@ -90,21 +94,21 @@ var brojac = 0;
   */
 function pump_counter(ID)
 {
-    if(timer12 == ID)
+    if(timers[3] == ID)
     {
-        if(IoPort.getPort(0) & I_PIN_7){senz_state = 1; } else{senz_state = 0;}
+        if(IoPort.getPort(0) & I_PIN_7){senz_state = 1;} else{senz_state = 0;}
 
         if(senz_state != last_senz_state)
         {
             if(senz_state == 1)
             {
                 brojac++;
-	if(debug_mode){ print("pump counter: " + brojac);}
+                if(debug_mode){print("pump counter: " + brojac);}
                 pump_present = 1;
             }
             else
             {
-	if(debug_mode){ print("pump left");}
+                if(debug_mode){ print("pump left");}
                 pump_present = 0;
             }
         }
@@ -121,7 +125,7 @@ var laser_moving = 0;
   */
 function laser_movement(ID)
 {
-    if(timer5 == ID)
+    if(timers[4] == ID)
     {
         laser_poz_cur = Axis.getPosition(2);
         if(laser_poz_cur != laser_poz_before)
@@ -189,21 +193,19 @@ function main()
     System["sigLaserEvent(int)"].connect(get_laser_events);
     System["sigLaserError(int)"].connect(onLaserError);
     System.sigClose.connect(onClose);
-    //sets debugging on=1 and off=0
-    debug_mode = 0;
-    
-     //Starts GUI application
-    init_func(); 
-    init_passed= init_func();
+
+     //Starts initialization function, if success GUI is generated
+    init_func();
+    init_passed = init_func();
     if(init_passed)
     {
-	if(debug_mode){ print("Init passed");}
-	gen_dialog(part_list);
+        if(debug_mode){print("Init passed");}
+        gen_dialog(part_list);
     }
     else
     {  	 stop_axis();
-	 error_init_fail();
+        error_init_fail();
     }
-  
+
   
 }
