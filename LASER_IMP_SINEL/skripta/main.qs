@@ -6,9 +6,9 @@ debug_mode = 1;
   --------------------------------------------------------*/
 /*
 Popis funkcija pinova
-O_PIN2 - Busy signal            - OUTPUT
+O_PIN2 - Busy signal                - OUTPUT
 O_PIN 3 - Z os step                 - OUTPUT
-O_PIN4 - Motor brake 	   - OUTPUT
+O_PIN4 - Motor brake                - OUTPUT
 O_PIN 5 - Cilindar gore             - OUTPUT
 O_PIN 6 - Z os Current off			- OUTPUT
 O_PIN 16 - Z os direction			- OUTPUT
@@ -222,15 +222,15 @@ function init_func()
 
     if ((typeof part_list != "undefined") && (reg_fault == 0))
     {
-	return 0;
+        return 0;
     }
     if(typeof part_list == "undefined")
     {
-	return 1;
+        return 1;
     }
-   if(reg_fault == 1)
+    if(reg_fault == 1)
     {
-	return 2;
+        return 2;
     }
 
 }
@@ -245,24 +245,24 @@ function main()
     System["sigLaserError(int)"].connect(onLaserError);
     System.sigClose.connect(onClose);
 
-     //Starts initialization function, if success GUI is generated
+    //Starts initialization function, if success GUI is generated
     init_func();
     init_passed = init_func();
     if(init_passed == 0)
     {
-        disable_break();       
+        disable_break();
         print("Init passed");
         if(Axis.isReversed(2)){Axis.reset(2);}else{print("Z axis not reversed");}
         gen_dialog(part_list);
     }
     if(init_passed == 1)
-    {  
+    {
         print("Initialization failed, check if files are present in specified directories...")
         stop_axis();
         error_init_fail();
     }
     if(init_passed == 2)
     {
-       error_regulator_fault();
+        error_regulator_fault();
     }
 }

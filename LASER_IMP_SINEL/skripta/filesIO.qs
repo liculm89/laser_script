@@ -6,7 +6,7 @@ drive_loc = "D:";
 	    
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
-var logoPath =drive_loc + "\\LASER_IMP_SINEL\\Predloge\\" ;
+var logoPath = drive_loc + "\\LASER_IMP_SINEL\\Predloge\\" ;
 var logPath= drive_loc + "\\LASER_IMP_SINEL\\writeLog.txt";
 var resPath = drive_loc + "\\LASER_IMP_SINEL\\res\\";
 
@@ -27,11 +27,18 @@ function parts_list_gen()
         part_list = [];
         logos_list = [];
         var res = hDb2.exec("SELECT * FROM [List1$]" );
+
+        res.forEach(function(index)
+        {
+            part_list[index] = res[index][0];
+            logos_list[index] = res[index][11];
+        })
+        /*
         for (i = 0; i < res.length; i++)
         {
             part_list[i] = res[i][0];
             logos_list[i] = res[i][11];
-        }
+        }*/
     }
     else
     {
@@ -100,14 +107,14 @@ function readFile()
                 var obj_m = h_Document.getLaserObject(laser_objects[(laser_objects.length-1)]);
                 obj_m.text = m;
 
-                print( "Document marking..." );
+                print("Document marking..." );
                 h_Document.update();
                 h_Document.execute();
             }
         }
         else
         {
-            //print("Result: " + res + " - Error: " + hDb.lastError());
+            if(debug_mode){print("Result: " + res + " - Error: " + hDb.lastError());}
             writeLog("Result: " + res + " - Error: " + hDb.lastError());
         }
     }        hDb.close();

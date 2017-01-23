@@ -447,15 +447,15 @@ function shut_down()
 {
     if( auto_mode == "OFF")
     {
-	print("Shutdown started");
-	disconnect_timers();
-	enable_break();
-	System.killAllTimers();
-	dialog.OK();
+        print("Shutdown started");
+        disconnect_timers();
+        enable_break();
+        System.killAllTimers();
+        dialog.OK();
     }
     else
     {
-	error_auto_mode();
+        error_auto_mode();
     }
 }
 

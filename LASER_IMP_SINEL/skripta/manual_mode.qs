@@ -2,20 +2,27 @@ function readFile_manual()
 {
     if(total_stop == 0)
     {
-        if(auto_mode == "OFF" )
+        if(reg_fault == 0)
         {
-            if(laser_status == "Ready for marking")
+            if(auto_mode == "OFF" )
             {
-                readFile();
+                if(laser_status == "Ready for marking")
+                {
+                    readFile();
+                }
+                else
+                {
+                    error_key_sequence();
+                }
             }
             else
             {
-                error_key_sequence();
+                error_auto_mode();
             }
         }
         else
         {
-            error_auto_mode();
+            error_regulator_faul();
         }
     }
     else
@@ -26,21 +33,34 @@ function readFile_manual()
 
 function laser_reference()
 {
-    if(auto_mode == "OFF")
+    if(total_stop == 0)
     {
-        barrier_up();
-        Axis.reset(2);
-        if(debug_mode){print("Laser is moving to reference pos");}
+        if(reg_fault == 0)
+        {
+            if(auto_mode == "OFF")
+            {
+                barrier_up();
+                Axis.reset(2);
+                if(debug_mode){print("Laser is moving to reference pos");}
+            }
+            else
+            {
+                error_auto_mode();
+            }
+        }
+        else
+        {
+            error_regulator_faul();
+        }
     }
     else
     {
-        error_auto_mode();
+        error_total_stop();
     }
 }
 
 function stop_m_manual()
-{
-    
+{   
     if(auto_mode == "OFF")
     {
         if(laser_status == "Marking is active" || laser_status == "Moving...")
@@ -61,11 +81,26 @@ function stop_m_manual()
 
 function search_working_pos()
 {  
-    barrier_down();
-    Axis.move(2, (Axis.getPosition(2) - 150));
-    timers[1] = System.setTimer(times[1]);
-    start_timer(timers[1], stop_search);
+    if(total_stop == 0)
+    {
+        if(auto_mode == "OFF")
+        {
+            barrier_down();
+            Axis.move(2, (Axis.getPosition(2) - 150));
+            timers[1] = System.setTimer(times[1]);
+            start_timer(timers[1], stop_search);
+        }
+        else
+        {
+            error_auto_mode();
+        }
+    }
+    else
+    {
+        error_total_stop();
+    }
 }
+
 
 function stop_search(ID)
 {
@@ -171,13 +206,12 @@ function min_pos_reached(ID)
     {
         if(IoPort.getPort(0) & I_PIN_8)
         {
-             if(debug_mode){ print("minimium pos reached");}    
-            Axis.stop(2);           
+            if(debug_mode){ print("minimium pos reached");}
+            Axis.stop(2);
             disconnect_func(min_pos_reached);
         }
     }
 }
-
 
 function stop_axis()
 {	
