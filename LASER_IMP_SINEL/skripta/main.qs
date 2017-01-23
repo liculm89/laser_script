@@ -1,4 +1,4 @@
-//sets debugging on=1 and off=0
+//sets debugging(on=1 and off=0)
 debug_mode = 0;
 
 /*---------------------------------------------------------
@@ -7,6 +7,7 @@ debug_mode = 0;
 /*
 Popis funkcija pinova
 O_PIN 3 - Z os step                 - OUTPUT
+O_PIN4 - Motor brake 	   - OUTPUT
 O_PIN 5 - Cilindar gore             - OUTPUT
 O_PIN 6 - Z os Current off			- OUTPUT
 O_PIN 16 - Z os direction			- OUTPUT
@@ -42,6 +43,7 @@ var last_error = "no errors";
 var nom, bar_gore, bar_dolje, sen_linija, sen_laser_gore, sen_laser_dolje = 0;
 var sen_optika, sen_bar_dolje, sen_bar_gore, reset_tipka, reg_fault, total_stop = 0;
 var laser_marking, laser_in_working_pos = 0;
+var brake_status = 0;
 
 var z_axis_active = 0;
 var sb1_v = 25;
@@ -78,13 +80,29 @@ function set_flags()
     {
         total_stop = 1;
         total_stop_func();
+        if(brake_status == 0){enable_break()};
     }
     else
-    {
-        total_stop = 0;
+    {   
+         if(brake_status == 1){disable_break()};
+        total_stop = 0;	
     }
 
     check_laser_state(System.getDeviceStatus());
+}
+
+function enable_break()
+{
+    IoPort.resetPort(0, O_PIN_5);
+    brake_status = 1;
+    if(debug_mode){print("Brake active")}
+}
+
+function disable_break()
+{
+     IoPort.setPort(0, O_PIN_5); 
+     brake_status = 0;
+     if(debug_mode){print("Brake disabled")}
 }
 
 var senz_state, last_senz_state, pump_present = 0;
@@ -200,10 +218,13 @@ function main()
     if(init_passed)
     {
         if(debug_mode){print("Init passed");}
+        disable_break();
         gen_dialog(part_list);
     }
     else
-    {  	 stop_axis();
+    {  
+        print("Initialization failed, check if files are present in specified directories...")
+        stop_axis();
         error_init_fail();
     }
 

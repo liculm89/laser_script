@@ -1,7 +1,7 @@
 /*---------------------------------
  Template and log file paths
   ----------------------------------*/
-drive_loc = "G:"
+drive_loc = "D:"
 
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
@@ -13,6 +13,32 @@ var h_Document,hDb, fw;
 var part_list, logos_list = [];
 var txt_selected_logo = "Izbran logo: ";
 var txt_num_writes = "Število zapisov (od zagona): ";
+
+/*------------------------------------------------
+    Generiranje liste komada iz excel tabele
+    ------------------------------------------------*/
+function parts_list_gen()
+{
+    hDb2 = new Db("QODBC");
+    hDb2.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + xlsPath;
+    if(hDb2.open())
+    {
+        part_list = [];
+        logos_list = [];
+        var res = hDb2.exec("SELECT * FROM [List1$]" );
+        for (i = 0; i < res.length; i++)
+        {
+            part_list[i] = res[i][0];
+            logos_list[i] = res[i][11];
+        }
+    }
+    else
+    {
+        if(debug_mode){ print("Result: " + res + " - Error: " + hDb2.lastError());}
+        writeLog("Result: " + res + " - Error: " + hDb2.lastError());
+    }
+    hDb2.close();
+}
 
 /*-----------------------------------------------------------------------------------------------
   Template reading, laser document creation and execution function
@@ -34,14 +60,13 @@ function readFile()
     if(pn != "" )
     {
         print("Selected P.N.: " + pn );
-        print("Number of copies.: " + nm );
+        //print("Number of copies.: " + nm );
         writeLog("Selected P.N.:" + pn);
         hDb = new Db("QODBC");
         hDb.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + xlsPath;
 
         if(hDb.open())
         {
-            print("entered");
             var res = hDb.exec("SELECT * FROM [List1$] WHERE PN LIKE '" + pn + "'");
             var objects = [];
 

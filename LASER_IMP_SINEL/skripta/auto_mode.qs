@@ -132,8 +132,8 @@ function stop_search_auto(ID)
             Axis.stop(2);
             readFile_auto();
             laser_in_working_pos = 1;
-            timer11 = System.setTimer(time11_ms);
-            start_timer(timer11, pump_not_present);
+            timers[2] = System.setTimer(times[2]);
+            start_timer(timers[2], pump_not_present);
             disconnect_func(stop_search_auto);
         }
     }
@@ -245,8 +245,8 @@ function reset_button_func()
 	    laser_in_working_pos = 0;
 	    nom = 0;
 	    auto_mode = "OFF";
-        timers[5] = System.setTimer(times[5]);
-        start_timer(timers[5], reset_auto);
+	    timers[5] = System.setTimer(times[5]);
+	    start_timer(timers[5], reset_auto);
 	}
 	if(auto_mode == "OFF")
 	{

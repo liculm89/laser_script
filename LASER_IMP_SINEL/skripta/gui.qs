@@ -286,7 +286,7 @@ function gen_dialog(part_list)
     gb_ver = new GroupBox("Version");
     dialog.add(gb_ver);
    
-    lbl_title = new Label("Laser control v0.9rc2");
+    lbl_title = new Label("Laser control v0.9rc3");
     lbl_title.font = font_albls;
     gb_ver.add(lbl_title);
     
@@ -373,7 +373,6 @@ function gui_update(ID)
             lb_bar_gore.text = "Barijera gore:" + get_stat(bar_gore);
             lb_bar_dolje.text = "Barijera dolje:" + get_stat(bar_dolje);
         }
-
     }
 }
 
@@ -400,32 +399,6 @@ function get_motor_status(input)
     return stat;
 }
 
-/*------------------------------------------------
-    Generiranje liste komada iz excel tabele
-    ------------------------------------------------*/
-function parts_list_gen()
-{
-    hDb2 = new Db("QODBC");
-    hDb2.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + xlsPath;
-    if(hDb2.open())
-    {
-        part_list = [];
-        logos_list = [];
-        var res = hDb2.exec("SELECT * FROM [List1$]" );
-        for (i = 0; i < res.length; i++)
-        {
-            part_list[i] = res[i][0];
-            logos_list[i] = res[i][11];
-        }
-
-    }
-    else
-    {
-        if(debug_mode){ print("Result: " + res + " - Error: " + hDb2.lastError());}
-        writeLog("Result: " + res + " - Error: " + hDb2.lastError());
-    }
-    hDb2.close();
-}
 
 function logo_selection(selected)
 {
@@ -465,9 +438,17 @@ function logo_init(curr_item, label)
 
 function shut_down()
 {
-    print("Shutdown started");
-    disconnect_timers();
-    dialog.OK();
+    if( auto_mode == "OFF")
+    {
+	print("Shutdown started");
+	disconnect_timers();
+	enable_break();
+	dialog.OK();
+    }
+    else
+    {
+	error_auto_mode();
+    }
 }
 
 function reset_pump_count()

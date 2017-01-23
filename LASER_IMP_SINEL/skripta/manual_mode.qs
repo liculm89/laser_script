@@ -63,8 +63,8 @@ function search_working_pos()
 {  
     barrier_down();
     Axis.move(2, (Axis.getPosition(2) - 150));
-    timer7 = System.setTimer(time7_ms);
-    start_timer(timer7, stop_search);
+    timers[1] = System.setTimer(times[1]);
+    start_timer(timers[1], stop_search);
 }
 
 function stop_search(ID)
@@ -126,12 +126,11 @@ function move_up()
 
 function max_pos_reached(ID)
 {
-    if(timer5 == ID && auto_mode == "ON")
+    if(timers[4] == ID && auto_mode == "ON")
     {
         if(IoPort.getPort(0) & I_PIN_9)
         {
             Axis.stop(2);
-            //error_max_pos();
             disconnect_func(max_pos_reached);
         }
     }
@@ -146,8 +145,8 @@ function move_down()
             if(!(IoPort.getPort(0) & I_PIN_8))
             {	
                 Axis.move(2, (Axis.getPosition(2) - sb1_v) );
-                timer5 = System.setTimer(time5_ms);
-                start_timer(timer5, min_pos_reached);
+                timers[4] = System.setTimer(times[4]);
+                start_timer(timers[4], min_pos_reached);
                 laser_in_working_pos = 0;
             }
             else
@@ -168,7 +167,7 @@ function move_down()
 
 function min_pos_reached(ID)
 {
-    if(timer5 == ID)
+    if(timers[4] == ID)
     {
         if(IoPort.getPort(0) & I_PIN_8)
         {

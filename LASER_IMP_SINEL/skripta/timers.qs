@@ -1,42 +1,16 @@
-
 //Timers declaration
 var times = [10, 20, 60, 100, 300, 500, 600, 7000];
 
 var timers = Array.apply(null, new Array(times.length)).map(Number.prototype.valueOf,0);
+var timer_list = [];
 
+//Setting up global timers
 times.forEach(function (item, index)
 {
     timers[index] = System.setTimer(item);
 });
 
-/*
-var time_ms = 10;
-var timer1 = System.setTimer(time_ms);    //gui_update(); --> timers[0]
-
-var time7_ms = 20;
-var timer7 = System.setTimer(time7_ms);   //stop_search(); stop_search_auto();
-
-var time11_ms = 60;
-var timer11 = System.setTimer(time11_ms); //pump_not_present();
-
-var time12_ms = 100;
-var timer12 = System.setTimer(time12_ms);     //pump_counter();
-
-var time5_ms = 300;
-var timer5 = System.setTimer(time5_ms);   //wait_for_pump();
-
-var time10_ms = 500;
-var timer10 = System.setTimer(time10_ms);     //reset_laser_marking();
-
-var time9_ms = 600;
-var timer9 = System.setTimer(time9_ms);   //wait_for_barrier();
-
-var time6_ms = 7000;
-var timer6 = System.setTimer(time6_ms);   //barrier_up_after_marking();
-*/
-
-var timer_list = [];
-
+//Connects given function
 function start_timer(timer, func)
 {
     if(debug_mode){print("connecting timer:" + timer);}
@@ -59,6 +33,7 @@ function start_timer(timer, func)
     }
 }
 
+//Disconnects given function
 function disconnect_func(func)
 {
     if (timer_list != 0)
@@ -74,6 +49,7 @@ function disconnect_func(func)
     }
 }
 
+//Disconnect all timers in timer_list
 function disconnect_timers()
 {
     if (timer_list != 0)
