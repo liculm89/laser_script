@@ -1,8 +1,9 @@
 /*---------------------------------
  Template and log file paths
   ----------------------------------*/
-drive_loc = "D:"
-
+//drive_loc = "G:";
+drive_loc = "D:";
+	    
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
 var logoPath =drive_loc + "\\LASER_IMP_SINEL\\Predloge\\" ;

@@ -85,7 +85,7 @@ function gen_dialog(part_list)
     lbl_marking.font =  font_lbls;
     status_box.add(lbl_marking);
     
-    lbl_laser_moving = new Label(); lbl_laser_moving.text = "Laser motor: " + get_motor_status( laser_moving );
+    lbl_laser_moving = new Label(); lbl_laser_moving.text = "Laser motor:" + get_motor_status( laser_moving );
     lbl_laser_moving.font = font_lbls;
     status_box.add(lbl_laser_moving);
     
@@ -212,11 +212,11 @@ function gen_dialog(part_list)
     status_box = new GroupBox(); status_box.title= "Status";
     dialog.add(status_box);
     
-    lbl_auto_status_m = new Label(); lbl_auto_status.text = "Auto mode: " + auto_mode;
+    lbl_auto_status_m = new Label(); lbl_auto_status.text = "Auto mode:" + auto_mode;
     lbl_auto_status_m.font = font_lbls;
     status_box.add(lbl_auto_status_m);
     
-    lbl_marking_m = new Label(); lbl_marking.text = "Laser status :" + laser_status;
+    lbl_marking_m = new Label(); lbl_marking.text = "Laser status:" + laser_status;
     lbl_marking_m.font = font_lbls;
     status_box.add(lbl_marking_m);
     
@@ -265,9 +265,15 @@ function gen_dialog(part_list)
     lb_reset_tipka.font = font_lbls;
     gb_inputs.add(lb_reset_tipka);
     
+  
+    
     //groupbox outputs
     gb_outputs = new GroupBox(); gb_outputs.title="Output status";
     dialog.add(gb_outputs);
+    
+    lbl_lrstatus = new Label(); lbl_lrstatus.text = "Laser ready signal:" + get_stat(signal_ready);
+    lbl_lrstatus.font = font_lbls;
+    gb_outputs.add(lbl_lrstatus);
     
     lb_bar_gore = new Label(); lb_bar_gore.text = "Barijera gore: " + get_stat(bar_gore);
     lb_bar_gore.font = font_lbls;
@@ -286,7 +292,7 @@ function gen_dialog(part_list)
     gb_ver = new GroupBox("Version");
     dialog.add(gb_ver);
    
-    lbl_title = new Label("Laser control v0.9rc3");
+    lbl_title = new Label("Laser control v0.9rc4");
     lbl_title.font = font_albls;
     gb_ver.add(lbl_title);
     
@@ -353,12 +359,13 @@ function gui_update(ID)
     {
         lbl1.text = "Z axis current position: " + Math.round(Axis.getPosition(2));
         lbl_auto_status_m.text= lbl_auto_status.text = "Auto mode: " + auto_mode;
+	
         check_laser_state(System.getDeviceStatus());
         lbl_marking_m.text = lbl_marking.text = "Laser status:" + laser_status;
         lbl_last_error.text = "Last error:" + last_error;
-        lbl_laser_moving.text = "Laser motor: " + get_motor_status(laser_moving);
+        lbl_laser_moving.text = "Laser motor:" + get_motor_status(laser_moving);
         lbl_counter.text = "Pumps counter:" + brojac;
-
+        
         if(debug_mode)
         {
             lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
@@ -443,6 +450,7 @@ function shut_down()
 	print("Shutdown started");
 	disconnect_timers();
 	enable_break();
+	System.killAllTimers();
 	dialog.OK();
     }
     else

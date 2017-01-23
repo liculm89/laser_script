@@ -49,8 +49,8 @@ function error_total_stop()
 
 function error_laser_not_rdy()
 {
-    var mesg_txt = "Restart";
-    MessageBox.critical( label = "Laser not ready", mesg_txt, MessageBox.Ok);
+    var mesg_txt = "Laser not ready";
+    MessageBox.critical( label =  mesg_txt, mesg_txt, MessageBox.Ok);
     last_error = mesg_txt;
 }
 
@@ -86,4 +86,11 @@ function error_init_fail()
 {
     var mesg_txt = "Initialization failed, database file missing or corrupted";
      MessageBox.critical( mesg_txt, MessageBox.Ok);
+}
+
+function error_regulator_fault()
+{
+   var mesg_txt = "Regulator fault! Check motor regulator";
+   MessageBox.critical( mesg_txt, MessageBox.Ok);
+   last_error = mesg_txt;
 }

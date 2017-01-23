@@ -8,6 +8,7 @@ var timer_list = [];
 times.forEach(function (item, index)
 {
     timers[index] = System.setTimer(item);
+    if(debug_mode){print("timers[i] : " + timers[index]);}
 });
 
 //Connects given function

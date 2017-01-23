@@ -94,7 +94,7 @@ function laser_move_timed()
     if(laser_in_working_pos == 0)
     {
         Axis.move(2, (Axis.getPosition(2) - search_distance));
-        timers[1] = System.setTimer(time[1]);
+        timers[1] = System.setTimer(times[1]);
         start_timer(timers[1], stop_search_auto);
     }
     if(laser_in_working_pos == 1)
@@ -113,7 +113,8 @@ function stop_search_auto(ID)
         if(IoPort.getPort(0) & I_PIN_10)
         {
             current_pos = Axis.getPosition(2);
-            if((home_pos - current_pos) <= search_distance)
+            //if((home_pos - current_pos) <= search_distance)
+            if(!(IoPort.getPort(0) & I_PIN_8))    
             {
                 if(debug_mode){print("Laser is moving to working pos...");}
             }
@@ -130,8 +131,8 @@ function stop_search_auto(ID)
         {
             if(debug_mode){ print("Pump in laser focus");}
             Axis.stop(2);
-            readFile_auto();
             laser_in_working_pos = 1;
+            readFile_auto();
             timers[2] = System.setTimer(times[2]);
             start_timer(timers[2], pump_not_present);
             disconnect_func(stop_search_auto);
@@ -149,6 +150,7 @@ function pump_not_present(ID)
             barrier_up_auto();
         }
         laser_marking = 0;
+        signal_ready = 1;
         laser_in_working_pos = 0;
         nom = 0;
         disconnect_func(pump_not_present);
@@ -159,6 +161,7 @@ function readFile_auto()
 {    
     if(debug_mode){ print("Read file started");}
     laser_marking = 1;
+    signal_ready = 0;
     timers[7] = System.setTimer(times[7]);
     start_timer(timers[7], barrier_up_afer_marking);
     readFile();
@@ -173,6 +176,7 @@ function barrier_up_afer_marking(ID)
             barrier_up_auto();
             laser_marking = 0;
             laser_in_working_pos = 0;
+            signal_ready = 1;
             timers[5] = System.setTimer(times[5]);
             start_timer(timers[5], reset_laser_marking);
         }

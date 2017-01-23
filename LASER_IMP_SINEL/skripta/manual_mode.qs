@@ -74,12 +74,12 @@ function stop_search(ID)
         if(IoPort.getPort(0) & I_PIN_10)
         {
             current_pos = Axis.getPosition(2);
-            if((home_pos - current_pos) <= search_distance)
+             if(!(IoPort.getPort(0) & I_PIN_8))    
             {
                 if(debug_mode){print("Laser is moving to working position");}
             }
             else
-            {
+            {	
                 Axis.stop(2);
                 error_cant_find_pump();
                 laser_reference();

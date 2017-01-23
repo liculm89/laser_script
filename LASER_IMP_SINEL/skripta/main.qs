@@ -1,11 +1,12 @@
 //sets debugging(on=1 and off=0)
-debug_mode = 0;
+debug_mode = 1;
 
 /*---------------------------------------------------------
  Inputs and outputs
   --------------------------------------------------------*/
 /*
 Popis funkcija pinova
+O_PIN2 - Busy signal            - OUTPUT
 O_PIN 3 - Z os step                 - OUTPUT
 O_PIN4 - Motor brake 	   - OUTPUT
 O_PIN 5 - Cilindar gore             - OUTPUT
@@ -40,15 +41,18 @@ var auto_mode = "OFF";
 var laser_status = "INACTIVE";
 var last_error = "no errors";
 
-var nom, bar_gore, bar_dolje, sen_linija, sen_laser_gore, sen_laser_dolje = 0;
-var sen_optika, sen_bar_dolje, sen_bar_gore, reset_tipka, reg_fault, total_stop = 0;
-var laser_marking, laser_in_working_pos = 0;
+var nom = 0; var bar_gore = 0; var bar_dolje = 0; var sen_linija = 0;
+var sen_laser_gore = 0;  var sen_laser_dolje = 0; var sen_optika = 0;
+var sen_bar_dolje = 0; var sen_bar_gore = 0; var reset_tipka = 0;
+var reg_fault = 0; var total_stop = 0; var laser_marking = 0;
+var laser_in_working_pos = 0;
 var brake_status = 0;
 
+var signal_ready = 0;
 var z_axis_active = 0;
 var sb1_v = 25;
 var min_pos = 5;
-var search_distance = 110;
+var search_distance = 130;
 var home_pos = 120;
 var current_pos = 0;
 const num_writes;
@@ -64,7 +68,16 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_10){ sen_optika = 1;} else{sen_optika = 0;}
     if(IoPort.getPort(0) & I_PIN_11){ sen_bar_dolje = 1;} else{sen_bar_dolje = 0;}
     if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
-    if(IoPort.getPort(0) & I_PIN_20){ reg_fault = 0;} else{reg_fault = 1;}
+    if(IoPort.getPort(0) & I_PIN_20)
+   { 
+	reg_fault = 0;
+    } 
+    else
+    {
+	reg_fault = 1;
+	print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!!");
+	//error_regulator_fault();
+    }
 
     if(IoPort.getPort(0) & I_PIN_19)
     {
@@ -84,11 +97,10 @@ function set_flags()
     }
     else
     {   
-         if(brake_status == 1){disable_break()};
-        total_stop = 0;	
+        if(brake_status == 1){disable_break()};
+        total_stop = 0;
+        
     }
-
-    check_laser_state(System.getDeviceStatus());
 }
 
 function enable_break()
@@ -105,19 +117,23 @@ function disable_break()
      if(debug_mode){print("Brake disabled")}
 }
 
-var senz_state, last_senz_state, pump_present = 0;
+var senz_state = 0; 
+last_senz_state = 0;
+pump_present = 0;
 var brojac = 0;
 /*
   Counts pumps and sets pump_present flag
   */
 function pump_counter(ID)
 {
-    if(timers[3] == ID)
+    if(timers[3] == ID)	
     {
+	
         if(IoPort.getPort(0) & I_PIN_7){senz_state = 1;} else{senz_state = 0;}
 
         if(senz_state != last_senz_state)
         {
+	   
             if(senz_state == 1)
             {
                 brojac++;
@@ -149,45 +165,53 @@ function laser_movement(ID)
         if(laser_poz_cur != laser_poz_before)
         {
             laser_moving = 1;
+            signal_ready = 0;
         }
         else
         {
             laser_moving = 0;
+            signal_ready = 1;
         }
         laser_poz_before = laser_poz_cur;
     }
 }
 
+function set_signal_ready(ID)
+{
+    if((timers[0] == ID)  && (signal_ready == 1))
+    {
+            IoPort.setPort(0, O_PIN_2); 
+    }
+    if((timers[0] == ID) && (signal_ready == 0))
+    {
+            IoPort.resetPort(0, O_PIN_2); 
+    }
+    
+    if((timers[0] == ID) && (auto_mode == "OFF") && (laser_in_working_pos == 1) && (IoPort.getPort(0) & I_PIN_11))
+    {
+           IoPort.resetPort(0, O_PIN_2); 
+    }
+ }
+
+/*
 function onLneChange(text) 
 {print("onLneChange("+text+")");}
 
 function onOutOfRange () 
 {print("onOutOfRange()");}
-
-
+*/
 
 function init_func()
 {
     var nm;
     System.makeCounterVariable("num_writes", 0, 0, nm, 1, 1, 0, 3, 10, true );
+    
     //Connects function set_flags() to trigger on input signal change
     IoPort.checkPort(0);
     IoPort.sigInputChange.connect(set_flags);
     
     //Initial flags setup
     set_flags();
-    
-    //If laser is not referenced, initiate laser referencing
-    if(!(IoPort.getPort(0) & I_PIN_9))
-    {
-        Axis.reset(2);
-    }
-    
-    //If barrier is not up,rises barrier
-    if(IoPort.getPort(0) & I_PIN_11)
-    {
-        barrier_up();
-    }
     
     //Generates parts_list[] from excel database
     parts_list_gen();
@@ -196,10 +220,19 @@ function init_func()
     System["sigTimer(int)"].connect(pump_counter);
     System["sigTimer(int)"].connect(laser_movement);
 
-    if (typeof part_list != "undefined")
-    {return 1;}
-    else
-    {return 0;}
+    if ((typeof part_list != "undefined") && (reg_fault == 0))
+    {
+	return 0;
+    }
+    if(typeof part_list == "undefined")
+    {
+	return 1;
+    }
+   if(reg_fault == 1)
+    {
+	return 2;
+    }
+
 }
 
 function main()
@@ -215,18 +248,21 @@ function main()
      //Starts initialization function, if success GUI is generated
     init_func();
     init_passed = init_func();
-    if(init_passed)
+    if(init_passed == 0)
     {
-        if(debug_mode){print("Init passed");}
-        disable_break();
+        disable_break();       
+        print("Init passed");
+        if(Axis.isReversed(2)){Axis.reset(2);}else{print("Z axis not reversed");}
         gen_dialog(part_list);
     }
-    else
+    if(init_passed == 1)
     {  
         print("Initialization failed, check if files are present in specified directories...")
         stop_axis();
         error_init_fail();
     }
-
-  
+    if(init_passed == 2)
+    {
+       error_regulator_fault();
+    }
 }
