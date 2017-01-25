@@ -1,14 +1,14 @@
 //sets debugging(on=1 and off=0)
-debug_mode = 1;
+debug_mode = 0;
 
 /*---------------------------------------------------------
  Inputs and outputs
   --------------------------------------------------------*/
 /*
 Popis funkcija pinova
-O_PIN2 - Busy signal                - OUTPUT
+O_PIN 2 - Busy signal                - OUTPUT
 O_PIN 3 - Z os step                 - OUTPUT
-O_PIN4 - Motor brake                - OUTPUT
+O_PIN 4 - Motor brake               - OUTPUT
 O_PIN 5 - Cilindar gore             - OUTPUT
 O_PIN 6 - Z os Current off			- OUTPUT
 O_PIN 16 - Z os direction			- OUTPUT
@@ -99,7 +99,6 @@ function set_flags()
     {   
         if(brake_status == 1){disable_break()};
         total_stop = 0;
-        
     }
 }
 

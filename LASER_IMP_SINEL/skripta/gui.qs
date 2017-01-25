@@ -264,9 +264,7 @@ function gen_dialog(part_list)
     lb_reset_tipka = new Label(); lb_reset_tipka.text = "Reset tipka: " + get_stat(reset_tipka);
     lb_reset_tipka.font = font_lbls;
     gb_inputs.add(lb_reset_tipka);
-    
   
-    
     //groupbox outputs
     gb_outputs = new GroupBox(); gb_outputs.title="Output status";
     dialog.add(gb_outputs);
@@ -282,7 +280,18 @@ function gen_dialog(part_list)
     lb_bar_dolje = new Label(); lb_bar_dolje.text = "Barijera dolje: " + get_stat(bar_dolje);
     lb_bar_dolje.font = font_lbls;
     gb_outputs.add(lb_bar_dolje);
+    
 }
+    
+        /*
+      Preview tab
+      */
+    dialog.newTab("Preview")
+    renderarea = new RenderArea();
+    dialog.add(renderarea);
+    var auto = 1; var init = 1;
+    generate_laser_doc(auto, init);
+    renderarea.preview(h_Document);
     /*
       About tab
       */
@@ -366,6 +375,9 @@ function gui_update(ID)
         lbl_laser_moving.text = "Laser motor:" + get_motor_status(laser_moving);
         lbl_counter.text = "Pumps counter:" + brojac;
         
+	//generate_laser_doc();
+	 //renderarea.preview(h_Document);
+	
         if(debug_mode)
         {
             lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
@@ -416,6 +428,8 @@ function logo_selection(selected)
             selectedLogo_a.text = txt_selected_logo + item;
         }
     });
+    var auto = 1; var init = 0;
+    generate_laser_doc(auto, init);
 }
 
 function logo_selection_m(selected)
@@ -427,6 +441,8 @@ function logo_selection_m(selected)
             selectedLogo.text = txt_selected_logo + item;
         }
     });
+    var auto = 0; var init = 0;
+    generate_laser_doc(auto, init);
 }
 
 function logo_init(curr_item, label)
@@ -441,6 +457,7 @@ function logo_init(curr_item, label)
             }
         });
     }
+    //generate_laser_doc();
 }
 
 function shut_down()
