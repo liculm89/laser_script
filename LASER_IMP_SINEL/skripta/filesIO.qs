@@ -48,8 +48,8 @@ function parts_list_gen()
   -----------------------------------------------------------------------------------------------*/
 function readFile()
 {  
-    print("reading and generating");
-   nm = 1;
+
+    nm = 1;
     
     if(auto_mode == "ON")
     {
@@ -59,11 +59,42 @@ function readFile()
     {
         var pn = cmb.currentItem;
     }
-    
+     
+    if(debug_mode){print("Reading and executing");}
+    laser_doc_update(pn);
+    h_Document.execute();
+}
+
+
+function generate_laser_doc(auto, init)
+{
+    nm = 1;
+    if(init == 0)
+    {
+	if(auto == 1)
+	{
+	    var pn = cmb_a.currentItem;
+	}
+	else
+	{
+	    var pn = cmb.currentItem;
+	}
+    }
+    else 
+    {
+	pn = part_list[0];
+    }
+    if(debug_mode){print("Reading and creating preview");}
+    laser_doc_update(pn);
+    renderarea.preview(h_Document);
+}
+
+function laser_doc_update(pn)
+{
     if(pn != "" )
     {
         print("Selected P.N.: " + pn );
-        //print("Number of copies.: " + nm );
+
         writeLog("Selected P.N.:" + pn);
         hDb = new Db("QODBC");
         hDb.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + xlsPath;
@@ -101,10 +132,8 @@ function readFile()
 
                 var obj_m = h_Document.getLaserObject(laser_objects[(laser_objects.length-1)]);
                 obj_m.text = m;
-
-                print("Document marking..." );
-                h_Document.update();
-                h_Document.execute();
+		
+                h_Document.update();	
             }
         }
         else
@@ -112,82 +141,8 @@ function readFile()
             if(debug_mode){print("Result: " + res + " - Error: " + hDb.lastError());}
             writeLog("Result: " + res + " - Error: " + hDb.lastError());
         }
-    }        hDb.close();
-}
-
-
-function generate_laser_doc(auto, init)
-{
-    nm = 1;
-    if(init == 0)
-    {
-	if(auto == 1)
-	{
-	    var pn = cmb_a.currentItem;
-	}
-	else
-	{
-	    var pn = cmb.currentItem;
-	}
-    }
-    else 
-    {
-	pn = part_list[0];
-    }
-    if(pn != "" )
-    {
-        print("Selected P.N.: " + pn );
-        //print("Number of copies.: " + nm );
-        //writeLog("Selected P.N.:" + pn);
-        hDb = new Db("QODBC");
-        hDb.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + xlsPath;
-
-        if(hDb.open())
-        {
-            var res = hDb.exec("SELECT * FROM [List1$] WHERE PN LIKE '" + pn + "'");
-            var objects = [];
-
-            if (typeof res[0] == "object")
-            {
-                for ( i = 0; i < res[0].length; i ++)
-                {
-                    objects[i] = res[0][i];
-                }
-                h_Document = new LaserDoc;
-                h_Document.load(tmplPath);
-/*
-                if(debug_mode){print("Read:" + objects);}
-                writeLog("Read:" + objects);
-*/
-                laser_objects = ["obj_a", "obj_b", "obj_c", "obj_d", "obj_e", "obj_f", "obj_g", "obj_h", "obj_i", "obj_j", "obj_k", "obj_l", "obj_m"] ;
-
-                for( i = 0; i < (laser_objects.length - 2) ; i++)
-                {
-                    var obj =  h_Document.getLaserObject(laser_objects[i]);
-                    obj.text = objects[i];
-                }
-
-                var l = objects[(objects.length - 2)];
-                var m = objects[(objects.length - 1)];
-                var logo = h_Document.getLaserImported("logo");
-
-                logo.importFile(logoPath + l + ".xlp");
-
-                var obj_m = h_Document.getLaserObject(laser_objects[(laser_objects.length-1)]);
-                obj_m.text = m;
-	print("generating preview");	
-                //print("Document marking..." );
-                h_Document.update();
-	renderarea.preview(h_Document);
-                //h_Document.execute();
-            }
-        }
-        else
-        {
-            if(debug_mode){print("Result: " + res + " - Error: " + hDb.lastError());}
-            writeLog("Result: " + res + " - Error: " + hDb.lastError());
-        }
-    }        hDb.close();
+    }   
+    hDb.close();
 }
 
 //Log creating/appending function

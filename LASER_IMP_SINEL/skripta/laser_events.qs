@@ -24,9 +24,9 @@ function onLaserEnd()
 
 var key_state = "OFF";
 var enable_state = "OFF";
-
 var warm_up_time = 35;
 var wac =warm_up_time;
+
 function laser_key_on()
 {
   
@@ -86,7 +86,6 @@ function warmup_counter(ID)
 	    wac =warm_up_time;
 	}
     }
-    
 }
 
 function reset_sequence()
@@ -143,12 +142,12 @@ function set_signal_ready(ID)
     {
             IoPort.setPort(0, O_PIN_2); 
     }
-    if((timers[0] == ID) && (signal_ready == 0))
+    else if((timers[0] == ID) && (signal_ready == 0))
     {
             IoPort.resetPort(0, O_PIN_2); 
     }
     
-    if((timers[0] == ID) && (auto_mode == "OFF") && (laser_in_working_pos == 1) && (IoPort.getPort(0) & I_PIN_11))
+    else if((timers[0] == ID) && (auto_mode == "OFF") && (laser_in_working_pos == 1) && (IoPort.getPort(0) & I_PIN_11))
     {
            IoPort.resetPort(0, O_PIN_2); 
     }
