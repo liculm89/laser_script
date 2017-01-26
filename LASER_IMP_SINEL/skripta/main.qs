@@ -12,6 +12,8 @@ O_PIN 4 - Motor brake               - OUTPUT
 O_PIN 5 - Cilindar gore             - OUTPUT
 O_PIN 6 - Z os Current off			- OUTPUT
 O_PIN 16 - Z os direction			- OUTPUT
+O_PIN 17 - Laser ext Key 		-OUTPUT
+O_PIN 18 Laser ext enable 	-OUTPUT
 O_PIN 23 - Cilindar dolje           - OUTPUT
 I_PIN 7 - Senzor prisutnosti linije	- INPUT
 I_PIN 8 - Glava lasera dolje		- INPUT
@@ -56,6 +58,7 @@ var search_distance = 130;
 var home_pos = 120;
 var current_pos = 0;
 const num_writes;
+var pumps_marked = 0;
 
 /*
   Read inputs and sets flags
@@ -76,7 +79,6 @@ function set_flags()
     {
 	reg_fault = 1;
 	print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!!");
-	//error_regulator_fault();
     }
 
     if(IoPort.getPort(0) & I_PIN_19)
@@ -93,28 +95,21 @@ function set_flags()
     {
         total_stop = 1;
         total_stop_func();
-        if(brake_status == 0){enable_break()};
+        if(brake_status == 0)
+	{
+	    enable_break()
+	};
     }
     else
     {   
-        if(brake_status == 1){disable_break()};
+        if(brake_status == 1)
+	{
+	    disable_break()
+	};
         total_stop = 0;
     }
 }
 
-function enable_break()
-{
-    IoPort.resetPort(0, O_PIN_5);
-    brake_status = 1;
-    if(debug_mode){print("Brake active")}
-}
-
-function disable_break()
-{
-     IoPort.setPort(0, O_PIN_5); 
-     brake_status = 0;
-     if(debug_mode){print("Brake disabled")}
-}
 
 var senz_state = 0; 
 last_senz_state = 0;
@@ -149,56 +144,6 @@ function pump_counter(ID)
     }
 }
 
-var laser_poz_before = Axis.getPosition(2);
-var laser_poz_cur =  Axis.getPosition(2);
-var laser_moving = 0;
-
-/*
-  Checks if laser is moving
-  */
-function laser_movement(ID)
-{
-    if(timers[4] == ID)
-    {
-        laser_poz_cur = Axis.getPosition(2);
-        if(laser_poz_cur != laser_poz_before)
-        {
-            laser_moving = 1;
-            signal_ready = 0;
-        }
-        else
-        {
-            laser_moving = 0;
-            signal_ready = 1;
-        }
-        laser_poz_before = laser_poz_cur;
-    }
-}
-
-function set_signal_ready(ID)
-{
-    if((timers[0] == ID)  && (signal_ready == 1))
-    {
-            IoPort.setPort(0, O_PIN_2); 
-    }
-    if((timers[0] == ID) && (signal_ready == 0))
-    {
-            IoPort.resetPort(0, O_PIN_2); 
-    }
-    
-    if((timers[0] == ID) && (auto_mode == "OFF") && (laser_in_working_pos == 1) && (IoPort.getPort(0) & I_PIN_11))
-    {
-           IoPort.resetPort(0, O_PIN_2); 
-    }
- }
-
-/*
-function onLneChange(text) 
-{print("onLneChange("+text+")");}
-
-function onOutOfRange () 
-{print("onOutOfRange()");}
-*/
 
 function init_func()
 {

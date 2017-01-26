@@ -212,6 +212,7 @@ function reset_laser_marking(ID)
     if((timers[5] == ID) && (pump_present == 0))
     {
         nom = 0;
+        pumps_marked++;
         disconnect_func(reset_laser_marking);
     }
 }

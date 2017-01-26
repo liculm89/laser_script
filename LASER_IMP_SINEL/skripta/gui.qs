@@ -2,10 +2,12 @@
   Kreiranje GUI aplikacije
   -----------------------------------*/
  var dialog = new Dialog ("Laser control",Dialog.D_NONE,false, 0x00040000);
+ var btn_key = new PushButton();
+ var btn_enable= new PushButton();
 
 function gen_dialog(part_list)
 {  
-    dialog.setFixedSize(600,720);
+    dialog.setFixedSize(650,720);
     /*--------------------------
      GUI - automatski mod
      ------------------------*/
@@ -13,11 +15,28 @@ function gen_dialog(part_list)
     font2 = "Courier New,15,-1,5,80,0,0,0,0,0";
     font_lbls=  "Courier New,12,-1,5,80,0,0,0,0,0";
     font_manual_btns =  "Courier New,15,-1,5,80,0,0,0,0,0";
-
+ 
     dialog.newTab("Automatic mode");
-    auto_box = new GroupBox(); auto_box.title = "Automatic laser marking";
-    dialog.add(auto_box);
+ 
+    laser_enable_box = new GroupBox("Laser key sequence");
     
+    //var btn_key = new PushButton();
+    btn_key.text ="KEY ("+ key_state +")";
+    btn_key["sigPressed()"].connect(laser_key_on);
+    btn_key.font = font2; btn_key.setFixedSize(240,60);
+    laser_enable_box.add(btn_key);
+    
+    laser_enable_box.newColumn();
+    //var btn_enable= new PushButton("ENABLE");
+    btn_enable["sigPressed()"].connect(enable_pressed);
+    btn_enable.text = "ENABLE (" +enable_state+")";
+    btn_enable.font = font2; btn_enable.setFixedSize(320,60);
+    laser_enable_box.add(btn_enable);
+    
+    dialog.add(laser_enable_box);
+    
+      auto_box = new GroupBox(); auto_box.title = "Automatic laser marking";
+    dialog.add(auto_box);
     lbl_auto_status = new Label(); lbl_auto_status.text = "Auto mode: " + auto_mode;
     lbl_auto_status.font = font_lbls;
     auto_box.add(lbl_auto_status);
@@ -47,25 +66,32 @@ function gen_dialog(part_list)
     var btn_auto_mode = new PushButton("START AUTO MODE");
     //btn_auto_mode["sigPressed()"].connect(readFile_auto);
     btn_auto_mode["sigPressed()"].connect(start_auto_mode);
-    btn_auto_mode.font = font2;  btn_auto_mode.setFixedSize(300,60);
+    btn_auto_mode.font = font2;  btn_auto_mode.setFixedSize(250,60);
     cmb_buttons_auto.add(btn_auto_mode);
+    
+    cmb_buttons_auto.newColumn();
     
     var btn_auto_stop = new PushButton("STOP AUTO MODE");
     btn_auto_stop["sigPressed()"].connect(stop_auto);
-    btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(300,60);
+    btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(250,60);
     cmb_buttons_auto.add(btn_auto_stop);
    
-    dialog.addSpace(50);
-    gb_pump_count = new GroupBox();
+    dialog.addSpace(20);
+    //Pumps count groupbox
+    gb_pump_count = new GroupBox("Pumps count");
     
-    lbl_counter = new Label(); lbl_counter.text = "Pumps counter:" + brojac;
+    lbl_counter = new Label(); lbl_counter.text = "Pumps passed:" + brojac;
     lbl_counter.font = font_lbls;
     gb_pump_count.add(lbl_counter);
     
+    lbl_pumps_marked = new Label(); lbl_pumps_marked.text ="Pumps marked:" + pumps_marked;
+    lbl_pumps_marked.font = font_lbls;
+    gb_pump_count.add(lbl_pumps_marked);
     
+    gb_pump_count.newColumn();
     var btn_pump_count = new PushButton("RESET PUMPS COUNTER");
     btn_pump_count["sigPressed()"].connect(reset_pump_count);
-    btn_pump_count.font = font2; btn_pump_count.setFixedSize(300,60);
+    btn_pump_count.font = font2; btn_pump_count.setFixedSize(250,60);
     gb_pump_count.add(btn_pump_count);
 
     dialog.add(gb_pump_count);
@@ -326,7 +352,7 @@ function gen_dialog(part_list)
     lbl_name.alignment =1;
     gb_contact.add(lbl_name);
   
-    lbl_dsc = new Label("Sinel, company for industrial automation, service and trade, limited.            ");
+    lbl_dsc = new Label("Sinel, company for industrial automation, service and trade, limited.                          ");
     lbl_dsc.font = font_albls;
     gb_contact.add(lbl_dsc);
     
@@ -374,10 +400,10 @@ function gui_update(ID)
         lbl_last_error.text = "Last error:" + last_error;
         lbl_laser_moving.text = "Laser motor:" + get_motor_status(laser_moving);
         lbl_counter.text = "Pumps counter:" + brojac;
-        
-	//generate_laser_doc();
-	 //renderarea.preview(h_Document);
-	
+        lbl_pumps_marked.text ="Pumps marked:" + pumps_marked;
+        btn_key.text ="KEY ("+ key_state +")";
+        btn_enable.text = "ENABLE (" +enable_state+")";
+    
         if(debug_mode)
         {
             lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
@@ -479,6 +505,7 @@ function shut_down()
 function reset_pump_count()
 {
     brojac = 0;
+    pumps_marked = 0;
 }
 
 

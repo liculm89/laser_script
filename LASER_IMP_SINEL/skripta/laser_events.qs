@@ -7,14 +7,6 @@ function onLaserStart()
 }
 
 /*
-  Function is triggered when one of axis stops movement or when marking proces i finished
-  */
-function onLaserEnd()
-{  
-     laser_marking = 0;
-}
-
-/*
   Function is triggered when laser marking is stoped with System call
   */
 function onLaserStop()
@@ -22,6 +14,145 @@ function onLaserStop()
     if(debug_mode){ print("laser stoped");}
 }
 
+/*
+  Function is triggered when one of axis stops movement or when marking proces i finished
+  */
+function onLaserEnd()
+{  
+     laser_marking = 0;
+}
+
+var key_state = "OFF";
+var enable_state = "OFF";
+
+var warm_up_time = 35;
+var wac =warm_up_time;
+function laser_key_on()
+{
+  
+    if(key_state == "OFF")
+    {	
+	IoPort.resetPort(0, O_PIN_17);
+	key_state = "ON";
+                enable_state = "Wait:"+wac+"s";
+	timers[8] = System.setTimer(times[8]);
+                start_timer(timers[8], warmup_counter);
+    }
+   else
+    {
+	IoPort.setPort(0, O_PIN_17);
+	key_state = "OFF";
+                enable_state = "OFF";
+	disconnect_func(warmup_counter);
+	wac = warm_up_time;
+    }
+}
+
+function enable_pressed()
+{
+    // if(laser_status == "Stand by, shutter closed")
+     if(enable_state == "Press to enable")
+    {
+	IoPort.resetPort(0, O_PIN_18);
+	enable_state = "ON";
+     }
+     else if(enable_state == "ON")
+     {
+	IoPort.setPort(0, O_PIN_18);
+	enable_state = "OFF";
+     }
+     else if(laser_status == "Stand by, shutter closed" && enable_state == "OFF")
+     //else if(laser_status == "Ready for marking" && enable_state == "OFF")
+     {
+	IoPort.resetPort(0, O_PIN_18);
+	enable_state = "ON"; 
+     }
+}
+
+function warmup_counter(ID)
+{
+    if(ID == timers[8])
+    {
+	if(wac != 0)
+	{
+	    wac = wac - 1;
+	    enable_state = "Wait:"+wac+"s";
+	   
+                }
+	else
+	{
+	    disconnect_func(warmup_counter);
+	    enable_state = "Press to enable";
+	    wac =warm_up_time;
+	}
+    }
+    
+}
+
+function reset_sequence()
+{
+    IoPort.setPort(0, O_PIN_17);
+    key_state = "OFF";
+    IoPort.setPort(0, O_PIN_18);
+    enable_state = "OFF";
+}
+
+function enable_break()
+{
+    IoPort.resetPort(0, O_PIN_5);
+    brake_status = 1;
+    if(debug_mode){print("Brake active")}
+}
+
+function disable_break()
+{
+     IoPort.setPort(0, O_PIN_5); 
+     brake_status = 0;
+     if(debug_mode){print("Brake disabled")}
+}
+
+var laser_poz_before = Axis.getPosition(2);
+var laser_poz_cur =  Axis.getPosition(2);
+var laser_moving = 0;
+
+/*
+  Checks if laser is moving
+  */
+function laser_movement(ID)
+{
+    if(timers[4] == ID)
+    {
+        laser_poz_cur = Axis.getPosition(2);
+        if(laser_poz_cur != laser_poz_before)
+        {
+            laser_moving = 1;
+            signal_ready = 0;
+        }
+        else
+        {
+            laser_moving = 0;
+            signal_ready = 1;
+        }
+        laser_poz_before = laser_poz_cur;
+    }
+}
+
+function set_signal_ready(ID)
+{
+    if((timers[0] == ID)  && (signal_ready == 1))
+    {
+            IoPort.setPort(0, O_PIN_2); 
+    }
+    if((timers[0] == ID) && (signal_ready == 0))
+    {
+            IoPort.resetPort(0, O_PIN_2); 
+    }
+    
+    if((timers[0] == ID) && (auto_mode == "OFF") && (laser_in_working_pos == 1) && (IoPort.getPort(0) & I_PIN_11))
+    {
+           IoPort.resetPort(0, O_PIN_2); 
+    }
+ }
 
 function get_laser_events(event)
 {

@@ -1,5 +1,5 @@
 //Timers declaration
-var times = [10, 20, 60, 100, 300, 500, 600, 7000];
+var times = [10, 20, 60, 100, 300, 500, 600, 7000, 1000];
 
 var timers = Array.apply(null, new Array(times.length)).map(Number.prototype.valueOf,0);
 var timer_list = [];

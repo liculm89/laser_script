@@ -9,6 +9,8 @@ function readFile_manual()
                 if(laser_status == "Ready for marking")
                 {
                     readFile();
+                    timers[7] = System.setTimer(times[7]);
+	    start_timer(timers[7], barrier_up_afer_marking_m);
                 }
                 else
                 {
@@ -28,6 +30,22 @@ function readFile_manual()
     else
     {
         error_total_stop();
+    }
+}
+
+function barrier_up_afer_marking_m(ID)
+{
+    if(timers[7] == ID)
+    {
+        if(IoPort.getPort(0) & I_PIN_11)
+        {
+            barrier_up_auto();
+            laser_marking = 0;
+            laser_in_working_pos = 0;
+            signal_ready = 1;
+            pumps_marked++;
+        }
+        disconnect_func(barrier_up_afer_marking_m);
     }
 }
 
