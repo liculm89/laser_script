@@ -95,6 +95,7 @@ function set_flags()
     {
         total_stop = 1;
         total_stop_func();
+        reset_sequence();	
         if(brake_status == 0)
 	{
 	    enable_break()
@@ -159,6 +160,8 @@ function init_func()
     
     //Generates parts_list[] from excel database
     parts_list_gen();
+     
+   reset_sequence();
     
     //Pump counter and laser movement functions connection
     System["sigTimer(int)"].connect(pump_counter);

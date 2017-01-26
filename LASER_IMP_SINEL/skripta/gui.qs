@@ -66,14 +66,14 @@ function gen_dialog(part_list)
     var btn_auto_mode = new PushButton("START AUTO MODE");
     //btn_auto_mode["sigPressed()"].connect(readFile_auto);
     btn_auto_mode["sigPressed()"].connect(start_auto_mode);
-    btn_auto_mode.font = font2;  btn_auto_mode.setFixedSize(250,60);
+    btn_auto_mode.font = font2;  btn_auto_mode.setFixedSize(280,60);
     cmb_buttons_auto.add(btn_auto_mode);
     
     cmb_buttons_auto.newColumn();
     
     var btn_auto_stop = new PushButton("STOP AUTO MODE");
     btn_auto_stop["sigPressed()"].connect(stop_auto);
-    btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(250,60);
+    btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(280,60);
     cmb_buttons_auto.add(btn_auto_stop);
    
     dialog.addSpace(20);
@@ -91,7 +91,7 @@ function gen_dialog(part_list)
     gb_pump_count.newColumn();
     var btn_pump_count = new PushButton("RESET PUMPS COUNTER");
     btn_pump_count["sigPressed()"].connect(reset_pump_count);
-    btn_pump_count.font = font2; btn_pump_count.setFixedSize(250,60);
+    btn_pump_count.font = font2; btn_pump_count.setFixedSize(300,60);
     gb_pump_count.add(btn_pump_count);
 
     dialog.add(gb_pump_count);
@@ -132,12 +132,33 @@ function gen_dialog(part_list)
     lbl1.font = font_lbls;
     gb.add(lbl1);
     
+        //grupa "laser pos"
+    gb_lp = new GroupBox(); gb_lp.title = "Laser position";
+
+    var btn_mu = new PushButton("Move up");
+    btn_mu["sigPressed()"].connect(move_up);
+    btn_mu.font = font_manual_btns; btn_mu.setFixedSize(170,50);
+    gb_lp.add(btn_mu);
+
+    gb_lp.newColumn();
+    var btn_md = new PushButton("Move down");
+    btn_md["sigPressed()"].connect(move_down);
+    btn_md.font = font_manual_btns; btn_md.setFixedSize(170,50);
+    gb_lp.add(btn_md);
+
+    gb_lp.newColumn();
+    var btn3 = new PushButton("STOP!");
+    btn3["sigPressed()"].connect(stop_axis);
+    btn3.font = font_manual_btns; btn3.setFixedSize(170,50);
+    gb_lp.add(btn3);
+    dialog.add(gb_lp);
+    
     gb_move_distance = new GroupBox();
     
     sb1 = new SpinBox("", 25);  sb1["sigValueChanged(int)"].connect(sb1_ch);
     sb1.font = font2;
     
-    lbl_md = new Label(); lbl_md.text ="Moving distance:";
+    lbl_md = new Label(); lbl_md.text ="Move distance (mm):";
     lbl_md.font = font2;
     gb_move_distance.add(lbl_md);
 				  
@@ -148,37 +169,16 @@ function gen_dialog(part_list)
     gb_las_r = new GroupBox(); gb_las_r.title ="Laser reference";
     btn_laser_ref = new PushButton("Move laser to reference position");
     btn_laser_ref["sigPressed()"].connect(laser_reference);
-    btn_laser_ref.font = font_manual_btns; btn_laser_ref.setFixedSize(400,50);
+    btn_laser_ref.font = font_manual_btns; btn_laser_ref.setFixedSize(560,50);
     gb_las_r.add(btn_laser_ref);
 
     btn_laser_pos = new PushButton("Move laser to working  position");
     btn_laser_pos["sigPressed()"].connect(search_working_pos);
-    btn_laser_pos.font = font_manual_btns; btn_laser_pos.setFixedSize(400,50);
+    btn_laser_pos.font = font_manual_btns; btn_laser_pos.setFixedSize(560,50);
     gb_las_r.add(btn_laser_pos);
 
     dialog.add(gb_las_r);
-
-    //grupa "laser pos"
-    gb_lp = new GroupBox(); gb_lp.title = "Laser position";
-
-    var btn_mu = new PushButton("Move up");
-    btn_mu["sigPressed()"].connect(move_up);
-    btn_mu.font = font_manual_btns; btn_mu.setFixedSize(120,50);
-    gb_lp.add(btn_mu);
-
-    gb_lp.newColumn();
-    var btn_md = new PushButton("Move down");
-    btn_md["sigPressed()"].connect(move_down);
-    btn_md.font = font_manual_btns; btn_md.setFixedSize(120,50);
-    gb_lp.add(btn_md);
-
-    gb_lp.newColumn();
-    var btn3 = new PushButton("STOP!");
-    btn3["sigPressed()"].connect(stop_axis);
-    btn3.font = font_manual_btns; btn3.setFixedSize(120,50);
-    gb_lp.add(btn3);
-    dialog.add(gb_lp);
-
+ 
     dialog.okButtonText = "Done"
     dialog.cancelButtonText = "Abort";
 
@@ -187,14 +187,14 @@ function gen_dialog(part_list)
 
     var btn_barriera_up = new PushButton("Barrier up");
     btn_barriera_up["sigPressed()"].connect(barrier_up);
-    btn_barriera_up.font = font_manual_btns; btn_barriera_up.setFixedSize(160,50);
+    btn_barriera_up.font = font_manual_btns; btn_barriera_up.setFixedSize(270,50);
     gb_lb.add(btn_barriera_up);
 
     gb_lb.newColumn();
 
     var btn_bar_down = new PushButton("Barrier down");
     btn_bar_down["sigPressed()"].connect(barrier_down);
-    btn_bar_down.font = font_manual_btns; btn_bar_down.setFixedSize(160,50);
+    btn_bar_down.font = font_manual_btns; btn_bar_down.setFixedSize(270,50);
     gb_lb.add(btn_bar_down);
 
     dialog.add(gb_lb);
@@ -221,15 +221,15 @@ function gen_dialog(part_list)
     gb_mark.add(selectedLogo);
 
     gb_mark.newColumn();
-    var btn = new PushButton("ZAPIŠI!");
+    var btn = new PushButton("MARK!");
     btn["sigPressed()"].connect(readFile_manual);
-    btn.setFixedSize(160,50);
+    btn.setFixedSize(220,50);
     btn.font =  font_manual_btns;
     gb_mark.add(btn);   
     
     var btn_stop_m = new PushButton("STOP MARKING!");
     btn_stop_m["sigPressed()"].connect(stop_m_manual);
-    btn_stop_m.setFixedSize(160,50);
+    btn_stop_m.setFixedSize(220,50);
     btn_stop_m.font = font_manual_btns;
     gb_mark.add(btn_stop_m);
 

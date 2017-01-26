@@ -24,7 +24,7 @@ function onLaserEnd()
 
 var key_state = "OFF";
 var enable_state = "OFF";
-var warm_up_time = 35;
+var warm_up_time = 30;
 var wac =warm_up_time;
 
 function laser_key_on()
@@ -42,8 +42,10 @@ function laser_key_on()
     {
 	IoPort.setPort(0, O_PIN_17);
 	key_state = "OFF";
+	if(enable_state != "ON")
+	{disconnect_func(warmup_counter)}
                 enable_state = "OFF";
-	disconnect_func(warmup_counter);
+
 	wac = warm_up_time;
     }
 }

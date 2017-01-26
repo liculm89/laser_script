@@ -12,8 +12,8 @@ var resPath = drive_loc + "\\LASER_IMP_SINEL\\res\\";
 
 var h_Document,hDb, fw;
 var part_list, logos_list = [];
-var txt_selected_logo = "Izbran logo: ";
-var txt_num_writes = "Število zapisov (od zagona): ";
+var txt_selected_logo = "Selected logo: ";
+//var txt_num_writes = "Število zapisov (od zagona): ";
 
 /*------------------------------------------------
     Generiranje liste komada iz excel tabele
