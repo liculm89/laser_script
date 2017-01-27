@@ -153,7 +153,7 @@ function laser_movement(ID)
 function set_signal_ready(ID)
 	
 {
-    print(signal_ready);
+    //print(signal_ready);
     if((timers[0] == ID)  && (signal_ready == 1))
     {
             IoPort.setPort(0, O_PIN_2); 

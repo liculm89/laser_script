@@ -1,8 +1,8 @@
 /*---------------------------------
  Template and log file paths
   ----------------------------------*/
-//drive_loc = "G:";
-drive_loc = "D:";
+drive_loc = "G:";
+//drive_loc = "D:";
 	    
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
@@ -10,8 +10,18 @@ var logoPath = drive_loc + "\\LASER_IMP_SINEL\\Predloge\\" ;
 var logPath= drive_loc + "\\LASER_IMP_SINEL\\writeLog.txt";
 var resPath = drive_loc + "\\LASER_IMP_SINEL\\res\\";
 
+
+var templates = drive_loc + "\\LASER_IMP_SINEL\\TEMPLATE\\";
+var nova_db =  drive_loc + "\\LASER_IMP_SINEL\\tabela_baza.xls";
+
 var h_Document,hDb, fw;
-var part_list, logos_list = [];
+var part_list = []; 
+var logos_list = [];
+var new_list = [];
+var newarr = [];
+var template_list = [];
+var template_list_s = [];
+
 var txt_selected_logo = "Selected logo: ";
 //var txt_num_writes = "Število zapisov (od zagona): ";
 
@@ -21,12 +31,14 @@ var txt_selected_logo = "Selected logo: ";
 function parts_list_gen()
 {
     hDb2 = new Db("QODBC");
+
     hDb2.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + xlsPath;
+
     if(hDb2.open())
     {
         part_list = [];
-        logos_list = [];
-        var res = hDb2.exec("SELECT * FROM [List1$]" );
+        logos_list = [];	
+        var res = hDb2.exec("SELECT * FROM [List1$]" ); 
 
         res.forEach(function(item, index)
         {
@@ -40,8 +52,77 @@ function parts_list_gen()
         writeLog("Result: " + res + " - Error: " + hDb2.lastError());
     }
     hDb2.close();
+
 }
 
+function new_parts_list()
+{
+        hDb3 = new Db("QODBC")
+        hDb3.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + nova_db;
+    
+        
+    if(hDb3.open())
+	
+    {
+	//izdelek
+	new_list = [];
+	var res = hDb3.exec("SELECT Izdelek FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek is not null" ); 
+
+        res.forEach(function(item, index)
+        {
+	    if(res[index][0] != "")
+	    {
+                           new_list[index] = res[index][0].toString().slice(0, 9);
+	     }
+        })
+
+
+newarr = (function(new_list){
+	var m = {}, newarr = []
+	for (var i = 0; i < new_list.length; i++){
+	    var v = new_list[i];
+	    if(!m[v])
+	    {
+		newarr.push(v);
+		m[v]= true;
+	    }
+	}
+	return newarr;
+    })(new_list);
+    
+    //Templates
+     template_list =[];
+     var res = hDb3.exec("SELECT TEMPLATE FROM [Napisne tablice in nalepke sezn$] WHERE TEMPLATE is not null" ); 
+               res.forEach(function(item, index)
+        {
+	    if(res[index][0] != "")
+	    {
+                          template_list[index] = res[index][0];
+	     }
+        })
+
+template_list.sort();
+
+template_list_s = (function(template_list){
+	var m = {}, template_list_s = []
+	for (var i = 0; i < template_list.length; i++){
+	    var v = template_list[i];
+	    if(!m[v])
+	    {
+		template_list_s.push(v);
+		m[v]= true;
+	    }
+	}
+	return template_list_s;
+    })(template_list);
+
+
+print(template_list_s);
+    
+    }
+hDb3.close()
+    
+}
 
 /*-----------------------------------------------------------------------------------------------
   Template reading, laser document creation and execution function

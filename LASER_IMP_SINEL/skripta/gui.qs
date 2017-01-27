@@ -51,6 +51,14 @@ function gen_dialog(part_list)
     cmb_a.font = font2;
     gb_cmb_box.add(cmb_a);
     cmb_a["sigIndexChanged(int)"].connect(logo_selection);
+    
+    gb_cmb_box.newColumn();
+    
+    type_select_btn = new PushButton("Type selection");
+    type_select_btn.setFixedSize(190,40); type_select_btn.font = font2;
+    type_select_btn["sigPressed()"].connect(select_type_popup);
+    
+    gb_cmb_box.add(type_select_btn);
 
     selectedLogo_a =  new Label(txt_selected_logo + "/");
     logo_init(cmb_a.currentItem, selectedLogo_a);
@@ -66,7 +74,6 @@ function gen_dialog(part_list)
     auto_box.add(cmb_buttons_auto);
   
     var btn_auto_mode = new PushButton("START AUTO MODE");
-    //btn_auto_mode["sigPressed()"].connect(readFile_auto);
     btn_auto_mode["sigPressed()"].connect(start_auto_mode);
     btn_auto_mode.font = font2;  btn_auto_mode.setFixedSize(270,60);
     cmb_buttons_auto.add(btn_auto_mode);
@@ -329,7 +336,7 @@ function gen_dialog(part_list)
     gb_ver = new GroupBox("Version");
     dialog.add(gb_ver);
    
-    lbl_title = new Label("Laser control v0.9rc4");
+    lbl_title = new Label("Laser control v0.9rc5");
     lbl_title.font = font_albls;
     gb_ver.add(lbl_title);
     
@@ -423,6 +430,47 @@ function gui_update(ID)
     }
 }
 
+
+function select_type_popup()
+{
+    type_selection = new Dialog ("Pump type selection",Dialog.D_OK,false, 0x00040000);
+    
+    type_selection.setFixedSize(650,720);
+    
+    new_parts_list();
+    
+    gb_parts = new GroupBox("Part selection");
+    
+    lbl_izdelek = new Label("Select pump from pumps list:")
+    lbl_izdelek.font= font2;
+    gb_parts.add(lbl_izdelek);
+    
+    type_selection.addSpace(10);
+    cmb_new = new ComboBox("",newarr);
+    cmb_new.font = font2;
+    gb_parts.add(cmb_new);
+    
+    type_selection.add(gb_parts);
+    type_selection.addSpace(25);
+    
+    gb_template = new GroupBox("Template selection");
+    
+    lbl_template = new Label("Select template");
+    lbl_template.font = font2;
+    gb_template.add(lbl_template);
+    
+    gb_template.addSpace(10);
+    
+    cmb_template = new ComboBox("", template_list_s);
+    cmb_template.font = font2;
+    gb_template.add(cmb_template);
+    
+    type_selection.add(gb_template);
+    
+    type_selection.show();
+    type_selection.exec();
+}
+
 function sb1_ch(value)
 {
     sb1_v = value;
@@ -494,8 +542,9 @@ function shut_down()
     {
         IoPort.resetPort(0, O_PIN_2); 	
         print("Shutdown started");
-        disconnect_timers();
         enable_break();
+	
+         disconnect_timers();
         System.killAllTimers();
         dialog.OK();
     }
