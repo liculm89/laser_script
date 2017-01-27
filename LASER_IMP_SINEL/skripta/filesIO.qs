@@ -51,6 +51,7 @@ function readFile()
 
     nm = 1;
     
+    /*
     if(auto_mode == "ON")
     {
         var pn = cmb_a.currentItem;
@@ -58,20 +59,33 @@ function readFile()
     else
     {
         var pn = cmb.currentItem;
-    }
+    }*/
+    pn = get_pn();
      
     if(debug_mode){print("Reading and executing");}
     laser_doc_update(pn);
     h_Document.execute();
 }
 
+function get_pn()
+{
+    var pn;
+    if(auto_mode == 1)
+	{
+	    pn = cmb_a.currentItem;
+	}
+	else
+	{
+	    pn = cmb.currentItem;
+	}
+}
 
 function generate_laser_doc(auto, init)
 {
     nm = 1;
     if(init == 0)
     {
-	if(auto == 1)
+	/*if(auto == 1)
 	{
 	    var pn = cmb_a.currentItem;
 	}
@@ -79,11 +93,15 @@ function generate_laser_doc(auto, init)
 	{
 	    var pn = cmb.currentItem;
 	}
-    }
+    }*/
+    pn = get_pn();
+    }	
     else 
     {
 	pn = part_list[0];
     }
+    
+	
     if(debug_mode){print("Reading and creating preview");}
     laser_doc_update(pn);
     renderarea.preview(h_Document);

@@ -37,9 +37,7 @@ function gen_dialog(part_list)
     
       auto_box = new GroupBox(); auto_box.title = "Automatic laser marking";
     dialog.add(auto_box);
-    lbl_auto_status = new Label(); lbl_auto_status.text = "Auto mode: " + auto_mode;
-    lbl_auto_status.font = font_lbls;
-    auto_box.add(lbl_auto_status);
+ 
     
     gb_cmb_box = new GroupBox();
     auto_box.add(gb_cmb_box);
@@ -60,20 +58,24 @@ function gen_dialog(part_list)
     selectedLogo_a.font = font_lbls;
     auto_box.add(selectedLogo_a);
     
+    lbl_auto_status = new Label(); lbl_auto_status.text = "Auto mode: " + auto_mode;
+    lbl_auto_status.font = font_lbls;
+    auto_box.add(lbl_auto_status);
+    
     cmb_buttons_auto = new GroupBox();
     auto_box.add(cmb_buttons_auto);
-    
+  
     var btn_auto_mode = new PushButton("START AUTO MODE");
     //btn_auto_mode["sigPressed()"].connect(readFile_auto);
     btn_auto_mode["sigPressed()"].connect(start_auto_mode);
-    btn_auto_mode.font = font2;  btn_auto_mode.setFixedSize(280,60);
+    btn_auto_mode.font = font2;  btn_auto_mode.setFixedSize(270,60);
     cmb_buttons_auto.add(btn_auto_mode);
     
     cmb_buttons_auto.newColumn();
     
     var btn_auto_stop = new PushButton("STOP AUTO MODE");
     btn_auto_stop["sigPressed()"].connect(stop_auto);
-    btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(280,60);
+    btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(270,60);
     cmb_buttons_auto.add(btn_auto_stop);
    
     dialog.addSpace(20);

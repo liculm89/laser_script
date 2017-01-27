@@ -1,10 +1,3 @@
-/*
-  Function is triggered when one of axis starts(moving) and on start of laser marking process
-  */
-function onLaserStart()
-{
-    //laser_status="ACTIVE";
-}
 
 /*
   Function is triggered when laser marking is stoped with System call
@@ -29,46 +22,58 @@ var wac =warm_up_time;
 
 function laser_key_on()
 {
-  
-    if(key_state == "OFF")
-    {	
+   if(total_stop == 0)
+    {
+    
+       if(key_state == "OFF")
+       {	
 	IoPort.resetPort(0, O_PIN_17);
 	key_state = "ON";
                 enable_state = "Wait:"+wac+"s";
 	timers[8] = System.setTimer(times[8]);
                 start_timer(timers[8], warmup_counter);
-    }
-   else
-    {
+	    }
+       else
+       {
 	IoPort.setPort(0, O_PIN_17);
 	key_state = "OFF";
 	if(enable_state != "ON")
 	{disconnect_func(warmup_counter)}
                 enable_state = "OFF";
-
 	wac = warm_up_time;
-    }
+       }
+  }
+  else
+   {
+      error_total_stop();
+  }
 }
 
 function enable_pressed()
 {
-    // if(laser_status == "Stand by, shutter closed")
-     if(enable_state == "Press to enable")
+    if(total_stop == 0)
     {
-	IoPort.resetPort(0, O_PIN_18);
-	enable_state = "ON";
-     }
-     else if(enable_state == "ON")
-     {
-	IoPort.setPort(0, O_PIN_18);
-	enable_state = "OFF";
-     }
-     else if(laser_status == "Stand by, shutter closed" && enable_state == "OFF")
-     //else if(laser_status == "Ready for marking" && enable_state == "OFF")
-     {
-	IoPort.resetPort(0, O_PIN_18);
-	enable_state = "ON"; 
-     }
+    
+	if(enable_state == "Press to enable" && laser_status == "Stand by, shutter closed")
+	{
+	    IoPort.resetPort(0, O_PIN_18);
+	    enable_state = "ON";
+	}
+	else if(enable_state == "ON")
+	{
+	    IoPort.setPort(0, O_PIN_18);
+	    enable_state = "OFF";
+	}
+	else if(laser_status == "Stand by, shutter closed" && enable_state == "OFF")
+	{
+	    IoPort.resetPort(0, O_PIN_18);
+	   enable_state = "ON"; 
+                }
+      }
+    else
+    {
+	error_total_stop();
+    }
 }
 
 function warmup_counter(ID)
@@ -231,6 +236,14 @@ function check_laser_state(state)
         laser_status ("Error getting state");
         break;
     }
+}
+
+/*
+  Function is triggered when one of axis starts(moving) and on start of laser marking process
+  */
+function onLaserStart()
+{
+    //laser_status="ACTIVE";
 }
 
 function onQueryStart()
