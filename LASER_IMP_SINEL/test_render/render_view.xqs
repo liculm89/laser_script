@@ -1,9 +1,0 @@
-<project>
- <title></title>
- <description></description>
- <author></author>
- <company></company>
- <version></version>
- <script>main.qs</script>
- <resource>IMP_SINEL.xlp</resource>
-</project>
