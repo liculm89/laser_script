@@ -103,16 +103,23 @@ function reset_sequence()
     enable_state = "OFF";
 }
 
+function disable_sequence()
+	
+{
+    IoPort.resetPort(0, O_PIN_17);
+    IoPort.resetPort(0, O_PIN_18); 
+}
+
 function enable_break()
 {
-    IoPort.resetPort(0, O_PIN_5);
+    IoPort.resetPort(0, O_PIN_4);
     brake_status = 1;
     if(debug_mode){print("Brake active")}
 }
 
 function disable_break()
 {
-     IoPort.setPort(0, O_PIN_5); 
+     IoPort.setPort(0, O_PIN_4); 
      brake_status = 0;
      if(debug_mode){print("Brake disabled")}
 }
@@ -132,19 +139,21 @@ function laser_movement(ID)
         if(laser_poz_cur != laser_poz_before)
         {
             laser_moving = 1;
-            signal_ready = 0;
+            //signal_ready = 0;
         }
         else
         {
             laser_moving = 0;
-            signal_ready = 1;
+            //signal_ready = 1;
         }
         laser_poz_before = laser_poz_cur;
     }
 }
 
 function set_signal_ready(ID)
+	
 {
+    print(signal_ready);
     if((timers[0] == ID)  && (signal_ready == 1))
     {
             IoPort.setPort(0, O_PIN_2); 

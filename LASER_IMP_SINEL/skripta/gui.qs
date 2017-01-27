@@ -492,6 +492,7 @@ function shut_down()
 {
     if( auto_mode == "OFF")
     {
+        IoPort.resetPort(0, O_PIN_2); 	
         print("Shutdown started");
         disconnect_timers();
         enable_break();

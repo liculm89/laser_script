@@ -167,6 +167,8 @@ function init_func()
     System["sigTimer(int)"].connect(pump_counter);
     System["sigTimer(int)"].connect(laser_movement);
 
+    
+
     if ((typeof part_list != "undefined") && (reg_fault == 0))
     {
         return 0;
@@ -198,6 +200,8 @@ function main()
     if(init_passed == 0)
     {
         disable_break();
+        signal_ready = 1;
+        System["sigTimer(int)"].connect(set_signal_ready);
         print("Init passed");
         if(Axis.isReversed(2)){Axis.reset(2);}else{print("Z axis not reversed");}
         gen_dialog(part_list);

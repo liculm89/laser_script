@@ -9,6 +9,7 @@ function readFile_manual()
                 if(laser_status == "Ready for marking")
                 {
                     readFile();
+                    signal_ready = 0;
                     timers[7] = System.setTimer(times[7]);
 	    start_timer(timers[7], barrier_up_afer_marking_m);
                 }
