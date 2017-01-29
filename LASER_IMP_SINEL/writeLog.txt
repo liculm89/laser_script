@@ -1676,3 +1676,454 @@ Friday, January 27, 2017 15:59:52 - Selected P.N.:979523951
 Friday, January 27, 2017 15:59:52 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
 Friday, January 27, 2017 16:00:48 - Selected P.N.:979523951
 Friday, January 27, 2017 16:00:48 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:00:30 - Result: undefined - Error: [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified QODBC3: Unable to connect
+Saturday, January 28, 2017 13:00:30 - Result: undefined - Error: [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified QODBC3: Unable to connect
+Saturday, January 28, 2017 13:00:31 - Selected P.N.:undefined
+Saturday, January 28, 2017 13:00:31 - Result: undefined - Error: [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified QODBC3: Unable to connect
+Saturday, January 28, 2017 13:06:24 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:06:24 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:06:27 - Selected P.N.:undefined
+Saturday, January 28, 2017 13:07:09 - Selected P.N.:undefined
+Saturday, January 28, 2017 13:17:51 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:17:51 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:29:00 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:29:00 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:30:03 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:30:03 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:30:46 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:30:46 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:31:26 - Selected P.N.:undefined
+Saturday, January 28, 2017 13:32:41 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:32:42 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:33:01 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:33:01 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:34:03 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:34:03 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:34:23 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:34:23 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:34:53 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:34:54 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:36:13 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:36:13 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:37:48 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:37:48 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:38:10 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:38:10 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:38:49 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:38:49 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:40:51 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:40:51 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:43:35 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:43:35 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:44:16 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:44:16 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:45:18 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:45:18 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:47:13 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:47:13 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:48:28 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:48:28 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:49:23 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:49:23 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:50:01 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:50:01 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:50:50 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:50:50 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:51:51 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:51:51 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:52:36 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:52:36 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:52:59 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:52:59 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:55:04 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:55:04 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:56:35 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:56:35 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 13:57:42 - Selected P.N.:979523951
+Saturday, January 28, 2017 13:57:42 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 14:00:25 - Selected P.N.:979523951
+Saturday, January 28, 2017 14:00:25 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 14:01:17 - Selected P.N.:979523951
+Saturday, January 28, 2017 14:01:17 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 14:03:01 - Selected P.N.:979523951
+Saturday, January 28, 2017 14:03:01 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 14:03:20 - Selected P.N.:979523951
+Saturday, January 28, 2017 14:03:20 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 14:03:57 - Selected P.N.:979523951
+Saturday, January 28, 2017 14:03:57 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 15:42:05 - Selected P.N.:979523951
+Saturday, January 28, 2017 15:42:05 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 15:48:43 - Selected P.N.:979523951
+Saturday, January 28, 2017 15:48:43 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 15:49:16 - Selected P.N.:979523951
+Saturday, January 28, 2017 15:49:16 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 15:50:09 - Selected P.N.:979523951
+Saturday, January 28, 2017 15:50:09 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 15:50:53 - Selected P.N.:979523951
+Saturday, January 28, 2017 15:50:53 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 15:51:18 - Selected P.N.:undefined
+Saturday, January 28, 2017 15:51:26 - Selected P.N.:979523951
+Saturday, January 28, 2017 15:51:27 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 15:53:17 - Selected P.N.:979523951
+Saturday, January 28, 2017 15:53:17 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 15:53:38 - Selected P.N.:979523951
+Saturday, January 28, 2017 15:53:38 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 16:49:51 - Selected P.N.:979523951
+Saturday, January 28, 2017 16:49:51 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 19:17:07 - Selected P.N.:979523951
+Saturday, January 28, 2017 19:17:07 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 19:28:52 - Selected P.N.:979523951
+Saturday, January 28, 2017 19:28:52 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 19:29:15 - Selected P.N.:979523951
+Saturday, January 28, 2017 19:29:15 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 19:33:53 - Selected P.N.:979523951
+Saturday, January 28, 2017 19:33:53 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 19:34:28 - Selected P.N.:979523951
+Saturday, January 28, 2017 19:34:28 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 19:35:38 - Selected P.N.:979523951
+Saturday, January 28, 2017 19:35:38 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 19:39:24 - Selected P.N.:979523951
+Saturday, January 28, 2017 19:39:24 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 19:48:37 - Selected P.N.:979523951
+Saturday, January 28, 2017 19:48:37 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 19:52:45 - Selected P.N.:979523951
+Saturday, January 28, 2017 19:52:45 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 19:54:14 - Selected P.N.:979523951
+Saturday, January 28, 2017 19:54:14 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 19:55:13 - Selected P.N.:979523951
+Saturday, January 28, 2017 19:55:13 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 19:56:05 - Selected P.N.:979523951
+Saturday, January 28, 2017 19:56:05 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 19:56:53 - Selected P.N.:979523951
+Saturday, January 28, 2017 19:56:53 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 19:57:45 - Selected P.N.:979523951
+Saturday, January 28, 2017 19:57:45 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 19:58:37 - Selected P.N.:979523951
+Saturday, January 28, 2017 19:58:37 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:00:51 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:00:51 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:01:56 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:01:56 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:04:23 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:04:23 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:15:04 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:15:04 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:18:53 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:18:53 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:19:04 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:19:04 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:21:25 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:21:25 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:28:23 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:28:23 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:33:52 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:33:52 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:34:21 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:34:21 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:34:58 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:34:58 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:35:43 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:35:43 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:35:52 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:35:52 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:35:59 - Selected P.N.:undefined
+Saturday, January 28, 2017 20:36:46 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:36:46 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:37:49 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:37:49 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:43:30 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:43:30 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:45:39 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:45:39 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:47:51 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:47:51 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:49:33 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:49:33 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 20:50:02 - Selected P.N.:979523951
+Saturday, January 28, 2017 20:50:02 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 21:17:56 - Selected P.N.:979523951
+Saturday, January 28, 2017 21:17:56 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 21:20:43 - Selected P.N.:979523951
+Saturday, January 28, 2017 21:20:43 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 21:21:36 - Selected P.N.:979523951
+Saturday, January 28, 2017 21:21:36 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 22:02:27 - Selected P.N.:979523951
+Saturday, January 28, 2017 22:02:27 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 22:44:42 - Selected P.N.:979523951
+Saturday, January 28, 2017 22:44:42 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 22:44:58 - Selected P.N.:979523951
+Saturday, January 28, 2017 22:44:58 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 22:45:04 - Selected P.N.:undefined
+Saturday, January 28, 2017 22:45:06 - Selected P.N.:undefined
+Saturday, January 28, 2017 22:55:45 - Selected P.N.:979523951
+Saturday, January 28, 2017 22:55:45 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 23:01:20 - Selected P.N.:979523951
+Saturday, January 28, 2017 23:01:20 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 23:01:24 - Selected P.N.:undefined
+Saturday, January 28, 2017 23:01:25 - Selected P.N.:undefined
+Saturday, January 28, 2017 23:02:51 - Selected P.N.:979523951
+Saturday, January 28, 2017 23:02:51 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 23:07:44 - Selected P.N.:979523951
+Saturday, January 28, 2017 23:07:44 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 23:14:08 - Selected P.N.:979523951
+Saturday, January 28, 2017 23:14:08 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 23:15:06 - Selected P.N.:979523951
+Saturday, January 28, 2017 23:15:06 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 23:17:57 - Selected P.N.:979523951
+Saturday, January 28, 2017 23:17:57 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 23:18:32 - Selected P.N.:979523951
+Saturday, January 28, 2017 23:18:32 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 23:19:00 - Selected P.N.:979523951
+Saturday, January 28, 2017 23:19:00 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 23:22:35 - Selected P.N.:979523951
+Saturday, January 28, 2017 23:22:35 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 23:40:57 - Selected P.N.:979523951
+Saturday, January 28, 2017 23:40:57 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 23:45:13 - Selected P.N.:979523951
+Saturday, January 28, 2017 23:45:13 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Saturday, January 28, 2017 23:45:23 - Selected P.N.:undefined
+Sunday, January 29, 2017 09:08:06 - Selected P.N.:979523951
+Sunday, January 29, 2017 09:08:06 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 09:54:04 - Selected P.N.:979523951
+Sunday, January 29, 2017 09:54:04 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 09:54:34 - Selected P.N.:979523951
+Sunday, January 29, 2017 09:54:34 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 09:55:38 - Selected P.N.:979523951
+Sunday, January 29, 2017 09:55:38 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 10:02:35 - Selected P.N.:979523951
+Sunday, January 29, 2017 10:02:35 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 10:39:12 - Selected P.N.:979523951
+Sunday, January 29, 2017 10:39:12 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 10:56:38 - Selected P.N.:979523951
+Sunday, January 29, 2017 10:56:38 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 10:59:00 - Selected P.N.:979523951
+Sunday, January 29, 2017 10:59:00 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 11:06:28 - Selected P.N.:979523951
+Sunday, January 29, 2017 11:06:28 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 11:06:45 - Selected P.N.:979523951
+Sunday, January 29, 2017 11:06:45 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 11:06:57 - Selected P.N.:979523951
+Sunday, January 29, 2017 11:06:57 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 11:07:49 - Selected P.N.:979523951
+Sunday, January 29, 2017 11:07:49 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 11:08:02 - Selected P.N.:979523951
+Sunday, January 29, 2017 11:08:02 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 11:08:13 - Selected P.N.:979523951
+Sunday, January 29, 2017 11:08:13 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 11:52:24 - Selected P.N.:979523951
+Sunday, January 29, 2017 11:52:25 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 11:52:53 - Selected P.N.:979523951
+Sunday, January 29, 2017 11:52:53 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 11:54:58 - Selected P.N.:979523951
+Sunday, January 29, 2017 11:54:58 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 11:55:18 - Selected P.N.:979523951
+Sunday, January 29, 2017 11:55:18 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 12:04:02 - Selected P.N.:979523951
+Sunday, January 29, 2017 12:04:02 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 12:05:36 - Selected P.N.:979523951
+Sunday, January 29, 2017 12:05:37 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 12:06:06 - Selected P.N.:979523951
+Sunday, January 29, 2017 12:06:06 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 12:06:50 - Selected P.N.:979523951
+Sunday, January 29, 2017 12:06:50 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 12:16:06 - Selected P.N.:979523951
+Sunday, January 29, 2017 12:16:06 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 12:17:43 - Selected P.N.:979523951
+Sunday, January 29, 2017 12:17:43 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 12:28:42 - Selected P.N.:979523951
+Sunday, January 29, 2017 12:28:42 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 12:29:31 - Selected P.N.:979523951
+Sunday, January 29, 2017 12:29:31 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 12:45:01 - Selected P.N.:979523951
+Sunday, January 29, 2017 12:45:01 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 12:45:27 - Selected P.N.:979523951
+Sunday, January 29, 2017 12:45:27 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 12:49:06 - Selected P.N.:979523951
+Sunday, January 29, 2017 12:49:06 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 12:49:10 - Selected P.N.:undefined
+Sunday, January 29, 2017 12:58:49 - Selected P.N.:979523951
+Sunday, January 29, 2017 12:58:49 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 13:08:06 - Selected P.N.:979523951
+Sunday, January 29, 2017 13:08:06 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 13:08:57 - Selected P.N.:979523951
+Sunday, January 29, 2017 13:08:57 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 13:10:16 - Selected P.N.:979523951
+Sunday, January 29, 2017 13:10:16 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 13:10:24 - Selected P.N.:979523951
+Sunday, January 29, 2017 13:10:24 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 13:10:37 - Selected P.N.:979523951
+Sunday, January 29, 2017 13:10:37 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 13:12:13 - Selected P.N.:979523951
+Sunday, January 29, 2017 13:12:13 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 13:23:31 - Selected P.N.:979523951
+Sunday, January 29, 2017 13:23:31 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 13:24:43 - Selected P.N.:979523951
+Sunday, January 29, 2017 13:24:43 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 13:25:18 - Selected P.N.:979523951
+Sunday, January 29, 2017 13:25:18 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 13:34:12 - Selected P.N.:979523951
+Sunday, January 29, 2017 13:34:12 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 13:48:48 - Selected P.N.:979523951
+Sunday, January 29, 2017 13:48:48 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 13:49:06 - Selected P.N.:979523951
+Sunday, January 29, 2017 13:49:06 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 13:58:30 - Selected P.N.:979523951
+Sunday, January 29, 2017 13:58:30 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 14:00:31 - Selected P.N.:979523951
+Sunday, January 29, 2017 14:00:31 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 14:43:46 - Selected P.N.:979523951
+Sunday, January 29, 2017 14:43:46 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 14:45:17 - Selected P.N.:979523951
+Sunday, January 29, 2017 14:45:17 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 14:51:03 - Selected P.N.:979523951
+Sunday, January 29, 2017 14:51:03 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 14:52:13 - Selected P.N.:979523951
+Sunday, January 29, 2017 14:52:13 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 14:55:24 - Selected P.N.:979523951
+Sunday, January 29, 2017 14:55:24 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 15:04:23 - Selected P.N.:979523951
+Sunday, January 29, 2017 15:04:23 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 15:27:37 - Selected P.N.:979523951
+Sunday, January 29, 2017 15:27:37 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:02:00 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:02:00 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:04:59 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:04:59 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:07:19 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:07:19 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:08:19 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:08:19 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:09:47 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:09:47 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:10:17 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:10:18 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:10:32 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:10:32 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:10:53 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:10:53 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:11:36 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:11:36 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:12:16 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:12:16 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:12:50 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:12:50 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:15:12 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:15:12 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:15:45 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:15:45 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:17:28 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:17:28 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:18:32 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:18:32 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:18:46 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:18:46 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:19:31 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:19:31 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:25:07 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:25:08 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:25:58 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:25:58 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:26:35 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:26:35 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:27:02 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:27:02 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:27:40 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:27:40 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:28:02 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:28:02 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:28:27 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:28:27 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:30:37 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:30:37 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:33:55 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:33:56 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:36:21 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:36:21 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:36:35 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:36:35 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:43:11 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:43:11 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:43:36 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:43:36 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:44:46 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:44:46 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:44:59 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:44:59 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 18:45:24 - Selected P.N.:979523951
+Sunday, January 29, 2017 18:45:24 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 19:29:15 - Selected P.N.:979523951
+Sunday, January 29, 2017 19:29:15 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 19:55:15 - Selected P.N.:979523951
+Sunday, January 29, 2017 19:55:15 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 19:56:55 - Selected P.N.:979523951
+Sunday, January 29, 2017 19:56:55 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 19:58:40 - Selected P.N.:979523951
+Sunday, January 29, 2017 19:58:40 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 19:59:15 - Selected P.N.:979523951
+Sunday, January 29, 2017 19:59:15 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 19:59:39 - Selected P.N.:979523951
+Sunday, January 29, 2017 19:59:39 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:00:36 - Selected P.N.:undefined
+Sunday, January 29, 2017 20:00:38 - Selected P.N.:undefined
+Sunday, January 29, 2017 20:07:05 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:07:05 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:08:42 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:08:42 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:09:50 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:09:50 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:24:20 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:24:21 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:24:48 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:24:49 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:25:13 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:25:13 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:26:00 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:26:00 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:27:19 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:27:19 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:28:08 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:28:08 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:30:16 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:30:16 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:32:24 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:32:24 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:36:45 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:36:45 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:38:01 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:38:01 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:38:17 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:38:17 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:39:10 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:39:10 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:41:04 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:41:04 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:41:21 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:41:21 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:43:06 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:43:06 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:43:38 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:43:38 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:44:20 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:44:20 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:46:28 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:46:28 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:49:47 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:49:47 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:50:04 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:50:04 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 20:58:42 - Selected P.N.:979523951
+Sunday, January 29, 2017 20:58:42 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 21:03:40 - Selected P.N.:979523951
+Sunday, January 29, 2017 21:03:40 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 21:04:38 - Selected P.N.:979523951
+Sunday, January 29, 2017 21:04:38 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 21:06:47 - Selected P.N.:979523951
+Sunday, January 29, 2017 21:06:47 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 21:28:22 - Selected P.N.:979523951
+Sunday, January 29, 2017 21:28:22 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 21:31:18 - Selected P.N.:979523951
+Sunday, January 29, 2017 21:31:18 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 21:34:25 - Selected P.N.:979523951
+Sunday, January 29, 2017 21:34:25 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz
+Sunday, January 29, 2017 21:34:55 - Selected P.N.:979523951
+Sunday, January 29, 2017 21:34:55 - Read:979523951,870524238,NMT PLUS ,15/40-130,0.05,0.2,3,21,0.16,1,1,telekom,1~230V 50Hz

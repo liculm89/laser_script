@@ -160,6 +160,7 @@ function init_func()
     
     //Generates parts_list[] from excel database
     parts_list_gen();
+    new_parts_list();
      
    reset_sequence();
     
@@ -183,6 +184,15 @@ function init_func()
     }
 
 }
+
+Date.prototype.mmyy = function(){
+    var mm = this.getMonth() + 1;
+
+    return [(mm>9 ? '' : '0') + mm,
+	    "/",
+          this.getFullYear(),
+         ].join('');
+};
 
 function main()
 {
