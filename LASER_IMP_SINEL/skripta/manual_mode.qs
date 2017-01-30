@@ -7,11 +7,11 @@ function readFile_manual()
             if(auto_mode == "OFF" )
             {
                 if(laser_status == "Ready for marking")
-                {
-                    readFile();
+                {    
+                    mark_auto();
                     signal_ready = 0;
                     timers[7] = System.setTimer(times[7]);
-	    start_timer(timers[7], barrier_up_afer_marking_m);
+	        start_timer(timers[7], barrier_up_afer_marking_m);
                 }
                 else
                 {

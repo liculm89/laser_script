@@ -3,7 +3,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////
 //sets debugging(on=1 and off=0)
 debug_mode = 0;
-
 /*---------------------------------------------------------
  Inputs and outputs
   --------------------------------------------------------*/
@@ -163,7 +162,6 @@ function to_arr(from_str, c1, c2)
     return arr_s;
 }
 
-
 function remove_duplicates(arr)
 {
     var m = {}, newarr = []
@@ -183,8 +181,8 @@ print(date.mmyy());
 
 
 //drive_loc = "G:";
-drive_loc = "D:";
-//drive_loc = "E:";
+//drive_loc = "D:";
+drive_loc = "E:";
 
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
@@ -195,9 +193,7 @@ var nova_db =  drive_loc + "\\LASER_IMP_SINEL\\tabela_baza.xls";
 
 var test_log =  drive_loc + "\\LASER_IMP_SINEL\\tabela_log.xls";
 
-
 var templates_a = "/,ADL-G,AN-G,BE-G,CAL-G,CAL-N,DEL-G,DEL-GS,DUP-G,EB-G,EB-N,EFA-G,EFA-N,EMS-G,ESP-G,EXP-G,EXP-N,GHN-G,GS-G,GUT-G,IMP-G,IMP-GS,IMP-N,INT-G,KIR-N,LAD-G,LAD-N,MAT-G,MIL-G,PER-G,PER-N,SLD-G,SOM-G,SOME-N,SOML-N,SPE-G,STA-G,UNI-G";
-
 var logotips_a = "ADL,AN,AP,BE,CAL,COOX,DEL,DUP,EB,EBARA,EFA,EMS,ENRJ,ESP,EXP,GS,GUT,IDR,IMP,INT,KIR,LAD,LATITUDE,MAT,MH,MI,PER,PL,SAE,SEA,SEN,SLD,SOM,SPE,ST,STA,TC5,UNI,VEX,calpeda1";
 
 var znaki_a = "CCC-1,CE-1,EAC-1,GOST-0,GOST-1,puščica-1,ucraino1"

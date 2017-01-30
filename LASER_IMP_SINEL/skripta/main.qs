@@ -6,9 +6,33 @@ Date.prototype.mmyy = function(){
     yy = yy.slice(2);
 
     return [(mm>9 ? '' : '0') + mm,
-	    "/",
-          yy,
-         ].join('');
+            "/",
+            yy,
+            ].join('');
+};
+
+Date.prototype.ddmmyytime = function(){
+      var mm = this.getMonth() +1;
+      var yy = this.getFullYear();
+      yy = yy.toString(); 
+
+      var dd = this.getDate() ;    
+      var uhr = this.getHours()+1;  
+      var min = this.getMinutes() ;      
+      var sec = this.getSeconds() ;
+      var time = this.getTime();
+      return[(dd>9 ? '' : '0') + dd,
+	     "/",
+	     (mm>9 ? '' : '0') + mm,
+	     "/",
+	     yy,
+	     "-",
+	     (uhr>9 ? '' : '0') + uhr,
+	     ":",
+	     (min>9 ? '' : '0') + min,
+	     ":",
+	     (sec>9 ? '' : '0') + sec,
+	     ].join('');
 };
 
 /*
@@ -23,13 +47,13 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_11){ sen_bar_dolje = 1;} else{sen_bar_dolje = 0;}
     if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
     if(IoPort.getPort(0) & I_PIN_20)
-   { 
-	reg_fault =0;
-    } 
+    {
+        reg_fault =1;
+    }
     else
     {
-	reg_fault =1;
-	print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!!");
+        reg_fault =0;
+        if(debug_mode){print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!!");}
     }
 
     if(IoPort.getPort(0) & I_PIN_19)
@@ -46,18 +70,18 @@ function set_flags()
     {
         total_stop = 1;
         total_stop_func();
-        reset_sequence();	
+        reset_sequence();
         if(brake_status == 0)
-	{
-	    enable_break()
-	};
+        {
+            enable_break()
+        };
     }
     else
-    {   
+    {
         if(brake_status == 1)
-	{
-	    disable_break()
-	};
+        {
+            disable_break()
+        };
         total_stop = 0;
     }
 }
@@ -67,13 +91,13 @@ function set_flags()
   */
 function pump_counter(ID)
 {
-    if(timers[3] == ID)	
+    if(timers[3] == ID)
     {
         if(IoPort.getPort(0) & I_PIN_7){senz_state = 1;} else{senz_state = 0;}
 
         if(senz_state != last_senz_state)
         {
-	   
+
             if(senz_state == 1)
             {
                 brojac++;
@@ -106,7 +130,7 @@ function init_func()
     //Generates parts_list[] from excel database
     parts_list_gen();
     new_parts_list();
-     
+
     reset_sequence();
     
     //Pump counter and laser movement functions connection
@@ -125,7 +149,6 @@ function init_func()
     {
         return 2;
     }
-
 }
 
 function main()
