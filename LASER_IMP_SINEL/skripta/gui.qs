@@ -571,10 +571,11 @@ function shut_down()
     {
 	IoPort.resetPort(0, O_PIN_2);
 	print("Shutdown started");
-	enable_break();
+	System.stopLaser();
 	
 	disconnect_timers();
 	System.killAllTimers();
+	enable_break();
 	dialog.close();
 	dialog.OK();
     }

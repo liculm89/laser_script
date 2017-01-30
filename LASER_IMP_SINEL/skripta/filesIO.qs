@@ -192,7 +192,9 @@ function show_preview()
 		le_ser.enable = false;
 	}
         lbl_from_db.text = "Izdelek: " + columns_dict["A"];
+       
         laser_doc_preview();
+
     }
     hDb4.close();
 }
@@ -212,6 +214,7 @@ function readFile()
 function mark_auto()
 {	
 	nm = 1;
+
 	h_Doc_new.execute();
 }
 
@@ -302,7 +305,7 @@ function laser_doc_preview()
             obj.text = date.mmyy();
 	}
     }
-    
+     h_Doc_new.move(8, 0);
     h_Doc_new.update();
     renderareaPrev.preview(h_Doc_new);
 }
