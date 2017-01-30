@@ -16,8 +16,8 @@ print(date.mmyy());
 
 
 //drive_loc = "G:";
-//drive_loc = "D:";
-drive_loc = "E:";
+drive_loc = "D:";
+//drive_loc = "E:";
 
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
@@ -36,7 +36,7 @@ var templatesPath = drive_loc + "\\LASER_IMP_SINEL\\TEMPLATE\\";
 var logosPath = drive_loc + "\\LASER_IMP_SINEL\\LOGOTIP\\XLP-LOGOTIPI\\";
 var znakiPath = drive_loc + "\\LASER_IMP_SINEL\\ZNAKI\\XLP - ZNAKI\\";
 
-var columns = "A B C D E F G H I J K L M N O P Q R S T U V W Z Y AA AB AC AD AE AF AG AH AI AJ";
+var columns = "A B C D E F G H I J K L M N O P Q R S T U V W X Z Y AA AB AC AD AE AF AG AH AI AJ";
 
 var h_Doc_new;
 var h_Document,hDb, fw;
@@ -136,13 +136,13 @@ function populateLogosDict()
 
 function populateZnakiDict()
 {
-    znaki_dict["CCC-1"] = znakiPath + "CCC.xpl";
-    znaki_dict["CE-1"] = znakiPath + "CE.xpl";
-    znaki_dict["EAC-1"] = znakiPath + "EAC.xpl";
+    znaki_dict["CCC-1"] = znakiPath + "CCC.xlp"
+    znaki_dict["CE-1"] = znakiPath + "CE.xlp";
+    znaki_dict["EAC-1"] = znakiPath + "EAC.xlp";
     //znaki_dict["GOST-1"] = znakiPath + "CCC.xpl";
     //znaki_dict["GOST-0"] = znakiPath + "CCC.xpl";
-    znaki_dict["puščica-1"] = znakiPath + "STRELCA.xpl";
-    znaki_dict["ucraino1"] = znakiPath + "ucraino_ebara.xpl";
+    znaki_dict["puščica-1"] = znakiPath + "STRELCA.xlp";
+    znaki_dict["ucraino1"] = znakiPath + "ucraino_ebara.xlp";
 }
 
 populateTemplateDict();
@@ -154,6 +154,7 @@ columns_arr.forEach(function(item, index)
     laser_objects.push("OBJ_"+columns_arr[index])
 });
 
+var laser_objects_J_N = laser_objects.slice(laser_objects.indexOf("OBJ_J"), laser_objects.indexOf("OBJ_N")+1);
 var laser_objects_O_T = laser_objects.slice(laser_objects.indexOf("OBJ_O"), laser_objects.indexOf("OBJ_T")+1);
 var laser_objects_U_AH = laser_objects.slice(laser_objects.indexOf("OBJ_U"), laser_objects.indexOf("OBJ_AH")+1);
 
@@ -317,7 +318,9 @@ function show_preview()
         var  res = hDb4.exec("SELECT * FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" + part + ext +"'");
         for( i = 0; i < dict_keys.length; i++)
         {
+	print(dict_keys[i]);
             columns_dict[dict_keys[i]] = res[0][i];
+	print(columns_dict[dict_keys[i]]);
         }
 
         lbl_from_db.text = columns_dict["A"];
@@ -364,31 +367,73 @@ function generate_laser_doc(auto, init)
     }
     if(debug_mode){print("Reading and creating preview");}
     laser_doc_update(pn);
-    renderarea.preview(h_Document);
+   // renderarea.preview(h_Document);
 }
 
 function laser_doc_preview()
 {
-
     h_Doc_new = new LaserDoc;
     var file_loc = templates_dict[columns_dict["G"]];
-    
+   
     dict_keys = Object.keys(columns_dict);
-    print(dict_keys);
-
     h_Doc_new.load(file_loc);
-
-    dict_keys_U_AH =  dict_keys.slice(dict_keys.indexOf("U"), dict_keys.indexOf("AH")+1);
+    
+    dict_keys_J_N =  dict_keys.slice(dict_keys.indexOf("J"), dict_keys.indexOf("N")+1);
+    dict_keys_O_T = dict_keys.slice(dict_keys.indexOf("O"), dict_keys.indexOf("T")+1);
+    dict_keys_U_AH = dict_keys.slice(dict_keys.indexOf("U"), dict_keys.indexOf("AH")+1);
+    
+    
+      for( i = 0; i < ( laser_objects_J_N.length) ; i++)
+    {
+        var obj =  h_Doc_new.getLaserObject(laser_objects_J_N[i]);
+        if( obj != null)
+        {
+	if(columns_dict[dict_keys_J_N[i]] != "/")
+	{
+	    obj.text = columns_dict[dict_keys_J_N[i]];
+	}
+        }
+    }
+    
+      for( i = 0; i < ( laser_objects_O_T.length) ; i++)
+    {
+        var obj =  h_Doc_new.getLaserImported(laser_objects_O_T[i]);
+        if( obj != null)
+        {
+	if(columns_dict[dict_keys_O_T[i]] != "/")
+	{
+	    print("Importing file..." + znaki_dict[ columns_dict[dict_keys_O_T[i]]]);
+	    obj.importFile(znaki_dict[ columns_dict[dict_keys_O_T[i]]]);
+	}
+        }
+    }   
+      
+    
+    
     
     for( i = 0; i < ( laser_objects_U_AH.length) ; i++)
     {
         var obj =  h_Doc_new.getLaserObject(laser_objects_U_AH[i]);
         if( obj != null)
         {
-            obj.text = columns_dict[dict_keys_U_AH[i]];
+	if(columns_dict[dict_keys_U_AH[i]] != "/")
+	{
+	    obj.text = columns_dict[dict_keys_U_AH[i]];
+	}
         }
     }
-
+    
+    print(columns_dict["AG"]);
+    if(columns_dict["AH"] == "mm/yy")
+    {    
+	var obj = h_Doc_new.getLaserObject(laser_objects_U_AH["AH"]);
+            if( obj != null)
+	{
+	var date = new Date();
+            obj.text = date.mmyy();
+	}
+    }
+    
     h_Doc_new.update();
     
     renderareaPrev.preview(h_Doc_new);

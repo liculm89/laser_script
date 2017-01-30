@@ -14,12 +14,12 @@ function gen_dialog(part_list)
 {  
     dialog.setFixedSize(1300, 720);
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    
     //GUI - automatski mod
-
+    
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     dialog.newTab("Automatic mode");
-
+    
     laser_enable_box = new GroupBox("Laser key sequence");
     
     btn_key.text ="KEY ("+ key_state +")";
@@ -38,7 +38,7 @@ function gen_dialog(part_list)
     
     auto_box = new GroupBox(); auto_box.title = "Automatic laser marking";
     dialog.add(auto_box);
-
+    
     gb_cmb_box = new GroupBox();
     auto_box.add(gb_cmb_box);
     
@@ -47,6 +47,7 @@ function gen_dialog(part_list)
     gb_cmb_box.add(lbl_select_type);
     
     gb_cmb_box.newColumn();
+    
     cmb_a = new ComboBox("",part_list);
     cmb_a.font = font2;
     gb_cmb_box.add(cmb_a);
@@ -54,9 +55,10 @@ function gen_dialog(part_list)
     
     gb_cmb_box.newColumn();
     
-
+    
     selectedLogo_a =  new Label(txt_selected_logo + "/");
-    logo_init(cmb_a.currentItem, selectedLogo_a);
+    
+    //logo_init(cmb_a.currentItem, selectedLogo_a);
     
     selectedLogo_a.font = font_lbls;
     auto_box.add(selectedLogo_a);
@@ -67,7 +69,7 @@ function gen_dialog(part_list)
     
     cmb_buttons_auto = new GroupBox();
     auto_box.add(cmb_buttons_auto);
-
+    
     var btn_auto_mode = new PushButton("START AUTO MODE");
     btn_auto_mode["sigPressed()"].connect(start_auto_mode);
     btn_auto_mode.font = font2;  btn_auto_mode.setFixedSize(270,60);
@@ -79,7 +81,7 @@ function gen_dialog(part_list)
     btn_auto_stop["sigPressed()"].connect(stop_auto);
     btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(270,60);
     cmb_buttons_auto.add(btn_auto_stop);
-
+    
     dialog.addSpace(20);
     //Pumps count groupbox
     gb_pump_count = new GroupBox("Pumps count");
@@ -97,7 +99,7 @@ function gen_dialog(part_list)
     btn_pump_count["sigPressed()"].connect(reset_pump_count);
     btn_pump_count.font = font2; btn_pump_count.setFixedSize(300,60);
     gb_pump_count.add(btn_pump_count);
-
+    
     dialog.add(gb_pump_count);
     
     gb_shutdown = new GroupBox();
@@ -127,19 +129,19 @@ function gen_dialog(part_list)
     //Preview in auto mode
     ///////////////////////////////////
     gb_prev_auto = new GroupBox();
-
+    
     gb_prev = new GroupBox("Selection preview")
-
-    dialog.add(gb_prev_auto);
+	      
+	      dialog.add(gb_prev_auto);
     gb_prev_auto.add(gb_prev);
     gb_sel = new GroupBox();
     
     gb_prev.add(gb_sel);
-
+    
     cmb_new = new ComboBox("",newarr);
     cmb_new.font = font2;
     gb_sel.add(cmb_new);
-
+    
     cmb_new["sigIndexChanged(int)"].connect(dynamic_template_list);
     
     gb_sel.newColumn();
@@ -149,59 +151,59 @@ function gen_dialog(part_list)
     gb_sel.add(cmb_template);
     
     gb_prev.newColumn();
-
+    
     gb_preview = new GroupBox("Marking preview");
     
     btn_preview = new PushButton("Selection preview");
     btn_preview.font = font2;
     btn_preview["sigPressed()"].connect(show_preview);
-    btn_preview.setFixedSize(220,50);
+    btn_preview.setFixedSize(250,50);
     
     lbl_from_db = new Label();
     lbl_from_db.text = "No preview selected";
-
+    
     gb_prev.add(lbl_from_db);
     gb_prev.add(btn_preview);
-
+    
     gb_prev_render = new GroupBox("Preview render box");
     gb_prev_auto.add(gb_prev_render);
-
+    
     renderareaPrev = new RenderArea();
     show_preview();
     renderareaPrev.preview(h_Doc_new);
-   
+    
     gb_prev_render.add(renderareaPrev);
-
-
+    
+    
     ////////////////////////////////////////////////////////////////////////
-
+    
     //GUI - manualni mod
-
+    
     ////////////////////////////////////////////////////////////////////////
     dialog.newTab("Manual mode");
-
+    
     //grupa "settings"
     gb = new GroupBox();gb.title = "Settings";
     dialog.add(gb);
-
+    
     lbl1 = new Label(); lbl1.text = "Z axis current position: " + Axis.getPosition(2);
     lbl1.font = font_lbls;
     gb.add(lbl1);
     
     //grupa "laser pos"
     gb_lp = new GroupBox(); gb_lp.title = "Laser position";
-
+    
     var btn_mu = new PushButton("Move up");
     btn_mu["sigPressed()"].connect(move_up);
     btn_mu.font = font_manual_btns; btn_mu.setFixedSize(170,50);
     gb_lp.add(btn_mu);
-
+    
     gb_lp.newColumn();
     var btn_md = new PushButton("Move down");
     btn_md["sigPressed()"].connect(move_down);
     btn_md.font = font_manual_btns; btn_md.setFixedSize(170,50);
     gb_lp.add(btn_md);
-
+    
     gb_lp.newColumn();
     var btn3 = new PushButton("STOP!");
     btn3["sigPressed()"].connect(stop_axis);
@@ -217,44 +219,44 @@ function gen_dialog(part_list)
     lbl_md = new Label(); lbl_md.text ="Move distance (mm):";
     lbl_md.font = font2;
     gb_move_distance.add(lbl_md);
-
+    
     gb_move_distance.newColumn();
     gb_move_distance.add(sb1);
     gb.add(gb_move_distance);
-
+    
     gb_las_r = new GroupBox(); gb_las_r.title ="Laser reference";
     btn_laser_ref = new PushButton("Move laser to reference position");
     btn_laser_ref["sigPressed()"].connect(laser_reference);
     btn_laser_ref.font = font_manual_btns; btn_laser_ref.setFixedSize(560,50);
     gb_las_r.add(btn_laser_ref);
-
+    
     btn_laser_pos = new PushButton("Move laser to working  position");
     btn_laser_pos["sigPressed()"].connect(search_working_pos);
     btn_laser_pos.font = font_manual_btns; btn_laser_pos.setFixedSize(560,50);
     gb_las_r.add(btn_laser_pos);
-
+    
     dialog.add(gb_las_r);
-
+    
     dialog.okButtonText = "Done"
-    dialog.cancelButtonText = "Abort";
-
+			  dialog.cancelButtonText = "Abort";
+    
     //groupa " laser barrier"
     gb_lb = new GroupBox(); gb_lb.title ="Laser barrier";
-
+    
     var btn_barriera_up = new PushButton("Barrier up");
     btn_barriera_up["sigPressed()"].connect(barrier_up);
     btn_barriera_up.font = font_manual_btns; btn_barriera_up.setFixedSize(270,50);
     gb_lb.add(btn_barriera_up);
-
+    
     gb_lb.newColumn();
-
+    
     var btn_bar_down = new PushButton("Barrier down");
     btn_bar_down["sigPressed()"].connect(barrier_down);
     btn_bar_down.font = font_manual_btns; btn_bar_down.setFixedSize(270,50);
     gb_lb.add(btn_bar_down);
-
+    
     dialog.add(gb_lb);
-
+    
     //manual laser marking group
     gb_mark = new GroupBox("Manual Laser Marking");
     
@@ -270,12 +272,12 @@ function gen_dialog(part_list)
     
     gb_select_m.newColumn();
     gb_select_m.add(cmb);
-
+    
     selectedLogo = new Label(txt_selected_logo + "/");
     selectedLogo.font = font_lbls;
     logo_init(cmb.currentItem, selectedLogo);
     gb_mark.add(selectedLogo);
-
+    
     gb_mark.newColumn();
     var btn = new PushButton("MARK!");
     btn["sigPressed()"].connect(readFile_manual);
@@ -288,7 +290,7 @@ function gen_dialog(part_list)
     btn_stop_m.setFixedSize(220,50);
     btn_stop_m.font = font_manual_btns;
     gb_mark.add(btn_stop_m);
-
+    
     dialog.add(gb_mark);
     
     status_box = new GroupBox(); status_box.title= "Status";
@@ -303,93 +305,94 @@ function gen_dialog(part_list)
     status_box.add(lbl_marking_m);
     
     if(debug_mode){
-        ////////////////////////////////////////////////////////////////////////
-
-        //I/O Status tab
-
-        ////////////////////////////////////////////////////////////////////////
-        dialog.newTab("I/O Status");
-
-        //groupbox inputs
-        gb_inputs = new GroupBox(); gb_inputs.title = "Inputs status";
-        dialog.add(gb_inputs);
-        lb_sen_linija = new Label(); lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
-        lb_sen_linija.font = font_lbls;
-        gb_inputs.add(lb_sen_linija);
-
-        lb_sen_bar_gore = new Label(); lb_sen_bar_gore.text = "Senzor laserske barijere gore: " + get_stat(sen_bar_gore);
-        lb_sen_bar_gore.font = font_lbls;
-        gb_inputs.add(lb_sen_bar_gore);
-
-        lb_sen_bar_dolje = new Label(); lb_sen_bar_dolje.text = "Senzor laserske barijere dolje: " + get_stat(sen_bar_dolje);
-        lb_sen_bar_dolje.font = font_lbls;
-        gb_inputs.add(lb_sen_bar_dolje);
-
-        lb_sen_laser_gore = new Label(); lb_sen_laser_gore.text = "Senzor laserske glave gore: " + get_stat(sen_laser_gore);
-        lb_sen_laser_gore.font = font_lbls;
-        gb_inputs.add(lb_sen_laser_gore);
-
-        lb_sen_laser_dolje = new Label(); lb_sen_laser_dolje.text = "Senzor laserske glave dolje: " + get_stat(sen_laser_dolje);
-        lb_sen_laser_dolje.font = font_lbls;
-        gb_inputs.add(lb_sen_laser_dolje);
-
-        lb_sen_optika = new Label(); lb_sen_optika.text = "Optički senzor: " + get_stat(sen_optika);
-        lb_sen_optika.font = font_lbls;
-        gb_inputs.add(lb_sen_optika);
-
-        lb_reg_fault = new Label(); lb_reg_fault.text = "Regulator fault: " + get_stat(reg_fault);
-        lb_reg_fault.font = font_lbls;
-        gb_inputs.add(lb_reg_fault);
-
-        lb_total_stop = new Label(); lb_total_stop.text = "Total stop: " + get_stat(total_stop);
-        lb_total_stop.font = font_lbls;
-        gb_inputs.add(lb_total_stop);
-
-        lb_reset_tipka = new Label(); lb_reset_tipka.text = "Reset tipka: " + get_stat(reset_tipka);
-        lb_reset_tipka.font = font_lbls;
-        gb_inputs.add(lb_reset_tipka);
-
-        //groupbox outputs
-        gb_outputs = new GroupBox(); gb_outputs.title="Output status";
-        dialog.add(gb_outputs);
-
-        lbl_lrstatus = new Label(); lbl_lrstatus.text = "Laser ready signal:" + get_stat(signal_ready);
-        lbl_lrstatus.font = font_lbls;
-        gb_outputs.add(lbl_lrstatus);
-
-        lb_bar_gore = new Label(); lb_bar_gore.text = "Barijera gore: " + get_stat(bar_gore);
-        lb_bar_gore.font = font_lbls;
-        gb_outputs.add(lb_bar_gore);
-
-        lb_bar_dolje = new Label(); lb_bar_dolje.text = "Barijera dolje: " + get_stat(bar_dolje);
-        lb_bar_dolje.font = font_lbls;
-        gb_outputs.add(lb_bar_dolje);
-
+	////////////////////////////////////////////////////////////////////////
+	
+	//I/O Status tab
+	
+	////////////////////////////////////////////////////////////////////////
+	dialog.newTab("I/O Status");
+	
+	//groupbox inputs
+	gb_inputs = new GroupBox(); gb_inputs.title = "Inputs status";
+	dialog.add(gb_inputs);
+	lb_sen_linija = new Label(); lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
+	lb_sen_linija.font = font_lbls;
+	gb_inputs.add(lb_sen_linija);
+	
+	lb_sen_bar_gore = new Label(); lb_sen_bar_gore.text = "Senzor laserske barijere gore: " + get_stat(sen_bar_gore);
+	lb_sen_bar_gore.font = font_lbls;
+	gb_inputs.add(lb_sen_bar_gore);
+	
+	lb_sen_bar_dolje = new Label(); lb_sen_bar_dolje.text = "Senzor laserske barijere dolje: " + get_stat(sen_bar_dolje);
+	lb_sen_bar_dolje.font = font_lbls;
+	gb_inputs.add(lb_sen_bar_dolje);
+	
+	lb_sen_laser_gore = new Label(); lb_sen_laser_gore.text = "Senzor laserske glave gore: " + get_stat(sen_laser_gore);
+	lb_sen_laser_gore.font = font_lbls;
+	gb_inputs.add(lb_sen_laser_gore);
+	
+	lb_sen_laser_dolje = new Label(); lb_sen_laser_dolje.text = "Senzor laserske glave dolje: " + get_stat(sen_laser_dolje);
+	lb_sen_laser_dolje.font = font_lbls;
+	gb_inputs.add(lb_sen_laser_dolje);
+	
+	lb_sen_optika = new Label(); lb_sen_optika.text = "Optički senzor: " + get_stat(sen_optika);
+	lb_sen_optika.font = font_lbls;
+	gb_inputs.add(lb_sen_optika);
+	
+	lb_reg_fault = new Label(); lb_reg_fault.text = "Regulator fault: " + get_stat(reg_fault);
+	lb_reg_fault.font = font_lbls;
+	gb_inputs.add(lb_reg_fault);
+	
+	lb_total_stop = new Label(); lb_total_stop.text = "Total stop: " + get_stat(total_stop);
+	lb_total_stop.font = font_lbls;
+	gb_inputs.add(lb_total_stop);
+	
+	lb_reset_tipka = new Label(); lb_reset_tipka.text = "Reset tipka: " + get_stat(reset_tipka);
+	lb_reset_tipka.font = font_lbls;
+	gb_inputs.add(lb_reset_tipka);
+	
+	//groupbox outputs
+	gb_outputs = new GroupBox(); gb_outputs.title="Output status";
+	dialog.add(gb_outputs);
+	
+	lbl_lrstatus = new Label(); lbl_lrstatus.text = "Laser ready signal:" + get_stat(signal_ready);
+	lbl_lrstatus.font = font_lbls;
+	gb_outputs.add(lbl_lrstatus);
+	
+	lb_bar_gore = new Label(); lb_bar_gore.text = "Barijera gore: " + get_stat(bar_gore);
+	lb_bar_gore.font = font_lbls;
+	gb_outputs.add(lb_bar_gore);
+	
+	lb_bar_dolje = new Label(); lb_bar_dolje.text = "Barijera dolje: " + get_stat(bar_dolje);
+	lb_bar_dolje.font = font_lbls;
+	gb_outputs.add(lb_bar_dolje);
+	
     }
     ////////////////////////////////////////////////////////////////////////
-
+    
     //Preview tab
-
+    
     ////////////////////////////////////////////////////////////////////////
+    /*
     dialog.newTab("Preview")
     renderarea = new RenderArea();
     dialog.add(renderarea);
     var auto = 1; var init = 1;
     generate_laser_doc(auto, init);
     renderarea.preview(h_Document);
-    
+    */
     ////////////////////////////////////////////////////////////////////////
-
+    
     //About tab
-
+    
     ////////////////////////////////////////////////////////////////////////
     
     dialog.newTab("About");
     font_albls=  "Courier New,9,-1,5,50,0,0,0,0,0";
-
+    
     gb_ver = new GroupBox("Version");
     dialog.add(gb_ver);
-
+    
     lbl_title = new Label("Laser control v0.9rc5");
     lbl_title.font = font_albls;
     gb_ver.add(lbl_title);
@@ -405,7 +408,7 @@ function gen_dialog(part_list)
     lbl_licence = new Label("Licence: GNU General Public Licence, GPL-3.0");
     lbl_licence.font = font_albls;
     gb_ver.add(lbl_licence);
-
+    
     dialog.addSpace(180);
     gb_contact = new GroupBox("Contact");
     dialog.add(gb_contact);
@@ -414,7 +417,7 @@ function gen_dialog(part_list)
     lbl_name.font = font_albls;
     lbl_name.alignment =1;
     gb_contact.add(lbl_name);
-
+    
     lbl_dsc = new Label("Sinel, company for industrial automation, service and trade, limited.                          ");
     lbl_dsc.font = font_albls;
     gb_contact.add(lbl_dsc);
@@ -445,6 +448,10 @@ function gen_dialog(part_list)
     lbl_sinel_logo.loadImage(resPath + "sinel logo.png", aspectRatioMode = 1, w=150, h = 550);
     gb_logo.add(lbl_sinel_logo);
     
+    dialog.newColumn();
+    lbl_space = new Label("                                                                                                           ");
+    dialog.add(lbl_space);
+    
     dialog.show();
     System["sigTimer(int)"].connect(gui_update);
     dialog.exec();
@@ -454,32 +461,32 @@ function gui_update(ID)
 {
     if (timers[0] == ID)
     {
-        lbl1.text = "Z axis current position: " + Math.round(Axis.getPosition(2));
-        lbl_auto_status_m.text= lbl_auto_status.text = "Auto mode: " + auto_mode;
-
-        check_laser_state(System.getDeviceStatus());
-        lbl_marking_m.text = lbl_marking.text = "Laser status:" + laser_status;
-        lbl_last_error.text = "Last error:" + last_error;
-        lbl_laser_moving.text = "Laser motor:" + get_motor_status(laser_moving);
-        lbl_counter.text = "Pumps counter:" + brojac;
-        lbl_pumps_marked.text ="Pumps marked:" + pumps_marked;
-        btn_key.text ="KEY ("+ key_state +")";
-        btn_enable.text = "ENABLE (" +enable_state+")";
-
-        if(debug_mode)
-        {
-            lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
-            lb_sen_bar_gore.text = "Senzor laserske barijere gore:" + get_stat(sen_bar_gore);
-            lb_sen_bar_dolje.text = "Senzor laserske barijere dolje:" + get_stat(sen_bar_dolje);
-            lb_sen_laser_gore.text = "Senzor laserske glave gore:" + get_stat(sen_laser_gore);
-            lb_sen_laser_dolje.text = "Senzor laserske glave dolje:" + get_stat(sen_laser_dolje);
-            lb_sen_optika.text = "Optički senzor:" + get_stat(sen_optika);
-            lb_reg_fault.text = "Regulator fault:" + get_stat(reg_fault);
-            lb_total_stop.text = "Total stop:" + get_stat(total_stop);
-            lb_reset_tipka.text = "Reset tipka:" + get_stat(reset_tipka);
-            lb_bar_gore.text = "Barijera gore:" + get_stat(bar_gore);
-            lb_bar_dolje.text = "Barijera dolje:" + get_stat(bar_dolje);
-        }
+	lbl1.text = "Z axis current position: " + Math.round(Axis.getPosition(2));
+	lbl_auto_status_m.text= lbl_auto_status.text = "Auto mode: " + auto_mode;
+	
+	check_laser_state(System.getDeviceStatus());
+	lbl_marking_m.text = lbl_marking.text = "Laser status:" + laser_status;
+	lbl_last_error.text = "Last error:" + last_error;
+	lbl_laser_moving.text = "Laser motor:" + get_motor_status(laser_moving);
+	lbl_counter.text = "Pumps counter:" + brojac;
+	lbl_pumps_marked.text ="Pumps marked:" + pumps_marked;
+	btn_key.text ="KEY ("+ key_state +")";
+	btn_enable.text = "ENABLE (" +enable_state+")";
+	
+	if(debug_mode)
+	{
+	    lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
+	    lb_sen_bar_gore.text = "Senzor laserske barijere gore:" + get_stat(sen_bar_gore);
+	    lb_sen_bar_dolje.text = "Senzor laserske barijere dolje:" + get_stat(sen_bar_dolje);
+	    lb_sen_laser_gore.text = "Senzor laserske glave gore:" + get_stat(sen_laser_gore);
+	    lb_sen_laser_dolje.text = "Senzor laserske glave dolje:" + get_stat(sen_laser_dolje);
+	    lb_sen_optika.text = "Optički senzor:" + get_stat(sen_optika);
+	    lb_reg_fault.text = "Regulator fault:" + get_stat(reg_fault);
+	    lb_total_stop.text = "Total stop:" + get_stat(total_stop);
+	    lb_reset_tipka.text = "Reset tipka:" + get_stat(reset_tipka);
+	    lb_bar_gore.text = "Barijera gore:" + get_stat(bar_gore);
+	    lb_bar_dolje.text = "Barijera dolje:" + get_stat(bar_dolje);
+	}
     }
 }
 
@@ -512,11 +519,11 @@ function get_motor_status(input)
 function logo_selection(selected)
 {
     logos_list.forEach(function (item, index)
-    {
-        if (index == selected)
-        {
-            selectedLogo_a.text = txt_selected_logo + item;
-        }
+		       {
+	if (index == selected)
+	{
+	    selectedLogo_a.text = txt_selected_logo + item;
+	}
     });
     var auto = 1; var init = 0;
     generate_laser_doc(auto, init);
@@ -525,11 +532,11 @@ function logo_selection(selected)
 function logo_selection_m(selected)
 {
     logos_list.forEach(function (item, index)
-    {
-        if (index == selected)
-        {
-            selectedLogo.text = txt_selected_logo + item;
-        }
+		       {
+	if (index == selected)
+	{
+	    selectedLogo.text = txt_selected_logo + item;
+	}
     });
     var auto = 0; var init = 0;
     generate_laser_doc(auto, init);
@@ -539,13 +546,13 @@ function logo_init(curr_item, label)
 {
     if( part_list != 0)
     {
-        part_list.forEach(function (item, index)
-        {
-            if (item == curr_item)
-            {
-                label.text = txt_selected_logo + logos_list[index];
-            }
-        });
+	part_list.forEach(function (item, index)
+			  {
+	    if (item == curr_item)
+	    {
+		label.text = txt_selected_logo + logos_list[index];
+	    }
+	});
     }
 }
 
@@ -553,18 +560,18 @@ function shut_down()
 {
     if( auto_mode == "OFF")
     {
-        IoPort.resetPort(0, O_PIN_2);
-        print("Shutdown started");
-        enable_break();
-
-        disconnect_timers();
-        System.killAllTimers();
-        dialog.close();
-        dialog.OK();
+	IoPort.resetPort(0, O_PIN_2);
+	print("Shutdown started");
+	enable_break();
+	
+	disconnect_timers();
+	System.killAllTimers();
+	dialog.close();
+	dialog.OK();
     }
     else
     {
-        error_auto_mode();
+	error_auto_mode();
     }
 }
 
