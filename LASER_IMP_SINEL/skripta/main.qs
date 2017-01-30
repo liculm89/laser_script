@@ -1,5 +1,4 @@
 
-
 Date.prototype.mmyy = function(){
     var mm = this.getMonth() + 1;
     var yy =  this.getFullYear();
@@ -25,11 +24,11 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
     if(IoPort.getPort(0) & I_PIN_20)
    { 
-	reg_fault =1;
+	reg_fault =0;
     } 
     else
     {
-	reg_fault =0;
+	reg_fault =1;
 	print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!!");
     }
 
@@ -63,8 +62,6 @@ function set_flags()
     }
 }
 
-
-
 /*
   Counts pumps and sets pump_present flag
   */
@@ -72,7 +69,6 @@ function pump_counter(ID)
 {
     if(timers[3] == ID)	
     {
-	
         if(IoPort.getPort(0) & I_PIN_7){senz_state = 1;} else{senz_state = 0;}
 
         if(senz_state != last_senz_state)
@@ -111,13 +107,11 @@ function init_func()
     parts_list_gen();
     new_parts_list();
      
-   reset_sequence();
+    reset_sequence();
     
     //Pump counter and laser movement functions connection
     System["sigTimer(int)"].connect(pump_counter);
     System["sigTimer(int)"].connect(laser_movement);
-
-    
 
     if ((typeof part_list != "undefined") && (reg_fault == 0))
     {

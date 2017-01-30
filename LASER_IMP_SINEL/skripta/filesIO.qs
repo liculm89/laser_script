@@ -27,6 +27,39 @@ function parts_list_gen()
 
 }
 
+
+function xls_log()
+{
+    hDb3 = new Db("QODBC")
+    hDb3.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;ReadOnly=0;Dbq=" + test_log;
+    
+    if ( hDb3.open())
+    {
+    print("entered");
+    
+	     hDb3.exec("INSERT INTO [Napisne tablice in nalepke sezn$] (Izdelek, ime_2) VALUES ('2934512', 'te44st')");
+	    
+	    print( hDb3.lastError());
+    }
+    hDb3.close();
+    
+}
+
+//xls_log();
+
+function serial_input_changed(text)
+{	
+	print(text);
+	columns_dict["M"] = text;
+	lbl_ser.text = "S.N. :" + text;
+}
+
+function ext_changed()
+		
+{
+	show_preview();
+}
+
 function new_parts_list()
 {
     hDb3 = new Db("QODBC")
@@ -39,6 +72,7 @@ function new_parts_list()
         var logotips = [];
 
         var res = hDb3.exec("SELECT Izdelek FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek is not null" );
+        print(hDb3.lastError());
         var res2 = hDb3.exec("SELECT TEMPLATE FROM [Napisne tablice in nalepke sezn$] WHERE TEMPLATE is not null" );
         var res3 = hDb3.exec("SELECT Logotip FROM [Napisne tablice in nalepke sezn$] WHERE Logotip is not null")
 
@@ -142,14 +176,22 @@ function show_preview()
     if(hDb4.open())
     {
         var  res = hDb4.exec("SELECT * FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" + part + ext +"'");
+	if(res[0] != null ){
         for( i = 0; i < dict_keys.length; i++)
         {
-	print(dict_keys[i]);
             columns_dict[dict_keys[i]] = res[0][i];
-	print(columns_dict[dict_keys[i]]);
         }
-
-        lbl_from_db.text = columns_dict["A"];
+}
+        if(columns_dict["M"] != "/")
+	{	
+		le_ser.enable = true;
+		columns_dict["M"] = le_ser.text;
+	}
+	else
+	{
+		le_ser.enable = false;
+	}
+        lbl_from_db.text = "Izdelek: " + columns_dict["A"];
         laser_doc_preview();
     }
     hDb4.close();
@@ -165,6 +207,12 @@ function readFile()
     if(debug_mode){print("Reading and executing");}
     laser_doc_update(pn);
     h_Document.execute();
+}
+
+function mark_auto()
+{	
+	nm = 1;
+	h_Doc_new.execute();
 }
 
 function get_pn()
@@ -207,8 +255,7 @@ function laser_doc_preview()
     dict_keys_J_N =  dict_keys.slice(dict_keys.indexOf("J"), dict_keys.indexOf("N")+1);
     dict_keys_O_T = dict_keys.slice(dict_keys.indexOf("O"), dict_keys.indexOf("T")+1);
     dict_keys_U_AH = dict_keys.slice(dict_keys.indexOf("U"), dict_keys.indexOf("AH")+1);
-    
-    
+  
       for( i = 0; i < ( laser_objects_J_N.length) ; i++)
     {
         var obj =  h_Doc_new.getLaserObject(laser_objects_J_N[i]);
@@ -228,7 +275,7 @@ function laser_doc_preview()
         {
 	if(columns_dict[dict_keys_O_T[i]] != "/")
 	{
-	    print("Importing file..." + znaki_dict[ columns_dict[dict_keys_O_T[i]]]);
+	    //print("Importing file..." + znaki_dict[ columns_dict[dict_keys_O_T[i]]]);
 	    obj.importFile(znaki_dict[ columns_dict[dict_keys_O_T[i]]]);
 	}
         }

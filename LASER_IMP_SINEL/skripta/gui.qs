@@ -9,6 +9,9 @@ var font1 = "MS Shell Dlg 2,15,-1,5,50,0,0,0,0,0";
 var font2 = "Courier New,15,-1,5,80,0,0,0,0,0";
 var font_lbls=  "Courier New,12,-1,5,80,0,0,0,0,0";
 var font_manual_btns =  "Courier New,15,-1,5,80,0,0,0,0,0";
+var lbl_from_db = new Label();
+var renderareaPrev = new RenderArea();
+le_ser = new LineEdit("Serial N.:");
 
 function gen_dialog(part_list)
 {  
@@ -20,9 +23,7 @@ function gen_dialog(part_list)
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     dialog.newTab("Automatic mode");
     
-    
     gb_top = new GroupBox();
-    
     dialog.add(gb_top);
     
     laser_enable_box = new GroupBox("Laser key sequence");
@@ -90,23 +91,17 @@ function gen_dialog(part_list)
     btn_pump_count.font = font2; btn_pump_count.setFixedSize(350,60);
     gb_pump_count.add(btn_pump_count);
     
-   gb_top.add(gb_pump_count);
-    
-    //gb_shutdown = new GroupBox();
-    //dialog.add(gb_shutdown);
-
-    
-   
-    
+    gb_top.add(gb_pump_count);
+       
     gb_top.newColumn();
     ////////////////////////////////////
-    //Preview in auto mode
+    //Pump selection
     ///////////////////////////////////
     gb_prev_auto = new GroupBox();
     
-    gb_prev = new GroupBox("Selection preview")
-	      
-	     gb_top.add(gb_prev_auto);
+    gb_prev = new GroupBox("Part selection");
+	   
+    gb_top.add(gb_prev_auto);
     gb_prev_auto.add(gb_prev);
     gb_sel = new GroupBox();
     
@@ -122,34 +117,57 @@ function gen_dialog(part_list)
     
     cmb_template = new ComboBox("", zdelek_ext_s);
     cmb_template.font = font2;
+    cmb_template["sigIndexChanged(int)"].connect(ext_changed);
+    
     gb_sel.add(cmb_template);
+    
+    ///
+    //Serial input
+    ///
+    
+    le_ser.font = font_lbls;
+    le_ser.labelFont = font_lbls;
+    le_ser["sigTextChanged(QString)"].connect(serial_input_changed);
+    
+    gb_prev.add(le_ser);
+
+    
+    le_num_w = new LineEdit("Quantity :"); le_num_w.font = font_lbls;
+    le_num_w.labelFont = font_lbls;
+    gb_prev.add(le_num_w);
     
     gb_prev.newColumn();
     
-    gb_preview = new GroupBox("Marking preview");
+    gb_confirm = new GroupBox();
     
-    btn_preview = new PushButton("Selection preview");
+    gb_prev.add(gb_confirm);
+    //gb_preview = new GroupBox("Marking preview");
+    
+    btn_preview = new PushButton("Confirm selection");
     btn_preview.font = font2;
     btn_preview["sigPressed()"].connect(show_preview);
     btn_preview.setFixedSize(250,50);
     
-    lbl_from_db = new Label();
+    //lbl_from_db = new Label();
     lbl_from_db.text = "No preview selected";
+    lbl_from_db.font = font_lbls;
+    gb_confirm.add(btn_preview);
+    gb_confirm.add(lbl_from_db);
     
-    gb_prev.add(lbl_from_db);
-    gb_prev.add(btn_preview);
+    lbl_ser = new Label();
+    lbl_ser.text = "S.N. :" + le_ser.text;
+    lbl_ser.font = font_lbls;
+    gb_confirm.add(lbl_ser);
     
-    gb_prev_render = new GroupBox("Preview render box");
-    gb_prev_auto.add(gb_prev_render);
+     //renderareaPrev = new RenderArea();
+     show_preview();
+     renderareaPrev.preview(h_Doc_new);
+     gb_prev_auto.add(renderareaPrev);
     
-    renderareaPrev = new RenderArea();
-    show_preview();
-    renderareaPrev.preview(h_Doc_new);
-    
-    gb_prev_render.add(renderareaPrev);
-    /////////
-    //
-    /////////
+     
+    /////////////////////////////////////////////////////////////////////////
+    //LASER STATUS MESSAGES
+    /////////////////////////////////////////////////////////////////////////
     
     status_box = new GroupBox(); status_box.title= "Status";
     dialog.add(status_box);
@@ -228,8 +246,8 @@ function gen_dialog(part_list)
     
     dialog.add(gb_las_r);
     
-    dialog.okButtonText = "Done"
-			  dialog.cancelButtonText = "Abort";
+    dialog.okButtonText = "Done";
+    dialog.cancelButtonText = "Abort";
     
     //groupa " laser barrier"
     gb_lb = new GroupBox(); gb_lb.title ="Laser barrier";

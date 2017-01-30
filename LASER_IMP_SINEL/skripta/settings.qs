@@ -182,8 +182,8 @@ var date = new Date();
 print(date.mmyy());
 
 
-drive_loc = "G:";
-//drive_loc = "D:";
+//drive_loc = "G:";
+drive_loc = "D:";
 //drive_loc = "E:";
 
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
@@ -191,7 +191,10 @@ var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
 var logoPath = drive_loc + "\\LASER_IMP_SINEL\\Predloge\\" ;
 var logPath= drive_loc + "\\LASER_IMP_SINEL\\writeLog.txt";
 var resPath = drive_loc + "\\LASER_IMP_SINEL\\res\\";
-var nova_db =  drive_loc + "\\LASER_IMP_SINEL\\tabela_baza2.xls";
+var nova_db =  drive_loc + "\\LASER_IMP_SINEL\\tabela_baza.xls";
+
+var test_log =  drive_loc + "\\LASER_IMP_SINEL\\tabela_log.xls";
+
 
 var templates_a = "/,ADL-G,AN-G,BE-G,CAL-G,CAL-N,DEL-G,DEL-GS,DUP-G,EB-G,EB-N,EFA-G,EFA-N,EMS-G,ESP-G,EXP-G,EXP-N,GHN-G,GS-G,GUT-G,IMP-G,IMP-GS,IMP-N,INT-G,KIR-N,LAD-G,LAD-N,MAT-G,MIL-G,PER-G,PER-N,SLD-G,SOM-G,SOME-N,SOML-N,SPE-G,STA-G,UNI-G";
 
