@@ -1,177 +1,3 @@
-/*---------------------------------
- Template and log file paths
-  ----------------------------------*/
-/*TEMPLATES
-  /,ADL-G,AN-G,BE-G,CAL-G,CAL-N,DEL-G,DEL-GS,DUP-G,EB-G,EB-N,EFA-G,EFA-N,EMS-G,ESP-G,EXP-G,EXP-N,GHN-G,GS-G,
-GUT-G,IMP-G,IMP-GS,IMP-N,INT-G,KIR-N,LAD-G,LAD-N,MAT-G,MIL-G,PER-G,PER-N,SLD-G,SOM-G,SOME-N,
-SOML-N,SPE-G,STA-G,UNI-G
-
-LOGOS
-  ADL,AN,AP,BE,CAL,COOX,DEL,DUP,EB,EBARA,EFA,EMS,ENRJ,ESP,EXP,GS,GUT,IDR,IMP,INT,
-KIR,LAD,LATITUDE,MAT,MH,MI,PER,PL,SAE,SEA,SEN,SLD,SOM,SPE,ST,STA,TC5,UNI,VEX,calpeda1
-*/
-
-var date = new Date();
-print(date.mmyy());
-
-
-//drive_loc = "G:";
-drive_loc = "D:";
-//drive_loc = "E:";
-
-var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
-var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
-var logoPath = drive_loc + "\\LASER_IMP_SINEL\\Predloge\\" ;
-var logPath= drive_loc + "\\LASER_IMP_SINEL\\writeLog.txt";
-var resPath = drive_loc + "\\LASER_IMP_SINEL\\res\\";
-var nova_db =  drive_loc + "\\LASER_IMP_SINEL\\tabela_baza2.xls";
-
-var templates_a = "/,ADL-G,AN-G,BE-G,CAL-G,CAL-N,DEL-G,DEL-GS,DUP-G,EB-G,EB-N,EFA-G,EFA-N,EMS-G,ESP-G,EXP-G,EXP-N,GHN-G,GS-G,GUT-G,IMP-G,IMP-GS,IMP-N,INT-G,KIR-N,LAD-G,LAD-N,MAT-G,MIL-G,PER-G,PER-N,SLD-G,SOM-G,SOME-N,SOML-N,SPE-G,STA-G,UNI-G";
-
-var logotips_a = "ADL,AN,AP,BE,CAL,COOX,DEL,DUP,EB,EBARA,EFA,EMS,ENRJ,ESP,EXP,GS,GUT,IDR,IMP,INT,KIR,LAD,LATITUDE,MAT,MH,MI,PER,PL,SAE,SEA,SEN,SLD,SOM,SPE,ST,STA,TC5,UNI,VEX,calpeda1";
-
-var znaki_a = "CCC-1,CE-1,EAC-1,GOST-0,GOST-1,puščica-1,ucraino1"
-
-var templatesPath = drive_loc + "\\LASER_IMP_SINEL\\TEMPLATE\\";
-var logosPath = drive_loc + "\\LASER_IMP_SINEL\\LOGOTIP\\XLP-LOGOTIPI\\";
-var znakiPath = drive_loc + "\\LASER_IMP_SINEL\\ZNAKI\\XLP - ZNAKI\\";
-
-var columns = "A B C D E F G H I J K L M N O P Q R S T U V W X Z Y AA AB AC AD AE AF AG AH AI AJ";
-
-var h_Doc_new;
-var h_Document,hDb, fw;
-var laser_objects = [];
-
-var part_list = []; 
-var logos_list = [];
-var new_list = [];
-var newarr = [];
-var zdelek_ext = [];
-var zdelek_ext_s = [];
-var template_list = [];
-var template_list_s = [];
-var columns_arr = [];
-
-var txt_selected_logo = "Selected logo: ";
-
-function to_dict(from_str, c1, c2, split)
-{
-    arr = from_str;
-    arr = arr.split(split);
-    arr_s = arr.slice(arr.indexOf(c1), arr.indexOf(c2) + 1);
-    var dict = {};
-    arr_s.forEach(function(item)
-    {
-        dict[item] = "init_value";
-    })
-    return dict;
-}
-
-function to_arr(from_str, c1, c2)
-{
-    var arr;
-    arr = from_str;
-    arr = arr.split(" ");
-    var arr_s;
-    arr_s = arr.slice(arr.indexOf(c1), arr.indexOf(c2) + 1);
-    return arr_s;
-}
-
-var templates_dict = {};
-var logotips_dict = {};
-var columns_dict = {};
-var znaki_dict = {};
-
-templates_dict = to_dict(templates_a, "/", "UNI-G", ",");
-logotips_dict = to_dict(logotips_a, "ADL","calpeda1",",");
-
-columns_dict = to_dict(columns, "A", "AJ", " ");
-columns_arr = to_arr(columns, "A", "AJ", " ");
-
-znaki_dict = to_dict(znaki_a, "CCC-1","ucraino1", ",");
-
-
-function populateTemplateDict()
-{
-    templates_dict["CAL-G"] = templatesPath + "CALPEDA_GHN.xlp";
-    templates_dict["CAL-N"] = templatesPath + "CALPEDA_NMT.xlp";
-    templates_dict["EB-G"] = templatesPath + "EB_GHN.xlp";
-    templates_dict["EB-N"] = templatesPath + "EB_NMT.xlp";
-    templates_dict["EFA-G"] = templatesPath + "EFA_GHN.xlp";
-    templates_dict["EFA-N"] = templatesPath + "EFA_NMT.xlp";
-    templates_dict["ESP-G"] = templatesPath + "ESP_GHN.xlp";
-    templates_dict["IMP-G"] = templatesPath + "IMP_GHN.xlp";
-    templates_dict["IMP-GS"] = templatesPath + "IMP_GHNSOL.xlp";
-    templates_dict["IMP_N"] = templatesPath + "IMP_NMT.xlp";
-    templates_dict["LAD_G"] = templatesPath + "LAD_GHN.xlp";
-    templates_dict["LAD-N"] = templatesPath + "LAD_NMT.xlp";
-    templates_dict["MAT-G"] = templatesPath + "MATRA_GHN.xlp";
-    templates_dict["PER-G"] = templatesPath + "PER_GHN.xlp";
-    templates_dict["PER-N"] = templatesPath + "PER_NMT.xlp";
-    templates_dict["STA-G"] = templatesPath + "STA_GHN.xlp";
-}
-
-function populateLogosDict()
-{
-    logotips_dict["ADL"] = logosPath + "ADL.xlp";
-    logotips_dict["AN"] = logosPath + "ANAVALOS.xlp";
-    logotips_dict["AP"] = logosPath + "APPEL.xlp";
-    logotips_dict["BE"] = logosPath + "BOMBA ELIAS.xlp";
-    logotips_dict["CAL"] = logosPath + "CALPEDA.xlp";
-    logotips_dict["COOX"] = logosPath + "COOX.xlp";
-    logotips_dict["EBARA"] = logosPath + "EBARA.xlp";
-    logotips_dict["EFA"] = logosPath + "EFAFLU.xlp";
-    logotips_dict["ESP"] = logosPath + "ESPA.xlp";
-    logotips_dict["IDR"] = logosPath + "IDROELETTRICA.xlp";
-    logotips_dict["IMP"] = logosPath + "IMP LOGO.xlp";
-    logotips_dict["LAD"] = logosPath + "LADDOMAT_NMT.xlp";
-    logotips_dict["MAT"] = logosPath + "MATRA.xlp";
-    logotips_dict["MH"] = logosPath + "MOBIHEAT.xlp";
-    logotips_dict["PER"] = logosPath + "PER.xlp";
-    logotips_dict["SEA"] = logosPath + "SEA_NMT.xlp";
-    logotips_dict["SEN"] = logosPath + "SENERTEC.xlp";
-    logotips_dict["SPE"] = logosPath + "SPERONI.xlp";
-    logotips_dict["STA"] = logosPath + "STA.xlp";
-}
-
-function populateZnakiDict()
-{
-    znaki_dict["CCC-1"] = znakiPath + "CCC.xlp"
-    znaki_dict["CE-1"] = znakiPath + "CE.xlp";
-    znaki_dict["EAC-1"] = znakiPath + "EAC.xlp";
-    //znaki_dict["GOST-1"] = znakiPath + "CCC.xpl";
-    //znaki_dict["GOST-0"] = znakiPath + "CCC.xpl";
-    znaki_dict["puščica-1"] = znakiPath + "STRELCA.xlp";
-    znaki_dict["ucraino1"] = znakiPath + "ucraino_ebara.xlp";
-}
-
-populateTemplateDict();
-populateLogosDict();
-populateZnakiDict();
-
-columns_arr.forEach(function(item, index)
-{
-    laser_objects.push("OBJ_"+columns_arr[index])
-});
-
-var laser_objects_J_N = laser_objects.slice(laser_objects.indexOf("OBJ_J"), laser_objects.indexOf("OBJ_N")+1);
-var laser_objects_O_T = laser_objects.slice(laser_objects.indexOf("OBJ_O"), laser_objects.indexOf("OBJ_T")+1);
-var laser_objects_U_AH = laser_objects.slice(laser_objects.indexOf("OBJ_U"), laser_objects.indexOf("OBJ_AH")+1);
-
-function remove_duplicates(arr)
-{
-    var m = {}, newarr = []
-    for (var i = 0; i < arr.length; i++){
-        var v = arr[i];
-        if(!m[v])
-        {
-            newarr.push(v);
-            m[v]= true;
-        }
-    }
-    return newarr;
-}
-
 /*------------------------------------------------
     Generiranje liste komada iz excel tabele
     ------------------------------------------------*/
@@ -225,6 +51,7 @@ function new_parts_list()
             }
         });
 
+        if(debug_mode){
         res2.forEach(function(item,index)
         {
             if(res2[index][0] != "")
@@ -239,8 +66,8 @@ function new_parts_list()
             {
                 logotips.push(res3[index][0])
             }
-        });
-
+         });
+        }
         template_list.sort();
         template_list_s = remove_duplicates(template_list);
         
@@ -281,7 +108,6 @@ function dynamic_template_list(part_id)
 
         zdelek_ext_s.sort();
         zdelek_ext_s = remove_duplicates(zdelek_ext_s);
-
         cmb_template.itemList = zdelek_ext_s;
     }
     hDb4.close();
@@ -407,10 +233,7 @@ function laser_doc_preview()
 	}
         }
     }   
-      
-    
-    
-    
+     
     for( i = 0; i < ( laser_objects_U_AH.length) ; i++)
     {
         var obj =  h_Doc_new.getLaserObject(laser_objects_U_AH[i]);
@@ -423,10 +246,9 @@ function laser_doc_preview()
         }
     }
     
-    print(columns_dict["AG"]);
     if(columns_dict["AH"] == "mm/yy")
     {    
-	var obj = h_Doc_new.getLaserObject(laser_objects_U_AH["AH"]);
+	var obj = h_Doc_new.getLaserObject("OBJ_AH");
             if( obj != null)
 	{
 	var date = new Date();
@@ -435,7 +257,6 @@ function laser_doc_preview()
     }
     
     h_Doc_new.update();
-    
     renderareaPrev.preview(h_Doc_new);
 }
 

@@ -1,64 +1,16 @@
-//sets debugging(on=1 and off=0)
-debug_mode = 0;
 
-/*---------------------------------------------------------
- Inputs and outputs
-  --------------------------------------------------------*/
-/*
-Popis funkcija pinova
-O_PIN 2 - Busy signal                - OUTPUT
-O_PIN 3 - Z os step                 - OUTPUT
-O_PIN 4 - Motor brake               - OUTPUT
-O_PIN 5 - Cilindar gore             - OUTPUT
-O_PIN 6 - Z os Current off			- OUTPUT
-O_PIN 16 - Z os direction			- OUTPUT
-O_PIN 17 - Laser ext Key 		-OUTPUT
-O_PIN 18 Laser ext enable 	-OUTPUT
-O_PIN 23 - Cilindar dolje           - OUTPUT
-I_PIN 7 - Senzor prisutnosti linije	- INPUT
-I_PIN 8 - Glava lasera dolje		- INPUT
-I_PIN 9 - Glava lasera gore         - INPUT
-I_PIN 10 - Optički senzor			- INPUT
-I_PIN 21 - Laserska barijera dolje	- INPUT
-I_PIN 12 - Laserska barijera gore	- INPUT
-I_PIN 19 - Reset tipkalo			- INPUT
-I_PIN 20 - Regulator fault			- INPUT
-I_PIN 11 - Total stop input         - INPUT
-*/
-//Input PINs
-const I_PIN_7 = 0x1; const I_PIN_8 = 0x2; const I_PIN_9 = 0x4;
-const I_PIN_10 = 0x8; const I_PIN_11 = 0x10; const I_PIN_12 = 0x20; 
-const I_PIN_19 = 0x200; const  I_PIN_20 = 0x100;  const  I_PIN_21 = 0x80;  const  I_PIN_22 = 0x40;
 
-//Output PINs
-const O_PIN_2 = 0x1; const O_PIN_3 = 0x4; const O_PIN_4 = 0x10; const O_PIN_5 = 0x40; 
-const O_PIN_6 = 0x100; const O_PIN_14 = 0x1000; const O_PIN_15 = 0x2; const O_PIN_16 = 0x08; 
-const O_PIN_17 = 0x20; const O_PIN_18 = 0x80; 
-const O_PIN_23 = 0x200; const O_PIN_24 = 0x800;
+Date.prototype.mmyy = function(){
+    var mm = this.getMonth() + 1;
+    var yy =  this.getFullYear();
+    yy = yy.toString();
+    yy = yy.slice(2);
 
-/*-------------------------------------------
-Flags and variables declaration
---------------------------------------------*/
-var auto_mode = "OFF";
-var laser_status = "INACTIVE";
-var last_error = "no errors";
-
-var nom = 0; var bar_gore = 0; var bar_dolje = 0; var sen_linija = 0;
-var sen_laser_gore = 0;  var sen_laser_dolje = 0; var sen_optika = 0;
-var sen_bar_dolje = 0; var sen_bar_gore = 0; var reset_tipka = 0;
-var reg_fault = 0; var total_stop = 0; var laser_marking = 0;
-var laser_in_working_pos = 0;
-var brake_status = 0;
-
-var signal_ready = 0;
-var z_axis_active = 0;
-var sb1_v = 25;
-var min_pos = 5;
-var search_distance = 130;
-var home_pos = 120;
-var current_pos = 0;
-const num_writes;
-var pumps_marked = 0;
+    return [(mm>9 ? '' : '0') + mm,
+	    "/",
+          yy,
+         ].join('');
+};
 
 /*
   Read inputs and sets flags
@@ -73,11 +25,11 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
     if(IoPort.getPort(0) & I_PIN_20)
    { 
-	reg_fault =0;
+	reg_fault =1;
     } 
     else
     {
-	reg_fault =1;
+	reg_fault =0;
 	print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!!");
     }
 
@@ -112,10 +64,7 @@ function set_flags()
 }
 
 
-var senz_state = 0; 
-last_senz_state = 0;
-pump_present = 0;
-var brojac = 0;
+
 /*
   Counts pumps and sets pump_present flag
   */
@@ -184,15 +133,6 @@ function init_func()
     }
 
 }
-
-Date.prototype.mmyy = function(){
-    var mm = this.getMonth() + 1;
-
-    return [(mm>9 ? '' : '0') + mm,
-	    "/",
-          this.getFullYear(),
-         ].join('');
-};
 
 function main()
 {

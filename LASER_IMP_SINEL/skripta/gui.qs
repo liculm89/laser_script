@@ -12,7 +12,7 @@ var font_manual_btns =  "Courier New,15,-1,5,80,0,0,0,0,0";
 
 function gen_dialog(part_list)
 {  
-    dialog.setFixedSize(1300, 720);
+    dialog.setFixedSize(1050, 720);
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     //GUI - automatski mod
@@ -20,69 +20,59 @@ function gen_dialog(part_list)
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     dialog.newTab("Automatic mode");
     
+    
+    gb_top = new GroupBox();
+    
+    dialog.add(gb_top);
+    
     laser_enable_box = new GroupBox("Laser key sequence");
+    
+    laser_seq = new GroupBox();
+    laser_enable_box.add(laser_seq);
     
     btn_key.text ="KEY ("+ key_state +")";
     btn_key["sigPressed()"].connect(laser_key_on);
-    btn_key.font = font2; btn_key.setFixedSize(240,60);
-    laser_enable_box.add(btn_key);
+    btn_key.font = font2; btn_key.setFixedSize(150,60);
+    laser_seq.add(btn_key);
     
-    laser_enable_box.newColumn();
+    laser_seq.newColumn();
+     
+    var btn_shut_down = new PushButton("SHUT DOWN");
+    btn_shut_down["sigPressed()"].connect(shut_down);
+    btn_shut_down.font = font2; btn_shut_down.setFixedSize(150,60);
+    laser_seq.add(btn_shut_down);
+   
     //var btn_enable= new PushButton("ENABLE");
     btn_enable["sigPressed()"].connect(enable_pressed);
     btn_enable.text = "ENABLE (" +enable_state+")";
-    btn_enable.font = font2; btn_enable.setFixedSize(320,60);
+    btn_enable.font = font2; btn_enable.setFixedSize(350,60);
     laser_enable_box.add(btn_enable);
     
-    dialog.add(laser_enable_box);
+    gb_top.add(laser_enable_box);
     
     auto_box = new GroupBox(); auto_box.title = "Automatic laser marking";
-    dialog.add(auto_box);
-    
-    gb_cmb_box = new GroupBox();
-    auto_box.add(gb_cmb_box);
-    
-    lbl_select_type = new Label(); lbl_select_type.text = "Select type:";
-    lbl_select_type.font = font2;
-    gb_cmb_box.add(lbl_select_type);
-    
-    gb_cmb_box.newColumn();
-    
-    cmb_a = new ComboBox("",part_list);
-    cmb_a.font = font2;
-    gb_cmb_box.add(cmb_a);
-    cmb_a["sigIndexChanged(int)"].connect(logo_selection);
-    
-    gb_cmb_box.newColumn();
-    
-    
-    selectedLogo_a =  new Label(txt_selected_logo + "/");
-    
-    //logo_init(cmb_a.currentItem, selectedLogo_a);
-    
-    selectedLogo_a.font = font_lbls;
-    auto_box.add(selectedLogo_a);
+    gb_top.add(auto_box);
     
     lbl_auto_status = new Label(); lbl_auto_status.text = "Auto mode: " + auto_mode;
     lbl_auto_status.font = font_lbls;
     auto_box.add(lbl_auto_status);
     
     cmb_buttons_auto = new GroupBox();
-    auto_box.add(cmb_buttons_auto);
+    //auto_box.add(cmb_buttons_auto);
     
     var btn_auto_mode = new PushButton("START AUTO MODE");
     btn_auto_mode["sigPressed()"].connect(start_auto_mode);
-    btn_auto_mode.font = font2;  btn_auto_mode.setFixedSize(270,60);
-    cmb_buttons_auto.add(btn_auto_mode);
+    btn_auto_mode.font = font2;  btn_auto_mode.setFixedSize(350,60);
+    auto_box.add(btn_auto_mode);
     
     cmb_buttons_auto.newColumn();
     
     var btn_auto_stop = new PushButton("STOP AUTO MODE");
     btn_auto_stop["sigPressed()"].connect(stop_auto);
-    btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(270,60);
-    cmb_buttons_auto.add(btn_auto_stop);
+    btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(350,60);
+    auto_box.add(btn_auto_stop);
     
-    dialog.addSpace(20);
+    gb_top.addSpace(20);
     //Pumps count groupbox
     gb_pump_count = new GroupBox("Pumps count");
     
@@ -94,37 +84,21 @@ function gen_dialog(part_list)
     lbl_pumps_marked.font = font_lbls;
     gb_pump_count.add(lbl_pumps_marked);
     
-    gb_pump_count.newColumn();
+    //gb_pump_count.newColumn();
     var btn_pump_count = new PushButton("RESET PUMPS COUNTER");
     btn_pump_count["sigPressed()"].connect(reset_pump_count);
-    btn_pump_count.font = font2; btn_pump_count.setFixedSize(300,60);
+    btn_pump_count.font = font2; btn_pump_count.setFixedSize(350,60);
     gb_pump_count.add(btn_pump_count);
     
-    dialog.add(gb_pump_count);
+   gb_top.add(gb_pump_count);
     
-    gb_shutdown = new GroupBox();
-    dialog.add(gb_shutdown);
-    var btn_shut_down = new PushButton("SHUT DOWN");
-    btn_shut_down["sigPressed()"].connect(shut_down);
-    btn_shut_down.font = font2; btn_shut_down.setFixedSize(300,60);
-    gb_shutdown.add(btn_shut_down);
+    //gb_shutdown = new GroupBox();
+    //dialog.add(gb_shutdown);
+
     
-    status_box = new GroupBox(); status_box.title= "Status";
-    dialog.add(status_box);
+   
     
-    lbl_marking = new Label(); lbl_marking.text = "Laser status:" + laser_status;
-    lbl_marking.font =  font_lbls;
-    status_box.add(lbl_marking);
-    
-    lbl_laser_moving = new Label(); lbl_laser_moving.text = "Laser motor:" + get_motor_status( laser_moving );
-    lbl_laser_moving.font = font_lbls;
-    status_box.add(lbl_laser_moving);
-    
-    lbl_last_error = new Label(); lbl_last_error.text = "Last error:" + last_error;
-    lbl_last_error.font = font_lbls;
-    status_box.add(lbl_last_error);
-    
-    dialog.newColumn();
+    gb_top.newColumn();
     ////////////////////////////////////
     //Preview in auto mode
     ///////////////////////////////////
@@ -132,7 +106,7 @@ function gen_dialog(part_list)
     
     gb_prev = new GroupBox("Selection preview")
 	      
-	      dialog.add(gb_prev_auto);
+	     gb_top.add(gb_prev_auto);
     gb_prev_auto.add(gb_prev);
     gb_sel = new GroupBox();
     
@@ -173,7 +147,24 @@ function gen_dialog(part_list)
     renderareaPrev.preview(h_Doc_new);
     
     gb_prev_render.add(renderareaPrev);
+    /////////
+    //
+    /////////
     
+    status_box = new GroupBox(); status_box.title= "Status";
+    dialog.add(status_box);
+    
+    lbl_marking = new Label(); lbl_marking.text = "Laser status:" + laser_status;
+    lbl_marking.font =  font_lbls;
+    status_box.add(lbl_marking);
+    
+    lbl_laser_moving = new Label(); lbl_laser_moving.text = "Laser motor:" + get_motor_status( laser_moving );
+    lbl_laser_moving.font = font_lbls;
+    //status_box.add(lbl_laser_moving);
+    
+    lbl_last_error = new Label(); lbl_last_error.text = "Last error:" + last_error;
+    lbl_last_error.font = font_lbls;
+    status_box.add(lbl_last_error);
     
     ////////////////////////////////////////////////////////////////////////
     
