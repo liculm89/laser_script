@@ -1,40 +1,4 @@
 
-Date.prototype.mmyy = function(){
-    var mm = this.getMonth() + 1;
-    var yy =  this.getFullYear();
-    yy = yy.toString();
-    yy = yy.slice(2);
-
-    return [(mm>9 ? '' : '0') + mm,
-            "/",
-            yy,
-            ].join('');
-};
-
-Date.prototype.ddmmyytime = function(){
-      var mm = this.getMonth() +1;
-      var yy = this.getFullYear();
-      yy = yy.toString(); 
-
-      var dd = this.getDate() ;    
-      var uhr = this.getHours()+1;  
-      var min = this.getMinutes() ;      
-      var sec = this.getSeconds() ;
-      var time = this.getTime();
-      return[(dd>9 ? '' : '0') + dd,
-	     "/",
-	     (mm>9 ? '' : '0') + mm,
-	     "/",
-	     yy,
-	     "-",
-	     (uhr>9 ? '' : '0') + uhr,
-	     ":",
-	     (min>9 ? '' : '0') + min,
-	     ":",
-	     (sec>9 ? '' : '0') + sec,
-	     ].join('');
-};
-
 /*
   Read inputs and sets flags
   */
@@ -48,11 +12,11 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
     if(IoPort.getPort(0) & I_PIN_20)
     {
-        reg_fault =1;
+        reg_fault =0;
     }
     else
     {
-        reg_fault =0;
+        reg_fault =1;
         if(debug_mode){print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!!");}
     }
 
@@ -150,7 +114,47 @@ function init_func()
         return 2;
     }
 }
+///////////////////////////////////////////////////
+//TIME AND DATE FORMATING
+///////////////////////////////////////////////////
+Date.prototype.mmyy = function(){
+    var mm = this.getMonth() + 1;
+    var yy =  this.getFullYear();
+    yy = yy.toString();
+    yy = yy.slice(2);
 
+    return [(mm>9 ? '' : '0') + mm,
+            "/",
+            yy,
+            ].join('');
+};
+
+Date.prototype.ddmmyytime = function(){
+      var mm = this.getMonth() +1;
+      var yy = this.getFullYear();
+      yy = yy.toString(); 
+
+      var dd = this.getDate() ;    
+      var uhr = this.getHours();  
+      var min = this.getMinutes() ;      
+      var sec = this.getSeconds() ;
+      var time = this.getTime();
+      return[(dd>9 ? '' : '0') + dd,
+	     "/",
+	     (mm>9 ? '' : '0') + mm,
+	     "/",
+	     yy,
+	     "-",
+	     (uhr>9 ? '' : '0') + uhr,
+	     ":",
+	     (min>9 ? '' : '0') + min,
+	     ":",
+	     (sec>9 ? '' : '0') + sec,
+	     ].join('');
+};
+/////////////////////////////////
+//MAIN
+////////////////////////////////
 function main()
 {
     System.sigQueryStart.connect(onQueryStart);

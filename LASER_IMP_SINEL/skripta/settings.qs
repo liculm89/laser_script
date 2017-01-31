@@ -73,9 +73,7 @@ var brojac = 0;
 //////////////////////////////////////////////////////////////////////////////////
 //INPUT -OUTPUT FILES SETTINGS
 /////////////////////////////////////////////////////////////////////////////////
-/*---------------------------------
- Template and log file paths
-  ----------------------------------*/
+
 /*TEMPLATES
   /,ADL-G,AN-G,BE-G,CAL-G,CAL-N,DEL-G,DEL-GS,DUP-G,EB-G,EB-N,EFA-G,EFA-N,EMS-G,ESP-G,EXP-G,EXP-N,GHN-G,GS-G,
 GUT-G,IMP-G,IMP-GS,IMP-N,INT-G,KIR-N,LAD-G,LAD-N,MAT-G,MIL-G,PER-G,PER-N,SLD-G,SOM-G,SOME-N,
@@ -181,8 +179,8 @@ print(date.mmyy());
 
 
 //drive_loc = "G:";
-//drive_loc = "D:";
-drive_loc = "E:";
+drive_loc = "D:";
+//drive_loc = "E:";
 
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
@@ -203,6 +201,9 @@ var logosPath = drive_loc + "\\LASER_IMP_SINEL\\LOGOTIP\\XLP-LOGOTIPI\\";
 var znakiPath = drive_loc + "\\LASER_IMP_SINEL\\ZNAKI\\XLP - ZNAKI\\";
 
 var columns = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z AA AB AC AD AE AF AG AH AI AJ";
+var columns_names = ["Izdelek","Izdelek_naziv","vgrajenec","ime_nap_tab","sek_klas","rotacija","TEMPLATE","st_nap_tab","Logotip","Ime_1","ime_2","Art nr","S N","SENERTEC","Ucraino","CCC","EAC","GOST","CE","Puščica","TF","napetost","zaščita","razred izolacije","PN","ln 1 (min)","ln 2","ln 3 (max)","P 1 (min)","P 2","P 3 (max)","EEI","Poreklo","datum"];
+
+//print(colNamesStr)
 
 var h_Doc_new;
 var h_Document,hDb, fw;
@@ -217,6 +218,8 @@ var zdelek_ext_s = [];
 var template_list = [];
 var template_list_s = [];
 var columns_arr = [];
+var columns_names_arr = [];
+var log_arr = [];
 
 var txt_selected_logo = "Selected logo: ";
 
@@ -230,7 +233,14 @@ logotips_dict = to_dict(logotips_a, "ADL","calpeda1",",");
 columns_dict = to_dict(columns, "A", "AJ", " ");
 znaki_dict = to_dict(znaki_a, "CCC-1","ucraino1", ",");
 
+//columns_names_arr = to_arr(columns_names, "Izdelek", "datum", ",");
 columns_arr = to_arr(columns, "A", "AJ", " ");
+
+//print(columns_names);
+/*
+columns_names_arr.forEach(function(item, index){
+	print(columns_names_arr[index]);
+});*/
 
 populateTemplateDict();
 populateLogosDict();
@@ -248,3 +258,4 @@ var laser_objects_U_AH = laser_objects.slice(laser_objects.indexOf("OBJ_U"), las
 
 
 /*************END OF INPUT-OUTPUT FILES SETTINGS********************/
+

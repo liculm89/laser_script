@@ -16,7 +16,7 @@ function parts_list_gen()
         {
             part_list[index] = res[index][0];
             logos_list[index] = res[index][11];
-        })
+        });
     }
     else
     {
@@ -31,20 +31,34 @@ function xls_log()
 
     var date2 = new Date();
     date2 = date2.ddmmyytime().toString();
+    
+    log_arr.splice(-2,2);
+    
+
+    var colNamesStr = "[" + columns_names.join("],[") +"]";
+    
+    log_str = "'" + log_arr.join("','") + "'";
+    
+    log_str = "'" +date2 + "'," + log_str
+    colNamesStr  = "Time_date," + colNamesStr;
+
    
-    print(date2);
+   query1  = "INSERT INTO [Napisne tablice in nalepke sezn$] ("+colNamesStr+") VALUES ("+log_str+")";
+  
     hDb3 = new Db("QODBC")
     hDb3.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;ReadOnly=0;Dbq=" + test_log;
     
     if (hDb3.open())
-    {
-        hDb3.exec("INSERT INTO [Napisne tablice in nalepke sezn$] (Izdelek) VALUES ('"+date2+"')");
-        print( hDb3.lastError());
-    }
+    {   
+         if(!hDb3.exec(query1))
+	    { 
+         print( hDb3.lastError());
+ }   
+ }
     hDb3.close();
 }
 
-//xls_log();
+
 
 function serial_input_changed(text)
 {	
@@ -57,12 +71,12 @@ function ext_changed()
 {
     show_preview();
 }
+ //TABLE_SCHEMA = '"+nova_db+"' AND
 
 function new_parts_list()
 {
     hDb3 = new Db("QODBC")
-    hDb3.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + nova_db;
-
+    hDb3.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;ReadOnly=0;Dbq=" + nova_db;
     if(hDb3.open())
     {
         zdelek_ext = [];
@@ -72,7 +86,7 @@ function new_parts_list()
 
         var res = hDb3.exec("SELECT Izdelek FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek is not null" );
         var res2 = hDb3.exec("SELECT TEMPLATE FROM [Napisne tablice in nalepke sezn$] WHERE TEMPLATE is not null" );
-        var res3 = hDb3.exec("SELECT Logotip FROM [Napisne tablice in nalepke sezn$] WHERE Logotip is not null")
+        var res3 = hDb3.exec("SELECT Logotip FROM [Napisne tablice in nalepke sezn$] WHERE Logotip is not null");
 
         template_list = [];
         res.forEach(function(item, index)
@@ -173,13 +187,21 @@ function show_preview()
     
     if(hDb4.open())
     {
-        var  res = hDb4.exec("SELECT * FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" + part + ext +"'");
+        var  res = hDb4.exec("SELECT * FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" + part + ext +"'"); 
+	
+        
+       log_arr = [];
         if(res[0] != null ){
             for( i = 0; i < dict_keys.length; i++)
             {
                 columns_dict[dict_keys[i]] = res[0][i];
+	    log_arr.push(res[0][i]);
+       
             }
         }
+	
+
+        //print(log_arr);
         if(columns_dict["M"] != "/")
         {
             le_ser.enable = true;
@@ -193,7 +215,7 @@ function show_preview()
         lbl_prev_man.text = "Izdelek: " + columns_dict["A"];
 
         laser_doc_preview();
-
+         xls_log();
     }
     hDb4.close();
 }
@@ -204,8 +226,8 @@ function show_preview()
 function mark_auto()
 {	
     nm = 1;
-
     h_Doc_new.execute();
+    xls_log();
 }
 
 function get_pn()
