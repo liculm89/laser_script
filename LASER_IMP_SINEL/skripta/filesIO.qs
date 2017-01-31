@@ -46,10 +46,11 @@ function xls_log()
     var colNamesStr = "[" + columns_names.join("],[") +"]";
     
     log_str = "'" + log_arr.join("','") + "'";   
-    log_str = "'" +date2 + "'," + log_str
+    log_str = "'" +date2 + "'," + log_str;
     colNamesStr  = "Time_date," + colNamesStr;
     
     query1  = "INSERT INTO [Napisne tablice in nalepke sezn$] ("+colNamesStr+") VALUES ("+log_str+")";
+    print(query1);
   
     hDb3 = new Db("QODBC")
     hDb3.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;ReadOnly=0;Dbq=" + test_log;
@@ -239,7 +240,7 @@ function selection_init()
         {	
 	print("selection init");
 	last_sn = get_last_serial().toString();
-            last_sn = last_sn.slice(3);
+                last_sn = last_sn.slice(3);
 	last_sn = parseInt(last_sn);
 	if(last_sn != 000001)
 	{last_sn = leftPad((last_sn + 1), 7);}
@@ -272,8 +273,12 @@ function show_preview()
         if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
         {	
 	last_sn = get_last_serial().toString();
-            last_sn = last_sn.slice(3);
+                last_sn = last_sn.slice(3);
 	last_sn = parseInt(last_sn);
+	
+	if(last_sn != 000001)
+	{last_sn = leftPad((last_sn + 1), 7);}
+	else{last_sn = leftPad((last_sn), 7);}
 	curr_sn = last_sn + 1;
 	
 	le_sn = le_ser.text;
@@ -323,7 +328,10 @@ function laser_doc_up()
 		last_sn = last_sn.slice(3);
 		last_sn = parseInt(last_sn);
 		curr_sn = last_sn + 1;
-		le_ser = date_year + "-" + curr_sn;
+		curr_sn =  leftPad((last_sn), 7);
+		
+
+		le_ser.text = date_year + "-" + curr_sn;
 		columns_dict["M"] = le_ser.text;
 		laser_doc_preview();
 	}
@@ -336,17 +344,19 @@ function laser_doc_up()
 function mark_auto()
 {	
     nm = 1;
-    
-    
+
     laser_doc_up();
     
-    h_Doc_new.execute();
+    log_arr = [];
      for( i = 0; i < dict_keys.length; i++)
      {
           log_arr.push(columns_dict[dict_keys[i]]);
      }
 	
-         xls_log();
+  
+    
+    h_Doc_new.execute();
+
 }
 
 function get_pn()
@@ -436,7 +446,7 @@ function laser_doc_preview()
         }
     }
     
-    h_Doc_new.move(8, 0);
+    h_Doc_new.move(7, 0);
     h_Doc_new.update();
     renderareaPrev.preview(h_Doc_new);
     renderareaPrev_m.preview(h_Doc_new);

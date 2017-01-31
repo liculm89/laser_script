@@ -9,8 +9,9 @@ function start_auto_mode()
                 if(laser_status == "Ready for marking")
                 {
                     auto_mode = "ON";
+	    numWC = 0;
                     le_num_w.enable = false;
-	        le_ser.enable = false;
+	    le_ser.enable = false;
                     if(debug_mode){ print("Auto mode started");}
                     laser_in_working_pos = 0;
                     laser_ref_auto();
@@ -47,6 +48,7 @@ function stop_auto(ID)
         auto_mode = "OFF";
         System.stopLaser();
         laser_marking = 0;
+        numWC = 0;
         nom= 0;
         disconnect_func(wait_for_pump);
     }
@@ -74,9 +76,7 @@ function wait_for_pump(ID)
             print("nom =" + nom);
             print("laser_in_working_pos" + laser_in_working_pos);
         }
-
-        if(numW < numWC || isNaN(numW))
-	{
+			
         for(nom; nom<1; nom++)
         {
             if(laser_in_working_pos == 0)
@@ -91,11 +91,8 @@ function wait_for_pump(ID)
                 start_timer(timers[6],wait_for_barrier);
             }
         }
-}
-	else
-	{
-		stop_auto();
-	}
+
+	
     }
 }
 
@@ -204,7 +201,7 @@ function barrier_up_afer_marking(ID)
 }
 
 function barrier_up_auto()
-{   	
+{   	                    
     IoPort.resetPort(0, O_PIN_23);
     bar_dolje = 0;
     IoPort.setPort(0, O_PIN_5);
@@ -223,11 +220,23 @@ function reset_laser_marking(ID)
 {
     if((timers[5] == ID) && (pump_present == 0))
     {
-        nom = 0;
-        increment_serial();
-        numW++;
-        pumps_marked++;
-        disconnect_func(reset_laser_marking);
+         xls_log();
+         numWC++;
+	 
+        if((numW > numWC) || isNaN(numW))
+	 { 
+	    nom = 0;
+	    pumps_marked++;
+	    disconnect_func(reset_laser_marking);
+                 }
+	
+	else
+	{
+	    stop_auto();
+	    disconnect_func(reset_laser_marking);
+	   
+	}
+        	
     }
 }
 
