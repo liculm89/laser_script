@@ -1,15 +1,14 @@
-
-/*
-  Function is triggered when laser marking is stoped with System call
-  */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Function is triggered when laser marking is stoped with System call
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function onLaserStop()
 {
     if(debug_mode){ print("laser stoped");}
 }
 
-/*
-  Function is triggered when one of axis stops movement or when marking proces i finished
-  */
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Function is triggered when one of axis stops movement or when marking proces i finished
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function onLaserEnd()
 {  
      laser_marking = 0;
@@ -19,6 +18,7 @@ var key_state = "OFF";
 var enable_state = "OFF";
 var warm_up_time = 30;
 var wac =warm_up_time;
+
 
 function laser_key_on()
 {
@@ -128,9 +128,9 @@ var laser_poz_before = Axis.getPosition(2);
 var laser_poz_cur =  Axis.getPosition(2);
 var laser_moving = 0;
 
-/*
-  Checks if laser is moving
-  */
+//////////////////////////////////////////////
+// Checks if laser is moving
+/////////////////////////////////////////////
 function laser_movement(ID)
 {
     if(timers[4] == ID)
@@ -139,12 +139,10 @@ function laser_movement(ID)
         if(laser_poz_cur != laser_poz_before)
         {
             laser_moving = 1;
-            //signal_ready = 0;
         }
         else
         {
             laser_moving = 0;
-            //signal_ready = 1;
         }
         laser_poz_before = laser_poz_cur;
     }
@@ -153,7 +151,6 @@ function laser_movement(ID)
 function set_signal_ready(ID)
 	
 {
-    //print(signal_ready);
     if((timers[0] == ID)  && (signal_ready == 1))
     {
             IoPort.setPort(0, O_PIN_2); 

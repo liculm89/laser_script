@@ -1,100 +1,16 @@
-/*------------------------------------------------
-    Generiranje liste komada iz excel tabele
-    ------------------------------------------------*/
-function parts_list_gen()
-{
-    hDb2 = new Db("QODBC");
-    hDb2.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + xlsPath;
-
-    if(hDb2.open())
-    {
-        part_list = [];
-        logos_list = [];
-        var res = hDb2.exec("SELECT * FROM [List1$]" );
-
-        res.forEach(function(item, index)
-        {
-            part_list[index] = res[index][0];
-            logos_list[index] = res[index][11];
-        });
-    }
-    else
-    {
-        if(debug_mode){ print("Result: " + res + " - Error: " + hDb2.lastError());}
-        writeLog("Result: " + res + " - Error: " + hDb2.lastError());
-    }
-    hDb2.close();
-}
-
-function leftPad(number, targetLength)
-{
-	var output = number + ' ';
-	while(output.length < targetLength) {
-		output = '0' + output;
-	}
-	return output;
-}
-		
-
-function xls_log()
-{
-
-    var date2 = new Date();
-    date2 = date2.ddmmyytime().toString();
-    
-    log_arr.splice(-2,2);
-    var colNamesStr = "[" + columns_names.join("],[") +"]";
-    
-    log_str = "'" + log_arr.join("','") + "'";   
-    log_str = "'" +date2 + "'," + log_str;
-    colNamesStr  = "Time_date," + colNamesStr;
-    
-    query1  = "INSERT INTO [Napisne tablice in nalepke sezn$] ("+colNamesStr+") VALUES ("+log_str+")";
-    print(query1);
-  
-    hDb3 = new Db("QODBC")
-    hDb3.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;ReadOnly=0;Dbq=" + test_log;
-    
-    if (hDb3.open())
-    {   
-         if(!hDb3.exec(query1))
-	    { 
-         print( hDb3.lastError());
- }   
- }
-    hDb3.close();
-}
-
-
-
-function serial_input_changed(text)
-{	
-    columns_dict["M"] = text;
-    lbl_ser.text = "Serial N.:" + text;
-}
-
-function ext_changed()
-
-{
-if(auto_mode == "OFF")
-    {
-     le_ser.text = "none";
-     le_ser.disable = true;
-     selection_init();	  //show_preview();
-    }
-}
- //TABLE_SCHEMA = '"+nova_db+"' AND
-
-function new_parts_list()
+////////////////////////////////////////////////////////////
+//Parts List creation from xls database
+///////////////////////////////////////////////////////////
+function parts_list()
 {
     hDb3 = new Db("QODBC")
     hDb3.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;ReadOnly=0;Dbq=" + nova_db;
     if(hDb3.open())
     {
-        zdelek_ext = [];
         new_list = [];
-
-        var logotips = [];
+        zdelekArr = [];
+        zdelek_ext = [];
+        logotips = [];
 
         var res = hDb3.exec("SELECT Izdelek FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek is not null" );
         var res2 = hDb3.exec("SELECT TEMPLATE FROM [Napisne tablice in nalepke sezn$] WHERE TEMPLATE is not null" );
@@ -131,25 +47,27 @@ function new_parts_list()
         
         logotips.sort();
         var logotips_s;
-        
         logotips_s = remove_duplicates(logotips);
         
         new_list.sort();
-        newarr = remove_duplicates(new_list);
+        zdelekArr = remove_duplicates(new_list);
 
-        dynamic_template_list(0);
+        dynamic_ext_list(0);
     }
     hDb3.close()
 }
 
-function dynamic_template_list(part_id)
+/////////////////////////////////////////////////////////////////////
+//Creating part extensions from xls database
+/////////////////////////////////////////////////////////////////////
+function dynamic_ext_list(part_id)
 {
     hDb4 = new Db("QODBC")
     hDb4.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + nova_db;
 
     if(hDb4.open())
     {
-        var res2 = hDb4.exec("SELECT Izdelek FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" + newarr[part_id] +"%'");
+        var res2 = hDb4.exec("SELECT Izdelek FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" +  zdelekArr[part_id] +"%'");
 
         zdelek_ext_s = [];
         res2.forEach(function(item, index)
@@ -171,44 +89,139 @@ function dynamic_template_list(part_id)
     hDb4.close();
 }
 
-function read_from_db()
+
+function serial_input_changed(text)
+{	
+    lbl_ser.text = "Serial N.:" + text;
+}
+
+////////////////////////////////////////
+//
+////////////////////////////////////////
+function ext_changed()
 {
-    hDb5 = new Db("QODBC")
-    hDb5.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + nova_db;
+    if(auto_mode == "OFF")
+    {
+        le_ser.text = "none";
+        le_ser.enable = true;
+        selection_init();
+    }
+}
+
+///////////////////////////////////////////////////
+//Gets the last serial from log file
+//////////////////////////////////////////////////
+function get_last_serial()
+{
+    var part = cmb_new.currentItem;
+    var ext = cmb_template.currentItem;  
+
+    hDb4 = new Db("QODBC")
+    hDb4.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + test_log;
+    
+    if(ext == "      ")
+    {
+	var query_se = "SELECT [S N] FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" + part  +"'";
+    }
+    else
+    {
+	var query_se = "SELECT [S N] FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" + part + ext +"'";
+    }
+    
+    var snArr = [];
 
     if(hDb4.open())
     {
-
+        var res = hDb4.exec(query_se);
+ 
+        if(res.length != 0)
+        {
+            res.forEach(function(item, index)
+            {
+                if(res[index][0] != "")
+                {
+                    snArr.push(res[index][0]);
+                }
+            });
+            snArr.sort();
+	    
+            if(res[0] != null)
+            {
+                var last_serial = snArr[snArr.length - 1];
+            }
+        }
+        else
+        {
+            last_serial = "17-000001";
+        }
     }
-    hDb5.close();
+    hDb4.close();
 
+    return last_serial;
 }
 
-function get_last_serial()
+//////////////////////////////////
+//Serial number check
+//////////////////////////////////
+function check_sn(sn)
 {
-	 var part = cmb_new.currentItem;
-             var ext = cmb_template.currentItem;
-	 print(part + ext);
-	 
-	  hDb4 = new Db("QODBC")
-             hDb4.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + test_log;
-	 
-	  
-	  if(hDb4.open())
-	     {
-		  var res = hDb4.exec("SELECT [S N] FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" + part + ext +"'"); 
-		  print(hDb4.lastError());	
-		  if(res[0] != null)
-		  {last_serial = res[res.length-1][res[0].length-1];}	
-		  else
-		  {last_serial ="17-000001"}
-			  
-               }
-	  hDb4.close();
-	  print(last_serial);
-	  return last_serial;
+    
+    var part = cmb_new.currentItem;
+    var ext = cmb_template.currentItem;  
+    
+    hDb4 = new Db("QODBC");
+    hDb4.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + test_log;
+    
+    if(ext == "      ")
+    {
+	var query_se = "SELECT [S N] FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" + part  +"'";
+    }
+    else
+    {
+	var query_se = "SELECT [S N] FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" + part + ext +"'";
+    }
+    
+    var snArr = [];
+
+    if(hDb4.open())
+    {
+        var res = hDb4.exec(query_se);
+ 
+        if(res.length != 0)
+        {
+            res.forEach(function(item, index)
+            {
+                if(res[index][0] != "")
+                {
+                    snArr.push(res[index][0]);
+                }
+            });
+	}
+    }
+    hDb4.close();
+    /*
+    print(snArr);
+    print(sn);
+    //var test = !!(snArr.includes(sn)+1);
+    var test;
+    
+      for(var i = 0; i < snArr.length; i++) 
+      {
+	  print(snArr[i]);
+	  print(sn);
+	  if(snArr[i] == sn)
+	  {
+	      
+	  }
+      }
+    print(test);
+    */
 }
 
+
+/////////////////////////////////////////
+//Initial values generation
+///////////////////////////////////////
 function selection_init()
 {
     hDb4 = new Db("QODBC")
@@ -225,170 +238,107 @@ function selection_init()
     
     if(hDb4.open())
     {
-        var  res = hDb4.exec("SELECT * FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" + part + ext +"'"); 
-	
-        
-       log_arr = [];
+        var  res = hDb4.exec("SELECT * FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" + part + ext +"'");
+        log_arr = [];
         if(res[0] != null ){
             for( i = 0; i < dict_keys.length; i++)
             {
                 columns_dict[dict_keys[i]] = res[0][i];
             }
         }
-         
-       if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
-        {	
-	print("selection init");
-	last_sn = get_last_serial().toString();
-                last_sn = last_sn.slice(3);
-	last_sn = parseInt(last_sn);
-	if(last_sn != 000001)
-	{last_sn = leftPad((last_sn + 1), 7);}
-	else{last_sn = leftPad((last_sn), 7);}
-	le_ser.text = date_year + "-" + last_sn;
-	le_ser.enable = true;
-        }		 
+
+        if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
+        {
+            last_sn = get_last_serial().toString();
+            last_sn = last_sn.slice(3);
+            last_sn = parseInt(last_sn);
+	    
+            if(last_sn == 1)
+            {
+                last_sn = leftPad((last_sn), 7);
+            }
+            else
+            {
+                last_sn = leftPad((last_sn + 1), 7);
+            }
+            le_ser.text = date_year + "-" + last_sn;
+            le_ser.enable = true;
+        }
         else
-        {	
-	le_ser.text = "none";	
+        {
+            le_ser.text = "none";
             le_ser.enable = false;
         }
         lbl_from_db.text = "Izdelek: " + columns_dict["A"];
         lbl_prev_man.text = "Izdelek: " + columns_dict["A"];
-
-        laser_doc_preview();
-        
-
+        laser_doc_generate();
     }
     hDb4.close();
-	
 }
 
-
-
-function show_preview()
+///////////////////////////////
+//Confirms selection
+//////////////////////////////
+function confirm_selection()
 {
-  if(auto_mode == "OFF")
-	{
+    if(auto_mode == "OFF")
+    {
         if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
-        {	
-	last_sn = get_last_serial().toString();
-                last_sn = last_sn.slice(3);
-	last_sn = parseInt(last_sn);
-	
-	if(last_sn != 000001)
-	{last_sn = leftPad((last_sn + 1), 7);}
-	else{last_sn = leftPad((last_sn), 7);}
-	curr_sn = last_sn + 1;
-	
-	le_sn = le_ser.text;
-	le_sn_i = le_sn.slice(3);
-	le_sn_i = parseInt(le_sn_i);
+        {
+            last_sn = get_last_serial().toString();
+            last_sn = last_sn.slice(3);
+            last_sn = parseInt(last_sn);
 
-	    if(le_sn_i > (curr_sn - 1))
-	    {
-		    columns_dict["M"] = le_ser.text;
-	    }
-	    else if(le_sn_i == 000001)
-	    {
-		    columns_dict["M"] = le_ser.text;
-	    }
-	    else
-	    {
-		    error_sn_exists();
-	    }
-           
+            if(last_sn != 1)
+            {
+                last_sn = last_sn + 1;
+                last_sn = leftPad((last_sn), 7);
+            }
+            else
+            {
+                last_sn = leftPad((last_sn), 7);
+            }
+	    
+	check_sn(le_ser.text);
+            
+	le_sn = le_ser.text;    
+            le_sn_i = le_sn.slice(3);
+            le_sn_i = parseInt(le_sn_i);
+            le_sn_i = leftPad((le_sn_i),7);
+
+            if(le_sn_i >= (last_sn))
+            {
+                columns_dict["M"] = le_ser.text;
+            }
+            else if(le_sn_i == 000001)
+            {
+                columns_dict["M"] = le_ser.text;
+            }
+            else
+            {
+                error_sn_exists();
+            }
             le_ser.enable = true;
-
         }
         else
-        {	
-	le_ser.text = "none";	
+        {
+            le_ser.text = "none";
             le_ser.enable = false;
         }
-	
-	numW = le_num_w.text;
-	numW = parseInt(numW);
-	print(numW);
-	laser_doc_preview();
-    }
-  else
-  {
-	   error_auto_started();
-  }
-	
-}
-
-
-function laser_doc_up()
-{
-	if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
-	{
-		last_sn = get_last_serial().toString();
-		last_sn = last_sn.slice(3);
-		last_sn = parseInt(last_sn);
-		curr_sn = last_sn + 1;
-		curr_sn =  leftPad((last_sn), 7);
-		
-
-		le_ser.text = date_year + "-" + curr_sn;
-		columns_dict["M"] = le_ser.text;
-		laser_doc_preview();
-	}
-	
-}
-
-/*-----------------------------------------------------------------------------------------------
-  Template reading, laser document creation and execution function
-  -----------------------------------------------------------------------------------------------*/
-function mark_auto()
-{	
-    nm = 1;
-
-    laser_doc_up();
-    
-    log_arr = [];
-     for( i = 0; i < dict_keys.length; i++)
-     {
-          log_arr.push(columns_dict[dict_keys[i]]);
-     }
-	
-  
-    
-    h_Doc_new.execute();
-
-}
-
-function get_pn()
-{
-    var pn;
-    if(auto_mode == 1)
-    {
-        pn = cmb_a.currentItem;
+        numW = le_num_w.text;
+        numW = parseInt(numW);
+        laser_doc_generate();
     }
     else
     {
-        pn = cmb.currentItem;
+        error_auto_started();
     }
 }
 
-function generate_laser_doc(auto, init)
-{
-    nm = 1;
-    if(init == 0)
-    {
-        pn = get_pn();
-    }
-    else
-    {
-        pn = part_list[0];
-    }
-    if(debug_mode){print("Reading and creating preview");}
-    laser_doc_update(pn);
-    // renderarea.preview(h_Document);
-}
-
-function laser_doc_preview()
+//////////////////////////////////////////////////////
+//Laser doc generation
+//////////////////////////////////////////////////////
+function laser_doc_generate()
 {
     h_Doc_new = new LaserDoc;
     var file_loc = templates_dict[columns_dict["G"]];
@@ -445,15 +395,96 @@ function laser_doc_preview()
             obj.text = date.mmyy();
         }
     }
-    
-    h_Doc_new.move(7, 0);
-    h_Doc_new.update();
+    if(columns_dict["F"] == "0")
+    {
+	 h_Doc_new.move(7, 0);
+             h_Doc_new.update();
+    }
+    else if(columns_dict["F"] == "270")
+    {	
+	h_Doc_new.rotate(270);
+	h_Doc_new.move(7, 0);
+            h_Doc_new.update();
+    }
     renderareaPrev.preview(h_Doc_new);
     renderareaPrev_m.preview(h_Doc_new);
-
 }
 
-//Log creating/appending function
+/////////////////////////////////////
+//Laser doc update
+////////////////////////////////////
+function laser_doc_update()
+{
+    if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
+    {
+        last_sn = get_last_serial().toString();
+        last_sn = last_sn.slice(3);
+        last_sn = parseInt(last_sn);
+	
+        curr_sn = last_sn + 1;
+        curr_sn =  leftPad((curr_sn), 7);
+	
+        le_ser.text = date_year + "-" + curr_sn;
+        columns_dict["M"] = le_ser.text;
+        laser_doc_generate();
+    }
+}
+
+////////////////////////////////////////
+//Laser doc execution
+///////////////////////////////////////
+function mark_auto()
+{	
+    nm = 1;
+    laser_doc_update();
+    log_arr = [];
+    for( i = 0; i < dict_keys.length; i++)
+    {
+        log_arr.push(columns_dict[dict_keys[i]]);
+    }
+    h_Doc_new.execute();
+}
+
+
+///////////////////////////////////////////////
+//Logging into xls database
+//////////////////////////////////////////////
+function xls_log()
+{
+    var date2 = new Date();
+    date2 = date2.ddmmyytime().toString();
+    
+    log_arr.splice(-2,2);
+    var colNamesStr = "[" + columns_names.join("],[") +"]";
+    
+    log_str = "'" + log_arr.join("','") + "'";
+    log_str = "'" + date2 + "'," + log_str;
+    colNamesStr  = "Time_date," + colNamesStr;
+    
+    var query1  = "INSERT INTO [Napisne tablice in nalepke sezn$] ("+colNamesStr+") VALUES ("+log_str+")";
+
+    hDb3 = new Db("QODBC")
+    hDb3.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;ReadOnly=0;Dbq=" + test_log;
+    
+    if (hDb3.open())
+    {
+        if(!hDb3.exec(query1))
+        {
+            print(hDb3.lastError());
+        }
+    }
+    hDb3.close();
+}
+
+function leftPad(number, targetLength)
+{
+    var output = number + ' ';
+    while(output.length < targetLength) {
+        output = '0' + output;
+    }
+    return output;
+}
+
 function writeLog(currentNum)
 {
     var today = new Date();

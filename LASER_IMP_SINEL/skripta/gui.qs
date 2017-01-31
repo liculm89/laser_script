@@ -1,6 +1,6 @@
-/*-----------------------------------
-  Kreiranje GUI aplikacije
-  -----------------------------------*/
+////////////////////////////////////////////////
+//  Kreiranje GUI aplikacije
+////////////////////////////////////////////////
 var dialog = new Dialog ("Laser control",Dialog.D_NONE,false, 0x00040000);
 dialog.setFixedSize(1050, 720);
 var btn_key = new PushButton();
@@ -114,11 +114,11 @@ function gen_dialog(part_list)
     
     gb_prev.add(gb_sel);
     
-    cmb_new = new ComboBox("",newarr);
+    cmb_new = new ComboBox("",zdelekArr);
     cmb_new.font = font2;
     gb_sel.add(cmb_new);
     
-    cmb_new["sigIndexChanged(int)"].connect(dynamic_template_list);
+    cmb_new["sigIndexChanged(int)"].connect(dynamic_ext_list);
     
     gb_sel.newColumn();
     
@@ -134,7 +134,7 @@ function gen_dialog(part_list)
     
     le_ser.font = font_lbls;
     le_ser.labelFont = font_lbls;
-    le_ser.text = date_year+ "-";
+    le_ser.text = date_year + "-";
     le_ser["sigTextChanged(QString)"].connect(serial_input_changed);
     
     gb_prev.add(le_ser);
@@ -150,7 +150,7 @@ function gen_dialog(part_list)
     
     btn_preview = new PushButton("Confirm selection");
     btn_preview.font = font2;
-    btn_preview["sigPressed()"].connect(show_preview);
+    btn_preview["sigPressed()"].connect(confirm_selection);
     btn_preview.setFixedSize(215,50);
     
     lbl_from_db.text = "No preview selected";
@@ -494,6 +494,9 @@ function gen_dialog(part_list)
     dialog.exec();
 }
 
+//////////////////////////
+//GUI UPDATE
+///////////////////////////
 function gui_update(ID)
 {
     if (timers[0] == ID)
@@ -558,46 +561,9 @@ function get_motor_status(input)
     return stat;
 }
 
-function logo_selection(selected)
-{
-    logos_list.forEach(function (item, index)
-    {
-        if (index == selected)
-        {
-            selectedLogo_a.text = txt_selected_logo + item;
-        }
-    });
-    var auto = 1; var init = 0;
-    generate_laser_doc(auto, init);
-}
-
-function logo_selection_m(selected)
-{
-    logos_list.forEach(function (item, index)
-    {
-        if (index == selected)
-        {
-            selectedLogo.text = txt_selected_logo + item;
-        }
-    });
-    var auto = 0; var init = 0;
-    generate_laser_doc(auto, init);
-}
-
-function logo_init(curr_item, label)
-{
-    if( part_list != 0)
-    {
-        part_list.forEach(function (item, index)
-        {
-            if (item == curr_item)
-            {
-                label.text = txt_selected_logo + logos_list[index];
-            }
-        });
-    }
-}
-
+///////////////////////////////////////////
+//Script Shut down function
+///////////////////////////////////////////
 function shut_down()
 {
     if( auto_mode == "OFF")

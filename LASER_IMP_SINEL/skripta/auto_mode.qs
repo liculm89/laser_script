@@ -1,3 +1,6 @@
+/////////////////////////////////////////////////
+//AUTO MODE START function
+/////////////////////////////////////////////////
 function start_auto_mode()
 {
     if(total_stop == 0)
@@ -9,9 +12,8 @@ function start_auto_mode()
                 if(laser_status == "Ready for marking")
                 {
                     auto_mode = "ON";
-	    numWC = 0;
+                    numWC = 0;
                     le_num_w.enable = false;
-	    le_ser.enable = false;
                     if(debug_mode){ print("Auto mode started");}
                     laser_in_working_pos = 0;
                     laser_ref_auto();
@@ -39,12 +41,14 @@ function start_auto_mode()
     }
 }
 
+////////////////////////////////////////////
+//STOPS auto mode
+//////////////////////////////////////////
 function stop_auto(ID)
 {      	
     if(auto_mode == "ON")
     {
-        le_num_w.enable = true;	   
-        le_ser.enable= true;
+        le_num_w.enable = true;
         auto_mode = "OFF";
         System.stopLaser();
         laser_marking = 0;
@@ -58,7 +62,9 @@ function stop_auto(ID)
     }
 }
 
-
+/////////////////////////////////////////////////////////////
+//Function sets laser into reference pos
+////////////////////////////////////////////////////////////
 function laser_ref_auto()
 {
     if(total_stop == 0)
@@ -67,6 +73,9 @@ function laser_ref_auto()
     }
 }
 
+//////////////////////////////////////////////////////////////////////////////
+//Laser auto mode is on, waits for external signal
+/////////////////////////////////////////////////////////////////////////////
 function wait_for_pump(ID)
 {
     if((timers[4] == ID) && (auto_mode == "ON") && (pump_present == 1))
@@ -76,7 +85,7 @@ function wait_for_pump(ID)
             print("nom =" + nom);
             print("laser_in_working_pos" + laser_in_working_pos);
         }
-			
+
         for(nom; nom<1; nom++)
         {
             if(laser_in_working_pos == 0)
@@ -91,11 +100,12 @@ function wait_for_pump(ID)
                 start_timer(timers[6],wait_for_barrier);
             }
         }
-
-	
     }
 }
 
+////////////////////////////////////
+//Timer waits for barrier
+/////////////////////////////////////
 function wait_for_barrier(ID)
 {
     if((timers[6] == ID) && (IoPort.getPort(0) & I_PIN_11))
@@ -105,6 +115,9 @@ function wait_for_barrier(ID)
     }
 }
 
+//////////////////////////////////////////////////////////////////
+//Laser moves and starts timers
+//////////////////////////////////////////////////////////////////
 function laser_move_timed()
 {      
     if(laser_in_working_pos == 0)
@@ -122,6 +135,9 @@ function laser_move_timed()
     }
 }
 
+////////////////////////////////////////////////////////////////////
+//Laser moves until working pos. is reached
+////////////////////////////////////////////////////////////////////
 function stop_search_auto(ID)
 {
     if(timers[1] == ID && auto_mode == "ON")
@@ -129,7 +145,6 @@ function stop_search_auto(ID)
         if(IoPort.getPort(0) & I_PIN_10)
         {
             current_pos = Axis.getPosition(2);
-            //if((home_pos - current_pos) <= search_distance)
             if(!(IoPort.getPort(0) & I_PIN_8))
             {
                 if(debug_mode){print("Laser is moving to working pos...");}
@@ -156,6 +171,9 @@ function stop_search_auto(ID)
     }
 }
 
+//////////////////////////////////////////////////////////////////////////////
+//If pump is not found, laser moves to ref. position
+//////////////////////////////////////////////////////////////////////////////
 function pump_not_present(ID)
 {
     if(timers[2] == ID && pump_present == 0 && auto_mode == "ON")
@@ -173,6 +191,9 @@ function pump_not_present(ID)
     }
 }
 
+//////////////////////////////////////////////////////////////////////////////////////
+//Automatic marking starts, sets timer for barrier rising
+//////////////////////////////////////////////////////////////////////////////////////
 function readFile_auto()
 {    
     if(debug_mode){ print("Read file started");}
@@ -183,6 +204,9 @@ function readFile_auto()
     mark_auto();
 }
 
+/////////////////////////////////////////
+//Barrier up after marking
+/////////////////////////////////////////
 function barrier_up_afer_marking(ID)
 {
     if(timers[7] == ID)
@@ -200,6 +224,9 @@ function barrier_up_afer_marking(ID)
     }
 }
 
+////////////////////////////////////
+//Automatic barrirer up
+///////////////////////////////////
 function barrier_up_auto()
 {   	                    
     IoPort.resetPort(0, O_PIN_23);
@@ -208,6 +235,9 @@ function barrier_up_auto()
     bar_gore = 1;
 }
 
+////////////////////////////////////////
+//Automatic barrier down
+////////////////////////////////////////
 function barrier_down_auto() 
 {
     IoPort.resetPort(0, O_PIN_5);
@@ -216,30 +246,33 @@ function barrier_down_auto()
     bar_dolje = 1;
 }
 
+///////////////////////////////////////////////////////////////////////////////////
+//Function resets laser marking to wait for pump func
+///////////////////////////////////////////////////////////////////////////////////
 function reset_laser_marking(ID)
 {
     if((timers[5] == ID) && (pump_present == 0))
     {
-         xls_log();
-         numWC++;
-	 
+       
+        numWC++;
+        xls_log();
         if((numW > numWC) || isNaN(numW))
-	 { 
-	    nom = 0;
-	    pumps_marked++;
-	    disconnect_func(reset_laser_marking);
-                 }
-	
-	else
-	{
-	    stop_auto();
-	    disconnect_func(reset_laser_marking);
-	   
-	}
-        	
+        {
+            nom = 0;
+            pumps_marked++;
+            disconnect_func(reset_laser_marking);
+        }
+        else
+        {
+            stop_auto();
+            disconnect_func(reset_laser_marking);
+        }
     }
 }
 
+////////////////////////////////////////////////////////////////////////////
+//Function is triggered when total stop is pressed
+////////////////////////////////////////////////////////////////////////////
 function total_stop_func()
 {
     if(auto_mode == "ON")
@@ -257,7 +290,9 @@ function total_stop_func()
         disconnect_timers();
     }
 }
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//IF pump is present, when reset is pressed, automatic mode resets
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 function reset_auto(ID)
 {
     if((timers[5] == ID) && (IoPort.getPort(0) & I_PIN_9))
@@ -268,6 +303,9 @@ function reset_auto(ID)
     }
 }
 
+///////////////////////////////////////////////////////////////////////////
+//Function is triggered when reset btn is pressed
+///////////////////////////////////////////////////////////////////////////
 function reset_button_func()
 {
     if(total_stop == 0)

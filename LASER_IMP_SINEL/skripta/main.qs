@@ -1,7 +1,6 @@
-
-/*
-  Read inputs and sets flags
-  */
+////////////////////////////////////////////
+//Read inputs and sets flags
+////////////////////////////////////////////
 function set_flags()
 {
     if(IoPort.getPort(0) & I_PIN_7){ sen_linija = 1;} else{sen_linija=0;}
@@ -12,11 +11,11 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
     if(IoPort.getPort(0) & I_PIN_20)
     {
-        reg_fault =0;
+        reg_fault =1;
     }
     else
     {
-        reg_fault =1;
+        reg_fault =0;
         if(debug_mode){print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!!");}
     }
 
@@ -50,9 +49,9 @@ function set_flags()
     }
 }
 
-/*
-  Counts pumps and sets pump_present flag
-  */
+/////////////////////////////////////////////////////////////////////
+//Counts pumps and sets pump_present flag
+////////////////////////////////////////////////////////////////////
 function pump_counter(ID)
 {
     if(timers[3] == ID)
@@ -77,8 +76,9 @@ function pump_counter(ID)
         last_senz_state = senz_state;
     }
 }
-
-
+//////////////////////////////////////
+//Init function
+/////////////////////////////////////
 function init_func()
 {
     var nm;
@@ -92,11 +92,9 @@ function init_func()
     set_flags();
     
     //Generates parts_list[] from excel database
-    parts_list_gen();
-    new_parts_list();
+    parts_list();
 
     reset_sequence();
-    
     //Pump counter and laser movement functions connection
     System["sigTimer(int)"].connect(pump_counter);
     System["sigTimer(int)"].connect(laser_movement);
@@ -169,12 +167,9 @@ function main()
     System["sigLaserError(int)"].connect(onLaserError);
     System.sigClose.connect(onClose);
     
-    var a = "";
-    var b = parseInt(a);
-    print(b);
-    print(isNaN(b));
-
+     ///////////////////////////////////////////////////////////////////////////////////////////
     //Starts initialization function, if success GUI is generated
+    ////////////////////////////////////////////////////////////////////////////////////////////
     init_func();
     init_passed = init_func();
     if(init_passed == 0)

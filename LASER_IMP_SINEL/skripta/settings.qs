@@ -3,9 +3,9 @@
 ////////////////////////////////////////////////////////////////////////////////////////////
 //sets debugging(on=1 and off=0)
 debug_mode = 0;
-/*---------------------------------------------------------
- Inputs and outputs
-  --------------------------------------------------------*/
+/////////////////////////////////////////////////////////
+// Inputs and outputs
+////////////////////////////////////////////////////////
 /*
 Popis funkcija pinova
 O_PIN 2 - Busy signal                - OUTPUT
@@ -27,20 +27,23 @@ I_PIN 19 - Reset tipkalo			- INPUT
 I_PIN 20 - Regulator fault			- INPUT
 I_PIN 11 - Total stop input         - INPUT
 */
-//Input PINs
+///////////////////////
+//Input PIN-s
+//////////////////////
 const I_PIN_7 = 0x1; const I_PIN_8 = 0x2; const I_PIN_9 = 0x4;
 const I_PIN_10 = 0x8; const I_PIN_11 = 0x10; const I_PIN_12 = 0x20; 
 const I_PIN_19 = 0x200; const  I_PIN_20 = 0x100;  const  I_PIN_21 = 0x80;  const  I_PIN_22 = 0x40;
-
-//Output PINs
+///////////////////////
+//Output PIN-s
+///////////////////////
 const O_PIN_2 = 0x1; const O_PIN_3 = 0x4; const O_PIN_4 = 0x10; const O_PIN_5 = 0x40; 
 const O_PIN_6 = 0x100; const O_PIN_14 = 0x1000; const O_PIN_15 = 0x2; const O_PIN_16 = 0x08; 
 const O_PIN_17 = 0x20; const O_PIN_18 = 0x80; 
 const O_PIN_23 = 0x200; const O_PIN_24 = 0x800;
 
-/*-------------------------------------------
-Flags and variables declaration
---------------------------------------------*/
+//////////////////////////////////////////////////////
+//Flags and variables declaration
+/////////////////////////////////////////////////////
 var auto_mode = "OFF";
 var laser_status = "INACTIVE";
 var last_error = "no errors";
@@ -75,8 +78,8 @@ var brojac = 0;
 /////////////////////////////////////////////////////////////////////////////////
 
 //drive_loc = "G:";
-drive_loc = "D:";
-//drive_loc = "E:";
+//drive_loc = "D:";
+drive_loc = "E:";
 
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
@@ -85,6 +88,10 @@ var logPath= drive_loc + "\\LASER_IMP_SINEL\\writeLog.txt";
 var resPath = drive_loc + "\\LASER_IMP_SINEL\\res\\";
 var nova_db =  drive_loc + "\\LASER_IMP_SINEL\\tabela_baza.xls";
 
+var templatesPath = drive_loc + "\\LASER_IMP_SINEL\\TEMPLATE\\";
+var logosPath = drive_loc + "\\LASER_IMP_SINEL\\LOGOTIP\\XLP-LOGOTIPI\\";
+var znakiPath = drive_loc + "\\LASER_IMP_SINEL\\ZNAKI\\XLP - ZNAKI\\";
+
 var test_log =  drive_loc + "\\LASER_IMP_SINEL\\tabela_log.xls";
 
 var templates_a = "/,ADL-G,AN-G,BE-G,CAL-G,CAL-N,DEL-G,DEL-GS,DUP-G,EB-G,EB-N,EFA-G,EFA-N,EMS-G,ESP-G,EXP-G,EXP-N,GHN-G,GS-G,GUT-G,IMP-G,IMP-GS,IMP-N,INT-G,KIR-N,LAD-G,LAD-N,MAT-G,MIL-G,PER-G,PER-N,SLD-G,SOM-G,SOME-N,SOML-N,SPE-G,STA-G,UNI-G";
@@ -92,22 +99,27 @@ var logotips_a = "ADL,AN,AP,BE,CAL,COOX,DEL,DUP,EB,EBARA,EFA,EMS,ENRJ,ESP,EXP,GS
 
 var znaki_a = "CCC-1,CE-1,EAC-1,GOST-0,GOST-1,puščica-1,ucraino1"
 
-var templatesPath = drive_loc + "\\LASER_IMP_SINEL\\TEMPLATE\\";
-var logosPath = drive_loc + "\\LASER_IMP_SINEL\\LOGOTIP\\XLP-LOGOTIPI\\";
-var znakiPath = drive_loc + "\\LASER_IMP_SINEL\\ZNAKI\\XLP - ZNAKI\\";
-
 var columns = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z AA AB AC AD AE AF AG AH AI AJ";
 var columns_names = ["Izdelek","Izdelek_naziv","vgrajenec","ime_nap_tab","sek_klas","rotacija","TEMPLATE","st_nap_tab","Logotip","Ime_1","ime_2","Art nr","S N","SENERTEC","Ucraino","CCC","EAC","GOST","CE","Puščica","TF","napetost","zaščita","razred izolacije","PN","ln 1 (min)","ln 2","ln 3 (max)","P 1 (min)","P 2","P 3 (max)","EEI","Poreklo","datum"];
-
-/*TEMPLATES
+///////////////////////
+//TEMPLATES
+/////////////////////////
+/*
   /,ADL-G,AN-G,BE-G,CAL-G,CAL-N,DEL-G,DEL-GS,DUP-G,EB-G,EB-N,EFA-G,EFA-N,EMS-G,ESP-G,EXP-G,EXP-N,GHN-G,GS-G,
 GUT-G,IMP-G,IMP-GS,IMP-N,INT-G,KIR-N,LAD-G,LAD-N,MAT-G,MIL-G,PER-G,PER-N,SLD-G,SOM-G,SOME-N,
 SOML-N,SPE-G,STA-G,UNI-G
-
-LOGOS
+*/
+///////////////
+//LOGOS
+///////////////
+/*
   ADL,AN,AP,BE,CAL,COOX,DEL,DUP,EB,EBARA,EFA,EMS,ENRJ,ESP,EXP,GS,GUT,IDR,IMP,INT,
 KIR,LAD,LATITUDE,MAT,MH,MI,PER,PL,SAE,SEA,SEN,SLD,SOM,SPE,ST,STA,TC5,UNI,VEX,calpeda1
 */
+
+///////////////////////////////////
+//DICTIONARIES 
+//////////////////////////////////
 function populateTemplateDict()
 {
     templates_dict["CAL-G"] = templatesPath + "CALPEDA_GHN.xlp";
@@ -162,6 +174,22 @@ function populateZnakiDict()
     znaki_dict["ucraino1"] = znakiPath + "ucraino_ebara.xlp";
 }
 
+var templates_dict = {};
+var logotips_dict = {};
+var columns_dict = {};
+var znaki_dict = {};
+templates_dict = to_dict(templates_a, "/", "UNI-G", ",");
+logotips_dict = to_dict(logotips_a, "ADL","calpeda1",",");
+columns_dict = to_dict(columns, "A", "AJ", " ");
+znaki_dict = to_dict(znaki_a, "CCC-1","ucraino1", ",");
+
+populateTemplateDict();
+populateLogosDict();
+populateZnakiDict();
+
+//////////////////////
+//String to dict
+///////////////////////
 function to_dict(from_str, c1, c2, split)
 {
     arr = from_str;
@@ -175,6 +203,9 @@ function to_dict(from_str, c1, c2, split)
     return dict;
 }
 
+//////////////////////////
+//String to array
+/////////////////////////
 function to_arr(from_str, c1, c2)
 {
     var arr;
@@ -185,6 +216,9 @@ function to_arr(from_str, c1, c2)
     return arr_s;
 }
 
+//////////////////////////////////////////////////
+//Removes duplicates from array
+//////////////////////////////////////////////////
 function remove_duplicates(arr)
 {
     var m = {}, newarr = []
@@ -202,16 +236,15 @@ function remove_duplicates(arr)
 var date = new Date();
 print(date.mmyy());
 
-//print(colNamesStr)
-
 var h_Doc_new;
 var h_Document,hDb, fw;
 var laser_objects = [];
 
 var part_list = []; 
 var logos_list = [];
+var logotips = [];
 var new_list = [];
-var newarr = [];
+var zdelekArr = [];
 var zdelek_ext = [];
 var zdelek_ext_s = [];
 var template_list = [];
@@ -220,33 +253,12 @@ var columns_arr = [];
 var columns_names_arr = [];
 var log_arr = [];
 
-var txt_selected_logo = "Selected logo: ";
-
-var templates_dict = {};
-var logotips_dict = {};
-var columns_dict = {};
-var znaki_dict = {};
 var last_sn;
 var curr_sn;
 var numW;
 var numWC = 0;
-templates_dict = to_dict(templates_a, "/", "UNI-G", ",");
-logotips_dict = to_dict(logotips_a, "ADL","calpeda1",",");
-columns_dict = to_dict(columns, "A", "AJ", " ");
-znaki_dict = to_dict(znaki_a, "CCC-1","ucraino1", ",");
 
-//columns_names_arr = to_arr(columns_names, "Izdelek", "datum", ",");
 columns_arr = to_arr(columns, "A", "AJ", " ");
-
-//print(columns_names);
-/*
-columns_names_arr.forEach(function(item, index){
-	print(columns_names_arr[index]);
-});*/
-
-populateTemplateDict();
-populateLogosDict();
-populateZnakiDict();
 
 columns_arr.forEach(function(item, index)
 {

@@ -46,6 +46,7 @@ function barrier_up_afer_marking_m(ID)
             signal_ready = 1;
             pumps_marked++;
         }
+         xls_log();
         disconnect_func(barrier_up_afer_marking_m);
     }
 }
