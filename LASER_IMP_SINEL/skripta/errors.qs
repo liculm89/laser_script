@@ -94,3 +94,17 @@ function error_regulator_fault()
    MessageBox.critical( mesg_txt, MessageBox.Ok);
    last_error = mesg_txt;
 }
+
+function error_sn_exists()
+{
+   var mesg_txt = "S.N. invalid, S.N. already exists";
+   MessageBox.critical( mesg_txt, MessageBox.Ok);
+   last_error = mesg_txt;
+}
+
+function error_auto_started()
+{
+      var mesg_txt = "Auto mode already started, cannot change part during auto mode execution";
+      MessageBox.critical( mesg_txt, MessageBox.Ok);
+      last_error = mesg_txt;
+}

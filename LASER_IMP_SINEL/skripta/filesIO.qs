@@ -26,6 +26,16 @@ function parts_list_gen()
     hDb2.close();
 }
 
+function leftPad(number, targetLength)
+{
+	var output = number + ' ';
+	while(output.length < targetLength) {
+		output = '0' + output;
+	}
+	return output;
+}
+		
+
 function xls_log()
 {
 
@@ -33,17 +43,13 @@ function xls_log()
     date2 = date2.ddmmyytime().toString();
     
     log_arr.splice(-2,2);
-    
-
     var colNamesStr = "[" + columns_names.join("],[") +"]";
     
-    log_str = "'" + log_arr.join("','") + "'";
-    
+    log_str = "'" + log_arr.join("','") + "'";   
     log_str = "'" +date2 + "'," + log_str
     colNamesStr  = "Time_date," + colNamesStr;
-
-   
-   query1  = "INSERT INTO [Napisne tablice in nalepke sezn$] ("+colNamesStr+") VALUES ("+log_str+")";
+    
+    query1  = "INSERT INTO [Napisne tablice in nalepke sezn$] ("+colNamesStr+") VALUES ("+log_str+")";
   
     hDb3 = new Db("QODBC")
     hDb3.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;ReadOnly=0;Dbq=" + test_log;
@@ -69,7 +75,12 @@ function serial_input_changed(text)
 function ext_changed()
 
 {
-    show_preview();
+if(auto_mode == "OFF")
+    {
+     le_ser.text = "none";
+     le_ser.disable = true;
+     selection_init();	  //show_preview();
+    }
 }
  //TABLE_SCHEMA = '"+nova_db+"' AND
 
@@ -172,12 +183,38 @@ function read_from_db()
 
 }
 
-function show_preview()
+function get_last_serial()
+{
+	 var part = cmb_new.currentItem;
+             var ext = cmb_template.currentItem;
+	 print(part + ext);
+	 
+	  hDb4 = new Db("QODBC")
+             hDb4.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + test_log;
+	 
+	  
+	  if(hDb4.open())
+	     {
+		  var res = hDb4.exec("SELECT [S N] FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" + part + ext +"'"); 
+		  print(hDb4.lastError());	
+		  if(res[0] != null)
+		  {last_serial = res[res.length-1][res[0].length-1];}	
+		  else
+		  {last_serial ="17-000001"}
+			  
+               }
+	  hDb4.close();
+	  print(last_serial);
+	  return last_serial;
+}
+
+function selection_init()
 {
     hDb4 = new Db("QODBC")
     hDb4.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + nova_db;
     var part = cmb_new.currentItem;
     var ext = cmb_template.currentItem;
+    
     if (cmb_template.currentItem == "      ")
     {
         ext = "";
@@ -195,29 +232,102 @@ function show_preview()
             for( i = 0; i < dict_keys.length; i++)
             {
                 columns_dict[dict_keys[i]] = res[0][i];
-	    log_arr.push(res[0][i]);
-       
             }
         }
-	
-
-        //print(log_arr);
-        if(columns_dict["M"] != "/")
-        {
-            le_ser.enable = true;
-            columns_dict["M"] = le_ser.text;
-        }
+         
+       if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
+        {	
+	print("selection init");
+	last_sn = get_last_serial().toString();
+            last_sn = last_sn.slice(3);
+	last_sn = parseInt(last_sn);
+	if(last_sn != 000001)
+	{last_sn = leftPad((last_sn + 1), 7);}
+	else{last_sn = leftPad((last_sn), 7);}
+	le_ser.text = date_year + "-" + last_sn;
+	le_ser.enable = true;
+        }		 
         else
-        {
+        {	
+	le_ser.text = "none";	
             le_ser.enable = false;
         }
         lbl_from_db.text = "Izdelek: " + columns_dict["A"];
         lbl_prev_man.text = "Izdelek: " + columns_dict["A"];
 
         laser_doc_preview();
-         xls_log();
+        
+
     }
     hDb4.close();
+	
+}
+
+
+
+function show_preview()
+{
+  if(auto_mode == "OFF")
+	{
+        if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
+        {	
+	last_sn = get_last_serial().toString();
+            last_sn = last_sn.slice(3);
+	last_sn = parseInt(last_sn);
+	curr_sn = last_sn + 1;
+	
+	le_sn = le_ser.text;
+	le_sn_i = le_sn.slice(3);
+	le_sn_i = parseInt(le_sn_i);
+
+	    if(le_sn_i > (curr_sn - 1))
+	    {
+		    columns_dict["M"] = le_ser.text;
+	    }
+	    else if(le_sn_i == 000001)
+	    {
+		    columns_dict["M"] = le_ser.text;
+	    }
+	    else
+	    {
+		    error_sn_exists();
+	    }
+           
+            le_ser.enable = true;
+
+        }
+        else
+        {	
+	le_ser.text = "none";	
+            le_ser.enable = false;
+        }
+	
+	numW = le_num_w.text;
+	numW = parseInt(numW);
+	print(numW);
+	laser_doc_preview();
+    }
+  else
+  {
+	   error_auto_started();
+  }
+	
+}
+
+
+function laser_doc_up()
+{
+	if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
+	{
+		last_sn = get_last_serial().toString();
+		last_sn = last_sn.slice(3);
+		last_sn = parseInt(last_sn);
+		curr_sn = last_sn + 1;
+		le_ser = date_year + "-" + curr_sn;
+		columns_dict["M"] = le_ser.text;
+		laser_doc_preview();
+	}
+	
 }
 
 /*-----------------------------------------------------------------------------------------------
@@ -226,8 +336,17 @@ function show_preview()
 function mark_auto()
 {	
     nm = 1;
+    
+    
+    laser_doc_up();
+    
     h_Doc_new.execute();
-    xls_log();
+     for( i = 0; i < dict_keys.length; i++)
+     {
+          log_arr.push(columns_dict[dict_keys[i]]);
+     }
+	
+         xls_log();
 }
 
 function get_pn()

@@ -152,6 +152,10 @@ Date.prototype.ddmmyytime = function(){
 	     (sec>9 ? '' : '0') + sec,
 	     ].join('');
 };
+
+date_year = new Date();
+date_year = date_year.getFullYear().toString().slice(2);
+print(date_year);
 /////////////////////////////////
 //MAIN
 ////////////////////////////////
@@ -164,6 +168,11 @@ function main()
     System["sigLaserEvent(int)"].connect(get_laser_events);
     System["sigLaserError(int)"].connect(onLaserError);
     System.sigClose.connect(onClose);
+    
+    var a = "";
+    var b = parseInt(a);
+    print(b);
+    print(isNaN(b));
 
     //Starts initialization function, if success GUI is generated
     init_func();

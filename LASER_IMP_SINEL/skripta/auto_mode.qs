@@ -9,6 +9,8 @@ function start_auto_mode()
                 if(laser_status == "Ready for marking")
                 {
                     auto_mode = "ON";
+                    le_num_w.enable = false;
+	        le_ser.enable = false;
                     if(debug_mode){ print("Auto mode started");}
                     laser_in_working_pos = 0;
                     laser_ref_auto();
@@ -40,6 +42,8 @@ function stop_auto(ID)
 {      	
     if(auto_mode == "ON")
     {
+        le_num_w.enable = true;	   
+        le_ser.enable= true;
         auto_mode = "OFF";
         System.stopLaser();
         laser_marking = 0;
@@ -70,6 +74,9 @@ function wait_for_pump(ID)
             print("nom =" + nom);
             print("laser_in_working_pos" + laser_in_working_pos);
         }
+
+        if(numW < numWC || isNaN(numW))
+	{
         for(nom; nom<1; nom++)
         {
             if(laser_in_working_pos == 0)
@@ -84,6 +91,11 @@ function wait_for_pump(ID)
                 start_timer(timers[6],wait_for_barrier);
             }
         }
+}
+	else
+	{
+		stop_auto();
+	}
     }
 }
 
@@ -212,6 +224,8 @@ function reset_laser_marking(ID)
     if((timers[5] == ID) && (pump_present == 0))
     {
         nom = 0;
+        increment_serial();
+        numW++;
         pumps_marked++;
         disconnect_func(reset_laser_marking);
     }

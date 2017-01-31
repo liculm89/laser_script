@@ -30,7 +30,7 @@ function laser_key_on()
 	IoPort.resetPort(0, O_PIN_17);
 	key_state = "ON";
                 enable_state = "Wait:"+wac+"s";
-	timers[8] = System.setTimer(times[8]);
+	    timers[8] = System.setTimer(times[8]);
                 start_timer(timers[8], warmup_counter);
 	    }
        else

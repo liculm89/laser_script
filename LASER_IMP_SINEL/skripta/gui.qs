@@ -134,6 +134,7 @@ function gen_dialog(part_list)
     
     le_ser.font = font_lbls;
     le_ser.labelFont = font_lbls;
+    le_ser.text = date_year+ "-";
     le_ser["sigTextChanged(QString)"].connect(serial_input_changed);
     
     gb_prev.add(le_ser);
@@ -150,7 +151,7 @@ function gen_dialog(part_list)
     btn_preview = new PushButton("Confirm selection");
     btn_preview.font = font2;
     btn_preview["sigPressed()"].connect(show_preview);
-    btn_preview.setFixedSize(235,50);
+    btn_preview.setFixedSize(215,50);
     
     lbl_from_db.text = "No preview selected";
     lbl_from_db.font = font_lbls;
@@ -163,7 +164,7 @@ function gen_dialog(part_list)
     gb_confirm.add(lbl_ser);
     
     //renderareaPrev = new RenderArea();
-    show_preview();
+    //show_preview();
     renderareaPrev.preview(h_Doc_new);
     gb_prev_auto.add(renderareaPrev);
 
@@ -194,8 +195,6 @@ function gen_dialog(part_list)
     lbl_date_m.text = "Date-Time:" + date_time;
     
     gb_time_m.add(lbl_date_m);
-    
-    
     
     gb_top_m = new GroupBox();
     dialog.add(gb_top_m);
@@ -489,7 +488,7 @@ function gen_dialog(part_list)
     dialog.newColumn();
     lbl_space = new Label("                                                                                          ");
     dialog.add(lbl_space);
-    
+    ext_changed();
     dialog.show();
     System["sigTimer(int)"].connect(gui_update);
     dialog.exec();
@@ -516,7 +515,7 @@ function gui_update(ID)
         lbl_ser_m.text =  "Serial N.:" + le_ser.text;
         lbl_date.text = "Date-Time:" + date_time; 
         lbl_date_m.text = "Date-Time:" + date_time;
-
+       
         if(debug_mode)
         {
             lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);

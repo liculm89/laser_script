@@ -74,6 +74,31 @@ var brojac = 0;
 //INPUT -OUTPUT FILES SETTINGS
 /////////////////////////////////////////////////////////////////////////////////
 
+//drive_loc = "G:";
+drive_loc = "D:";
+//drive_loc = "E:";
+
+var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
+var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
+var logoPath = drive_loc + "\\LASER_IMP_SINEL\\Predloge\\" ;
+var logPath= drive_loc + "\\LASER_IMP_SINEL\\writeLog.txt";
+var resPath = drive_loc + "\\LASER_IMP_SINEL\\res\\";
+var nova_db =  drive_loc + "\\LASER_IMP_SINEL\\tabela_baza.xls";
+
+var test_log =  drive_loc + "\\LASER_IMP_SINEL\\tabela_log.xls";
+
+var templates_a = "/,ADL-G,AN-G,BE-G,CAL-G,CAL-N,DEL-G,DEL-GS,DUP-G,EB-G,EB-N,EFA-G,EFA-N,EMS-G,ESP-G,EXP-G,EXP-N,GHN-G,GS-G,GUT-G,IMP-G,IMP-GS,IMP-N,INT-G,KIR-N,LAD-G,LAD-N,MAT-G,MIL-G,PER-G,PER-N,SLD-G,SOM-G,SOME-N,SOML-N,SPE-G,STA-G,UNI-G";
+var logotips_a = "ADL,AN,AP,BE,CAL,COOX,DEL,DUP,EB,EBARA,EFA,EMS,ENRJ,ESP,EXP,GS,GUT,IDR,IMP,INT,KIR,LAD,LATITUDE,MAT,MH,MI,PER,PL,SAE,SEA,SEN,SLD,SOM,SPE,ST,STA,TC5,UNI,VEX,calpeda1";
+
+var znaki_a = "CCC-1,CE-1,EAC-1,GOST-0,GOST-1,puščica-1,ucraino1"
+
+var templatesPath = drive_loc + "\\LASER_IMP_SINEL\\TEMPLATE\\";
+var logosPath = drive_loc + "\\LASER_IMP_SINEL\\LOGOTIP\\XLP-LOGOTIPI\\";
+var znakiPath = drive_loc + "\\LASER_IMP_SINEL\\ZNAKI\\XLP - ZNAKI\\";
+
+var columns = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z AA AB AC AD AE AF AG AH AI AJ";
+var columns_names = ["Izdelek","Izdelek_naziv","vgrajenec","ime_nap_tab","sek_klas","rotacija","TEMPLATE","st_nap_tab","Logotip","Ime_1","ime_2","Art nr","S N","SENERTEC","Ucraino","CCC","EAC","GOST","CE","Puščica","TF","napetost","zaščita","razred izolacije","PN","ln 1 (min)","ln 2","ln 3 (max)","P 1 (min)","P 2","P 3 (max)","EEI","Poreklo","datum"];
+
 /*TEMPLATES
   /,ADL-G,AN-G,BE-G,CAL-G,CAL-N,DEL-G,DEL-GS,DUP-G,EB-G,EB-N,EFA-G,EFA-N,EMS-G,ESP-G,EXP-G,EXP-N,GHN-G,GS-G,
 GUT-G,IMP-G,IMP-GS,IMP-N,INT-G,KIR-N,LAD-G,LAD-N,MAT-G,MIL-G,PER-G,PER-N,SLD-G,SOM-G,SOME-N,
@@ -177,32 +202,6 @@ function remove_duplicates(arr)
 var date = new Date();
 print(date.mmyy());
 
-
-//drive_loc = "G:";
-drive_loc = "D:";
-//drive_loc = "E:";
-
-var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
-var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
-var logoPath = drive_loc + "\\LASER_IMP_SINEL\\Predloge\\" ;
-var logPath= drive_loc + "\\LASER_IMP_SINEL\\writeLog.txt";
-var resPath = drive_loc + "\\LASER_IMP_SINEL\\res\\";
-var nova_db =  drive_loc + "\\LASER_IMP_SINEL\\tabela_baza.xls";
-
-var test_log =  drive_loc + "\\LASER_IMP_SINEL\\tabela_log.xls";
-
-var templates_a = "/,ADL-G,AN-G,BE-G,CAL-G,CAL-N,DEL-G,DEL-GS,DUP-G,EB-G,EB-N,EFA-G,EFA-N,EMS-G,ESP-G,EXP-G,EXP-N,GHN-G,GS-G,GUT-G,IMP-G,IMP-GS,IMP-N,INT-G,KIR-N,LAD-G,LAD-N,MAT-G,MIL-G,PER-G,PER-N,SLD-G,SOM-G,SOME-N,SOML-N,SPE-G,STA-G,UNI-G";
-var logotips_a = "ADL,AN,AP,BE,CAL,COOX,DEL,DUP,EB,EBARA,EFA,EMS,ENRJ,ESP,EXP,GS,GUT,IDR,IMP,INT,KIR,LAD,LATITUDE,MAT,MH,MI,PER,PL,SAE,SEA,SEN,SLD,SOM,SPE,ST,STA,TC5,UNI,VEX,calpeda1";
-
-var znaki_a = "CCC-1,CE-1,EAC-1,GOST-0,GOST-1,puščica-1,ucraino1"
-
-var templatesPath = drive_loc + "\\LASER_IMP_SINEL\\TEMPLATE\\";
-var logosPath = drive_loc + "\\LASER_IMP_SINEL\\LOGOTIP\\XLP-LOGOTIPI\\";
-var znakiPath = drive_loc + "\\LASER_IMP_SINEL\\ZNAKI\\XLP - ZNAKI\\";
-
-var columns = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z AA AB AC AD AE AF AG AH AI AJ";
-var columns_names = ["Izdelek","Izdelek_naziv","vgrajenec","ime_nap_tab","sek_klas","rotacija","TEMPLATE","st_nap_tab","Logotip","Ime_1","ime_2","Art nr","S N","SENERTEC","Ucraino","CCC","EAC","GOST","CE","Puščica","TF","napetost","zaščita","razred izolacije","PN","ln 1 (min)","ln 2","ln 3 (max)","P 1 (min)","P 2","P 3 (max)","EEI","Poreklo","datum"];
-
 //print(colNamesStr)
 
 var h_Doc_new;
@@ -227,7 +226,10 @@ var templates_dict = {};
 var logotips_dict = {};
 var columns_dict = {};
 var znaki_dict = {};
-
+var last_sn;
+var curr_sn;
+var numW;
+var numWC = 0;
 templates_dict = to_dict(templates_a, "/", "UNI-G", ",");
 logotips_dict = to_dict(logotips_a, "ADL","calpeda1",",");
 columns_dict = to_dict(columns, "A", "AJ", " ");
