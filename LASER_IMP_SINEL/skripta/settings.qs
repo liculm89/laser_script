@@ -77,8 +77,8 @@ var brojac = 0;
 //INPUT -OUTPUT FILES SETTINGS
 /////////////////////////////////////////////////////////////////////////////////
 
-//drive_loc = "G:";
-drive_loc = "D:";
+drive_loc = "G:";
+//drive_loc = "D:";
 //drive_loc = "E:";
 
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";

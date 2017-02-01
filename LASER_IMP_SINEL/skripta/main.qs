@@ -11,11 +11,11 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
     if(IoPort.getPort(0) & I_PIN_20)
     {
-        reg_fault =0;
+        reg_fault =1;
     }
     else
     {
-        reg_fault =1;
+        reg_fault =0;
         if(debug_mode){print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!!");}
     }
 
@@ -99,11 +99,11 @@ function init_func()
     System["sigTimer(int)"].connect(pump_counter);
     System["sigTimer(int)"].connect(laser_movement);
 
-    if ((typeof part_list != "undefined") && (reg_fault == 0))
+    if ((typeof new_list != "undefined") && (reg_fault == 0))
     {
         return 0;
     }
-    if(typeof part_list == "undefined")
+    if(typeof new_list == "undefined")
     {
         return 1;
     }
@@ -167,6 +167,7 @@ function main()
     System["sigLaserError(int)"].connect(onLaserError);
     System.sigClose.connect(onClose);
     
+    System.sigClose();
      ///////////////////////////////////////////////////////////////////////////////////////////
     //Starts initialization function, if success GUI is generated
     ////////////////////////////////////////////////////////////////////////////////////////////
