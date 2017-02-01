@@ -255,8 +255,10 @@ function reset_laser_marking(ID)
     {
        
         numWC++;
+        print("from laser marking .. numWC: " + numWC);	
+        print("from laser marking .. numW: " + numW);
         xls_log();
-        if((numW > numWC) || isNaN(numW))
+        if((numW > numWC) || numW == 0)
         {
             nom = 0;
             pumps_marked++;
@@ -279,6 +281,7 @@ function total_stop_func()
     {
         System.stopLaser();
         disconnect_timers();
+        le_num_w.enable = false;
         laser_marking = 0;
         laser_in_working_pos = 0;
         nom = 0;
@@ -314,6 +317,7 @@ function reset_button_func()
         {
             System.stopLaser();
             disconnect_timers();
+            le_num_w.enable = true;
             laser_marking = 0;
             laser_in_working_pos = 0;
             nom = 0;

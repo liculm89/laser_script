@@ -420,7 +420,7 @@ function gen_dialog(part_list)
     gb_about.add(gb_ver);
     dialog.add(gb_about);
     
-    lbl_title = new Label("Laser control v0.9rc5");
+    lbl_title = new Label("Laser control v0.9");
     lbl_title.font = font_albls;
     gb_ver.add(lbl_title);
 

@@ -78,8 +78,8 @@ var brojac = 0;
 /////////////////////////////////////////////////////////////////////////////////
 
 //drive_loc = "G:";
-//drive_loc = "D:";
-drive_loc = "E:";
+drive_loc = "D:";
+//drive_loc = "E:";
 
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
@@ -255,7 +255,7 @@ var log_arr = [];
 
 var last_sn;
 var curr_sn;
-var numW;
+var numW = 0;
 var numWC = 0;
 
 columns_arr = to_arr(columns, "A", "AJ", " ");

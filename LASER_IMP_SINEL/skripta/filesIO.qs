@@ -327,7 +327,9 @@ function confirm_selection()
         }
         numW = le_num_w.text;
         numW = parseInt(numW);
-        laser_doc_generate();
+	if(isNaN(numW)){numW=0;}
+      print("from confirm .. numW: " + numW);  
+	laser_doc_generate();
     }
     else
     {
