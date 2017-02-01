@@ -182,7 +182,7 @@ function check_sn(sn)
     }
     
     var snArr = [];
-
+    var snArr_i = [];
     if(hDb4.open())
     {
         var res = hDb4.exec(query_se);
@@ -193,29 +193,28 @@ function check_sn(sn)
             {
                 if(res[index][0] != "")
                 {
-                    snArr.push(res[index][0]);
+                    snArr.push(res[index][0]); 
                 }
             });
 	}
     }
     hDb4.close();
-    /*
-    print(snArr);
-    print(sn);
-    //var test = !!(snArr.includes(sn)+1);
-    var test;
     
-      for(var i = 0; i < snArr.length; i++) 
-      {
-	  print(snArr[i]);
-	  print(sn);
-	  if(snArr[i] == sn)
-	  {
-	      
-	  }
-      }
-    print(test);
-    */
+    print(snArr);
+    snArr.forEach(function(item, index)
+   {		
+	snArr_i[index] = snArr[index].toString().slice(3);
+	snArr_i[index] = parseInt(snArr_i[index]);
+    });
+    
+    if (snArr_i.indexOf(sn) >= 0)
+    {
+	return true;
+    }
+    else
+    {
+	return false;
+    }
 }
 
 
@@ -246,9 +245,10 @@ function selection_init()
                 columns_dict[dict_keys[i]] = res[0][i];
             }
         }
-
+        
         if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
         {
+	le_ser.enable = true;
             last_sn = get_last_serial().toString();
             last_sn = last_sn.slice(3);
             last_sn = parseInt(last_sn);
@@ -261,6 +261,7 @@ function selection_init()
             {
                 last_sn = leftPad((last_sn + 1), 7);
             }
+	    
             le_ser.text = date_year + "-" + last_sn;
             le_ser.enable = true;
         }
@@ -269,6 +270,7 @@ function selection_init()
             le_ser.text = "none";
             le_ser.enable = false;
         }
+	
         lbl_from_db.text = "Izdelek: " + columns_dict["A"];
         lbl_prev_man.text = "Izdelek: " + columns_dict["A"];
         laser_doc_generate();
@@ -276,13 +278,29 @@ function selection_init()
     hDb4.close();
 }
 
+
+function check_sn_format_imp(sn)
+{
+print(sn.length);
+if ( (/^17\-\d{6}/.test(sn)) && (sn.length == 10))
+{ 
+    return true;
+}
+else
+{
+    return false;
+}
+
+}
 ///////////////////////////////
 //Confirms selection
 //////////////////////////////
 function confirm_selection()
 {
+    
     if(auto_mode == "OFF")
     {
+        confirm = 0;
         if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
         {
             last_sn = get_last_serial().toString();
@@ -299,43 +317,62 @@ function confirm_selection()
                 last_sn = leftPad((last_sn), 7);
             }
 	    
-	check_sn(le_ser.text);
-            
 	le_sn = le_ser.text;    
-            le_sn_i = le_sn.slice(3);
-            le_sn_i = parseInt(le_sn_i);
-            le_sn_i = leftPad((le_sn_i),7);
-
-            if(le_sn_i >= (last_sn))
-            {
-                columns_dict["M"] = le_ser.text;
-            }
-            else if(le_sn_i == 000001)
-            {
-                columns_dict["M"] = le_ser.text;
-            }
-            else
-            {
-                error_sn_exists();
-            }
-            le_ser.enable = true;
-        }
-        else
-        {
+	
+	if(check_sn_format_imp(le_sn))
+	{
+	
+	    le_sn_i = le_sn.slice(3);
+	    le_sn_i = parseInt(le_sn_i);
+	    
+	
+	    
+	    curr_sn = le_sn_i;
+	
+	    le_sn_i = leftPad((le_sn_i),7);
+	
+	    ///////////////////////////////////////////////
+	    //Check if serial already exist
+	    /////////////////////////////////////////////
+	    if(check_sn(curr_sn))
+	    {
+		error_sn_exists();
+		confirm = 0;
+	    }
+	    else
+	    {	
+		columns_dict["M"] = le_ser.text;
+		confirm = 1;
+	    } 
+	}
+	else
+	{
+	    error_sn_false_format();
+	}
+	
+	le_ser.enable = true;
+    }
+    else
+    {
             le_ser.text = "none";
             le_ser.enable = false;
-        }
+	confirm = 1;
+    }
+    
+	
         numW = le_num_w.text;
         numW = parseInt(numW);
-	if(isNaN(numW)){numW=0;}
-      print("from confirm .. numW: " + numW);  
-	laser_doc_generate();
-    }
+        if(isNaN(numW)){numW=0;}
+        
+         print("from confirm .. numW: " + numW);  
+         laser_doc_generate();
+     }
     else
     {
         error_auto_started();
     }
 }
+
 
 //////////////////////////////////////////////////////
 //Laser doc generation
@@ -419,15 +456,11 @@ function laser_doc_update()
 {
     if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
     {
-        last_sn = get_last_serial().toString();
-        last_sn = last_sn.slice(3);
-        last_sn = parseInt(last_sn);
-	
-        curr_sn = last_sn + 1;
-        curr_sn =  leftPad((curr_sn), 7);
-	
-        le_ser.text = date_year + "-" + curr_sn;
-        columns_dict["M"] = le_ser.text;
+       // last_sn = get_last_serial().toString();
+        last_sn = curr_sn;
+        last_sn = leftPad((last_sn),7);	 
+        le_ser.text =  date_year + "-" + last_sn;	
+        columns_dict["M"] = le_ser.text;		
         laser_doc_generate();
     }
 }
@@ -445,8 +478,8 @@ function mark_auto()
         log_arr.push(columns_dict[dict_keys[i]]);
     }
     h_Doc_new.execute();
+    print("from mark auto, last_sn : " + last_sn);     
 }
-
 
 ///////////////////////////////////////////////
 //Logging into xls database

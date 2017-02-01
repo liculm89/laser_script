@@ -111,3 +111,17 @@ function error_auto_started()
       MessageBox.critical( mesg_txt, MessageBox.Ok);
       last_error = mesg_txt;
 }
+
+function error_selection_not_confirmed()
+{
+      var mesg_txt = "Selected part and serial number not confirmed!";
+      MessageBox.critical( mesg_txt, MessageBox.Ok);
+      last_error = mesg_txt;
+}
+
+function error_sn_false_format()
+{
+    var mesg_txt = "Check serial number format";
+    MessageBox.critical( mesg_txt, MessageBox.Ok);
+    last_error = mesg_txt;
+}

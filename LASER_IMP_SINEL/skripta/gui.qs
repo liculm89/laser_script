@@ -131,7 +131,6 @@ function gen_dialog(part_list)
     /////////////////////////////////
     //Serial number input
     /////////////////////////////////
-    
     le_ser.font = font_lbls;
     le_ser.labelFont = font_lbls;
     le_ser.text = date_year + "-";

@@ -77,9 +77,9 @@ var brojac = 0;
 //INPUT -OUTPUT FILES SETTINGS
 /////////////////////////////////////////////////////////////////////////////////
 
-drive_loc = "G:";
+//drive_loc = "G:";
 //drive_loc = "D:";
-//drive_loc = "E:";
+drive_loc = "E:";
 
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
@@ -253,10 +253,12 @@ var columns_arr = [];
 var columns_names_arr = [];
 var log_arr = [];
 
+var log_sn;
 var last_sn;
 var curr_sn;
 var numW = 0;
 var numWC = 0;
+var confirm = 0;
 
 columns_arr = to_arr(columns, "A", "AJ", " ");
 
