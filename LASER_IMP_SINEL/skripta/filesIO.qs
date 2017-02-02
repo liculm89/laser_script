@@ -108,6 +108,63 @@ function ext_changed()
     }
 }
 
+function get_ebara_prefix()
+{
+	var S; var P; var M; var LP;
+	date = new Date();	
+            year =  date.getFullYear().toString();
+            month = (date.getMonth() + 1);
+	 S = "S";
+	 AF = "AF";
+	 
+	 switch(year)
+	 {
+	 case "2017":
+		    P = "W";
+		   break;
+	 case "2018":
+		   P = "X";
+	                break;
+	 case "2019":
+		    P = "Y";
+		    break;
+	   }
+	switch(month)
+	{
+	default:
+		M = month.toString();	
+		break;
+	case 10:
+		M = "X";
+		 break;
+	case  11:
+		M = "Y";
+		 break;
+	case  12:
+		M = "Z";
+		 break;
+	}
+	ebara_prefix = S+P+M+AF;
+	print(ebara_prefix);
+	return(ebara_prefix);
+}
+
+function init_sn()
+{
+	 if((columns_dict["M"]  == "ebara") || (/\w{5}\d{6}/.test(columns_dict["M"])))
+	 {	
+		var  ebara_pre = get_ebara_prefix();
+		last_serial= ebara_pre + "000001";
+	 }
+	else
+	 {
+		year = new Date();	
+		year =  year.getFullYear().toString().slice(2);	
+		last_serial =  year + "-000001";
+	 }
+	return last_serial;
+}
+
 ///////////////////////////////////////////////////
 //Gets the last serial from log file
 //////////////////////////////////////////////////
@@ -129,7 +186,6 @@ function get_last_serial()
     }
     
     var snArr = [];
-
     if(hDb4.open())
     {
         var res = hDb4.exec(query_se);
@@ -151,8 +207,8 @@ function get_last_serial()
             }
         }
         else
-        {
-            last_serial = "17-000001";
+        {	
+	last_serial = init_sn();	
         }
     }
     hDb4.close();
@@ -217,6 +273,48 @@ function check_sn(sn)
     }
 }
 
+///////////////////////////
+//S.N. Format check
+//////////////////////////
+function check_sn_format_imp(sn)
+{
+	if((columns_dict["M"]  == "ebara") || (/\w{5}\d{6}/.test(columns_dict["M"])))
+	{
+		if(sn.length == 11)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		
+	}
+	else
+	{				
+	          if ( (/^17\-\d{6}/.test(sn)) && (sn.length == 9))
+		     { 
+			     return true;
+		     }
+		     else
+		     {	
+			     return false;
+		     }		
+	}
+}
+
+function update_sn()
+{
+   if((columns_dict["M"]  == "ebara") || (/\w{5}\d{6}/.test(columns_dict["M"])))
+	{
+		 ebara_pre = get_ebara_prefix();
+		 le_ser.text = ebara_pre + last_sn;
+	}
+	else
+	{
+		 le_ser.text = date_year + "-" + last_sn;
+	}	
+}
 
 /////////////////////////////////////////
 //Initial values generation
@@ -233,8 +331,7 @@ function selection_init()
         ext = "";
     }
 
-    dict_keys = Object.keys(columns_dict);
-    
+    dict_keys = Object.keys(columns_dict);  
     if(hDb4.open())
     {
         var  res = hDb4.exec("SELECT * FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" + part + ext +"'");
@@ -250,19 +347,30 @@ function selection_init()
         {
 	le_ser.enable = true;
             last_sn = get_last_serial().toString();
-            last_sn = last_sn.slice(3);
-            last_sn = parseInt(last_sn);
+            if(debug_mode){print("columns dict m "+columns_dict["M"] );}
+	    
+	if((columns_dict["M"]  == "ebara") || (/\w{5}\d{6}/.test(columns_dict["M"])))
+	{
+		last_sn = last_sn.slice(5);
+		last_sn = parseInt(last_sn);
+	 }
+	else
+	{
+		last_sn = last_sn.slice(3);
+		last_sn = parseInt(last_sn);
+	}
+        
 	    
             if(last_sn == 1)
             {
-                last_sn = leftPad((last_sn), 7);
+                last_sn = leftPad((last_sn),6);
             }
             else
             {
-                last_sn = leftPad((last_sn + 1), 7);
+                last_sn = leftPad((last_sn + 1),6);
             }
-	    
-            le_ser.text = date_year + "-" + last_sn;
+	
+	update_sn();    
             le_ser.enable = true;
         }
         else
@@ -278,72 +386,83 @@ function selection_init()
     hDb4.close();
 }
 
-
-function check_sn_format_imp(sn)
-{
-print(sn.length);
-if ( (/^17\-\d{6}/.test(sn)) && (sn.length == 10))
-{ 
-    return true;
-}
-else
-{
-    return false;
-}
-
-}
 ///////////////////////////////
 //Confirms selection
 //////////////////////////////
 function confirm_selection()
-{
-    
+{   
     if(auto_mode == "OFF")
     {
         confirm = 0;
+        
+	
         if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
         {
             last_sn = get_last_serial().toString();
-            last_sn = last_sn.slice(3);
-            last_sn = parseInt(last_sn);
+	    
+	 if((columns_dict["M"]  == "ebara") || (/\w{5}\d{6}/.test(columns_dict["M"])))
+	{
+		last_sn = last_sn.slice(5);
+		last_sn = parseInt(last_sn);
+	 }
+	else
+	{
+		last_sn = last_sn.slice(3);
+		last_sn = parseInt(last_sn);
+	}
 
             if(last_sn != 1)
             {
                 last_sn = last_sn + 1;
-                last_sn = leftPad((last_sn), 7);
+                last_sn = leftPad((last_sn), 6);
             }
             else
             {
-                last_sn = leftPad((last_sn), 7);
+                last_sn = leftPad((last_sn),6);
             }
-	    
 	le_sn = le_ser.text;    
 	
 	if(check_sn_format_imp(le_sn))
 	{
-	
-	    le_sn_i = le_sn.slice(3);
-	    le_sn_i = parseInt(le_sn_i);
 	    
+                if((columns_dict["M"]  == "ebara") || (/\w{5}\d{6}/.test(columns_dict["M"])))
+		{          
+			print(le_sn);
+			le_sn_i = le_sn.slice(5);
+			le_sn_i = parseInt(le_sn_i);
+		}
+		else
+		{
+			print(le_sn);
+			le_sn_i = le_sn.slice(3);
+			le_sn_i = parseInt(le_sn_i);
+		}
 	
-	    
 	    curr_sn = le_sn_i;
-	
-	    le_sn_i = leftPad((le_sn_i),7);
+	    le_sn_i = leftPad((le_sn_i),6);
 	
 	    ///////////////////////////////////////////////
 	    //Check if serial already exist
 	    /////////////////////////////////////////////
-	    if(check_sn(curr_sn))
+	    if(!enable_existing_sn_marking)
 	    {
-		error_sn_exists();
-		confirm = 0;
-	    }
+		    if(check_sn(curr_sn))
+		    {
+			    error_sn_exists();
+			    confirm = 0;
+	                }
+	    
+	               else
+	               {	
+			    columns_dict["M"] = le_ser.text;
+			    confirm = 1;
+	                 } 
+	     }
 	    else
-	    {	
-		columns_dict["M"] = le_ser.text;
-		confirm = 1;
-	    } 
+	    {
+		   columns_dict["M"] = le_ser.text;
+	               confirm = 1;  
+	    }
 	}
 	else
 	{
@@ -358,14 +477,11 @@ function confirm_selection()
             le_ser.enable = false;
 	confirm = 1;
     }
-    
-	
-        numW = le_num_w.text;
-        numW = parseInt(numW);
-        if(isNaN(numW)){numW=0;}
-        
-         print("from confirm .. numW: " + numW);  
-         laser_doc_generate();
+    numW = le_num_w.text;
+    numW = parseInt(numW);
+    if(isNaN(numW)){numW=0;}
+    print("genereting laser doc");
+    laser_doc_generate();
      }
     else
     {
@@ -425,15 +541,23 @@ function laser_doc_generate()
         }
     }
     
+    //////////////////////////////
+    //Sets MONTH/YEAR
+    ////////////////////////////
     if(columns_dict["AH"] == "mm/yy")
     {
         var obj = h_Doc_new.getLaserObject("OBJ_AH");
         if( obj != null)
         {
             var date = new Date();
-            obj.text = date.mmyy();
+            columns_dict["AH"] = date.mmyy();
+	obj.text = date.mmyy();
         }
     }
+    
+    /////////////////////////////
+    //ROTATION CHECK
+    /////////////////////////////
     if(columns_dict["F"] == "0")
     {
 	 h_Doc_new.move(7, 0);
@@ -456,10 +580,10 @@ function laser_doc_update()
 {
     if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
     {
-       // last_sn = get_last_serial().toString();
         last_sn = curr_sn;
-        last_sn = leftPad((last_sn),7);	 
-        le_ser.text =  date_year + "-" + last_sn;	
+        last_sn = leftPad((last_sn),6);	 
+	
+        update_sn();
         columns_dict["M"] = le_ser.text;		
         laser_doc_generate();
     }
@@ -478,7 +602,7 @@ function mark_auto()
         log_arr.push(columns_dict[dict_keys[i]]);
     }
     h_Doc_new.execute();
-    print("from mark auto, last_sn : " + last_sn);     
+
 }
 
 ///////////////////////////////////////////////
@@ -497,7 +621,7 @@ function xls_log()
     colNamesStr  = "Time_date," + colNamesStr;
     
     var query1  = "INSERT INTO [Napisne tablice in nalepke sezn$] ("+colNamesStr+") VALUES ("+log_str+")";
-
+    if(debug_mode){print(query1);}
     hDb3 = new Db("QODBC")
     hDb3.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;ReadOnly=0;Dbq=" + test_log;
     
@@ -513,7 +637,7 @@ function xls_log()
 
 function leftPad(number, targetLength)
 {
-    var output = number + ' ';
+    var output = number.toString();
     while(output.length < targetLength) {
         output = '0' + output;
     }

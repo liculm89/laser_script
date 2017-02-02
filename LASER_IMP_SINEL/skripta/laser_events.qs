@@ -240,7 +240,7 @@ function check_laser_state(state)
     default:
         print("Error Geting State");
         laser_status ("Error getting state");
-        break;
+
     }
 }
 

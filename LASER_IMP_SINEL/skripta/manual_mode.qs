@@ -56,6 +56,11 @@ function barrier_up_afer_marking_m(ID)
         xls_log();
         
         curr_sn = parseInt(last_sn) + 1;
+        last_sn = curr_sn;
+        last_sn = leftPad((last_sn),6);	 
+        
+        
+        update_sn();
         disconnect_func(barrier_up_afer_marking_m);
     }
 }

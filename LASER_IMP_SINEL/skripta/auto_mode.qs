@@ -260,6 +260,9 @@ function reset_laser_marking(ID)
         print("from laser marking .. numW: " + numW);
         xls_log();
         curr_sn = parseInt(last_sn) + 1;
+        last_sn = curr_sn;
+        last_sn = leftPad((last_sn),6);	 
+        update_sn();
 	
         if((numW > numWC) || numW == 0)
         {

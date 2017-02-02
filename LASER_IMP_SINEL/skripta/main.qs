@@ -11,11 +11,11 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
     if(IoPort.getPort(0) & I_PIN_20)
     {
-        reg_fault =1;
+        reg_fault =0;
     }
     else
     {
-        reg_fault =0;
+        reg_fault =1;
         if(debug_mode){print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!!");}
     }
 
@@ -153,7 +153,7 @@ Date.prototype.ddmmyytime = function(){
 
 date_year = new Date();
 date_year = date_year.getFullYear().toString().slice(2);
-print(date_year);
+
 /////////////////////////////////
 //MAIN
 ////////////////////////////////
@@ -167,7 +167,8 @@ function main()
     System["sigLaserError(int)"].connect(onLaserError);
     System.sigClose.connect(onClose);
     
-    System.sigClose();
+        
+    
      ///////////////////////////////////////////////////////////////////////////////////////////
     //Starts initialization function, if success GUI is generated
     ////////////////////////////////////////////////////////////////////////////////////////////

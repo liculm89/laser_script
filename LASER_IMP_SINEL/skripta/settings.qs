@@ -2,7 +2,10 @@
 // LASER SETTINGS
 ////////////////////////////////////////////////////////////////////////////////////////////
 //sets debugging(on=1 and off=0)
-debug_mode = 0;
+var debug_mode = 0;
+var enable_existing_sn_marking = 0;
+
+
 /////////////////////////////////////////////////////////
 // Inputs and outputs
 ////////////////////////////////////////////////////////
@@ -78,8 +81,8 @@ var brojac = 0;
 /////////////////////////////////////////////////////////////////////////////////
 
 //drive_loc = "G:";
-//drive_loc = "D:";
-drive_loc = "E:";
+drive_loc = "D:";
+//drive_loc = "E:";
 
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
@@ -259,6 +262,7 @@ var curr_sn;
 var numW = 0;
 var numWC = 0;
 var confirm = 0;
+var sn_marking_times = 1;
 
 columns_arr = to_arr(columns, "A", "AJ", " ");
 
