@@ -25,7 +25,7 @@ function gen_dialog(part_list)
     //GUI - automatski mod
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     dialog.newTab("Automatic mode");
-     
+
     gb_time = new GroupBox();
     dialog.add(gb_time);
     lbl_date = new Label("");
@@ -33,19 +33,17 @@ function gen_dialog(part_list)
     lbl_date.text = "Date-Time:" + date_time;
     
     gb_time.add(lbl_date);
-    
+
     gb_top = new GroupBox();
     dialog.add(gb_top);
     
     laser_enable_box = new GroupBox("Laser key sequence");
-    
     laser_seq = new GroupBox();
     laser_enable_box.add(laser_seq);
     
     btn_key.text ="KEY ("+ key_state +")"; btn_key["sigPressed()"].connect(laser_key_on);
     btn_key.font = font2; btn_key.setFixedSize(150,60);
     laser_seq.add(btn_key);
-    
     laser_seq.newColumn();
 
     var btn_shut_down = new PushButton("SHUT DOWN");
@@ -58,7 +56,6 @@ function gen_dialog(part_list)
     laser_enable_box.add(btn_enable);
     
     gb_top.add(laser_enable_box);
-    
     auto_box = new GroupBox(); auto_box.title = "Automatic laser marking";
     gb_top.add(auto_box);
     
@@ -67,15 +64,12 @@ function gen_dialog(part_list)
     auto_box.add(lbl_auto_status);
     
     cmb_buttons_auto = new GroupBox();
-    //auto_box.add(cmb_buttons_auto);
-    
     var btn_auto_mode = new PushButton("START AUTO MODE");
     btn_auto_mode["sigPressed()"].connect(start_auto_mode);
     btn_auto_mode.font = font2;  btn_auto_mode.setFixedSize(350,60);
     auto_box.add(btn_auto_mode);
     
     cmb_buttons_auto.newColumn();
-    
     var btn_auto_stop = new PushButton("STOP AUTO MODE");
     btn_auto_stop["sigPressed()"].connect(stop_auto);
     btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(350,60);
@@ -105,27 +99,22 @@ function gen_dialog(part_list)
     //Pump selection
     ///////////////////////////////////
     gb_prev_auto = new GroupBox();
-    
     gb_prev = new GroupBox("Part selection");
 
     gb_top.add(gb_prev_auto);
     gb_prev_auto.add(gb_prev);
     gb_sel = new GroupBox();
-    
     gb_prev.add(gb_sel);
     
     cmb_new = new ComboBox("",zdelekArr);
     cmb_new.font = font2;
     gb_sel.add(cmb_new);
-    
     cmb_new["sigIndexChanged(int)"].connect(dynamic_ext_list);
-    
     gb_sel.newColumn();
     
     cmb_template = new ComboBox("", zdelek_ext_s);
     cmb_template.font = font2;
     cmb_template["sigIndexChanged(int)"].connect(ext_changed);
-    
     gb_sel.add(cmb_template);
     
     /////////////////////////////////
@@ -137,13 +126,11 @@ function gen_dialog(part_list)
     le_ser["sigTextChanged(QString)"].connect(serial_input_changed);
     
     gb_prev.add(le_ser);
-
     le_num_w = new LineEdit("Quantity :"); le_num_w.font = font_lbls;
     le_num_w.labelFont = font_lbls;
     gb_prev.add(le_num_w);
     
     gb_prev.newColumn();
-    
     gb_confirm = new GroupBox();
     gb_prev.add(gb_confirm);
     
@@ -161,9 +148,7 @@ function gen_dialog(part_list)
     lbl_ser.text = "Serial N.:" + le_ser.text;
     lbl_ser.font = font_lbls;
     gb_confirm.add(lbl_ser);
-    
-    //renderareaPrev = new RenderArea();
-    //show_preview();
+
     renderareaPrev.preview(h_Doc_new);
     gb_prev_auto.add(renderareaPrev);
 
@@ -192,7 +177,6 @@ function gen_dialog(part_list)
     lbl_date_m = new Label("");
     lbl_date_m.font = font_lbls;
     lbl_date_m.text = "Date-Time:" + date_time;
-    
     gb_time_m.add(lbl_date_m);
     
     gb_top_m = new GroupBox();
@@ -266,7 +250,6 @@ function gen_dialog(part_list)
     gb_lb.add(btn_barriera_up);
     
     gb_lb.newColumn();
-    
     var btn_bar_down = new PushButton("Barrier down");
     btn_bar_down["sigPressed()"].connect(barrier_down);
     btn_bar_down.font = font_manual_btns; btn_bar_down.setFixedSize(160,30);
@@ -284,7 +267,6 @@ function gen_dialog(part_list)
     btn.setFixedSize(160,30);
     btn.font =  font_manual_btns;
     gb_mark.add(btn);
-    
     gb_mark.newColumn();
     
     var btn_stop_m = new PushButton("STOP MARKING!");
@@ -299,9 +281,7 @@ function gen_dialog(part_list)
     //Preview Manual
     ////////////////////////////
     gb_top_m.newColumn();
-    
     gb_prev_m = new GroupBox("Marking preview");
-
     gb_top_m.add(gb_prev_m);
 
     gb_prev_lbls = new GroupBox();
@@ -320,7 +300,6 @@ function gen_dialog(part_list)
     lbl_space_prev = new Label("                                                         ");
     lbl_space_prev.font = font_lbls;
     gb_prev_lbls.add(lbl_space_prev);
-    
     renderareaPrev_m.preview(h_Doc_new);
     
     gb_prev_m.add(renderareaPrev_m);
@@ -419,7 +398,7 @@ function gen_dialog(part_list)
     gb_about.add(gb_ver);
     dialog.add(gb_about);
     
-    lbl_title = new Label("Laser control v0.91rc1");
+    lbl_title = new Label("Laser control v0.91");
     lbl_title.font = font_albls;
     gb_ver.add(lbl_title);
 
@@ -502,7 +481,7 @@ function gui_update(ID)
     {
         var date_time = new Date();
         date_time = date_time.ddmmyytime().toString();
-	
+
         lbl1.text = "Z axis current position: " + Math.round(Axis.getPosition(2));
         lbl_auto_status_m.text= lbl_auto_status.text = "Auto mode: " + auto_mode;
 
@@ -515,9 +494,9 @@ function gui_update(ID)
         btn_key.text ="KEY ("+ key_state +")";
         btn_enable.text = "ENABLE (" +enable_state+")";
         lbl_ser_m.text =  "Serial N.:" + le_ser.text;
-        lbl_date.text = "Date-Time:" + date_time; 
+        lbl_date.text = "Date-Time:" + date_time;
         lbl_date_m.text = "Date-Time:" + date_time;
-       
+
         if(debug_mode)
         {
             lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
@@ -570,13 +549,11 @@ function shut_down()
         IoPort.resetPort(0, O_PIN_2);
         print("Shutdown started");
         System.stopLaser();
-
         disconnect_timers();
         System.killAllTimers();
         enable_break();
-         dialog.OK();
-         dialog.close();
-
+        dialog.OK();
+        dialog.close();
     }
     else
     {

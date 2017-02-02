@@ -81,29 +81,27 @@ function pump_counter(ID)
 /////////////////////////////////////
 function init_func()
 {
-    var nm;
-    System.makeCounterVariable("num_writes", 0, 0, nm, 1, 1, 0, 3, 10, true );
-    
-    //Connects function set_flags() to trigger on input signal change
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    /*Connects function set_flags() to trigger on input signal change
+    Initial flags setup
+    Generates parts_list[] from excel database
+    Reads from xls database, gets templates and logos
+    Pump counter and laser movement functions connection
+    */
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
     IoPort.checkPort(0);
     IoPort.sigInputChange.connect(set_flags);
-    
-    //Initial flags setup
     set_flags();
-    
-    //Generates parts_list[] from excel database
     parts_list();
-
-    reset_sequence();
-    //Pump counter and laser movement functions connection
+    gen_lists_from_xls();
     System["sigTimer(int)"].connect(pump_counter);
     System["sigTimer(int)"].connect(laser_movement);
 
-    if ((typeof new_list != "undefined") && (reg_fault == 0))
+    if ((zdelekArr.length != 0) && (reg_fault == 0))
     {
         return 0;
     }
-    if(typeof new_list == "undefined")
+    if(zdelekArr.length == 0)
     {
         return 1;
     }
@@ -112,50 +110,9 @@ function init_func()
         return 2;
     }
 }
-///////////////////////////////////////////////////
-//TIME AND DATE FORMATING
-///////////////////////////////////////////////////
-Date.prototype.mmyy = function(){
-    var mm = this.getMonth() + 1;
-    var yy =  this.getFullYear();
-    yy = yy.toString();
-    yy = yy.slice(2);
-
-    return [(mm>9 ? '' : '0') + mm,
-            "/",
-            yy,
-            ].join('');
-};
-
-Date.prototype.ddmmyytime = function(){
-      var mm = this.getMonth() +1;
-      var yy = this.getFullYear();
-      yy = yy.toString(); 
-
-      var dd = this.getDate() ;    
-      var uhr = this.getHours();  
-      var min = this.getMinutes() ;      
-      var sec = this.getSeconds() ;
-      var time = this.getTime();
-      return[(dd>9 ? '' : '0') + dd,
-	     "/",
-	     (mm>9 ? '' : '0') + mm,
-	     "/",
-	     yy,
-	     "-",
-	     (uhr>9 ? '' : '0') + uhr,
-	     ":",
-	     (min>9 ? '' : '0') + min,
-	     ":",
-	     (sec>9 ? '' : '0') + sec,
-	     ].join('');
-};
-
-date_year = new Date();
-date_year = date_year.getFullYear().toString().slice(2);
 
 /////////////////////////////////
-//MAIN
+//MAIN func
 ////////////////////////////////
 function main()
 {
@@ -167,9 +124,7 @@ function main()
     System["sigLaserError(int)"].connect(onLaserError);
     System.sigClose.connect(onClose);
     
-        
-    
-     ///////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////
     //Starts initialization function, if success GUI is generated
     ////////////////////////////////////////////////////////////////////////////////////////////
     init_func();
@@ -181,6 +136,18 @@ function main()
         System["sigTimer(int)"].connect(set_signal_ready);
         print("Init passed");
         if(Axis.isReversed(2)){Axis.reset(2);}else{print("Z axis not reversed");}
+
+        templates_dict = to_dict( template_list_s, "1", "UNI-G", ",");
+        logotips_dict = to_dict( logotips_s, "ADL","calpeda1",",");
+        columns_dict = to_dict(columns, "A", "AJ", " ");
+        znaki_dict = to_dict(znaki_a, "CCC-1","ucraino1", ",");
+
+        populateTemplateDict();
+        populateLogosDict();
+        populateZnakiDict();
+        ///////////////////////////
+        //GUI generation
+        /////////////////////////////
         gen_dialog(part_list);
     }
     if(init_passed == 1)

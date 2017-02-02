@@ -33,7 +33,7 @@ function start_timer(timer, func)
 
     if(count == 0)
     {
-        if(debug_mode){ print("adding timer to list");}	
+        if(debug_mode){ print("adding timer to list");}
         timer_list.push(func);
     }
 }

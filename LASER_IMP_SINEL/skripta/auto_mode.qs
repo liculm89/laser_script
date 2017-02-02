@@ -219,9 +219,7 @@ function barrier_up_afer_marking(ID)
             signal_ready = 1;
             timers[5] = System.setTimer(times[5]);
             start_timer(timers[5], reset_laser_marking);
-        } 
-        
-
+        }
         disconnect_func(barrier_up_afer_marking);
     }
 }
@@ -256,14 +254,17 @@ function reset_laser_marking(ID)
     if((timers[5] == ID) && (pump_present == 0))
     {
         numWC++;
-        print("from laser marking .. numWC: " + numWC);	
+        print("from laser marking .. numWC: " + numWC);
         print("from laser marking .. numW: " + numW);
         xls_log();
-        curr_sn = parseInt(last_sn) + 1;
-        last_sn = curr_sn;
-        last_sn = leftPad((last_sn),6);	 
-        update_sn();
-	
+
+        if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
+        {
+            curr_sn = parseInt(last_sn, 10) + 1;
+            last_sn = curr_sn;
+            last_sn = leftPad((last_sn),6);
+            update_sn();
+        }
         if((numW > numWC) || numW == 0)
         {
             nom = 0;

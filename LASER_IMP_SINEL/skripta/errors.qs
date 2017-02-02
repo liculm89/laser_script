@@ -15,12 +15,12 @@ function onLaserError(error)
         msg_txt = "Interlock error, reset laser";
         MessageBox.critical( msg_txt, MessageBox.Ok );
         last_error = msg_txt;
-	break;
+        break;
     case System.DSP_TEMPERATURE_ERROR:
         msg_txt = "Temperature error, press total stop to restart laser";
         MessageBox.critical( msg_txt, MessageBox.Ok );
         last_error = msg_txt;
-	break;
+        break;
     }
 }
 
@@ -90,40 +90,47 @@ function error_max_pos()
 function error_init_fail()
 {
     var mesg_txt = "Initialization failed, database file missing or corrupted";
-     MessageBox.critical( mesg_txt, MessageBox.Ok);
+    MessageBox.critical( mesg_txt, MessageBox.Ok);
 }
 
 function error_regulator_fault()
 {
-   var mesg_txt = "Regulator fault! Check motor regulator";
-   MessageBox.critical( mesg_txt, MessageBox.Ok);
-   last_error = mesg_txt;
+    var mesg_txt = "Regulator fault! Check motor regulator";
+    MessageBox.critical( mesg_txt, MessageBox.Ok);
+    last_error = mesg_txt;
 }
 
 function error_sn_exists()
 {
-   var mesg_txt = "S.N. invalid, S.N. already exists";
-   MessageBox.critical( mesg_txt, MessageBox.Ok);
-   last_error = mesg_txt;
+    var mesg_txt = "S.N. invalid, S.N. already exists";
+    MessageBox.critical( mesg_txt, MessageBox.Ok);
+    last_error = mesg_txt;
 }
 
 function error_auto_started()
 {
-      var mesg_txt = "Auto mode already started, cannot change part during auto mode execution";
-      MessageBox.critical( mesg_txt, MessageBox.Ok);
-      last_error = mesg_txt;
+    var mesg_txt = "Auto mode already started, cannot change part during auto mode execution";
+    MessageBox.critical( mesg_txt, MessageBox.Ok);
+    last_error = mesg_txt;
 }
 
 function error_selection_not_confirmed()
 {
-      var mesg_txt = "Selected part and serial number not confirmed!";
-      MessageBox.critical( mesg_txt, MessageBox.Ok);
-      last_error = mesg_txt;
+    var mesg_txt = "Selected part and serial number not confirmed!";
+    MessageBox.critical( mesg_txt, MessageBox.Ok);
+    last_error = mesg_txt;
 }
 
 function error_sn_false_format()
 {
     var mesg_txt = "Check serial number format";
+    MessageBox.critical( mesg_txt, MessageBox.Ok);
+    last_error = mesg_txt;
+}
+
+function error_template_missing()
+{
+    var mesg_txt = "Template file not defined";
     MessageBox.critical( mesg_txt, MessageBox.Ok);
     last_error = mesg_txt;
 }

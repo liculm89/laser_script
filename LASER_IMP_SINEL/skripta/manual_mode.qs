@@ -1,3 +1,6 @@
+////////////////////////////////////////////////////////////////////////////////////
+//Connected with manual "Start marking" PushButton
+/////////////////////////////////////////////////////////////////////////////////////
 function readFile_manual()
 {
     if(total_stop == 0)
@@ -7,18 +10,18 @@ function readFile_manual()
             if(auto_mode == "OFF" )
             {
                 if(laser_status == "Ready for marking")
-                {    
-                   if(confirm)
-		    {
-                    mark_auto();
-                    signal_ready = 0;
-                    timers[7] = System.setTimer(times[7]);
-	        start_timer(timers[7], barrier_up_afer_marking_m);
-	    }
-		   else
-		   {
-		       error_selection_not_confirmed();
-		   }
+                {
+                    if(confirm)
+                    {
+                        mark_auto();
+                        signal_ready = 0;
+                        timers[7] = System.setTimer(times[7]);
+                        start_timer(timers[7], barrier_up_afer_marking_m);
+                    }
+                    else
+                    {
+                        error_selection_not_confirmed();
+                    }
                 }
                 else
                 {
@@ -41,6 +44,9 @@ function readFile_manual()
     }
 }
 
+///////////////////////////////////////////////
+//Raises barrier after marking
+///////////////////////////////////////////////
 function barrier_up_afer_marking_m(ID)
 {
     if(timers[7] == ID)
@@ -55,16 +61,21 @@ function barrier_up_afer_marking_m(ID)
         }
         xls_log();
         
-        curr_sn = parseInt(last_sn) + 1;
-        last_sn = curr_sn;
-        last_sn = leftPad((last_sn),6);	 
+        if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
+        {
+            curr_sn = parseInt(last_sn, 10) + 1;
+            last_sn = curr_sn;
+            last_sn = leftPad((last_sn), 6);
+            update_sn();
+        }
         
-        
-        update_sn();
         disconnect_func(barrier_up_afer_marking_m);
     }
 }
 
+//////////////////////////////////////////
+//Manual laser referencing
+//////////////////////////////////////////
 function laser_reference()
 {
     if(total_stop == 0)
@@ -93,6 +104,9 @@ function laser_reference()
     }
 }
 
+////////////////////////////////////////////////////
+//Connected with Stop pushbutton
+////////////////////////////////////////////////////
 function stop_m_manual()
 {   
     if(auto_mode == "OFF")
@@ -104,7 +118,7 @@ function stop_m_manual()
         }
         else
         {
-	    if(debug_mode){ print("Laser and motor are not active");}
+            if(debug_mode){ print("Laser and motor are not active");}
         }
     }
     else
@@ -113,6 +127,9 @@ function stop_m_manual()
     }
 }
 
+////////////////////////////////////////////////////////
+//Manual search for working pos
+///////////////////////////////////////////////////////
 function search_working_pos()
 {  
     if(total_stop == 0)
@@ -135,7 +152,9 @@ function search_working_pos()
     }
 }
 
-
+////////////////////////////////////////////////////////////////////////////
+//Function stops working pos. search
+////////////////////////////////////////////////////////////////////////
 function stop_search(ID)
 {
     if(timers[1] == ID)
@@ -143,12 +162,12 @@ function stop_search(ID)
         if(IoPort.getPort(0) & I_PIN_10)
         {
             current_pos = Axis.getPosition(2);
-             if(!(IoPort.getPort(0) & I_PIN_8))    
+            if(!(IoPort.getPort(0) & I_PIN_8))
             {
                 if(debug_mode){print("Laser is moving to working position");}
             }
             else
-            {	
+            {
                 Axis.stop(2);
                 error_cant_find_pump();
                 laser_reference();
@@ -164,6 +183,9 @@ function stop_search(ID)
     }
 }
 
+////////////////////////////
+//Move laser up
+//////////////////////////
 function move_up()
 { 
     if(total_stop == 0)
@@ -193,6 +215,9 @@ function move_up()
     }
 }
 
+/////////////////////////////////////////////////////
+//Checks if laser max pos reached
+/////////////////////////////////////////////////////
 function max_pos_reached(ID)
 {
     if(timers[4] == ID && auto_mode == "ON")
@@ -205,6 +230,9 @@ function max_pos_reached(ID)
     }
 }
 
+//////////////////////////////
+//Move laser down
+/////////////////////////////
 function move_down()
 {
     if(total_stop == 0)
@@ -212,7 +240,7 @@ function move_down()
         if (auto_mode == "OFF")
         {
             if(!(IoPort.getPort(0) & I_PIN_8))
-            {	
+            {
                 Axis.move(2, (Axis.getPosition(2) - sb1_v) );
                 timers[4] = System.setTimer(times[4]);
                 start_timer(timers[4], min_pos_reached);
@@ -234,6 +262,9 @@ function move_down()
     }
 }
 
+/////////////////////////////////////////////////////
+//Checks if laser min pos. reached
+/////////////////////////////////////////////////////
 function min_pos_reached(ID)
 {
     if(timers[4] == ID)
@@ -247,6 +278,9 @@ function min_pos_reached(ID)
     }
 }
 
+/////////////////////////////////////////
+//Laser axis movement stop
+////////////////////////////////////////
 function stop_axis()
 {	
     if (auto_mode == "OFF")
@@ -261,6 +295,9 @@ function stop_axis()
     }
 }
 
+//////////////////////////////////////
+//Manual barrier rising
+/////////////////////////////////////
 function barrier_up()
 {
     if(total_stop == 0)
@@ -283,6 +320,9 @@ function barrier_up()
     }
 }
 
+/////////////////////////////////////////
+//Manual barrier lowering
+/////////////////////////////////////////
 function barrier_down()
 {
     if(total_stop == 0)
