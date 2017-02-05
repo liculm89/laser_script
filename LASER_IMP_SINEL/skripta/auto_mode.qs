@@ -11,14 +11,21 @@ function start_auto_mode()
             {
                 if(laser_status == "Ready for marking")
                 {
-                    auto_mode = "ON";
-                    numWC = 0;
-                    le_num_w.enable = false;
-                    if(debug_mode){ print("Auto mode started");}
-                    laser_in_working_pos = 0;
-                    laser_ref_auto();
-                    timers[4] = System.setTimer(times[4]);
-                    start_timer(timers[4], wait_for_pump);
+		    if(confirm)
+		    {
+			auto_mode = "ON";
+			numWC = 0;
+			
+			if(debug_mode){ print("Auto mode started");}
+			laser_in_working_pos = 0;
+			laser_ref_auto();
+			timers[4] = System.setTimer(times[4]);
+			start_timer(timers[4], wait_for_pump);
+		    }
+		else
+		    {
+		            error_selection_not_confirmed();
+		    }
                 }
                 else
                 {
@@ -48,7 +55,6 @@ function stop_auto(ID)
 {      	
     if(auto_mode == "ON")
     {
-        le_num_w.enable = true;
         auto_mode = "OFF";
         System.stopLaser();
         laser_marking = 0;
@@ -288,7 +294,6 @@ function total_stop_func()
     {
         System.stopLaser();
         disconnect_timers();
-        le_num_w.enable = false;
         laser_marking = 0;
         laser_in_working_pos = 0;
         nom = 0;
@@ -324,7 +329,6 @@ function reset_button_func()
         {
             System.stopLaser();
             disconnect_timers();
-            le_num_w.enable = true;
             laser_marking = 0;
             laser_in_working_pos = 0;
             nom = 0;

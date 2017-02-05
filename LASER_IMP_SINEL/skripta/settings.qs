@@ -58,8 +58,8 @@ var brojac = 0;
 //File locations
 /////////////////////////////
 //drive_loc = "G:";
-drive_loc = "D:";
-//drive_loc = "E:";
+//drive_loc = "D:";
+drive_loc = "E:";
 
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
@@ -99,9 +99,8 @@ var template_list = [];
 var logotips_s; var template_list_s;
 var columns_arr = []; var columns_names_arr = []; var log_arr = [];
 
-var log_sn; var last_sn; var curr_sn; var numW = 0;
-var numWC = 0;
-var confirm = 0;
+var log_sn; var last_sn; var curr_sn; 
+var numW = 0; var numWC = 0; var confirm = 0;
 var sn_marking_times = 1; var sn_update_times = 0;
 
 var znaki_a = "CCC-1,CE-1,EAC-1,GOST-0,GOST-1,puščica-1,ucraino1"

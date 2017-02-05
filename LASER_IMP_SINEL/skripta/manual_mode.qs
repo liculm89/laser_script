@@ -67,8 +67,7 @@ function barrier_up_afer_marking_m(ID)
             last_sn = curr_sn;
             last_sn = leftPad((last_sn), 6);
             update_sn();
-        }
-        
+        }      
         disconnect_func(barrier_up_afer_marking_m);
     }
 }

@@ -34,7 +34,9 @@ function laser_key_on()
             IoPort.setPort(0, O_PIN_17);
             key_state = "OFF";
             if(enable_state != "ON")
-            {disconnect_func(warmup_counter)}
+            {
+		disconnect_func(warmup_counter);
+            }
             enable_state = "OFF";
             wac = warm_up_time;
         }
@@ -98,7 +100,6 @@ function reset_sequence()
 }
 
 function disable_sequence()
-
 {
     IoPort.resetPort(0, O_PIN_17);
     IoPort.resetPort(0, O_PIN_18);
@@ -108,7 +109,7 @@ function enable_break()
 {
     IoPort.resetPort(0, O_PIN_4);
     brake_status = 1;
-    if(debug_mode){print("Brake active")}
+    if(debug_mode){print("Brake active");}
 }
 
 function disable_break()

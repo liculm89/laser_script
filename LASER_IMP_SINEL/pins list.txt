@@ -13,8 +13,8 @@ I_PIN 7 - Senzor prisutnosti linije	- INPUT
 I_PIN 8 - Glava lasera dolje		- INPUT
 I_PIN 9 - Glava lasera gore         	- INPUT
 I_PIN 10 - Opticki senzor		- INPUT
-I_PIN 21 - Laserska barijera dolje	- INPUT
-I_PIN 12 - Laserska barijera gore	- INPUT
+I_PIN 11 - Laserska barijera dolje	- INPUT
+I_PIN 21 - Laserska barijera gore	- INPUT
 I_PIN 19 - Reset tipkalo		- INPUT
 I_PIN 20 - Regulator fault		- INPUT
-I_PIN 11 - Total stop input         	- INPUT
+I_PIN 12 - Total stop input         	- INPUT

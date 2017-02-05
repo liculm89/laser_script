@@ -484,7 +484,7 @@ function gui_update(ID)
 
         lbl1.text = "Z axis current position: " + Math.round(Axis.getPosition(2));
         lbl_auto_status_m.text= lbl_auto_status.text = "Auto mode: " + auto_mode;
-
+     	
         check_laser_state(System.getDeviceStatus());
         lbl_marking_m.text = lbl_marking.text = "Laser status:" + laser_status;
         lbl_last_error.text = "Last error:" + last_error;
@@ -496,6 +496,25 @@ function gui_update(ID)
         lbl_ser_m.text =  "Serial N.:" + le_ser.text;
         lbl_date.text = "Date-Time:" + date_time;
         lbl_date_m.text = "Date-Time:" + date_time;
+       
+        if(auto_mode == "ON")
+	{
+	     cmb_new.enable = false;
+	     le_num_w.enable = false;
+	     cmb_template.enable = false;
+	     le_ser.enable = false;
+	}
+	else
+	{
+	    if(columns_dict["M"] == "/" || columns_dict["M"] == '' )
+	    {
+		 le_ser.enable = false;
+	    
+	    }
+	    cmb_new.enable = true;
+  	    le_num_w.enable = true;
+	    cmb_template.enable = true;
+	}
 
         if(debug_mode)
         {
@@ -546,6 +565,7 @@ function shut_down()
 {
     if( auto_mode == "OFF")
     {
+        reset_sequence(); 
         IoPort.resetPort(0, O_PIN_2);
         print("Shutdown started");
         System.stopLaser();

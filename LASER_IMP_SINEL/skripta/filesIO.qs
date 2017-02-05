@@ -37,7 +37,7 @@ function gen_lists_from_xls()
         template_list = [];
         logotips = [];
 
-        var res1 = hDb3.exec("SELECT TEMPLATE FROM [Napisne tablice in nalepke sezn$] WHERE TEMPLATE is not null" );
+        var res1 = hDb3.exec("SELECT TEMPLATE FROM [Napisne tablice in nalepke sezn$] WHERE TEMPLATE is not null");
         var res2 = hDb3.exec("SELECT Logotip FROM [Napisne tablice in nalepke sezn$] WHERE Logotip is not null");
 
         res1.forEach(function(item,index)
@@ -346,9 +346,8 @@ function selection_init()
             le_ser.enable = true;
             last_sn = get_last_serial().toString();
             if(debug_mode){print("columns dict m "+ columns_dict["M"] );}
-
+	    
             last_sn = get_serial_int(last_sn);
-
             if(last_sn == 1)
             {
                 last_sn = leftPad((last_sn),6);
@@ -357,7 +356,6 @@ function selection_init()
             {
                 last_sn = leftPad((last_sn + 1),6);
             }
-
             update_sn();
             le_ser.enable = true;
         }
@@ -439,6 +437,8 @@ function confirm_selection()
             le_ser.enable = false;
             confirm = 1;
         }
+        
+        sn_marking_times = parseInt(columns_dict["H"]);
         numW = le_num_w.text;
         numW = parseInt(numW);
         if(isNaN(numW)){numW=0;}
@@ -451,21 +451,13 @@ function confirm_selection()
     }
 }
 
-
 //////////////////////////////////////////////////////
-//Laser doc generation
+//Laser objects updates
 //////////////////////////////////////////////////////
-function laser_doc_generate()
+function laser_objects_update()
 {
-    h_Doc_new = new LaserDoc;
-    var file_loc = templates_dict[columns_dict["G"]];
-    dict_keys = Object.keys(columns_dict);
     
-    if(file_loc != "init_value")
-    {
-        h_Doc_new.load(file_loc);
-
-        dict_keys_J_N =  dict_keys.slice(dict_keys.indexOf("J"), dict_keys.indexOf("N")+1);
+            dict_keys_J_N =  dict_keys.slice(dict_keys.indexOf("J"), dict_keys.indexOf("N")+1);
         dict_keys_O_T = dict_keys.slice(dict_keys.indexOf("O"), dict_keys.indexOf("T")+1);
         dict_keys_U_AH = dict_keys.slice(dict_keys.indexOf("U"), dict_keys.indexOf("AH")+1);
 
@@ -504,6 +496,22 @@ function laser_doc_generate()
                 }
             }
         }
+    
+}
+//////////////////////////////////////////////////////
+//Laser doc generation
+//////////////////////////////////////////////////////
+function laser_doc_generate()
+{
+    h_Doc_new = new LaserDoc;
+    var file_loc = templates_dict[columns_dict["G"]];
+    dict_keys = Object.keys(columns_dict);
+    
+    if(file_loc != "init_value")
+    {
+        h_Doc_new.load(file_loc);
+        
+        laser_objects_update();
 
         ////////////////////////////////
         //Sets MONTH/YEAR
@@ -518,7 +526,6 @@ function laser_doc_generate()
                 obj.text = date.mmyy();
             }
         }
-
         /////////////////////////////////
         //ROTATION CHECK
         /////////////////////////////////
@@ -554,7 +561,12 @@ function laser_doc_update()
 
         update_sn();
         columns_dict["M"] = le_ser.text;
-        laser_doc_generate();
+	
+        laser_objects_update();
+        h_Doc_new.update();
+        renderareaPrev.preview(h_Doc_new);
+        renderareaPrev_m.preview(h_Doc_new);
+        //laser_doc_generate();
     }
 }
 
