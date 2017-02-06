@@ -7,12 +7,12 @@
  <script>main.qs</script>
  <script>utils_functions.qs</script>
  <script>settings.qs</script>
+ <script>filesIO.qs</script>
  <script>errors.qs</script>
  <script>gui.qs</script>
  <script>auto_mode.qs</script>
  <script>manual_mode.qs</script>
  <script>laser_events.qs</script>
  <script>timers.qs</script>
- <script>filesIO.qs</script>
  <resource>sinel logo.png</resource>
 </project>

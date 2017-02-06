@@ -582,6 +582,7 @@ function mark_auto()
     {
         log_arr.push(columns_dict[dict_keys[i]]);
     }
+    h_Doc_new.sigEndMark.connect(marking_ended);
     h_Doc_new.execute();
 }
 

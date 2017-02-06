@@ -14,7 +14,7 @@ var lbl_from_db = new Label();
 var lbl_prev_man = new Label();
 var renderareaPrev = new RenderArea();
 var renderareaPrev_m = new RenderArea();
-var le_ser = new LineEdit("Serial N.:");
+var le_ser = new LineEdit("S.N.:");
 
 var date_time = new Date();
 date_time = date_time.ddmmyytime().toString();
@@ -42,17 +42,17 @@ function gen_dialog(part_list)
     laser_enable_box.add(laser_seq);
     
     btn_key.text ="KEY ("+ key_state +")"; btn_key["sigPressed()"].connect(laser_key_on);
-    btn_key.font = font2; btn_key.setFixedSize(150,60);
+    btn_key.font = font2; btn_key.setFixedSize(120,60);
     laser_seq.add(btn_key);
     laser_seq.newColumn();
 
     var btn_shut_down = new PushButton("SHUT DOWN");
     btn_shut_down["sigPressed()"].connect(shut_down);
-    btn_shut_down.font = font2; btn_shut_down.setFixedSize(150,60);
+    btn_shut_down.font = font2; btn_shut_down.setFixedSize(120,60);
     laser_seq.add(btn_shut_down);
 
     btn_enable["sigPressed()"].connect(enable_pressed); btn_enable.text = "ENABLE (" +enable_state+")";
-    btn_enable.font = font2; btn_enable.setFixedSize(350,60);
+    btn_enable.font = font2; btn_enable.setFixedSize(280,60);
     laser_enable_box.add(btn_enable);
     
     gb_top.add(laser_enable_box);
@@ -66,13 +66,13 @@ function gen_dialog(part_list)
     cmb_buttons_auto = new GroupBox();
     var btn_auto_mode = new PushButton("START AUTO MODE");
     btn_auto_mode["sigPressed()"].connect(start_auto_mode);
-    btn_auto_mode.font = font2;  btn_auto_mode.setFixedSize(350,60);
+    btn_auto_mode.font = font2;  btn_auto_mode.setFixedSize(280,60);
     auto_box.add(btn_auto_mode);
     
     cmb_buttons_auto.newColumn();
     var btn_auto_stop = new PushButton("STOP AUTO MODE");
     btn_auto_stop["sigPressed()"].connect(stop_auto);
-    btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(350,60);
+    btn_auto_stop.font = font2;  btn_auto_stop.setFixedSize(280,60);
     auto_box.add(btn_auto_stop);
     
     gb_top.addSpace(20);
@@ -89,7 +89,7 @@ function gen_dialog(part_list)
     
     var btn_pump_count = new PushButton("RESET PUMPS COUNTER");
     btn_pump_count["sigPressed()"].connect(reset_pump_count);
-    btn_pump_count.font = font2; btn_pump_count.setFixedSize(350,60);
+    btn_pump_count.font = font2; btn_pump_count.setFixedSize(280,60);
     gb_pump_count.add(btn_pump_count);
     
     gb_top.add(gb_pump_count);
@@ -125,7 +125,18 @@ function gen_dialog(part_list)
     le_ser.text = date_year + "-";
     le_ser["sigTextChanged(QString)"].connect(serial_input_changed);
     
-    gb_prev.add(le_ser);
+    
+    gb_serial = new GroupBox();
+    gb_serial.add(le_ser);
+    
+    gb_prev.add(gb_serial);
+    
+    gb_serial.newColumn();
+    
+    chk_fix_sn = new CheckBox("Fix S.N.");
+    chk_fix_sn.font = font_lbls;
+    gb_serial.add(chk_fix_sn);
+    
     le_num_w = new LineEdit("Quantity :"); le_num_w.font = font_lbls;
     le_num_w.labelFont = font_lbls;
     gb_prev.add(le_num_w);
@@ -542,7 +553,7 @@ function sb1_ch(value)
 
 function get_stat(input)
 {
-    if(input == 1 ){stat= "Active";} else {stat="Inactive";}
+    if(input == 1){stat= "Active";} else {stat="Inactive";}
     return stat;
 }
 
@@ -565,15 +576,26 @@ function shut_down()
 {
     if( auto_mode == "OFF")
     {
-        reset_sequence(); 
+        disable_sequence();
         IoPort.resetPort(0, O_PIN_2);
         print("Shutdown started");
         System.stopLaser();
-        disconnect_timers();
-        System.killAllTimers();
+
         enable_break();
+        //disconnect_timers();
+        //System.killAllTimers();
         dialog.OK();
-        dialog.close();
+      
+        if(dialog.tryTerminate())
+	{
+		//print("process terminated");
+	}
+	else
+	{
+		print("killing process...");
+		dialog.kill();
+	}
+
     }
     else
     {

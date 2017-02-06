@@ -143,22 +143,29 @@ function laser_movement(ID)
     }
 }
 
-function set_signal_ready(ID)
-
+function marking_ended()
 {
-    if((timers[0] == ID)  && (signal_ready == 1))
-    {
-        IoPort.setPort(0, O_PIN_2);
-    }
-    else if((timers[0] == ID) && (signal_ready == 0))
-    {
-        IoPort.resetPort(0, O_PIN_2);
-    }
-    
-    else if((timers[0] == ID) && (auto_mode == "OFF") && (laser_in_working_pos == 1) && (IoPort.getPort(0) & I_PIN_11))
-    {
-        IoPort.resetPort(0, O_PIN_2);
-    }
+	print("marking_ended");
+	send_signal_done();
+}
+
+function send_signal_done()
+{	
+	print("setting signal done");	
+	IoPort.setPort(0, O_PIN_2);
+	timers[9] = System.setTimer(times[9]);
+            start_timer(timers[9], reset_signal_done);
+}
+
+function reset_signal_done(ID)
+{
+	if(timers[9] == ID)
+	{	
+		print(ID);
+		print("reseting signal done");
+		IoPort.resetPort(0, O_PIN_2);
+		disconnect_func(reset_signal_done);
+	}
 }
 
 function get_laser_events(event)

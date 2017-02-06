@@ -133,8 +133,9 @@ function main()
     if(init_passed == 0)
     {
         disable_break();
-        signal_ready = 1;
-        System["sigTimer(int)"].connect(set_signal_ready);
+        //signal_ready = 1;
+        //System["sigTimer(int)"].connect(set_signal_ready);
+        IoPort.resetPort(0, O_PIN_2);
         print("Init passed");
         if(Axis.isReversed(2)){Axis.reset(2);}else{print("Z axis not reversed");}
 

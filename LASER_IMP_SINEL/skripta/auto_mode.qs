@@ -15,7 +15,6 @@ function start_auto_mode()
 		    {
 			auto_mode = "ON";
 			numWC = 0;
-			
 			if(debug_mode){ print("Auto mode started");}
 			laser_in_working_pos = 0;
 			laser_ref_auto();
@@ -190,7 +189,7 @@ function pump_not_present(ID)
             barrier_up_auto();
         }
         laser_marking = 0;
-        signal_ready = 1;
+        //signal_ready = 1;
         laser_in_working_pos = 0;
         nom = 0;
         disconnect_func(pump_not_present);
@@ -204,7 +203,7 @@ function readFile_auto()
 {    
     if(debug_mode){ print("Read file started");}
     laser_marking = 1;
-    signal_ready = 0;
+    //signal_ready = 0;
     timers[7] = System.setTimer(times[7]);
     start_timer(timers[7], barrier_up_afer_marking);
     mark_auto();
@@ -222,7 +221,7 @@ function barrier_up_afer_marking(ID)
             barrier_up_auto();
             laser_marking = 0;
             laser_in_working_pos = 0;
-            signal_ready = 1;
+            //signal_ready = 1;
             timers[5] = System.setTimer(times[5]);
             start_timer(timers[5], reset_laser_marking);
         }
