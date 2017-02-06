@@ -189,7 +189,6 @@ function pump_not_present(ID)
             barrier_up_auto();
         }
         laser_marking = 0;
-        //signal_ready = 1;
         laser_in_working_pos = 0;
         nom = 0;
         disconnect_func(pump_not_present);
@@ -203,7 +202,6 @@ function readFile_auto()
 {    
     if(debug_mode){ print("Read file started");}
     laser_marking = 1;
-    //signal_ready = 0;
     timers[7] = System.setTimer(times[7]);
     start_timer(timers[7], barrier_up_afer_marking);
     mark_auto();
@@ -221,7 +219,6 @@ function barrier_up_afer_marking(ID)
             barrier_up_auto();
             laser_marking = 0;
             laser_in_working_pos = 0;
-            //signal_ready = 1;
             timers[5] = System.setTimer(times[5]);
             start_timer(timers[5], reset_laser_marking);
         }
@@ -263,13 +260,19 @@ function reset_laser_marking(ID)
         print("from laser marking .. numW: " + numW);
         xls_log();
 
+	if(!(numWC % sn_marking_times))	
+	{
         if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
         {
-            curr_sn = parseInt(last_sn, 10) + 1;
-            last_sn = curr_sn;
-            last_sn = leftPad((last_sn),6);
-            update_sn();
+	 if(!sn_fixed)
+	{
+	     curr_sn = parseInt(last_sn, 10) + 1;
+	     last_sn = curr_sn;
+	     last_sn = leftPad((last_sn),6);
+	     update_sn();
+	}
         }
+    }
         if((numW > numWC) || numW == 0)
         {
             nom = 0;
@@ -279,6 +282,7 @@ function reset_laser_marking(ID)
         else
         {
             stop_auto();
+	marking_quantity_complete();
             disconnect_func(reset_laser_marking);
         }
     }

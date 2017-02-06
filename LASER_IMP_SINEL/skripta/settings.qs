@@ -57,8 +57,8 @@ var brojac = 0;
 ////////////////////////////
 //File locations
 /////////////////////////////
-drive_loc = "G:";
-//drive_loc = "D:";
+//drive_loc = "G:";
+drive_loc = "D:";
 //drive_loc = "E:";
 
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
@@ -88,6 +88,7 @@ var date = new Date();
 //Variables declaration
 //////////////////////////////////
 var h_Doc_new;
+var h_preview = new LaserDoc;
 var h_Document,hDb, fw;
 var laser_objects = [];
 

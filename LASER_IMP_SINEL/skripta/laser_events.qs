@@ -17,6 +17,9 @@ function onLaserEnd()
 var key_state = "OFF"; var enable_state = "OFF";
 var warm_up_time = 30; var wac =warm_up_time;
 
+//////////////////////////////////
+//Sets laser key on
+/////////////////////////////////
 function laser_key_on()
 {
     if(total_stop == 0)
@@ -35,7 +38,7 @@ function laser_key_on()
             key_state = "OFF";
             if(enable_state != "ON")
             {
-		disconnect_func(warmup_counter);
+	          disconnect_func(warmup_counter);
             }
             enable_state = "OFF";
             wac = warm_up_time;
@@ -47,6 +50,9 @@ function laser_key_on()
     }
 }
 
+/////////////////////////////////////////////////////////
+//Connected with enable pushbutton
+/////////////////////////////////////////////////////////
 function enable_pressed()
 {
     if(total_stop == 0)
@@ -73,6 +79,9 @@ function enable_pressed()
     }
 }
 
+//////////////////////////////////
+//Warmup countdown
+/////////////////////////////////
 function warmup_counter(ID)
 {
     if(ID == timers[8])
@@ -91,6 +100,9 @@ function warmup_counter(ID)
     }
 }
 
+/////////////////////////////////////
+//Reset sequence
+////////////////////////////////////
 function reset_sequence()
 {
     IoPort.setPort(0, O_PIN_17);
@@ -105,6 +117,9 @@ function disable_sequence()
     IoPort.resetPort(0, O_PIN_18);
 }
 
+//////////////////////////////////////////////////
+//Activates stepper motor brake
+/////////////////////////////////////////////////
 function enable_break()
 {
     IoPort.resetPort(0, O_PIN_4);
@@ -112,6 +127,9 @@ function enable_break()
     if(debug_mode){print("Brake active");}
 }
 
+/////////////////////////////////////////////////
+//Disables stepper motor brake
+///////////////////////////////////////////////
 function disable_break()
 {
     IoPort.setPort(0, O_PIN_4);
@@ -142,6 +160,8 @@ function laser_movement(ID)
         laser_poz_before = laser_poz_cur;
     }
 }
+
+
 
 function marking_ended()
 {
@@ -244,6 +264,12 @@ function check_laser_state(state)
         laser_status ("Error getting state");
 
     }
+}
+
+function marking_quantity_complete()
+{
+    var mesg_txt = "Finished marking of "+numW+" pumps with code:"  + part + ext ;
+    MessageBox.information( mesg_txt, MessageBox.Ok );
 }
 
 function onLaserStart()

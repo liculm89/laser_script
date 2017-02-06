@@ -13,11 +13,19 @@ function readFile_manual()
                 {
                     if(confirm)
                     {
-                        mark_auto();
-                        //signal_ready = 0;
-                        timers[7] = System.setTimer(times[7]);
-                        start_timer(timers[7], barrier_up_afer_marking_m);
-                    }
+	              if((numW > numWC) || numW == 0)
+		{
+			  mark_auto();
+			  timers[7] = System.setTimer(times[7]);
+			  start_timer(timers[7], barrier_up_afer_marking_m);
+		    }
+		      else
+		      {
+			  	marking_quantity_complete();
+			      }
+		
+		    }
+		      
                     else
                     {
                         error_selection_not_confirmed();
@@ -56,18 +64,21 @@ function barrier_up_afer_marking_m(ID)
             barrier_up_auto();
             laser_marking = 0;
             laser_in_working_pos = 0;
-            //signal_ready = 1;
             pumps_marked++;
+	numWC++;
         }
-        xls_log();
+        xls_log();	
         
         if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
         {
-            curr_sn = parseInt(last_sn, 10) + 1;
-            last_sn = curr_sn;
-            last_sn = leftPad((last_sn), 6);
-            update_sn();
-        }      
+	    if(!sn_fixed)
+	    {
+		curr_sn = parseInt(last_sn, 10) + 1;
+		last_sn = curr_sn;
+		last_sn = leftPad((last_sn), 6);
+		update_sn();
+	    }
+        }   
         disconnect_func(barrier_up_afer_marking_m);
     }
 }

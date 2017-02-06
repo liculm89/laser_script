@@ -86,9 +86,9 @@ function remove_duplicates(arr)
     return newarr;
 }
 
-//////////////////////////
+////////////////////////////////
 //S.N. Format check
-//////////////////////////
+////////////////////////////////
 function check_sn_format_imp(sn)
 {
     if((columns_dict["M"]  == "ebara") || (ebara_reg.test(columns_dict["M"])))

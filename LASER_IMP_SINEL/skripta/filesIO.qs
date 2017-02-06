@@ -166,7 +166,7 @@ function ext_changed()
     if(auto_mode == "OFF")
     {
         le_ser.text = "none";
-        le_ser.enable = true;
+        //le_ser.enable = true;
         selection_init();
     }
 }
@@ -437,7 +437,6 @@ function confirm_selection()
             le_ser.enable = false;
             confirm = 1;
         }
-        
         sn_marking_times = parseInt(columns_dict["H"]);
         numW = le_num_w.text;
         numW = parseInt(numW);
@@ -456,8 +455,7 @@ function confirm_selection()
 //////////////////////////////////////////////////////
 function laser_objects_update()
 {
-    
-            dict_keys_J_N =  dict_keys.slice(dict_keys.indexOf("J"), dict_keys.indexOf("N")+1);
+        dict_keys_J_N =  dict_keys.slice(dict_keys.indexOf("J"), dict_keys.indexOf("N")+1);
         dict_keys_O_T = dict_keys.slice(dict_keys.indexOf("O"), dict_keys.indexOf("T")+1);
         dict_keys_U_AH = dict_keys.slice(dict_keys.indexOf("U"), dict_keys.indexOf("AH")+1);
 
@@ -496,7 +494,6 @@ function laser_objects_update()
                 }
             }
         }
-    
 }
 //////////////////////////////////////////////////////
 //Laser doc generation
@@ -512,41 +509,64 @@ function laser_doc_generate()
         h_Doc_new.load(file_loc);
         
         laser_objects_update();
-
         ////////////////////////////////
         //Sets MONTH/YEAR
         ////////////////////////////////
         if(columns_dict["AH"] == "mm/yy")
         {
             var obj = h_Doc_new.getLaserObject("OBJ_AH");
-            if( obj != null)
+            if(obj != null)
             {
                 var date = new Date();
                 columns_dict["AH"] = date.mmyy();
                 obj.text = date.mmyy();
             }
         }
-        /////////////////////////////////
-        //ROTATION CHECK
-        /////////////////////////////////
-        if(columns_dict["F"] == "0")
-        {
-            h_Doc_new.move(7, 0);
-            h_Doc_new.update();
-        }
-        else if(columns_dict["F"] == "270")
-        {
-            h_Doc_new.rotate(270);
-            h_Doc_new.move(7, 0);
-            h_Doc_new.update();
-        }
-        renderareaPrev.preview(h_Doc_new);
-        renderareaPrev_m.preview(h_Doc_new);
+         h_preview = h_Doc_new;
+         h_preview.move(7,0);	 
+         renderareaPrev.preview(h_preview);
+         renderareaPrev_m.preview(h_preview); 
+         
+         rotate_and_move();
+         h_Doc_new.update();
     }
     else
     {
         error_template_missing();
     }
+}
+
+function rotate_and_move()
+{
+    /////////////////////////////////
+    //Rotation switch
+    /////////////////////////////////
+    kut = parseInt(columns_dict["F"]);
+    
+    switch(kut)
+    {
+    case 0:
+        h_Doc_new.rotate(0-90);
+        break;
+    case 90:
+        h_Doc_new.rotate(90-90);
+        break;
+    case 180:
+        h_Doc_new.rotate(180-90);
+        break;
+    case 270:
+        h_Doc_new.rotate(270-90); 
+        break;
+    case 360:
+        h_Doc_new.rotate(360-90);
+    break;
+    default:
+        h_Doc_new.rotate(0-90);	      
+    }
+       ///////////////////////////////////////////////
+       //Korekcija koordinate lasera
+       ///////////////////////////////////////////////
+       h_Doc_new.move(7,0);   
 }
 
 /////////////////////////////////////
@@ -562,11 +582,15 @@ function laser_doc_update()
         update_sn();
         columns_dict["M"] = le_ser.text;
 	
-        laser_objects_update();
+        laser_objects_update(); 
+        
+         h_preview.rotate(-90);
+         h_preview.update();
+  
+        //renderareaPrev.preview(h_preview);
+        //renderareaPrev_m.preview(h_preview); 
+        rotate_and_move();
         h_Doc_new.update();
-        renderareaPrev.preview(h_Doc_new);
-        renderareaPrev_m.preview(h_Doc_new);
-        //laser_doc_generate();
     }
 }
 

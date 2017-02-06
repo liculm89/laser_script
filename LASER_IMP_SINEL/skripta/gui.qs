@@ -7,7 +7,7 @@ var btn_key = new PushButton();
 var btn_enable= new PushButton();
 
 var font1 = "MS Shell Dlg 2,15,-1,5,50,0,0,0,0,0";
-var font2 = "Courier New,15,-1,5,80,0,0,0,0,0";
+var font2 = "Courier New,14,-1,5,80,0,0,0,0,0";
 var font_lbls=  "Courier New,12,-1,5,80,0,0,0,0,0";
 var font_manual_btns =  "Courier New,15,-1,5,80,0,0,0,0,0";
 var lbl_from_db = new Label();
@@ -130,7 +130,6 @@ function gen_dialog(part_list)
     gb_serial.add(le_ser);
     
     gb_prev.add(gb_serial);
-    
     gb_serial.newColumn();
     
     chk_fix_sn = new CheckBox("Fix S.N.");
@@ -520,11 +519,19 @@ function gui_update(ID)
 	    if(columns_dict["M"] == "/" || columns_dict["M"] == '' )
 	    {
 		 le_ser.enable = false;
-	    
 	    }
 	    cmb_new.enable = true;
   	    le_num_w.enable = true;
 	    cmb_template.enable = true;
+	}
+        
+	if(chk_fix_sn.checked)
+	{
+	    sn_fixed = 1;
+	}
+	else
+	{
+	    sn_fixed = 0;
 	}
 
         if(debug_mode)
