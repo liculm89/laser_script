@@ -62,6 +62,11 @@ function enable_pressed()
             IoPort.resetPort(0, O_PIN_18);
             enable_state = "ON";
         }
+        else if(enable_state == "Press to enable" && laser_status == "Ready for marking") 
+        {
+            IoPort.resetPort(0, O_PIN_18);
+            enable_state = "ON";
+        }
         else if(enable_state == "ON")
         {
             IoPort.setPort(0, O_PIN_18);
@@ -114,6 +119,7 @@ function reset_sequence()
 function disable_sequence()
 {
     IoPort.resetPort(0, O_PIN_17);
+    
     IoPort.resetPort(0, O_PIN_18);
 }
 
@@ -161,8 +167,6 @@ function laser_movement(ID)
     }
 }
 
-
-
 function marking_ended()
 {
 	print("marking_ended");
@@ -174,7 +178,7 @@ function send_signal_done()
 	print("setting signal done");	
 	IoPort.setPort(0, O_PIN_2);
 	timers[9] = System.setTimer(times[9]);
-            start_timer(timers[9], reset_signal_done);
+                start_timer(timers[9], reset_signal_done);
 }
 
 function reset_signal_done(ID)

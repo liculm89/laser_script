@@ -14,18 +14,18 @@ function readFile_manual()
                     if(confirm)
                     {
 	              if((numW > numWC) || numW == 0)
-		{
+		 {
 			  mark_auto();
 			  timers[7] = System.setTimer(times[7]);
 			  start_timer(timers[7], barrier_up_afer_marking_m);
-		    }
-		      else
+		  }
+		  else
 		      {
-			  	marking_quantity_complete();
-			      }
-		
-		    }
-		      
+			  marking_quantity_complete();
+			  pumps_marked = 0
+			  le_num_w= "";	 
+	                    }
+	         }
                     else
                     {
                         error_selection_not_confirmed();
@@ -62,13 +62,15 @@ function barrier_up_afer_marking_m(ID)
         if(IoPort.getPort(0) & I_PIN_11)
         {
             barrier_up_auto();
-            laser_marking = 0;
-            laser_in_working_pos = 0;
-            pumps_marked++;
-	numWC++;
+
         }
+        laser_marking = 0;
+        laser_in_working_pos = 0;
+        pumps_marked++;
+        numWC++;    
         xls_log();	
-        
+          if(!(numWC % sn_marking_times))	
+        {
         if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
         {
 	    if(!sn_fixed)
@@ -79,6 +81,7 @@ function barrier_up_afer_marking_m(ID)
 		update_sn();
 	    }
         }   
+    }
         disconnect_func(barrier_up_afer_marking_m);
     }
 }

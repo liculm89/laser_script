@@ -161,13 +161,21 @@ function serial_input_changed(text)
     lbl_ser.text = "Serial N.:" + text;
 }
 
+var sel_init = 0;
+var current_selection;
+var last_selection;
+
 function ext_changed()
 {
     if(auto_mode == "OFF")
     {
         le_ser.text = "none";
-        //le_ser.enable = true;
-        selection_init();
+        current_selection = cmb_template.currentItem; 
+        if(current_selection != last_selection)
+	{	
+		selection_init();
+	}
+        last_selection = current_selection;	
     }
 }
 
@@ -319,6 +327,7 @@ function update_sn()
 ///////////////////////////////////////
 function selection_init()
 {
+
     hDb4 = new Db("QODBC")
     hDb4.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + nova_db;
     var part = cmb_new.currentItem;
@@ -370,6 +379,7 @@ function selection_init()
         laser_doc_generate();
     }
     hDb4.close();
+  //  sel_init = 1;
 }
 
 ///////////////////////////////
@@ -380,6 +390,7 @@ function confirm_selection()
     if(auto_mode == "OFF")
     {
         confirm = 0;
+  //      sel_init = 0;
         if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
         {
             last_sn = get_last_serial().toString();
@@ -439,8 +450,17 @@ function confirm_selection()
         }
         sn_marking_times = parseInt(columns_dict["H"]);
         numW = le_num_w.text;
-        numW = parseInt(numW);
-        if(isNaN(numW)){numW=0;}
+        get_quantity();
+	/*if(num_w_reg.test(numW))
+	{
+		numW = parseInt(numW);
+		if(isNaN(numW)){numW=0;}
+	}
+	else
+	{
+		error_wrong_quantity_format();
+	}
+        */
         if(debug_mode){print("genereting laser doc");}
         laser_doc_generate();
     }
@@ -448,6 +468,25 @@ function confirm_selection()
     {
         error_auto_started();
     }
+}
+
+function get_quantity()
+{
+        numW = le_num_w.text;
+	numW = parseInt(numW);
+	if(num_w_reg.test(numW))
+	{
+		numW = parseInt(numW);
+		if(isNaN(numW)){numW=0;}
+	}
+	else if(typeof(numW == NaN))
+	{
+		numW = 0;
+	}      	
+	else 
+	{
+		error_wrong_quantity_format();
+	}
 }
 
 //////////////////////////////////////////////////////
@@ -501,12 +540,14 @@ function laser_objects_update()
 function laser_doc_generate()
 {
     h_Doc_new = new LaserDoc;
-    var file_loc = templates_dict[columns_dict["G"]];
+    var template_file = templates_dict[columns_dict["G"]];
+    //var template_file = templatesPath + columns_dict["G"] + ".xlp";
+    //print(template_file);
     dict_keys = Object.keys(columns_dict);
     
-    if(file_loc != "init_value")
+    if(template_file != "init_value")
     {
-        h_Doc_new.load(file_loc);
+        h_Doc_new.load(template_file);
         
         laser_objects_update();
         ////////////////////////////////
@@ -523,7 +564,7 @@ function laser_doc_generate()
             }
         }
          h_preview = h_Doc_new;
-         h_preview.move(7,0);	 
+         h_preview.move(7.0,0.5);	 
          renderareaPrev.preview(h_preview);
          renderareaPrev_m.preview(h_preview); 
          
@@ -566,7 +607,7 @@ function rotate_and_move()
        ///////////////////////////////////////////////
        //Korekcija koordinate lasera
        ///////////////////////////////////////////////
-       h_Doc_new.move(7,0);   
+       h_Doc_new.move(7.0, -1.5);   
 }
 
 /////////////////////////////////////
@@ -606,7 +647,7 @@ function mark_auto()
     {
         log_arr.push(columns_dict[dict_keys[i]]);
     }
-    h_Doc_new.sigEndMark.connect(marking_ended);
+    //h_Doc_new.sigEndMark.connect(marking_ended);
     h_Doc_new.execute();
 }
 

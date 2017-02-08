@@ -130,6 +130,6 @@ var laser_objects_U_AH = laser_objects.slice(laser_objects.indexOf("OBJ_U"), las
 //////////////////////
 var ebara_reg = /\w{5}\d{6}/;
 var imp_reg = /^17\-\d{6}/;
-
+var num_w_reg = /\d/;
 /*************END OF INPUT-OUTPUT FILES SETTINGS********************/
 

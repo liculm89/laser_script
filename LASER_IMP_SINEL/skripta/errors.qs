@@ -134,3 +134,10 @@ function error_template_missing()
     MessageBox.critical( mesg_txt, MessageBox.Ok);
     last_error = mesg_txt;
 }
+
+function error_wrong_quantity_format()
+{
+    var mesg_txt = "Check quantity input format";
+    MessageBox.critical( mesg_txt, MessageBox.Ok);
+    last_error = mesg_txt;
+}

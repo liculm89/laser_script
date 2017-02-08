@@ -14,6 +14,9 @@ function start_auto_mode()
 		    if(confirm)
 		    {
 			auto_mode = "ON";
+			get_quantity();
+			//numW = parseInt(le_num_w.text, 10);
+			//if(typeof(numW  == NaN)){numW = 0;}
 			numWC = 0;
 			if(debug_mode){ print("Auto mode started");}
 			laser_in_working_pos = 0;
@@ -83,8 +86,10 @@ function laser_ref_auto()
 /////////////////////////////////////////////////////////////////////////////
 function wait_for_pump(ID)
 {
+    //print(pump_present);
     if((timers[4] == ID) && (auto_mode == "ON") && (pump_present == 1))
     {
+        
         if(debug_mode)
         {
             print("nom =" + nom);
@@ -219,6 +224,7 @@ function barrier_up_afer_marking(ID)
             barrier_up_auto();
             laser_marking = 0;
             laser_in_working_pos = 0;
+            marking_ended();
             timers[5] = System.setTimer(times[5]);
             start_timer(timers[5], reset_laser_marking);
         }
@@ -256,11 +262,9 @@ function reset_laser_marking(ID)
     if((timers[5] == ID) && (pump_present == 0))
     {
         numWC++;
-        print("from laser marking .. numWC: " + numWC);
-        print("from laser marking .. numW: " + numW);
         xls_log();
 
-	if(!(numWC % sn_marking_times))	
+      if(!(numWC % sn_marking_times))	
 	{
         if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
         {
@@ -275,15 +279,17 @@ function reset_laser_marking(ID)
     }
         if((numW > numWC) || numW == 0)
         {
-            nom = 0;
+            nom = 0;   
             pumps_marked++;
             disconnect_func(reset_laser_marking);
         }
         else
         {
             stop_auto();
-	marking_quantity_complete();
-            disconnect_func(reset_laser_marking);
+           disconnect_func(reset_laser_marking);
+           marking_quantity_complete(); 
+           pumps_marked = 0;
+           le_num_w = ""; 
         }
     }
 }

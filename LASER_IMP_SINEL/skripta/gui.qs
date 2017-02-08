@@ -500,7 +500,15 @@ function gui_update(ID)
         lbl_last_error.text = "Last error:" + last_error;
         lbl_last_error_m.text = "Last error:" + last_error;
         lbl_counter.text = "Pumps counter:" + brojac;
-        lbl_pumps_marked.text ="Pumps marked:" + pumps_marked;
+        if(numW != 0)
+	{
+		lbl_pumps_marked.text ="Pumps marked:" + pumps_marked + "/" + numW;
+	}
+	else
+	{
+		lbl_pumps_marked.text ="Pumps marked:" + pumps_marked;
+	}
+
         btn_key.text ="KEY ("+ key_state +")";
         btn_enable.text = "ENABLE (" +enable_state+")";
         lbl_ser_m.text =  "Serial N.:" + le_ser.text;
@@ -583,25 +591,16 @@ function shut_down()
 {
     if( auto_mode == "OFF")
     {
+        //reset_sequence();	
         disable_sequence();
         IoPort.resetPort(0, O_PIN_2);
         print("Shutdown started");
         System.stopLaser();
 
         enable_break();
-        //disconnect_timers();
-        //System.killAllTimers();
-        dialog.OK();
-      
-        if(dialog.tryTerminate())
-	{
-		//print("process terminated");
-	}
-	else
-	{
-		print("killing process...");
-		dialog.kill();
-	}
+        disconnect_timers();
+       System.killAllTimers();
+       dialog.OK();
 
     }
     else
@@ -614,4 +613,5 @@ function reset_pump_count()
 {
     brojac = 0;
     pumps_marked = 0;
+    numW = 0;
 }

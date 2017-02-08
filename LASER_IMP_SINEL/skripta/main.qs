@@ -11,11 +11,11 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
     if(IoPort.getPort(0) & I_PIN_20)
     {
-        reg_fault =0;
+        reg_fault = 0;
     }
     else
     {
-        reg_fault =1;
+        reg_fault = 1;
         if(debug_mode){print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!!");}
     }
 
@@ -91,7 +91,7 @@ function init_func()
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     IoPort.checkPort(0);
     IoPort.sigInputChange.connect(set_flags);
-    //reset_sequence();
+    reset_sequence();
     set_flags();
     parts_list();
     gen_lists_from_xls();
