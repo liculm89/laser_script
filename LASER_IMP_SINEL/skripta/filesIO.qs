@@ -163,16 +163,17 @@ function serial_input_changed(text)
 
 var sel_init = 0;
 var current_selection;
-var last_selection;
+var last_selection = "";
 
 function ext_changed()
 {
     if(auto_mode == "OFF")
-    {
-        le_ser.text = "none";
-        current_selection = cmb_template.currentItem; 
-        if(current_selection != last_selection)
+    {	    
+            le_ser.text = "none";
+            current_selection = cmb_template.currentItem; 
+	if(current_selection != last_selection)
 	{	
+		//print("init");
 		selection_init();
 	}
         last_selection = current_selection;	

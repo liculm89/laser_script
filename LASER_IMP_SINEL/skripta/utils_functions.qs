@@ -190,3 +190,15 @@ function get_serial_int(sn_str)
     }
     return serial_int;
 }
+
+/*function generate_regex()
+{
+	switch(date_year)
+	{
+	case 17:
+		
+	
+	
+	}
+	
+}*/

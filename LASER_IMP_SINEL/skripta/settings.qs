@@ -57,8 +57,8 @@ var brojac = 0;
 ////////////////////////////
 //File locations
 /////////////////////////////
-//drive_loc = "G:";
-drive_loc = "D:";
+drive_loc = "G:";
+//drive_loc = "D:";
 //drive_loc = "E:";
 
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
@@ -128,8 +128,17 @@ var laser_objects_U_AH = laser_objects.slice(laser_objects.indexOf("OBJ_U"), las
 ////////////////////
 //RegEx 
 //////////////////////
+//date_year = date_year.getFullYear().toString().slice(2);
+
 var ebara_reg = /\w{5}\d{6}/;
-var imp_reg = /^17\-\d{6}/;
+//var imp_reg = /^17\-\d{6}/;
+
+var imp_yy = "\^" + date_year +"\\" + "\-\\d{6}";
+var imp_reg_dyn = new RegExp(imp_yy);
+
+var imp_reg = imp_reg_dyn;
+
+print(imp_reg, typeof(imp_reg));
 var num_w_reg = /\d/;
 /*************END OF INPUT-OUTPUT FILES SETTINGS********************/
 
