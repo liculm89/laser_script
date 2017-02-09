@@ -16,7 +16,7 @@ function set_flags()
     else
     {
         reg_fault = 0;
-        if(debug_mode){print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!!");}
+        if(debug_mode){print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!");}
     }
 
     if(IoPort.getPort(0) & I_PIN_19)
