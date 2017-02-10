@@ -545,8 +545,10 @@ function laser_doc_generate()
     var template_file = templatesPath + columns_dict["G"] + ".xlp";
     print(template_file);
     dict_keys = Object.keys(columns_dict);
+  //  print(h_Doc_new.load(template_file));
     
-    if(template_file != "init_value")
+    if(h_Doc_new.load(template_file))
+    //if(template_file != "init_value")
     {
         h_Doc_new.load(template_file);
         
