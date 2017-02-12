@@ -20,7 +20,7 @@ function readFile_manual()
 			  start_timer(timers[7], barrier_up_afer_marking_m);
 		  }
 		  else
-		      {
+		       {
 			  marking_quantity_complete();
 			  pumps_marked = 0
 			  le_num_w= "";	 
