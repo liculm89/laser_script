@@ -1,0 +1,32 @@
+Postupak instalacije touch screen suport paketa za win7emb na datalogic računalima.
+
+1. Isključenje EWF(enhanced write filtera) koji briše promjene prilikom gašenja računala
+    -otvaranje CMD-a u administrator modu
+    -upisivanje komande : ewfmgr.exe c: -Disable
+    -provjera da je upješno izvršena komanda: ewfmgr c: | findstr /R / State
+    -treba ispisati State DISABLED
+    -Reboot računala restartom, Shut down neće zapamtiti promjenu.
+    -Nakon reboota se u desnom donjem kutu(do sata) pojavi ikonica lokota (C:disabled)
+
+2. Instaliranje paketa winemb-tablet.cab
+    -kopiranje "winemb-tablet.cab" u D:\touchscreen\
+    -otvaranje CMD-a u administrator modu
+    -upisivanje komande: dism /online /Add-Package /PackagePath:D:\touchscreen /NoRestart
+    -dism automatski instalira paket "winemb-tablet.cab"
+    -reboot računala restartom
+    -kad se podigne windows, automatski će odradit update i ponovno se restartati
+    -prilikom drugog podizanje bi trebao prepoznati touchscreen
+
+3. Uključenje EWF
+    -otvaranje CMD-a u administrator modu
+    -upisivanje komande : ewfmgr.exe c: -Enable
+    -provjera da je upješno izvršena komanda: ewfmgr c: | findstr /R / State
+    -treba ispisati State ENABLED
+    -Reboot računala restartom
+    
+U slučaju da nakon instalacije windows i dalje ne preoznaje touchscreen moguće je provjeriti
+da je paket uspješno instaliran na sljeeći način:
+    -otvaranje CMD-a u administrator modu
+    -upisivanje komande: dism /online /Get-Package | findstr /R / WinEmb-Tablet
+    -unutar par sekundi treba ispisati nešto slično ovome:
+        Package Identity : WinEmb-Tablet~31bf3856ad364e35~x86~~6.1.7601.17514
