@@ -379,6 +379,7 @@ function selection_init()
         lbl_prev_man.text = "Izdelek: " + columns_dict["A"];
         laser_doc_generate();
     }
+    	    
     hDb4.close();
   //  sel_init = 1;
 }
@@ -395,7 +396,8 @@ function confirm_selection()
         if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
         {
             last_sn = get_last_serial().toString();
-            sn_update_times = columns_dict["I"];
+
+            sn_update_times = columns_dict["H"];
             last_sn = get_serial_int(last_sn);
 
             if(last_sn != 1)
@@ -452,16 +454,7 @@ function confirm_selection()
         sn_marking_times = parseInt(columns_dict["H"]);
         numW = le_num_w.text;
         get_quantity();
-	/*if(num_w_reg.test(numW))
-	{
-		numW = parseInt(numW);
-		if(isNaN(numW)){numW=0;}
-	}
-	else
-	{
-		error_wrong_quantity_format();
-	}
-        */
+
         if(debug_mode){print("genereting laser doc");}
         laser_doc_generate();
     }
@@ -498,7 +491,16 @@ function laser_objects_update()
         dict_keys_J_N =  dict_keys.slice(dict_keys.indexOf("J"), dict_keys.indexOf("N")+1);
         dict_keys_O_T = dict_keys.slice(dict_keys.indexOf("O"), dict_keys.indexOf("T")+1);
         dict_keys_U_AH = dict_keys.slice(dict_keys.indexOf("U"), dict_keys.indexOf("AH")+1);
-
+	
+        if(columns_dict["I"] != "/" && columns_dict["I"] != '')
+	{
+		var obj =  h_Doc_new.getLaserImported(laser_objects["I"]);
+		if(obj !=null)
+		{
+			obj.importFile(logosPath + columns_dict["I"] + ".xlp");
+		}
+	}
+        	
         for( i = 0; i < ( laser_objects_J_N.length) ; i++)
         {
             var obj =  h_Doc_new.getLaserObject(laser_objects_J_N[i]);
@@ -543,9 +545,9 @@ function laser_doc_generate()
     h_Doc_new = new LaserDoc;
     //var template_file = templates_dict[columns_dict["G"]];
     var template_file = templatesPath + columns_dict["G"] + ".xlp";
-    print(template_file);
+    
     dict_keys = Object.keys(columns_dict);
-  //  print(h_Doc_new.load(template_file));
+   //print(h_Doc_new.load(template_file));
     
     if(h_Doc_new.load(template_file))
     //if(template_file != "init_value")
@@ -570,7 +572,7 @@ function laser_doc_generate()
          h_preview.move(7.0,0.5);	 
          renderareaPrev.preview(h_preview);
          renderareaPrev_m.preview(h_preview); 
-         
+         print(laser_objects["I"]);
          rotate_and_move();
          h_Doc_new.update();
     }
