@@ -38,7 +38,7 @@ function laser_key_on()
             key_state = "OFF";
             if(enable_state != "ON")
             {
-	          disconnect_func(warmup_counter);
+                disconnect_func(warmup_counter);
             }
             enable_state = "OFF";
             wac = warm_up_time;
@@ -62,7 +62,7 @@ function enable_pressed()
             IoPort.resetPort(0, O_PIN_18);
             enable_state = "ON";
         }
-        else if(enable_state == "Press to enable" && laser_status == "Ready for marking") 
+        else if(enable_state == "Press to enable" && laser_status == "Ready for marking")
         {
             IoPort.resetPort(0, O_PIN_18);
             enable_state = "ON";
@@ -167,29 +167,36 @@ function laser_movement(ID)
     }
 }
 
+
 function marking_ended()
 {
-	print("marking_ended");
-	send_signal_done();
+    print("marking_ended");
+    timers[5] = System.setTimer(times[5]);
+    start_timer(timers[5], send_signal_done);
+    send_signal_done();
 }
 
-function send_signal_done()
+function send_signal_done(ID)
 {	
-	print("setting signal done");	
-	IoPort.setPort(0, O_PIN_2);
-	timers[9] = System.setTimer(times[9]);
-                start_timer(timers[9], reset_signal_done);
+    if(timers[5] == ID)
+    {
+        print("setting signal done");
+        IoPort.setPort(0, O_PIN_2);
+        timers[9] = System.setTimer(times[9]);
+        start_timer(timers[9], reset_signal_done);
+        disconnect_func(send_signal_done);
+    }
 }
 
 function reset_signal_done(ID)
 {
-	if(timers[9] == ID)
-	{	
-		print(ID);
-		print("reseting signal done");
-		IoPort.resetPort(0, O_PIN_2);
-		disconnect_func(reset_signal_done);
-	}
+    if(timers[9] == ID)
+    {
+        print(ID);
+        print("reseting signal done");
+        IoPort.resetPort(0, O_PIN_2);
+        disconnect_func(reset_signal_done);
+    }
 }
 
 function get_laser_events(event)

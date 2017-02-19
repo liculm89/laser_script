@@ -193,12 +193,12 @@ function get_serial_int(sn_str)
 
 /*function generate_regex()
 {
-	switch(date_year)
-	{
-	case 17:
-		
-	
-	
-	}
-	
+    switch(date_year)
+    {
+    case 17:
+
+
+
+    }
+
 }*/

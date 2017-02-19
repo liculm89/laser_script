@@ -11,11 +11,11 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
     if(IoPort.getPort(0) & I_PIN_20)
     {
-        reg_fault = 1;
+        reg_fault = 0;
     }
     else
     {
-        reg_fault = 0;
+        reg_fault = 1;
         if(debug_mode){print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!");}
     }
 
@@ -139,8 +139,8 @@ function main()
         print("Init passed");
         if(Axis.isReversed(2)){Axis.reset(2);}else{print("Z axis not reversed");}
 
-        templates_dict = to_dict( template_list_s, "1", "UNI-G", ",");
-        logotips_dict = to_dict( logotips_s, "ADL","calpeda1",",");
+        templates_dict = to_dict(template_list_s, "1", "UNI-G", ",");
+        logotips_dict = to_dict(logotips_s, "ADL","calpeda1",",");
         columns_dict = to_dict(columns, "A", "AJ", " ");
         znaki_dict = to_dict(znaki_a, "CCC-1","ucraino1", ",");
 

@@ -168,15 +168,14 @@ var last_selection = "";
 function ext_changed()
 {
     if(auto_mode == "OFF")
-    {	    
-            le_ser.text = "none";
-            current_selection = cmb_template.currentItem; 
-	if(current_selection != last_selection)
-	{	
-		//print("init");
-		selection_init();
-	}
-        last_selection = current_selection;	
+    {
+        le_ser.text = "none";
+        current_selection = cmb_template.currentItem;
+        if(current_selection != last_selection)
+        {
+            selection_init();
+        }
+        last_selection = current_selection;
     }
 }
 
@@ -290,7 +289,7 @@ function check_sn(sn)
     }
     hDb4.close();
     
-    print(snArr);
+    //print(snArr);
     snArr.forEach(function(item, index)
     {
         snArr_i[index] = snArr[index].toString().slice(3);
@@ -356,7 +355,7 @@ function selection_init()
             le_ser.enable = true;
             last_sn = get_last_serial().toString();
             if(debug_mode){print("columns dict m "+ columns_dict["M"] );}
-	    
+
             last_sn = get_serial_int(last_sn);
             if(last_sn == 1)
             {
@@ -379,9 +378,9 @@ function selection_init()
         lbl_prev_man.text = "Izdelek: " + columns_dict["A"];
         laser_doc_generate();
     }
-    	    
+
     hDb4.close();
-  //  sel_init = 1;
+    //  sel_init = 1;
 }
 
 ///////////////////////////////
@@ -392,7 +391,7 @@ function confirm_selection()
     if(auto_mode == "OFF")
     {
         confirm = 0;
-  //      sel_init = 0;
+        //sel_init = 0;
         if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
         {
             last_sn = get_last_serial().toString();
@@ -466,21 +465,21 @@ function confirm_selection()
 
 function get_quantity()
 {
-        numW = le_num_w.text;
-	numW = parseInt(numW);
-	if(num_w_reg.test(numW))
-	{
-		numW = parseInt(numW);
-		if(isNaN(numW)){numW=0;}
-	}
-	else if(typeof(numW == NaN))
-	{
-		numW = 0;
-	}      	
-	else 
-	{
-		error_wrong_quantity_format();
-	}
+    numW = le_num_w.text;
+    numW = parseInt(numW);
+    if(num_w_reg.test(numW))
+    {
+        numW = parseInt(numW);
+        if(isNaN(numW)){numW=0;}
+    }
+    else if(typeof(numW == NaN))
+    {
+        numW = 0;
+    }
+    else
+    {
+        error_wrong_quantity_format();
+    }
 }
 
 //////////////////////////////////////////////////////
@@ -488,54 +487,54 @@ function get_quantity()
 //////////////////////////////////////////////////////
 function laser_objects_update()
 {
-        dict_keys_J_N =  dict_keys.slice(dict_keys.indexOf("J"), dict_keys.indexOf("N")+1);
-        dict_keys_O_T = dict_keys.slice(dict_keys.indexOf("O"), dict_keys.indexOf("T")+1);
-        dict_keys_U_AH = dict_keys.slice(dict_keys.indexOf("U"), dict_keys.indexOf("AH")+1);
-	
-        if(columns_dict["I"] != "/" && columns_dict["I"] != '')
-	{
-		var obj =  h_Doc_new.getLaserImported(laser_objects["I"]);
-		if(obj !=null)
-		{
-			obj.importFile(logosPath + columns_dict["I"] + ".xlp");
-		}
-	}
-        	
-        for( i = 0; i < ( laser_objects_J_N.length) ; i++)
-        {
-            var obj =  h_Doc_new.getLaserObject(laser_objects_J_N[i]);
-            if( obj != null)
-            {
-                if(columns_dict[dict_keys_J_N[i]] != "/")
-                {
-                    obj.text = columns_dict[dict_keys_J_N[i]];
-                }
-            }
-        }
+    dict_keys_J_N =  dict_keys.slice(dict_keys.indexOf("J"), dict_keys.indexOf("N")+1);
+    dict_keys_O_T = dict_keys.slice(dict_keys.indexOf("O"), dict_keys.indexOf("T")+1);
+    dict_keys_U_AH = dict_keys.slice(dict_keys.indexOf("U"), dict_keys.indexOf("AH")+1);
 
-        for( i = 0; i < ( laser_objects_O_T.length) ; i++)
+    if(columns_dict["I"] != "/" && columns_dict["I"] != '')
+    {
+        var obj =  h_Doc_new.getLaserImported(laser_objects["I"]);
+        if(obj !=null)
         {
-            var obj =  h_Doc_new.getLaserImported(laser_objects_O_T[i]);
-            if( obj != null)
-            {
-                if(columns_dict[dict_keys_O_T[i]] != "/")
-                {
-                    obj.importFile(znaki_dict[ columns_dict[dict_keys_O_T[i]]]);
-                }
-            }
+            obj.importFile(logosPath + columns_dict["I"] + ".xlp");
         }
+    }
 
-        for( i = 0; i < ( laser_objects_U_AH.length) ; i++)
+    for( i = 0; i < ( laser_objects_J_N.length) ; i++)
+    {
+        var obj =  h_Doc_new.getLaserObject(laser_objects_J_N[i]);
+        if( obj != null)
         {
-            var obj =  h_Doc_new.getLaserObject(laser_objects_U_AH[i]);
-            if( obj != null)
+            if(columns_dict[dict_keys_J_N[i]] != "/")
             {
-                if(columns_dict[dict_keys_U_AH[i]] != "/")
-                {
-                    obj.text = columns_dict[dict_keys_U_AH[i]];
-                }
+                obj.text = columns_dict[dict_keys_J_N[i]];
             }
         }
+    }
+
+    for( i = 0; i < ( laser_objects_O_T.length) ; i++)
+    {
+        var obj =  h_Doc_new.getLaserImported(laser_objects_O_T[i]);
+        if( obj != null)
+        {
+            if(columns_dict[dict_keys_O_T[i]] != "/")
+            {
+                obj.importFile(znaki_dict[ columns_dict[dict_keys_O_T[i]]]);
+            }
+        }
+    }
+
+    for( i = 0; i < ( laser_objects_U_AH.length) ; i++)
+    {
+        var obj =  h_Doc_new.getLaserObject(laser_objects_U_AH[i]);
+        if( obj != null)
+        {
+            if(columns_dict[dict_keys_U_AH[i]] != "/")
+            {
+                obj.text = columns_dict[dict_keys_U_AH[i]];
+            }
+        }
+    }
 }
 //////////////////////////////////////////////////////
 //Laser doc generation
@@ -547,10 +546,10 @@ function laser_doc_generate()
     var template_file = templatesPath + columns_dict["G"] + ".xlp";
     
     dict_keys = Object.keys(columns_dict);
-   //print(h_Doc_new.load(template_file));
+    //print(h_Doc_new.load(template_file));
     
     if(h_Doc_new.load(template_file))
-    //if(template_file != "init_value")
+        //if(template_file != "init_value")
     {
         h_Doc_new.load(template_file);
         
@@ -568,13 +567,13 @@ function laser_doc_generate()
                 obj.text = date.mmyy();
             }
         }
-         h_preview = h_Doc_new;
-         h_preview.move(7.0,0.5);	 
-         renderareaPrev.preview(h_preview);
-         renderareaPrev_m.preview(h_preview); 
-         print(laser_objects["I"]);
-         rotate_and_move();
-         h_Doc_new.update();
+        h_preview = h_Doc_new;
+        h_preview.move(7.0,0.5);
+        renderareaPrev.preview(h_preview);
+        renderareaPrev_m.preview(h_preview);
+        //print(laser_objects["I"]);
+        rotate_and_move();
+        h_Doc_new.update();
     }
     else
     {
@@ -601,18 +600,18 @@ function rotate_and_move()
         h_Doc_new.rotate(180-90);
         break;
     case 270:
-        h_Doc_new.rotate(270-90); 
+        h_Doc_new.rotate(270-90);
         break;
     case 360:
         h_Doc_new.rotate(360-90);
-    break;
+        break;
     default:
-        h_Doc_new.rotate(0-90);	      
+        h_Doc_new.rotate(0-90);
     }
-       ///////////////////////////////////////////////
-       //Korekcija koordinate lasera
-       ///////////////////////////////////////////////
-       h_Doc_new.move(7.0, -1.5);   
+    ///////////////////////////////////////////////
+    //Korekcija koordinate lasera
+    ///////////////////////////////////////////////
+    h_Doc_new.move(7.0, -1.5);
 }
 
 /////////////////////////////////////
@@ -627,33 +626,17 @@ function laser_doc_update()
 
         update_sn();
         columns_dict["M"] = le_ser.text;
-	
-        laser_objects_update(); 
+
+        laser_objects_update();
         
-         h_preview.rotate(-90);
-         h_preview.update();
-  
+        h_preview.rotate(-90);
+        h_preview.update();
+
         //renderareaPrev.preview(h_preview);
-        //renderareaPrev_m.preview(h_preview); 
+        //renderareaPrev_m.preview(h_preview);
         rotate_and_move();
         h_Doc_new.update();
     }
-}
-
-////////////////////////////////////////
-//Laser doc execution
-///////////////////////////////////////
-function mark_auto()
-{	
-    nm = 1;
-    laser_doc_update();
-    log_arr = [];
-    for( i = 0; i < dict_keys.length; i++)
-    {
-        log_arr.push(columns_dict[dict_keys[i]]);
-    }
-    //h_Doc_new.sigEndMark.connect(marking_ended);
-    h_Doc_new.execute();
 }
 
 ///////////////////////////////////////////////

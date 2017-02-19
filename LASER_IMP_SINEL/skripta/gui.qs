@@ -408,7 +408,7 @@ function gen_dialog(part_list)
     gb_about.add(gb_ver);
     dialog.add(gb_about);
     
-    lbl_title = new Label("Laser control v0.91");
+    lbl_title = new Label("Laser control v0.92rc1");
     lbl_title.font = font_albls;
     gb_ver.add(lbl_title);
 
@@ -494,53 +494,53 @@ function gui_update(ID)
 
         lbl1.text = "Z axis current position: " + Math.round(Axis.getPosition(2));
         lbl_auto_status_m.text= lbl_auto_status.text = "Auto mode: " + auto_mode;
-     	
+
         check_laser_state(System.getDeviceStatus());
         lbl_marking_m.text = lbl_marking.text = "Laser status:" + laser_status;
         lbl_last_error.text = "Last error:" + last_error;
         lbl_last_error_m.text = "Last error:" + last_error;
         lbl_counter.text = "Pumps counter:" + brojac;
         if(numW != 0)
-	{
-		lbl_pumps_marked.text ="Pumps marked:" + pumps_marked + "/" + numW;
-	}
-	else
-	{
-		lbl_pumps_marked.text ="Pumps marked:" + pumps_marked;
-	}
+        {
+            lbl_pumps_marked.text ="Pumps marked:" + pumps_marked + "/" + numW;
+        }
+        else
+        {
+            lbl_pumps_marked.text ="Pumps marked:" + pumps_marked;
+        }
 
         btn_key.text ="KEY ("+ key_state +")";
         btn_enable.text = "ENABLE (" +enable_state+")";
         lbl_ser_m.text =  "Serial N.:" + le_ser.text;
         lbl_date.text = "Date-Time:" + date_time;
         lbl_date_m.text = "Date-Time:" + date_time;
-       
+
         if(auto_mode == "ON")
-	{
-	     cmb_new.enable = false;
-	     le_num_w.enable = false;
-	     cmb_template.enable = false;
-	     le_ser.enable = false;
-	}
-	else
-	{
-	    if(columns_dict["M"] == "/" || columns_dict["M"] == '' )
-	    {
-		 le_ser.enable = false;
-	    }
-	    cmb_new.enable = true;
-  	    le_num_w.enable = true;
-	    cmb_template.enable = true;
-	}
+        {
+            cmb_new.enable = false;
+            le_num_w.enable = false;
+            cmb_template.enable = false;
+            le_ser.enable = false;
+        }
+        else
+        {
+            if(columns_dict["M"] == "/" || columns_dict["M"] == '' )
+            {
+                le_ser.enable = false;
+            }
+            cmb_new.enable = true;
+            le_num_w.enable = true;
+            cmb_template.enable = true;
+        }
         
-	if(chk_fix_sn.checked)
-	{
-	    sn_fixed = 1;
-	}
-	else
-	{
-	    sn_fixed = 0;
-	}
+        if(chk_fix_sn.checked)
+        {
+            sn_fixed = 1;
+        }
+        else
+        {
+            sn_fixed = 0;
+        }
 
         if(debug_mode)
         {
@@ -591,7 +591,7 @@ function shut_down()
 {
     if( auto_mode == "OFF")
     {
-        //reset_sequence();	
+        //reset_sequence();
         disable_sequence();
         IoPort.resetPort(0, O_PIN_2);
         print("Shutdown started");
@@ -599,8 +599,8 @@ function shut_down()
 
         enable_break();
         disconnect_timers();
-       System.killAllTimers();
-       dialog.OK();
+        System.killAllTimers();
+        dialog.OK();
 
     }
     else

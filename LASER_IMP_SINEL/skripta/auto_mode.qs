@@ -11,23 +11,23 @@ function start_auto_mode()
             {
                 if(laser_status == "Ready for marking")
                 {
-		    if(confirm)
-		    {
-			auto_mode = "ON";
-			get_quantity();
-			//numW = parseInt(le_num_w.text, 10);
-			//if(typeof(numW  == NaN)){numW = 0;}
-			numWC = 0;
-			if(debug_mode){ print("Auto mode started");}
-			laser_in_working_pos = 0;
-			laser_ref_auto();
-			timers[4] = System.setTimer(times[4]);
-			start_timer(timers[4], wait_for_pump);
-		    }
-		else
-		    {
-		            error_selection_not_confirmed();
-		    }
+                    if(confirm)
+                    {
+                        auto_mode = "ON";
+                        get_quantity();
+                        //numW = parseInt(le_num_w.text, 10);
+                        //if(typeof(numW  == NaN)){numW = 0;}
+                        numWC = 0;
+                        if(debug_mode){ print("Auto mode started");}
+                        laser_in_working_pos = 0;
+                        laser_ref_auto();
+                        timers[4] = System.setTimer(times[4]);
+                        start_timer(timers[4], wait_for_pump);
+                    }
+                    else
+                    {
+                        error_selection_not_confirmed();
+                    }
                 }
                 else
                 {
@@ -207,29 +207,47 @@ function readFile_auto()
 {    
     if(debug_mode){ print("Read file started");}
     laser_marking = 1;
-    timers[7] = System.setTimer(times[7]);
-    start_timer(timers[7], barrier_up_afer_marking);
+    //timers[7] = System.setTimer(times[7]);
+    //start_timer(timers[7], barrier_up_afer_marking);
     mark_auto();
+}
+
+////////////////////////////////////////
+//Laser doc execution
+///////////////////////////////////////
+function mark_auto()
+{	
+    nm = 1;
+    laser_doc_update();
+    log_arr = [];
+    for( i = 0; i < dict_keys.length; i++)
+    {
+        log_arr.push(columns_dict[dict_keys[i]]);
+    }
+    //h_Doc_new.sigEndMark.connect(marking_ended);
+    h_Doc_new.sigEndMark.connect(barrier_up_afer_marking);
+    h_Doc_new.execute();
 }
 
 /////////////////////////////////////////
 //Barrier up after marking
 /////////////////////////////////////////
-function barrier_up_afer_marking(ID)
+function barrier_up_afer_marking()
+//function barrier_up_afer_marking(ID)
 {
-    if(timers[7] == ID)
+    // if(timers[7] == ID)
+    //{
+    if(IoPort.getPort(0) & I_PIN_11)
     {
-        if(IoPort.getPort(0) & I_PIN_11)
-        {
-            barrier_up_auto();
-            laser_marking = 0;
-            laser_in_working_pos = 0;
-            marking_ended();
-            timers[5] = System.setTimer(times[5]);
-            start_timer(timers[5], reset_laser_marking);
-        }
-        disconnect_func(barrier_up_afer_marking);
+        barrier_up_auto();
+        laser_marking = 0;
+        laser_in_working_pos = 0;
+        marking_ended();
+        timers[5] = System.setTimer(times[5]);
+        start_timer(timers[5], reset_laser_marking);
     }
+    //disconnect_func(barrier_up_afer_marking);
+    //}
 }
 
 ////////////////////////////////////
@@ -264,32 +282,32 @@ function reset_laser_marking(ID)
         numWC++;
         xls_log();
 
-      if(!(numWC % sn_marking_times))	
-	{
-        if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
+        if(!(numWC % sn_marking_times))
         {
-	 if(!sn_fixed)
-	{
-	     curr_sn = parseInt(last_sn, 10) + 1;
-	     last_sn = curr_sn;
-	     last_sn = leftPad((last_sn),6);
-	     update_sn();
-	}
+            if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
+            {
+                if(!sn_fixed)
+                {
+                    curr_sn = parseInt(last_sn, 10) + 1;
+                    last_sn = curr_sn;
+                    last_sn = leftPad((last_sn),6);
+                    update_sn();
+                }
+            }
         }
-    }
         if((numW > numWC) || numW == 0)
         {
-            nom = 0;   
+            nom = 0;
             pumps_marked++;
             disconnect_func(reset_laser_marking);
         }
         else
         {
             stop_auto();
-           disconnect_func(reset_laser_marking);
-           marking_quantity_complete(); 
-           pumps_marked = 0;
-           le_num_w = ""; 
+            disconnect_func(reset_laser_marking);
+            marking_quantity_complete();
+            pumps_marked = 0;
+            le_num_w = "";
         }
     }
 }
