@@ -17,11 +17,10 @@ function readFile_manual()
                         {
                             //mark_auto();
                             mark_manual();
-
-                            /*
-                             timers[7] = System.setTimer(times[7]);
-                             start_timer(timers[7], barrier_up_afer_marking_m);
-                            */
+			    /*
+			     timers[7] = System.setTimer(times[7]);
+			     start_timer(timers[7], barrier_up_afer_marking_m);
+			    */
                         }
                         else
                         {
@@ -59,6 +58,8 @@ function readFile_manual()
 
 function mark_manual()
 {
+    if(debug_mode){ print("Read file started");}
+    laser_marking = 1;
     nm = 1;
     laser_doc_update();
     log_arr = [];

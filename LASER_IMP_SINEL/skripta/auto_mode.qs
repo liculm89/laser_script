@@ -139,7 +139,8 @@ function laser_move_timed()
     if(laser_in_working_pos == 1)
     {
         if(debug_mode){ print("Laser already in pos");}
-        readFile_auto();
+        mark_auto();
+	//readFile_auto();
         timers[2] = System.setTimer(times[2]);
         start_timer(timers[2], pump_not_present);
     }
@@ -173,7 +174,7 @@ function stop_search_auto(ID)
             if(debug_mode){ print("Pump in laser focus");}
             Axis.stop(2);
             laser_in_working_pos = 1;
-            readFile_auto();
+            mark_auto();
             timers[2] = System.setTimer(times[2]);
             start_timer(timers[2], pump_not_present);
             disconnect_func(stop_search_auto);
@@ -205,8 +206,7 @@ function pump_not_present(ID)
 //////////////////////////////////////////////////////////////////////////////////////
 function readFile_auto()
 {    
-    if(debug_mode){ print("Read file started");}
-    laser_marking = 1;
+   
     //timers[7] = System.setTimer(times[7]);
     //start_timer(timers[7], barrier_up_afer_marking);
     mark_auto();
@@ -216,7 +216,9 @@ function readFile_auto()
 //Laser doc execution
 ///////////////////////////////////////
 function mark_auto()
-{	
+{		
+    if(debug_mode){ print("Read file started");}
+    laser_marking = 1;	
     nm = 1;
     laser_doc_update();
     log_arr = [];

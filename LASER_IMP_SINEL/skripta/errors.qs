@@ -12,7 +12,7 @@ function onLaserError(error)
         MessageBox.critical( "Board initialization error", MessageBox.Ok );
         break;
     case System.DSP_INTERLOCK_ERROR:
-        msg_txt = "Interlock error, press and release total stop t reset laser";
+        msg_txt = "Interlock error, press and release total stop to reset laser";
         MessageBox.critical( msg_txt, MessageBox.Ok );
         last_error = msg_txt;
         break;
