@@ -141,3 +141,10 @@ function error_wrong_quantity_format()
     MessageBox.critical( mesg_txt, MessageBox.Ok);
     last_error = mesg_txt;
 }
+
+function template_file_error()
+{
+    var mesg_txt = "Logo object ID is not 'OBJ_I' or template file is missing";
+    MessageBox.critical( mesg_txt, MessageBox.Ok);
+    last_error = mesg_txt;
+}

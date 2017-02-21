@@ -493,11 +493,15 @@ function laser_objects_update()
 
     if(columns_dict["I"] != "/" && columns_dict["I"] != '')
     {
-        var obj =  h_Doc_new.getLaserImported(laser_objects["I"]);
+        var obj =  h_Doc_new.getLaserImported("OBJ_I");
         if(obj !=null)
         {
             obj.importFile(logosPath + columns_dict["I"] + ".xlp");
         }
+        else
+	{
+		template_file_error();
+	}
     }
 
     for( i = 0; i < ( laser_objects_J_N.length) ; i++)
