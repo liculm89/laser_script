@@ -144,9 +144,9 @@ function populateLogosDict()
 
 function populateZnakiDict()
 {
-    znaki_dict["CCC-1"] = znakiPath + "CCC.xlp"
-    znaki_dict["CE-1"] = znakiPath + "CE.xlp";
-    znaki_dict["EAC-1"] = znakiPath + "EAC.xlp";
+    znaki_dict["CCC"] = znakiPath + "CCC.xlp"
+    znaki_dict["CE"] = znakiPath + "CE.xlp";
+    znaki_dict["EAC"] = znakiPath + "EAC.xlp";
     //znaki_dict["GOST-1"] = znakiPath + "CCC.xpl";
     //znaki_dict["GOST-0"] = znakiPath + "CCC.xpl";
     znaki_dict["puščica-1"] = znakiPath + "STRELCA.xlp";
@@ -521,13 +521,21 @@ function laser_objects_update()
         var obj =  h_Doc_new.getLaserImported(laser_objects_O_T[i]);
         if( obj != null)
         {
+		
             if(columns_dict[dict_keys_O_T[i]] != "/")
             {
-                obj.importFile(znaki_dict[ columns_dict[dict_keys_O_T[i]]]);
+                obj.importFile(znakiPath + columns_dict[dict_keys_O_T[i]] + ".xlp");
+	    obj.update();
             }
+	    else
+	    {
+	         //print(obj.id);
+	         //print(h_Doc_new.removeLaserObject(obj.id));
+	         h_Doc_new.removeLaserObject(obj.id)
+	    }
         }
     }
-
+  
     for( i = 0; i < ( laser_objects_U_AH.length) ; i++)
     {
         var obj =  h_Doc_new.getLaserObject(laser_objects_U_AH[i]);

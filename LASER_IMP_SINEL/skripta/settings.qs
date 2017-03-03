@@ -121,6 +121,7 @@ columns_arr.forEach(function(item, index)
 });
 
 var laser_objects_J_N = laser_objects.slice(laser_objects.indexOf("OBJ_J"), laser_objects.indexOf("OBJ_N")+1);
+
 var laser_objects_O_T = laser_objects.slice(laser_objects.indexOf("OBJ_O"), laser_objects.indexOf("OBJ_T")+1);
 var laser_objects_U_AH = laser_objects.slice(laser_objects.indexOf("OBJ_U"), laser_objects.indexOf("OBJ_AH")+1);
 
