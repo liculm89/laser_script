@@ -14,6 +14,7 @@ var lbl_from_db = new Label();
 var lbl_prev_man = new Label();
 var renderareaPrev = new RenderArea();
 var renderareaPrev_m = new RenderArea();
+var renderareaPrev_setup = new RenderArea();
 var le_ser = new LineEdit("S.N.:");
 
 var date_time = new Date();
@@ -396,6 +397,56 @@ function gen_dialog(part_list)
 
     }
     
+    /////////////////////////////////////////////
+    //MARKING LOCATION SETUP
+    ////////////////////////////////////////////
+    dialog.newTab("Marking location setup");
+    gb_setup_preview = new GroupBox; gb_setup_preview.title = "Setup preview";
+    
+    
+    dialog.add(gb_setup_preview);
+    
+    renderareaPrev_setup.preview(h_setup);
+    gb_setup_preview.add(renderareaPrev_setup);
+    
+    
+   /* if(h_setup.addImportedObj(cross, "Cross"))
+    {  
+         print("cross imported");
+        h_setup.update();
+    }*/
+    
+  
+    
+    gb_settings_setup = new GroupBox; gb_settings_setup.title = "Setup settings";
+    
+    slider_x = new Slider(); slider_x.horizontal = true; slider_x.step = 1; slider_x.maximum = 150; slider_x.minimum = -150; slider_x.TickPosition = 2;
+    slider_x.label = "X:";
+    slider_x.labelFont = font2;
+    slider_x["sigValueChanged(int)"].connect(move_x_coord);
+    
+    slider_y = new Slider(); slider_y.horizontal = true;slider_y.step = 1; slider_y.maximum = 150; slider_y.minimum = -150; slider_y.TickPosition = 2;
+    slider_y.label = "Y:";
+    slider_y.labelFont = font2;
+    slider_y["sigValueChanged(int)"].connect(move_y_coord);
+    
+    move_x = new SpinBox("X coordinate: ", 2);  move_x["sigValueChanged(int)"].connect(move_x_coord);
+    move_x.labelFont = font2;
+    move_x.font = font2;
+    
+    move_y = new SpinBox("Y coordinate: ", 1);  move_x["sigValueChanged(int)"].connect(move_y_coord);
+    move_y.labelFont = font2;
+    move_y.font = font2;
+    
+    //gb_settings_setup.add(move_x);
+    //gb_settings_setup.add(move_y);
+    
+    gb_settings_setup.add(slider_x);
+    gb_settings_setup.add(slider_y);
+    
+    dialog.newColumn();
+    dialog.add(gb_settings_setup);
+    
     ////////////////////////////////////////////////////////////////////////
     //About tab
     ////////////////////////////////////////////////////////////////////////
@@ -578,9 +629,39 @@ function get_laser_stat(input)
     return stat;
 }
 
+function update_laser_doc_setup()
+{
+    /*
+    centar =  h_Doc_new.getLaserImported("centar");
+    print(marking_settings[0]);
+    centar.moveTo(marking_settings[0], marking_settings[1]);
+    centar.update();
+    //obj.update();
+    
+    //h_Doc_new.move(marking_settings[0], marking_settings[1])
+    h_Doc_new.update();
+    renderareaPrev_setup.preview(h_Doc_new);
+   // h_Doc_new.update();   
+  */
+}
+
+function move_x_coord(value)
+{
+     print((value/10.0));	
+     marking_settings[0] =  value/10.0;
+     update_laser_doc_setup();
+}
+
+function move_y_coord(value)
+{
+     print((value/10.0));
+     marking_settings[1] =  value/10.0;
+     update_laser_doc_setup();
+}
+
 function get_motor_status(input)
 {
-    if(input == 1 ){stat= "Moving";} else {stat="Holding position";}
+    if(input == 1){stat= "Moving";} else {stat="Holding position";}
     return stat;
 }
 
@@ -600,7 +681,9 @@ function shut_down()
         enable_break();
         disconnect_timers();
         System.killAllTimers();
+        
         dialog.OK();
+	
 
     }
     else

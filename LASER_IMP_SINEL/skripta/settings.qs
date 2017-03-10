@@ -48,6 +48,9 @@ var last_senz_state = 0;
 var pump_present = 0;
 var brojac = 0;
 
+var marking_loc = [];
+var marking_settings = [];
+
 /*************END OF LASER SETTINGS********************/
 
 
@@ -56,9 +59,9 @@ var brojac = 0;
 /////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////
 //File locations
-drive_loc = "D:";
+//drive_loc = "D:";
 //drive_loc = "E:";
-//drive_loc = "G:";
+drive_loc = "G:";
 
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
@@ -66,13 +69,14 @@ var logoPath = drive_loc + "\\LASER_IMP_SINEL\\Predloge\\" ;
 var logPath= drive_loc + "\\LASER_IMP_SINEL\\writeLog.txt";
 var resPath = drive_loc + "\\LASER_IMP_SINEL\\res\\";
 var nova_db =  drive_loc + "\\LASER_IMP_SINEL\\tabela_baza.xls";
+var script_loc = drive_loc +"\\LASER_IMP_SINEL\\skripta\\";
 
 var templatesPath = drive_loc + "\\LASER_IMP_SINEL\\TEMPLATE\\";
 var logosPath = drive_loc + "\\LASER_IMP_SINEL\\LOGOTIP\\XLP-LOGOTIPI\\";
 var znakiPath = drive_loc + "\\LASER_IMP_SINEL\\ZNAKI\\XLP - ZNAKI\\";
 
 var test_log =  drive_loc + "\\LASER_IMP_SINEL\\tabela_log.xls";
-
+/*
 ////////////////////////////////////////
 //Dictionary declaration
 //////////////////////////////////////
@@ -80,16 +84,21 @@ var templates_dict = {};
 var logotips_dict = {};
 var columns_dict = {};
 var znaki_dict = {};
-
+*/
 var date = new Date();
 
 ///////////////////////////////////
 //Variables declaration
 //////////////////////////////////
-var h_Doc_new;
+var h_Doc_new = new LaserDoc;
 var h_preview = new LaserDoc;
+var h_setup = h_preview;
 var h_Document,hDb, fw;
 var laser_objects = [];
+
+ var cross = h_Doc_new.createLaserImported("cross");
+//var cross = h_Doc_new.createLaserImported("cross");
+var centar = h_Doc_new.createLaserImported("centar");
 
 var part_list = []; var logos_list = []; var logotips = [];
 var new_list = []; var zdelekArr = [];
@@ -121,7 +130,6 @@ columns_arr.forEach(function(item, index)
 });
 
 var laser_objects_J_N = laser_objects.slice(laser_objects.indexOf("OBJ_J"), laser_objects.indexOf("OBJ_N")+1);
-
 var laser_objects_O_T = laser_objects.slice(laser_objects.indexOf("OBJ_O"), laser_objects.indexOf("OBJ_T")+1);
 var laser_objects_U_AH = laser_objects.slice(laser_objects.indexOf("OBJ_U"), laser_objects.indexOf("OBJ_AH")+1);
 

@@ -11,11 +11,11 @@ function set_flags()
     if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
     if(IoPort.getPort(0) & I_PIN_20)
     {
-        reg_fault = 0;
+        reg_fault = 1;
     }
     else
     {
-        reg_fault = 1;
+        reg_fault = 0;
         if(debug_mode){print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!");}
     }
 
@@ -95,6 +95,7 @@ function init_func()
     set_flags();
     parts_list();
     gen_lists_from_xls();
+      get_xy_loc();  
     System["sigTimer(int)"].connect(pump_counter);
     System["sigTimer(int)"].connect(laser_movement);
 
@@ -110,6 +111,23 @@ function init_func()
     {
         return 2;
     }
+}
+
+
+function get_xy_loc()
+{
+	var coords_xy = new File(script_loc + "coords");
+	coords_xy.open(File.ReadOnly);
+	var i = 0;
+       while (!coords_xy.eof) 
+	{
+                marking_loc[i] = coords_xy.readLine();
+                i++;            
+	}
+
+       print(marking_loc[0], marking_loc[1]);
+       coords_xy.close();
+       
 }
 
 /////////////////////////////////
@@ -132,6 +150,7 @@ function main()
     init_passed = init_func();
     if(init_passed == 0)
     {
+	 
         disable_break();
         //signal_ready = 1;
         //System["sigTimer(int)"].connect(set_signal_ready);
@@ -143,13 +162,11 @@ function main()
         logotips_dict = to_dict(logotips_s, "ADL","calpeda1",",");
         columns_dict = to_dict(columns, "A", "AJ", " ");
         znaki_dict = to_dict(znaki_a, "CCC-1","ucraino1", ",");
-
-        populateTemplateDict();
-        populateLogosDict();
-        populateZnakiDict();
         ///////////////////////////
         //GUI generation
         /////////////////////////////
+       	
+	
         gen_dialog(part_list);
     }
     if(init_passed == 1)

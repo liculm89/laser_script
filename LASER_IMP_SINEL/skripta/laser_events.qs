@@ -293,4 +293,5 @@ function onQueryStart()
 
 function onClose()
 {
+	print("closing");
 }

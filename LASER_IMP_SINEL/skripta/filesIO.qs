@@ -96,62 +96,6 @@ function dynamic_ext_list(part_id)
     hDb4.close();
 }
 
-///////////////////////////////////
-//DICTIONARIES 
-//////////////////////////////////
-function populateTemplateDict()
-{
-    templates_dict["CAL-G"] = templatesPath + "CALPEDA_GHN.xlp";
-    templates_dict["CAL-N"] = templatesPath + "CALPEDA_NMT.xlp";
-    templates_dict["EB-G"] = templatesPath + "EB_GHN.xlp";
-    templates_dict["EB-N"] = templatesPath + "EB_NMT.xlp";
-    templates_dict["EFA-G"] = templatesPath + "EFA_GHN.xlp";
-    templates_dict["EFA-N"] = templatesPath + "EFA_NMT.xlp";
-    templates_dict["ESP-G"] = templatesPath + "ESP_GHN.xlp";
-    templates_dict["IMP-G"] = templatesPath + "IMP_GHN.xlp";
-    templates_dict["IMP-GS"] = templatesPath + "IMP_GHNSOL.xlp";
-    templates_dict["IMP_N"] = templatesPath + "IMP_NMT.xlp";
-    templates_dict["LAD_G"] = templatesPath + "LAD_GHN.xlp";
-    templates_dict["LAD-N"] = templatesPath + "LAD_NMT.xlp";
-    templates_dict["MAT-G"] = templatesPath + "MATRA_GHN.xlp";
-    templates_dict["PER-G"] = templatesPath + "PER_GHN.xlp";
-    templates_dict["PER-N"] = templatesPath + "PER_NMT.xlp";
-    templates_dict["STA-G"] = templatesPath + "STA_GHN.xlp";
-}
-
-function populateLogosDict()
-{
-    logotips_dict["ADL"] = logosPath + "ADL.xlp";
-    logotips_dict["AN"] = logosPath + "ANAVALOS.xlp";
-    logotips_dict["AP"] = logosPath + "APPEL.xlp";
-    logotips_dict["BE"] = logosPath + "BOMBA ELIAS.xlp";
-    logotips_dict["CAL"] = logosPath + "CALPEDA.xlp";
-    logotips_dict["COOX"] = logosPath + "COOX.xlp";
-    logotips_dict["EBARA"] = logosPath + "EBARA.xlp";
-    logotips_dict["EFA"] = logosPath + "EFAFLU.xlp";
-    logotips_dict["ESP"] = logosPath + "ESPA.xlp";
-    logotips_dict["IDR"] = logosPath + "IDROELETTRICA.xlp";
-    logotips_dict["IMP"] = logosPath + "IMP LOGO.xlp";
-    logotips_dict["LAD"] = logosPath + "LADDOMAT_NMT.xlp";
-    logotips_dict["MAT"] = logosPath + "MATRA.xlp";
-    logotips_dict["MH"] = logosPath + "MOBIHEAT.xlp";
-    logotips_dict["PER"] = logosPath + "PER.xlp";
-    logotips_dict["SEA"] = logosPath + "SEA_NMT.xlp";
-    logotips_dict["SEN"] = logosPath + "SENERTEC.xlp";
-    logotips_dict["SPE"] = logosPath + "SPERONI.xlp";
-    logotips_dict["STA"] = logosPath + "STA.xlp";
-}
-
-function populateZnakiDict()
-{
-    znaki_dict["CCC"] = znakiPath + "CCC.xlp"
-    znaki_dict["CE"] = znakiPath + "CE.xlp";
-    znaki_dict["EAC"] = znakiPath + "EAC.xlp";
-    //znaki_dict["GOST-1"] = znakiPath + "CCC.xpl";
-    //znaki_dict["GOST-0"] = znakiPath + "CCC.xpl";
-    znaki_dict["puščica-1"] = znakiPath + "STRELCA.xlp";
-    znaki_dict["ucraino1"] = znakiPath + "ucraino_ebara.xlp";
-}
 
 /////////////////////////////////////////////
 //Serial number LABEL update
@@ -491,19 +435,25 @@ function laser_objects_update()
     dict_keys_O_T = dict_keys.slice(dict_keys.indexOf("O"), dict_keys.indexOf("T")+1);
     dict_keys_U_AH = dict_keys.slice(dict_keys.indexOf("U"), dict_keys.indexOf("AH")+1);
 
+    //////////////////////////////////////////
+    //Učitavanja logo-a u template
+    //////////////////////////////////////////
     if(columns_dict["I"] != "/" && columns_dict["I"] != '')
     {
         var obj =  h_Doc_new.getLaserImported("OBJ_I");
         if(obj !=null)
         {
             obj.importFile(logosPath + columns_dict["I"] + ".xlp");
+	obj.update();
         }
         else
 	{
 		template_file_error();
 	}
     }
-
+    /////////////////////////////////////////////////
+    //Učitavanje tekstualnih objekata
+    //////////////////////////////////////////////////
     for( i = 0; i < ( laser_objects_J_N.length) ; i++)
     {
         var obj =  h_Doc_new.getLaserObject(laser_objects_J_N[i]);
@@ -512,10 +462,14 @@ function laser_objects_update()
             if(columns_dict[dict_keys_J_N[i]] != "/")
             {
                 obj.text = columns_dict[dict_keys_J_N[i]];
+		obj.update();
             }
         }
     }
-
+    
+    /////////////////////////////
+    //Učitavanje znakova
+    /////////////////////////////
     for( i = 0; i < ( laser_objects_O_T.length) ; i++)
     {
         var obj =  h_Doc_new.getLaserImported(laser_objects_O_T[i]);
@@ -529,9 +483,8 @@ function laser_objects_update()
             }
 	    else
 	    {
-	         //print(obj.id);
-	         //print(h_Doc_new.removeLaserObject(obj.id));
 	         h_Doc_new.removeLaserObject(obj.id)
+	         h_Doc_new.update();
 	    }
         }
     }
@@ -544,9 +497,27 @@ function laser_objects_update()
             if(columns_dict[dict_keys_U_AH[i]] != "/")
             {
                 obj.text = columns_dict[dict_keys_U_AH[i]];
+		obj.update();
             }
         }
     }
+    
+   // laser_objects_update();
+ /*   
+    var centar = h_Doc_new.createLaserImported("centar");
+    centar.importFile(script_loc + "centar.xlp");
+    centar.moveTo(marking_loc[0], marking_loc[1]);
+    centar.update();
+    
+    
+    var cross = h_Doc_new.createLaserImported("cross");
+    cross.importFile(script_loc + "cross.xlp");
+   //cross.moveTo(-marking_loc[0], -marking_loc[1]);
+    cross.update();
+*/   
+//
+  //  h_Doc_new.update();
+ 
 }
 //////////////////////////////////////////////////////
 //Laser doc generation
@@ -554,17 +525,13 @@ function laser_objects_update()
 function laser_doc_generate()
 {
     h_Doc_new = new LaserDoc;
-    //var template_file = templates_dict[columns_dict["G"]];
     var template_file = templatesPath + columns_dict["G"] + ".xlp";
     
     dict_keys = Object.keys(columns_dict);
-    //print(h_Doc_new.load(template_file));
     
     if(h_Doc_new.load(template_file))
-        //if(template_file != "init_value")
     {
         h_Doc_new.load(template_file);
-        
         laser_objects_update();
         ////////////////////////////////
         //Sets MONTH/YEAR
@@ -580,10 +547,9 @@ function laser_doc_generate()
             }
         }
         h_preview = h_Doc_new;
-        h_preview.move(7.0,0.5);
+        //h_preview.move(marking_loc[0], marking_loc[1]);
         renderareaPrev.preview(h_preview);
         renderareaPrev_m.preview(h_preview);
-        //print(laser_objects["I"]);
         rotate_and_move();
         h_Doc_new.update();
     }
@@ -623,6 +589,7 @@ function rotate_and_move()
     ///////////////////////////////////////////////
     //Korekcija koordinate lasera
     ///////////////////////////////////////////////
+    
     h_Doc_new.move(7.0, -1.5);
 }
 
@@ -680,6 +647,7 @@ function xls_log()
     }
     hDb3.close();
 }
+
 
 function writeLog(currentNum)
 {
