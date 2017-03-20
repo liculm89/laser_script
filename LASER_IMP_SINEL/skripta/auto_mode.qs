@@ -41,7 +41,7 @@ function start_auto_mode()
         }
         else
         {
-            error_regulator_faul();
+            error_regulator_fault();
         }
     }
     else
@@ -89,7 +89,6 @@ function wait_for_pump(ID)
     //print(pump_present);
     if((timers[4] == ID) && (auto_mode == "ON") && (pump_present == 1))
     {
-        
         if(debug_mode)
         {
             print("nom =" + nom);
