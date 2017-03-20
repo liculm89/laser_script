@@ -59,8 +59,8 @@ var marking_settings = [];
 /////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////
 //File locations
-//drive_loc = "D:";
-drive_loc = "H:";
+drive_loc = "D:";
+//drive_loc = "H:";
 //drive_loc = "G:";
 
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";

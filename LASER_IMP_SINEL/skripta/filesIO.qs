@@ -502,21 +502,6 @@ function laser_objects_update()
         }
     }
     
-   // laser_objects_update();
- /*   
-    var centar = h_Doc_new.createLaserImported("centar");
-    centar.importFile(script_loc + "centar.xlp");
-    centar.moveTo(marking_loc[0], marking_loc[1]);
-    centar.update();
-    
-    
-    var cross = h_Doc_new.createLaserImported("cross");
-    cross.importFile(script_loc + "cross.xlp");
-   //cross.moveTo(-marking_loc[0], -marking_loc[1]);
-    cross.update();
-*/   
-//
-  //  h_Doc_new.update();
  
 }
 //////////////////////////////////////////////////////

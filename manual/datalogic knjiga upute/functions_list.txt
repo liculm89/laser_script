@@ -1,0 +1,141 @@
+Popis funkcija
+
+Main.qs
+
+function set_flags()
+function pump_counter(ID)
+function init_func()
+function get_xy_loc()
+function main()
+
+utils_function.qs
+
+function to_dict(from_str, c1, c2, split)
+function to_arr(from_str, c1, c2)
+function remove_duplicates(arr)
+function check_sn_format_imp(sn)
+function get_ebara_prefix()
+function leftPad(number, targetLength)
+function get_serial_int(sn_str)
+
+filesIO.qs
+
+function parts_list()
+function gen_lists_from_xls()
+function dynamic_ext_list(part_id)
+function serial_input_changed(text)
+function ext_changed()
+function init_sn()
+function get_last_serial()
+function check_sn(sn)
+function update_sn()
+function selection_init()
+function confirm_selection()
+function get_quantity()
+function laser_objects_update()
+function laser_doc_generate()
+function rotate_and_move()
+function laser_doc_update()
+function xls_log()
+function writeLog(currentNum)
+
+errors.qs
+
+function onLaserError(error)
+function error_auto_mode()
+function error_auto_aoff()
+function error_manual_mode()
+function error_total_stop()
+function error_laser_not_rdy()
+function error_key_sequence()
+function error_cant_find_pump()
+function error_min_pos()
+function error_max_pos()
+function error_init_fail()
+function error_regulator_fault()
+function error_sn_exists()
+function error_auto_started()
+function error_selection_not_confirmed()
+function error_sn_false_format()
+function error_template_missing()
+function error_wrong_quantity_format()
+function template_file_error()
+
+gui.qs
+
+function gen_dialog(part_list)
+function gui_update(ID)
+function sb1_ch(value)
+function get_stat(input)
+function get_laser_stat(input)
+function update_laser_doc_setup()
+function move_x_coord(value)
+function move_y_coord(value)
+function get_motor_status(input)
+function shut_down()
+function reset_pump_count()
+
+auto_mode.qs
+
+function start_auto_mode()
+function stop_auto(ID)
+function laser_ref_auto()
+function wait_for_pump(ID)
+function wait_for_barrier(ID)
+function laser_move_timed()
+function stop_search_auto(ID)
+function pump_not_present(ID)
+function readFile_auto()
+function mark_auto()
+function barrier_up_afer_marking()
+function barrier_up_auto()
+function barrier_down_auto() 
+function reset_laser_marking(ID)
+function total_stop_func()
+function reset_auto(ID)
+function reset_button_func()
+
+manual_mode.qs
+
+function readFile_manual()
+function mark_manual()
+function barrier_up_afer_marking_m()
+function laser_reference()
+function stop_m_manual()
+function search_working_pos()
+function stop_search(ID)
+function move_up()
+function max_pos_reached(ID)
+function move_down()
+function min_pos_reached(ID)
+function stop_axis()
+function barrier_up()
+function barrier_down()
+
+laser_events.qs
+
+function onLaserStop()
+function onLaserEnd()
+function laser_key_on()
+function enable_pressed()
+function warmup_counter(ID)
+function reset_sequence()
+function disable_sequence()
+function enable_break()
+function disable_break()
+function laser_movement(ID)
+function marking_ended()
+function send_signal_done(ID)
+function reset_signal_done(ID)
+function get_laser_events(event)
+function check_laser_state(state)
+function marking_quantity_complete()
+
+timers.qs
+
+function start_timer(timer, func)
+function disconnect_func(func)
+function disconnect_timers()
+
+
+

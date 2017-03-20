@@ -119,7 +119,6 @@ function reset_sequence()
 function disable_sequence()
 {
     IoPort.resetPort(0, O_PIN_17);
-    
     IoPort.resetPort(0, O_PIN_18);
 }
 
@@ -171,14 +170,14 @@ function laser_movement(ID)
 function marking_ended()
 {
     print("Marking finished");
-    timers[5] = System.setTimer(times[5]);
-    start_timer(timers[5], send_signal_done);
-    send_signal_done();
+    timers[10] = System.setTimer(times[10]);
+    start_timer(timers[10], send_signal_done);
+    //send_signal_done();
 }
 
 function send_signal_done(ID)
 {	
-    if(timers[5] == ID)
+    if(timers[10] == ID)
     {
         print("setting signal done");
         IoPort.setPort(0, O_PIN_2);
@@ -192,8 +191,8 @@ function reset_signal_done(ID)
 {
     if(timers[9] == ID)
     {
-        print(ID);
-        print("reseting signal done");
+        //print(ID);
+       // print("reseting signal done");
         IoPort.resetPort(0, O_PIN_2);
         disconnect_func(reset_signal_done);
     }
