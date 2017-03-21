@@ -4,7 +4,7 @@
 //sets debugging(on=1 and off=0)
 var debug_mode = 0;
 var enable_existing_sn_marking = 1;
-
+var marking_location_setup = 0;
 ///////////////////////
 //Input PIN-s
 //////////////////////
@@ -59,8 +59,8 @@ var marking_settings = [];
 /////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////
 //File locations
-drive_loc = "D:";
-//drive_loc = "H:";
+//drive_loc = "D:";
+drive_loc = "H:";
 //drive_loc = "G:";
 
 var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
@@ -132,6 +132,8 @@ columns_arr.forEach(function(item, index)
 var laser_objects_J_N = laser_objects.slice(laser_objects.indexOf("OBJ_J"), laser_objects.indexOf("OBJ_N")+1);
 var laser_objects_O_T = laser_objects.slice(laser_objects.indexOf("OBJ_O"), laser_objects.indexOf("OBJ_T")+1);
 var laser_objects_U_AH = laser_objects.slice(laser_objects.indexOf("OBJ_U"), laser_objects.indexOf("OBJ_AH")+1);
+var laser_object_AI = "OBJ_AI";
+//print(laser_objects);
 
 ////////////////////
 //RegEx 

@@ -502,6 +502,19 @@ function laser_objects_update()
         }
     }
     
+     if(columns_dict["AI"] != "/" && columns_dict["AI"] != '')
+    {
+        var obj =  h_Doc_new.getLaserImported("OBJ_AI");
+        if(obj !=null)
+        {
+            obj.importFile(znakiPath + columns_dict["AI"] + ".xlp");
+	obj.update();
+        }
+        else
+       {
+	print("object does not exist");
+	}
+    }
  
 }
 //////////////////////////////////////////////////////
@@ -574,8 +587,8 @@ function rotate_and_move()
     ///////////////////////////////////////////////
     //Korekcija koordinate lasera
     ///////////////////////////////////////////////
-    
-    h_Doc_new.move(7.0, -1.5);
+    h_Doc_new.move(marking_loc[0], marking_loc[1]);
+    //h_Doc_new.move(7.0, -1.5);
 }
 
 /////////////////////////////////////

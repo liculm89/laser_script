@@ -267,6 +267,7 @@ function gen_dialog(part_list)
     gb_lb.add(btn_bar_down);
     
     gb_left_m.add(gb_lb);
+    
     ///////////////////////////////////////////////
     //manual laser marking group
     //////////////////////////////////////////////
@@ -397,27 +398,24 @@ function gen_dialog(part_list)
 
     }
     
+    if(marking_location_setup == 1)
+    {
     /////////////////////////////////////////////
     //MARKING LOCATION SETUP
     ////////////////////////////////////////////
     dialog.newTab("Marking location setup");
     gb_setup_preview = new GroupBox; gb_setup_preview.title = "Setup preview";
-    
-    
+     
     dialog.add(gb_setup_preview);
     
     renderareaPrev_setup.preview(h_setup);
-    gb_setup_preview.add(renderareaPrev_setup);
-    
+    gb_setup_preview.add(renderareaPrev_setup); 
     
    /* if(h_setup.addImportedObj(cross, "Cross"))
     {  
          print("cross imported");
         h_setup.update();
     }*/
-    
-  
-    
     gb_settings_setup = new GroupBox; gb_settings_setup.title = "Setup settings";
     
     slider_x = new Slider(); slider_x.horizontal = true; slider_x.step = 1; slider_x.maximum = 150; slider_x.minimum = -150; slider_x.TickPosition = 2;
@@ -446,6 +444,7 @@ function gen_dialog(part_list)
     
     dialog.newColumn();
     dialog.add(gb_settings_setup);
+}
     
     ////////////////////////////////////////////////////////////////////////
     //About tab

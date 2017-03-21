@@ -15,8 +15,12 @@ function start_auto_mode()
                     {
                         auto_mode = "ON";
                         get_quantity();
-                        //numW = parseInt(le_num_w.text, 10);
-                        //if(typeof(numW  == NaN)){numW = 0;}
+			
+		if((IoPort.getPort(0) & I_PIN_11))
+		{
+		     barrier_up_auto();
+		 }
+                      
                         numWC = 0;
                         if(debug_mode){ print("Auto mode started");}
                         laser_in_working_pos = 0;
@@ -55,7 +59,7 @@ function start_auto_mode()
 //////////////////////////////////////////
 function stop_auto(ID)
 {      	
-    if(auto_mode == "ON")
+    if(auto_mode == "ON")  
     {
         auto_mode = "OFF";
         System.stopLaser();
@@ -63,6 +67,8 @@ function stop_auto(ID)
         numWC = 0;
         nom= 0;
         disconnect_func(wait_for_pump);
+        disconnect_func(wait_for_barrier);
+
     }
     else
     {
