@@ -15,12 +15,17 @@ function start_auto_mode()
                     {
                         auto_mode = "ON";
                         get_quantity();
-			
+	
 		if((IoPort.getPort(0) & I_PIN_11))
 		{
 		     barrier_up_auto();
 		 }
                       
+           	           if(sen_linija == 1)
+		{
+                             timers[10] = System.setTimer(times[10]);
+	                 start_timer(timers[10], send_signal_done);
+                         }
                         numWC = 0;
                         if(debug_mode){ print("Auto mode started");}
                         laser_in_working_pos = 0;
@@ -66,9 +71,9 @@ function stop_auto(ID)
         laser_marking = 0;
         numWC = 0;
         nom= 0;
-        disconnect_func(wait_for_pump);
-        disconnect_func(wait_for_barrier);
-
+       // disconnect_func(wait_for_pump); 
+       disconnect_timers();
+        //disconnect_func(wait_for_barrier);
     }
     else
     {
@@ -98,7 +103,7 @@ function wait_for_pump(ID)
         if(debug_mode)
         {
             print("nom =" + nom);
-            print("laser_in_working_pos" + laser_in_working_pos);
+	print("laser_in_working_pos: " + laser_in_working_pos);
         }
 
         for(nom; nom<1; nom++)
@@ -123,11 +128,38 @@ function wait_for_pump(ID)
 /////////////////////////////////////
 function wait_for_barrier(ID)
 {
-    if((timers[6] == ID) && (IoPort.getPort(0) & I_PIN_11))
-    {
-        laser_move_timed();
-        disconnect_func(wait_for_barrier);
+	
+    if(simulation_mode)
+   {	
+	        if((timers[6] == ID) && (chkb_barriera.checked))
+	    { 
+			if(debug_mode)
+			{
+				//print("nom =" + nom);
+				print("laser is seaching for pump");
+			}
+	    
+			laser_move_timed();
+			disconnect_func(wait_for_barrier);
+		}
+    
     }
+    else
+    {
+	        if((timers[6] == ID) && (IoPort.getPort(0) & I_PIN_11))
+	    { 
+			if(debug_mode)
+			{
+				//print("nom =" + nom);
+				print("laser is seaching for pump");
+			}
+	    
+			laser_move_timed();
+			disconnect_func(wait_for_barrier);
+		}
+    
+    }
+
 }
 
 //////////////////////////////////////////////////////////////////
@@ -195,6 +227,7 @@ function pump_not_present(ID)
     if(timers[2] == ID && pump_present == 0 && auto_mode == "ON")
     {
         System.stopLaser();
+        print("pump not present");
         if(IoPort.getPort(0) & I_PIN_11)
         {
             barrier_up_auto();
@@ -231,9 +264,68 @@ function mark_auto()
     {
         log_arr.push(columns_dict[dict_keys[i]]);
     }
-    //h_Doc_new.sigEndMark.connect(marking_ended);
-    h_Doc_new.sigEndMark.connect(barrier_up_afer_marking);
-    h_Doc_new.execute();
+    
+    if(simulation_mode)
+    {
+	    if(chkb_barriera.checked)
+	    {   
+		    
+	             // h_Doc_new.sigEndMark.connect( barrier_up_afer_marking ); 
+		 // h_Doc_new.update();
+
+		  h_Doc_new.execute();	
+		  timers[11] = System.setTimer(times[11]);
+		  start_timer(timers[11], check_marking);
+		  
+		  //check_marking();
+		   // timers[7] = System.setTimer(times[7]);
+		  //  start_timer(timers[7], barrier_up_afer_marking);
+	    }
+	    else {error_barrier_not_down();}
+    }
+    else
+    {
+	    if(IoPort.getPort(0) & I_PIN_11)
+	    {
+		    h_Doc_new.execute();
+		    //System.sigLaserEnd.connect(barrier_up_after_marking);
+		    //timers[7] = System.setTimer(times[7]);
+		    //start_timer(timers[7], barrier_up_afer_marking); 
+	    }
+	    else{error_barrier_not_down();}
+}
+ 
+
+
+}
+
+function check_marking(ID)
+{
+	if(timers[11] == ID)
+	{
+		if(simulation_mode == 1)
+		{
+			print( (laser_status == "Marking is active"));
+			if((chkb_barriera.checked) && !(laser_status == "Marking is active"))
+			{
+				barrier_up_afer_marking();
+				disconnect_func(check_marking);
+			}
+			else if((laser_status = "Marking is active") && !(chkb_barriera.checked))
+			{
+				 auto_mode = "OFF";
+				 System.stopLaser();
+				 laser_marking = 0;
+				 numWC = 0;
+				 nom= 0;
+				 disconnect_timers();
+			}
+		}
+		else
+		{
+		
+		}
+	}	
 }
 
 /////////////////////////////////////////
@@ -242,19 +334,18 @@ function mark_auto()
 function barrier_up_afer_marking()
 //function barrier_up_afer_marking(ID)
 {
-    // if(timers[7] == ID)
-    //{
-    if(IoPort.getPort(0) & I_PIN_11)
-    {
+//     if(timers[7] == ID)
+//    {
+
         barrier_up_auto();
         laser_marking = 0;
         laser_in_working_pos = 0;
         marking_ended();
         timers[5] = System.setTimer(times[5]);
         start_timer(timers[5], reset_laser_marking);
-    }
-    //disconnect_func(barrier_up_afer_marking);
-    //}
+
+//    disconnect_func(barrier_up_afer_marking);
+//    }
 }
 
 ////////////////////////////////////

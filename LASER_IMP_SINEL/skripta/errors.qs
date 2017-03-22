@@ -148,3 +148,10 @@ function template_file_error()
     MessageBox.critical( mesg_txt, MessageBox.Ok);
     last_error = mesg_txt;
 }
+
+function error_barrier_not_down()
+{  
+    var mesg_txt = "Barrier is not in lower position";
+    MessageBox.critical( mesg_txt, MessageBox.Ok);
+    last_error = mesg_txt;
+}

@@ -111,6 +111,8 @@ var last_selection = "";
 
 function ext_changed()
 {
+   
+      
     if(auto_mode == "OFF")
     {
         le_ser.text = "none";
@@ -513,7 +515,7 @@ function laser_objects_update()
         else
        {
 	print("object does not exist");
-	}
+    }
     }
  
 }
@@ -632,7 +634,7 @@ function xls_log()
     colNamesStr  = "Time_date," + colNamesStr;
     
     var query1  = "INSERT INTO [Napisne tablice in nalepke sezn$] ("+colNamesStr+") VALUES ("+log_str+")";
-    if(debug_mode){print(query1);}
+    if(debug_mode){print("writing_log");}
     hDb3 = new Db("QODBC")
     hDb3.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;ReadOnly=0;Dbq=" + test_log;
     

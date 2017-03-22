@@ -17,6 +17,14 @@ var renderareaPrev_m = new RenderArea();
 var renderareaPrev_setup = new RenderArea();
 var le_ser = new LineEdit("S.N.:");
 
+if(simulation_mode)
+{
+  var chkb_linija = new CheckBox();
+  var chkb_optika= new CheckBox();
+  var chkb_barriera = new CheckBox();
+}
+
+
 var date_time = new Date();
 date_time = date_time.ddmmyytime().toString();
 
@@ -395,6 +403,28 @@ function gen_dialog(part_list)
         lb_bar_dolje = new Label(); lb_bar_dolje.text = "Barijera dolje: " + get_stat(bar_dolje);
         lb_bar_dolje.font = font_lbls;
         gb_outputs.add(lb_bar_dolje);
+	
+	if(simulation_mode)
+	{
+	  gb_sim = new GroupBox; gb_sim.title="Simulation mode";
+	  //chkb_linija = new CheckBox();  
+	  chkb_linija.text = "Senzor linije"; chkb_linija.font = font2;
+	  
+	  gb_sim.add(chkb_linija);
+	  dialog.add(gb_sim);
+	  
+	 // chkb_optika = new CheckBox();  
+	  chkb_optika.text = "Senzor optika"; chkb_optika.font = font2;	  
+	  gb_sim.add(chkb_optika);
+	  
+	  //chkb_barriera = new CheckBox();   
+	  chkb_barriera.text = "Barriera dolje";  chkb_barriera.font = font2;
+	  
+	  gb_sim.add(chkb_barriera);
+
+	  
+	
+	}
 
     }
     
@@ -591,9 +621,19 @@ function gui_update(ID)
         {
             sn_fixed = 0;
         }
-
+	
+ 
         if(debug_mode)
         {
+	  if(simulation_mode == 1)
+    {
+	   // print(chkb_linija.checked);
+	    if(chkb_linija.checked){sen_linija = 1;}else{sen_linija=0;}
+	     if(chkb_optika.checked){sen_optika = 1;}else{sen_optika=0;}
+	       if(chkb_barriera.checked){sen_bar_dolje = 1;}else{sen_bar_dolje=0;}
+    }	
+		
+		
             lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
             lb_sen_bar_gore.text = "Senzor laserske barijere gore:" + get_stat(sen_bar_gore);
             lb_sen_bar_dolje.text = "Senzor laserske barijere dolje:" + get_stat(sen_bar_dolje);
@@ -682,8 +722,6 @@ function shut_down()
         System.killAllTimers();
         
         dialog.OK();
-	
-
     }
     else
     {

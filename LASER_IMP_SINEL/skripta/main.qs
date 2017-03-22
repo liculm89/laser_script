@@ -3,19 +3,48 @@
 ////////////////////////////////////////////
 function set_flags()
 {
-    if(IoPort.getPort(0) & I_PIN_7){ sen_linija = 1;} else{sen_linija=0;}
-    if(IoPort.getPort(0) & I_PIN_8){ sen_laser_dolje = 1;} else{sen_laser_dolje = 0;}
-    if(IoPort.getPort(0) & I_PIN_9){ sen_laser_gore = 1;} else{sen_laser_gore = 0;}
-    if(IoPort.getPort(0) & I_PIN_10){ sen_optika = 1;} else{sen_optika = 0;}
-    if(IoPort.getPort(0) & I_PIN_11){ sen_bar_dolje = 1;} else{sen_bar_dolje = 0;}
-    if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
-    if(IoPort.getPort(0) & I_PIN_20)
+	
+	
+    if(simulation_mode == 1)
     {
-        reg_fault =1;
+	    if(chkb_linija.checked){sen_linija = 1;}else{sen_linija=0;}
+	    if(chkb_optika.checked){sen_optika = 1;}else{sen_optika=0;}
+	    if(chkb_barriera.checked){sen_bar_dolje = 1;}else{sen_bar_dolje=0;}
     }
     else
     {
-        reg_fault =0;
+        if(IoPort.getPort(0) & I_PIN_7){ sen_linija = 1;} else{sen_linija=0;}
+        if(IoPort.getPort(0) & I_PIN_10){ sen_optika = 1;} else{sen_optika = 0;}
+        if(IoPort.getPort(0) & I_PIN_11){ sen_bar_dolje = 1;} else{sen_bar_dolje = 0;}
+    }
+    
+    //if(IoPort.getPort(0) & I_PIN_7){ sen_linija = 1;} else{sen_linija=0;}
+    if(IoPort.getPort(0) & I_PIN_8){ sen_laser_dolje = 1;} else{sen_laser_dolje = 0;}
+    if(IoPort.getPort(0) & I_PIN_9){ sen_laser_gore = 1;} else{sen_laser_gore = 0;}
+    //if(IoPort.getPort(0) & I_PIN_10){ sen_optika = 1;} else{sen_optika = 0;}
+   // if(IoPort.getPort(0) & I_PIN_11){ sen_bar_dolje = 1;} else{sen_bar_dolje = 0;}
+    if(IoPort.getPort(0) & I_PIN_21){ sen_bar_gore = 1;} else{sen_bar_gore = 0;}
+    if(IoPort.getPort(0) & I_PIN_20)
+    {
+	    if(simulation_mode == 1)
+	    {
+		    reg_fault =1;
+	    }
+	    else
+	    {
+		    reg_fault =0;
+	    }
+    }
+    else
+    {
+           if(simulation_mode == 1)
+	    {
+		    reg_fault = 0;
+	    }
+	    else
+	    {
+		    reg_fault = 1;
+	    }
         if(debug_mode){print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!");}
     }
 
@@ -47,17 +76,23 @@ function set_flags()
         };
         total_stop = 0;
     }
+
 }
 
-/////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
 //Counts pumps and sets pump_present flag
-////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
 function pump_counter(ID)
 {
     if(timers[3] == ID)
     {
-        if(IoPort.getPort(0) & I_PIN_7){senz_state = 1;} else{senz_state = 0;}
-
+        if(simulation_mode)
+	    {
+	 if(chkb_linija.checked){senz_state = 1;}else{senz_state = 0;}
+	}
+	else{
+	    if(IoPort.getPort(0) & I_PIN_7){senz_state = 1;} else{senz_state = 0;}
+    }
         if(senz_state != last_senz_state)
         {
 
@@ -137,8 +172,8 @@ function main()
 {
     System.sigQueryStart.connect(onQueryStart);
     System.sigLaserStop.connect(onLaserStop);
-    System.sigLaserStart.connect(onLaserStart);
-    System.sigLaserEnd.connect(onLaserEnd);
+    //System.sigLaserStart.connect(onLaserStart);
+    //System.sigLaserEnd.connect(onLaserEnd);
     System["sigLaserEvent(int)"].connect(get_laser_events);
     System["sigLaserError(int)"].connect(onLaserError);
     System.sigClose.connect(onClose);
@@ -162,7 +197,14 @@ function main()
         logotips_dict = to_dict(logotips_s, "ADL","calpeda1",",");
         columns_dict = to_dict(columns, "A", "AJ", " ");
         znaki_dict = to_dict(znaki_a, "CCC-1","ucraino1", ",");
-        ///////////////////////////
+       
+        //If "sen_linija" exists, reset it	
+        if(sen_linija == 1)
+        {
+            timers[10] = System.setTimer(times[10]);
+            start_timer(timers[10], send_signal_done);
+        }
+         ///////////////////////////
         //GUI generation
         /////////////////////////////
        	

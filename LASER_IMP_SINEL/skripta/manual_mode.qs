@@ -67,19 +67,19 @@ function mark_manual()
     {
         log_arr.push(columns_dict[dict_keys[i]]);
     }
+        if(debug_mode){ print("Marking started");}
     h_Doc_new.sigEndMark.connect(barrier_up_afer_marking_m);
     h_Doc_new.execute();
+
 }
 
 ///////////////////////////////////////////////
 //Raises barrier after marking
 ///////////////////////////////////////////////
-//function barrier_up_afer_marking_m(ID)
+
 function barrier_up_afer_marking_m()
 {
-    /*
-    if(timers[7] == ID)
-    {*/
+    if(debug_mode){ print("Marking finished");}	
     if(IoPort.getPort(0) & I_PIN_11)
     {
         barrier_up_auto();
@@ -89,6 +89,7 @@ function barrier_up_afer_marking_m()
     pumps_marked++;
     numWC++;
     xls_log();
+    
     if(!(numWC % sn_marking_times))
     {
         if(columns_dict["M"] != "/" && columns_dict["M"] != '' )
@@ -103,8 +104,6 @@ function barrier_up_afer_marking_m()
         }
     }
     marking_ended();
-    //   disconnect_func(barrier_up_afer_marking_m);
-    //}
 }
 
 //////////////////////////////////////////
