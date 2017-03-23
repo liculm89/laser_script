@@ -110,21 +110,14 @@ function wait_for_barrier(ID) {
             laser_move_timed();
             disconnect_func(wait_for_barrier);
         }
-
     }
     else {
         if ((timers[6] == ID) && (IoPort.getPort(0) & I_PIN_11)) {
-            if (debug_mode) {
-                //print("nom =" + nom);
-                print("laser is seaching for pump");
-            }
-
+            if (debug_mode) { print("laser is seaching for pump"); }
             laser_move_timed();
             disconnect_func(wait_for_barrier);
         }
-
     }
-
 }
 
 //////////////////////////////////////////////////////////////////
@@ -196,9 +189,6 @@ function pump_not_present(ID) {
 //Automatic marking starts, sets timer for barrier rising
 //////////////////////////////////////////////////////////////////////////////////////
 function readFile_auto() {
-
-    //timers[7] = System.setTimer(times[7]);
-    //start_timer(timers[7], barrier_up_afer_marking);
     mark_auto();
 }
 
@@ -221,8 +211,6 @@ function mark_auto() {
             h_Doc_new.execute();
             timers[11] = System.setTimer(times[11]);
             start_timer(timers[11], check_marking);
-            // timers[7] = System.setTimer(times[7]);
-            //  start_timer(timers[7], barrier_up_afer_marking);
         }
         else { error_barrier_not_down(); }
     }
@@ -232,8 +220,6 @@ function mark_auto() {
             timers[11] = System.setTimer(times[11]);
             start_timer(timers[11], check_marking);
             //System.sigLaserEnd.connect(barrier_up_after_marking);
-            //timers[7] = System.setTimer(times[7]);
-            //start_timer(timers[7], barrier_up_afer_marking); 
         }
         else { error_barrier_not_down(); }
     }
@@ -242,7 +228,7 @@ function mark_auto() {
 function check_marking(ID) {
     if (timers[11] == ID) {
         if (simulation_mode == 1) {
-            print((laser_status == "Marking is active"));
+           // print((laser_status == "Marking is active"));
             if ((chkb_barriera.checked) && !(laser_status == "Marking is active")) {
                 barrier_up_afer_marking();
                 disconnect_func(check_marking);
@@ -251,13 +237,25 @@ function check_marking(ID) {
                 auto_mode = "OFF";
                 System.stopLaser();
                 laser_marking = 0;
+                //numWC = 0;
+	    disconnect_timers();
+                nom = 0;
+            }
+        }
+        else {
+	//print((laser_status == "Marking is active"));
+            if ((IoPort.getPort(0) & I_PIN_11) && !(laser_status == "Marking is active")) {
+                barrier_up_afer_marking();
+                disconnect_func(check_marking);
+            }
+            else if ((laser_status = "Marking is active") && !(IoPort.getPort(0) & I_PIN_11)) {
+                auto_mode = "OFF";
+                System.stopLaser();
+                laser_marking = 0;
                 numWC = 0;
                 nom = 0;
                 disconnect_timers();
             }
-        }
-        else {
-
         }
     }
 }
@@ -266,20 +264,13 @@ function check_marking(ID) {
 //Barrier up after marking
 /////////////////////////////////////////
 function barrier_up_afer_marking()
-//function barrier_up_afer_marking(ID)
 {
-    //     if(timers[7] == ID)
-    //    {
-
     barrier_up_auto();
     laser_marking = 0;
     laser_in_working_pos = 0;
     marking_ended();
     timers[5] = System.setTimer(times[5]);
     start_timer(timers[5], reset_laser_marking);
-
-    //    disconnect_func(barrier_up_afer_marking);
-    //    }
 }
 
 ////////////////////////////////////
@@ -309,7 +300,8 @@ function reset_laser_marking(ID) {
     if ((timers[5] == ID) && (pump_present == 0)) {
         numWC++;
         xls_log();
-
+	
+        print(numWC % sn_marking_times);
         if (!(numWC % sn_marking_times)) {
             if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
                 if (!sn_fixed) {
@@ -347,7 +339,7 @@ function total_stop_func() {
         nom = 0;
         auto_mode = "OFF";
     }
-    if (auto_mode == "OFF") {
+    if (auto_mode == "OFF") {f
         System.stopLaser();
         disconnect_timers();
     }

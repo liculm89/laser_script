@@ -47,8 +47,45 @@ function mark_manual() {
         log_arr.push(columns_dict[dict_keys[i]]);
     }
     if (debug_mode) { print("Marking started"); }
-    h_Doc_new.sigEndMark.connect(barrier_up_afer_marking_m);
+    //h_Doc_new.sigEndMark.connect(barrier_up_afer_marking_m);
+    timers[11] = System.setTimer(times[11]);
+    start_timer(timers[11], check_marking_manual);
+    
     h_Doc_new.execute();
+}
+
+//
+function check_marking_manual(ID) {
+    if (timers[11] == ID) {
+        if (simulation_mode == 1) {
+            //print((laser_status == "Marking is active"));
+            if ((chkb_barriera.checked) && !(laser_status == "Marking is active")) {
+                barrier_up_afer_marking_m();
+                disconnect_func(check_marking);
+            }
+            else if ((laser_status = "Marking is active") && !(chkb_barriera.checked)) {
+                System.stopLaser();
+                laser_marking = 0;
+                //numWC = 0;
+                nom = 0;
+                disconnect_timers();
+            }
+        }
+        else {
+	//print((laser_status == "Marking is active"));
+            if ((IoPort.getPort(0) & I_PIN_11) && !(laser_status == "Marking is active")) {
+	    barrier_up_afer_marking_m();
+                disconnect_func(check_marking);
+            }
+            else if ((laser_status = "Marking is active") && !(IoPort.getPort(0) & I_PIN_11)) {
+                System.stopLaser();
+                laser_marking = 0;
+                //numWC = 0;
+                nom = 0;
+                disconnect_timers();
+            }
+        }
+    }
 }
 
 ///////////////////////////////////////////////

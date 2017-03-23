@@ -139,7 +139,6 @@ function laser_movement(ID) {
     }
 }
 
-
 function marking_ended() {
     print("Marking finished");
     timers[10] = System.setTimer(times[10]);
@@ -218,9 +217,7 @@ function check_laser_state(state) {
             if (laser_moving == 0) {
                 laser_status = "Marking is active";
             }
-            else {
-                laser_status = "Moving...";
-            }
+            else { laser_status = "Moving..."; }
             break;
         case System.LASER_BUSY_SHUTTER_CLOSED:
             laser_status = "Busy, shutter closed";

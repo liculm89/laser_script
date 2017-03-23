@@ -64,8 +64,8 @@ var marking_settings = [];
 ////////////////////////////
 //File locations
 if (simulation_mode == 1) {
-    drive_loc = "H:";
-    //drive_loc = "G:";
+    //drive_loc = "H:";
+    drive_loc = "G:";
 }
 else {
     drive_loc = "D:";
@@ -75,7 +75,7 @@ var tmplPath = drive_loc + "\\LASER_IMP_SINEL\\IMP_SINEL.XLP";
 var xlsPath = drive_loc + "\\LASER_IMP_SINEL\\TabelaNMTPLUS.xlsx";
 var logoPath = drive_loc + "\\LASER_IMP_SINEL\\Predloge\\";
 var logPath = drive_loc + "\\LASER_IMP_SINEL\\writeLog.txt";
-var resPath = drive_loc + "\\LASER_IMP_SINEL\\res\\";
+var resPath = drive_loc + "\\LASER_IMP_SINEL\\skripta\\res\\";
 var nova_db = drive_loc + "\\LASER_IMP_SINEL\\tabela_baza.xls";
 var script_loc = drive_loc + "\\LASER_IMP_SINEL\\skripta\\";
 
