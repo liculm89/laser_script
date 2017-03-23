@@ -133,15 +133,10 @@ function wait_for_barrier(ID)
    {	
 	        if((timers[6] == ID) && (chkb_barriera.checked))
 	    { 
-			if(debug_mode)
-			{
-				//print("nom =" + nom);
-				print("laser is seaching for pump");
-			}
-	    
+			if(debug_mode){print("laser is seaching for pump");}
 			laser_move_timed();
 			disconnect_func(wait_for_barrier);
-		}
+                 }
     
     }
     else
@@ -268,16 +263,11 @@ function mark_auto()
     if(simulation_mode)
     {
 	    if(chkb_barriera.checked)
-	    {   
-		    
+	    {       
 	             // h_Doc_new.sigEndMark.connect( barrier_up_afer_marking ); 
-		 // h_Doc_new.update();
-
 		  h_Doc_new.execute();	
 		  timers[11] = System.setTimer(times[11]);
 		  start_timer(timers[11], check_marking);
-		  
-		  //check_marking();
 		   // timers[7] = System.setTimer(times[7]);
 		  //  start_timer(timers[7], barrier_up_afer_marking);
 	    }
@@ -288,16 +278,15 @@ function mark_auto()
 	    if(IoPort.getPort(0) & I_PIN_11)
 	    {
 		    h_Doc_new.execute();
+		    timers[11] = System.setTimer(times[11]);
+		    start_timer(timers[11], check_marking);
 		    //System.sigLaserEnd.connect(barrier_up_after_marking);
 		    //timers[7] = System.setTimer(times[7]);
 		    //start_timer(timers[7], barrier_up_afer_marking); 
 	    }
 	    else{error_barrier_not_down();}
-}
- 
-
-
-}
+     }
+ }
 
 function check_marking(ID)
 {

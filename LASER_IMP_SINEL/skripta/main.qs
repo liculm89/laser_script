@@ -3,8 +3,6 @@
 ////////////////////////////////////////////
 function set_flags()
 {
-	
-	
     if(simulation_mode == 1)
     {
 	    if(chkb_linija.checked){sen_linija = 1;}else{sen_linija=0;}
