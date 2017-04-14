@@ -382,7 +382,7 @@ function laser_objects_update() {
         var obj = h_Doc_new.getLaserObject(laser_objects_J_N[i]);
         if (obj != null) {
             if (columns_dict[dict_keys_J_N[i]] != "/") {
-                obj.text = columns_dict[dict_keys_J_N[i]];
+                obj.text = columns_dict[dict_keys_J_N[i]].toString() + "";
                 obj.update();
             }
         }
@@ -392,14 +392,19 @@ function laser_objects_update() {
     //Učitavanje znakova
     /////////////////////////////
     for (i = 0; i < (laser_objects_O_T.length); i++) {
-        var obj = h_Doc_new.getLaserImported(laser_objects_O_T[i]);
+		print((laser_objects_O_T[i]));
+		var obj = h_Doc_new.getLaserImported(laser_objects_O_T[i]);
+		print(obj);
         if (obj != null) {
-
+			print((columns_dict[dict_keys_O_T[i]] != "/"));
             if (columns_dict[dict_keys_O_T[i]] != "/") {
+				
+		print("Dict column " + columns_dict[dict_keys_O_T[i]]);
                 obj.importFile(znakiPath + columns_dict[dict_keys_O_T[i]] + ".xlp");
                 obj.update();
             }
             else {
+				print("removing objects:" +  obj.id);
                 h_Doc_new.removeLaserObject(obj.id)
                 h_Doc_new.update();
             }
@@ -491,6 +496,7 @@ function rotate_and_move() {
     ///////////////////////////////////////////////
     //Korekcija koordinate lasera
     ///////////////////////////////////////////////
+	get_xy_loc();
     h_Doc_new.move(marking_loc[0], marking_loc[1]);
     
 }
