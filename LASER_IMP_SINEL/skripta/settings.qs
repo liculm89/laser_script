@@ -68,8 +68,13 @@ var marking_settings = [];
 ////////////////////////////
 //File locations
 if (simulation_mode == 1) {
+<<<<<<< HEAD
 	//drive_loc = "H:";
 	drive_loc = "G:";
+=======
+    //drive_loc = "H:";
+    drive_loc = "G:";
+>>>>>>> ba233a51d1f9bb7fab68cf8811949e0e0769217a
 }
 else {
 	drive_loc = "D:";
