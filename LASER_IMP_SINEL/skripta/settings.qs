@@ -6,8 +6,8 @@ var enable_existing_sn_marking = 1;
 
 //sets debugging(on=1 and off=0)
 
-var simulation_mode =1;
-var debug_mode =1;
+var simulation_mode =0;
+var debug_mode =0;
 if (debug_mode == 0) { simulation_mode = 0; }
 
 var marking_location_setup = 0;
@@ -68,13 +68,8 @@ var marking_settings = [];
 ////////////////////////////
 //File locations
 if (simulation_mode == 1) {
-<<<<<<< HEAD
 	//drive_loc = "H:";
 	drive_loc = "G:";
-=======
-    //drive_loc = "H:";
-    drive_loc = "G:";
->>>>>>> ba233a51d1f9bb7fab68cf8811949e0e0769217a
 }
 else {
 	drive_loc = "D:";

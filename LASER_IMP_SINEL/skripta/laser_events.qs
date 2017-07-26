@@ -214,15 +214,8 @@ function check_laser_state(state) {
             laser_status = "Ready, shutter closed";
             break;
         case System.LASER_EMISSION:
-<<<<<<< HEAD
             laser_status = "Marking is active"; 
             return(true);
-=======
-            if (laser_moving == 0) {
-                laser_status = "Marking is active";
-            }
-            else { laser_status = "Moving..."; }
->>>>>>> ba233a51d1f9bb7fab68cf8811949e0e0769217a
             break;
         case System.LASER_BUSY_SHUTTER_CLOSED:
             laser_status = "Busy, shutter closed";

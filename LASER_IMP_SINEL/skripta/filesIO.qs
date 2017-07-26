@@ -382,7 +382,7 @@ function laser_objects_update() {
         var obj = h_Doc_new.getLaserObject(laser_objects_J_N[i]);
         if (obj != null) {
             if (columns_dict[dict_keys_J_N[i]] != "/") {
-                obj.text = columns_dict[dict_keys_J_N[i]].toString() + "";
+                obj.text = columns_dict[dict_keys_J_N[i]];
                 obj.update();
             }
         }
