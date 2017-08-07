@@ -46,6 +46,7 @@ var z_axis_active = 0;
 var sb1_v = 25;
 var min_pos = 5;
 var search_distance = 130;
+var compensation_distance = 1;
 var home_pos = 120;
 var current_pos = 0;
 const num_writes;
@@ -58,6 +59,7 @@ var brojac = 0;
 var reset_auto = 1;
 var marking_loc = [];
 var marking_settings = [];
+var laser_barrier_down = 0;
 
 /*************END OF LASER SETTINGS********************/
 

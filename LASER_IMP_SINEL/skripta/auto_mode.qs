@@ -9,24 +9,20 @@ function start_auto_mode() {
 					if (confirm) {
 						auto_mode = "ON";
 						get_quantity();
-
 						if ((IoPort.getPort(0) & I_PIN_11)) {
 							barrier_up_auto();
 						}
-
 						if (reset_auto == 1) {
-
 							if (sen_linija == 1) {
 								timers[10] = System.setTimer(times[10]);
 								start_timer(timers[10], send_signal_done);
 								reset_auto = 0;
 							}
-
 						}
-
 						numWC = 0;
 						if (debug_mode) { print("Auto mode started"); }
 						laser_in_working_pos = 0;
+						laser_barrier_down = 0;
 						laser_ref_auto();
 						timers[4] = System.setTimer(times[4]);
 						start_timer(timers[4], wait_for_pump);
@@ -54,7 +50,6 @@ function start_auto_mode() {
 
 
 //wait_signal()
-
 
 ////////////////////////////////////////////
 //STOPS auto mode
@@ -109,6 +104,17 @@ function wait_for_pump(ID) {
 	}
 }
 
+function automatic_marking(ID) {
+	if (timers[12] == ID) {
+		if (debug_mode) { print("Laser already in pos"); }
+		mark_auto();
+		//readFile_auto();
+		timers[2] = System.setTimer(times[2]);
+		start_timer(timers[2], pump_not_present);
+	}
+}
+
+
 ////////////////////////////////////
 //Timer waits for barrier
 /////////////////////////////////////
@@ -122,13 +128,17 @@ function wait_for_barrier(ID) {
 		}
 	}
 	else {
+
 		if ((timers[6] == ID) && (IoPort.getPort(0) & I_PIN_11)) {
 			if (debug_mode) { print("laser is seaching for pump"); }
+			
 			laser_move_timed();
 			disconnect_func(wait_for_barrier);
+
 		}
 	}
 }
+
 
 //////////////////////////////////////////////////////////////////
 //Laser moves and starts timers
@@ -163,19 +173,28 @@ function stop_search_auto(ID) {
 				laser_ref_auto();
 				barrier_up_auto();
 				error_cant_find_pump();
+				//laser_barrier_down = 1;
 				disconnect_func(stop_search_auto);
+				
 			}
 		}
 		else {
 			if (debug_mode) { print("Pump in laser focus"); }
 			Axis.stop(2);
 			laser_in_working_pos = 1;
+			laser_barrier_down = 1;
+
 			mark_auto();
 			timers[2] = System.setTimer(times[2]);
 			start_timer(timers[2], pump_not_present);
 			disconnect_func(stop_search_auto);
 		}
 	}
+}
+
+function height_compensation(ID)
+{
+	Axis.move(2, (Axis.getPosition(2) - 2))
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -190,6 +209,7 @@ function pump_not_present(ID) {
 		}
 		laser_marking = 0;
 		laser_in_working_pos = 0;
+		//laser_barrier_down = 0;
 		nom = 0;
 		disconnect_func(pump_not_present);
 	}

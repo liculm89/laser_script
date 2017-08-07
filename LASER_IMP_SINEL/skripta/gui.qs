@@ -23,7 +23,6 @@ if (simulation_mode) {
     var chkb_barriera = new CheckBox();
 }
 
-
 var date_time = new Date();
 date_time = date_time.ddmmyytime().toString();
 
