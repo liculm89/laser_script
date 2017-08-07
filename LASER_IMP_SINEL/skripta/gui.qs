@@ -219,19 +219,19 @@ function gen_dialog(part_list) {
     gb_move_btns = new GroupBox();
     gb_lp.add(gb_move_btns);
 
-    var btn_mu = new PushButton("Move up",  resPath +"arrow_up.png");
+    var btn_mu = new PushButton("Move up", resPath + "arrow_up.png");
     btn_mu["sigPressed()"].connect(move_up);
     btn_mu.font = font_manual_btns; btn_mu.setFixedSize(155, 30);
     gb_move_btns.add(btn_mu);
 
     gb_lp.newColumn();
-    var btn_md = new PushButton("Move down",  resPath +"arrow_down.png");
+    var btn_md = new PushButton("Move down", resPath + "arrow_down.png");
     btn_md["sigPressed()"].connect(move_down);
     btn_md.font = font_manual_btns; btn_md.setFixedSize(155, 30);
     gb_move_btns.add(btn_md);
 
     gb_lp.newColumn();
-    var btn3 = new PushButton("STOP!", resPath +"stop.png");
+    var btn3 = new PushButton("STOP!", resPath + "stop.png");
     btn3["sigPressed()"].connect(stop_axis);
     btn3.font = font_manual_btns; btn3.setFixedSize(125, 85);
     gb_lp.add(btn3);
@@ -402,7 +402,7 @@ function gen_dialog(part_list) {
 
         if (simulation_mode) {
             gb_sim = new GroupBox; gb_sim.title = "Simulation mode";
- 
+
             chkb_linija.text = "Senzor linije"; chkb_linija.font = font2;
 
             gb_sim.add(chkb_linija);

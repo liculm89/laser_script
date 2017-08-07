@@ -6,8 +6,8 @@ var enable_existing_sn_marking = 1;
 
 //sets debugging(on=1 and off=0)
 
-var simulation_mode =1;
-var debug_mode =1;
+var simulation_mode = 1;
+var debug_mode = 1;
 if (debug_mode == 0) { simulation_mode = 0; }
 
 var marking_location_setup = 0;
@@ -116,11 +116,11 @@ var numW = 0; var numWC = 0; var confirm = 0;
 var sn_marking_times = 1; var sn_update_times = 0;
 
 var znaki_a = "CCC-1,CE-1,EAC-1,GOST-0,GOST-1,puščica-1,ucraino1"
-			  var columns = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z AA AB AC AD AE AF AG AH AI AJ";
+var columns = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z AA AB AC AD AE AF AG AH AI AJ";
 var columns_names = ["Izdelek", "Izdelek_naziv", "vgrajenec", "ime_nap_tab", "sek_klas", "rotacija", "TEMPLATE",
-					 "st_nap_tab", "Logotip", "Ime_1", "ime_2", "Art nr", "S N", "SENERTEC", "Ucraino", "CCC", "EAC", "GOST",
-					 "CE", "Puščica", "TF", "napetost", "zaščita", "razred izolacije", "PN", "ln 1 (min)", "ln 2", "ln 3 (max)", "P 1 (min)",
-					 "P 2", "P 3 (max)", "EEI", "Poreklo", "datum"];
+	"st_nap_tab", "Logotip", "Ime_1", "ime_2", "Art nr", "S N", "SENERTEC", "Ucraino", "CCC", "EAC", "GOST",
+	"CE", "Puščica", "TF", "napetost", "zaščita", "razred izolacije", "PN", "ln 1 (min)", "ln 2", "ln 3 (max)", "P 1 (min)",
+	"P 2", "P 3 (max)", "EEI", "Poreklo", "datum"];
 
 columns_arr = to_arr(columns, "A", "AJ", " ");
 /////////////////////////////////
@@ -128,7 +128,7 @@ columns_arr = to_arr(columns, "A", "AJ", " ");
 ////////////////////////////////
 columns_arr.forEach(function (item, index) {
 	laser_objects.push("OBJ_" + columns_arr[index])
-		});
+});
 
 var laser_objects_J_N = laser_objects.slice(laser_objects.indexOf("OBJ_J"), laser_objects.indexOf("OBJ_N") + 1);
 var laser_objects_O_T = laser_objects.slice(laser_objects.indexOf("OBJ_O"), laser_objects.indexOf("OBJ_T") + 1);

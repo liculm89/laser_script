@@ -276,8 +276,8 @@ function selection_init() {
 //Confirms selection
 //////////////////////////////
 function confirm_selection() {
-    
-	if (auto_mode == "OFF") {
+
+    if (auto_mode == "OFF") {
         confirm = 0;
         if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
             last_sn = get_last_serial().toString();
@@ -392,19 +392,19 @@ function laser_objects_update() {
     //Učitavanje znakova
     /////////////////////////////
     for (i = 0; i < (laser_objects_O_T.length); i++) {
-		print((laser_objects_O_T[i]));
-		var obj = h_Doc_new.getLaserImported(laser_objects_O_T[i]);
-		print(obj);
+        print((laser_objects_O_T[i]));
+        var obj = h_Doc_new.getLaserImported(laser_objects_O_T[i]);
+        print(obj);
         if (obj != null) {
-			print((columns_dict[dict_keys_O_T[i]] != "/"));
+            print((columns_dict[dict_keys_O_T[i]] != "/"));
             if (columns_dict[dict_keys_O_T[i]] != "/") {
-				
-		print("Dict column " + columns_dict[dict_keys_O_T[i]]);
+
+                print("Dict column " + columns_dict[dict_keys_O_T[i]]);
                 obj.importFile(znakiPath + columns_dict[dict_keys_O_T[i]] + ".xlp");
                 obj.update();
             }
             else {
-				print("removing objects:" +  obj.id);
+                print("removing objects:" + obj.id);
                 h_Doc_new.removeLaserObject(obj.id)
                 h_Doc_new.update();
             }
@@ -498,7 +498,7 @@ function rotate_and_move() {
     ///////////////////////////////////////////////
     get_xy_loc();
     h_Doc_new.move(marking_loc[0], marking_loc[1]);
-    
+
 }
 
 /////////////////////////////////////

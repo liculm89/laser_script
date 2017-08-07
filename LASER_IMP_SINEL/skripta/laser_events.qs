@@ -214,8 +214,8 @@ function check_laser_state(state) {
             laser_status = "Ready, shutter closed";
             break;
         case System.LASER_EMISSION:
-            laser_status = "Marking is active"; 
-            return(true);
+            laser_status = "Marking is active";
+            return (true);
             break;
         case System.LASER_BUSY_SHUTTER_CLOSED:
             laser_status = "Busy, shutter closed";
@@ -233,7 +233,7 @@ function check_laser_state(state) {
 }
 
 function marking_quantity_complete() {
-    var mesg_txt = "Finished marking of " + numW + " pumps with code: " +  cmb_new.currentItem + cmb_template.currentItem;
+    var mesg_txt = "Finished marking of " + numW + " pumps with code: " + cmb_new.currentItem + cmb_template.currentItem;
     MessageBox.information(mesg_txt, MessageBox.Ok);
 }
 
