@@ -23,8 +23,7 @@ function start_auto_mode() {
 						}
 						
 						}
-					
-						
+								
 						numWC = 0;
 						if (debug_mode) { print("Auto mode started"); }
 						laser_in_working_pos = 0;
@@ -355,8 +354,9 @@ function total_stop_func() {
 		nom = 0;
 		auto_mode = "OFF";
 	}
-	if (auto_mode == "OFF") {f
-							 System.stopLaser();
+	if (auto_mode == "OFF") {
+		
+		System.stopLaser();
 		disconnect_timers();
 	}
 }

@@ -74,7 +74,7 @@ function check_marking_manual(ID) {
         else {
 	//print((laser_status == "Marking is active"));
             if ((IoPort.getPort(0) & I_PIN_11) && !(laser_status == "Marking is active")) {
-	    barrier_up_afer_marking_m();
+	      barrier_up_afer_marking_m();
                 disconnect_func(check_marking);
             }
             else if ((laser_status = "Marking is active") && !(IoPort.getPort(0) & I_PIN_11)) {
@@ -99,6 +99,7 @@ function barrier_up_afer_marking_m() {
     laser_marking = 0;
     laser_in_working_pos = 0;
     pumps_marked++;
+	
     numWC++;
     xls_log();
 

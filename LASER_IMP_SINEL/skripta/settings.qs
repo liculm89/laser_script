@@ -6,8 +6,8 @@ var enable_existing_sn_marking = 1;
 
 //sets debugging(on=1 and off=0)
 
-var simulation_mode =0;
-var debug_mode =0;
+var simulation_mode =1;
+var debug_mode =1;
 if (debug_mode == 0) { simulation_mode = 0; }
 
 var marking_location_setup = 0;
@@ -69,7 +69,7 @@ var marking_settings = [];
 //File locations
 if (simulation_mode == 1) {
 	//drive_loc = "H:";
-	drive_loc = "G:";
+	drive_loc = "F:";
 }
 else {
 	drive_loc = "D:";
@@ -101,7 +101,6 @@ var h_Document, hDb, fw;
 var laser_objects = [];
 
 var cross = h_Doc_new.createLaserImported("cross");
-//var cross = h_Doc_new.createLaserImported("cross");
 var centar = h_Doc_new.createLaserImported("centar");
 
 var part_list = []; var logos_list = []; var logotips = [];

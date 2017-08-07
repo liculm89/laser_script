@@ -496,7 +496,7 @@ function rotate_and_move() {
     ///////////////////////////////////////////////
     //Korekcija koordinate lasera
     ///////////////////////////////////////////////
-	get_xy_loc();
+    get_xy_loc();
     h_Doc_new.move(marking_loc[0], marking_loc[1]);
     
 }
