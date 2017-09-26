@@ -104,15 +104,6 @@ function wait_for_pump(ID) {
 	}
 }
 
-function automatic_marking(ID) {
-	if (timers[12] == ID) {
-		if (debug_mode) { print("Laser already in pos"); }
-		mark_auto();
-		//readFile_auto();
-		timers[2] = System.setTimer(times[2]);
-		start_timer(timers[2], pump_not_present);
-	}
-}
 
 
 ////////////////////////////////////
@@ -123,7 +114,15 @@ function wait_for_barrier(ID) {
 	if (simulation_mode) {
 		if ((timers[6] == ID) && (chkb_barriera.checked)) {
 			if (debug_mode) { print("laser is seaching for pump"); }
-			laser_move_timed();
+			if (laser_barrier_down == 1) {
+				print("laser already in position");
+				mark_auto();
+				timers[2] = System.setTimer(times[2]);
+				start_timer(timers[2], pump_not_present);
+			}
+			else {
+				laser_move_timed();
+			}
 			disconnect_func(wait_for_barrier);
 		}
 	}
@@ -131,8 +130,16 @@ function wait_for_barrier(ID) {
 
 		if ((timers[6] == ID) && (IoPort.getPort(0) & I_PIN_11)) {
 			if (debug_mode) { print("laser is seaching for pump"); }
-			
-			laser_move_timed();
+			if (laser_barrier_down == 1) {
+				print("laser already in position");
+				mark_auto();
+				timers[2] = System.setTimer(times[2]);
+				start_timer(timers[2], pump_not_present);
+			}
+			else {
+				laser_move_timed();
+			}
+
 			disconnect_func(wait_for_barrier);
 
 		}
@@ -173,7 +180,6 @@ function stop_search_auto(ID) {
 				laser_ref_auto();
 				barrier_up_auto();
 				error_cant_find_pump();
-				//laser_barrier_down = 1;
 				disconnect_func(stop_search_auto);
 				
 			}
@@ -184,18 +190,35 @@ function stop_search_auto(ID) {
 			laser_in_working_pos = 1;
 			laser_barrier_down = 1;
 
-			mark_auto();
-			timers[2] = System.setTimer(times[2]);
-			start_timer(timers[2], pump_not_present);
+			Axis.move(2, (Axis.getPosition(2) - compensation_distance));
+			timers[12] = System.setTimer(times[12]);
+			start_timer(timers[12], automatic_marking);
+			//mark_auto();
+			//timers[2] = System.setTimer(times[2]);
+			//start_timer(timers[2], pump_not_present);
 			disconnect_func(stop_search_auto);
 		}
 	}
 }
 
-function height_compensation(ID)
-{
-	Axis.move(2, (Axis.getPosition(2) - 2))
+
+function automatic_marking(ID) {
+	if (timers[12] == ID) {
+		if (debug_mode) { print("Laser already in pos"); }
+		
+		mark_auto();
+		timers[2] = System.setTimer(times[2]);
+		start_timer(timers[2], pump_not_present);
+		disconnect_func(automatic_marking);
+	}
 }
+
+/*function height_compensation(ID)
+{
+
+	Axis.move(2, (Axis.getPosition(2) - compensation_distance));
+	disconnect_func(height_compensation);
+}*/
 
 //////////////////////////////////////////////////////////////////////////////
 //If pump is not found, laser moves to ref. position
@@ -209,6 +232,7 @@ function pump_not_present(ID) {
 		}
 		laser_marking = 0;
 		laser_in_working_pos = 0;
+		laser_barrier_down = 0;
 		//laser_barrier_down = 0;
 		nom = 0;
 		disconnect_func(pump_not_present);
@@ -303,6 +327,7 @@ function barrier_up_afer_marking() {
 	laser_marking = 0;
 	laser_in_working_pos = 0;
 	marking_ended();
+	if(simulation_mode){}
 	timers[5] = System.setTimer(times[5]);
 	start_timer(timers[5], reset_laser_marking);
 }
@@ -370,6 +395,7 @@ function total_stop_func() {
 		disconnect_timers();
 		laser_marking = 0;
 		laser_in_working_pos = 0;
+		laser_barrier_down = 0;
 		nom = 0;
 		auto_mode = "OFF";
 	}
@@ -401,6 +427,7 @@ function reset_button_func() {
 			disconnect_timers();
 			laser_marking = 0;
 			laser_in_working_pos = 0;
+			laser_barrier_down = 0;
 			nom = 0;
 			auto_mode = "OFF";
 			//reset_auto();

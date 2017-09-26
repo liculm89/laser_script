@@ -6,8 +6,8 @@ var enable_existing_sn_marking = 1;
 
 //sets debugging(on=1 and off=0)
 
-var simulation_mode = 1;
-var debug_mode = 1;
+var simulation_mode = 0;
+var debug_mode = 0;
 if (debug_mode == 0) { simulation_mode = 0; }
 
 var marking_location_setup = 0;
@@ -45,7 +45,7 @@ var signal_ready = 0;
 var z_axis_active = 0;
 var sb1_v = 25;
 var min_pos = 5;
-var search_distance = 130;
+var search_distance = 85;
 var compensation_distance = 1;
 var home_pos = 120;
 var current_pos = 0;

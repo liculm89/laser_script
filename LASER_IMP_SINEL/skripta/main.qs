@@ -4,7 +4,7 @@
 function set_flags() {
     if (simulation_mode == 1) {
         if (chkb_linija.checked) { sen_linija = 1; } else { sen_linija = 0; }
-        if (chkb_optika.checked) { sen_optika = 1; } else { sen_optika = 0; }
+        if (chkb_optika.checked) { sen_optika = 0; } else { sen_optika = 1; }
         if (chkb_barriera.checked) { sen_bar_dolje = 1; } else { sen_bar_dolje = 0; }
     }
     else {
