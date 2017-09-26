@@ -8,6 +8,7 @@ var enable_existing_sn_marking = 1;
 
 var simulation_mode = 0;
 var debug_mode = 0;
+var compensation_enabled = 0;
 if (debug_mode == 0) { simulation_mode = 0; }
 
 var marking_location_setup = 0;

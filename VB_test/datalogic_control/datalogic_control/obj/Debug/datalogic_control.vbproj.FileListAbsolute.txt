@@ -1,0 +1,11 @@
+F:\VB_test\datalogic_control\datalogic_control\bin\Debug\datalogic_control.exe.config
+F:\VB_test\datalogic_control\datalogic_control\bin\Debug\datalogic_control.exe
+F:\VB_test\datalogic_control\datalogic_control\bin\Debug\datalogic_control.pdb
+F:\VB_test\datalogic_control\datalogic_control\bin\Debug\datalogic_control.xml
+F:\VB_test\datalogic_control\datalogic_control\obj\Debug\datalogic_control.vbprojResolveAssemblyReference.cache
+F:\VB_test\datalogic_control\datalogic_control\obj\Debug\datalogic_control.Form1.resources
+F:\VB_test\datalogic_control\datalogic_control\obj\Debug\datalogic_control.Resources.resources
+F:\VB_test\datalogic_control\datalogic_control\obj\Debug\datalogic_control.vbproj.GenerateResource.Cache
+F:\VB_test\datalogic_control\datalogic_control\obj\Debug\datalogic_control.exe
+F:\VB_test\datalogic_control\datalogic_control\obj\Debug\datalogic_control.xml
+F:\VB_test\datalogic_control\datalogic_control\obj\Debug\datalogic_control.pdb

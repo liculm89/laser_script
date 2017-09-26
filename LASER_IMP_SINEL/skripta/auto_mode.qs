@@ -181,7 +181,7 @@ function stop_search_auto(ID) {
 				barrier_up_auto();
 				error_cant_find_pump();
 				disconnect_func(stop_search_auto);
-				
+
 			}
 		}
 		else {
@@ -189,8 +189,9 @@ function stop_search_auto(ID) {
 			Axis.stop(2);
 			laser_in_working_pos = 1;
 			laser_barrier_down = 1;
-
-			Axis.move(2, (Axis.getPosition(2) - compensation_distance));
+			if (compensation_enabled) {
+				Axis.move(2, (Axis.getPosition(2) - compensation_distance));
+			}
 			timers[12] = System.setTimer(times[12]);
 			start_timer(timers[12], automatic_marking);
 			//mark_auto();
@@ -205,7 +206,7 @@ function stop_search_auto(ID) {
 function automatic_marking(ID) {
 	if (timers[12] == ID) {
 		if (debug_mode) { print("Laser already in pos"); }
-		
+
 		mark_auto();
 		timers[2] = System.setTimer(times[2]);
 		start_timer(timers[2], pump_not_present);
@@ -327,7 +328,7 @@ function barrier_up_afer_marking() {
 	laser_marking = 0;
 	laser_in_working_pos = 0;
 	marking_ended();
-	if(simulation_mode){}
+	if (simulation_mode) { }
 	timers[5] = System.setTimer(times[5]);
 	start_timer(timers[5], reset_laser_marking);
 }
