@@ -12,9 +12,7 @@ function set_flags() {
         if (IoPort.getPort(0) & I_PIN_10) { sen_optika = 1; } else { sen_optika = 0; }
         if (IoPort.getPort(0) & I_PIN_11) { sen_bar_dolje = 1; } else { sen_bar_dolje = 0; }
     }
-    //if(IoPort.getPort(0) & I_PIN_7){ sen_linija = 1;} else{sen_linija=0;}
-    //if(IoPort.getPort(0) & I_PIN_10){ sen_optika = 1;} else{sen_optika = 0;}
-    // if(IoPort.getPort(0) & I_PIN_11){ sen_bar_dolje = 1;} else{sen_bar_dolje = 0;}
+	
     if (IoPort.getPort(0) & I_PIN_8) { sen_laser_dolje = 1; } else { sen_laser_dolje = 0; }
     if (IoPort.getPort(0) & I_PIN_9) { sen_laser_gore = 1; } else { sen_laser_gore = 0; }
     if (IoPort.getPort(0) & I_PIN_21) { sen_bar_gore = 1; } else { sen_bar_gore = 0; }
@@ -133,7 +131,7 @@ function main() {
     System["sigLaserEvent(int)"].connect(get_laser_events);
     System["sigLaserError(int)"].connect(onLaserError);
     System.sigClose.connect(onClose);
-
+	
     ///////////////////////////////////////////////////////////////////////////////////////////
     //Starts initialization function, if success GUI is generated
     ////////////////////////////////////////////////////////////////////////////////////////////

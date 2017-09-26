@@ -165,7 +165,7 @@ function search_working_pos() {
     if (total_stop == 0) {
         if (auto_mode == "OFF") {
             barrier_down();
-            Axis.move(2, (Axis.getPosition(2) - 90));
+            Axis.move(2, (Axis.getPosition(2) - 80));
             timers[1] = System.setTimer(times[1]);
             start_timer(timers[1], stop_search);
         }
@@ -185,8 +185,7 @@ function stop_search(ID) {
     if (timers[1] == ID) {
         if (IoPort.getPort(0) & I_PIN_10) {
             current_pos = Axis.getPosition(2);
-            if (!(IoPort.getPort(0) & I_PIN_8) || (current_pos <= (home_pos - current_pos)) ) {
-            //if (!(IoPort.getPort(0) & I_PIN_8)) {
+		if (!(IoPort.getPort(0) & I_PIN_8) || !(current_pos <= (home_pos - search_distance)) ) {
                 if (debug_mode) { print("Laser is moving to working position"); }
             }
             else {

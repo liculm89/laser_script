@@ -171,6 +171,15 @@ function get_serial_int(sn_str) {
     return serial_int;
 }
 
+function log_creator()
+{
+	
+}
+
+function write_log(logstr)
+{
+	
+}
 /*function generate_regex()
 {
     switch(date_year)

@@ -28,6 +28,12 @@ function error_auto_mode() {
     last_error = mesg_txt;
 }
 
+function error_barrier_up(){
+	var mesg_txt = "Barrier is not in lowered position, marking is stopped!";
+	MessageBox.critical(mesg_txt, MessageBox.Ok);
+	last_error = mesg_txt;
+}
+
 function error_auto_aoff() {
     var mesg_txt = "Auto mode already off";
     MessageBox.critical(mesg_txt, MessageBox.Ok);
