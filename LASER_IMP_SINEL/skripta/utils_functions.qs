@@ -171,14 +171,31 @@ function get_serial_int(sn_str) {
     return serial_int;
 }
 
-function log_creator()
-{
-	
+function log_creator() {
+
+    var plog_file = new File(plog_loc + "log2.txt");
+    //   print( if(plog_file.exists()));
+    print(plog_file.exists);
+    if (plog_file.exists) {
+        plog_file.open(File.ReadWrite);
+
+        plog_file.write("novi");
+        plog_file.write("\n");
+        plog_file.close();
+
+    }
+    else {
+        if (plog_file.open(File.ReadWrite)) {
+            plog_file.writeLine("new log");
+            plog_file.close();
+        }
+    }
+
+
 }
 
-function write_log(logstr)
-{
-	
+function write_log(logstr) {
+
 }
 /*function generate_regex()
 {

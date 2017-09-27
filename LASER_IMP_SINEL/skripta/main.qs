@@ -158,6 +158,7 @@ function main() {
         }
 
         //Start GUI generation
+	//	log_creator() ;
         gen_dialog(part_list);
     }
     if (init_passed == 1) {

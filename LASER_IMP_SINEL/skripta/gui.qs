@@ -2,6 +2,8 @@
 //  Kreiranje GUI aplikacije
 ////////////////////////////////////////////////
 var dialog = new Dialog("Laser control", Dialog.D_NONE, false, 0x00040000);
+var rr_dialog = new Dialog("Retry or STOP", Dialog.D_OKCANCEL, false);
+var ra_dialog = new Dialog("Serial number choice", Dialog.D_OKCANCEL, false);
 dialog.setFixedSize(1050, 720);
 var btn_key = new PushButton();
 var btn_enable = new PushButton();
@@ -545,7 +547,10 @@ function gen_dialog(part_list) {
     ext_changed();
     dialog.show();
     System["sigTimer(int)"].connect(gui_update);
-    dialog.exec();
+    if (dialog.exec()) {
+        print("---Closing application---");
+        dialog.close();
+    }
 }
 
 //////////////////////////

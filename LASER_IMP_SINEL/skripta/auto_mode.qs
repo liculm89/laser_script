@@ -8,6 +8,7 @@ function start_auto_mode() {
 				if (laser_status == "Ready for marking") {
 					if (confirm) {
 						auto_mode = "ON";
+						//retry_stop_choice();
 						get_quantity();
 						if ((IoPort.getPort(0) & I_PIN_11)) {
 							barrier_up_auto();
@@ -26,6 +27,7 @@ function start_auto_mode() {
 						laser_ref_auto();
 						timers[4] = System.setTimer(times[4]);
 						start_timer(timers[4], wait_for_pump);
+
 					}
 					else {
 						error_selection_not_confirmed();
@@ -54,18 +56,45 @@ function start_auto_mode() {
 ////////////////////////////////////////////
 //STOPS auto mode
 //////////////////////////////////////////
-function stop_auto(ID) {
+function stop_auto() {
 	if (auto_mode == "ON") {
+		if (laser_status == "Marking is active") {
+			disconnect_func(stop_auto);
+			if (auto_waiting_to_stop == 0) {
+				auto_waiting_to_stop = 1;
+				timers[14] = System.setTimer(times[14]);
+				start_timer(timers[14], wait_for_marking_end);
+			}
+		}
+		else {
+			auto_mode = "OFF";
+			System.stopLaser();
+			laser_marking = 0;
+			numWC = 0;
+			nom = 0;
+			laser_ref_auto();
+			disconnect_timers();
+		}
+	}
+	else {
+		error_auto_aoff();
+	}
+}
+
+////////////////////////////////
+//If stop auto pressed 
+////////////////////////////////
+function wait_for_marking_end(ID) {
+	if ((timers[14] == ID) && !(laser_status == "Marking is active")) {
+		disconnect_func(wait_for_marking_end);
+		auto_waiting_to_stop = 0;
 		auto_mode = "OFF";
 		System.stopLaser();
 		laser_marking = 0;
 		numWC = 0;
 		nom = 0;
-		disconnect_func(stop_auto);
+		laser_ref_auto();
 		disconnect_timers();
-	}
-	else {
-		error_auto_aoff();
 	}
 }
 
@@ -82,16 +111,17 @@ function laser_ref_auto() {
 //Laser auto mode is on, waits for external signal
 /////////////////////////////////////////////////////////////////////////////
 function wait_for_pump(ID) {
-	//print(pump_present);
+
 	if ((timers[4] == ID) && (auto_mode == "ON") && (pump_present == 1)) {
 		if (debug_mode) {
-			print("nom =" + nom);
-			print("laser_in_working_pos: " + laser_in_working_pos);
+			//print("nom =" + nom);
+			//print("laser_in_working_pos: " + laser_in_working_pos);
 		}
 
 		for (nom; nom < 1; nom++) {
 			if (laser_in_working_pos == 0) {
 				barrier_down_auto();
+				print("new pump is present. wait for barrier");
 				timers[6] = System.setTimer(times[6]);
 				start_timer(timers[6], wait_for_barrier);
 			}
@@ -138,9 +168,7 @@ function wait_for_barrier(ID) {
 			else {
 				laser_move_timed();
 			}
-
 			disconnect_func(wait_for_barrier);
-
 		}
 	}
 }
@@ -151,7 +179,7 @@ function wait_for_barrier(ID) {
 //////////////////////////////////////////////////////////////////
 function laser_move_timed() {
 	if (laser_in_working_pos == 0) {
-
+		print("starting stop search auto");
 		Axis.move(2, (Axis.getPosition(2) - search_distance));
 		timers[1] = System.setTimer(times[1]);
 		start_timer(timers[1], stop_search_auto);
@@ -163,6 +191,7 @@ function laser_move_timed() {
 		timers[2] = System.setTimer(times[2]);
 		start_timer(timers[2], pump_not_present);
 	}
+
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -182,10 +211,19 @@ function stop_search_auto(ID) {
 				barrier_up_auto();
 				disconnect_func(stop_search_auto);
 				error_cant_find_pump();
+				laser_ref_auto();
+				retry_stop_choice();
+				//laser_move_timed();
 			}
 		}
 		else {
-			if (debug_mode) { print("Pump in laser focus"); }
+
+
+			if (debug_mode) {
+				print("Pump in laser focus");
+				//print("+++++++++auto mode ++++:" + auto_mode);
+			}
+			disconnect_func(stop_search_auto);
 			Axis.stop(2);
 			laser_in_working_pos = 1;
 			laser_barrier_down = 1;
@@ -194,20 +232,46 @@ function stop_search_auto(ID) {
 			}
 			timers[12] = System.setTimer(times[12]);
 			start_timer(timers[12], automatic_marking);
-			disconnect_func(stop_search_auto);
+
 		}
 	}
 }
 
 
+function retry_stop_choice() {
+
+	var rr_dialog = new Dialog("Retry or STOP", Dialog.D_OKCANCEL, false);
+	var lbl_question1 = new Label(); lbl_question1.text = "Pump has not been found, retry or stop auto mode?";
+	var font6 = "MS Shell Dlg 2,16,-1,5,50,0,0,0,0,0";
+	lbl_question1.font = font6;
+	rr_dialog.font = font6;
+	rr_dialog.add(lbl_question1);
+	rr_dialog.okButtonText = "Try again"
+	rr_dialog.cancelButtonText = "No, stop Auto mode";
+
+	if (rr_dialog.exec()) {
+		print("ok pressed, trying to find pump again");
+		laser_move_timed();
+
+	}
+	else {
+		print("cancel pressed, old serial kept");
+		stop_auto();
+	}
+	delete rr_dialog;
+
+
+}
+
 function automatic_marking(ID) {
 	if (timers[12] == ID) {
-		if (debug_mode) { print("Laser in position, starting marking..."); }
+		if (debug_mode) { print("Laser in position, starts marking..."); }
 
 		mark_auto();
+		disconnect_func(automatic_marking);
 		timers[2] = System.setTimer(times[2]);
 		start_timer(timers[2], pump_not_present);
-		disconnect_func(automatic_marking);
+
 	}
 }
 
@@ -221,11 +285,13 @@ function pump_not_present(ID) {
 		if (IoPort.getPort(0) & I_PIN_11) {
 			barrier_up_auto();
 		}
+		disconnect_func(pump_not_present);
 		laser_marking = 0;
 		laser_in_working_pos = 0;
 		laser_barrier_down = 0;
 		nom = 0;
-		disconnect_func(pump_not_present);
+		//disconnect_func(pump_not_present);
+
 	}
 }
 
@@ -242,7 +308,7 @@ function readFile_auto() {
 function mark_auto() {
 	if (debug_mode) { print("Read file started"); }
 	laser_marking = 1;
-	nm = 1;
+	nom = 1;
 	laser_doc_update();
 	log_arr = [];
 	for (i = 0; i < dict_keys.length; i++) {
@@ -252,7 +318,7 @@ function mark_auto() {
 	if (simulation_mode) {
 		if (chkb_barriera.checked) {
 			h_Doc_new.execute();
-			print("simulation auto marking started");
+			//print("simulation auto marking started");
 			timers[11] = System.setTimer(times[11]);
 			start_timer(timers[11], check_marking);
 		}
@@ -279,16 +345,18 @@ function check_marking(ID) {
 			}
 
 			else if ((laser_status = "Marking is active") && !(chkb_barriera.checked)) {
-				print("disconnecting_func check marking simulation mode");
+				disconnect_func(check_marking);
+				//print("disconnecting_func check marking simulation mode");
 				auto_mode = "OFF";
 				System.stopLaser();
 				laser_marking = 0;
 				laser_in_working_pos = 0;
 				nom = 0;
-				auto_mode = "OFF";
-				disconnect_func(check_marking);
+				error_barrier_not_down();
+				laser_reference();
 				timers[13] = System.setTimer(times[13]);
 				start_timer(timers[13], reset_auto_func);
+
 			}
 
 		}
@@ -306,7 +374,7 @@ function check_marking(ID) {
 				error_barrier_not_down();
 				laser_reference();
 				auto_mode = "OFF";
-				print("somethings wrong ........ check marking real");
+				//print("somethings wrong ........ check marking real");
 				disconnect_func(check_marking);
 				timers[13] = System.setTimer(times[13]);
 				start_timer(timers[13], reset_auto_func);
@@ -328,8 +396,10 @@ function barrier_up_afer_marking() {
 		timers[5] = System.setTimer(times[5]);
 		start_timer(timers[5], reset_laser_marking);
 	}
-	timers[5] = System.setTimer(times[5]);
-	start_timer(timers[5], reset_laser_marking);
+	else {
+		timers[5] = System.setTimer(times[5]);
+		start_timer(timers[5], reset_laser_marking);
+	}
 }
 
 ////////////////////////////////////
@@ -358,7 +428,7 @@ function barrier_down_auto() {
 function reset_laser_marking(ID) {
 	if ((timers[5] == ID) && (pump_present == 0)) {
 		numWC++;
-		print("writing xls log");
+		//print("writing xls log");
 		xls_log();
 
 		print(numWC % sn_marking_times);
@@ -412,26 +482,88 @@ function total_stop_func() {
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 function reset_auto_func(ID) {
 
-	/*if (timers[13] == ID) {
+	if (simulation_mode) {
+		if (timers[13] == ID) {
 
-		if (simulation_mode) {
-			if (debug_mode) { print("Reseting auto mode! Simulation mode *****************"); }
+			if (simulation_mode) {
+				if (debug_mode) { print("Reseting auto mode! Simulation mode *****************"); }
+				reset_auto = 1;
+				//disconnect_timers();
+				disconnect_func(reset_auto_func);
+				serial_choice();
+				start_auto_mode();
+			}
+		}
+	}
+	else {
+		if ((timers[13] == ID) && (IoPort.getPort(0) & I_PIN_9)) {
+			if (debug_mode) { print("Reseting auto mode!!!!"); }
 			reset_auto = 1;
-			//disconnect_func(reset_auto_func);
-			disconnect_timers();
+			//disconnect_timers();
+			disconnect_func(reset_auto_func);
+			serial_choice();
 			start_auto_mode();
 		}
-		else {*/
-	if ((timers[13] == ID) && (IoPort.getPort(0) & I_PIN_9)) {
-		if (debug_mode) { print("Reseting auto mode!!!!"); }
-		reset_auto = 1;
-		//disconnect_func(reset_auto_func);
-		disconnect_timers();
-		start_auto_mode();
 	}
 }
 
 
+function serial_choice() {
+	/*if (simulation_mode) {
+		var ans = MessageBox.information("Create new serial number?", MessageBox.Yes, MessageBox.No);
+		if (ans == MessageBox.Yes) {
+			print("cancel pressed, old serial kept");
+		}
+		else {
+			//print("mark new");
+			print("ok pressed, creating new serial number");
+			if (!(numWC % sn_marking_times)) {
+				if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
+					if (!sn_fixed) {
+						curr_sn = parseInt(last_sn, 10) + 1;
+						last_sn = curr_sn;
+						last_sn = leftPad((last_sn), 6);
+						update_sn();
+					}
+				}
+			}
+
+		}
+	}
+	else {*/
+
+	year = new Date();
+	year = year.getFullYear().toString().slice(2);
+	var ra_dialog = new Dialog("Serial number choice", Dialog.D_OKCANCEL, false);
+	var lbl_question = new Label(); lbl_question.text = "Create new serial number?";
+	var font6 = "MS Shell Dlg 2,15,-1,5,50,0,0,0,0,0";
+	lbl_question.font = font6;
+	ra_dialog.font = font6;
+	ra_dialog.add(lbl_question);
+	ra_dialog.okButtonText = "Yes"
+	ra_dialog.cancelButtonText = "No, repeat this S.N. : " + year + "-" + leftPad((curr_sn), 6);
+	//disconnect_timers();
+
+	if (ra_dialog.exec()) {
+		print("ok pressed, creating new serial number");
+		if (!(numWC % sn_marking_times)) {
+			if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
+				if (!sn_fixed) {
+					curr_sn = parseInt(last_sn, 10) + 1;
+					last_sn = curr_sn;
+					last_sn = leftPad((last_sn), 6);
+					update_sn();
+				}
+			}
+		}
+	}
+	else {
+		print("cancel pressed, old serial kept");
+	}
+
+	delete ra_dialog;
+
+}
 
 
 ///////////////////////////////////////////////////////////////////////////

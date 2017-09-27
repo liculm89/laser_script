@@ -246,7 +246,7 @@ function selection_init() {
         if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
             le_ser.enable = true;
             last_sn = get_last_serial().toString();
-            if (debug_mode) { print("columns dict m " + columns_dict["M"]); }
+            //if (debug_mode) { print("columns dict m " + columns_dict["M"]); }
 
             last_sn = get_serial_int(last_sn);
             if (last_sn == 1) {
@@ -331,7 +331,7 @@ function confirm_selection() {
         numW = le_num_w.text;
         get_quantity();
 
-        if (debug_mode) { print("genereting laser doc"); }
+//        if (debug_mode) { print("genereting laser doc"); }
         laser_doc_generate();
     }
     else {
@@ -392,19 +392,19 @@ function laser_objects_update() {
     //Učitavanje znakova
     /////////////////////////////
     for (i = 0; i < (laser_objects_O_T.length); i++) {
-        print((laser_objects_O_T[i]));
+      //  print((laser_objects_O_T[i]));
         var obj = h_Doc_new.getLaserImported(laser_objects_O_T[i]);
-        print(obj);
+      //  print(obj);
         if (obj != null) {
-            print((columns_dict[dict_keys_O_T[i]] != "/"));
+          //  print((columns_dict[dict_keys_O_T[i]] != "/"));
             if (columns_dict[dict_keys_O_T[i]] != "/") {
 
-                print("Dict column " + columns_dict[dict_keys_O_T[i]]);
+              //  print("Dict column " + columns_dict[dict_keys_O_T[i]]);
                 obj.importFile(znakiPath + columns_dict[dict_keys_O_T[i]] + ".xlp");
                 obj.update();
             }
             else {
-                print("removing objects:" + obj.id);
+             //   print("removing objects:" + obj.id);
                 h_Doc_new.removeLaserObject(obj.id)
                 h_Doc_new.update();
             }
@@ -428,7 +428,7 @@ function laser_objects_update() {
             obj.update();
         }
         else {
-            print("object does not exist");
+           // print("object does not exist");
         }
     }
 
