@@ -10,25 +10,21 @@ var timer_list = [];
 //////////////////////////////////////////////
 times.forEach(function (item, index) {
     timers[index] = System.setTimer(item);
-   // if (debug_mode) { print("timers[" + index + "] : " + timers[index]); }
 });
 //////////////////////////////////////////////
 //Connects given function
 //////////////////////////////////////////////
 function start_timer(timer, func) {
-    if (debug_mode) { print("connecting timer:" + timer); }
-    System["sigTimer(int)"].connect(func);
 
+    System["sigTimer(int)"].connect(func);
     var count = 0;
     timer_list.forEach(function (item) {
         if (func == item) {
-        //    if (debug_mode) { print("timer already on list"); }
             count++;
         }
     });
 
     if (count == 0) {
-      //  if (debug_mode) { print("adding timer to list"); }
         timer_list.push(func);
     }
 }
@@ -49,7 +45,6 @@ function disconnect_func(func) {
 ///////////////////////////////////////////////////////
 function disconnect_timers() {
    
-	//print("disconnecting all timers");
 	if (timer_list != 0) {
         timer_list.forEach(function (item, index) {
             System["sigTimer(int)"].disconnect(item);

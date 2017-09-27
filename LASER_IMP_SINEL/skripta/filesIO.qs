@@ -87,6 +87,7 @@ function dynamic_ext_list(part_id) {
 function serial_input_changed(text) {
     lbl_ser.text = "Serial N.:" + text;
 }
+
 var sel_init = 0;
 var current_selection;
 var last_selection = "";
@@ -246,7 +247,6 @@ function selection_init() {
         if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
             le_ser.enable = true;
             last_sn = get_last_serial().toString();
-            //if (debug_mode) { print("columns dict m " + columns_dict["M"]); }
 
             last_sn = get_serial_int(last_sn);
             if (last_sn == 1) {
@@ -267,9 +267,7 @@ function selection_init() {
         lbl_prev_man.text = "Izdelek: " + columns_dict["A"];
         laser_doc_generate();
     }
-
     hDb4.close();
-    //  sel_init = 1;
 }
 
 ///////////////////////////////
@@ -330,8 +328,6 @@ function confirm_selection() {
         sn_marking_times = parseInt(columns_dict["H"]);
         numW = le_num_w.text;
         get_quantity();
-
-//        if (debug_mode) { print("genereting laser doc"); }
         laser_doc_generate();
     }
     else {
@@ -392,19 +388,14 @@ function laser_objects_update() {
     //Učitavanje znakova
     /////////////////////////////
     for (i = 0; i < (laser_objects_O_T.length); i++) {
-      //  print((laser_objects_O_T[i]));
         var obj = h_Doc_new.getLaserImported(laser_objects_O_T[i]);
-      //  print(obj);
-        if (obj != null) {
-          //  print((columns_dict[dict_keys_O_T[i]] != "/"));
-            if (columns_dict[dict_keys_O_T[i]] != "/") {
 
-              //  print("Dict column " + columns_dict[dict_keys_O_T[i]]);
+        if (obj != null) {
+            if (columns_dict[dict_keys_O_T[i]] != "/") {
                 obj.importFile(znakiPath + columns_dict[dict_keys_O_T[i]] + ".xlp");
                 obj.update();
             }
             else {
-             //   print("removing objects:" + obj.id);
                 h_Doc_new.removeLaserObject(obj.id)
                 h_Doc_new.update();
             }
@@ -428,7 +419,6 @@ function laser_objects_update() {
             obj.update();
         }
         else {
-           // print("object does not exist");
         }
     }
 
@@ -457,7 +447,6 @@ function laser_doc_generate() {
             }
         }
         h_preview = h_Doc_new;
-        //h_preview.move(marking_loc[0], marking_loc[1]);
         renderareaPrev.preview(h_preview);
         renderareaPrev_m.preview(h_preview);
         rotate_and_move();
@@ -534,7 +523,7 @@ function xls_log() {
     colNamesStr = "Time_date," + colNamesStr;
 
     var query1 = "INSERT INTO [Napisne tablice in nalepke sezn$] (" + colNamesStr + ") VALUES (" + log_str + ")";
-    if (debug_mode) { print("writing_log"); }
+    write_log("Appending .xls log table");
     hDb3 = new Db("QODBC")
     hDb3.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;ReadOnly=0;Dbq=" + test_log;
 
@@ -548,7 +537,7 @@ function xls_log() {
 
 function writeLog(currentNum) {
     var today = new Date();
-    if (debug_mode) { print("Writing to log:" + currentNum); }
+    write_log("Writing to log:" + currentNum);
     var outFile = new File(logPath);
     outFile.open(File.Append);
     outFile.write("\r\n" + today.toLocaleString() + " - " + currentNum);

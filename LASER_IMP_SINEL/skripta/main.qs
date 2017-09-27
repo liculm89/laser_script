@@ -19,7 +19,7 @@ function set_flags() {
     if (IoPort.getPort(0) & I_PIN_20) {
         if (simulation_mode == 1) { reg_fault = 1; }
         else { reg_fault = 0; }
-        if (debug_mode) { print("!!!!!*****REGULATOR FAULT, CHECK MOTOR REGULATOR****!!!"); }
+        
     }
     else {
         if (simulation_mode == 1) { reg_fault = 0; }
@@ -65,11 +65,11 @@ function pump_counter(ID) {
 
             if (senz_state == 1) {
                 brojac++;
-                if (debug_mode) { print("pump counter: " + brojac); }
-                pump_present = 1;
+                write_log("pump counter:" + brojac);
+		    pump_present = 1;
             }
             else {
-                if (debug_mode) { print("pump left"); }
+                write_log("pump left");
                 pump_present = 0;
             }
         }
@@ -116,7 +116,6 @@ function get_xy_loc() {
         marking_loc[i] = coords_xy.readLine();
         i++;
     }
-    print(marking_loc[0], marking_loc[1]);
     coords_xy.close();
 }
 
@@ -126,8 +125,6 @@ function get_xy_loc() {
 function main() {
     System.sigQueryStart.connect(onQueryStart);
     System.sigLaserStop.connect(onLaserStop);
-    //System.sigLaserStart.connect(onLaserStart);
-    //System.sigLaserEnd.connect(onLaserEnd);
     System["sigLaserEvent(int)"].connect(get_laser_events);
     System["sigLaserError(int)"].connect(onLaserError);
     System.sigClose.connect(onClose);
@@ -135,34 +132,31 @@ function main() {
     ///////////////////////////////////////////////////////////////////////////////////////////
     //Starts initialization function, if success GUI is generated
     ////////////////////////////////////////////////////////////////////////////////////////////
-    //init_func();
+	
     init_passed = init_func();
     if (init_passed == 0) {
 
         disable_break();
-        //signal_ready = 1;
-        //System["sigTimer(int)"].connect(set_signal_ready);
         IoPort.resetPort(0, O_PIN_2);
-        print("Init passed");
+        write_log("Init passed");
         if (Axis.isReversed(2)) { Axis.reset(2); } else { print("Z axis not reversed"); }
 
         templates_dict = to_dict(template_list_s, "1", "UNI-G", ",");
         logotips_dict = to_dict(logotips_s, "ADL", "calpeda1", ",");
         columns_dict = to_dict(columns, "A", "AJ", " ");
         znaki_dict = to_dict(znaki_a, "CCC-1", "ucraino1", ",");
-
-        //If "sen_linija" exists, reset it	
+	
         if (sen_linija == 1) {
             timers[10] = System.setTimer(times[10]);
             start_timer(timers[10], send_signal_done);
         }
-
+	
+	  log_creator();
         //Start GUI generation
-	//	log_creator() ;
         gen_dialog(part_list);
     }
     if (init_passed == 1) {
-        print("Initialization failed, check if files are present in specified directories...")
+        write_log("Initialization failed, check if files are present in specified directories...");
         stop_axis();
         error_init_fail();
     }

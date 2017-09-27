@@ -107,7 +107,7 @@ function disable_sequence() {
 function enable_break() {
     IoPort.resetPort(0, O_PIN_4);
     brake_status = 1;
-    if (debug_mode) { print("Brake active"); }
+    //write_log("Brake active"); }
 }
 
 /////////////////////////////////////////////////
@@ -116,7 +116,7 @@ function enable_break() {
 function disable_break() {
     IoPort.setPort(0, O_PIN_4);
     brake_status = 0;
-    if (debug_mode) { print("Brake disabled") }
+    //if (debug_mode) { print("Brake disabled") }
 }
 
 var laser_poz_before = Axis.getPosition(2);
@@ -140,26 +140,25 @@ function laser_movement(ID) {
 }
 
 function marking_ended() {
-    print("Marking finished");
+    //print("Marking finished");
     timers[10] = System.setTimer(times[10]);
     start_timer(timers[10], send_signal_done);
-    //send_signal_done();
 }
 
 function send_signal_done(ID) {
     if (timers[10] == ID) {
-        print("setting signal done");
+       
         IoPort.setPort(0, O_PIN_2);
         timers[9] = System.setTimer(times[9]);
         start_timer(timers[9], reset_signal_done);
         disconnect_func(send_signal_done);
+	  write_log("Signal DONE set");
     }
 }
 
 function reset_signal_done(ID) {
     if (timers[9] == ID) {
-        //print(ID);
-        // print("reseting signal done");
+	 write_log("Signal DONE reseted");
         IoPort.resetPort(0, O_PIN_2);
         disconnect_func(reset_signal_done);
     }
@@ -235,6 +234,7 @@ function check_laser_state(state) {
 function marking_quantity_complete() {
     var mesg_txt = "Finished marking of " + numW + " pumps with code: " + cmb_new.currentItem + cmb_template.currentItem;
     MessageBox.information(mesg_txt, MessageBox.Ok);
+    write_log(mesg_txt);
 }
 
 function onLaserStart() {

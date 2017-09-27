@@ -476,7 +476,7 @@ function gen_dialog(part_list) {
     gb_about.add(gb_ver);
     dialog.add(gb_about);
 
-    lbl_title = new Label("Laser control v0.92rc2");
+    lbl_title = new Label("Laser control v0.92rc3");
     lbl_title.font = font_albls;
     gb_ver.add(lbl_title);
 
@@ -605,7 +605,6 @@ function gui_update(ID) {
         }
         if (debug_mode) {
             if (simulation_mode == 1) {
-                // print(chkb_linija.checked);
                 if (chkb_linija.checked) { sen_linija = 1; } else { sen_linija = 0; }
                 if (chkb_optika.checked) { sen_optika = 1; } else { sen_optika = 0; }
                 if (chkb_barriera.checked) { sen_bar_dolje = 1; } else { sen_bar_dolje = 0; }
@@ -642,18 +641,7 @@ function get_laser_stat(input) {
 }
 
 function update_laser_doc_setup() {
-    /*
-    centar =  h_Doc_new.getLaserImported("centar");
-    print(marking_settings[0]);
-    centar.moveTo(marking_settings[0], marking_settings[1]);
-    centar.update();
-    //obj.update();
-    
-    //h_Doc_new.move(marking_settings[0], marking_settings[1])
-    h_Doc_new.update();
-    renderareaPrev_setup.preview(h_Doc_new);
-   // h_Doc_new.update();   
-  */
+
 }
 
 function move_x_coord(value) {
@@ -678,7 +666,6 @@ function get_motor_status(input) {
 ///////////////////////////////////////////
 function shut_down() {
     if (auto_mode == "OFF") {
-        //reset_sequence();
         disable_sequence();
         IoPort.resetPort(0, O_PIN_2);
         print("Shutdown started");
@@ -687,7 +674,7 @@ function shut_down() {
         enable_break();
         disconnect_timers();
         System.killAllTimers();
-
+	  write_log(" *** Script Shutting down *** ");
         dialog.OK();
     }
     else {

@@ -13,6 +13,20 @@ Date.prototype.mmyy = function () {
     ].join('');
 };
 
+Date.prototype.ddmmyy = function () {
+    var mm = this.getMonth() + 1;
+    var yy = this.getFullYear();
+    yy = yy.toString();
+
+    var dd = this.getDate();
+    return [(dd > 9 ? '' : '0') + dd,
+        "_",
+    (mm > 9 ? '' : '0') + mm,
+        "_",
+        yy,
+    ].join('');
+};
+
 Date.prototype.ddmmyytime = function () {
     var mm = this.getMonth() + 1;
     var yy = this.getFullYear();
@@ -37,8 +51,21 @@ Date.prototype.ddmmyytime = function () {
     ].join('');
 };
 
-date_year = new Date();
-date_year = date_year.getFullYear().toString().slice(2);
+function gen_timestamp()
+{	
+	var date = new Date();
+	var ts = date.ddmmyytime().toString();
+	return ts;
+}
+
+/////////////////////////////////
+//Setting up log file date
+/////////////////////////////////
+var date_year = new Date();
+var date_year = date_year.getFullYear().toString().slice(2);
+var date_init = new Date();
+var log_date = date_init.ddmmyy().toString();
+
 
 //////////////////////
 //String to dict
@@ -172,35 +199,43 @@ function get_serial_int(sn_str) {
 }
 
 function log_creator() {
-
-    var plog_file = new File(plog_loc + "log2.txt");
-    //   print( if(plog_file.exists()));
-    print(plog_file.exists);
+	
+    var date_init = new Date();
+    var timestamp = gen_timestamp(); 
+    var log_date = date_init.ddmmyy().toString();
+    var plog_file = new File(plog_loc + log_date + ".log");
+    plog_file.open(File.ReadWrite);
+    plog_file.close();
+	
     if (plog_file.exists) {
-        plog_file.open(File.ReadWrite);
-
-        plog_file.write("novi");
-        plog_file.write("\n");
-        plog_file.close();
-
+        plog_file.open(File.Append);
+	  
+        var line1 = timestamp + " *** Process logging started *** \r\n";
+	  var line2 = "=================================================== \r\n";
+	  plog_file.writeLine(line2);			     	
+        plog_file.writeLine(line1);
+        plog_file.writeLine(line2);
     }
-    else {
-        if (plog_file.open(File.ReadWrite)) {
-            plog_file.writeLine("new log");
-            plog_file.close();
-        }
-    }
-
-
+	plog_file.close();
 }
 
 function write_log(logstr) {
 
+	var plog_file = new File(plog_loc + log_date + ".log");
+      var timestamp = gen_timestamp();
+	if(plog_file.exists)
+	  {
+		plog_file.open(File.Append);
+		var line = timestamp + " --- "+ logstr;
+	print(line);
+	plog_file.writeLine(line);
+	plog_file.writeLine("\r\n");
+	plog_file.close();
+       }
+	else
+	{
+		log_creator();
+	}
+	
 }
-/*function generate_regex()
-{
-    switch(date_year)
-    {
-    case 17:
-    }
-}*/
+
