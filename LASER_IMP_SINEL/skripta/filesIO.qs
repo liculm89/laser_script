@@ -529,7 +529,7 @@ function xls_log() {
 
     if (hDb3.open()) {
         if (!hDb3.exec(query1)) {
-            print(hDb3.lastError());
+            write_log(hDb3.lastError());
         }
     }
     hDb3.close();

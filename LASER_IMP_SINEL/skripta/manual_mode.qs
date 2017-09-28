@@ -38,7 +38,7 @@ function readFile_manual() {
 }
 
 function mark_manual() {
-    write_log("Manual marking : Read file started"); 
+    write_log("Manual marking : Read file started");
     laser_marking = 1;
     nm = 1;
     laser_doc_update();
@@ -87,7 +87,7 @@ function check_marking_manual(ID) {
 //Raises barrier after marking
 ///////////////////////////////////////////////
 function barrier_up_afer_marking_m() {
-   write_log("Manual marking finished");
+    write_log("Manual marking finished");
     if (IoPort.getPort(0) & I_PIN_11) {
         barrier_up_auto();
     }
@@ -160,7 +160,7 @@ function search_working_pos() {
     if (total_stop == 0) {
         if (auto_mode == "OFF") {
             barrier_down();
-            Axis.move(2, (Axis.getPosition(2) - 80));
+            Axis.move(2, (Axis.getPosition(2) - search_distance));
             timers[1] = System.setTimer(times[1]);
             start_timer(timers[1], stop_search);
         }
@@ -177,25 +177,42 @@ function search_working_pos() {
 //Function stops working pos. search
 ////////////////////////////////////////////////////////////////////////
 function stop_search(ID) {
-    if (timers[1] == ID) {
-        if (IoPort.getPort(0) & I_PIN_10) {
-            current_pos = Axis.getPosition(2);
-		if (!(IoPort.getPort(0) & I_PIN_8) || !(current_pos <= (home_pos - search_distance)) ) {
-                if (debug_mode) { print("Laser is moving to working position"); }
-            }
-            else {
-                Axis.stop(2);
-                error_cant_find_pump();
-                laser_reference();
-                disconnect_func(stop_search);
-            }
-        }
-        else {
-            Axis.stop(2);
-            laser_in_working_pos = 1;
-            disconnect_func(stop_search);
-        }
-    }
+    if (timers[1] == ID && auto_mode == "ON") {
+		current_pos = Axis.getPosition(2);
+		if (!(IoPort.getPort(0) & I_PIN_8)) {
+			if (!(IoPort.getPort(0) & I_PIN_10)) {
+
+				if (!(current_pos <= (home_pos - search_distance))) {
+					if (debug_mode) { print("Laser is moving to working pos..."); }
+				}
+				else {
+					Axis.stop(2);
+					write_log("Search distance passed but no pump found. Going back to ref...");
+					laser_ref_auto(); laser_ref_auto();
+					barrier_up_auto();
+					disconnect_func(stop_search);
+					retry_stop_choice();
+				}
+			}
+			else {
+				write_log("Pump in laser focus");
+				disconnect_func(stop_search);
+				Axis.stop(2);
+				laser_in_working_pos = 1;		
+				if (compensation_enabled) {
+					Axis.move(2, (Axis.getPosition(2) - compensation_distance));
+				}
+			}
+		}
+		else {
+			write_log("Laser lower position reached, no pump found, going back to ref...");
+			Axis.stop(2);
+			laser_ref_auto(); laser_ref_auto();
+			barrier_up_auto();
+			disconnect_func(stop_search_auto);
+			retry_stop_choice();
+		}
+	}
 }
 
 ////////////////////////////

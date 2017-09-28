@@ -6,7 +6,7 @@ var enable_existing_sn_marking = 1;
 
 //sets debugging(on=1 and off=0)
 
-var simulation_mode = 0;
+var simulation_mode = 1;
 var debug_mode = 1;
 
 var compensation_enabled = 0;
@@ -47,7 +47,7 @@ var signal_ready = 0;
 var z_axis_active = 0;
 var sb1_v = 25;
 var min_pos = 5;
-var search_distance = 85;
+var search_distance = 82;
 var compensation_distance = 1;
 var auto_waiting_to_stop = 0;
 var home_pos = 120;
@@ -87,7 +87,7 @@ var logPath = drive_loc + "\\LASER_IMP_SINEL\\writeLog.txt";
 var resPath = drive_loc + "\\LASER_IMP_SINEL\\skripta\\res\\";
 var nova_db = drive_loc + "\\LASER_IMP_SINEL\\tabela_baza.xls";
 var script_loc = drive_loc + "\\LASER_IMP_SINEL\\skripta\\";
-var plog_loc = drive_loc + "\\LASER_IMP_SINEL\\script_logs\\";
+var plog_loc = drive_loc + "\\LASER_IMP_SINEL\\process_logs\\";
 
 var templatesPath = drive_loc + "\\LASER_IMP_SINEL\\TEMPLATE\\";
 var logosPath = drive_loc + "\\LASER_IMP_SINEL\\LOGOTIP\\XLP-LOGOTIPI\\";

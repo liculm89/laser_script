@@ -6,50 +6,49 @@ function set_flags() {
         if (chkb_linija.checked) { sen_linija = 1; } else { sen_linija = 0; }
         if (chkb_optika.checked) { sen_optika = 0; } else { sen_optika = 1; }
         if (chkb_barriera.checked) { sen_bar_dolje = 1; } else { sen_bar_dolje = 0; }
+        if (chkb_reset.checked) { reset_tipka = 1; reset_button_func(); } else { reset_tipka = 0; }
+        if (chkb_lp.checked) { sen_bar_dolje = 1; } else { sen_bar_dolje = 0; }
     }
     else {
         if (IoPort.getPort(0) & I_PIN_7) { sen_linija = 1; } else { sen_linija = 0; }
         if (IoPort.getPort(0) & I_PIN_10) { sen_optika = 1; } else { sen_optika = 0; }
         if (IoPort.getPort(0) & I_PIN_11) { sen_bar_dolje = 1; } else { sen_bar_dolje = 0; }
-    }
-	
-    if (IoPort.getPort(0) & I_PIN_8) { sen_laser_dolje = 1; } else { sen_laser_dolje = 0; }
-    if (IoPort.getPort(0) & I_PIN_9) { sen_laser_gore = 1; } else { sen_laser_gore = 0; }
-    if (IoPort.getPort(0) & I_PIN_21) { sen_bar_gore = 1; } else { sen_bar_gore = 0; }
-    if (IoPort.getPort(0) & I_PIN_20) {
-        if (simulation_mode == 1) { reg_fault = 1; }
-        else { reg_fault = 0; }
-        
-    }
-    else {
-        if (simulation_mode == 1) { reg_fault = 0; }
-        else { reg_fault = 1; }
-    }
+        if (IoPort.getPort(0) & I_PIN_19) {
+            reset_tipka = 1;
+            reset_button_func();
+        }
+        else {
+            reset_tipka = 0;
+        }
 
-    if (IoPort.getPort(0) & I_PIN_19) {
-        reset_tipka = 1;
-        reset_button_func();
-    }
-    else {
-        reset_tipka = 0;
-    }
+        if (IoPort.getPort(0) & I_PIN_8) { sen_laser_dolje = 1; } else { sen_laser_dolje = 0; }
+        if (IoPort.getPort(0) & I_PIN_9) { sen_laser_gore = 1; } else { sen_laser_gore = 0; }
+        if (IoPort.getPort(0) & I_PIN_21) { sen_bar_gore = 1; } else { sen_bar_gore = 0; }
+        if (IoPort.getPort(0) & I_PIN_20) {
+            if (simulation_mode == 1) { reg_fault = 1; }
+            else { reg_fault = 0; }
 
-    if (IoPort.getPort(0) & I_PIN_12) {
-        total_stop = 1;
-        total_stop_func();
-        reset_sequence();
-        if (brake_status == 0) {
-            enable_break()
-        };
-    }
-    else {
-        if (brake_status == 1) {
-            disable_break()
-        };
-        total_stop = 0;
+        }
+        else {
+            if (simulation_mode == 1) { reg_fault = 0; }
+            else { reg_fault = 1; }
+        }
+        if (IoPort.getPort(0) & I_PIN_12) {
+            total_stop = 1;
+            total_stop_func();
+            reset_sequence();
+            if (brake_status == 0) {
+                enable_break()
+            };
+        }
+        else {
+            if (brake_status == 1) {
+                disable_break()
+            };
+            total_stop = 0;
+        }
     }
 }
-
 ///////////////////////////////////////////////////////////////////
 //Counts pumps and sets pump_present flag
 //////////////////////////////////////////////////////////////////
@@ -66,7 +65,7 @@ function pump_counter(ID) {
             if (senz_state == 1) {
                 brojac++;
                 write_log("pump counter:" + brojac);
-		    pump_present = 1;
+                pump_present = 1;
             }
             else {
                 write_log("pump left");
@@ -128,14 +127,14 @@ function main() {
     System["sigLaserEvent(int)"].connect(get_laser_events);
     System["sigLaserError(int)"].connect(onLaserError);
     System.sigClose.connect(onClose);
-	
+
     ///////////////////////////////////////////////////////////////////////////////////////////
     //Starts initialization function, if success GUI is generated
     ////////////////////////////////////////////////////////////////////////////////////////////
-	
+
     init_passed = init_func();
     if (init_passed == 0) {
-
+	  print(System.currentThreadId());
         disable_break();
         IoPort.resetPort(0, O_PIN_2);
         write_log("Init passed");
@@ -145,13 +144,13 @@ function main() {
         logotips_dict = to_dict(logotips_s, "ADL", "calpeda1", ",");
         columns_dict = to_dict(columns, "A", "AJ", " ");
         znaki_dict = to_dict(znaki_a, "CCC-1", "ucraino1", ",");
-	
+
         if (sen_linija == 1) {
             timers[10] = System.setTimer(times[10]);
             start_timer(timers[10], send_signal_done);
         }
-	
-	  log_creator();
+
+        log_creator();
         //Start GUI generation
         gen_dialog(part_list);
     }

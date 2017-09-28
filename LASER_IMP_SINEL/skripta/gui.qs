@@ -2,8 +2,8 @@
 //  Kreiranje GUI aplikacije
 ////////////////////////////////////////////////
 var dialog = new Dialog("Laser control", Dialog.D_NONE, false, 0x00040000);
-var rr_dialog = new Dialog("Retry or STOP", Dialog.D_OKCANCEL, false);
-var ra_dialog = new Dialog("Serial number choice", Dialog.D_OKCANCEL, false);
+//var rr_dialog = new Dialog("Retry or STOP", Dialog.D_OKCANCEL, false);
+//var ra_dialog = new Dialog("Serial number choice", Dialog.D_OKCANCEL, false);
 dialog.setFixedSize(1050, 720);
 var btn_key = new PushButton();
 var btn_enable = new PushButton();
@@ -23,6 +23,8 @@ if (simulation_mode) {
     var chkb_linija = new CheckBox();
     var chkb_optika = new CheckBox();
     var chkb_barriera = new CheckBox();
+    var chkb_reset = new CheckBox();
+    var chkb_lp = new CheckBox();
 }
 
 var date_time = new Date();
@@ -414,6 +416,12 @@ function gen_dialog(part_list) {
 
             chkb_barriera.text = "Barriera dolje"; chkb_barriera.font = font2;
             gb_sim.add(chkb_barriera);
+
+            chkb_reset.text = "Reset button"; chkb_reset.font = font2;
+            gb_sim.add(chkb_reset);
+
+            chkb_lp.text = "Laser lower pos"; chkb_lp.font = font2;
+            gb_sim.add(chkb_lp);
         }
     }
 
@@ -476,7 +484,7 @@ function gen_dialog(part_list) {
     gb_about.add(gb_ver);
     dialog.add(gb_about);
 
-    lbl_title = new Label("Laser control v0.92rc3");
+    lbl_title = new Label("Laser control v0.92rc4");
     lbl_title.font = font_albls;
     gb_ver.add(lbl_title);
 
@@ -608,6 +616,8 @@ function gui_update(ID) {
                 if (chkb_linija.checked) { sen_linija = 1; } else { sen_linija = 0; }
                 if (chkb_optika.checked) { sen_optika = 1; } else { sen_optika = 0; }
                 if (chkb_barriera.checked) { sen_bar_dolje = 1; } else { sen_bar_dolje = 0; }
+                if (chkb_reset.checked) { reset_tipka = 1; reset_button_func(); } else { reset_tipka = 0; }
+                if (chkb_lp.checked) { sen_bar_dolje = 1; } else { sen_bar_dolje = 0; }
             }
             lb_sen_linija.text = "Senzor linije: " + get_stat(sen_linija);
             lb_sen_bar_gore.text = "Senzor laserske barijere gore:" + get_stat(sen_bar_gore);
@@ -674,7 +684,7 @@ function shut_down() {
         enable_break();
         disconnect_timers();
         System.killAllTimers();
-	  write_log(" *** Script Shutting down *** ");
+        write_log(" *** Script Shutting down *** ");
         dialog.OK();
     }
     else {

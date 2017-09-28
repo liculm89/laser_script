@@ -51,11 +51,10 @@ Date.prototype.ddmmyytime = function () {
     ].join('');
 };
 
-function gen_timestamp()
-{	
-	var date = new Date();
-	var ts = date.ddmmyytime().toString();
-	return ts;
+function gen_timestamp() {
+    var date = new Date();
+    var ts = date.ddmmyytime().toString();
+    return ts;
 }
 
 /////////////////////////////////
@@ -198,44 +197,357 @@ function get_serial_int(sn_str) {
     return serial_int;
 }
 
+
+function delayed_ref()
+{
+}
+
+/*""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*
+FUNCTIONS NEEDED FOR SIMULATION MODE
+*"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
+function wait_for_barrier_sim(ID){
+
+    if ((timers[6] == ID) && (chkb_barriera.checked)) {
+        if (debug_mode) {print("laser is waiting for barrier to be lowered");}
+        if (laser_barrier_down == 1) {
+            print("laser already in position");
+            mark_auto_sim();
+            gen_timer(2, pump_not_present);
+        }
+        else {
+            disconnect_func(wait_for_barrier_sim);
+            laser_move_timed();
+        }
+        disconnect_func(wait_for_barrier_sim);
+    }
+
+}
+
+function stop_search_auto_sim(ID){
+
+	if (timers[1] == ID && auto_mode == "ON") {
+		current_pos = Axis.getPosition(2);
+		if (!(chkb_lp.checked)) {
+			if (!(chkb_optika.checked)) {
+
+				if (!(current_pos <= (home_pos - search_distance))) {
+					if (debug_mode) { print("Laser is moving to working pos..."); }
+				}
+				else {
+					Axis.stop(2);
+					write_log("Search distance passed but no pump found. Going back to ref...");
+					laser_ref_auto(); laser_ref_auto();
+					barrier_up_auto();
+                    disconnect_func(stop_search_auto_sim);
+					retry_stop_choice();
+				}
+			}
+			else {
+				write_log("Pump in laser focus");
+				disconnect_func(stop_search_auto_sim);
+				Axis.stop(2);
+				laser_in_working_pos = 1;
+				laser_barrier_down = 1;
+				if (compensation_enabled) {
+					Axis.move(2, (Axis.getPosition(2) - compensation_distance));
+				}
+				gen_timer(12, automatic_marking);
+			}
+		}
+		else{
+            disconnect_func(stop_search_auto_sim);
+			write_log("Laser lower position reached, no pump found, going back to ref...");
+			Axis.stop(2);
+			laser_ref_auto(); laser_ref_auto();
+            barrier_up_auto();
+			retry_stop_choice();
+		}
+	}
+}
+
+function mark_auto_sim() {
+
+    laser_marking = 1;
+    nom = 1;
+    laser_doc_update();
+    log_arr = [];
+    for (i = 0; i < dict_keys.length; i++) {
+        log_arr.push(columns_dict[dict_keys[i]]);
+    }
+    if (chkb_optika.checked) {
+        if (chkb_barriera.checked) {
+            h_Doc_new.execute();
+            write_log("simulation auto marking started");
+            gen_timer(11, check_marking_sim);
+        }
+        else {
+            laser_marking = 0;
+            laser_in_working_pos = 0;
+            laser_barrier_down = 0;
+            nom = 0;
+            write_log("Barrier is not down, laser goes in reference position");
+            disconnect_timers();
+            laser_ref_auto();
+            gen_timer(13, reset_auto_func_sim);
+        }
+    }
+    else {
+        System.stopLaser();
+        laser_marking = 0;
+        laser_in_working_pos = 0;
+        laser_barrier_down = 0;
+        nom = 0;
+        write_log("Optical sensor is not seeing pump, laser goes in reference position");
+        disconnect_timers();
+        laser_ref_auto();
+        gen_timer(13, reset_auto_func_sim);
+    }
+}
+
+function check_marking_sim(ID) {
+    if (timers[11] == ID) {
+        if (chkb_optika.checked) {
+            if ((chkb_barriera.checked) && !(laser_status == "Marking is active")) {
+                barrier_up_after_marking();
+                disconnect_func(check_marking_sim);
+            }
+            else if ((laser_status = "Marking is active") && !(chkb_barriera.checked)) {
+                disconnect_func(check_marking_sim);
+                System.stopLaser();
+                laser_marking = 0;
+                laser_in_working_pos = 0;
+                laser_barrier_down = 0;
+                //nom = 0;
+                auto_mode = "OFF";
+                barrier_up_auto();
+                laser_ref_auto();
+                write_log("Barrier not down during laser marking");
+                gen_timer(13, reset_auto_func_sim);
+            }
+        }
+        else {
+            disconnect_func(check_marking_sim);
+            System.stopLaser();
+            laser_marking = 0;
+            laser_in_working_pos = 0;
+            laser_barrier_down = 0;
+            //nom = 0;
+            auto_mode = "OFF";
+            write_log("Optical sensor is not seeing pump, laser goes in reference position");
+            disconnect_timers();
+            laser_ref_auto();
+            barrier_up_auto();
+            gen_timer(13, reset_auto_func_sim);
+        }
+    }
+}
+
+function reset_auto_func_sim(ID) {
+
+    if (timers[13] == ID) {
+            write_log("Resetting auto mode! Simulation mode *****************");
+            reset_auto = 1;
+            disconnect_func(wait_for_pump); //Most important disconnect
+            disconnect_func(reset_auto_func_sim);
+            if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
+                serial_choice();
+            }
+            start_auto_mode();
+    }
+}
+
+
+/*************************************************
+ * END SIMULATION FUNCTIONS
+ *************************************************/
+
+function serial_choice() {
+
+    year = new Date();
+    year = year.getFullYear().toString().slice(2);
+    var ra_dialog = new Dialog("Serial number choice", Dialog.D_OKCANCEL, false);
+    var lbl_question = new Label(); lbl_question.text = "Create new serial number?";
+    var font6 = "MS Shell Dlg 2,15,-1,5,50,0,0,0,0,0";
+    lbl_question.font = font6;
+    ra_dialog.font = font6;
+    ra_dialog.add(lbl_question);
+    ra_dialog.okButtonText = "Yes"
+    ra_dialog.cancelButtonText = "No, repeat this S.N. : " + year + "-" + leftPad((curr_sn), 6);
+
+    if (ra_dialog.exec()) {
+        write_log(" Ok pressed, creating new serial number");
+        if (!(numWC % sn_marking_times)) {
+            if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
+                if (!sn_fixed) {
+                    curr_sn = parseInt(last_sn, 10) + 1;
+                    last_sn = curr_sn;
+                    last_sn = leftPad((last_sn), 6);
+                    update_sn();
+                }
+            }
+        }
+    }
+    else {
+        write_log("Cancel pressed, keeping current serial: " + year + "-" + leftPad((curr_sn), 6));
+    }
+
+    delete ra_dialog;
+    System.collectGarbage();
+}
+
+
+function retry_stop_choice() {
+
+    var rr_dialog = new Dialog("Retry or STOP", Dialog.D_OKCANCEL, false);
+    var lbl_question1 = new Label(); lbl_question1.text = "Pump has not been found, retry or stop auto mode?";
+    var font6 = "MS Shell Dlg 2,16,-1,5,50,0,0,0,0,0";
+    lbl_question1.font = font6;
+    rr_dialog.font = font6;
+    rr_dialog.add(lbl_question1);
+    rr_dialog.okButtonText = "Try again"
+    rr_dialog.cancelButtonText = "No, stop Auto mode";
+
+    if (rr_dialog.exec()) {
+        write_log("ok pressed, trying to find pump again");
+        laser_move_timed();
+    }
+    else {
+        write_log("cancel pressed, old serial kept");
+        stop_auto();
+    }
+    delete rr_dialog;
+    System.collectGarbage();
+}
+
+/////////////////////////////////////////////////////////////
+//Function sets laser into reference pos
+////////////////////////////////////////////////////////////
+function laser_ref_auto() {
+	if (total_stop == 0) {
+		write_log("Automatic laser referencing initiated");
+		Axis.reset(2);
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
+//Automatic marking starts, sets timer for barrier rising
+//////////////////////////////////////////////////////////////////////////////////////
+function readFile_auto() {
+	mark_auto();
+}
+
+////////////////////////////////////
+//Automatic barrirer up
+///////////////////////////////////
+function barrier_up_auto() {
+	IoPort.resetPort(0, O_PIN_23);
+	bar_dolje = 0;
+	write_log("Automatic barrier rising");
+	IoPort.setPort(0, O_PIN_5);
+	bar_gore = 1;
+}
+
+////////////////////////////////////////
+//Automatic barrier down
+////////////////////////////////////////
+function barrier_down_auto() {
+	IoPort.resetPort(0, O_PIN_5);
+	bar_gore = 0;
+	write_log("Automatic barrier lowering");
+	IoPort.setPort(0, O_PIN_23);
+	bar_dolje = 1;
+}
+
+////////////////////////////////////////////////////////////////////////////
+//Function is triggered when total stop is pressed
+////////////////////////////////////////////////////////////////////////////
+function total_stop_func() {
+	if (auto_mode == "ON") {
+        write_log("Total stop pressed during Auto mode");
+        disconnect_func(wait_for_pump);
+		System.stopLaser();
+		laser_marking = 0;
+		laser_in_working_pos = 0;
+		laser_barrier_down = 0;
+		nom = 0;
+		auto_mode = "OFF";
+	}
+	if (auto_mode == "OFF") {
+		write_log("Total stop pressed while not in Auto mode");
+		System.stopLaser();
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////
+//Function is triggered when reset btn is pressed
+///////////////////////////////////////////////////////////////////////////
+function reset_button_func() {
+	if (total_stop == 0) {
+		if (auto_mode == "ON") {
+			write_log("Reset button pressed during Auto mode");
+            System.stopLaser();
+            disconnect_func(wait_for_pump);
+			laser_marking = 0;
+			laser_in_working_pos = 0;
+			laser_barrier_down = 0;
+			nom = 0;
+			auto_mode = "OFF";
+			laser_ref_auto();
+			barrier_up_auto();
+			if (simulation_mode) {
+				gen_timer(13, reset_auto_func_sim);
+			}
+			else {
+				gen_timer(13, reset_auto_func);
+			}
+		}
+		if (auto_mode == "OFF") {
+			write_log("Reset button pressed while not in Auto mode");
+			System.stopLaser();
+			laser_ref_auto();
+		}
+	}
+	else {
+		error_total_stop();
+	}
+}
+
 function log_creator() {
-	
+
     var date_init = new Date();
-    var timestamp = gen_timestamp(); 
+    var timestamp = gen_timestamp();
     var log_date = date_init.ddmmyy().toString();
     var plog_file = new File(plog_loc + log_date + ".log");
     plog_file.open(File.ReadWrite);
     plog_file.close();
-	
+
     if (plog_file.exists) {
         plog_file.open(File.Append);
-	  
+
         var line1 = timestamp + " *** Process logging started *** \r\n";
-	  var line2 = "=================================================== \r\n";
-	  plog_file.writeLine(line2);			     	
+        var line2 = "=================================================== \r\n";
+        plog_file.writeLine(line2);
         plog_file.writeLine(line1);
         plog_file.writeLine(line2);
     }
-	plog_file.close();
+    plog_file.close();
 }
 
 function write_log(logstr) {
 
-	var plog_file = new File(plog_loc + log_date + ".log");
-      var timestamp = gen_timestamp();
-	if(plog_file.exists)
-	  {
-		plog_file.open(File.Append);
-		var line = timestamp + " --- "+ logstr;
-	print(line);
-	plog_file.writeLine(line);
-	plog_file.writeLine("\r\n");
-	plog_file.close();
-       }
-	else
-	{
-		log_creator();
-	}
-	
+    var plog_file = new File(plog_loc + log_date + ".log");
+    var timestamp = gen_timestamp();
+    if (plog_file.exists) {
+        plog_file.open(File.Append);
+        var line = timestamp + " --- " + logstr;
+        print(line);
+        plog_file.writeLine(line);
+        plog_file.writeLine("\r\n");
+        plog_file.close();
+    }
+    else {
+        log_creator();
+    }
+
 }
 

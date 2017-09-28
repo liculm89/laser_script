@@ -147,18 +147,18 @@ function marking_ended() {
 
 function send_signal_done(ID) {
     if (timers[10] == ID) {
-       
+
         IoPort.setPort(0, O_PIN_2);
         timers[9] = System.setTimer(times[9]);
         start_timer(timers[9], reset_signal_done);
         disconnect_func(send_signal_done);
-	  write_log("Signal DONE set");
+        write_log("Signal DONE set");
     }
 }
 
 function reset_signal_done(ID) {
     if (timers[9] == ID) {
-	 write_log("Signal DONE reseted");
+        write_log("Signal DONE reseted");
         IoPort.resetPort(0, O_PIN_2);
         disconnect_func(reset_signal_done);
     }
