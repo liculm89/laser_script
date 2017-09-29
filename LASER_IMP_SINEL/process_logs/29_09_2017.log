@@ -1,0 +1,5349 @@
+=================================================== 
+
+29/09/2017-00:00:03 *** Process logging started *** 
+
+=================================================== 
+
+=================================================== 
+
+29/09/2017-00:00:03 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-00:00:10 --- Automatic barrier rising
+
+
+29/09/2017-00:00:10 --- Auto mode started
+
+
+29/09/2017-00:00:10 --- Automatic laser referencing initiated
+
+
+29/09/2017-00:00:11 --- pump counter:1
+
+
+29/09/2017-00:00:12 --- Automatic barrier lowering
+
+
+29/09/2017-00:00:12 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-00:00:13 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-00:00:14 --- Pump in laser focus
+
+
+29/09/2017-00:00:15 --- Laser in position, starts marking...
+
+
+29/09/2017-00:00:15 --- simulation auto marking started
+
+
+29/09/2017-00:00:20 --- Optical sensor is not seeing pump, laser goes in reference position
+
+
+29/09/2017-00:00:20 --- Automatic laser referencing initiated
+
+
+29/09/2017-00:00:20 --- Automatic barrier rising
+
+
+29/09/2017-00:00:21 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-00:00:23 ---  Ok pressed, creating new serial number
+
+
+29/09/2017-00:00:23 --- Automatic barrier rising
+
+
+29/09/2017-00:00:23 --- Auto mode started
+
+
+29/09/2017-00:00:23 --- Automatic laser referencing initiated
+
+
+29/09/2017-00:00:23 --- Signal DONE set
+
+
+29/09/2017-00:00:24 --- Signal DONE reseted
+
+
+29/09/2017-00:00:25 --- pump left
+
+
+29/09/2017-00:00:25 --- pump not present
+
+
+29/09/2017-00:00:26 --- pump counter:2
+
+
+29/09/2017-00:00:26 --- Automatic barrier lowering
+
+
+29/09/2017-00:00:26 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-00:00:28 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-00:00:29 --- Pump in laser focus
+
+
+29/09/2017-00:00:30 --- Laser in position, starts marking...
+
+
+29/09/2017-00:00:31 --- simulation auto marking started
+
+
+29/09/2017-00:00:34 --- Automatic barrier rising
+
+
+29/09/2017-00:00:34 --- Automatic laser referencing initiated
+
+
+29/09/2017-00:00:34 --- Barrier not down during laser marking
+
+
+29/09/2017-00:00:34 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-00:00:36 --- Cancel pressed, keeping current serial: 17-000286
+
+
+29/09/2017-00:00:36 --- Automatic barrier rising
+
+
+29/09/2017-00:00:36 --- Auto mode started
+
+
+29/09/2017-00:00:36 --- Automatic laser referencing initiated
+
+
+29/09/2017-00:00:37 --- Signal DONE set
+
+
+29/09/2017-00:00:37 --- Signal DONE reseted
+
+
+29/09/2017-00:00:38 --- pump left
+
+
+29/09/2017-00:00:38 --- pump not present
+
+
+29/09/2017-00:00:39 --- pump counter:3
+
+
+29/09/2017-00:00:39 --- Automatic barrier lowering
+
+
+29/09/2017-00:00:39 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-00:00:40 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-00:00:41 --- Pump in laser focus
+
+
+29/09/2017-00:00:42 --- Laser in position, starts marking...
+
+
+29/09/2017-00:00:42 --- simulation auto marking started
+
+
+29/09/2017-00:00:44 --- pump left
+
+
+29/09/2017-00:00:44 --- pump not present
+
+
+29/09/2017-00:00:44 --- Automatic barrier rising
+
+
+29/09/2017-00:00:44 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+29/09/2017-00:00:45 --- Marking successful, incrementing serial number and setting signal done
+
+
+29/09/2017-00:00:45 --- Appending .xls log table
+
+
+29/09/2017-00:00:45 ---  
+
+
+29/09/2017-00:00:46 --- Signal DONE set
+
+
+29/09/2017-00:00:47 --- Signal DONE reseted
+
+
+29/09/2017-00:00:52 --- pump counter:4
+
+
+29/09/2017-00:00:52 --- Automatic barrier lowering
+
+
+29/09/2017-00:00:52 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-00:00:52 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-00:00:52 --- Pump in laser focus
+
+
+29/09/2017-00:00:53 --- Laser in position, starts marking...
+
+
+29/09/2017-00:00:54 --- simulation auto marking started
+
+
+29/09/2017-00:00:56 --- Optical sensor is not seeing pump, laser goes in reference position
+
+
+29/09/2017-00:00:56 --- Automatic laser referencing initiated
+
+
+29/09/2017-00:00:56 --- Automatic barrier rising
+
+
+29/09/2017-00:00:57 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-00:00:58 --- Cancel pressed, keeping current serial: 17-000287
+
+
+29/09/2017-00:00:58 --- Automatic barrier rising
+
+
+29/09/2017-00:00:58 --- Auto mode started
+
+
+29/09/2017-00:00:58 --- Automatic laser referencing initiated
+
+
+29/09/2017-00:00:58 --- Signal DONE set
+
+
+29/09/2017-00:00:59 --- Signal DONE reseted
+
+
+29/09/2017-00:01:01 --- pump left
+
+
+29/09/2017-00:01:01 --- pump not present
+
+
+29/09/2017-00:01:02 --- pump counter:5
+
+
+29/09/2017-00:01:02 --- Automatic barrier lowering
+
+
+29/09/2017-00:01:02 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-00:01:04 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-00:01:05 --- Pump in laser focus
+
+
+29/09/2017-00:01:06 --- Laser in position, starts marking...
+
+
+29/09/2017-00:01:06 --- simulation auto marking started
+
+
+29/09/2017-00:01:15 --- pump left
+
+
+29/09/2017-00:01:15 --- pump not present
+
+
+29/09/2017-00:01:16 --- Optical sensor is not seeing pump, laser goes in reference position
+
+
+29/09/2017-00:01:16 --- Automatic laser referencing initiated
+
+
+29/09/2017-00:01:16 --- Automatic barrier rising
+
+
+29/09/2017-00:01:16 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-00:01:18 --- Cancel pressed, keeping current serial: 17-000287
+
+
+29/09/2017-00:01:18 --- Automatic barrier rising
+
+
+29/09/2017-00:01:18 --- Auto mode started
+
+
+29/09/2017-00:01:18 --- Automatic laser referencing initiated
+
+
+29/09/2017-00:01:24 --- Automatic laser referencing initiated
+
+
+29/09/2017-00:01:24 --- Automatic barrier rising
+
+
+29/09/2017-00:01:47 --- Automatic barrier rising
+
+
+29/09/2017-00:01:47 --- Auto mode started
+
+
+29/09/2017-00:01:47 --- Automatic laser referencing initiated
+
+
+29/09/2017-00:01:48 --- Automatic laser referencing initiated
+
+
+29/09/2017-00:01:48 --- Automatic barrier rising
+
+
+29/09/2017-00:01:53 ---  *** Script Shutting down *** 
+
+
+29/09/2017-10:26:28 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-10:26:28 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-10:26:33 --- pump counter:1
+
+
+29/09/2017-10:26:37 --- pump left
+
+
+29/09/2017-10:26:41 --- Selected part and serial number not confirmed!
+
+
+29/09/2017-10:26:46 --- Automatic barrier rising
+
+
+29/09/2017-10:26:46 --- Auto mode started
+
+
+29/09/2017-10:26:46 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:26:48 --- pump counter:2
+
+
+29/09/2017-10:26:48 --- Automatic barrier lowering
+
+
+29/09/2017-10:26:48 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-10:26:49 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:26:50 --- Pump in laser focus
+
+
+29/09/2017-10:26:51 --- Laser in position, starts marking...
+
+
+29/09/2017-10:26:51 --- simulation auto marking started
+
+
+29/09/2017-10:26:59 --- Stop auto mode has been pressed while marking was active
+
+
+29/09/2017-10:27:45 --- Automatic barrier rising
+
+
+29/09/2017-10:27:45 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:27:45 --- Automatic barrier rising
+
+
+29/09/2017-10:27:45 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+29/09/2017-10:27:46 --- Signal DONE set
+
+
+29/09/2017-10:27:46 --- Signal DONE reseted
+
+
+29/09/2017-10:27:49 ---  Ok pressed, creating new serial number
+
+
+29/09/2017-10:27:55 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-10:27:55 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-10:27:59 --- pump counter:1
+
+
+29/09/2017-10:28:01 --- pump left
+
+
+29/09/2017-10:28:03 --- Selected part and serial number not confirmed!
+
+
+29/09/2017-10:28:08 --- Selected part and serial number not confirmed!
+
+
+29/09/2017-10:28:12 --- Automatic barrier rising
+
+
+29/09/2017-10:28:12 --- Auto mode started
+
+
+29/09/2017-10:28:12 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:28:13 --- pump counter:2
+
+
+29/09/2017-10:28:14 --- Automatic barrier lowering
+
+
+29/09/2017-10:28:14 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-10:28:14 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:28:15 --- Pump in laser focus
+
+
+29/09/2017-10:28:16 --- Laser in position, starts marking...
+
+
+29/09/2017-10:28:16 --- simulation auto marking started
+
+
+29/09/2017-10:28:20 --- Automatic barrier rising
+
+
+29/09/2017-10:28:20 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:28:20 --- Barrier not down during laser marking
+
+
+29/09/2017-10:28:20 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-10:28:21 --- Cancel pressed, keeping current serial: 17-000287
+
+
+29/09/2017-10:28:21 --- Automatic barrier rising
+
+
+29/09/2017-10:28:21 --- Auto mode started
+
+
+29/09/2017-10:28:21 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:28:22 --- Automatic barrier lowering
+
+
+29/09/2017-10:28:22 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-10:28:22 --- Signal DONE set
+
+
+29/09/2017-10:28:22 --- Signal DONE reseted
+
+
+29/09/2017-10:28:24 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:28:25 --- pump left
+
+
+29/09/2017-10:28:25 --- pump not present
+
+
+29/09/2017-10:28:26 --- pump counter:3
+
+
+29/09/2017-10:28:26 --- Automatic barrier lowering
+
+
+29/09/2017-10:28:26 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-10:28:27 --- Pump in laser focus
+
+
+29/09/2017-10:28:28 --- Laser in position, starts marking...
+
+
+29/09/2017-10:28:29 --- Barrier is not down, laser goes in reference position
+
+
+29/09/2017-10:28:29 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:28:29 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-10:28:31 --- Cancel pressed, keeping current serial: 17-000287
+
+
+29/09/2017-10:28:33 --- Auto mode already started, or laser marking started in manual mode
+
+
+29/09/2017-10:28:33 --- pump left
+
+
+29/09/2017-10:28:39 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-10:28:39 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-10:28:47 --- Automatic barrier rising
+
+
+29/09/2017-10:28:47 --- Auto mode started
+
+
+29/09/2017-10:28:47 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:28:49 --- pump counter:1
+
+
+29/09/2017-10:28:49 --- Automatic barrier lowering
+
+
+29/09/2017-10:28:49 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-10:28:51 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:28:51 --- Pump in laser focus
+
+
+29/09/2017-10:28:51 --- Laser in position, starts marking...
+
+
+29/09/2017-10:28:52 --- simulation auto marking started
+
+
+29/09/2017-10:28:55 --- Optical sensor is not seeing pump, laser goes in reference position
+
+
+29/09/2017-10:28:55 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:28:55 --- Automatic barrier rising
+
+
+29/09/2017-10:28:56 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-10:28:57 --- Cancel pressed, keeping current serial: 17-000287
+
+
+29/09/2017-10:28:57 --- Automatic barrier rising
+
+
+29/09/2017-10:28:57 --- Auto mode started
+
+
+29/09/2017-10:28:57 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:28:57 --- Automatic barrier lowering
+
+
+29/09/2017-10:28:57 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-10:28:57 --- Signal DONE set
+
+
+29/09/2017-10:28:58 --- Signal DONE reseted
+
+
+29/09/2017-10:28:58 --- pump left
+
+
+29/09/2017-10:28:58 --- pump not present
+
+
+29/09/2017-10:28:59 --- pump counter:2
+
+
+29/09/2017-10:29:00 --- Automatic barrier lowering
+
+
+29/09/2017-10:29:00 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-10:29:00 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:29:00 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:29:01 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:29:01 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- simulation auto marking started
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:02 --- Pump in laser focus
+
+
+29/09/2017-10:29:03 --- simulation auto marking started
+
+
+29/09/2017-10:29:03 --- Pump in laser focus
+
+
+29/09/2017-10:29:03 --- Pump in laser focus
+
+
+29/09/2017-10:29:03 --- Pump in laser focus
+
+
+29/09/2017-10:29:03 --- Pump in laser focus
+
+
+29/09/2017-10:29:03 --- Pump in laser focus
+
+
+29/09/2017-10:29:03 --- Pump in laser focus
+
+
+29/09/2017-10:29:03 --- Pump in laser focus
+
+
+29/09/2017-10:29:03 --- Pump in laser focus
+
+
+29/09/2017-10:29:03 --- Pump in laser focus
+
+
+29/09/2017-10:29:03 --- simulation auto marking started
+
+
+29/09/2017-10:29:03 --- Pump in laser focus
+
+
+29/09/2017-10:29:03 --- Pump in laser focus
+
+
+29/09/2017-10:29:03 --- Pump in laser focus
+
+
+29/09/2017-10:29:03 --- Pump in laser focus
+
+
+29/09/2017-10:29:03 --- Pump in laser focus
+
+
+29/09/2017-10:29:03 --- Pump in laser focus
+
+
+29/09/2017-10:29:04 --- simulation auto marking started
+
+
+29/09/2017-10:30:10 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-10:30:10 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-10:30:17 --- pump counter:1
+
+
+29/09/2017-10:30:22 --- pump left
+
+
+29/09/2017-10:30:27 --- Automatic barrier rising
+
+
+29/09/2017-10:30:27 --- Auto mode started
+
+
+29/09/2017-10:30:27 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:30:29 --- pump counter:2
+
+
+29/09/2017-10:30:30 --- Automatic barrier lowering
+
+
+29/09/2017-10:30:30 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-10:30:30 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:30:33 --- Pump in laser focus
+
+
+29/09/2017-10:30:34 --- Laser in position, starts marking...
+
+
+29/09/2017-10:30:34 --- simulation auto marking started
+
+
+29/09/2017-10:30:42 --- Optical sensor is not seeing pump, laser goes in reference position
+
+
+29/09/2017-10:30:42 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:30:42 --- Automatic barrier rising
+
+
+29/09/2017-10:30:43 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-10:30:46 --- Cancel pressed, keeping current serial: 17-000287
+
+
+29/09/2017-10:30:46 --- Automatic barrier rising
+
+
+29/09/2017-10:30:46 --- Auto mode started
+
+
+29/09/2017-10:30:46 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:30:46 --- Automatic barrier lowering
+
+
+29/09/2017-10:30:46 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-10:30:46 --- Signal DONE set
+
+
+29/09/2017-10:30:47 --- Signal DONE reseted
+
+
+29/09/2017-10:30:49 --- pump left
+
+
+29/09/2017-10:30:49 --- pump not present
+
+
+29/09/2017-10:30:50 --- pump counter:3
+
+
+29/09/2017-10:30:50 --- Automatic barrier lowering
+
+
+29/09/2017-10:30:50 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-10:30:51 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:30:51 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:30:52 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:30:52 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:30:53 --- Pump in laser focus
+
+
+29/09/2017-10:30:53 --- Pump in laser focus
+
+
+29/09/2017-10:30:53 --- Pump in laser focus
+
+
+29/09/2017-10:30:53 --- Pump in laser focus
+
+
+29/09/2017-10:30:53 --- simulation auto marking started
+
+
+29/09/2017-10:30:53 --- Pump in laser focus
+
+
+29/09/2017-10:30:53 --- Pump in laser focus
+
+
+29/09/2017-10:30:53 --- Pump in laser focus
+
+
+29/09/2017-10:30:53 --- Pump in laser focus
+
+
+29/09/2017-10:30:53 --- Pump in laser focus
+
+
+29/09/2017-10:30:53 --- Pump in laser focus
+
+
+29/09/2017-10:30:53 --- Pump in laser focus
+
+
+29/09/2017-10:30:53 --- Pump in laser focus
+
+
+29/09/2017-10:30:54 --- Pump in laser focus
+
+
+29/09/2017-10:30:54 --- Pump in laser focus
+
+
+29/09/2017-10:30:54 --- Pump in laser focus
+
+
+29/09/2017-10:30:54 --- Pump in laser focus
+
+
+29/09/2017-10:30:54 --- simulation auto marking started
+
+
+29/09/2017-10:30:54 --- Pump in laser focus
+
+
+29/09/2017-10:30:54 --- Pump in laser focus
+
+
+29/09/2017-10:30:54 --- Pump in laser focus
+
+
+29/09/2017-10:30:54 --- Pump in laser focus
+
+
+29/09/2017-10:30:54 --- Pump in laser focus
+
+
+29/09/2017-10:30:54 --- Pump in laser focus
+
+
+29/09/2017-10:30:54 --- Pump in laser focus
+
+
+29/09/2017-10:30:54 --- Pump in laser focus
+
+
+29/09/2017-10:30:54 --- Pump in laser focus
+
+
+29/09/2017-10:30:55 --- simulation auto marking started
+
+
+29/09/2017-10:30:55 --- Pump in laser focus
+
+
+29/09/2017-10:30:55 --- Pump in laser focus
+
+
+29/09/2017-10:30:55 --- Pump in laser focus
+
+
+29/09/2017-10:30:55 --- Pump in laser focus
+
+
+29/09/2017-10:30:55 --- Pump in laser focus
+
+
+29/09/2017-10:30:55 --- Pump in laser focus
+
+
+29/09/2017-10:30:55 --- simulation auto marking started
+
+
+29/09/2017-10:31:03 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-10:31:03 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-10:31:09 --- Automatic barrier rising
+
+
+29/09/2017-10:31:09 --- Auto mode started
+
+
+29/09/2017-10:31:09 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:31:11 --- pump counter:1
+
+
+29/09/2017-10:31:11 --- Automatic barrier lowering
+
+
+29/09/2017-10:31:11 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-10:31:12 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:31:13 --- Pump in laser focus
+
+
+29/09/2017-10:31:13 --- Laser in position, starts marking...
+
+
+29/09/2017-10:31:14 --- simulation auto marking started
+
+
+29/09/2017-10:31:16 --- Automatic barrier rising
+
+
+29/09/2017-10:31:16 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:31:16 --- Barrier not down during laser marking
+
+
+29/09/2017-10:31:16 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-10:31:17 --- Cancel pressed, keeping current serial: 17-000052
+
+
+29/09/2017-10:31:17 --- Automatic barrier rising
+
+
+29/09/2017-10:31:17 --- Auto mode started
+
+
+29/09/2017-10:31:17 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:31:18 --- Signal DONE set
+
+
+29/09/2017-10:31:18 --- Signal DONE reseted
+
+
+29/09/2017-10:31:18 --- pump left
+
+
+29/09/2017-10:31:18 --- pump not present
+
+
+29/09/2017-10:31:19 --- pump counter:2
+
+
+29/09/2017-10:31:19 --- Automatic barrier lowering
+
+
+29/09/2017-10:31:19 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-10:31:20 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:31:21 --- Pump in laser focus
+
+
+29/09/2017-10:31:22 --- Laser in position, starts marking...
+
+
+29/09/2017-10:31:22 --- simulation auto marking started
+
+
+29/09/2017-10:39:23 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-10:39:23 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-10:39:29 --- pump counter:1
+
+
+29/09/2017-10:39:32 --- pump left
+
+
+29/09/2017-10:39:39 --- Automatic barrier rising
+
+
+29/09/2017-10:39:39 --- Auto mode started
+
+
+29/09/2017-10:39:39 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:39:41 --- pump counter:2
+
+
+29/09/2017-10:39:41 --- Automatic barrier lowering
+
+
+29/09/2017-10:39:41 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-10:39:42 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:39:43 --- Pump in laser focus
+
+
+29/09/2017-10:39:44 --- Laser in position, starts marking...
+
+
+29/09/2017-10:39:45 --- simulation auto marking started
+
+
+29/09/2017-10:40:06 --- Stop auto mode has been pressed while marking was active
+
+
+29/09/2017-10:40:41 --- Automatic barrier rising
+
+
+29/09/2017-10:40:41 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:40:42 --- Automatic barrier rising
+
+
+29/09/2017-10:40:42 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+29/09/2017-10:40:42 --- Signal DONE set
+
+
+29/09/2017-10:40:43 --- Signal DONE reseted
+
+
+29/09/2017-10:40:48 --- Cancel pressed, keeping current serial: 17-000287
+
+
+29/09/2017-10:43:59 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-10:43:59 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-10:44:04 --- Automatic barrier rising
+
+
+29/09/2017-10:44:04 --- Auto mode started
+
+
+29/09/2017-10:44:04 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:44:05 --- pump counter:1
+
+
+29/09/2017-10:44:05 --- Automatic barrier lowering
+
+
+29/09/2017-10:44:05 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-10:44:06 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:44:13 --- Pump in laser focus
+
+
+29/09/2017-10:44:13 --- Laser in position, starts marking...
+
+
+29/09/2017-10:44:14 --- simulation auto marking started
+
+
+29/09/2017-10:44:17 --- Automatic barrier rising
+
+
+29/09/2017-10:44:17 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:44:17 --- Barrier not down during laser marking
+
+
+29/09/2017-10:44:17 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-10:44:17 --- Automatic barrier rising
+
+
+29/09/2017-10:44:17 --- Auto mode started
+
+
+29/09/2017-10:44:17 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:44:18 --- Signal DONE set
+
+
+29/09/2017-10:44:18 --- Signal DONE reseted
+
+
+29/09/2017-10:44:23 --- Cancel pressed, keeping current serial: 17-000052
+
+
+29/09/2017-10:44:25 --- pump left
+
+
+29/09/2017-10:44:25 --- pump not present
+
+
+29/09/2017-10:44:26 --- pump counter:2
+
+
+29/09/2017-10:44:26 --- Automatic barrier lowering
+
+
+29/09/2017-10:44:26 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-10:44:29 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-10:44:30 --- Pump in laser focus
+
+
+29/09/2017-10:44:31 --- Laser in position, starts marking...
+
+
+29/09/2017-10:44:31 --- simulation auto marking started
+
+
+29/09/2017-10:44:34 --- Optical sensor is not seeing pump, laser goes in reference position
+
+
+29/09/2017-10:44:34 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:44:34 --- Automatic barrier rising
+
+
+29/09/2017-10:44:34 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-10:44:34 --- Automatic barrier rising
+
+
+29/09/2017-10:44:34 --- Auto mode started
+
+
+29/09/2017-10:44:34 --- Automatic laser referencing initiated
+
+
+29/09/2017-10:44:35 --- Signal DONE set
+
+
+29/09/2017-10:44:35 --- Signal DONE reseted
+
+
+29/09/2017-10:44:37 ---  Ok pressed, creating new serial number
+
+
+29/09/2017-11:50:10 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-11:50:10 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-11:50:17 --- Automatic barrier rising
+
+
+29/09/2017-11:50:17 --- Auto mode started
+
+
+29/09/2017-11:50:17 --- Automatic laser referencing initiated
+
+
+29/09/2017-11:50:18 --- pump counter:1
+
+
+29/09/2017-11:50:19 --- Automatic barrier lowering
+
+
+29/09/2017-11:50:19 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-11:50:20 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-11:50:21 --- Pump in laser focus
+
+
+29/09/2017-11:50:22 --- Laser in position, starts marking...
+
+
+29/09/2017-11:50:23 --- simulation auto marking started
+
+
+29/09/2017-11:50:28 --- pump left
+
+
+29/09/2017-11:50:28 --- pump not present
+
+
+29/09/2017-11:50:29 --- Optical sensor is not seeing pump, laser goes in reference position
+
+
+29/09/2017-11:50:29 --- Automatic laser referencing initiated
+
+
+29/09/2017-11:50:29 --- Automatic barrier rising
+
+
+29/09/2017-11:50:29 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-11:50:29 --- Automatic barrier rising
+
+
+29/09/2017-11:50:29 --- Auto mode started
+
+
+29/09/2017-11:50:29 --- Automatic laser referencing initiated
+
+
+29/09/2017-11:50:31 --- Cancel pressed, keeping current serial: 17-000287
+
+
+29/09/2017-11:50:33 --- pump counter:2
+
+
+29/09/2017-11:50:33 --- Automatic barrier lowering
+
+
+29/09/2017-11:50:33 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-11:50:46 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-11:50:46 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-11:50:52 --- Automatic barrier rising
+
+
+29/09/2017-11:50:52 --- Auto mode started
+
+
+29/09/2017-11:50:52 --- Automatic laser referencing initiated
+
+
+29/09/2017-11:50:53 --- pump counter:1
+
+
+29/09/2017-11:50:54 --- Automatic barrier lowering
+
+
+29/09/2017-11:50:54 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-11:50:54 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-11:50:55 --- Pump in laser focus
+
+
+29/09/2017-11:50:56 --- Laser in position, starts marking...
+
+
+29/09/2017-11:50:56 --- simulation auto marking started
+
+
+29/09/2017-11:51:28 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-11:51:28 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-11:51:35 --- Automatic barrier rising
+
+
+29/09/2017-11:51:35 --- Auto mode started
+
+
+29/09/2017-11:51:35 --- Automatic laser referencing initiated
+
+
+29/09/2017-11:51:36 --- pump counter:1
+
+
+29/09/2017-11:51:36 --- Automatic barrier lowering
+
+
+29/09/2017-11:51:36 --- new pump has arrived, barrier going down ...
+
+
+29/09/2017-11:51:37 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-11:51:37 --- Automatic barrier lowering
+
+
+29/09/2017-11:51:37 --- Automatic barrier lowering
+
+
+29/09/2017-11:51:37 --- Automatic barrier lowering
+
+
+29/09/2017-11:51:37 --- Automatic barrier lowering
+
+
+29/09/2017-11:51:37 --- Automatic barrier lowering
+
+
+29/09/2017-11:51:37 --- Automatic barrier lowering
+
+
+29/09/2017-11:51:37 --- Automatic barrier lowering
+
+
+29/09/2017-11:51:37 --- Automatic barrier lowering
+
+
+29/09/2017-11:51:38 --- Automatic barrier lowering
+
+
+29/09/2017-11:51:38 --- Automatic barrier lowering
+
+
+29/09/2017-11:51:38 --- Automatic barrier lowering
+
+
+29/09/2017-11:51:38 --- Automatic barrier lowering
+
+
+29/09/2017-11:51:38 --- Automatic barrier lowering
+
+
+29/09/2017-11:51:38 --- Automatic barrier lowering
+
+
+29/09/2017-11:51:38 --- Pump in laser focus
+
+
+29/09/2017-11:51:39 --- Laser in position, starts marking...
+
+
+29/09/2017-11:51:39 --- simulation auto marking started
+
+
+29/09/2017-11:51:42 --- Automatic barrier rising
+
+
+29/09/2017-11:51:42 --- Automatic laser referencing initiated
+
+
+29/09/2017-11:51:42 --- Barrier not down during laser marking
+
+
+29/09/2017-11:51:43 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-11:51:43 --- Automatic barrier rising
+
+
+29/09/2017-11:51:43 --- Auto mode started
+
+
+29/09/2017-11:51:43 --- Automatic laser referencing initiated
+
+
+29/09/2017-11:51:43 --- Signal DONE set
+
+
+29/09/2017-11:51:43 --- Cancel pressed, keeping current serial: 17-000052
+
+
+29/09/2017-11:51:44 --- Signal DONE reseted
+
+
+29/09/2017-13:26:34 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-13:26:34 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-13:26:41 --- Automatic barrier rising
+
+
+29/09/2017-13:26:41 --- Auto mode started
+
+
+29/09/2017-13:26:41 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:26:43 --- pump counter:1
+
+
+29/09/2017-13:26:43 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:43 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:26:44 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:26:45 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:45 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:45 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:45 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:45 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:45 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:45 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:45 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:45 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:45 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:45 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:45 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:45 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:45 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:46 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:46 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:46 --- Pump in laser focus
+
+
+29/09/2017-13:26:47 --- Laser in position, starts marking...
+
+
+29/09/2017-13:26:47 --- simulation auto marking started
+
+
+29/09/2017-13:26:51 --- Automatic barrier rising
+
+
+29/09/2017-13:26:51 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:26:51 --- Barrier not down during laser marking
+
+
+29/09/2017-13:26:51 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-13:26:51 --- Automatic barrier rising
+
+
+29/09/2017-13:26:51 --- Auto mode started
+
+
+29/09/2017-13:26:51 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:26:51 --- Automatic barrier lowering
+
+
+29/09/2017-13:26:51 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:26:52 --- Signal DONE set
+
+
+29/09/2017-13:26:52 --- Signal DONE reseted
+
+
+29/09/2017-13:26:53 --- Cancel pressed, keeping current serial: 17-000287
+
+
+29/09/2017-13:26:59 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-13:26:59 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-13:27:07 --- Automatic barrier rising
+
+
+29/09/2017-13:27:07 --- Auto mode started
+
+
+29/09/2017-13:27:07 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:27:09 --- pump counter:1
+
+
+29/09/2017-13:27:09 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:09 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:27:10 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:27:10 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:10 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:10 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:10 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:10 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:10 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:10 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:10 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:27:11 --- Pump in laser focus
+
+
+29/09/2017-13:27:12 --- Laser in position, starts marking...
+
+
+29/09/2017-13:27:12 --- simulation auto marking started
+
+
+29/09/2017-13:28:07 --- Automatic barrier rising
+
+
+29/09/2017-13:28:07 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+29/09/2017-13:28:07 --- Signal DONE set
+
+
+29/09/2017-13:28:07 --- Signal DONE reseted
+
+
+29/09/2017-13:28:10 --- pump left
+
+
+29/09/2017-13:28:10 --- pump not present
+
+
+29/09/2017-13:28:10 --- Marking successful, incrementing serial number and setting signal done
+
+
+29/09/2017-13:28:10 --- Appending .xls log table
+
+
+29/09/2017-13:28:10 ---  
+
+
+29/09/2017-13:28:11 --- pump counter:2
+
+
+29/09/2017-13:28:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:11 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:11 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:11 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:11 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:12 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:12 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:12 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:12 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:12 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:12 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:13 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:13 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:13 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:13 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:13 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:13 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:13 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:13 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:14 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:14 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:14 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:14 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:14 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:14 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:14 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:14 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:15 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:15 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:15 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:15 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:15 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:15 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:16 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:16 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:16 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:16 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:17 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:17 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:17 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:18 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:18 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:18 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:19 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:19 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:19 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:19 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:20 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:20 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:20 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:20 --- pump left
+
+
+29/09/2017-13:28:22 --- pump counter:3
+
+
+29/09/2017-13:28:22 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:22 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:23 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:23 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:23 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:23 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:23 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:23 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:24 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:24 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:24 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:24 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:24 --- pump left
+
+
+29/09/2017-13:28:34 --- pump counter:4
+
+
+29/09/2017-13:28:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:35 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:35 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:35 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:36 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:36 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:36 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:36 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:36 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:36 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:37 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:37 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:37 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:37 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:37 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:37 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:38 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:38 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:38 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:38 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:38 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:38 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:39 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:39 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:39 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:39 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:39 --- pump left
+
+
+29/09/2017-13:28:42 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:28:42 --- Automatic barrier rising
+
+
+29/09/2017-13:28:42 --- Automatic barrier rising
+
+
+29/09/2017-13:28:42 --- Auto mode started
+
+
+29/09/2017-13:28:42 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:28:45 --- pump counter:5
+
+
+29/09/2017-13:28:45 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:45 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:45 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:45 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:46 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:46 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:46 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:46 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:46 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:46 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:47 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:47 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:47 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:47 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:47 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:47 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:48 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:48 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:48 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:48 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:48 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:48 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:49 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:49 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:49 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:49 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:49 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:49 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:50 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:50 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:50 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:50 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:50 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:50 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:51 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:51 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:51 --- Automatic barrier lowering
+
+
+29/09/2017-13:28:51 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:28:51 --- pump left
+
+
+29/09/2017-13:28:53 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:28:53 --- Automatic barrier rising
+
+
+29/09/2017-13:28:54 ---  *** Script Shutting down *** 
+
+
+29/09/2017-13:31:44 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-13:31:44 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-13:31:50 --- Automatic barrier rising
+
+
+29/09/2017-13:31:50 --- Auto mode started
+
+
+29/09/2017-13:31:50 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:31:57 --- pump counter:1
+
+
+29/09/2017-13:31:57 --- Automatic barrier lowering
+
+
+29/09/2017-13:31:57 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:32:01 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:32:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:02 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:02 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:02 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:02 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:02 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:02 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:02 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:02 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:02 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:02 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:02 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:02 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:02 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:02 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:02 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:03 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:03 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:03 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:03 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:03 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:03 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:03 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:03 --- Automatic barrier lowering
+
+
+29/09/2017-13:32:03 --- Pump in laser focus
+
+
+29/09/2017-13:32:04 --- Laser in position, starts marking...
+
+
+29/09/2017-13:32:04 --- simulation auto marking started
+
+
+29/09/2017-13:33:01 --- Automatic barrier rising
+
+
+29/09/2017-13:33:01 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+29/09/2017-13:33:01 --- Signal DONE set
+
+
+29/09/2017-13:33:02 --- Signal DONE reseted
+
+
+29/09/2017-13:33:04 --- pump left
+
+
+29/09/2017-13:33:04 --- Marking successful, incrementing serial number and setting signal done
+
+
+29/09/2017-13:33:04 --- Appending .xls log table
+
+
+29/09/2017-13:33:04 ---  
+
+
+29/09/2017-13:33:04 --- starting wait_for_pump_sim from reset_laser marking
+
+
+29/09/2017-13:33:04 --- pump not present
+
+
+29/09/2017-13:33:06 --- pump counter:2
+
+
+29/09/2017-13:33:06 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:06 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:06 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:06 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:07 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:07 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:07 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:07 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:07 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:07 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:08 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:08 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:08 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:08 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:08 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:08 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:08 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:09 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:09 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:09 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:09 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:09 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:09 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:09 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:10 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:10 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:10 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:10 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:10 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:10 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:11 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:11 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:11 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:11 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:11 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:12 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:12 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:12 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:12 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:12 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:12 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:12 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:12 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:13 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:13 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:13 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:13 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:13 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:13 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:14 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:14 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:14 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:14 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:14 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:14 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:14 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:14 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:15 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:15 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:15 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:15 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:15 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:15 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:16 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:16 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:16 --- pump left
+
+
+29/09/2017-13:33:23 --- pump counter:3
+
+
+29/09/2017-13:33:23 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:23 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:23 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:23 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:24 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:24 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:24 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:24 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:24 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:24 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:25 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:25 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:25 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:25 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:25 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:25 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:25 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:25 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:26 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:26 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:26 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:27 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:27 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:27 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:28 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:28 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:28 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:29 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:29 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:29 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:30 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:30 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:30 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:31 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:31 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:32 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:32 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:32 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:33:33 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:33:33 --- pump left
+
+
+29/09/2017-13:33:33 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:33 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:33 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:34 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:34 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:34 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:34 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:35 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:35 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:35 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:35 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:36 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:36 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:36 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:36 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:37 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:37 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:37 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:37 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:38 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:38 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:38 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:38 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:39 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:39 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:39 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:39 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:39 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:40 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:40 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:40 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:40 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:41 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:41 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:41 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:41 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:41 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:42 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:42 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:42 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:42 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:42 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:43 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:43 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:43 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:43 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:44 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:44 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:44 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:44 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:44 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:45 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:45 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:45 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:45 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:45 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:46 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:46 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:46 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:46 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:47 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:47 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:47 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:47 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:33:48 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:37:49 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-13:37:49 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-13:37:58 --- Automatic barrier rising
+
+
+29/09/2017-13:37:58 --- Auto mode started
+
+
+29/09/2017-13:37:58 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:37:59 --- pump counter:1
+
+
+29/09/2017-13:37:59 --- Automatic barrier lowering
+
+
+29/09/2017-13:37:59 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:38:00 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:38:00 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:00 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:00 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:00 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:00 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:00 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:01 --- Pump in laser focus
+
+
+29/09/2017-13:38:02 --- Laser in position, starts marking...
+
+
+29/09/2017-13:38:02 --- simulation auto marking started
+
+
+29/09/2017-13:38:05 --- Automatic barrier rising
+
+
+29/09/2017-13:38:05 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:38:05 --- Barrier not down during laser marking
+
+
+29/09/2017-13:38:05 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-13:38:05 --- Automatic barrier rising
+
+
+29/09/2017-13:38:05 --- Auto mode started
+
+
+29/09/2017-13:38:05 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:38:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:05 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:38:06 --- Signal DONE set
+
+
+29/09/2017-13:38:06 --- Signal DONE reseted
+
+
+29/09/2017-13:38:07 --- Cancel pressed, keeping current serial: 17-000053
+
+
+29/09/2017-13:38:09 --- pump left
+
+
+29/09/2017-13:38:09 --- pump not present
+
+
+29/09/2017-13:38:13 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-13:38:13 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-13:38:23 --- Auto mode already off
+
+
+29/09/2017-13:38:23 --- Automatic barrier rising
+
+
+29/09/2017-13:38:23 --- Auto mode started
+
+
+29/09/2017-13:38:23 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:38:25 --- pump counter:1
+
+
+29/09/2017-13:38:25 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:25 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:38:27 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:38:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:28 --- Pump in laser focus
+
+
+29/09/2017-13:38:29 --- Laser in position, starts marking...
+
+
+29/09/2017-13:38:29 --- simulation auto marking started
+
+
+29/09/2017-13:38:32 --- Optical sensor is not seeing pump, laser goes in reference position
+
+
+29/09/2017-13:38:32 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:38:32 --- Automatic barrier rising
+
+
+29/09/2017-13:38:32 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-13:38:32 --- Automatic barrier rising
+
+
+29/09/2017-13:38:32 --- Auto mode started
+
+
+29/09/2017-13:38:32 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:38:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:32 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:38:32 --- Signal DONE set
+
+
+29/09/2017-13:38:33 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:38:33 --- Signal DONE reseted
+
+
+29/09/2017-13:38:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:34 --- Cancel pressed, keeping current serial: 17-000288
+
+
+29/09/2017-13:38:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:35 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:36 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:36 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:36 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:36 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:36 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:36 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:36 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:36 --- Automatic barrier lowering
+
+
+29/09/2017-13:38:43 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-13:38:43 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-13:42:50 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-13:42:50 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-13:42:57 --- Automatic barrier rising
+
+
+29/09/2017-13:42:57 --- Auto mode started
+
+
+29/09/2017-13:42:57 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:42:58 --- pump counter:1
+
+
+29/09/2017-13:42:58 --- Automatic barrier lowering
+
+
+29/09/2017-13:42:58 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:42:59 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:42:59 --- Automatic barrier lowering
+
+
+29/09/2017-13:42:59 --- Automatic barrier lowering
+
+
+29/09/2017-13:42:59 --- Automatic barrier lowering
+
+
+29/09/2017-13:42:59 --- Automatic barrier lowering
+
+
+29/09/2017-13:42:59 --- Automatic barrier lowering
+
+
+29/09/2017-13:42:59 --- Automatic barrier lowering
+
+
+29/09/2017-13:42:59 --- Automatic barrier lowering
+
+
+29/09/2017-13:42:59 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:00 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:00 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:00 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:00 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:00 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:00 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:00 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:00 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:00 --- Pump in laser focus
+
+
+29/09/2017-13:43:01 --- Laser in position, starts marking...
+
+
+29/09/2017-13:43:01 --- simulation auto marking started
+
+
+29/09/2017-13:43:03 --- Optical sensor is not seeing pump, laser goes in reference position
+
+
+29/09/2017-13:43:03 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:43:03 --- Automatic barrier rising
+
+
+29/09/2017-13:43:03 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-13:43:03 --- Automatic barrier rising
+
+
+29/09/2017-13:43:03 --- Auto mode started
+
+
+29/09/2017-13:43:03 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:43:03 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:03 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:43:04 --- Signal DONE set
+
+
+29/09/2017-13:43:04 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:43:04 --- Signal DONE reseted
+
+
+29/09/2017-13:43:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:43:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:46:03 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-13:46:03 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-13:46:12 --- Automatic barrier rising
+
+
+29/09/2017-13:46:12 --- Auto mode started
+
+
+29/09/2017-13:46:12 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:46:14 --- pump counter:1
+
+
+29/09/2017-13:46:14 --- Automatic barrier lowering
+
+
+29/09/2017-13:46:14 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:46:15 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:46:15 --- Automatic barrier lowering
+
+
+29/09/2017-13:46:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:46:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:46:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:46:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:46:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:46:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:46:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:46:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:46:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:46:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:46:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:46:16 --- Pump in laser focus
+
+
+29/09/2017-13:46:17 --- Laser in position, starts marking...
+
+
+29/09/2017-13:46:18 --- simulation auto marking started
+
+
+29/09/2017-13:46:21 --- Automatic barrier rising
+
+
+29/09/2017-13:46:21 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:46:21 --- Barrier not down during laser marking
+
+
+29/09/2017-13:46:21 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-13:46:21 --- Automatic barrier rising
+
+
+29/09/2017-13:46:21 --- Auto mode started
+
+
+29/09/2017-13:46:21 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:46:22 --- Automatic barrier lowering
+
+
+29/09/2017-13:46:22 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:46:22 --- Signal DONE set
+
+
+29/09/2017-13:46:23 --- Signal DONE reseted
+
+
+29/09/2017-13:46:25 --- Cancel pressed, keeping current serial: 17-000053
+
+
+29/09/2017-13:46:30 --- Auto mode already started, or laser marking started in manual mode
+
+
+29/09/2017-13:48:42 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-13:48:42 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-13:48:50 --- Automatic barrier rising
+
+
+29/09/2017-13:48:50 --- Auto mode started
+
+
+29/09/2017-13:48:50 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:48:52 --- pump counter:1
+
+
+29/09/2017-13:48:53 --- Automatic barrier lowering
+
+
+29/09/2017-13:48:53 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:48:54 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:48:54 --- Automatic barrier lowering
+
+
+29/09/2017-13:48:54 --- Automatic barrier lowering
+
+
+29/09/2017-13:48:54 --- Automatic barrier lowering
+
+
+29/09/2017-13:48:55 --- Automatic barrier lowering
+
+
+29/09/2017-13:48:55 --- Automatic barrier lowering
+
+
+29/09/2017-13:48:55 --- Automatic barrier lowering
+
+
+29/09/2017-13:48:55 --- Automatic barrier lowering
+
+
+29/09/2017-13:48:55 --- Automatic barrier lowering
+
+
+29/09/2017-13:48:55 --- Automatic barrier lowering
+
+
+29/09/2017-13:48:55 --- Automatic barrier lowering
+
+
+29/09/2017-13:48:55 --- Automatic barrier lowering
+
+
+29/09/2017-13:48:55 --- Automatic barrier lowering
+
+
+29/09/2017-13:48:55 --- Automatic barrier lowering
+
+
+29/09/2017-13:48:55 --- Pump in laser focus
+
+
+29/09/2017-13:48:56 --- Laser in position, starts marking...
+
+
+29/09/2017-13:48:57 --- simulation auto marking started
+
+
+29/09/2017-13:49:00 --- Automatic barrier rising
+
+
+29/09/2017-13:49:00 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:49:00 --- Barrier not down during laser marking
+
+
+29/09/2017-13:49:00 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-13:49:00 --- Automatic barrier rising
+
+
+29/09/2017-13:49:00 --- Auto mode started
+
+
+29/09/2017-13:49:00 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:49:01 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:01 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:49:01 --- Signal DONE set
+
+
+29/09/2017-13:49:01 --- Signal DONE reseted
+
+
+29/09/2017-13:49:03 --- Cancel pressed, keeping current serial: 17-000288
+
+
+29/09/2017-13:49:08 --- Auto mode already started, or laser marking started in manual mode
+
+
+29/09/2017-13:49:13 --- pump left
+
+
+29/09/2017-13:49:13 --- pump not present
+
+
+29/09/2017-13:49:14 --- pump counter:2
+
+
+29/09/2017-13:49:14 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:14 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:49:16 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:49:16 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:49:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:16 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:17 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:18 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:19 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:20 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:21 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:21 --- Pump in laser focus
+
+
+29/09/2017-13:49:22 --- simulation auto marking started
+
+
+29/09/2017-13:49:22 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:22 --- Pump in laser focus
+
+
+29/09/2017-13:49:22 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:22 --- Pump in laser focus
+
+
+29/09/2017-13:49:22 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:22 --- Pump in laser focus
+
+
+29/09/2017-13:49:22 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:22 --- Pump in laser focus
+
+
+29/09/2017-13:49:22 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:22 --- Pump in laser focus
+
+
+29/09/2017-13:49:22 --- Automatic barrier lowering
+
+
+29/09/2017-13:49:22 --- Pump in laser focus
+
+
+29/09/2017-13:51:45 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-13:51:45 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-13:51:55 --- Automatic barrier rising
+
+
+29/09/2017-13:51:55 --- Auto mode started
+
+
+29/09/2017-13:51:55 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:51:56 --- pump counter:1
+
+
+29/09/2017-13:51:56 --- Automatic barrier lowering
+
+
+29/09/2017-13:51:56 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:51:56 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:51:57 --- Automatic barrier lowering
+
+
+29/09/2017-13:51:57 --- Automatic barrier lowering
+
+
+29/09/2017-13:51:57 --- Automatic barrier lowering
+
+
+29/09/2017-13:51:57 --- Automatic barrier lowering
+
+
+29/09/2017-13:51:57 --- Automatic barrier lowering
+
+
+29/09/2017-13:51:57 --- Automatic barrier lowering
+
+
+29/09/2017-13:51:57 --- Automatic barrier lowering
+
+
+29/09/2017-13:51:57 --- Automatic barrier lowering
+
+
+29/09/2017-13:51:57 --- Automatic barrier lowering
+
+
+29/09/2017-13:51:57 --- Automatic barrier lowering
+
+
+29/09/2017-13:51:57 --- Pump in laser focus
+
+
+29/09/2017-13:51:58 --- Laser in position, starts marking...
+
+
+29/09/2017-13:51:59 --- simulation auto marking started
+
+
+29/09/2017-13:52:02 --- Optical sensor is not seeing pump, laser goes in reference position
+
+
+29/09/2017-13:52:02 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:52:02 --- Automatic barrier rising
+
+
+29/09/2017-13:52:02 --- Resetting auto mode! Simulation mode *****************
+
+
+29/09/2017-13:52:02 --- Automatic barrier rising
+
+
+29/09/2017-13:52:02 --- Auto mode started
+
+
+29/09/2017-13:52:02 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:52:03 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:03 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:52:03 --- Signal DONE set
+
+
+29/09/2017-13:52:03 --- Cancel pressed, keeping current serial: 17-000288
+
+
+29/09/2017-13:52:03 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:52:04 --- Signal DONE reseted
+
+
+29/09/2017-13:52:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:04 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:05 --- Auto mode already started, or laser marking started in manual mode
+
+
+29/09/2017-13:52:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:05 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:06 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:06 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:06 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:06 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:06 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:06 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:06 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:06 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:06 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:06 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:06 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:06 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:07 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:07 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:07 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:07 --- pump left
+
+
+29/09/2017-13:52:07 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:07 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:07 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:07 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:07 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:07 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:07 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:07 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:14 --- Init passed
+
+
+=================================================== 
+
+29/09/2017-13:52:14 *** Process logging started *** 
+
+=================================================== 
+
+29/09/2017-13:52:22 --- Automatic barrier rising
+
+
+29/09/2017-13:52:22 --- Auto mode started
+
+
+29/09/2017-13:52:22 --- Automatic laser referencing initiated
+
+
+29/09/2017-13:52:24 --- pump counter:1
+
+
+29/09/2017-13:52:24 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:24 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+29/09/2017-13:52:25 --- Laser is moving into working position, searching for pump...
+
+
+29/09/2017-13:52:25 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:25 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:25 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:25 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:26 --- pump left
+
+
+29/09/2017-13:52:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:26 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:27 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:28 --- pump counter:2
+
+
+29/09/2017-13:52:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:28 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:29 --- pump left
+
+
+29/09/2017-13:52:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:29 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:30 --- pump counter:3
+
+
+29/09/2017-13:52:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:30 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:31 --- pump left
+
+
+29/09/2017-13:52:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:31 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:32 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:33 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:34 --- Automatic barrier lowering
+
+
+29/09/2017-13:52:34 --- Automatic barrier lowering
+
+

@@ -6,7 +6,7 @@ var enable_existing_sn_marking = 1;
 
 //sets debugging(on=1 and off=0)
 
-var simulation_mode = 1;
+var simulation_mode = 0;
 var debug_mode = 1;
 
 var compensation_enabled = 0;

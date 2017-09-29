@@ -31045,3 +31045,204 @@
 28/09/2017-23:53:54 --- [Microsoft][ODBC Excel Driver] Number of query values and destination fields are not the same. QODBC3: Unable to execute statement
 
 
+28/09/2017-23:58:27 --- Init passed
+
+
+=================================================== 
+
+28/09/2017-23:58:27 *** Process logging started *** 
+
+=================================================== 
+
+28/09/2017-23:58:33 --- Automatic barrier rising
+
+
+28/09/2017-23:58:33 --- Auto mode started
+
+
+28/09/2017-23:58:33 --- Automatic laser referencing initiated
+
+
+28/09/2017-23:58:35 --- pump counter:1
+
+
+28/09/2017-23:58:35 --- Automatic barrier lowering
+
+
+28/09/2017-23:58:35 --- new pump has arrived, barrier going down ...
+
+
+28/09/2017-23:58:38 --- Laser is moving into working position, searching for pump...
+
+
+28/09/2017-23:58:38 --- Pump in laser focus
+
+
+28/09/2017-23:58:38 --- Laser in position, starts marking...
+
+
+28/09/2017-23:58:39 --- simulation auto marking started
+
+
+28/09/2017-23:58:47 --- Automatic barrier rising
+
+
+28/09/2017-23:58:47 --- Automatic laser referencing initiated
+
+
+28/09/2017-23:58:47 --- Barrier not down during laser marking
+
+
+28/09/2017-23:58:47 --- Resetting auto mode! Simulation mode *****************
+
+
+28/09/2017-23:58:49 --- Cancel pressed, keeping current serial: 17-000052
+
+
+28/09/2017-23:58:49 --- Automatic barrier rising
+
+
+28/09/2017-23:58:49 --- Auto mode started
+
+
+28/09/2017-23:58:49 --- Automatic laser referencing initiated
+
+
+28/09/2017-23:58:49 --- Signal DONE set
+
+
+28/09/2017-23:58:49 --- Signal DONE reseted
+
+
+28/09/2017-23:58:50 --- pump left
+
+
+28/09/2017-23:58:50 --- pump not present
+
+
+28/09/2017-23:58:56 --- pump counter:2
+
+
+28/09/2017-23:58:57 --- Automatic barrier lowering
+
+
+28/09/2017-23:58:57 --- new pump has arrived, barrier going down ...
+
+
+28/09/2017-23:59:03 --- Laser is moving into working position, searching for pump...
+
+
+28/09/2017-23:59:05 --- Pump in laser focus
+
+
+28/09/2017-23:59:05 --- Laser in position, starts marking...
+
+
+28/09/2017-23:59:06 --- simulation auto marking started
+
+
+28/09/2017-23:59:09 --- Optical sensor is not seeing pump, laser goes in reference position
+
+
+28/09/2017-23:59:09 --- Automatic laser referencing initiated
+
+
+28/09/2017-23:59:09 --- Automatic barrier rising
+
+
+28/09/2017-23:59:10 --- Resetting auto mode! Simulation mode *****************
+
+
+28/09/2017-23:59:14 --- Cancel pressed, keeping current serial: 17-000052
+
+
+28/09/2017-23:59:14 --- Automatic barrier rising
+
+
+28/09/2017-23:59:14 --- Auto mode started
+
+
+28/09/2017-23:59:14 --- Automatic laser referencing initiated
+
+
+28/09/2017-23:59:14 --- Signal DONE set
+
+
+28/09/2017-23:59:15 --- Signal DONE reseted
+
+
+28/09/2017-23:59:18 --- pump left
+
+
+28/09/2017-23:59:18 --- pump not present
+
+
+28/09/2017-23:59:19 --- pump counter:3
+
+
+28/09/2017-23:59:19 --- Automatic barrier lowering
+
+
+28/09/2017-23:59:19 --- new pump has arrived, barrier going down ...
+
+
+28/09/2017-23:59:24 --- Laser is moving into working position, searching for pump...
+
+
+28/09/2017-23:59:26 --- Pump in laser focus
+
+
+28/09/2017-23:59:27 --- Laser in position, starts marking...
+
+
+28/09/2017-23:59:27 --- simulation auto marking started
+
+
+28/09/2017-23:59:31 --- Optical sensor is not seeing pump, laser goes in reference position
+
+
+28/09/2017-23:59:31 --- Automatic laser referencing initiated
+
+
+28/09/2017-23:59:31 --- Automatic barrier rising
+
+
+28/09/2017-23:59:32 --- Resetting auto mode! Simulation mode *****************
+
+
+28/09/2017-23:59:33 --- Cancel pressed, keeping current serial: 17-000052
+
+
+28/09/2017-23:59:33 --- Automatic barrier rising
+
+
+28/09/2017-23:59:33 --- Auto mode started
+
+
+28/09/2017-23:59:33 --- Automatic laser referencing initiated
+
+
+28/09/2017-23:59:33 --- pump left
+
+
+28/09/2017-23:59:33 --- Signal DONE set
+
+
+28/09/2017-23:59:33 --- pump not present
+
+
+28/09/2017-23:59:34 --- Signal DONE reseted
+
+
+28/09/2017-23:59:41 --- First stop auto mode!
+
+
+28/09/2017-23:59:42 --- Automatic laser referencing initiated
+
+
+28/09/2017-23:59:42 --- Automatic barrier rising
+
+
+28/09/2017-23:59:42 ---  *** Script Shutting down *** 
+
+
