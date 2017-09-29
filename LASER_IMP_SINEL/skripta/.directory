@@ -1,8 +1,8 @@
 [Dolphin]
 SortOrder=1
-SortRole=date
-Timestamp=2017,1,23,15,44,47
-Version=3
+SortRole=modificationtime
+Timestamp=2017,9,29,20,17,32
+Version=4
 ViewMode=1
 
 [Settings]
