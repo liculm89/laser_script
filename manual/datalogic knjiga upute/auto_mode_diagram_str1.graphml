@@ -15,7 +15,6 @@
   <graph edgedefault="directed" id="G">
     <data key="d0"/>
     <node id="n0">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="56.11199999999997" width="161.84110705777778" x="125.80000000000004" y="-75.0"/>
@@ -33,7 +32,6 @@
       </data>
     </node>
     <node id="n1">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="72.01309866666679" width="131.71234133333337" x="-102.690491778698" y="2.9869013333332077"/>
@@ -54,7 +52,6 @@
       </data>
     </node>
     <node id="n2">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="111.42284799999993" width="131.71234133333337" x="110.33141333333339" y="679.112128"/>
@@ -73,7 +70,6 @@ auto_mode str 2.<y:LabelModel>
       </data>
     </node>
     <node id="n3">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="72.01309866666679" width="131.71234133333337" x="-108.84865841896303" y="615.0"/>
@@ -94,7 +90,6 @@ auto_mode str 2.<y:LabelModel>
       </data>
     </node>
     <node id="n4">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="90.0" width="110.51349333333334" x="-102.690491778698" y="105.0"/>
@@ -229,13 +224,12 @@ nom++<y:LabelModel>
           <y:Geometry height="118.57249666221628" width="211.92096128170897" x="112.64632680312985" y="20.009479305741024"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="114.783203125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="205.263671875" x="3.3286447033544846" y="1.8946467686081405">auto_mode = "ON"
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="98.95703125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="156.103515625" x="27.908722828354485" y="9.80773270610814">auto_mode = "ON"
 get_quantity()
 numWC = 0
 laser_in_working_pos = 0
 laser_ref_auto()
-timers[4] = System.setTimer(times[4])
-start_timer(timers[4], wait_for_pump)<y:LabelModel>
+gen_timer(4, wait_for_pump)<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -417,13 +411,12 @@ start_timer(timers[4], wait_for_pump)<y:LabelModel>
       </data>
     </node>
     <node id="n22">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="90.59866488651534" x="173.30747500072667" y="170.92585527369837"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.826171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="82.873046875" x="3.86280900575764" y="5.0869140625">wait_for_pump<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.826171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="82.873046875" x="3.8628090057576685" y="5.0869140625">wait_for_pump<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -435,7 +428,6 @@ start_timer(timers[4], wait_for_pump)<y:LabelModel>
       </data>
     </node>
     <edge id="e0" source="n2" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -456,7 +448,6 @@ start_timer(timers[4], wait_for_pump)<y:LabelModel>
       </data>
     </edge>
     <edge id="e1" source="n5" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-63.81241599999993" sy="-4.323462718467908" tx="0.0" ty="0.0"/>
@@ -475,7 +466,6 @@ start_timer(timers[4], wait_for_pump)<y:LabelModel>
       </data>
     </edge>
     <edge id="e2" source="n6" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="65.88403014298216" sy="32.93570078707717" tx="0.0" ty="0.0">
@@ -496,7 +486,6 @@ start_timer(timers[4], wait_for_pump)<y:LabelModel>
       </data>
     </edge>
     <edge id="e3" source="n6" target="n3">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -575,7 +564,6 @@ start_timer(timers[4], wait_for_pump)<y:LabelModel>
       </data>
     </edge>
     <edge id="e8" source="n11" target="n1">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-0.403993797878627" sy="-40.30227697018256" tx="0.0" ty="0.0"/>
@@ -586,7 +574,6 @@ start_timer(timers[4], wait_for_pump)<y:LabelModel>
       </data>
     </edge>
     <edge id="e9" source="n11" target="n4">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-2.791009797878644" sy="23.257949911925152" tx="-9.89979426070881" ty="30.0">
@@ -781,7 +768,6 @@ start_timer(timers[4], wait_for_pump)<y:LabelModel>
       </data>
     </edge>
     <edge id="e22" source="n22" target="n9">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -792,7 +778,6 @@ start_timer(timers[4], wait_for_pump)<y:LabelModel>
       </data>
     </edge>
     <edge id="e23" source="n9" target="n22">
-      <data key="d9"/>
       <data key="d10">
         <y:SplineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">

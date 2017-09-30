@@ -508,3 +508,1086 @@
 30/09/2017-00:18:56 --- Automatic laser referencing initiated
 
 
+30/09/2017-22:07:29 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-22:07:29 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-22:07:53 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-22:07:53 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-22:08:02 --- Automatic barrier rising
+
+
+30/09/2017-22:08:02 --- Auto mode started
+
+
+30/09/2017-22:08:02 --- Automatic laser referencing initiated
+
+
+30/09/2017-22:08:06 --- pump counter:1
+
+
+30/09/2017-22:08:06 --- Automatic barrier lowering
+
+
+30/09/2017-22:08:06 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+30/09/2017-22:08:07 --- Barrier is lowered, searching for pump...
+
+
+30/09/2017-22:08:07 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-22:08:16 --- Pump in laser focus
+
+
+30/09/2017-22:08:17 --- simulation auto marking started
+
+
+30/09/2017-22:08:21 --- Optical sensor error during marking, laser goes in reference position
+
+
+30/09/2017-22:08:21 --- Automatic laser referencing initiated
+
+
+30/09/2017-22:08:21 --- Resetting auto mode! Simulation mode *****************
+
+
+30/09/2017-22:08:21 --- Automatic laser referencing initiated
+
+
+30/09/2017-22:08:21 --- Automatic barrier rising
+
+
+30/09/2017-22:08:23 --- Cancel pressed, keeping current serial: 17-000290
+
+
+30/09/2017-22:08:23 --- Automatic barrier rising
+
+
+30/09/2017-22:08:23 --- Auto mode started
+
+
+30/09/2017-22:08:23 --- Automatic laser referencing initiated
+
+
+30/09/2017-22:08:28 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-22:08:28 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-22:08:31 --- Selected part and serial number not confirmed!
+
+
+30/09/2017-22:08:42 --- Selected part and serial number not confirmed!
+
+
+30/09/2017-22:08:51 --- Automatic barrier rising
+
+
+30/09/2017-22:08:51 --- Auto mode started
+
+
+30/09/2017-22:08:51 --- Automatic laser referencing initiated
+
+
+30/09/2017-22:08:55 --- pump counter:1
+
+
+30/09/2017-22:08:55 --- Automatic barrier lowering
+
+
+30/09/2017-22:08:55 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+30/09/2017-22:08:56 --- Barrier is lowered, searching for pump...
+
+
+30/09/2017-22:08:56 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-22:09:02 --- Pump in laser focus
+
+
+30/09/2017-22:09:03 --- simulation auto marking started
+
+
+30/09/2017-22:09:18 --- Barrier not down during laser marking
+
+
+30/09/2017-22:09:18 --- Automatic laser referencing initiated
+
+
+30/09/2017-22:09:18 --- Resetting auto mode! Simulation mode *****************
+
+
+30/09/2017-22:09:18 --- Automatic laser referencing initiated
+
+
+30/09/2017-22:09:18 --- Automatic barrier rising
+
+
+30/09/2017-22:09:20 ---  Ok pressed, creating new serial number
+
+
+30/09/2017-22:09:20 --- Automatic barrier rising
+
+
+30/09/2017-22:09:20 --- Auto mode started
+
+
+30/09/2017-22:09:20 --- Automatic laser referencing initiated
+
+
+30/09/2017-22:59:23 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-22:59:23 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-22:59:30 --- Automatic barrier rising
+
+
+30/09/2017-22:59:30 --- Auto mode started
+
+
+30/09/2017-22:59:30 --- Automatic laser referencing initiated
+
+
+30/09/2017-22:59:32 --- pump counter:1
+
+
+30/09/2017-22:59:32 --- Automatic barrier lowering
+
+
+30/09/2017-22:59:33 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+30/09/2017-22:59:34 --- Barrier is lowered, searching for pump...
+
+
+30/09/2017-22:59:34 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-22:59:34 --- Pump in laser focus
+
+
+30/09/2017-22:59:34 --- simulation auto marking started
+
+
+30/09/2017-22:59:36 --- pump left
+
+
+30/09/2017-22:59:37 --- Automatic barrier rising
+
+
+30/09/2017-22:59:37 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+30/09/2017-22:59:37 --- Marking successful, incrementing serial number and setting signal done
+
+
+30/09/2017-22:59:37 --- Appending .xls log table
+
+
+30/09/2017-22:59:38 ---  
+
+
+30/09/2017-22:59:38 --- starting wait_for_pump_sim from reset_laser marking
+
+
+30/09/2017-22:59:38 --- Signal DONE set
+
+
+30/09/2017-22:59:38 --- Signal DONE reseted
+
+
+30/09/2017-22:59:59 --- Automatic laser referencing initiated
+
+
+30/09/2017-22:59:59 --- Automatic barrier rising
+
+
+30/09/2017-23:00:01 ---  *** Script Shutting down *** 
+
+
+30/09/2017-23:07:24 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-23:07:24 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-23:08:00 --- Template file not defined
+
+
+30/09/2017-23:08:06 --- Template file not defined
+
+
+30/09/2017-23:08:09 ---  *** Script Shutting down *** 
+
+
+30/09/2017-23:08:53 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-23:08:53 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-23:09:00 --- Automatic barrier rising
+
+
+30/09/2017-23:09:00 --- Auto mode started
+
+
+30/09/2017-23:09:00 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:09:04 --- pump counter:1
+
+
+30/09/2017-23:09:04 --- Automatic barrier lowering
+
+
+30/09/2017-23:09:04 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+30/09/2017-23:09:06 --- Barrier is lowered, searching for pump...
+
+
+30/09/2017-23:09:06 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-23:09:07 --- Pump in laser focus
+
+
+30/09/2017-23:09:08 --- simulation auto marking started
+
+
+30/09/2017-23:09:26 --- Barrier not down during laser marking
+
+
+30/09/2017-23:09:26 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:09:26 --- Resetting auto mode! Simulation mode *****************
+
+
+30/09/2017-23:09:26 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:09:26 --- Automatic barrier rising
+
+
+30/09/2017-23:09:30 ---  Ok pressed, creating new serial number
+
+
+30/09/2017-23:09:30 --- Automatic barrier rising
+
+
+30/09/2017-23:09:30 --- Auto mode started
+
+
+30/09/2017-23:09:30 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:13:35 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-23:13:35 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-23:13:42 --- Automatic barrier rising
+
+
+30/09/2017-23:13:42 --- Auto mode started
+
+
+30/09/2017-23:13:42 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:13:44 --- pump counter:1
+
+
+30/09/2017-23:13:44 --- Automatic barrier lowering
+
+
+30/09/2017-23:13:44 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+30/09/2017-23:13:45 --- Barrier is lowered, searching for pump...
+
+
+30/09/2017-23:13:45 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-23:13:46 --- Pump in laser focus
+
+
+30/09/2017-23:13:46 --- simulation auto marking started
+
+
+30/09/2017-23:13:49 --- Optical sensor error during marking, laser goes in reference position
+
+
+30/09/2017-23:13:49 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:13:49 --- Resetting auto mode! Simulation mode *****************
+
+
+30/09/2017-23:13:49 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:13:49 --- Automatic barrier rising
+
+
+30/09/2017-23:13:50 --- Cancel pressed, keeping current serial: 17-000291
+
+
+30/09/2017-23:13:50 --- Automatic barrier rising
+
+
+30/09/2017-23:13:50 --- Auto mode started
+
+
+30/09/2017-23:13:50 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:13:54 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-23:13:54 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-23:14:01 --- Automatic barrier rising
+
+
+30/09/2017-23:14:01 --- Auto mode started
+
+
+30/09/2017-23:14:01 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:14:03 --- pump counter:1
+
+
+30/09/2017-23:14:03 --- Automatic barrier lowering
+
+
+30/09/2017-23:14:03 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+30/09/2017-23:14:06 --- Barrier is lowered, searching for pump...
+
+
+30/09/2017-23:14:06 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-23:14:08 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:14:08 --- Laser lower position reached, no pump found, going back to ref...
+
+
+30/09/2017-23:14:08 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:14:08 --- Automatic barrier rising
+
+
+30/09/2017-23:14:10 --- ok pressed, trying to find pump again
+
+
+30/09/2017-23:14:10 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-23:14:10 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:14:10 --- Automatic barrier rising
+
+
+30/09/2017-23:14:10 --- Automatic barrier rising
+
+
+30/09/2017-23:14:10 --- Auto mode started
+
+
+30/09/2017-23:14:10 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:14:15 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-23:14:15 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-23:14:25 --- Automatic barrier rising
+
+
+30/09/2017-23:14:25 --- Auto mode started
+
+
+30/09/2017-23:14:25 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:14:27 --- pump counter:1
+
+
+30/09/2017-23:14:27 --- Automatic barrier lowering
+
+
+30/09/2017-23:14:27 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+30/09/2017-23:14:30 --- Barrier is lowered, searching for pump...
+
+
+30/09/2017-23:14:30 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-23:14:31 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:14:31 --- Laser lower position reached, no pump found, going back to ref...
+
+
+30/09/2017-23:14:31 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:14:31 --- Automatic barrier rising
+
+
+30/09/2017-23:14:32 --- ok pressed, trying to find pump again
+
+
+30/09/2017-23:14:32 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-23:14:32 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:14:32 --- Automatic barrier rising
+
+
+30/09/2017-23:14:32 --- Automatic barrier rising
+
+
+30/09/2017-23:14:32 --- Auto mode started
+
+
+30/09/2017-23:14:32 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:14:46 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-23:14:46 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-23:14:54 --- Automatic barrier rising
+
+
+30/09/2017-23:14:54 --- Auto mode started
+
+
+30/09/2017-23:14:54 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:15:00 --- First stop auto mode!
+
+
+30/09/2017-23:15:02 --- First stop auto mode!
+
+
+30/09/2017-23:15:03 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:15:03 --- Automatic barrier rising
+
+
+30/09/2017-23:15:14 --- pump counter:1
+
+
+30/09/2017-23:15:20 --- pump left
+
+
+30/09/2017-23:15:20 --- pump counter:2
+
+
+30/09/2017-23:15:21 --- pump left
+
+
+30/09/2017-23:15:24 ---  *** Script Shutting down *** 
+
+
+30/09/2017-23:21:29 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-23:21:29 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-23:21:36 --- Automatic barrier rising
+
+
+30/09/2017-23:21:36 --- Auto mode started
+
+
+30/09/2017-23:21:36 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:21:38 --- pump counter:1
+
+
+30/09/2017-23:21:38 --- Automatic barrier lowering
+
+
+30/09/2017-23:21:38 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+30/09/2017-23:21:41 --- Barrier is lowered, searching for pump...
+
+
+30/09/2017-23:21:41 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-23:21:44 --- Pump in laser focus
+
+
+30/09/2017-23:21:45 --- simulation auto marking started
+
+
+30/09/2017-23:21:52 --- Optical sensor error during marking, laser goes in reference position
+
+
+30/09/2017-23:21:52 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:21:52 --- Resetting auto mode! Simulation mode *****************
+
+
+30/09/2017-23:21:52 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:21:52 --- Automatic barrier rising
+
+
+30/09/2017-23:22:03 --- Cancel pressed, keeping current serial: 17-000055
+
+
+30/09/2017-23:22:03 --- Automatic barrier rising
+
+
+30/09/2017-23:22:03 --- Auto mode started
+
+
+30/09/2017-23:22:03 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:22:03 --- Automatic barrier lowering
+
+
+30/09/2017-23:22:03 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+30/09/2017-23:22:04 --- Barrier is lowered, searching for pump...
+
+
+30/09/2017-23:22:04 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-23:22:12 --- Pump in laser focus
+
+
+30/09/2017-23:22:12 --- simulation auto marking started
+
+
+30/09/2017-23:22:16 --- Optical sensor error during marking, laser goes in reference position
+
+
+30/09/2017-23:22:16 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:22:16 --- Resetting auto mode! Simulation mode *****************
+
+
+30/09/2017-23:22:16 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:22:16 --- Automatic barrier rising
+
+
+30/09/2017-23:22:17 --- Cancel pressed, keeping current serial: 17-000055
+
+
+30/09/2017-23:22:17 --- Automatic barrier rising
+
+
+30/09/2017-23:22:17 --- Auto mode started
+
+
+30/09/2017-23:22:17 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:26:28 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-23:26:28 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-23:26:36 --- Automatic barrier rising
+
+
+30/09/2017-23:26:36 --- Auto mode started
+
+
+30/09/2017-23:26:36 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:26:38 --- Auto mode already started, or laser marking started in manual mode
+
+
+30/09/2017-23:26:40 --- pump counter:1
+
+
+30/09/2017-23:26:40 --- Automatic barrier lowering
+
+
+30/09/2017-23:26:40 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+30/09/2017-23:26:41 --- Barrier is lowered, searching for pump...
+
+
+30/09/2017-23:26:41 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-23:26:44 --- Pump in laser focus
+
+
+30/09/2017-23:26:45 --- simulation auto marking started
+
+
+30/09/2017-23:26:49 --- Optical sensor error during marking, laser goes in reference position
+
+
+30/09/2017-23:26:49 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:26:49 --- Resetting auto mode! Simulation mode *****************
+
+
+30/09/2017-23:26:49 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:26:49 --- Automatic barrier rising
+
+
+30/09/2017-23:26:51 ---  Ok pressed, creating new serial number
+
+
+30/09/2017-23:26:51 --- Automatic barrier rising
+
+
+30/09/2017-23:26:51 --- Auto mode started
+
+
+30/09/2017-23:26:51 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:30:30 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-23:30:31 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-23:30:41 --- Automatic barrier rising
+
+
+30/09/2017-23:30:42 --- Auto mode started
+
+
+30/09/2017-23:30:42 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:30:44 --- pump counter:1
+
+
+30/09/2017-23:30:44 --- Automatic barrier lowering
+
+
+30/09/2017-23:30:44 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+30/09/2017-23:30:45 --- Barrier is lowered, searching for pump...
+
+
+30/09/2017-23:30:45 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-23:30:51 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:30:51 --- Laser lower position reached, no pump found, going back to ref...
+
+
+30/09/2017-23:30:51 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:30:51 --- Automatic barrier rising
+
+
+30/09/2017-23:30:53 --- ok pressed, trying to find pump again
+
+
+30/09/2017-23:30:53 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-23:30:53 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:30:53 --- Automatic barrier rising
+
+
+30/09/2017-23:30:53 --- Automatic barrier rising
+
+
+30/09/2017-23:30:53 --- Auto mode started
+
+
+30/09/2017-23:30:53 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:30:58 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-23:30:59 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-23:31:08 --- Automatic barrier rising
+
+
+30/09/2017-23:31:08 --- Auto mode started
+
+
+30/09/2017-23:31:08 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:31:10 --- pump counter:1
+
+
+30/09/2017-23:31:11 --- Automatic barrier lowering
+
+
+30/09/2017-23:31:11 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+30/09/2017-23:31:11 --- Barrier is lowered, searching for pump...
+
+
+30/09/2017-23:31:11 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-23:31:15 --- Pump in laser focus
+
+
+30/09/2017-23:31:15 --- simulation auto marking started
+
+
+30/09/2017-23:31:18 --- Optical sensor error during marking, laser goes in reference position
+
+
+30/09/2017-23:31:18 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:31:18 --- Resetting auto mode! Simulation mode *****************
+
+
+30/09/2017-23:31:18 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:31:18 --- Automatic barrier rising
+
+
+30/09/2017-23:31:20 ---  Ok pressed, creating new serial number
+
+
+30/09/2017-23:31:20 --- Automatic barrier rising
+
+
+30/09/2017-23:31:20 --- Auto mode started
+
+
+30/09/2017-23:31:20 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:31:23 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-23:31:23 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-23:31:30 --- Automatic barrier rising
+
+
+30/09/2017-23:31:30 --- Auto mode started
+
+
+30/09/2017-23:31:30 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:31:32 --- pump counter:1
+
+
+30/09/2017-23:31:32 --- Automatic barrier lowering
+
+
+30/09/2017-23:31:32 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+30/09/2017-23:31:33 --- Barrier is lowered, searching for pump...
+
+
+30/09/2017-23:31:33 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-23:31:34 --- Pump in laser focus
+
+
+30/09/2017-23:31:34 --- simulation auto marking started
+
+
+30/09/2017-23:31:37 --- Barrier not down during laser marking
+
+
+30/09/2017-23:31:37 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:31:37 --- Resetting auto mode! Simulation mode *****************
+
+
+30/09/2017-23:31:37 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:31:37 --- Automatic barrier rising
+
+
+30/09/2017-23:31:39 --- Cancel pressed, keeping current serial: 17-000055
+
+
+30/09/2017-23:31:39 --- Automatic barrier rising
+
+
+30/09/2017-23:31:39 --- Auto mode started
+
+
+30/09/2017-23:31:39 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:31:43 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-23:31:43 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-23:31:51 --- Automatic barrier rising
+
+
+30/09/2017-23:31:51 --- Auto mode started
+
+
+30/09/2017-23:31:51 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:31:51 --- pump counter:1
+
+
+30/09/2017-23:31:51 --- Automatic barrier lowering
+
+
+30/09/2017-23:31:51 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+30/09/2017-23:31:53 --- Barrier is lowered, searching for pump...
+
+
+30/09/2017-23:31:53 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-23:32:03 --- Pump in laser focus
+
+
+30/09/2017-23:32:03 --- simulation auto marking started
+
+
+30/09/2017-23:32:06 --- pump left
+
+
+30/09/2017-23:32:10 --- Barrier not down during laser marking
+
+
+30/09/2017-23:32:10 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:32:10 --- Resetting auto mode! Simulation mode *****************
+
+
+30/09/2017-23:32:10 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:32:10 --- Automatic barrier rising
+
+
+30/09/2017-23:32:11 --- Cancel pressed, keeping current serial: 17-000055
+
+
+30/09/2017-23:32:11 --- Automatic barrier rising
+
+
+30/09/2017-23:32:11 --- Auto mode started
+
+
+30/09/2017-23:32:11 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:45:03 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-23:45:03 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-23:45:07 --- Selected part and serial number not confirmed!
+
+
+30/09/2017-23:45:09 --- Selected part and serial number not confirmed!
+
+
+30/09/2017-23:45:14 --- Selected part and serial number not confirmed!
+
+
+30/09/2017-23:45:22 --- Automatic barrier rising
+
+
+30/09/2017-23:45:22 --- Auto mode started
+
+
+30/09/2017-23:45:22 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:45:23 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:45:23 --- Automatic barrier rising
+
+
+30/09/2017-23:45:25 ---  *** Script Shutting down *** 
+
+
+30/09/2017-23:50:44 --- Init passed
+
+
+=================================================== 
+
+30/09/2017-23:50:44 *** Process logging started *** 
+
+=================================================== 
+
+30/09/2017-23:50:51 --- Automatic barrier rising
+
+
+30/09/2017-23:50:51 --- Auto mode started
+
+
+30/09/2017-23:50:51 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:50:53 --- pump counter:1
+
+
+30/09/2017-23:50:53 --- Automatic barrier lowering
+
+
+30/09/2017-23:50:53 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+30/09/2017-23:50:57 --- Barrier is lowered, searching for pump...
+
+
+30/09/2017-23:50:57 --- Laser is moving into working position, searching for pump...
+
+
+30/09/2017-23:50:57 --- Pump in laser focus
+
+
+30/09/2017-23:50:58 --- simulation auto marking started
+
+
+30/09/2017-23:51:01 --- Stop auto mode has been pressed while marking was active
+
+
+30/09/2017-23:51:46 --- Automatic laser referencing initiated
+
+
+30/09/2017-23:51:46 --- Automatic barrier rising
+
+
+30/09/2017-23:52:02 --- Cancel pressed, keeping current serial: 17-000291
+
+

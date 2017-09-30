@@ -1,0 +1,156 @@
+=================================================== 
+
+01/10/2017-00:05:33 *** Process logging started *** 
+
+=================================================== 
+
+=================================================== 
+
+01/10/2017-00:05:33 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-00:05:43 --- Automatic barrier rising
+
+
+01/10/2017-00:05:43 --- Auto mode started
+
+
+01/10/2017-00:05:43 --- Automatic laser referencing initiated
+
+
+01/10/2017-00:05:45 --- Auto mode already started, or laser marking started in manual mode
+
+
+01/10/2017-00:05:46 --- Automatic laser referencing initiated
+
+
+01/10/2017-00:05:46 --- Automatic barrier rising
+
+
+01/10/2017-00:05:47 --- Automatic barrier rising
+
+
+01/10/2017-00:05:47 --- Auto mode started
+
+
+01/10/2017-00:05:47 --- Automatic laser referencing initiated
+
+
+01/10/2017-00:05:49 --- Auto mode already started, or laser marking started in manual mode
+
+
+01/10/2017-00:05:52 --- pump counter:1
+
+
+01/10/2017-00:05:52 --- Automatic barrier lowering
+
+
+01/10/2017-00:05:52 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-00:05:53 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-00:05:53 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-00:05:54 --- Pump in laser focus
+
+
+01/10/2017-00:05:55 --- simulation auto marking started
+
+
+01/10/2017-00:06:10 --- Barrier not down during laser marking
+
+
+01/10/2017-00:06:10 --- Automatic laser referencing initiated
+
+
+01/10/2017-00:06:10 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-00:06:10 --- Automatic laser referencing initiated
+
+
+01/10/2017-00:06:10 --- Automatic barrier rising
+
+
+01/10/2017-00:06:11 ---  Ok pressed, creating new serial number
+
+
+01/10/2017-00:06:11 --- Automatic barrier rising
+
+
+01/10/2017-00:06:11 --- Auto mode started
+
+
+01/10/2017-00:06:11 --- Automatic laser referencing initiated
+
+
+01/10/2017-00:12:23 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-00:12:23 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-00:12:29 --- Automatic barrier rising
+
+
+01/10/2017-00:12:29 --- Auto mode started
+
+
+01/10/2017-00:12:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-00:12:31 --- pump counter:1
+
+
+01/10/2017-00:12:31 --- Automatic barrier lowering
+
+
+01/10/2017-00:12:31 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-00:12:31 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-00:12:31 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-00:12:32 --- Pump in laser focus
+
+
+01/10/2017-00:12:32 --- simulation auto marking started
+
+
+01/10/2017-00:12:35 --- Optical sensor error during marking, laser goes in reference position
+
+
+01/10/2017-00:12:35 --- Automatic laser referencing initiated
+
+
+01/10/2017-00:12:35 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-00:12:35 --- Automatic laser referencing initiated
+
+
+01/10/2017-00:12:35 --- Automatic barrier rising
+
+
+01/10/2017-00:12:36 ---  Ok pressed, creating new serial number
+
+
+01/10/2017-00:12:36 --- Automatic barrier rising
+
+
+01/10/2017-00:12:36 --- Auto mode started
+
+
+01/10/2017-00:12:36 --- Automatic laser referencing initiated
+
+

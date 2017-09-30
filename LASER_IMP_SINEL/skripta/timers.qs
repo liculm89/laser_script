@@ -1,19 +1,19 @@
 //////////////////////////////////////////////
 //Timers declaration
 //////////////////////////////////////////////
-var times = [10, 61, 121, 151, 301, 501, 601, 9001, 1001, 401, 551, 1201, 801, 43, 651];
+var times = [10, 61, 121, 151, 301, 501, 601, 9001, 1001, 401, 551, 1201, 801, 43, 98];
 ///////////////// 0    1    2    3     4     5     6      7       8      9                     10    11 12 13 14////////////////
 var timers = Array.apply(null, new Array(times.length)).map(Number.prototype.valueOf, 0);
 var timer_list = [];
-//////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //Setting up global timers
-//////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 times.forEach(function (item, index) {
     timers[index] = System.setTimer(item);
 });
-//////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //Connects given function
-//////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 function start_timer(timer, func) {
 
     System["sigTimer(int)"].connect(func);
@@ -23,7 +23,6 @@ function start_timer(timer, func) {
             count++;
         }
     });
-
     if (count == 0) {
         timer_list.push(func);
     }
@@ -39,7 +38,6 @@ function disconnect_func(func) {
             }
         });
     }
-	//System.killAllTimers():
 	System.collectGarbage();
 }
 

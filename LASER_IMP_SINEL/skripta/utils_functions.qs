@@ -139,7 +139,6 @@ function get_ebara_prefix() {
     var month = (date.getMonth() + 1);
     S = "S";
     AF = "AF";
-
     switch (year) {
         case "2017":
             P = "W";
@@ -200,6 +199,25 @@ function get_serial_int(sn_str) {
 function delayed_ref() {
 }
 
+function searching_error(fail_code){
+    if(fail_code == 1){write_log("Search distance passed but no pump found. Going back to ref...");}
+    if(fail_code == 2){
+        laser_ref_auto();
+        write_log("Laser lower position reached, no pump found, going back to ref...");
+    }
+    disconnect_timers();
+    if(simulation_mode){
+        disconnect_func(stop_search_auto_sim);
+    }
+    else{
+        disconnect_func(stop_search_auto);
+    }
+    Axis.stop(2);
+    laser_ref_auto();  barrier_up_auto();
+    retry_stop_choice();
+
+}
+
 function marking_failed(fail_code) {
     if (fail_code == 1) { write_log("Barrier is not down, laser goes in reference position"); }
     if (fail_code == 2) { write_log("Optical sensor is not seeing pump, laser goes in reference position"); }
@@ -221,17 +239,8 @@ function marking_failed(fail_code) {
 
 
 function serial_choice_stop() {
-    year = new Date();
-    year = year.getFullYear().toString().slice(2);
-    var ra_dialog = new Dialog("Serial number choice", Dialog.D_OKCANCEL, false);
-    var lbl_question = new Label(); lbl_question.text = "Create new serial number?";
-    var font6 = "MS Shell Dlg 2,15,-1,5,50,0,0,0,0,0";
-    lbl_question.font = font6;
-    ra_dialog.font = font6;
-    ra_dialog.add(lbl_question);
-    ra_dialog.okButtonText = "Yes"
-    ra_dialog.cancelButtonText = "No, repeat this S.N. : " + year + "-" + leftPad((curr_sn), 6);
-
+    
+    var ra_dialog = gen_sc_dialog();
     if (ra_dialog.exec()) {
         write_log(" Ok pressed, creating new serial number");
         if (!(numWC % sn_marking_times)) {
@@ -245,22 +254,17 @@ function serial_choice_stop() {
             }
         }
         reset_auto = 1;
-        // start_auto_mode();
     }
     else {
         write_log("Cancel pressed, keeping current serial: " + year + "-" + leftPad((curr_sn), 6));
-        //  start_auto_mode();
         reset_auto = 0;
-        //barrier_down_auto();
-        //laser_move_timed();
     }
-    delete ra_dialog;
+    //delete ra_dialog;
     System.collectGarbage();
 }
 
 function serial_choice() {
     var ra_dialog = gen_sc_dialog();
-
     if (ra_dialog.exec()) {
         write_log(" Ok pressed, creating new serial number");
         if (!(numWC % sn_marking_times)) {
@@ -273,14 +277,16 @@ function serial_choice() {
                 }
             }
         }
-        //reset_auto = 1; 
+       // delete ra_dialog;
         start_auto_mode();
+
     }
     else {
         write_log("Cancel pressed, keeping current serial: " + year + "-" + leftPad((curr_sn), 6));
+        //delete ra_dialog;
         start_auto_mode();
     }
-    delete ra_dialog;
+    
     System.collectGarbage();
 }
 
@@ -294,29 +300,17 @@ function retry_stop_choice() {
         if (auto_mode == "ON") {
             stop_auto();
         }
-        disconnect_func(wait_for_pump);
-        disconnect_timers();
         start_auto_mode();
+        //delete rr_dialog;
     }
     else {
         write_log("cancel pressed, stoping auto_mode");
-        if (simulation_mode) {
-            disconnect_func(wait_for_pump);
-            disconnect_timers();
-            if (auto_mode == "ON") {
-                stop_auto();
-            }
+        if (auto_mode == "ON") {
+            stop_auto();
         }
-        else {
-            disconnect_func(wait_for_pump);
-            disconnect_timers();
-            if (auto_mode == "ON") {
-                stop_auto();
-            }
-            // stop_auto();
-        }
+        //delete rr_dialog;
     }
-    delete rr_dialog;
+    
     System.collectGarbage();
 }
 
@@ -386,10 +380,9 @@ function reset_button_func() {
         if (auto_mode == "ON") {
             write_log("Reset button pressed during Auto mode");
             System.stopLaser();
-            disconnect_func(wait_for_pump);
+            //disconnect_func(wait_for_pump);
             laser_marking = 0;
             laser_in_working_pos = 0;
-            //nom = 0;
             laser_ref_auto();
             barrier_up_auto();
             if (simulation_mode) {
@@ -410,8 +403,37 @@ function reset_button_func() {
     }
 }
 
-function log_creator() {
+function auto_mode_check()
+{
+	if (total_stop == 0) {
+		if (reg_fault == 0) {
+			if (auto_mode == "OFF") {
+				if (laser_status == "Ready for marking") {
+					if (confirm) {
+						return true;
+					}
+					else {
+                        process_error(14); return false;
+					}
+				}
+				else {
+                    error_key_sequence(); return false;
+				}
+			}
+			else {
+                error_manual_mode(); return false;
+			}
+		}
+		else {
+            error_regulator_fault(); return false;
+		}
+	}
+	else {
+        error_total_stop(); return false;
+	}    
+}
 
+function log_creator() {
     var date_init = new Date();
     var timestamp = gen_timestamp();
     var log_date = date_init.ddmmyy().toString();

@@ -73,8 +73,8 @@ var laser_barrier_down = 0;
 ////////////////////////////
 //File locations
 if (simulation_mode == 1) {
-	drive_loc = "H:";
-	//drive_loc = "F:";
+	//drive_loc = "H:";
+	drive_loc = "F:";
 }
 else {
 	drive_loc = "D:";

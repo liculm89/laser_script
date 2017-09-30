@@ -30,11 +30,7 @@ function stop_search_auto_sim(ID) {
                     if (debug_mode) { print("Laser is moving to working pos..."); }
                 }
                 else {
-                    Axis.stop(2);
-                    write_log("Search distance passed but no pump found. Going back to ref...");
-                    laser_ref_auto(); barrier_up_auto();
-                    disconnect_func(stop_search_auto_sim);
-                    retry_stop_choice();
+                    searching_error(1);
                 }
             }
             else {
@@ -47,12 +43,7 @@ function stop_search_auto_sim(ID) {
             }
         }
         else {
-            disconnect_func(stop_search_auto_sim);
-            write_log("Laser lower position reached, no pump found, going back to ref...");
-            Axis.stop(2);
-            laser_ref_auto(); laser_ref_auto();
-            barrier_up_auto();
-            retry_stop_choice();
+            searching_error(2);
         }
     }
 }
@@ -104,10 +95,9 @@ function reset_auto_func_sim(ID) {
 
     if (timers[13] == ID) {
         write_log("Resetting auto mode! Simulation mode *****************");
-        //reset_auto = 1;
         if (auto_mode == "ON"); {
-			stop_auto();
-		}
+            stop_auto();
+        }
         disconnect_func(reset_auto_func_sim);
         if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
             serial_choice();

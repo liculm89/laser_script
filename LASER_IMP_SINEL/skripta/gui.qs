@@ -713,6 +713,7 @@ function shut_down() {
         System.killAllTimers();
         write_log(" *** Script Shutting down *** ");
         dialog.OK();
+        delete dialog;
     }
     else {
         error_auto_mode();
