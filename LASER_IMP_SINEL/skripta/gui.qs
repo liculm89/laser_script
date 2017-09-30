@@ -671,6 +671,33 @@ function get_motor_status(input) {
     return stat;
 }
 
+function gen_rr_dialog()
+{
+    var retry_diag = new Dialog("Retry or STOP", Dialog.D_OKCANCEL, false);
+    var lbl_question1 = new Label(); lbl_question1.text = "Pump has not been found, retry or stop auto mode?";
+    var font6 = "MS Shell Dlg 2,16,-1,5,50,0,0,0,0,0";
+    lbl_question1.font = font6;
+    retry_diag.font = font6;
+    retry_diag.add(lbl_question1);
+    retry_diag.okButtonText = "Try again"
+    retry_diag.cancelButtonText = "No, stop Auto mode";
+    return(retry_diag);
+}
+
+function gen_sc_dialog()
+{
+    year = new Date();
+    year = year.getFullYear().toString().slice(2);
+    var serial_dialog = new Dialog("Serial number choice", Dialog.D_OKCANCEL, false);
+    var lbl_question = new Label(); lbl_question.text = "Create new serial number?";
+    var font6 = "MS Shell Dlg 2,15,-1,5,50,0,0,0,0,0";
+    lbl_question.font = font6;
+    serial_dialog.font = font6;
+    serial_dialog.add(lbl_question);
+    serial_dialog.okButtonText = "Yes"
+    serial_dialog.cancelButtonText = "No, repeat this S.N. : " + year + "-" + leftPad((curr_sn), 6);
+    return(serial_dialog);
+}
 ///////////////////////////////////////////
 //Script Shut down function
 ///////////////////////////////////////////

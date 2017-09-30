@@ -6,7 +6,7 @@ var enable_existing_sn_marking = 1;
 
 //sets debugging(on=1 and off=0)
 
-var simulation_mode = 0;
+var simulation_mode = 1;
 var debug_mode = 1;
 
 var compensation_enabled = 0;
@@ -73,8 +73,8 @@ var laser_barrier_down = 0;
 ////////////////////////////
 //File locations
 if (simulation_mode == 1) {
-	//drive_loc = "H:";
-	drive_loc = "F:";
+	drive_loc = "H:";
+	//drive_loc = "F:";
 }
 else {
 	drive_loc = "D:";

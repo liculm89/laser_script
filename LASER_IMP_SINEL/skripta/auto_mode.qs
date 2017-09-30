@@ -13,12 +13,10 @@ function start_auto_mode() {
 						barrier_up_auto();
 						if (reset_auto == 1) {
 							if (sen_linija == 1) {
-								delete timers[10];
-								timers[10] = System.setTimer(times[10]);
-								start_timer(timers[10], send_signal_done);
+								marking_ended();
 								reset_auto = 0;
 							}
-							else{
+							else {
 								reset_auto = 0;
 							}
 						}
@@ -26,14 +24,13 @@ function start_auto_mode() {
 						write_log("Auto mode started");
 						auto_waiting_to_stop = 0;
 						laser_in_working_pos = 0;
-						laser_barrier_down = 0;
-
 						laser_ref_auto();
-						if(simulation_mode){
+						if (simulation_mode) {
 							gen_timer(4, wait_for_pump_sim)
 						}
-						else{
-						gen_timer(4, wait_for_pump);}
+						else {
+							gen_timer(4, wait_for_pump);
+						}
 					}
 					else {
 						error_selection_not_confirmed();
@@ -62,40 +59,22 @@ function start_auto_mode() {
 function wait_for_pump(ID) {
 
 	if ((timers[4] == ID) && (auto_mode == "ON") && (pump_present == 1)) {
-
-			disconnect_func(wait_for_pump);
-			barrier_down_auto();
-			write_log("new pump has arrived, barrier going down ...");
-			if (simulation_mode) {
-				gen_timer(6, wait_for_barrier_sim);
-			}
-			else {
-				gen_timer(6, wait_for_barrier);
-			}
-		}
-
-	
+		disconnect_func(wait_for_pump);
+		barrier_down_auto();
+		write_log("Signal from line recieved, barrier going down ...");
+		gen_timer(6, wait_for_barrier);
+	}
 }
 
 ////////////////////////////////////
 //Laser waits for barrier
 /////////////////////////////////////
 function wait_for_barrier(ID) {
-	//Laser must find pump before laser marking is performed. 
+	//Laser waits for barrier to be lowered 
 	if ((timers[6] == ID) && (IoPort.getPort(0) & I_PIN_11)) {
-		if (debug_mode) { print("Barrier is lowered"); }
-		if (laser_barrier_down == 1) {
-			print("laser already in position");
-			disconnect_func(wait_for_barrier);
-			mark_auto();
-			//gen_timer(2, pump_not_present);
-		}
-		else {
-			if (IoPort.getPort(0) & I_PIN_21){ barrier_down_auto(); }
-			disconnect_func(wait_for_barrier);
-			laser_move_timed();
-		}
+		write_log("Barrier is lowered, searching for pump...");
 		disconnect_func(wait_for_barrier);
+		laser_move_timed();
 	}
 }
 
@@ -106,25 +85,22 @@ function laser_move_timed() {
 	if (laser_in_working_pos == 0) {
 		write_log("Laser is moving into working position, searching for pump...");
 		Axis.move(2, (Axis.getPosition(2) - search_distance));
-		
+
 		if (simulation_mode) {
-			//if (IoPort.getPort(0) & I_PIN_21){barrier_down_auto();}
+			if (sen_bar_gore) { barrier_down_auto(); }
 			gen_timer(1, stop_search_auto_sim);
 		}
 		else {
-			//if (IoPort.getPort(0) & I_PIN_21){barrier_down_auto();}
+			if (IoPort.getPort(0) & I_PIN_21) { barrier_down_auto(); }
 			gen_timer(1, stop_search_auto);
 		}
 	}
-	//if (laser_in_working_pos == 1) {
 	else {
 		write_log("Laser already in position, initiating marking process...");
 		if (simulation_mode) {
-
 			mark_auto_sim();
 		}
 		else {
-		    //gen_timer(12, automatic_marking);
 			mark_auto();
 		}
 
@@ -139,15 +115,13 @@ function stop_search_auto(ID) {
 		current_pos = Axis.getPosition(2);
 		if (!(IoPort.getPort(0) & I_PIN_8)) { //laser lowest position sensor
 			if ((IoPort.getPort(0) & I_PIN_10)) {  //Optika
-
 				if (!(current_pos <= (home_pos - search_distance))) {
 					if (debug_mode) { print("Laser is moving to working pos..."); }
 				}
 				else {
 					Axis.stop(2);
 					write_log("Search distance passed but no pump found. Going back to ref...");
-					laser_ref_auto(); laser_ref_auto();
-					barrier_up_auto();
+					laser_ref_auto(); barrier_up_auto();
 					disconnect_func(stop_search_auto);
 					retry_stop_choice();
 				}
@@ -157,12 +131,10 @@ function stop_search_auto(ID) {
 				disconnect_func(stop_search_auto);
 				Axis.stop(2);
 				laser_in_working_pos = 1;
-				laser_barrier_down = 1;
 				if (compensation_enabled) {
 					Axis.move(2, (Axis.getPosition(2) - compensation_distance));
 				}
 				mark_auto();
-				//gen_timer(12, automatic_marking);
 			}
 		}
 		else {
@@ -179,7 +151,6 @@ function stop_search_auto(ID) {
 function automatic_marking(ID) {
 	if (timers[12] == ID) {
 		write_log("Laser in position, starts marking...");
-
 		if (simulation_mode) {
 			mark_auto_sim();
 		}
@@ -187,7 +158,6 @@ function automatic_marking(ID) {
 			mark_auto();
 		}
 		disconnect_func(automatic_marking);
-		//gen_timer(2, pump_not_present);
 	}
 }
 
@@ -204,7 +174,6 @@ function pump_not_present(ID) {
 		disconnect_func(pump_not_present);
 		laser_marking = 0;
 		laser_in_working_pos = 0;
-		laser_barrier_down = 0;
 	}
 }
 
@@ -221,35 +190,18 @@ function mark_auto() {
 	}
 
 	if (!(IoPort.getPort(0) & I_PIN_10)) {
-
 		if (IoPort.getPort(0) & I_PIN_11) {
 			write_log("auto marking started");
 			h_Doc_new.execute();
 			gen_timer(11, check_marking);
 		}
 		else {
-			laser_marking = 0;
-			laser_in_working_pos = 0;
-			laser_barrier_down = 0;
-			//nom = 0;
-			disconnect_timers();
-			write_log("Barrier is not down, laser goes in reference position");
-			laser_ref_auto();
-			gen_timer(13, reset_auto_func);
+			marking_failed(1);
 		}
 	}
 	else {
-		System.stopLaser();
-		laser_marking = 0;
-		laser_in_working_pos = 0;
-		laser_barrier_down = 0;
-		//nom = 0;
-		write_log("Optical sensor is not seeing pump, laser goes in reference position");
-		disconnect_timers();
-		laser_ref_auto();
-		gen_timer(13, reset_auto_func);
+		marking_failed(2);
 	}
-
 }
 
 function check_marking(ID) {
@@ -262,27 +214,12 @@ function check_marking(ID) {
 			}
 			else if ((laser_status = "Marking is active") && !(IoPort.getPort(0) & I_PIN_11)) {
 				disconnect_func(check_marking);
-				System.stopLaser();
-				auto_mode = "OFF";
-				barrier_up_auto();
-				System.stopLaser();
-				laser_ref_auto();
-				write_log("Barrier not down during laser marking");
+				marking_failed(3);
 			}
 		}
 		else {
 			disconnect_func(check_marking);
-			System.stopLaser();
-			laser_marking = 0;
-			laser_in_working_pos = 0;
-			laser_barrier_down = 0;
-
-			auto_mode = "OFF";
-			write_log("Optical sensor is not seeing pump, laser goes in reference position");
-			disconnect_timers();
-			laser_ref_auto();
-			barrier_up_auto();
-			gen_timer(13, reset_auto_func);
+			marking_failed(4);
 		}
 	}
 }
@@ -294,7 +231,6 @@ function barrier_up_after_marking() {
 	barrier_up_auto();
 	laser_marking = 0;
 	laser_in_working_pos = 0;
-	laser_barrier_down = 0;
 	marking_ended();
 	write_log("Marking successful, raising barrier up and setting signal DONE..");
 	gen_timer(5, reset_laser_marking);
@@ -323,28 +259,22 @@ function reset_laser_marking(ID) {
 		}
 		if ((numW > numWC) || numW == 0) {
 
-			if(simulation_mode)
-			{
+			if (simulation_mode) {
 				write_log("starting wait_for_pump_sim from reset_laser marking");
 				gen_timer(4, wait_for_pump_sim);
 			}
-			else
-			{
-				
-				if(auto_waiting_to_stop = 1)
-				{				
-				    gen_timer(14, wait_for_marking_end);
+			else {
+				if (auto_waiting_to_stop == 1) {
+					gen_timer(14, wait_for_marking_end);
 				}
-				else
-				{
-				    gen_timer(4, wait_for_pump);}
+				else {
+					gen_timer(4, wait_for_pump);
+				}
 			}
-
 			pumps_marked++;
 		}
 		else {
-		    
-		    stop_auto();
+			stop_auto();
 			write_log("Marking quantity reached! Stoping auto mode");
 			marking_quantity_complete();
 			pumps_marked = 0;
@@ -360,21 +290,13 @@ function reset_auto_func(ID) {
 
 	if ((timers[13] == ID) && (IoPort.getPort(0) & I_PIN_9)) {
 		write_log("Reseting auto mode!!!!");
-		//reset_auto = 1;
-		//to_mode = "OFF";
-		if(auto_mode == "ON");{
-		    stop_auto();}
-		disconnect_func(wait_for_pump);
-		disconnect_timers();
-		//start_auto_mode();
+		if (auto_mode == "ON"); {
+			stop_auto();
+		}
 		disconnect_func(reset_auto_func);
-	               // if(auto_mode == "OFF"){ start_auto_mode();
 		if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
 			serial_choice();
 		}
-		//if(auto_mode == "OFF"){
-		
-		
 	}
 }
 
@@ -384,7 +306,6 @@ function reset_auto_func(ID) {
 function stop_auto() {
 	if (auto_mode == "ON") {
 		if (laser_status == "Marking is active") {
-			disconnect_func(stop_auto);
 			if (auto_waiting_to_stop == 0) {
 				write_log("Stop auto mode has been pressed while marking was active");
 				auto_waiting_to_stop = 1;
@@ -392,15 +313,12 @@ function stop_auto() {
 			}
 		}
 		else {
-			auto_mode = "OFF";
+			if(auto_mode == "ON"){auto_mode = "OFF";}
 			System.stopLaser();
 			laser_marking = 0;
-			//numWC = 0;
-			//nom = 0;
-			reset_auto = 1;
+			laser_in_working_pos = 0;
 			laser_ref_auto();
 			barrier_up_auto();
-			//disconnect_func(wait_for_pump);
 			disconnect_timers();
 		}
 	}
@@ -422,7 +340,5 @@ function wait_for_marking_end(ID) {
 		laser_ref_auto();
 		barrier_up_auto();
 		serial_choice_stop();
-		//gen_timer(13, reset_auto_func);
-
 	}
 }

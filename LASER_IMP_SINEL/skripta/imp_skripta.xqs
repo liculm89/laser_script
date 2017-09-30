@@ -1,9 +1,9 @@
 <project>
- <title></title>
+ <title>Laser Control</title>
  <description></description>
- <author></author>
- <company></company>
- <version></version>
+ <author>Licul Mauro</author>
+ <company>Sinel d.O.O.</company>
+ <version>0.94rc4</version>
  <script>main.qs</script>
  <script>utils_functions.qs</script>
  <script>settings.qs</script>
@@ -11,6 +11,7 @@
  <script>errors.qs</script>
  <script>gui.qs</script>
  <script>auto_mode.qs</script>
+ <script>simulation_mode.qs</script>
  <script>manual_mode.qs</script>
  <script>laser_events.qs</script>
  <script>timers.qs</script>

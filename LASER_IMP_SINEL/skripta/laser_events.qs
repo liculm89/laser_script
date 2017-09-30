@@ -140,7 +140,7 @@ function laser_movement(ID) {
 }
 
 function marking_ended() {
-    //print("Marking finished");
+    delete timers[10];
     timers[10] = System.setTimer(times[10]);
     start_timer(timers[10], send_signal_done);
 }
