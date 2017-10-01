@@ -675,6 +675,7 @@ function gen_rr_dialog()
 {
     var retry_diag = new Dialog("Retry or STOP", Dialog.D_OKCANCEL, false);
     var lbl_question1 = new Label(); lbl_question1.text = "Pump has not been found, retry or stop auto mode?";
+    lbl_question1.alignment = 0x04; 
     var font6 = "MS Shell Dlg 2,16,-1,5,50,0,0,0,0,0";
     lbl_question1.font = font6;
     retry_diag.font = font6;
@@ -688,14 +689,15 @@ function gen_sc_dialog()
 {
     year = new Date();
     year = year.getFullYear().toString().slice(2);
-    var serial_dialog = new Dialog("Serial number choice", Dialog.D_OKCANCEL, false);
-    var lbl_question = new Label(); lbl_question.text = "Create new serial number?";
+    var serial_dialog = new Dialog("SN choice", Dialog.D_OKCANCEL, false);
+    var lbl_question = new Label(); lbl_question.text = "Repeat marking?";
+    lbl_question.alignment = 0x04; 
     var font6 = "MS Shell Dlg 2,15,-1,5,50,0,0,0,0,0";
     lbl_question.font = font6;
     serial_dialog.font = font6;
     serial_dialog.add(lbl_question);
-    serial_dialog.okButtonText = "Yes"
-    serial_dialog.cancelButtonText = "No, repeat this S.N. : " + year + "-" + leftPad((curr_sn), 6);
+    serial_dialog.okButtonText = "Repeat marking with S.N.: "  + year + "-" + leftPad((curr_sn), 6);
+    serial_dialog.cancelButtonText = "NO, continue with auto mode";
     return(serial_dialog);
 }
 ///////////////////////////////////////////
@@ -712,6 +714,7 @@ function shut_down() {
         disconnect_timers();
         System.killAllTimers();
         write_log(" *** Script Shutting down *** ");
+        
         dialog.OK();
         delete dialog;
     }

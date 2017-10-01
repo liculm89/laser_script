@@ -196,6 +196,19 @@ function get_serial_int(sn_str) {
     return serial_int;
 }
 
+function chk_and_increment_sn(){
+	if (!(numWC % sn_marking_times)) {
+        if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
+            if (!sn_fixed) {
+                curr_sn = parseInt(last_sn, 10) + 1;
+                last_sn = curr_sn;
+                last_sn = leftPad((last_sn), 6);
+                update_sn();
+            }
+        }
+    }
+}
+
 function delayed_ref() {
 }
 
@@ -259,7 +272,8 @@ function serial_choice_stop() {
         write_log("Cancel pressed, keeping current serial: " + year + "-" + leftPad((curr_sn), 6));
         reset_auto = 0;
     }
-    //delete ra_dialog;
+    
+    delete ra_dialog();
     System.collectGarbage();
 }
 
@@ -277,17 +291,20 @@ function serial_choice() {
                 }
             }
         }
-       // delete ra_dialog;
-        start_auto_mode();
-
     }
     else {
         write_log("Cancel pressed, keeping current serial: " + year + "-" + leftPad((curr_sn), 6));
-        //delete ra_dialog;
-        start_auto_mode();
     }
-    
-    System.collectGarbage();
+
+    try {
+        print("deleting dialog");
+        delete ra_dialog;
+        System.collectGarbage();
+    }
+    catch (e) {
+        print("Exception: " + e); 
+    }
+
 }
 
 
@@ -296,21 +313,20 @@ function retry_stop_choice() {
 
     if (rr_dialog.exec()) {
         write_log("ok pressed, trying to find pump again");
-        laser_move_timed();
-        if (auto_mode == "ON") {
-            stop_auto();
-        }
-        start_auto_mode();
-        //delete rr_dialog;
+	if(simulation_mode){
+	    gen_timer(6, wait_for_barrier_sim);}
+	else{
+	    gen_timer(6, wait_for_barrier);
+	}
     }
     else {
         write_log("cancel pressed, stoping auto_mode");
         if (auto_mode == "ON") {
             stop_auto();
         }
-        //delete rr_dialog;
+  
     }
-    
+    delete rr_dialog;
     System.collectGarbage();
 }
 
@@ -413,23 +429,23 @@ function auto_mode_check()
 						return true;
 					}
 					else {
-                        process_error(14); return false;
+					    process_error(14); return false;
 					}
 				}
 				else {
-                    error_key_sequence(); return false;
+				    error_key_sequence(); return false;
 				}
 			}
 			else {
-                error_manual_mode(); return false;
+			    error_manual_mode(); return false;
 			}
 		}
 		else {
-            error_regulator_fault(); return false;
+		    error_regulator_fault(); return false;
 		}
 	}
 	else {
-        error_total_stop(); return false;
+	    error_total_stop(); return false;
 	}    
 }
 

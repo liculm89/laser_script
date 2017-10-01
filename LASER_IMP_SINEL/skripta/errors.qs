@@ -38,8 +38,59 @@ function process_error(code){
         case 1:
         var mesg_txt = "Barrier is not in lowered position, marking is stopped!";
         create_mesgbox(mesg_txt);
+        case 2:
+        var mesg_txt = "Auto mode already off";
+        create_mesgbox(mesg_txt);
+        case 3:
+        var mesg_txt = "Auto mode already started, or laser marking started in manual mode";
+        create_mesgbox(mesg_txt);
+        case 4:
+        var mesg_txt = "Total stop is active!";
+        create_mesgbox(mesg_txt);
+        case 5:
+        var mesg_txt = "Laser not ready";
+        create_mesgbox(mesg_txt);
+        case 6:
+        var mesg_txt = "Reset key sequence";
+        create_mesgbox(mesg_txt);
+        case 7:
+        var mesg_txt = "Pump not found! Going back to refence position";
+        create_mesgbox(mesg_txt);
+        case 8:
+        var mesg_txt = "Laser is in lowest position!";
+        create_mesgbox(mesg_txt);
+        case 9:
+        var mesg_txt = "Laser is in highest position!";
+        create_mesgbox(mesg_txt);
+        case 10:
+        var mesg_txt = "Initialization failed, database file missing or corrupted";
+        create_mesgbox(mesg_txt);
+        case 11:
+        var mesg_txt = "Regulator fault! Check motor regulator";
+        create_mesgbox(mesg_txt);
+        case 12:
+        var mesg_txt = "S.N. invalid, S.N. already exists";
+        create_mesgbox(mesg_txt);
+        case 13:
+        var mesg_txt = "Auto mode already started, cannot change part during auto mode execution";
+        create_mesgbox(mesg_txt);
         case 14:
         var mesg_txt = "Selected part and serial number not confirmed!";
+        create_mesgbox(mesg_txt);
+        case 15:
+        var mesg_txt = "Check serial number format";
+        create_mesgbox(mesg_txt);
+        case 16:
+        var mesg_txt = "Template file not defined";
+        create_mesgbox(mesg_txt);
+        case 17:
+        var mesg_txt = "Check quantity input format";
+        create_mesgbox(mesg_txt);
+        case 18:
+        var mesg_txt = "Logo object ID is not 'OBJ_I' or template file is missing";
+        create_mesgbox(mesg_txt);
+        case 19:
+        var mesg_txt = "Barrier is not in lower position";
         create_mesgbox(mesg_txt);
         break;
     }

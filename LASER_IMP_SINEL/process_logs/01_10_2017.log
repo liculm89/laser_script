@@ -154,3 +154,5103 @@
 01/10/2017-00:12:36 --- Automatic laser referencing initiated
 
 
+01/10/2017-14:43:29 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-14:43:29 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-14:43:34 --- Automatic barrier rising
+
+
+01/10/2017-14:43:34 --- Auto mode started
+
+
+01/10/2017-14:43:34 --- Automatic laser referencing initiated
+
+
+01/10/2017-14:43:37 --- pump counter:1
+
+
+01/10/2017-14:43:37 --- Automatic barrier lowering
+
+
+01/10/2017-14:43:37 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-14:43:37 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-14:43:37 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-14:43:38 --- Pump in laser focus
+
+
+01/10/2017-14:43:38 --- simulation auto marking started
+
+
+01/10/2017-14:43:40 --- Stop auto mode has been pressed while marking was active
+
+
+01/10/2017-14:44:27 --- Automatic laser referencing initiated
+
+
+01/10/2017-14:44:27 --- Automatic barrier rising
+
+
+01/10/2017-14:44:51 ---  Ok pressed, creating new serial number
+
+
+01/10/2017-20:16:22 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-20:16:22 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-20:16:28 --- Automatic barrier rising
+
+
+01/10/2017-20:16:28 --- Auto mode started
+
+
+01/10/2017-20:16:28 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:16:30 --- pump counter:1
+
+
+01/10/2017-20:16:30 --- Automatic barrier lowering
+
+
+01/10/2017-20:16:30 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-20:16:31 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-20:16:31 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-20:16:33 --- Pump in laser focus
+
+
+01/10/2017-20:16:33 --- simulation auto marking started
+
+
+01/10/2017-20:17:03 --- Stop auto mode has been pressed while marking was active
+
+
+01/10/2017-20:17:24 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:17:24 --- Automatic barrier rising
+
+
+01/10/2017-20:18:14 ---  Ok pressed, creating new serial number
+
+
+01/10/2017-20:19:40 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-20:19:40 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-20:19:44 --- pump counter:1
+
+
+01/10/2017-20:19:45 --- pump left
+
+
+01/10/2017-20:19:52 --- Automatic barrier rising
+
+
+01/10/2017-20:19:52 --- Auto mode started
+
+
+01/10/2017-20:19:52 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:19:54 --- pump counter:2
+
+
+01/10/2017-20:19:54 --- Automatic barrier lowering
+
+
+01/10/2017-20:19:54 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-20:19:55 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-20:19:55 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-20:19:57 --- Pump in laser focus
+
+
+01/10/2017-20:19:58 --- simulation auto marking started
+
+
+01/10/2017-20:20:02 --- Barrier not down during laser marking
+
+
+01/10/2017-20:20:02 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:20:02 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-20:20:02 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:20:02 --- Automatic barrier rising
+
+
+01/10/2017-20:20:03 ---  Ok pressed, creating new serial number
+
+
+01/10/2017-20:20:03 --- Automatic barrier rising
+
+
+01/10/2017-20:20:03 --- Auto mode started
+
+
+01/10/2017-20:20:03 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:20:20 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-20:20:20 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-20:20:23 --- Automatic barrier rising
+
+
+01/10/2017-20:20:23 --- Auto mode started
+
+
+01/10/2017-20:20:23 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:20:25 --- pump counter:1
+
+
+01/10/2017-20:20:25 --- Automatic barrier lowering
+
+
+01/10/2017-20:20:25 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-20:20:25 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-20:20:25 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-20:20:26 --- Pump in laser focus
+
+
+01/10/2017-20:20:27 --- simulation auto marking started
+
+
+01/10/2017-20:20:29 --- Barrier not down during laser marking
+
+
+01/10/2017-20:20:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:20:29 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-20:20:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:20:29 --- Automatic barrier rising
+
+
+01/10/2017-20:20:30 ---  Ok pressed, creating new serial number
+
+
+01/10/2017-20:20:30 --- Automatic barrier rising
+
+
+01/10/2017-20:20:30 --- Auto mode started
+
+
+01/10/2017-20:20:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:20:50 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-20:20:50 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-20:20:57 --- Automatic barrier rising
+
+
+01/10/2017-20:20:57 --- Auto mode started
+
+
+01/10/2017-20:20:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:20:58 --- pump counter:1
+
+
+01/10/2017-20:20:58 --- Automatic barrier lowering
+
+
+01/10/2017-20:20:58 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-20:21:00 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-20:21:00 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-20:21:00 --- Pump in laser focus
+
+
+01/10/2017-20:21:01 --- simulation auto marking started
+
+
+01/10/2017-20:21:03 --- Barrier not down during laser marking
+
+
+01/10/2017-20:21:03 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:21:03 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-20:21:03 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:21:03 --- Automatic barrier rising
+
+
+01/10/2017-20:21:04 --- Cancel pressed, keeping current serial: 17-000055
+
+
+01/10/2017-20:21:04 --- Automatic barrier rising
+
+
+01/10/2017-20:21:04 --- Auto mode started
+
+
+01/10/2017-20:21:04 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:22:02 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-20:22:02 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-20:22:07 --- Automatic barrier rising
+
+
+01/10/2017-20:22:07 --- Auto mode started
+
+
+01/10/2017-20:22:07 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:22:09 --- pump counter:1
+
+
+01/10/2017-20:22:09 --- Automatic barrier lowering
+
+
+01/10/2017-20:22:09 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-20:22:09 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-20:22:09 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-20:22:10 --- Pump in laser focus
+
+
+01/10/2017-20:22:10 --- simulation auto marking started
+
+
+01/10/2017-20:22:12 --- Barrier not down during laser marking
+
+
+01/10/2017-20:22:12 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:22:12 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-20:22:12 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:22:12 --- Automatic barrier rising
+
+
+01/10/2017-20:22:14 ---  Ok pressed, creating new serial number
+
+
+01/10/2017-20:22:18 --- pump left
+
+
+01/10/2017-20:22:20 --- pump counter:2
+
+
+01/10/2017-20:22:24 --- pump left
+
+
+01/10/2017-20:22:26 --- Automatic barrier rising
+
+
+01/10/2017-20:22:26 --- Auto mode started
+
+
+01/10/2017-20:22:26 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:22:29 --- pump counter:3
+
+
+01/10/2017-20:22:29 --- Automatic barrier lowering
+
+
+01/10/2017-20:22:29 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-20:22:31 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-20:22:31 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-20:22:31 --- Pump in laser focus
+
+
+01/10/2017-20:22:32 --- simulation auto marking started
+
+
+01/10/2017-20:22:34 --- Barrier not down during laser marking
+
+
+01/10/2017-20:22:34 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:22:34 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-20:22:34 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:22:34 --- Automatic barrier rising
+
+
+01/10/2017-20:22:37 ---  Ok pressed, creating new serial number
+
+
+01/10/2017-20:24:12 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-20:24:12 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-20:24:18 --- Automatic barrier rising
+
+
+01/10/2017-20:24:18 --- Auto mode started
+
+
+01/10/2017-20:24:18 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:24:20 --- pump counter:1
+
+
+01/10/2017-20:24:20 --- Automatic barrier lowering
+
+
+01/10/2017-20:24:20 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-20:24:20 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-20:24:20 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-20:24:21 --- Pump in laser focus
+
+
+01/10/2017-20:24:21 --- simulation auto marking started
+
+
+01/10/2017-20:24:24 --- Barrier not down during laser marking
+
+
+01/10/2017-20:24:24 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:24:24 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-20:24:24 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:24:24 --- Automatic barrier rising
+
+
+01/10/2017-20:24:26 ---  Ok pressed, creating new serial number
+
+
+01/10/2017-20:24:51 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-20:24:51 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-20:24:56 --- Automatic barrier rising
+
+
+01/10/2017-20:24:56 --- Auto mode started
+
+
+01/10/2017-20:24:56 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:24:58 --- Auto mode already started, or laser marking started in manual mode
+
+
+01/10/2017-20:24:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-20:24:59 --- Automatic barrier rising
+
+
+01/10/2017-20:24:59 --- Automatic barrier rising
+
+
+01/10/2017-20:24:59 --- Auto mode started
+
+
+01/10/2017-20:24:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-21:32:43 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-21:32:43 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-21:32:48 --- Automatic barrier rising
+
+
+01/10/2017-21:32:48 --- Auto mode started
+
+
+01/10/2017-21:32:48 --- Automatic laser referencing initiated
+
+
+01/10/2017-21:32:50 --- pump counter:1
+
+
+01/10/2017-21:32:51 --- Automatic barrier lowering
+
+
+01/10/2017-21:32:51 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-21:32:51 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-21:32:51 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-21:32:52 --- Pump in laser focus
+
+
+01/10/2017-21:32:53 --- simulation auto marking started
+
+
+01/10/2017-21:33:13 --- Barrier not down during laser marking
+
+
+01/10/2017-21:33:13 --- Automatic laser referencing initiated
+
+
+01/10/2017-21:33:13 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-21:33:13 --- Automatic laser referencing initiated
+
+
+01/10/2017-21:33:13 --- Automatic barrier rising
+
+
+01/10/2017-21:33:15 --- Cancel pressed, keeping current serial: 17-000291
+
+
+01/10/2017-21:50:33 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-21:50:33 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-21:51:26 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-21:51:26 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-21:51:35 --- Automatic barrier rising
+
+
+01/10/2017-21:51:35 --- Auto mode started
+
+
+01/10/2017-21:51:35 --- Automatic laser referencing initiated
+
+
+01/10/2017-21:51:37 --- pump counter:1
+
+
+01/10/2017-21:51:37 --- Automatic barrier lowering
+
+
+01/10/2017-21:51:37 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-21:51:38 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-21:51:38 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-21:51:40 --- Pump in laser focus
+
+
+01/10/2017-21:51:40 --- simulation auto marking started
+
+
+01/10/2017-21:52:29 --- Automatic barrier rising
+
+
+01/10/2017-21:52:29 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+01/10/2017-21:52:29 --- Signal DONE set
+
+
+01/10/2017-21:52:30 --- Signal DONE reseted
+
+
+01/10/2017-21:52:51 --- Automatic laser referencing initiated
+
+
+01/10/2017-21:52:51 --- Automatic barrier rising
+
+
+01/10/2017-21:52:52 ---  *** Script Shutting down *** 
+
+
+01/10/2017-21:56:24 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-21:56:24 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-21:56:30 --- Automatic barrier rising
+
+
+01/10/2017-21:56:30 --- Auto mode started
+
+
+01/10/2017-21:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-21:56:32 --- pump counter:1
+
+
+01/10/2017-21:56:33 --- Automatic barrier lowering
+
+
+01/10/2017-21:56:33 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-21:56:33 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-21:56:33 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-21:56:33 --- Pump in laser focus
+
+
+01/10/2017-21:56:34 --- simulation auto marking started
+
+
+01/10/2017-21:57:38 --- Automatic barrier rising
+
+
+01/10/2017-21:57:38 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+01/10/2017-21:57:39 --- Signal DONE set
+
+
+01/10/2017-21:57:39 --- Signal DONE reseted
+
+
+01/10/2017-21:57:43 --- pump left
+
+
+01/10/2017-21:59:42 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-21:59:42 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-21:59:54 --- Automatic barrier rising
+
+
+01/10/2017-21:59:54 --- Auto mode started
+
+
+01/10/2017-21:59:54 --- Automatic laser referencing initiated
+
+
+01/10/2017-21:59:55 --- pump counter:1
+
+
+01/10/2017-21:59:55 --- Automatic barrier lowering
+
+
+01/10/2017-21:59:55 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-21:59:56 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-21:59:56 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-21:59:59 --- Pump in laser focus
+
+
+01/10/2017-21:59:59 --- simulation auto marking started
+
+
+01/10/2017-22:00:46 --- Automatic barrier rising
+
+
+01/10/2017-22:00:46 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+01/10/2017-22:00:46 --- Signal DONE set
+
+
+01/10/2017-22:00:47 --- Signal DONE reseted
+
+
+01/10/2017-22:01:53 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-22:01:53 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-22:01:58 --- Automatic barrier rising
+
+
+01/10/2017-22:01:58 --- Auto mode started
+
+
+01/10/2017-22:01:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:01:59 --- pump counter:1
+
+
+01/10/2017-22:01:59 --- Automatic barrier lowering
+
+
+01/10/2017-22:01:59 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-22:01:59 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-22:01:59 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-22:02:00 --- Pump in laser focus
+
+
+01/10/2017-22:02:00 --- simulation auto marking started
+
+
+01/10/2017-22:02:57 --- Automatic barrier rising
+
+
+01/10/2017-22:02:57 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+01/10/2017-22:02:58 --- Marking successful, incrementing serial number and setting signal done
+
+
+01/10/2017-22:02:58 --- Appending .xls log table
+
+
+01/10/2017-22:02:58 ---  
+
+
+01/10/2017-22:02:58 --- Signal DONE set
+
+
+01/10/2017-22:02:59 --- Automatic barrier lowering
+
+
+01/10/2017-22:02:59 --- Signal from line recieved, barrier going down ...
+
+
+01/10/2017-22:02:59 --- Signal DONE reseted
+
+
+01/10/2017-22:04:04 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-22:04:04 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-22:04:29 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-22:04:29 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-22:04:33 --- Automatic barrier rising
+
+
+01/10/2017-22:04:33 --- Auto mode started
+
+
+01/10/2017-22:04:33 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:04:34 --- pump counter:1
+
+
+01/10/2017-22:04:34 --- Automatic barrier lowering
+
+
+01/10/2017-22:04:34 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-22:04:36 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-22:04:36 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-22:04:36 --- Pump in laser focus
+
+
+01/10/2017-22:04:37 --- simulation auto marking started
+
+
+01/10/2017-22:05:41 --- Automatic barrier rising
+
+
+01/10/2017-22:05:41 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+01/10/2017-22:05:42 --- Marking successful, incrementing serial number and setting signal done
+
+
+01/10/2017-22:05:42 --- Appending .xls log table
+
+
+01/10/2017-22:05:42 ---  
+
+
+01/10/2017-22:05:42 --- starting wait_for_pump_sim from reset_laser marking
+
+
+01/10/2017-22:05:42 --- Signal DONE set
+
+
+01/10/2017-22:05:43 --- Automatic barrier lowering
+
+
+01/10/2017-22:05:43 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-22:05:43 --- Signal DONE reseted
+
+
+01/10/2017-22:05:44 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-22:05:44 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-22:05:44 --- Pump in laser focus
+
+
+01/10/2017-22:05:44 --- simulation auto marking started
+
+
+01/10/2017-22:15:34 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-22:15:34 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-22:15:40 --- Automatic barrier rising
+
+
+01/10/2017-22:15:40 --- Auto mode started
+
+
+01/10/2017-22:15:40 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:15:42 --- pump counter:1
+
+
+01/10/2017-22:15:42 --- Automatic barrier lowering
+
+
+01/10/2017-22:15:42 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-22:15:43 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-22:15:43 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-22:15:43 --- Pump in laser focus
+
+
+01/10/2017-22:15:44 --- simulation auto marking started
+
+
+01/10/2017-22:16:27 --- Automatic barrier rising
+
+
+01/10/2017-22:16:27 --- Appending .xls log table
+
+
+01/10/2017-22:16:27 ---  
+
+
+01/10/2017-22:16:27 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+01/10/2017-22:16:28 --- Signal DONE set
+
+
+01/10/2017-22:16:28 --- Signal DONE reseted
+
+
+01/10/2017-22:16:31 --- pump left
+
+
+01/10/2017-22:16:31 --- Marking successful, incrementing serial number and setting signal done
+
+
+01/10/2017-22:16:31 --- starting wait_for_pump_sim from reset_laser marking
+
+
+01/10/2017-22:16:43 --- pump counter:2
+
+
+01/10/2017-22:16:43 --- Automatic barrier lowering
+
+
+01/10/2017-22:16:43 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-22:16:44 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-22:16:44 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-22:16:45 --- Pump in laser focus
+
+
+01/10/2017-22:16:45 --- simulation auto marking started
+
+
+01/10/2017-22:16:53 --- Stop auto mode has been pressed while marking was active
+
+
+01/10/2017-22:17:48 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:17:48 --- Automatic barrier rising
+
+
+01/10/2017-22:17:56 --- Cancel pressed, keeping current serial: 17-000057
+
+
+01/10/2017-22:41:14 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-22:41:14 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-22:41:20 --- Automatic barrier rising
+
+
+01/10/2017-22:41:20 --- Auto mode started
+
+
+01/10/2017-22:41:20 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:41:22 --- pump counter:1
+
+
+01/10/2017-22:41:22 --- Automatic barrier lowering
+
+
+01/10/2017-22:41:22 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-22:41:23 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-22:41:23 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-22:41:23 --- Pump in laser focus
+
+
+01/10/2017-22:41:23 --- simulation auto marking started
+
+
+01/10/2017-22:41:26 --- Barrier not down during laser marking
+
+
+01/10/2017-22:41:26 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:41:26 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:41:26 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:41:26 --- Automatic barrier rising
+
+
+01/10/2017-22:41:29 --- Cancel pressed, keeping current serial: 17-000012
+
+
+01/10/2017-22:42:21 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-22:42:21 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-22:42:27 --- Automatic barrier rising
+
+
+01/10/2017-22:42:27 --- Auto mode started
+
+
+01/10/2017-22:42:27 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:42:28 --- pump counter:1
+
+
+01/10/2017-22:42:28 --- Automatic barrier lowering
+
+
+01/10/2017-22:42:28 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-22:42:29 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-22:42:29 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-22:42:29 --- Pump in laser focus
+
+
+01/10/2017-22:42:29 --- simulation auto marking started
+
+
+01/10/2017-22:42:32 --- Barrier not down during laser marking
+
+
+01/10/2017-22:42:32 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:42:32 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:42:32 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:42:32 --- Automatic barrier rising
+
+
+01/10/2017-22:42:46 ---  Ok pressed, creating new serial number
+
+
+01/10/2017-22:44:28 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-22:44:28 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-22:44:37 --- Automatic barrier rising
+
+
+01/10/2017-22:44:37 --- Auto mode started
+
+
+01/10/2017-22:44:37 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:44:39 --- pump counter:1
+
+
+01/10/2017-22:44:39 --- Automatic barrier lowering
+
+
+01/10/2017-22:44:39 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-22:44:41 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-22:44:41 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-22:44:42 --- Pump in laser focus
+
+
+01/10/2017-22:44:43 --- simulation auto marking started
+
+
+01/10/2017-22:44:45 --- Barrier not down during laser marking
+
+
+01/10/2017-22:44:45 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:44:45 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:44:45 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:44:45 --- Automatic barrier rising
+
+
+01/10/2017-22:45:03 --- Cancel pressed, keeping current serial: 17-000291
+
+
+01/10/2017-22:45:54 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-22:45:54 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-22:45:59 --- Automatic barrier rising
+
+
+01/10/2017-22:45:59 --- Auto mode started
+
+
+01/10/2017-22:45:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:46:02 --- pump counter:1
+
+
+01/10/2017-22:46:02 --- Automatic barrier lowering
+
+
+01/10/2017-22:46:02 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-22:46:04 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-22:46:04 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-22:46:04 --- Pump in laser focus
+
+
+01/10/2017-22:46:04 --- simulation auto marking started
+
+
+01/10/2017-22:46:09 --- Barrier not down during laser marking
+
+
+01/10/2017-22:46:09 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:46:09 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:46:09 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:46:09 --- Automatic barrier rising
+
+
+01/10/2017-22:46:10 --- Cancel pressed, keeping current serial: 17-000057
+
+
+01/10/2017-22:46:13 --- pump left
+
+
+01/10/2017-22:46:15 --- pump counter:2
+
+
+01/10/2017-22:46:19 --- pump left
+
+
+01/10/2017-22:46:21 --- Auto mode already off
+
+
+01/10/2017-22:46:22 ---  *** Script Shutting down *** 
+
+
+01/10/2017-22:47:40 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-22:47:40 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-22:47:51 --- Automatic barrier rising
+
+
+01/10/2017-22:47:51 --- Auto mode started
+
+
+01/10/2017-22:47:51 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:55 --- pump counter:1
+
+
+01/10/2017-22:47:55 --- Automatic barrier lowering
+
+
+01/10/2017-22:47:55 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:57 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:57 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:57 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-22:47:58 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:58 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:58 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:58 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:47:59 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:47:59 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:47:59 --- Automatic barrier rising
+
+
+01/10/2017-22:48:00 --- Cancel pressed, keeping current serial: 17-000291
+
+
+01/10/2017-22:48:00 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:48:01 --- Auto mode already off
+
+
+01/10/2017-22:48:02 --- Cancel pressed, keeping current serial: 17-000291
+
+
+01/10/2017-22:48:02 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:48:02 --- Auto mode already off
+
+
+01/10/2017-22:48:03 --- Cancel pressed, keeping current serial: 17-000291
+
+
+01/10/2017-22:48:03 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:48:03 --- Auto mode already off
+
+
+01/10/2017-22:48:03 --- Cancel pressed, keeping current serial: 17-000291
+
+
+01/10/2017-22:48:03 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:48:03 --- Auto mode already off
+
+
+01/10/2017-22:48:04 --- Cancel pressed, keeping current serial: 17-000291
+
+
+01/10/2017-22:48:04 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:48:04 --- Auto mode already off
+
+
+01/10/2017-22:48:04 --- Cancel pressed, keeping current serial: 17-000291
+
+
+01/10/2017-22:48:04 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:48:04 --- Auto mode already off
+
+
+01/10/2017-22:48:04 --- Cancel pressed, keeping current serial: 17-000291
+
+
+01/10/2017-22:48:04 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:48:04 --- Auto mode already off
+
+
+01/10/2017-22:48:04 --- Cancel pressed, keeping current serial: 17-000291
+
+
+01/10/2017-22:48:04 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:48:05 --- Auto mode already off
+
+
+01/10/2017-22:48:05 --- Cancel pressed, keeping current serial: 17-000291
+
+
+01/10/2017-22:48:05 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:48:05 --- Auto mode already off
+
+
+01/10/2017-22:48:11 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-22:48:11 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-22:48:45 ---  *** Script Shutting down *** 
+
+
+01/10/2017-22:49:08 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-22:49:08 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-22:49:14 --- Automatic barrier rising
+
+
+01/10/2017-22:49:14 --- Auto mode started
+
+
+01/10/2017-22:49:14 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:49:16 --- pump counter:1
+
+
+01/10/2017-22:49:16 --- Automatic barrier lowering
+
+
+01/10/2017-22:49:16 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-22:49:17 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-22:49:17 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-22:49:18 --- Pump in laser focus
+
+
+01/10/2017-22:49:18 --- simulation auto marking started
+
+
+01/10/2017-22:49:22 --- Barrier not down during laser marking
+
+
+01/10/2017-22:49:22 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:49:22 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:49:22 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:49:22 --- Automatic barrier rising
+
+
+01/10/2017-22:49:23 --- Cancel pressed, keeping current serial: 17-000291
+
+
+01/10/2017-22:49:58 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-22:49:58 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-22:50:02 --- Automatic barrier rising
+
+
+01/10/2017-22:50:02 --- Auto mode started
+
+
+01/10/2017-22:50:02 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:50:03 --- pump counter:1
+
+
+01/10/2017-22:50:04 --- Automatic barrier lowering
+
+
+01/10/2017-22:50:04 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-22:50:05 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-22:50:05 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-22:50:06 --- Pump in laser focus
+
+
+01/10/2017-22:50:06 --- simulation auto marking started
+
+
+01/10/2017-22:50:10 --- Barrier not down during laser marking
+
+
+01/10/2017-22:50:10 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:50:10 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:50:10 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:50:10 --- Automatic barrier rising
+
+
+01/10/2017-22:50:16 ---  Ok pressed, creating new serial number
+
+
+01/10/2017-22:50:19 --- pump left
+
+
+01/10/2017-22:50:20 --- pump counter:2
+
+
+01/10/2017-22:51:47 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-22:51:47 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-22:56:20 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-22:56:20 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-22:56:25 --- Automatic barrier rising
+
+
+01/10/2017-22:56:25 --- Auto mode started
+
+
+01/10/2017-22:56:25 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:27 --- pump counter:1
+
+
+01/10/2017-22:56:27 --- Automatic barrier lowering
+
+
+01/10/2017-22:56:27 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:29 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:29 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:29 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Reset button pressed during Auto mode
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:30 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:56:30 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:30 --- Automatic barrier rising
+
+
+01/10/2017-22:56:34 ---  Ok pressed, creating new serial number
+
+
+01/10/2017-22:56:34 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:56:35 --- Auto mode already off
+
+
+01/10/2017-22:56:35 --- Cancel pressed, keeping current serial: 17-000292
+
+
+01/10/2017-22:56:35 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:56:36 --- Auto mode already off
+
+
+01/10/2017-22:56:36 --- Cancel pressed, keeping current serial: 17-000292
+
+
+01/10/2017-22:56:36 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:56:36 --- Auto mode already off
+
+
+01/10/2017-22:56:37 --- Cancel pressed, keeping current serial: 17-000292
+
+
+01/10/2017-22:56:37 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:56:37 --- Auto mode already off
+
+
+01/10/2017-22:56:37 --- Cancel pressed, keeping current serial: 17-000292
+
+
+01/10/2017-22:56:37 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:56:37 --- Auto mode already off
+
+
+01/10/2017-22:56:37 --- Cancel pressed, keeping current serial: 17-000292
+
+
+01/10/2017-22:56:37 --- Resetting auto mode! Simulation mode *****************
+
+
+01/10/2017-22:56:37 --- Auto mode already off
+
+
+01/10/2017-22:56:42 --- Init passed
+
+
+=================================================== 
+
+01/10/2017-22:56:42 *** Process logging started *** 
+
+=================================================== 
+
+01/10/2017-22:56:49 --- pump counter:1
+
+
+01/10/2017-22:56:51 --- pump left
+
+
+01/10/2017-22:56:53 --- Automatic barrier rising
+
+
+01/10/2017-22:56:53 --- Auto mode started
+
+
+01/10/2017-22:56:53 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:54 --- pump counter:2
+
+
+01/10/2017-22:56:54 --- Automatic barrier lowering
+
+
+01/10/2017-22:56:54 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+01/10/2017-22:56:55 --- Barrier is lowered, searching for pump...
+
+
+01/10/2017-22:56:55 --- Laser is moving into working position, searching for pump...
+
+
+01/10/2017-22:56:56 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:56 --- Laser lower position reached, no pump found, going back to ref...
+
+
+01/10/2017-22:56:56 --- Automatic laser referencing initiated
+
+
+01/10/2017-22:56:56 --- Automatic barrier rising
+
+
+01/10/2017-22:56:58 --- ok pressed, trying to find pump again
+
+
+01/10/2017-22:56:58 --- Barrier is lowered, searching for pump...
+
+

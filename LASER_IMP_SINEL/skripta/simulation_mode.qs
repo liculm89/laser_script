@@ -91,6 +91,36 @@ function check_marking_sim(ID) {
     }
 }
 
+function reset_laser_marking_sim(ID) {
+    if ((timers[5] == ID) && (pump_present == 0)) {
+        disconnect_func(reset_laser_marking_sim);
+        write_log("Marking successful, incrementing serial number and setting signal done");
+        //numWC++;
+        //xls_log();
+        //print(numWC % sn_marking_times);
+        chk_and_increment_sn();
+
+        if ((numW > numWC) || numW == 0) {
+            if (auto_waiting_to_stop == 1) {
+                gen_timer(14, wait_for_marking_end);
+            }
+            else {
+                write_log("starting wait_for_pump_sim from reset_laser marking");
+                gen_timer(4, wait_for_pump_sim);
+            }
+        }
+        else{
+        stop_auto();
+        write_log("Marking quantity reached! Stoping auto mode");
+        marking_quantity_complete();
+        pumps_marked = 0;
+        le_num_w = "";
+    }
+    pumps_marked++;
+
+}
+}
+
 function reset_auto_func_sim(ID) {
 
     if (timers[13] == ID) {

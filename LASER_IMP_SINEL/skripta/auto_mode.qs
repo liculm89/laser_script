@@ -4,9 +4,12 @@
 
 function start_auto_mode() {
 	if (auto_mode_check()) {
-		System.collectGarbage();
+
+		try { System.collectGarbage(); }
+		catch (e) { print("Exception: " + e); }
+
 		auto_mode = "ON";
-		get_quantity();
+		get_quantity(); //Sets numW var
 		barrier_up_auto();
 		if (reset_auto == 1) {
 			if (sen_linija == 1) {
@@ -73,13 +76,7 @@ function laser_move_timed() {
 	}
 	else {
 		write_log("Laser already in position, initiating marking process...");
-		if (simulation_mode) {
-			mark_auto_sim();
-		}
-		else {
-			mark_auto();
-		}
-
+		gen_timer(12, automatic_marking);
 	}
 }
 
@@ -106,7 +103,8 @@ function stop_search_auto(ID) {
 				if (compensation_enabled) {
 					Axis.move(2, (Axis.getPosition(2) - compensation_distance));
 				}
-				mark_auto();
+				gen_timer(12, automatic_marking);
+				//mark_auto();
 			}
 		}
 		else {
@@ -120,14 +118,12 @@ MARKING DELAY FUNCTION
 */
 function automatic_marking(ID) {
 	if (timers[12] == ID) {
+		disconnect_func(automatic_marking);
 		write_log("Laser in position, starts marking...");
-		if (simulation_mode) {
-			mark_auto_sim();
-		}
+		if (simulation_mode) { mark_auto_sim(); }
 		else {
 			mark_auto();
 		}
-		disconnect_func(automatic_marking);
 	}
 }
 
@@ -182,9 +178,22 @@ function barrier_up_after_marking() {
 	barrier_up_auto();
 	laser_marking = 0;
 	laser_in_working_pos = 0;
-	marking_ended();
-	write_log("Marking successful, raising barrier up and setting signal DONE..");
-	gen_timer(5, reset_laser_marking);
+	if (auto_waiting_to_stop == 1) {
+
+	}
+	else {
+		marking_ended();
+		numWC++;
+		xls_log();
+		write_log("Marking successful, raising barrier up and setting signal DONE..");
+		chk_and_increment_sn();
+		if (simulation_mode) {
+			gen_timer(5, reset_laser_marking_sim);
+		}
+		else {
+			gen_timer(5, reset_laser_marking);
+		}
+	}
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -193,34 +202,14 @@ function barrier_up_after_marking() {
 function reset_laser_marking(ID) {
 	if ((timers[5] == ID) && (pump_present == 0)) {
 		disconnect_func(reset_laser_marking);
-		write_log("Marking successful, incrementing serial number and setting signal done");
-		numWC++;
-		xls_log();
-		print(numWC % sn_marking_times);
-		if (!(numWC % sn_marking_times)) {
-			if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
-				if (!sn_fixed) {
-					curr_sn = parseInt(last_sn, 10) + 1;
-					last_sn = curr_sn;
-					last_sn = leftPad((last_sn), 6);
-					update_sn();
-				}
-			}
-		}
+		write_log("Checking marking quantity and connecting wait for pump function");
 		if ((numW > numWC) || numW == 0) {
-			if (simulation_mode) {
-				write_log("starting wait_for_pump_sim from reset_laser marking");
-				gen_timer(4, wait_for_pump_sim);
+			if (auto_waiting_to_stop == 1) {
+				gen_timer(14, wait_for_marking_end);
 			}
 			else {
-				if (auto_waiting_to_stop == 1) {
-					gen_timer(14, wait_for_marking_end);
-				}
-				else {
-					gen_timer(4, wait_for_pump);
-				}
+				gen_timer(4, wait_for_pump);
 			}
-			pumps_marked++;
 		}
 		else {
 			stop_auto();
@@ -229,9 +218,9 @@ function reset_laser_marking(ID) {
 			pumps_marked = 0;
 			le_num_w = "";
 		}
+		pumps_marked++;
 	}
 }
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //IF pump is present, when reset is pressed, automatic mode resets
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -262,7 +251,7 @@ function stop_auto() {
 			}
 		}
 		else {
-			if(auto_mode == "ON"){auto_mode = "OFF";}
+			if (auto_mode == "ON") { auto_mode = "OFF"; }
 			System.stopLaser();
 			laser_marking = 0;
 			laser_in_working_pos = 0;
@@ -285,6 +274,7 @@ function wait_for_marking_end(ID) {
 		auto_waiting_to_stop = 0;
 		System.stopLaser();
 		laser_marking = 0;
+		laser_in_working_pos = 0;
 		disconnect_timers();
 		laser_ref_auto();
 		barrier_up_auto();
