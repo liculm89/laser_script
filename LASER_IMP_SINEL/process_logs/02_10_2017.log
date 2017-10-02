@@ -6979,3 +6979,69 @@
 02/10/2017-10:36:21 --- simulation auto marking started
 
 
+02/10/2017-12:22:03 --- Init passed
+
+
+=================================================== 
+
+02/10/2017-12:22:03 *** Process logging started *** 
+
+=================================================== 
+
+02/10/2017-12:22:09 --- Automatic barrier rising
+
+
+02/10/2017-12:22:09 --- Auto mode started
+
+
+02/10/2017-12:22:09 --- Automatic laser referencing initiated
+
+
+02/10/2017-12:22:10 --- pump counter:1
+
+
+02/10/2017-12:22:10 --- Automatic barrier lowering
+
+
+02/10/2017-12:22:10 ---  Simulation - new pump has arrived, barrier going down ...
+
+
+02/10/2017-12:22:10 --- Barrier is lowered, searching for pump...
+
+
+02/10/2017-12:22:10 --- Laser is moving into working position, searching for pump...
+
+
+02/10/2017-12:22:11 --- Pump in laser focus
+
+
+02/10/2017-12:22:12 --- Laser in position, starts marking...
+
+
+02/10/2017-12:22:12 --- simulation auto marking started
+
+
+02/10/2017-12:23:02 --- Stop auto mode has been pressed while marking was active
+
+
+02/10/2017-12:23:08 --- Automatic laser referencing initiated
+
+
+02/10/2017-12:23:08 --- Automatic barrier rising
+
+
+02/10/2017-12:23:11 --- No pressed, continuing onto next pump...
+
+
+02/10/2017-12:23:11 --- Appending .xls log table
+
+
+02/10/2017-12:23:12 ---  
+
+
+02/10/2017-12:23:12 --- Automatic laser referencing initiated
+
+
+02/10/2017-12:23:12 --- Automatic barrier rising
+
+
