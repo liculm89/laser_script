@@ -557,7 +557,17 @@ function gen_dialog(part_list) {
     System["sigTimer(int)"].connect(gui_update);
     if (dialog.exec()) {
         print("---Closing application---");
-        dialog.close();
+		
+        
+     //   dialog.close();
+    }
+	 try {
+        
+        delete dialog;
+        System.collectGarbage();
+    }
+    catch (e) {
+        write_log("Exception: " + e);
     }
 }
 
@@ -696,9 +706,23 @@ function gen_sc_dialog()
     lbl_question.font = font6;
     serial_dialog.font = font6;
     serial_dialog.add(lbl_question);
-    serial_dialog.okButtonText = "Repeat marking with S.N.: "  + year + "-" + leftPad((curr_sn), 6);
-    serial_dialog.cancelButtonText = "NO, continue with auto mode";
+    serial_dialog.okButtonText = "Yes, repeat marking with S.N.: "  + year + "-" + leftPad((curr_sn), 6);
+    serial_dialog.cancelButtonText = "NO, continue onto next pump";
     return(serial_dialog);
+}
+
+function gen_wos_dialog()
+{
+    var wo_serial_dialog = new Dialog("Retry or continue", Dialog.D_OKCANCEL, false);
+    var lbl_question = new Label(); lbl_question.text = "Repeat marking?";
+    lbl_question.alignment = 0x04; 
+    var font6 = "MS Shell Dlg 2,15,-1,5,50,0,0,0,0,0";
+    lbl_question.font = font6;
+    wo_serial_dialog.font = font6;
+    wo_serial_dialog.add(lbl_question);
+    wo_serial_dialog.okButtonText = "Yes";
+    wo_serial_dialog.cancelButtonText = "NO, continue onto next pump";
+    return(wo_serial_dialog);
 }
 ///////////////////////////////////////////
 //Script Shut down function
@@ -716,7 +740,14 @@ function shut_down() {
         write_log(" *** Script Shutting down *** ");
         
         dialog.OK();
+		 try {
+        
         delete dialog;
+        System.collectGarbage();
+    }
+    catch (e) {
+        write_log("Exception: " + e);
+    }
     }
     else {
         error_auto_mode();

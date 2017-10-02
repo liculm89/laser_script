@@ -196,8 +196,8 @@ function get_serial_int(sn_str) {
     return serial_int;
 }
 
-function chk_and_increment_sn(){
-	if (!(numWC % sn_marking_times)) {
+function chk_and_increment_sn() {
+    if (!(numWC % sn_marking_times)) {
         if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
             if (!sn_fixed) {
                 curr_sn = parseInt(last_sn, 10) + 1;
@@ -212,21 +212,21 @@ function chk_and_increment_sn(){
 function delayed_ref() {
 }
 
-function searching_error(fail_code){
-    if(fail_code == 1){write_log("Search distance passed but no pump found. Going back to ref...");}
-    if(fail_code == 2){
+function searching_error(fail_code) {
+    if (fail_code == 1) { write_log("Search distance passed but no pump found. Going back to ref..."); }
+    if (fail_code == 2) {
         laser_ref_auto();
         write_log("Laser lower position reached, no pump found, going back to ref...");
     }
     disconnect_timers();
-    if(simulation_mode){
+    if (simulation_mode) {
         disconnect_func(stop_search_auto_sim);
     }
-    else{
+    else {
         disconnect_func(stop_search_auto);
     }
     Axis.stop(2);
-    laser_ref_auto();  barrier_up_auto();
+    laser_ref_auto(); barrier_up_auto();
     retry_stop_choice();
 
 }
@@ -242,89 +242,124 @@ function marking_failed(fail_code) {
     laser_marking = 0; laser_in_working_pos = 0;
     disconnect_timers();
     laser_ref_auto();
-    if(simulation_mode){
+    if (simulation_mode) {
         gen_timer(13, reset_auto_func_sim);
     }
-    else{
+    else {
         gen_timer(13, reset_auto_func);
     }
 }
 
 
 function serial_choice_stop() {
-    
+
     var ra_dialog = gen_sc_dialog();
     if (ra_dialog.exec()) {
-        write_log(" Ok pressed, creating new serial number");
-        if (!(numWC % sn_marking_times)) {
-            if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
-                if (!sn_fixed) {
-                    curr_sn = parseInt(last_sn, 10) + 1;
-                    last_sn = curr_sn;
-                    last_sn = leftPad((last_sn), 6);
-                    update_sn();
-                }
-            }
-        }
-        reset_auto = 1;
-    }
-    else {
-        write_log("Cancel pressed, keeping current serial: " + year + "-" + leftPad((curr_sn), 6));
+        write_log("Yes pressed, repeating marking with S.N." + year + "-" + leftPad((curr_sn), 6));
         reset_auto = 0;
-    }
-    
-    delete ra_dialog();
-    System.collectGarbage();
-}
-
-function serial_choice() {
-    var ra_dialog = gen_sc_dialog();
-    if (ra_dialog.exec()) {
-        write_log(" Ok pressed, creating new serial number");
-        if (!(numWC % sn_marking_times)) {
-            if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
-                if (!sn_fixed) {
-                    curr_sn = parseInt(last_sn, 10) + 1;
-                    last_sn = curr_sn;
-                    last_sn = leftPad((last_sn), 6);
-                    update_sn();
-                }
-            }
-        }
+        if (auto_mode == "ON") {
+            stop_auto();}
     }
     else {
-        write_log("Cancel pressed, keeping current serial: " + year + "-" + leftPad((curr_sn), 6));
+        write_log("No pressed, continuing onto next pump...");
+		numWC++;
+		xls_log();
+		//write_log("Marking successful, raising barrier up and setting signal DONE..");
+		chk_and_increment_sn();
+        reset_auto = 1;
+        if (auto_mode == "ON") {
+            stop_auto();}
     }
-
-    try {
-        print("deleting dialog");
+	/*if(reset_pressed)
+    {reset_pressed = 0;}*/
+     try {
         delete ra_dialog;
         System.collectGarbage();
     }
     catch (e) {
-        print("Exception: " + e); 
+        write_log("Exception: " + e);
     }
 
 }
 
+function serial_choice() {
+    var ra_dialog = gen_sc_dialog();
+    
+    if (ra_dialog.exec()) {
+        write_log("Yes pressed, repeating marking with S.N." + year + "-" + leftPad((curr_sn), 6));
+        barrier_down_auto();
+        if (simulation_mode) {
+            gen_timer(6, wait_for_barrier_sim);
+        }
+        else {
+            gen_timer(6, wait_for_barrier);
+        }
+    }
+    else {
+        write_log("No pressed, continuing onto next pump...");
+        barrier_up_after_marking();
+    }
+
+    if(reset_pressed)
+    {reset_pressed = 0;}
+    try {
+        delete ra_dialog;
+        System.collectGarbage();
+    }
+    catch (e) {
+        write_log("Exception: " + e);
+    }
+
+}
+
+function without_serial_choice() {
+    var wos_dialog = gen_wos_dialog();
+    if (wos_dialog.exec()) {
+        write_log("Yes pressed, laser is repeating marking ...");
+        barrier_down_auto();
+        if (simulation_mode) {
+            gen_timer(6, wait_for_barrier_sim);
+        }
+        else {
+            gen_timer(6, wait_for_barrier);
+        }
+    }
+    else {
+        write_log("No pressed, continuing onto next pump...");
+        barrier_up_after_marking();
+    }
+
+    if(reset_pressed)
+    {reset_pressed = 0;}
+    try {
+        delete wos_dialog;
+        System.collectGarbage();
+    }
+    catch (e) {
+        write_log("Exception: " + e);
+    }
+}
 
 function retry_stop_choice() {
     var rr_dialog = gen_rr_dialog();
 
     if (rr_dialog.exec()) {
         write_log("ok pressed, trying to find pump again");
-	if(simulation_mode){
-	    gen_timer(6, wait_for_barrier_sim);}
-	else{
-	    gen_timer(6, wait_for_barrier);
-	}
+        if (simulation_mode) {
+            barrier_down_auto();
+            gen_timer(6, wait_for_barrier_sim);
+        }
+        else {
+            barrier_down_auto();
+            gen_timer(6, wait_for_barrier);
+        }
     }
     else {
         write_log("cancel pressed, stoping auto_mode");
         if (auto_mode == "ON") {
             stop_auto();
         }
-  
+
     }
     delete rr_dialog;
     System.collectGarbage();
@@ -393,60 +428,64 @@ function total_stop_func() {
 ///////////////////////////////////////////////////////////////////////////
 function reset_button_func() {
     if (total_stop == 0) {
-        if (auto_mode == "ON") {
-            write_log("Reset button pressed during Auto mode");
-            System.stopLaser();
-            //disconnect_func(wait_for_pump);
-            laser_marking = 0;
-            laser_in_working_pos = 0;
-            laser_ref_auto();
-            barrier_up_auto();
-            if (simulation_mode) {
-                gen_timer(13, reset_auto_func_sim);
+ 
+        if (!reset_pressed) {
+            if (auto_mode == "ON") {
+		     reset_pressed = 1;
+                write_log("Reset button pressed during Auto mode");
+                System.stopLaser();
+                laser_marking = 0;
+                laser_in_working_pos = 0;
+                laser_ref_auto();
+                barrier_up_auto();
+                if (simulation_mode) {
+                    gen_timer(13, reset_auto_func_sim);
+                }
+                else {
+                    gen_timer(13, reset_auto_func);
+                }
             }
-            else {
-                gen_timer(14, wait_for_marking_end);
+            if (auto_mode == "OFF") {
+                write_log("Reset button pressed while not in Auto mode");
+                System.stopLaser();
+                laser_ref_auto();
+				
             }
         }
-        if (auto_mode == "OFF") {
-            write_log("Reset button pressed while not in Auto mode");
-            System.stopLaser();
-            laser_ref_auto();
-        }
+        
     }
     else {
         error_total_stop();
     }
 }
 
-function auto_mode_check()
-{
-	if (total_stop == 0) {
-		if (reg_fault == 0) {
-			if (auto_mode == "OFF") {
-				if (laser_status == "Ready for marking") {
-					if (confirm) {
-						return true;
-					}
-					else {
-					    process_error(14); return false;
-					}
-				}
-				else {
-				    error_key_sequence(); return false;
-				}
-			}
-			else {
-			    error_manual_mode(); return false;
-			}
-		}
-		else {
-		    error_regulator_fault(); return false;
-		}
-	}
-	else {
-	    error_total_stop(); return false;
-	}    
+function auto_mode_check() {
+    if (total_stop == 0) {
+        if (reg_fault == 0) {
+            if (auto_mode == "OFF") {
+                if (laser_status == "Ready for marking") {
+                    if (confirm) {
+                        return true;
+                    }
+                    else {
+                        process_error(14); return false;
+                    }
+                }
+                else {
+                    error_key_sequence(); return false;
+                }
+            }
+            else {
+                error_manual_mode(); return false;
+            }
+        }
+        else {
+            error_regulator_fault(); return false;
+        }
+    }
+    else {
+        error_total_stop(); return false;
+    }
 }
 
 function log_creator() {

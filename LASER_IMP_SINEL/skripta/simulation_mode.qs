@@ -98,7 +98,7 @@ function reset_laser_marking_sim(ID) {
         //numWC++;
         //xls_log();
         //print(numWC % sn_marking_times);
-        chk_and_increment_sn();
+        //chk_and_increment_sn();
 
         if ((numW > numWC) || numW == 0) {
             if (auto_waiting_to_stop == 1) {
@@ -125,9 +125,9 @@ function reset_auto_func_sim(ID) {
 
     if (timers[13] == ID) {
         write_log("Resetting auto mode! Simulation mode *****************");
-        if (auto_mode == "ON"); {
+        /*if (auto_mode == "ON"); {
             stop_auto();
-        }
+        }*/
         disconnect_func(reset_auto_func_sim);
         if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
             serial_choice();

@@ -177,9 +177,9 @@ function check_marking(ID) {
 function barrier_up_after_marking() {
 	barrier_up_auto();
 	laser_marking = 0;
-	laser_in_working_pos = 0;
+//	laser_in_working_pos = 0;
 	if (auto_waiting_to_stop == 1) {
-
+		gen_timer(14, wait_for_marking_end);
 	}
 	else {
 		marking_ended();
@@ -228,12 +228,13 @@ function reset_auto_func(ID) {
 
 	if ((timers[13] == ID) && (IoPort.getPort(0) & I_PIN_9)) {
 		write_log("Reseting auto mode!!!!");
-		if (auto_mode == "ON"); {
-			stop_auto();
-		}
 		disconnect_func(reset_auto_func);
 		if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
 			serial_choice();
+		}
+		else
+		{
+			without_serial_choice();
 		}
 	}
 }
