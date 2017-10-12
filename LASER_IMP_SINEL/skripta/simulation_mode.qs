@@ -39,6 +39,7 @@ function stop_search_auto_sim(ID) {
                 Axis.stop(2);
                 laser_in_working_pos = 1;
                 //Input compensation function if needed here
+               
                 gen_timer(12, automatic_marking);
             }
         }

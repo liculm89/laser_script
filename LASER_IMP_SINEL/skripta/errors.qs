@@ -234,3 +234,18 @@ function error_barrier_not_down() {
     write_log(mesg_txt);
     last_error = mesg_txt;
 }
+
+function error_barrier_up_during_auto_mark() {
+    var mesg_txt = "Barrier is not in lower position";
+    MessageBox.critical(mesg_txt, MessageBox.Ok);
+    write_log(mesg_txt);
+    last_error = mesg_txt;
+}
+
+function error_no_pump_manual() {
+    var mesg_txt ="Can't find pump!";
+    MessageBox.critical(mesg_txt, MessageBox.Ok);
+    write_log(mesg_txt);
+    last_error = mesg_txt;
+}
+

@@ -9,7 +9,7 @@ var enable_existing_sn_marking = 1;
 var simulation_mode =0;
 var debug_mode = 1;
 
-var compensation_enabled = 0;
+var compensation_enabled = 1;
 if (debug_mode == 0) { simulation_mode = 0; }
 
 var marking_location_setup = 0;
@@ -49,7 +49,7 @@ var z_axis_active = 0;
 var sb1_v = 25;
 var min_pos = 5;
 var search_distance = 82;
-var compensation_distance = 1;
+var compensation_distance = 4;
 var auto_waiting_to_stop = 0;
 var home_pos = 120;
 var current_pos = 0;

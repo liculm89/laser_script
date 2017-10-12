@@ -100,15 +100,26 @@ function stop_search_auto(ID) {
 				disconnect_func(stop_search_auto);
 				Axis.stop(2);
 				laser_in_working_pos = 1;
-				if (compensation_enabled) {
-					Axis.move(2, (Axis.getPosition(2) - compensation_distance));
-				}
-				gen_timer(12, automatic_marking);
+				gen_timer(15, compensation);
+				//gen_timer(12, automatic_marking);
 				//mark_auto();
 			}
 		}
 		else {
 			searching_error(2); //LASER LOWEST POSITION
+		}
+	}
+}
+
+function compensation(ID) {
+	if (timers[15] == ID) {
+		disconnect_func(compensation);
+		if (compensation_enabled) {
+			Axis.move(2, (Axis.getPosition(2) - compensation_distance));
+			gen_timer(12, automatic_marking);
+		}
+		else {
+			gen_timer(12, automatic_marking);
 		}
 	}
 }
@@ -154,12 +165,28 @@ function mark_auto() {
 
 function check_marking(ID) {
 	if (timers[11] == ID) {
+		if ((IoPort.getPort(0) & I_PIN_11) && !(laser_status == "Marking is active")) {
+			disconnect_func(check_marking);
+			barrier_up_after_marking();
+		}
+		else if ((laser_status = "Marking is active") && !(IoPort.getPort(0) & I_PIN_11)) {
+			disconnect_func(check_marking);
+			marking_failed(3);
+		}
+	}
+
+}
+
+
+/*
+function check_marking(ID) {
+	if (timers[11] == ID) {
 		if (!(IoPort.getPort(0) & I_PIN_10)) {
 			if ((IoPort.getPort(0) & I_PIN_11) && !(laser_status == "Marking is active")) {
 				barrier_up_after_marking();
 				disconnect_func(check_marking);
 			}
-			else if ((laser_status = "Marking is active") && !(IoPort.getPort(0) & I_PIN_11)) {
+			else if ((laser_status = "Marking is active") &&++6 !(IoPort.getPort(0) & I_PIN_11)) {
 				disconnect_func(check_marking);
 				marking_failed(3);
 			}
@@ -170,6 +197,7 @@ function check_marking(ID) {
 		}
 	}
 }
+*/
 
 /////////////////////////////////////////
 //Barrier up after marking
@@ -177,7 +205,7 @@ function check_marking(ID) {
 function barrier_up_after_marking() {
 	barrier_up_auto();
 	laser_marking = 0;
-//	laser_in_working_pos = 0;
+	//	laser_in_working_pos = 0;
 	if (auto_waiting_to_stop == 1) {
 		gen_timer(14, wait_for_marking_end);
 	}
@@ -229,11 +257,12 @@ function reset_auto_func(ID) {
 	if ((timers[13] == ID) && (IoPort.getPort(0) & I_PIN_9)) {
 		write_log("Reseting auto mode!!!!");
 		disconnect_func(reset_auto_func);
+		laser_marking = 0;
+		barrier_up_auto();
 		if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
 			serial_choice();
 		}
-		else
-		{
+		else {
 			without_serial_choice();
 		}
 	}

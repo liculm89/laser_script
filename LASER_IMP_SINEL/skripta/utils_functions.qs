@@ -231,6 +231,26 @@ function searching_error(fail_code) {
 
 }
 
+function searching_error_manual(fail_code) {
+    if (fail_code == 1) { write_log("Search distance passed but no pump found. Going back to ref..."); }
+    if (fail_code == 2) {
+        laser_ref_auto();
+        write_log("Laser lower position reached, no pump found, going back to ref...");
+    }
+    disconnect_timers();
+    if (simulation_mode) {
+        disconnect_func(stop_search_auto_sim);
+    }
+    else {
+        disconnect_func(stop_search_auto);
+    }
+    Axis.stop(2);
+    laser_ref_auto(); barrier_up_auto();
+    error_no_pump_manual();
+    //retry_stop_choice();
+
+}
+
 function marking_failed(fail_code) {
     if (fail_code == 1) { write_log("Barrier is not down, laser goes in reference position"); }
     if (fail_code == 2) { write_log("Optical sensor is not seeing pump, laser goes in reference position"); }
@@ -238,9 +258,17 @@ function marking_failed(fail_code) {
     if (fail_code == 4) {
         write_log("Optical sensor error during marking, laser goes in reference position");
     }
+    disconnect_timers();
+    
+    try { disconnect_func(check_marking); }
+    catch (e) {
+	write_log("Exception: " + e);
+    }
+    
+    
     System.stopLaser();
     laser_marking = 0; laser_in_working_pos = 0;
-    disconnect_timers();
+   
     laser_ref_auto();
     if (simulation_mode) {
         gen_timer(13, reset_auto_func_sim);
@@ -270,8 +298,6 @@ function serial_choice_stop() {
         if (auto_mode == "ON") {
             stop_auto();}
     }
-	/*if(reset_pressed)
-    {reset_pressed = 0;}*/
      try {
         delete ra_dialog;
         System.collectGarbage();
@@ -386,11 +412,17 @@ function readFile_auto() {
 //Automatic barrirer up
 ///////////////////////////////////
 function barrier_up_auto() {
+    
+    if(!(laser_status == "Marking is active")){
     IoPort.resetPort(0, O_PIN_23);
     bar_dolje = 0;
     write_log("Automatic barrier rising");
     IoPort.setPort(0, O_PIN_5);
-    bar_gore = 1;
+    bar_gore = 1;}
+    else{
+	write_log("Barrier up during laser marking is active!!!");
+    }
+    
 }
 
 ////////////////////////////////////////

@@ -561,14 +561,14 @@ function gen_dialog(part_list) {
         
      //   dialog.close();
     }
-	 try {
+	/* try {
         
         delete dialog;
         System.collectGarbage();
     }
     catch (e) {
         write_log("Exception: " + e);
-    }
+    }*/
 }
 
 //////////////////////////
