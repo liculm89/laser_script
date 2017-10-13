@@ -51,9 +51,42 @@ Date.prototype.ddmmyytime = function () {
     ].join('');
 };
 
+Date.prototype.ddmmyytime_ms = function () {
+    var mm = this.getMonth() + 1;
+    var yy = this.getFullYear();
+    yy = yy.toString();
+
+    var dd = this.getDate();
+    var uhr = this.getHours();
+    var min = this.getMinutes();
+    var sec = this.getSeconds();
+    var mss = this.getMilliseconds();
+    var time = this.getTime();
+    return [(dd > 9 ? '' : '0') + dd,
+        "/",
+    (mm > 9 ? '' : '0') + mm,
+        "/",
+        yy,
+        "-",
+    (uhr > 9 ? '' : '0') + uhr,
+        ":",
+    (min > 9 ? '' : '0') + min,
+        ":",
+    (sec > 9 ? '' : '0') + sec,
+    "-",
+    mss,
+    ].join('');
+};
+
 function gen_timestamp() {
     var date = new Date();
     var ts = date.ddmmyytime().toString();
+    return ts;
+}
+
+function gen_timestamp_ms() {
+    var date = new Date();
+    var ts = date.ddmmyytime_ms().toString();
     return ts;
 }
 
@@ -212,19 +245,20 @@ function chk_and_increment_sn() {
 function delayed_ref() {
 }
 
-function searching_error(fail_code) {
+function searching_error(fail_code, t_ID) {
     if (fail_code == 1) { write_log("Search distance passed but no pump found. Going back to ref..."); }
     if (fail_code == 2) {
         laser_ref_auto();
         write_log("Laser lower position reached, no pump found, going back to ref...");
     }
-    disconnect_timers();
+
     if (simulation_mode) {
-        disconnect_func(stop_search_auto_sim);
+        disconnect_func(stop_search_auto_sim, t_ID);
     }
     else {
-        disconnect_func(stop_search_auto);
+        disconnect_func(stop_search_auto, t_ID);
     }
+  
     Axis.stop(2);
     laser_ref_auto(); barrier_up_auto();
     retry_stop_choice();
@@ -237,18 +271,9 @@ function searching_error_manual(fail_code) {
         laser_ref_auto();
         write_log("Laser lower position reached, no pump found, going back to ref...");
     }
-    disconnect_timers();
-    if (simulation_mode) {
-        disconnect_func(stop_search_auto_sim);
-    }
-    else {
-        disconnect_func(stop_search_auto);
-    }
     Axis.stop(2);
     laser_ref_auto(); barrier_up_auto();
     error_no_pump_manual();
-    //retry_stop_choice();
-
 }
 
 function marking_failed(fail_code) {
@@ -258,13 +283,13 @@ function marking_failed(fail_code) {
     if (fail_code == 4) {
         write_log("Optical sensor error during marking, laser goes in reference position");
     }
-    disconnect_timers();
+    //disconnect_timers();
     
-    try { disconnect_func(check_marking); }
+    /*try { disconnect_func(check_marking); }
     catch (e) {
 	write_log("Exception: " + e);
     }
-    
+    */
     
     System.stopLaser();
     laser_marking = 0; laser_in_working_pos = 0;
@@ -405,6 +430,7 @@ function laser_ref_auto() {
 //Automatic marking starts, sets timer for barrier rising
 //////////////////////////////////////////////////////////////////////////////////////
 function readFile_auto() {
+     prepare_layout();
     mark_auto();
 }
 
@@ -420,7 +446,7 @@ function barrier_up_auto() {
     IoPort.setPort(0, O_PIN_5);
     bar_gore = 1;}
     else{
-	write_log("Barrier up during laser marking is active!!!");
+	write_log("Barrier can't go up during laser marking is active!!!");
     }
     
 }
@@ -442,7 +468,7 @@ function barrier_down_auto() {
 function total_stop_func() {
     if (auto_mode == "ON") {
         write_log("Total stop pressed during Auto mode");
-        disconnect_func(wait_for_pump);
+        disconnect_timers();
         System.stopLaser();
         laser_marking = 0;
         laser_in_working_pos = 0;
@@ -543,7 +569,7 @@ function log_creator() {
 function write_log(logstr) {
 
     plog_file = new File(plog_loc + log_date + ".log");
-    var timestamp = gen_timestamp();
+    var timestamp = gen_timestamp_ms();
     if (plog_file.exists) {
         plog_file.open(File.Append);
         var line = timestamp + " --- " + logstr;

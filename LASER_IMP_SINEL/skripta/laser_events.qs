@@ -24,8 +24,10 @@ function laser_key_on() {
             IoPort.resetPort(0, O_PIN_17);
             key_state = "ON";
             enable_state = "Wait:" + wac + "s";
+            gen_timer(8, warmup_counter);
+            /*
             timers[8] = System.setTimer(times[8]);
-            start_timer(timers[8], warmup_counter);
+            start_timer(timers[8], warmup_counter);*/
         }
         else {
             IoPort.setPort(0, O_PIN_17);
@@ -79,6 +81,7 @@ function warmup_counter(ID) {
             enable_state = "Wait:" + wac + "s";
         }
         else {
+            //disconnect_func(warmup_counter);
             disconnect_func(warmup_counter);
             enable_state = "Press to enable";
             wac = warm_up_time;
@@ -107,7 +110,6 @@ function disable_sequence() {
 function enable_break() {
     IoPort.resetPort(0, O_PIN_4);
     brake_status = 1;
-    //write_log("Brake active"); }
 }
 
 /////////////////////////////////////////////////
@@ -116,7 +118,6 @@ function enable_break() {
 function disable_break() {
     IoPort.setPort(0, O_PIN_4);
     brake_status = 0;
-    //if (debug_mode) { print("Brake disabled") }
 }
 
 var laser_poz_before = Axis.getPosition(2);
@@ -140,18 +141,19 @@ function laser_movement(ID) {
 }
 
 function marking_ended() {
-    delete timers[10];
-    timers[10] = System.setTimer(times[10]);
-    start_timer(timers[10], send_signal_done);
+
+    gen_timer(10, send_signal_done);
 }
 
 function send_signal_done(ID) {
     if (timers[10] == ID) {
-
+        //disconnect_func(send_signal_done);
+        disconnect_func(send_signal_done, ID);
+        
         IoPort.setPort(0, O_PIN_2);
-        timers[9] = System.setTimer(times[9]);
-        start_timer(timers[9], reset_signal_done);
-        disconnect_func(send_signal_done);
+        /*timers[9] = System.setTimer(times[9]);
+        start_timer(timers[9], reset_signal_done);*/
+        gen_timer(9, reset_signal_done);
         write_log("Signal DONE set");
     }
 }
@@ -160,7 +162,8 @@ function reset_signal_done(ID) {
     if (timers[9] == ID) {
         write_log("Signal DONE reseted");
         IoPort.resetPort(0, O_PIN_2);
-        disconnect_func(reset_signal_done);
+       //disconnect_func(reset_signal_done);
+        disconnect_func(reset_signal_done, ID);
     }
 }
 

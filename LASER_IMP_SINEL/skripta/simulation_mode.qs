@@ -5,9 +5,10 @@ FUNCTIONS NEEDED FOR SIMULATION MODE
 
 function wait_for_pump_sim(ID) {
     if ((timers[4] == ID) && (auto_mode == "ON") && (pump_present == 1)) {
-        disconnect_func(wait_for_pump_sim);
+        //disconnect_func(wait_for_pump_sim);
+        disconnect_func(wait_for_pump_sim, ID);
         barrier_down_auto();
-        write_log(" Simulation - new pump has arrived, barrier going down ...");
+        write_log("Simulation - new pump has arrived, barrier going down ...");
         gen_timer(6, wait_for_barrier_sim);
     }
 
@@ -15,8 +16,9 @@ function wait_for_pump_sim(ID) {
 
 function wait_for_barrier_sim(ID) {
     if ((timers[6] == ID) && (chkb_barriera.checked)) {
-        write_log("Barrier is lowered, searching for pump...");
-        disconnect_func(wait_for_barrier_sim);
+        //disconnect_func(wait_for_barrier_sim);
+        disconnect_func(wait_for_barrier_sim, ID);
+        write_log("Simulation - Barrier is lowered, searching for pump...");
         laser_move_timed();
     }
 }
@@ -35,12 +37,11 @@ function stop_search_auto_sim(ID) {
             }
             else {
                 write_log("Pump in laser focus");
-                disconnect_func(stop_search_auto_sim);
+                //disconnect_func(stop_search_auto_sim);
+                disconnect_func(stop_search_auto_sim, ID);
                 Axis.stop(2);
                 laser_in_working_pos = 1;
-                //Input compensation function if needed here
-               
-                gen_timer(12, automatic_marking);
+                gen_timer(15, compensation);
             }
         }
         else {
@@ -75,6 +76,23 @@ function mark_auto_sim() {
 
 function check_marking_sim(ID) {
     if (timers[11] == ID) {
+        check_laser_state(System.getDeviceStatus());
+        if ((chkb_barriera.checked) && !(laser_status == "Marking is active")) {
+            //disconnect_func(check_marking_sim);
+            disconnect_func(check_marking_sim, ID);
+            barrier_up_after_marking();
+
+        }
+        else if ((laser_status = "Marking is active") && !(chkb_barriera.checked)) {
+            //disconnect_func(check_marking_sim);
+            disconnect_func(check_marking_sim, ID);
+            marking_failed(3);
+        }
+    }
+}
+/*
+function check_marking_sim(ID) {
+    if (timers[11] == ID) {
         if (chkb_optika.checked) {
             if ((chkb_barriera.checked) && !(laser_status == "Marking is active")) {
                 barrier_up_after_marking();
@@ -91,15 +109,12 @@ function check_marking_sim(ID) {
         }
     }
 }
-
+*/
 function reset_laser_marking_sim(ID) {
     if ((timers[5] == ID) && (pump_present == 0)) {
-        disconnect_func(reset_laser_marking_sim);
+        //disconnect_func(reset_laser_marking_sim);
+        disconnect_func(reset_laser_marking_sim, ID);
         write_log("Marking successful, incrementing serial number and setting signal done");
-        //numWC++;
-        //xls_log();
-        //print(numWC % sn_marking_times);
-        //chk_and_increment_sn();
 
         if ((numW > numWC) || numW == 0) {
             if (auto_waiting_to_stop == 1) {
@@ -110,16 +125,15 @@ function reset_laser_marking_sim(ID) {
                 gen_timer(4, wait_for_pump_sim);
             }
         }
-        else{
-        stop_auto();
-        write_log("Marking quantity reached! Stoping auto mode");
-        marking_quantity_complete();
-        pumps_marked = 0;
-        le_num_w = "";
+        else {
+            stop_auto();
+            write_log("Marking quantity reached! Stoping auto mode");
+            marking_quantity_complete();
+            pumps_marked = 0;
+            le_num_w = "";
+        }
+        pumps_marked++;
     }
-    pumps_marked++;
-
-}
 }
 
 function reset_auto_func_sim(ID) {
@@ -129,9 +143,16 @@ function reset_auto_func_sim(ID) {
         /*if (auto_mode == "ON"); {
             stop_auto();
         }*/
-        disconnect_func(reset_auto_func_sim);
+        laser_marking = 0;
+        barrier_up_auto();
+        //disconnect_func(reset_auto_func_sim);
+        disconnect_func(reset_auto_func_sim, ID);
+
         if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
             serial_choice();
+        }
+        else{
+            without_serial_choice();
         }
 
     }

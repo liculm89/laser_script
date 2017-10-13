@@ -1,0 +1,1916 @@
+=================================================== 
+
+13/10/2017-08:21:56 *** Process logging started *** 
+
+=================================================== 
+
+=================================================== 
+
+13/10/2017-08:21:56 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-08:22:04 --- Automatic barrier rising
+
+
+13/10/2017-08:22:04 --- Auto mode started
+
+
+13/10/2017-08:22:04 --- Automatic laser referencing initiated
+
+
+13/10/2017-08:22:04 --- Connected timer: 1979711510,to func: wait_for_pump_sim
+
+
+13/10/2017-08:22:10 --- pump counter:1
+
+
+13/10/2017-08:22:10 --- Killed timer: 0,that was connected to func: wait_for_pump_sim
+
+
+13/10/2017-08:22:10 --- Automatic barrier lowering
+
+
+13/10/2017-08:22:10 --- Simulation - new pump has arrived, barrier going down ...
+
+
+13/10/2017-08:22:10 --- Connected timer: 1979711511,to func: wait_for_barrier_sim
+
+
+13/10/2017-08:22:19 --- Killed timer: 0,that was connected to func: wait_for_barrier_sim
+
+
+13/10/2017-08:22:19 --- Simulation - Barrier is lowered, searching for pump...
+
+
+13/10/2017-08:22:19 --- Laser is moving into working position, searching for pump...
+
+
+13/10/2017-08:22:19 --- Connected timer: 1224736792,to func: stop_search_auto_sim
+
+
+13/10/2017-08:22:21 --- Pump in laser focus
+
+
+13/10/2017-08:22:21 --- Killed timer: 0,that was connected to func: stop_search_auto_sim
+
+
+13/10/2017-08:22:21 --- Connected timer: 1946157081,to func: compensation
+
+
+13/10/2017-08:22:21 --- Killed timer: 0,that was connected to func: compensation
+
+
+13/10/2017-08:22:21 --- Connected timer: 1979711509,to func: automatic_marking
+
+
+13/10/2017-08:22:22 --- Killed timer: 0,that was connected to func: automatic_marking
+
+
+13/10/2017-08:22:22 --- Laser in position, starts marking...
+
+
+13/10/2017-08:22:23 --- simulation auto marking started
+
+
+13/10/2017-08:22:23 --- Connected timer: 2080374811,to func: check_marking_sim
+
+
+13/10/2017-08:23:19 --- Killed timer: 0,that was connected to func: check_marking_sim
+
+
+13/10/2017-08:23:19 --- Automatic barrier rising
+
+
+13/10/2017-08:23:19 --- Connected timer: 16777244,to func: send_signal_done
+
+
+13/10/2017-08:23:19 --- Appending .xls log table
+
+
+13/10/2017-08:23:19 ---  
+
+
+13/10/2017-08:23:20 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+13/10/2017-08:23:20 --- Connected timer: 33554461,to func: reset_laser_marking_sim
+
+
+13/10/2017-08:23:20 --- Connected timer: 50331678,to func: reset_signal_done
+
+
+13/10/2017-08:23:20 --- Killed timer: 0,that was connected to func: send_signal_done
+
+
+13/10/2017-08:23:20 --- Signal DONE set
+
+
+13/10/2017-08:23:20 --- Signal DONE reseted
+
+
+13/10/2017-08:23:20 --- Killed timer: 1,that was connected to func: reset_signal_done
+
+
+13/10/2017-08:23:26 --- pump left
+
+
+13/10/2017-08:23:26 --- Killed timer: 0,that was connected to func: reset_laser_marking_sim
+
+
+13/10/2017-08:23:26 --- Marking successful, incrementing serial number and setting signal done
+
+
+13/10/2017-08:23:26 --- starting wait_for_pump_sim from reset_laser marking
+
+
+13/10/2017-08:23:26 --- Connected timer: 234881056,to func: wait_for_pump_sim
+
+
+13/10/2017-08:23:33 --- pump counter:2
+
+
+13/10/2017-08:23:33 --- Killed timer: 0,that was connected to func: wait_for_pump_sim
+
+
+13/10/2017-08:23:33 --- Automatic barrier lowering
+
+
+13/10/2017-08:23:33 --- Simulation - new pump has arrived, barrier going down ...
+
+
+13/10/2017-08:23:33 --- Connected timer: 352321567,to func: wait_for_barrier_sim
+
+
+13/10/2017-08:23:37 --- Killed timer: 0,that was connected to func: wait_for_barrier_sim
+
+
+13/10/2017-08:23:37 --- Simulation - Barrier is lowered, searching for pump...
+
+
+13/10/2017-08:23:37 --- Laser already in position, initiating marking process...
+
+
+13/10/2017-08:23:37 --- Connected timer: 1728053274,to func: automatic_marking
+
+
+13/10/2017-08:23:37 --- Killed timer: 0,that was connected to func: automatic_marking
+
+
+13/10/2017-08:23:37 --- Laser in position, starts marking...
+
+
+13/10/2017-08:23:38 --- Optical sensor is not seeing pump, laser goes in reference position
+
+
+13/10/2017-08:23:38 --- Automatic laser referencing initiated
+
+
+13/10/2017-08:23:38 --- Connected timer: 1744830497,to func: reset_auto_func_sim
+
+
+13/10/2017-08:23:38 --- Resetting auto mode! Simulation mode *****************
+
+
+13/10/2017-08:23:38 --- Automatic barrier rising
+
+
+13/10/2017-08:23:38 --- Killed timer: 0,that was connected to func: reset_auto_func_sim
+
+
+13/10/2017-08:23:48 --- Yes pressed, repeating marking with S.N.17-000309
+
+
+13/10/2017-08:23:48 --- Automatic barrier lowering
+
+
+13/10/2017-08:23:48 --- Connected timer: 1006632995,to func: wait_for_barrier_sim
+
+
+13/10/2017-08:23:49 --- Killed timer: 0,that was connected to func: wait_for_barrier_sim
+
+
+13/10/2017-08:23:49 --- Simulation - Barrier is lowered, searching for pump...
+
+
+13/10/2017-08:23:49 --- Laser is moving into working position, searching for pump...
+
+
+13/10/2017-08:23:49 --- Connected timer: 369098789,to func: stop_search_auto_sim
+
+
+13/10/2017-08:23:49 --- Pump in laser focus
+
+
+13/10/2017-08:23:49 --- Killed timer: 0,that was connected to func: stop_search_auto_sim
+
+
+13/10/2017-08:23:49 --- Connected timer: 469762084,to func: compensation
+
+
+13/10/2017-08:23:50 --- Killed timer: 0,that was connected to func: compensation
+
+
+13/10/2017-08:23:50 --- Connected timer: 788529190,to func: automatic_marking
+
+
+13/10/2017-08:23:51 --- Killed timer: 0,that was connected to func: automatic_marking
+
+
+13/10/2017-08:23:51 --- Laser in position, starts marking...
+
+
+13/10/2017-08:23:51 --- simulation auto marking started
+
+
+13/10/2017-08:23:51 --- Connected timer: 855638050,to func: check_marking_sim
+
+
+13/10/2017-08:23:55 --- Killed timer: 0,that was connected to func: check_marking_sim
+
+
+13/10/2017-08:23:55 --- Barrier not down during laser marking
+
+
+13/10/2017-08:23:55 --- Automatic laser referencing initiated
+
+
+13/10/2017-08:23:55 --- Connected timer: 50331688,to func: reset_auto_func_sim
+
+
+13/10/2017-08:23:55 --- Resetting auto mode! Simulation mode *****************
+
+
+13/10/2017-08:23:55 --- Automatic barrier rising
+
+
+13/10/2017-08:23:55 --- Killed timer: 0,that was connected to func: reset_auto_func_sim
+
+
+13/10/2017-08:23:56 --- No pressed, continuing onto next pump...
+
+
+13/10/2017-08:23:56 --- Automatic barrier rising
+
+
+13/10/2017-08:23:56 --- Connected timer: 872415273,to func: send_signal_done
+
+
+13/10/2017-08:23:56 --- Appending .xls log table
+
+
+13/10/2017-08:23:56 ---  
+
+
+13/10/2017-08:23:57 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+13/10/2017-08:23:57 --- Connected timer: 889192490,to func: reset_laser_marking_sim
+
+
+13/10/2017-08:23:57 --- Connected timer: 922746924,to func: reset_signal_done
+
+
+13/10/2017-08:23:57 --- Killed timer: 0,that was connected to func: send_signal_done
+
+
+13/10/2017-08:23:57 --- Signal DONE set
+
+
+13/10/2017-08:23:57 --- Signal DONE reseted
+
+
+13/10/2017-08:23:57 --- Killed timer: 1,that was connected to func: reset_signal_done
+
+
+13/10/2017-08:23:58 --- pump left
+
+
+13/10/2017-08:23:58 --- Killed timer: 0,that was connected to func: reset_laser_marking_sim
+
+
+13/10/2017-08:23:58 --- Marking successful, incrementing serial number and setting signal done
+
+
+13/10/2017-08:23:58 --- starting wait_for_pump_sim from reset_laser marking
+
+
+13/10/2017-08:23:58 --- Connected timer: 1241514027,to func: wait_for_pump_sim
+
+
+13/10/2017-08:24:01 --- pump counter:3
+
+
+13/10/2017-08:24:01 --- Killed timer: 0,that was connected to func: wait_for_pump_sim
+
+
+13/10/2017-08:24:01 --- Automatic barrier lowering
+
+
+13/10/2017-08:24:01 --- Simulation - new pump has arrived, barrier going down ...
+
+
+13/10/2017-08:24:01 --- Connected timer: 1526726695,to func: wait_for_barrier_sim
+
+
+13/10/2017-08:24:03 --- Killed timer: 0,that was connected to func: wait_for_barrier_sim
+
+
+13/10/2017-08:24:03 --- Simulation - Barrier is lowered, searching for pump...
+
+
+13/10/2017-08:24:03 --- Laser is moving into working position, searching for pump...
+
+
+13/10/2017-08:24:03 --- Connected timer: 419430446,to func: stop_search_auto_sim
+
+
+13/10/2017-08:24:05 --- Pump in laser focus
+
+
+13/10/2017-08:24:05 --- Killed timer: 0,that was connected to func: stop_search_auto_sim
+
+
+13/10/2017-08:24:05 --- Connected timer: 1778384941,to func: compensation
+
+
+13/10/2017-08:24:06 --- Killed timer: 0,that was connected to func: compensation
+
+
+13/10/2017-08:24:06 --- Connected timer: 1811939375,to func: automatic_marking
+
+
+13/10/2017-08:24:06 --- Killed timer: 0,that was connected to func: automatic_marking
+
+
+13/10/2017-08:24:06 --- Laser in position, starts marking...
+
+
+13/10/2017-08:24:07 --- simulation auto marking started
+
+
+13/10/2017-08:24:07 --- Connected timer: 1828716592,to func: check_marking_sim
+
+
+13/10/2017-08:24:13 --- Killed timer: 0,that was connected to func: check_marking_sim
+
+
+13/10/2017-08:24:13 --- Barrier not down during laser marking
+
+
+13/10/2017-08:24:13 --- Automatic laser referencing initiated
+
+
+13/10/2017-08:24:13 --- Connected timer: 1442840627,to func: reset_auto_func_sim
+
+
+13/10/2017-08:24:13 --- Resetting auto mode! Simulation mode *****************
+
+
+13/10/2017-08:24:13 --- Automatic barrier rising
+
+
+13/10/2017-08:24:13 --- Killed timer: 0,that was connected to func: reset_auto_func_sim
+
+
+13/10/2017-08:24:14 --- Yes pressed, repeating marking with S.N.17-000310
+
+
+13/10/2017-08:24:14 --- Automatic barrier lowering
+
+
+13/10/2017-08:24:14 --- Connected timer: 469762097,to func: wait_for_barrier_sim
+
+
+13/10/2017-08:24:15 --- pump left
+
+
+13/10/2017-08:37:12 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-08:37:12 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-08:37:20 --- Automatic barrier rising
+
+
+13/10/2017-08:37:20 --- Auto mode started
+
+
+13/10/2017-08:37:20 --- Automatic laser referencing initiated
+
+
+13/10/2017-08:37:20 --- Connected timer: 1711276054,to func: wait_for_pump_sim
+
+
+13/10/2017-08:37:23 --- pump counter:1
+
+
+13/10/2017-08:37:23 --- Killed timer: 0,that was connected to func: wait_for_pump_sim
+
+
+13/10/2017-08:37:23 --- Automatic barrier lowering
+
+
+13/10/2017-08:37:23 --- Simulation - new pump has arrived, barrier going down ...
+
+
+13/10/2017-08:37:23 --- Connected timer: 1644167192,to func: wait_for_barrier_sim
+
+
+13/10/2017-08:37:25 --- Killed timer: 0,that was connected to func: wait_for_barrier_sim
+
+
+13/10/2017-08:37:25 --- Simulation - Barrier is lowered, searching for pump...
+
+
+13/10/2017-08:37:25 --- Laser is moving into working position, searching for pump...
+
+
+13/10/2017-08:37:25 --- Connected timer: 201326615,to func: stop_search_auto_sim
+
+
+13/10/2017-08:37:27 --- Pump in laser focus
+
+
+13/10/2017-08:37:27 --- Killed timer: 0,that was connected to func: stop_search_auto_sim
+
+
+13/10/2017-08:37:27 --- Connected timer: 1560281113,to func: compensation
+
+
+13/10/2017-08:37:28 --- Killed timer: 0,that was connected to func: compensation
+
+
+13/10/2017-08:37:28 --- Connected timer: 1744830491,to func: automatic_marking
+
+
+13/10/2017-08:37:29 --- Killed timer: 0,that was connected to func: automatic_marking
+
+
+13/10/2017-08:37:29 --- Laser in position, starts marking...
+
+
+13/10/2017-08:37:29 --- simulation auto marking started
+
+
+13/10/2017-08:37:29 --- Connected timer: 1778384922,to func: check_marking_sim
+
+
+13/10/2017-08:38:09 --- Killed timer: 0,that was connected to func: check_marking_sim
+
+
+13/10/2017-08:38:09 --- Barrier not down during laser marking
+
+
+13/10/2017-08:38:09 --- Automatic laser referencing initiated
+
+
+13/10/2017-08:38:09 --- Connected timer: 369098780,to func: reset_auto_func_sim
+
+
+13/10/2017-08:38:09 --- Resetting auto mode! Simulation mode *****************
+
+
+13/10/2017-08:38:09 --- Automatic barrier rising
+
+
+13/10/2017-08:38:09 --- Killed timer: 0,that was connected to func: reset_auto_func_sim
+
+
+13/10/2017-08:38:11 --- Yes pressed, repeating marking with S.N.17-000310
+
+
+13/10/2017-08:38:11 --- Automatic barrier lowering
+
+
+13/10/2017-08:38:11 --- Connected timer: 1040187421,to func: wait_for_barrier_sim
+
+
+13/10/2017-08:40:09 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-08:40:09 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-08:40:16 --- Automatic barrier rising
+
+
+13/10/2017-08:40:16 --- Auto mode started
+
+
+13/10/2017-08:40:16 --- Automatic laser referencing initiated
+
+
+13/10/2017-08:40:16 --- Connected timer: 2013265942,to func: wait_for_pump_sim
+
+
+13/10/2017-08:40:19 --- pump counter:1
+
+
+13/10/2017-08:40:19 --- Killed timer: function wait_for_pump_sim(ID) {
+    if ((timers[4] == ID) && (auto_mode == "ON") && (pump_present == 1)) {
+        disconnect_func(wait_for_pump_sim);
+        barrier_down_auto();
+        write_log("Simulation - new pump has arrived, barrier going down ...");
+        gen_timer(6, wait_for_barrier_sim);
+    }
+
+},that was connected to func: wait_for_pump_sim
+
+
+13/10/2017-08:40:19 --- Automatic barrier lowering
+
+
+13/10/2017-08:40:19 --- Simulation - new pump has arrived, barrier going down ...
+
+
+13/10/2017-08:40:19 --- Connected timer: 1660944407,to func: wait_for_barrier_sim
+
+
+13/10/2017-08:49:56 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-08:49:56 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-08:50:05 --- Automatic barrier rising
+
+
+13/10/2017-08:50:05 --- Auto mode started
+
+
+13/10/2017-08:50:05 --- Automatic laser referencing initiated
+
+
+13/10/2017-08:50:05 --- Connected timer: 469762070,to func: wait_for_pump_sim
+
+
+13/10/2017-08:50:07 --- pump counter:1
+
+
+13/10/2017-08:50:07 --- Killed timer: 385875969,that was connected to func: wait_for_pump_sim
+
+
+13/10/2017-08:50:07 --- Automatic barrier lowering
+
+
+13/10/2017-08:50:07 --- Simulation - new pump has arrived, barrier going down ...
+
+
+13/10/2017-08:50:07 --- Connected timer: 587202582,to func: wait_for_barrier_sim
+
+
+13/10/2017-08:50:09 --- Killed timer: 385875969,that was connected to func: wait_for_barrier_sim
+
+
+13/10/2017-08:50:09 --- Simulation - Barrier is lowered, searching for pump...
+
+
+13/10/2017-08:50:09 --- Laser is moving into working position, searching for pump...
+
+
+13/10/2017-08:50:09 --- Connected timer: 268435478,to func: stop_search_auto_sim
+
+
+13/10/2017-08:50:10 --- Pump in laser focus
+
+
+13/10/2017-08:50:10 --- Killed timer: 385875969,that was connected to func: stop_search_auto_sim
+
+
+13/10/2017-08:50:10 --- Connected timer: 939524118,to func: compensation
+
+
+13/10/2017-08:50:10 --- Killed timer: 385875969,that was connected to func: compensation
+
+
+13/10/2017-08:50:10 --- Connected timer: 989855769,to func: automatic_marking
+
+
+13/10/2017-08:50:11 --- Killed timer: 385875969,that was connected to func: automatic_marking
+
+
+13/10/2017-08:50:11 --- Laser in position, starts marking...
+
+
+13/10/2017-08:50:12 --- simulation auto marking started
+
+
+13/10/2017-08:50:12 --- Connected timer: 1023410200,to func: check_marking_sim
+
+
+13/10/2017-09:11:03 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-09:11:03 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-09:11:10 --- Automatic barrier rising
+
+
+13/10/2017-09:11:10 --- Auto mode started
+
+
+13/10/2017-09:11:10 --- Automatic laser referencing initiated
+
+
+13/10/2017-09:11:10 --- Connected timer: 1325400086,to func: wait_for_pump_sim
+
+
+13/10/2017-09:11:12 --- pump counter:1
+
+
+13/10/2017-09:11:12 --- Killed timer: 1325400086,that was connected to func: wait_for_pump_sim
+
+
+13/10/2017-09:11:12 --- Automatic barrier lowering
+
+
+13/10/2017-09:11:12 --- Simulation - new pump has arrived, barrier going down ...
+
+
+13/10/2017-09:11:12 --- Connected timer: 1191182358,to func: wait_for_barrier_sim
+
+
+13/10/2017-09:11:19 --- Killed timer: 1191182358,that was connected to func: wait_for_barrier_sim
+
+
+13/10/2017-09:11:19 --- Simulation - Barrier is lowered, searching for pump...
+
+
+13/10/2017-09:11:19 --- Laser is moving into working position, searching for pump...
+
+
+13/10/2017-09:11:19 --- Connected timer: 939524118,to func: stop_search_auto_sim
+
+
+13/10/2017-09:11:21 --- Pump in laser focus
+
+
+13/10/2017-09:11:21 --- Killed timer: 939524118,that was connected to func: stop_search_auto_sim
+
+
+13/10/2017-09:11:21 --- Connected timer: 2097152022,to func: compensation
+
+
+13/10/2017-09:11:22 --- Killed timer: 2097152022,that was connected to func: compensation
+
+
+13/10/2017-09:11:22 --- Connected timer: 22,to func: automatic_marking
+
+
+13/10/2017-09:11:23 --- Killed timer: 22,that was connected to func: automatic_marking
+
+
+13/10/2017-09:11:23 --- Laser in position, starts marking...
+
+
+13/10/2017-09:11:23 --- simulation auto marking started
+
+
+13/10/2017-09:11:23 --- Connected timer: 33554454,to func: check_marking_sim
+
+
+13/10/2017-09:12:20 --- Killed timer: 33554454,that was connected to func: check_marking_sim
+
+
+13/10/2017-09:12:20 --- Automatic barrier rising
+
+
+13/10/2017-09:12:20 --- Connected timer: 520093718,to func: send_signal_done
+
+
+13/10/2017-09:12:20 --- Appending .xls log table
+
+
+13/10/2017-09:12:20 ---  
+
+
+13/10/2017-09:12:21 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+13/10/2017-09:12:21 --- Connected timer: 536870935,to func: reset_laser_marking_sim
+
+
+13/10/2017-09:12:21 --- Killed timer: 520093718,that was connected to func: send_signal_done
+
+
+13/10/2017-09:12:21 --- Connected timer: 570425366,to func: reset_signal_done
+
+
+13/10/2017-09:12:21 --- Signal DONE set
+
+
+13/10/2017-09:12:21 --- Signal DONE reseted
+
+
+13/10/2017-09:12:21 --- Killed timer: 570425366,that was connected to func: reset_signal_done
+
+
+13/10/2017-09:12:33 --- pump left
+
+
+13/10/2017-09:12:33 --- Killed timer: 536870935,that was connected to func: reset_laser_marking_sim
+
+
+13/10/2017-09:12:33 --- Marking successful, incrementing serial number and setting signal done
+
+
+13/10/2017-09:12:33 --- starting wait_for_pump_sim from reset_laser marking
+
+
+13/10/2017-09:12:33 --- Connected timer: 50331671,to func: wait_for_pump_sim
+
+
+13/10/2017-09:12:34 --- pump counter:2
+
+
+13/10/2017-09:12:34 --- Killed timer: 50331671,that was connected to func: wait_for_pump_sim
+
+
+13/10/2017-09:12:34 --- Automatic barrier lowering
+
+
+13/10/2017-09:12:34 --- Simulation - new pump has arrived, barrier going down ...
+
+
+13/10/2017-09:12:34 --- Connected timer: 117440535,to func: wait_for_barrier_sim
+
+
+13/10/2017-09:12:36 --- Killed timer: 117440535,that was connected to func: wait_for_barrier_sim
+
+
+13/10/2017-09:12:36 --- Simulation - Barrier is lowered, searching for pump...
+
+
+13/10/2017-09:12:36 --- Laser already in position, initiating marking process...
+
+
+13/10/2017-09:12:36 --- Connected timer: 1744830487,to func: automatic_marking
+
+
+13/10/2017-09:12:37 --- Killed timer: 1744830487,that was connected to func: automatic_marking
+
+
+13/10/2017-09:12:37 --- Laser in position, starts marking...
+
+
+13/10/2017-09:12:37 --- simulation auto marking started
+
+
+13/10/2017-09:12:37 --- Connected timer: 1778384919,to func: check_marking_sim
+
+
+13/10/2017-09:12:40 --- Killed timer: 1778384919,that was connected to func: check_marking_sim
+
+
+13/10/2017-09:12:40 --- Barrier not down during laser marking
+
+
+13/10/2017-09:12:40 --- Automatic laser referencing initiated
+
+
+13/10/2017-09:12:40 --- Connected timer: 352321559,to func: reset_auto_func_sim
+
+
+13/10/2017-09:12:40 --- Resetting auto mode! Simulation mode *****************
+
+
+13/10/2017-09:12:40 --- Automatic barrier rising
+
+
+13/10/2017-09:12:40 --- Killed timer: 352321559,that was connected to func: reset_auto_func_sim
+
+
+13/10/2017-09:12:42 --- Yes pressed, repeating marking with S.N.17-000311
+
+
+13/10/2017-09:12:42 --- Automatic barrier lowering
+
+
+13/10/2017-09:12:42 --- Connected timer: 1023410197,to func: wait_for_barrier_sim
+
+
+13/10/2017-09:12:55 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-09:12:55 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-09:13:01 --- Automatic barrier rising
+
+
+13/10/2017-09:13:01 --- Auto mode started
+
+
+13/10/2017-09:13:01 --- Automatic laser referencing initiated
+
+
+13/10/2017-09:13:01 --- Connected timer: 1895825430,to func: wait_for_pump_sim
+
+
+13/10/2017-09:13:06 --- pump counter:1
+
+
+13/10/2017-09:13:06 --- Killed timer: 1895825430,that was connected to func: wait_for_pump_sim
+
+
+13/10/2017-09:13:06 --- Automatic barrier lowering
+
+
+13/10/2017-09:13:06 --- Simulation - new pump has arrived, barrier going down ...
+
+
+13/10/2017-09:13:06 --- Connected timer: 83886102,to func: wait_for_barrier_sim
+
+
+13/10/2017-09:13:07 --- Killed timer: 83886102,that was connected to func: wait_for_barrier_sim
+
+
+13/10/2017-09:13:07 --- Simulation - Barrier is lowered, searching for pump...
+
+
+13/10/2017-09:13:07 --- Laser is moving into working position, searching for pump...
+
+
+13/10/2017-09:13:07 --- Connected timer: 704643094,to func: stop_search_auto_sim
+
+
+13/10/2017-09:13:07 --- Pump in laser focus
+
+
+13/10/2017-09:13:07 --- Killed timer: 704643094,that was connected to func: stop_search_auto_sim
+
+
+13/10/2017-09:13:07 --- Connected timer: 771751958,to func: compensation
+
+
+13/10/2017-09:13:08 --- Killed timer: 771751958,that was connected to func: compensation
+
+
+13/10/2017-09:13:08 --- Connected timer: 838860822,to func: automatic_marking
+
+
+13/10/2017-09:13:09 --- Killed timer: 838860822,that was connected to func: automatic_marking
+
+
+13/10/2017-09:13:09 --- Laser in position, starts marking...
+
+
+13/10/2017-09:13:09 --- simulation auto marking started
+
+
+13/10/2017-09:13:09 --- Connected timer: 905969686,to func: check_marking_sim
+
+
+13/10/2017-09:13:12 --- Killed timer: 905969686,that was connected to func: check_marking_sim
+
+
+13/10/2017-09:13:12 --- Barrier not down during laser marking
+
+
+13/10/2017-09:13:12 --- Automatic laser referencing initiated
+
+
+13/10/2017-09:13:12 --- Connected timer: 33554454,to func: reset_auto_func_sim
+
+
+13/10/2017-09:13:12 --- Resetting auto mode! Simulation mode *****************
+
+
+13/10/2017-09:13:12 --- Automatic barrier rising
+
+
+13/10/2017-09:13:12 --- Killed timer: 33554454,that was connected to func: reset_auto_func_sim
+
+
+13/10/2017-09:13:13 --- Yes pressed, repeating marking with S.N.17-000065
+
+
+13/10/2017-09:13:13 --- Automatic barrier lowering
+
+
+13/10/2017-09:13:13 --- Connected timer: 587202583,to func: wait_for_barrier_sim
+
+
+13/10/2017-09:13:21 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-09:13:21 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-09:13:29 --- Automatic barrier rising
+
+
+13/10/2017-09:13:29 --- Auto mode started
+
+
+13/10/2017-09:13:29 --- Automatic laser referencing initiated
+
+
+13/10/2017-09:13:29 --- Connected timer: 1040187414,to func: wait_for_pump_sim
+
+
+13/10/2017-09:13:30 --- pump counter:1
+
+
+13/10/2017-09:13:31 --- Killed timer: 1040187414,that was connected to func: wait_for_pump_sim
+
+
+13/10/2017-09:13:31 --- Automatic barrier lowering
+
+
+13/10/2017-09:13:31 --- Simulation - new pump has arrived, barrier going down ...
+
+
+13/10/2017-09:13:31 --- Connected timer: 1191182358,to func: wait_for_barrier_sim
+
+
+13/10/2017-09:13:32 --- Killed timer: 1191182358,that was connected to func: wait_for_barrier_sim
+
+
+13/10/2017-09:13:32 --- Simulation - Barrier is lowered, searching for pump...
+
+
+13/10/2017-09:13:32 --- Laser is moving into working position, searching for pump...
+
+
+13/10/2017-09:13:32 --- Connected timer: 50331670,to func: stop_search_auto_sim
+
+
+13/10/2017-09:13:33 --- Pump in laser focus
+
+
+13/10/2017-09:13:33 --- Killed timer: 50331670,that was connected to func: stop_search_auto_sim
+
+
+13/10/2017-09:13:33 --- Connected timer: 402653206,to func: compensation
+
+
+13/10/2017-09:13:33 --- Killed timer: 402653206,that was connected to func: compensation
+
+
+13/10/2017-09:13:33 --- Connected timer: 452984854,to func: automatic_marking
+
+
+13/10/2017-09:13:34 --- Killed timer: 452984854,that was connected to func: automatic_marking
+
+
+13/10/2017-09:13:34 --- Laser in position, starts marking...
+
+
+13/10/2017-09:13:34 --- simulation auto marking started
+
+
+13/10/2017-09:13:34 --- Connected timer: 486539286,to func: check_marking_sim
+
+
+13/10/2017-09:13:42 --- Killed timer: 486539286,that was connected to func: check_marking_sim
+
+
+13/10/2017-09:13:42 --- Barrier not down during laser marking
+
+
+13/10/2017-09:13:42 --- Automatic laser referencing initiated
+
+
+13/10/2017-09:13:42 --- Connected timer: 503316502,to func: reset_auto_func_sim
+
+
+13/10/2017-09:13:42 --- Resetting auto mode! Simulation mode *****************
+
+
+13/10/2017-09:13:42 --- Automatic barrier rising
+
+
+13/10/2017-09:13:42 --- Killed timer: 503316502,that was connected to func: reset_auto_func_sim
+
+
+13/10/2017-09:13:46 --- No pressed, continuing onto next pump...
+
+
+13/10/2017-09:13:46 --- Automatic barrier rising
+
+
+13/10/2017-09:13:46 --- Connected timer: 1560281109,to func: send_signal_done
+
+
+13/10/2017-09:13:46 --- Appending .xls log table
+
+
+13/10/2017-09:13:46 ---  
+
+
+13/10/2017-09:13:46 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+13/10/2017-09:13:46 --- Connected timer: 1577058328,to func: reset_laser_marking_sim
+
+
+13/10/2017-09:13:46 --- Killed timer: 1560281109,that was connected to func: send_signal_done
+
+
+13/10/2017-09:13:46 --- Connected timer: 1644167189,to func: reset_signal_done
+
+
+13/10/2017-09:13:46 --- Signal DONE set
+
+
+13/10/2017-09:13:47 --- Signal DONE reseted
+
+
+13/10/2017-09:13:47 --- Killed timer: 1644167189,that was connected to func: reset_signal_done
+
+
+13/10/2017-09:13:50 --- pump left
+
+
+13/10/2017-09:13:50 --- Killed timer: 1577058328,that was connected to func: reset_laser_marking_sim
+
+
+13/10/2017-09:13:50 --- Marking successful, incrementing serial number and setting signal done
+
+
+13/10/2017-09:13:50 --- starting wait_for_pump_sim from reset_laser marking
+
+
+13/10/2017-09:13:50 --- Connected timer: 1207959576,to func: wait_for_pump_sim
+
+
+13/10/2017-09:13:53 --- pump counter:2
+
+
+13/10/2017-09:13:53 --- Killed timer: 1207959576,that was connected to func: wait_for_pump_sim
+
+
+13/10/2017-09:13:53 --- Automatic barrier lowering
+
+
+13/10/2017-09:13:53 --- Simulation - new pump has arrived, barrier going down ...
+
+
+13/10/2017-09:13:53 --- Connected timer: 1291845656,to func: wait_for_barrier_sim
+
+
+13/10/2017-09:13:55 --- Killed timer: 1291845656,that was connected to func: wait_for_barrier_sim
+
+
+13/10/2017-09:13:55 --- Simulation - Barrier is lowered, searching for pump...
+
+
+13/10/2017-09:13:55 --- Laser is moving into working position, searching for pump...
+
+
+13/10/2017-09:13:55 --- Connected timer: 872415256,to func: stop_search_auto_sim
+
+
+13/10/2017-09:13:57 --- Pump in laser focus
+
+
+13/10/2017-09:13:57 --- Killed timer: 872415256,that was connected to func: stop_search_auto_sim
+
+
+13/10/2017-09:13:57 --- Connected timer: 1660944408,to func: compensation
+
+
+13/10/2017-09:13:57 --- Killed timer: 1660944408,that was connected to func: compensation
+
+
+13/10/2017-09:13:57 --- Connected timer: 1711276056,to func: automatic_marking
+
+
+13/10/2017-09:13:58 --- Killed timer: 1711276056,that was connected to func: automatic_marking
+
+
+13/10/2017-09:13:58 --- Laser in position, starts marking...
+
+
+13/10/2017-09:13:59 --- simulation auto marking started
+
+
+13/10/2017-09:13:59 --- Connected timer: 1744830488,to func: check_marking_sim
+
+
+13/10/2017-09:14:05 --- Killed timer: 1744830488,that was connected to func: check_marking_sim
+
+
+13/10/2017-09:14:05 --- Barrier not down during laser marking
+
+
+13/10/2017-09:14:05 --- Automatic laser referencing initiated
+
+
+13/10/2017-09:14:05 --- Connected timer: 1862271000,to func: reset_auto_func_sim
+
+
+13/10/2017-09:14:06 --- Resetting auto mode! Simulation mode *****************
+
+
+13/10/2017-09:14:06 --- Automatic barrier rising
+
+
+13/10/2017-09:14:06 --- Killed timer: 1862271000,that was connected to func: reset_auto_func_sim
+
+
+13/10/2017-09:14:07 --- No pressed, continuing onto next pump...
+
+
+13/10/2017-09:14:07 --- Automatic barrier rising
+
+
+13/10/2017-09:14:07 --- Connected timer: 788529176,to func: send_signal_done
+
+
+13/10/2017-09:14:07 --- Appending .xls log table
+
+
+13/10/2017-09:14:08 ---  
+
+
+13/10/2017-09:14:09 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+13/10/2017-09:14:09 --- Connected timer: 805306389,to func: reset_laser_marking_sim
+
+
+13/10/2017-09:14:09 --- Killed timer: 788529176,that was connected to func: send_signal_done
+
+
+13/10/2017-09:14:09 --- Connected timer: 889192472,to func: reset_signal_done
+
+
+13/10/2017-09:14:09 --- Signal DONE set
+
+
+13/10/2017-09:14:10 --- Signal DONE reseted
+
+
+13/10/2017-09:14:10 --- Killed timer: 889192472,that was connected to func: reset_signal_done
+
+
+13/10/2017-09:14:13 --- pump left
+
+
+13/10/2017-09:14:13 --- Killed timer: 805306389,that was connected to func: reset_laser_marking_sim
+
+
+13/10/2017-09:14:13 --- Marking successful, incrementing serial number and setting signal done
+
+
+13/10/2017-09:14:13 --- starting wait_for_pump_sim from reset_laser marking
+
+
+13/10/2017-09:14:13 --- Connected timer: 1711276053,to func: wait_for_pump_sim
+
+
+13/10/2017-09:14:14 --- pump counter:3
+
+
+13/10/2017-09:14:15 --- Killed timer: 1711276053,that was connected to func: wait_for_pump_sim
+
+
+13/10/2017-09:14:15 --- Automatic barrier lowering
+
+
+13/10/2017-09:14:15 --- Simulation - new pump has arrived, barrier going down ...
+
+
+13/10/2017-09:14:15 --- Connected timer: 1778384917,to func: wait_for_barrier_sim
+
+
+13/10/2017-09:14:16 --- Killed timer: 1778384917,that was connected to func: wait_for_barrier_sim
+
+
+13/10/2017-09:14:16 --- Simulation - Barrier is lowered, searching for pump...
+
+
+13/10/2017-09:14:16 --- Laser is moving into working position, searching for pump...
+
+
+13/10/2017-09:14:16 --- Connected timer: 1140850709,to func: stop_search_auto_sim
+
+
+13/10/2017-09:14:17 --- Pump in laser focus
+
+
+13/10/2017-09:14:17 --- Killed timer: 1140850709,that was connected to func: stop_search_auto_sim
+
+
+13/10/2017-09:14:17 --- Connected timer: 1929379861,to func: compensation
+
+
+13/10/2017-09:14:18 --- Killed timer: 1929379861,that was connected to func: compensation
+
+
+13/10/2017-09:14:18 --- Connected timer: 1979711509,to func: automatic_marking
+
+
+13/10/2017-09:14:19 --- Killed timer: 1979711509,that was connected to func: automatic_marking
+
+
+13/10/2017-09:14:19 --- Laser in position, starts marking...
+
+
+13/10/2017-09:14:19 --- simulation auto marking started
+
+
+13/10/2017-09:14:19 --- Connected timer: 2013265941,to func: check_marking_sim
+
+
+13/10/2017-09:14:22 --- Killed timer: 2013265941,that was connected to func: check_marking_sim
+
+
+13/10/2017-09:14:22 --- Barrier not down during laser marking
+
+
+13/10/2017-09:14:22 --- Automatic laser referencing initiated
+
+
+13/10/2017-09:14:22 --- Connected timer: 352321557,to func: reset_auto_func_sim
+
+
+13/10/2017-09:14:22 --- Resetting auto mode! Simulation mode *****************
+
+
+13/10/2017-09:14:22 --- Automatic barrier rising
+
+
+13/10/2017-09:14:22 --- Killed timer: 352321557,that was connected to func: reset_auto_func_sim
+
+
+13/10/2017-09:14:24 --- Yes pressed, repeating marking with S.N.17-000313
+
+
+13/10/2017-09:14:24 --- Automatic barrier lowering
+
+
+13/10/2017-09:14:24 --- Connected timer: 754974741,to func: wait_for_barrier_sim
+
+
+13/10/2017-09:14:26 --- pump left
+
+
+13/10/2017-09:18:25 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-09:18:25 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-09:18:43 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-09:18:43 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-09:23:26 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-09:23:26 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-09:24:22 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-09:24:22 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-09:26:53-35 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-09:26:53 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-09:27:02-900 --- Automatic barrier rising
+
+
+13/10/2017-09:27:02-903 --- Auto mode started
+
+
+13/10/2017-09:27:02-905 --- Automatic laser referencing initiated
+
+
+13/10/2017-09:27:02-909 --- Connected timer: 22,to func: wait_for_pump_sim
+
+
+13/10/2017-09:27:06-266 --- pump counter:1
+
+
+13/10/2017-09:27:06-459 --- Killed timer: 22,that was connected to func: wait_for_pump_sim
+
+
+13/10/2017-09:27:06-466 --- Automatic barrier lowering
+
+
+13/10/2017-09:27:06-470 --- Simulation - new pump has arrived, barrier going down ...
+
+
+13/10/2017-09:27:06-472 --- Connected timer: 1006632982,to func: wait_for_barrier_sim
+
+
+13/10/2017-09:27:10-71 --- Killed timer: 1006632982,that was connected to func: wait_for_barrier_sim
+
+
+13/10/2017-09:27:10-76 --- Simulation - Barrier is lowered, searching for pump...
+
+
+13/10/2017-09:27:10-78 --- Laser is moving into working position, searching for pump...
+
+
+13/10/2017-09:27:10-81 --- Connected timer: 838860822,to func: stop_search_auto_sim
+
+
+13/10/2017-09:27:11-974 --- Pump in laser focus
+
+
+13/10/2017-09:27:11-984 --- Killed timer: 838860822,that was connected to func: stop_search_auto_sim
+
+
+13/10/2017-09:27:11-988 --- Connected timer: 83886102,to func: compensation
+
+
+13/10/2017-09:27:12-517 --- Killed timer: 83886102,that was connected to func: compensation
+
+
+13/10/2017-09:27:12-525 --- Connected timer: 218103830,to func: automatic_marking
+
+
+13/10/2017-09:27:13-420 --- Killed timer: 218103830,that was connected to func: automatic_marking
+
+
+13/10/2017-09:27:13-426 --- Laser in position, starts marking...
+
+
+13/10/2017-09:27:13-845 --- simulation auto marking started
+
+
+13/10/2017-09:27:13-845 --- Connected timer: 268435478,to func: check_marking_sim
+
+
+13/10/2017-09:27:37-248 --- Killed timer: 268435478,that was connected to func: check_marking_sim
+
+
+13/10/2017-09:27:37-255 --- Barrier not down during laser marking
+
+
+13/10/2017-09:27:37-260 --- Automatic laser referencing initiated
+
+
+13/10/2017-09:27:37-263 --- Connected timer: 520093718,to func: reset_auto_func_sim
+
+
+13/10/2017-09:27:37-316 --- Resetting auto mode! Simulation mode *****************
+
+
+13/10/2017-09:27:37-323 --- Automatic barrier rising
+
+
+13/10/2017-09:27:37-325 --- Killed timer: 520093718,that was connected to func: reset_auto_func_sim
+
+
+13/10/2017-09:27:39-613 --- No pressed, continuing onto next pump...
+
+
+13/10/2017-09:27:39-618 --- Automatic barrier rising
+
+
+13/10/2017-09:27:39-621 --- Connected timer: 1795162133,to func: send_signal_done
+
+
+13/10/2017-09:27:39-626 --- Appending .xls log table
+
+
+13/10/2017-09:27:39-945 ---  
+
+
+13/10/2017-09:27:40-305 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+13/10/2017-09:27:40-343 --- Connected timer: 1811939352,to func: reset_laser_marking_sim
+
+
+13/10/2017-09:27:40-373 --- Killed timer: 1795162133,that was connected to func: send_signal_done
+
+
+13/10/2017-09:27:40-379 --- Connected timer: 1862270997,to func: reset_signal_done
+
+
+13/10/2017-09:27:40-383 --- Signal DONE set
+
+
+13/10/2017-09:27:40-782 --- Signal DONE reseted
+
+
+13/10/2017-09:27:40-785 --- Killed timer: 1862270997,that was connected to func: reset_signal_done
+
+
+13/10/2017-09:27:42-568 --- pump left
+
+
+13/10/2017-09:27:42-805 --- Killed timer: 1811939352,that was connected to func: reset_laser_marking_sim
+
+
+13/10/2017-09:27:42-810 --- Marking successful, incrementing serial number and setting signal done
+
+
+13/10/2017-09:27:42-815 --- starting wait_for_pump_sim from reset_laser marking
+
+
+13/10/2017-09:27:42-818 --- Connected timer: 1879048216,to func: wait_for_pump_sim
+
+
+13/10/2017-09:27:43-894 --- pump counter:2
+
+
+13/10/2017-09:27:43-973 --- Killed timer: 1879048216,that was connected to func: wait_for_pump_sim
+
+
+13/10/2017-09:27:43-980 --- Automatic barrier lowering
+
+
+13/10/2017-09:27:43-980 --- Simulation - new pump has arrived, barrier going down ...
+
+
+13/10/2017-09:27:43-980 --- Connected timer: 1929379864,to func: wait_for_barrier_sim
+
+
+13/10/2017-09:27:45-339 --- pump left
+
+
+13/10/2017-09:46:42-926 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-09:46:42 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-09:46:49-914 --- Automatic barrier rising
+
+
+13/10/2017-09:46:49-920 --- Auto mode started
+
+
+13/10/2017-09:46:49-924 --- Automatic laser referencing initiated
+
+
+13/10/2017-09:46:49-928 --- Connected timer: 520093718,to func: wait_for_pump_sim
+
+
+13/10/2017-09:46:51-346 --- pump counter:1
+
+
+13/10/2017-09:46:51-602 --- Killed timer: 520093718,that was connected to func: wait_for_pump_sim
+
+
+13/10/2017-09:46:51-609 --- Automatic barrier lowering
+
+
+13/10/2017-09:46:51-613 --- Simulation - new pump has arrived, barrier going down ...
+
+
+13/10/2017-09:46:51-622 --- Connected timer: 2097152022,to func: wait_for_barrier_sim
+
+
+13/10/2017-09:46:52-272 --- Killed timer: 2097152022,that was connected to func: wait_for_barrier_sim
+
+
+13/10/2017-09:46:52-276 --- Simulation - Barrier is lowered, searching for pump...
+
+
+13/10/2017-09:46:52-279 --- Laser is moving into working position, searching for pump...
+
+
+13/10/2017-09:46:52-283 --- Connected timer: 805306390,to func: stop_search_auto_sim
+
+
+13/10/2017-09:46:53-174 --- Pump in laser focus
+
+
+13/10/2017-09:46:53-177 --- Killed timer: 805306390,that was connected to func: stop_search_auto_sim
+
+
+13/10/2017-09:46:53-181 --- Connected timer: 1845493782,to func: compensation
+
+
+13/10/2017-09:46:53-758 --- Killed timer: 1845493782,that was connected to func: compensation
+
+
+13/10/2017-09:46:53-767 --- Connected timer: 1895825430,to func: automatic_marking
+
+
+13/10/2017-09:46:54-694 --- Killed timer: 1895825430,that was connected to func: automatic_marking
+
+
+13/10/2017-09:46:54-699 --- Laser in position, starts marking...
+
+
+13/10/2017-09:46:55-121 --- simulation auto marking started
+
+
+13/10/2017-09:46:55-127 --- Connected timer: 1979711510,to func: check_marking_sim
+
+
+13/10/2017-09:47:52-924 --- Killed timer: 1979711510,that was connected to func: check_marking_sim
+
+
+13/10/2017-09:47:52-932 --- Automatic barrier rising
+
+
+13/10/2017-09:47:52-942 --- Connected timer: 2130706454,to func: send_signal_done
+
+
+13/10/2017-09:47:52-955 --- Appending .xls log table
+
+
+13/10/2017-09:47:53-362 ---  
+
+
+13/10/2017-09:47:53-841 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+13/10/2017-09:47:53-852 --- Connected timer: 23,to func: reset_laser_marking_sim
+
+
+13/10/2017-09:47:53-859 --- Killed timer: 2130706454,that was connected to func: send_signal_done
+
+
+13/10/2017-09:47:53-886 --- Connected timer: 33554454,to func: reset_signal_done
+
+
+13/10/2017-09:47:53-904 --- Signal DONE set
+
+
+13/10/2017-09:47:54-297 --- Signal DONE reseted
+
+
+13/10/2017-09:47:54-300 --- Killed timer: 33554454,that was connected to func: reset_signal_done
+
+
+13/10/2017-09:47:57-934 --- pump left
+
+
+13/10/2017-09:47:58-332 --- Killed timer: 23,that was connected to func: reset_laser_marking_sim
+
+
+13/10/2017-09:47:58-339 --- Marking successful, incrementing serial number and setting signal done
+
+
+13/10/2017-09:47:58-341 --- starting wait_for_pump_sim from reset_laser marking
+
+
+13/10/2017-09:47:58-344 --- Connected timer: 2046820375,to func: wait_for_pump_sim
+
+
+13/10/2017-09:47:58-635 --- pump counter:2
+
+
+13/10/2017-09:47:58-678 --- Killed timer: 2046820375,that was connected to func: wait_for_pump_sim
+
+
+13/10/2017-09:47:58-684 --- Automatic barrier lowering
+
+
+13/10/2017-09:47:58-687 --- Simulation - new pump has arrived, barrier going down ...
+
+
+13/10/2017-09:47:58-691 --- Connected timer: 2130706455,to func: wait_for_barrier_sim
+
+
+13/10/2017-09:48:06-578 --- Killed timer: 2130706455,that was connected to func: wait_for_barrier_sim
+
+
+13/10/2017-09:48:06-585 --- Simulation - Barrier is lowered, searching for pump...
+
+
+13/10/2017-09:48:06-589 --- Laser already in position, initiating marking process...
+
+
+13/10/2017-09:48:06-591 --- Connected timer: 184549399,to func: automatic_marking
+
+
+13/10/2017-09:48:07-450 --- Killed timer: 184549399,that was connected to func: automatic_marking
+
+
+13/10/2017-09:48:07-455 --- Laser in position, starts marking...
+
+
+13/10/2017-09:48:07-898 --- simulation auto marking started
+
+
+13/10/2017-09:48:07-902 --- Connected timer: 285212695,to func: check_marking_sim
+
+
+13/10/2017-09:48:57-616 --- Killed timer: 285212695,that was connected to func: check_marking_sim
+
+
+13/10/2017-09:48:57-623 --- Barrier not down during laser marking
+
+
+13/10/2017-09:48:57-631 --- Automatic laser referencing initiated
+
+
+13/10/2017-09:48:57-634 --- Connected timer: 1090519063,to func: reset_auto_func_sim
+
+
+13/10/2017-09:48:57-683 --- Resetting auto mode! Simulation mode *****************
+
+
+13/10/2017-09:48:57-694 --- Automatic barrier rising
+
+
+13/10/2017-09:48:57-729 --- Killed timer: 1090519063,that was connected to func: reset_auto_func_sim
+
+
+13/10/2017-09:48:58-665 --- No pressed, continuing onto next pump...
+
+
+13/10/2017-09:48:58-707 --- Automatic barrier rising
+
+
+13/10/2017-09:48:58-711 --- Connected timer: 1828716567,to func: send_signal_done
+
+
+13/10/2017-09:48:58-717 --- Appending .xls log table
+
+
+13/10/2017-09:48:59-38 ---  
+
+
+13/10/2017-09:48:59-531 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+13/10/2017-09:48:59-534 --- Connected timer: 1845493785,to func: reset_laser_marking_sim
+
+
+13/10/2017-09:48:59-566 --- Killed timer: 1828716567,that was connected to func: send_signal_done
+
+
+13/10/2017-09:48:59-570 --- Connected timer: 1895825431,to func: reset_signal_done
+
+
+13/10/2017-09:48:59-574 --- Signal DONE set
+
+
+13/10/2017-09:49:00-58 --- Signal DONE reseted
+
+
+13/10/2017-09:49:00-62 --- Killed timer: 1895825431,that was connected to func: reset_signal_done
+
+
+13/10/2017-09:49:00-288 --- pump left
+
+
+13/10/2017-09:49:00-763 --- Killed timer: 1845493785,that was connected to func: reset_laser_marking_sim
+
+
+13/10/2017-09:49:00-767 --- Marking successful, incrementing serial number and setting signal done
+
+
+13/10/2017-09:49:00-770 --- starting wait_for_pump_sim from reset_laser marking
+
+
+13/10/2017-09:49:00-773 --- Connected timer: 369098777,to func: wait_for_pump_sim
+
+
+13/10/2017-09:49:05-193 --- First stop auto mode!
+
+
+13/10/2017-09:49:05-561 --- Automatic laser referencing initiated
+
+
+13/10/2017-09:49:05-564 --- Automatic barrier rising
+
+
+13/10/2017-10:28:36-584 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-10:28:36 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-10:28:45-473 --- Auto mode already off
+
+
+13/10/2017-10:28:50-337 --- Automatic barrier rising
+
+
+13/10/2017-10:28:50-337 --- Auto mode started
+
+
+13/10/2017-10:28:50-337 --- Automatic laser referencing initiated
+
+
+13/10/2017-10:28:50-337 --- Connected timer: 704643095,to func: wait_for_pump_sim
+
+
+13/10/2017-10:28:50-974 --- Automatic laser referencing initiated
+
+
+13/10/2017-10:28:50-977 --- Automatic barrier rising
+
+
+13/10/2017-10:28:52-831 --- Auto mode already off
+
+
+13/10/2017-10:28:53-813 --- Automatic barrier rising
+
+
+13/10/2017-10:28:53-816 --- Auto mode started
+
+
+13/10/2017-10:28:53-819 --- Automatic laser referencing initiated
+
+
+13/10/2017-10:28:53-821 --- Connected timer: 503316502,to func: wait_for_pump_sim
+
+
+13/10/2017-10:28:54-491 --- Automatic laser referencing initiated
+
+
+13/10/2017-10:28:54-569 --- Automatic barrier rising
+
+
+13/10/2017-10:28:56-9 --- Auto mode already off
+
+
+13/10/2017-10:29:31-87 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-10:29:31 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-10:29:38-271 --- Automatic barrier rising
+
+
+13/10/2017-10:29:38-361 --- Auto mode started
+
+
+13/10/2017-10:29:38-365 --- Automatic laser referencing initiated
+
+
+13/10/2017-10:29:38-370 --- Connected timer: 1845493782,to func: wait_for_pump_sim
+
+
+13/10/2017-10:29:40-42 --- Automatic laser referencing initiated
+
+
+13/10/2017-10:29:40-47 --- Automatic barrier rising
+
+
+13/10/2017-10:29:42-521 --- Auto mode already off
+
+
+13/10/2017-10:31:02-419 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-10:31:02 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-10:31:09-711 --- Automatic barrier rising
+
+
+13/10/2017-10:31:09-715 --- Auto mode started
+
+
+13/10/2017-10:31:09-719 --- Automatic laser referencing initiated
+
+
+13/10/2017-10:31:09-723 --- Connected timer: 1023410198,to func: wait_for_pump_sim
+
+
+13/10/2017-10:31:10-449 --- Automatic laser referencing initiated
+
+
+13/10/2017-10:31:10-455 --- Automatic barrier rising
+
+
+13/10/2017-10:31:12-580 --- Auto mode already off
+
+
+13/10/2017-10:31:24-576 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-10:31:24 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-10:31:28-273 --- Automatic barrier rising
+
+
+13/10/2017-10:31:28-279 --- Auto mode started
+
+
+13/10/2017-10:31:28-284 --- Automatic laser referencing initiated
+
+
+13/10/2017-10:31:28-288 --- Connected timer: 2080374806,to func: wait_for_pump_sim
+
+
+13/10/2017-10:31:28-939 --- Automatic laser referencing initiated
+
+
+13/10/2017-10:31:28-942 --- Automatic barrier rising
+
+
+13/10/2017-10:31:34-190 ---  *** Script Shutting down *** 
+
+
+13/10/2017-10:31:45-858 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-10:31:45 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-10:31:51-951 --- Automatic barrier rising
+
+
+13/10/2017-10:31:51-957 --- Auto mode started
+
+
+13/10/2017-10:31:51-962 --- Automatic laser referencing initiated
+
+
+13/10/2017-10:31:51-967 --- Connected timer: 1291845654,to func: wait_for_pump_sim
+
+
+13/10/2017-10:31:52-331 --- Automatic laser referencing initiated
+
+
+13/10/2017-10:31:52-334 --- Automatic barrier rising
+
+
+13/10/2017-10:56:47-462 --- Init passed
+
+
+=================================================== 
+
+13/10/2017-10:56:47 *** Process logging started *** 
+
+=================================================== 
+
+13/10/2017-10:56:57-807 --- Automatic barrier rising
+
+
+13/10/2017-10:56:57-815 --- Auto mode started
+
+
+13/10/2017-10:56:57-819 --- Automatic laser referencing initiated
+
+
+13/10/2017-10:56:57-833 --- Connected timer: 1845493782,to func: wait_for_pump_sim
+
+
+13/10/2017-10:56:58-516 --- Automatic laser referencing initiated
+
+
+13/10/2017-10:56:58-521 --- Automatic barrier rising
+
+

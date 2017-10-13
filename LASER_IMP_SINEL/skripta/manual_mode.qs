@@ -55,46 +55,47 @@ function mark_manual() {
 
 //
 function check_marking_manual(ID) {
-  /*  if (timers[11] == ID) {
-        if (simulation_mode == 1) {
-            if ((chkb_barriera.checked) && !(laser_status == "Marking is active")) {
-                barrier_up_afer_marking_m();
-                disconnect_func(check_marking);
-            }
-            else if ((laser_status = "Marking is active") && !(chkb_barriera.checked)) {
-                System.stopLaser();
-                laser_marking = 0;
-                nom = 0;
-                disconnect_timers();
-            }
+    /*  if (timers[11] == ID) {
+          if (simulation_mode == 1) {
+              if ((chkb_barriera.checked) && !(laser_status == "Marking is active")) {
+                  barrier_up_afer_marking_m();
+                  disconnect_func(check_marking);
+              }
+              else if ((laser_status = "Marking is active") && !(chkb_barriera.checked)) {
+                  System.stopLaser();
+                  laser_marking = 0;
+                  nom = 0;
+                  disconnect_timers();
+              }
+          }
+          else {
+              if ((IoPort.getPort(0) & I_PIN_11) && !(laser_status == "Marking is active")) {
+                  barrier_up_afer_marking_m();
+                  disconnect_func(check_marking);
+              }
+              else if ((laser_status = "Marking is active") && !(IoPort.getPort(0) & I_PIN_11)) {
+                  System.stopLaser();
+                  laser_marking = 0;
+                  nom = 0;
+                  disconnect_timers();
+              }
+          }
+      }*/
+    if (timers[11] == ID) {
+        if ((IoPort.getPort(0) & I_PIN_11) && !(laser_status == "Marking is active")) {
+            //disconnect_func(check_marking_manual);
+            disconnect_func(check_marking_manual, ID);
+            //barrier_up_after_marking();
         }
-        else {
-            if ((IoPort.getPort(0) & I_PIN_11) && !(laser_status == "Marking is active")) {
-                barrier_up_afer_marking_m();
-                disconnect_func(check_marking);
-            }
-            else if ((laser_status = "Marking is active") && !(IoPort.getPort(0) & I_PIN_11)) {
-                System.stopLaser();
-                laser_marking = 0;
-                nom = 0;
-                disconnect_timers();
-            }
+        else if ((laser_status = "Marking is active") && !(IoPort.getPort(0) & I_PIN_11)) {
+            //disconnect_func(check_marking_manual);
+            disconnect_func(check_marking_manual, ID);
+            System.stopLaser();
+            laser_marking = 0; laser_in_working_pos = 0;
+
+            laser_ref_auto();
         }
-    }*/
-    	if (timers[11] == ID) {
-		if ((IoPort.getPort(0) & I_PIN_11) && !(laser_status == "Marking is active")) {
-		   disconnect_func(check_marking_manual);
-		   
-		   //barrier_up_after_marking();
-		}
-		else if ((laser_status = "Marking is active") && !(IoPort.getPort(0) & I_PIN_11)) {
-			disconnect_func(check_marking_manual);
-			 System.stopLaser();
-			 laser_marking = 0; laser_in_working_pos = 0;
-   
-			 laser_ref_auto();
-		}
-	}
+    }
 }
 
 ///////////////////////////////////////////////
@@ -190,32 +191,30 @@ function search_working_pos() {
 //Function stops working pos. search
 ////////////////////////////////////////////////////////////////////////
 function stop_search(ID) {
-	if (timers[1] == ID && auto_mode == "OFF") {
-		current_pos = Axis.getPosition(2);
-		if (!(IoPort.getPort(0) & I_PIN_8)) { //***** Laser lowest position sensor
-			if ((IoPort.getPort(0) & I_PIN_10)) {  //***** Optika
-				if (!(current_pos <= (home_pos - search_distance))) {
-					if (debug_mode) { print("Laser is moving to working pos..."); }
-				}
-				else {
-				     disconnect_func(stop_search);
-					searching_error_manual(1); //Search distance reached
-				}
-			}
-			else {
-			                Axis.stop(2);
-			                disconnect_func(stop_search);
-				write_log("Pump in laser focus");
-				
-				
-				laser_in_working_pos = 1;
-			}
-		}
-		else {
-		                disconnect_func(stop_search);
-			searching_error_manual(2); //LASER LOWEST POSITION
-		}
-	}
+    if (timers[1] == ID && auto_mode == "OFF") {
+        current_pos = Axis.getPosition(2);
+        if (!(IoPort.getPort(0) & I_PIN_8)) { //***** Laser lowest position sensor
+            if ((IoPort.getPort(0) & I_PIN_10)) {  //***** Optika
+                if (!(current_pos <= (home_pos - search_distance))) {
+                    if (debug_mode) { print("Laser is moving to working pos..."); }
+                }
+                else {
+                    disconnect_func(stop_search, ID);
+                    searching_error_manual(1); //Search distance reached
+                }
+            }
+            else {
+                Axis.stop(2);
+                disconnect_func(stop_search, ID);
+                write_log("Pump in laser focus");
+                laser_in_working_pos = 1;
+            }
+        }
+        else {
+            disconnect_func(stop_search, ID);
+            searching_error_manual(2); //LASER LOWEST POSITION
+        }
+    }
 }
 
 ////////////////////////////
@@ -227,8 +226,9 @@ function move_up() {
             if (!(IoPort.getPort(0) & I_PIN_9)) {
                 Axis.move(2, (Axis.getPosition(2) + sb1_v));
                 laser_in_working_pos = 0;
-                timers[4] = System.setTimer(times[4]);
-                start_timer(timers[4], max_pos_reached);
+                /*timers[4] = System.setTimer(times[4]);
+                start_timer(timers[4], max_pos_reached);*/
+                gen_timer(4, max_pos_reached);
             }
             else {
                 error_max_pos();
@@ -250,7 +250,7 @@ function max_pos_reached(ID) {
     if (timers[4] == ID && auto_mode == "ON") {
         if (IoPort.getPort(0) & I_PIN_9) {
             Axis.stop(2);
-            disconnect_func(max_pos_reached);
+            disconnect_func(max_pos_reached, ID);
         }
     }
 }
@@ -262,18 +262,18 @@ function move_down() {
     if (total_stop == 0) {
         if (auto_mode == "OFF") {
             if (!(IoPort.getPort(0) & I_PIN_8)) {
-		current_pos = Axis.getPosition(2);
-	if (!(current_pos <= (home_pos - search_distance))) {
-					//if (debug_mode) { print("Laser is moving to working pos..."); }
-	                    Axis.move(2, (Axis.getPosition(2) - sb1_v));
-                timers[4] = System.setTimer(times[4]);
-                start_timer(timers[4], min_pos_reached);
-                laser_in_working_pos = 0;
-				}
-				else {
-				     error_min_pos();
-					//searching_error(1); //Search distance reached
-				}	
+                current_pos = Axis.getPosition(2);
+                if (!(current_pos <= (home_pos - search_distance))) {
+                    //if (debug_mode) { print("Laser is moving to working pos..."); }
+                    Axis.move(2, (Axis.getPosition(2) - sb1_v));
+                    timers[4] = System.setTimer(times[4]);
+                    start_timer(timers[4], min_pos_reached);
+                    laser_in_working_pos = 0;
+                }
+                else {
+                    error_min_pos();
+                    //searching_error(1); //Search distance reached
+                }
 
             }
             else {
