@@ -38,8 +38,8 @@ function start_auto_mode() {
 function wait_for_pump(ID) {
 	if ((timers[4] == ID) && (auto_mode == "ON") && (pump_present == 1)) {
 		disconnect_func(wait_for_pump, ID);
-		barrier_down_auto();
 		write_log("Signal from line recieved, barrier going down ...");
+		barrier_down_auto();
 		gen_timer(6, wait_for_barrier); //600 ms
 	}
 }
@@ -113,7 +113,7 @@ function compensation(ID) {
 		disconnect_func(compensation, ID);
 		if (compensation_enabled) {
 			Axis.move(2, (Axis.getPosition(2) - compensation_distance));
-			 prepare_layout();
+			prepare_layout();
 			gen_timer(12, automatic_marking);
 		}
 		else {
@@ -126,23 +126,22 @@ function compensation(ID) {
 /*
 MARKING DELAY FUNCTION
 */
-function prepare_layout()
-{
-     laser_marking = 1;
-				laser_doc_update();
-				log_arr = [];
-				for (i = 0; i < dict_keys.length; i++) {
-				    log_arr.push(columns_dict[dict_keys[i]]);
+function prepare_layout() {
+	
+	doc_updated = 0;
+	laser_doc_update();
+	log_arr = [];
+	for (i = 0; i < dict_keys.length; i++) {
+		log_arr.push(columns_dict[dict_keys[i]]);
+	}
 }
-			    }
+
 function automatic_marking(ID) {
-	if (timers[12] == ID) {
+	if (timers[12] == ID && doc_updated == 1) {
 		disconnect_func(automatic_marking, ID);
 		write_log("Laser in position, starts marking...");
 		if (simulation_mode) { mark_auto_sim(); }
-		else {
-		    
-		               
+		else {               
 			mark_auto();
 		}
 	}
@@ -158,6 +157,7 @@ function mark_auto() {
 	for (i = 0; i < dict_keys.length; i++) {
 		log_arr.push(columns_dict[dict_keys[i]]);
 	}*/
+	laser_marking = 1;
 	if (!(IoPort.getPort(0) & I_PIN_10)) {
 		if (IoPort.getPort(0) & I_PIN_11) {
 			write_log("Auto marking started");
@@ -217,7 +217,6 @@ function barrier_up_after_marking() {
 ///////////////////////////////////////////////////////////////////////////////////
 function reset_laser_marking(ID) {
 	if ((timers[5] == ID) && (pump_present == 0)) {
-		//disconnect_func(reset_laser_marking);
 		disconnect_func(reset_laser_marking, ID);
 		write_log("Checking marking quantity and connecting wait for pump function");
 		if ((numW > numWC) || numW == 0) {
@@ -301,28 +300,3 @@ function wait_for_marking_end(ID) {
 		serial_choice_stop();
 	}
 }
-
-
-
-/*
-//////////////////////////////////////////////////////////////////////
-// OLD CHECK MARKING FUNCTION, checks both optical and barrier sensor
-function check_marking(ID) {
-	if (timers[11] == ID) {
-		if (!(IoPort.getPort(0) & I_PIN_10)) {
-			if ((IoPort.getPort(0) & I_PIN_11) && !(laser_status == "Marking is active")) {
-				barrier_up_after_marking();
-				disconnect_func(check_marking);
-			}
-			else if ((laser_status = "Marking is active") &&++6 !(IoPort.getPort(0) & I_PIN_11)) {
-				disconnect_func(check_marking);
-				marking_failed(3);
-			}
-		}
-		else {
-			disconnect_func(check_marking);
-			marking_failed(4);
-		}
-	}
-}
-*/

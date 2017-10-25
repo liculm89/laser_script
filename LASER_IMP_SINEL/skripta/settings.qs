@@ -49,7 +49,7 @@ var z_axis_active = 0;
 var sb1_v = 25;
 var min_pos = 5;
 var search_distance = 82;
-var compensation_distance = 3;
+var compensation_distance = 2;
 var auto_waiting_to_stop = 0;
 var home_pos = 120;
 var current_pos = 0;
@@ -106,6 +106,7 @@ var h_preview = new LaserDoc;
 var h_setup = h_preview;
 var h_Document, hDb, fw;
 var laser_objects = [];
+var doc_updated = 0;
 
 var cross = h_Doc_new.createLaserImported("cross");
 var centar = h_Doc_new.createLaserImported("centar");

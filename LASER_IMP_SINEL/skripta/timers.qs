@@ -55,7 +55,6 @@ function disconnect_func(func, t_ID) {
         timer_list.forEach(function (item, index) {
             if (func == item) {
                 System["sigTimer(int)"].disconnect(func);
-		
                 System.killTimer(t_ID);
                 write_log("Killed timer: " + t_ID + ",that was connected to func: " + func.name)
                 timer_list.splice(index, 1);
@@ -65,20 +64,6 @@ function disconnect_func(func, t_ID) {
     System.collectGarbage();
 }
 
-/*
-function disconnect_func(func) {
-    if (timer_list != 0) {
-        timer_list.forEach(function (item, index) {
-            if (func == item) {
-                System["sigTimer(int)"].disconnect(func);
-                System.killTimer(index);
-                write_log("Killed timer: " + timers[index] + ",that was connected to func: " + func.name)
-                timer_list.splice(index, 1);
-            }
-        });
-    }
-    System.collectGarbage();
-}*/
 
 ////////////////////////////////////////////////////////
 //Disconnect all timers in timer_list

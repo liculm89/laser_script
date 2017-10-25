@@ -5,10 +5,9 @@ FUNCTIONS NEEDED FOR SIMULATION MODE
 
 function wait_for_pump_sim(ID) {
     if ((timers[4] == ID) && (auto_mode == "ON") && (pump_present == 1)) {
-        //disconnect_func(wait_for_pump_sim);
         disconnect_func(wait_for_pump_sim, ID);
-        barrier_down_auto();
         write_log("Simulation - new pump has arrived, barrier going down ...");
+        barrier_down_auto();
         gen_timer(6, wait_for_barrier_sim);
     }
 
@@ -16,7 +15,6 @@ function wait_for_pump_sim(ID) {
 
 function wait_for_barrier_sim(ID) {
     if ((timers[6] == ID) && (chkb_barriera.checked)) {
-        //disconnect_func(wait_for_barrier_sim);
         disconnect_func(wait_for_barrier_sim, ID);
         write_log("Simulation - Barrier is lowered, searching for pump...");
         laser_move_timed();
@@ -32,12 +30,11 @@ function stop_search_auto_sim(ID) {
                     if (debug_mode) { print("Laser is moving to working pos..."); }
                 }
                 else {
-                    searching_error(1);
+                    searching_error(1, ID);
                 }
             }
             else {
                 write_log("Pump in laser focus");
-                //disconnect_func(stop_search_auto_sim);
                 disconnect_func(stop_search_auto_sim, ID);
                 Axis.stop(2);
                 laser_in_working_pos = 1;
@@ -45,7 +42,7 @@ function stop_search_auto_sim(ID) {
             }
         }
         else {
-            searching_error(2);
+            searching_error(2, ID);
         }
     }
 }
@@ -53,12 +50,6 @@ function stop_search_auto_sim(ID) {
 function mark_auto_sim() {
 
     laser_marking = 1;
-    nom = 1;
-    laser_doc_update();
-    log_arr = [];
-    for (i = 0; i < dict_keys.length; i++) {
-        log_arr.push(columns_dict[dict_keys[i]]);
-    }
     if (chkb_optika.checked) {
         if (chkb_barriera.checked) {
             h_Doc_new.execute();
@@ -78,41 +69,19 @@ function check_marking_sim(ID) {
     if (timers[11] == ID) {
         check_laser_state(System.getDeviceStatus());
         if ((chkb_barriera.checked) && !(laser_status == "Marking is active")) {
-            //disconnect_func(check_marking_sim);
             disconnect_func(check_marking_sim, ID);
             barrier_up_after_marking();
 
         }
         else if ((laser_status = "Marking is active") && !(chkb_barriera.checked)) {
-            //disconnect_func(check_marking_sim);
             disconnect_func(check_marking_sim, ID);
             marking_failed(3);
         }
     }
 }
-/*
-function check_marking_sim(ID) {
-    if (timers[11] == ID) {
-        if (chkb_optika.checked) {
-            if ((chkb_barriera.checked) && !(laser_status == "Marking is active")) {
-                barrier_up_after_marking();
-                disconnect_func(check_marking_sim);
-            }
-            else if ((laser_status = "Marking is active") && !(chkb_barriera.checked)) {
-                disconnect_func(check_marking_sim);
-                marking_failed(3);
-            }
-        }
-        else {
-            disconnect_func(check_marking_sim);
-            marking_failed(4);
-        }
-    }
-}
-*/
+
 function reset_laser_marking_sim(ID) {
     if ((timers[5] == ID) && (pump_present == 0)) {
-        //disconnect_func(reset_laser_marking_sim);
         disconnect_func(reset_laser_marking_sim, ID);
         write_log("Marking successful, incrementing serial number and setting signal done");
 
@@ -140,14 +109,9 @@ function reset_auto_func_sim(ID) {
 
     if (timers[13] == ID) {
         write_log("Resetting auto mode! Simulation mode *****************");
-        /*if (auto_mode == "ON"); {
-            stop_auto();
-        }*/
+        disconnect_func(reset_auto_func_sim, ID);
         laser_marking = 0;
         barrier_up_auto();
-        //disconnect_func(reset_auto_func_sim);
-        disconnect_func(reset_auto_func_sim, ID);
-
         if (columns_dict["M"] != "/" && columns_dict["M"] != '') {
             serial_choice();
         }

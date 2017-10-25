@@ -505,7 +505,10 @@ function laser_doc_update() {
 
         rotate_and_move();
         h_Doc_new.update();
+        write_log("Laser doc has been updated");
+        doc_updated = 1;
     }
+    doc_updated = 1;
 }
 
 ///////////////////////////////////////////////
