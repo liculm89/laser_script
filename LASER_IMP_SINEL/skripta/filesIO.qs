@@ -127,7 +127,7 @@ function get_last_serial() {
     var ext = cmb_template.currentItem;
 
     hDb4 = new Db("QODBC")
-    hDb4.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + test_log;
+    hDb4.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + xls_log;
 
     if (ext == "      ") {
         var query_se = "SELECT [S N] FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" + part + "'";
@@ -170,7 +170,7 @@ function check_sn(sn) {
     var ext = cmb_template.currentItem;
 
     hDb4 = new Db("QODBC");
-    hDb4.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + test_log;
+    hDb4.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;Dbq=" + xls_log;
 
     if (ext == "      ") {
         var query_se = "SELECT [S N] FROM [Napisne tablice in nalepke sezn$] WHERE Izdelek LIKE '" + part + "'";
@@ -528,7 +528,9 @@ function xls_log() {
     var query1 = "INSERT INTO [Napisne tablice in nalepke sezn$] (" + colNamesStr + ") VALUES (" + log_str + ")";
     write_log("Appending .xls log table");
     hDb3 = new Db("QODBC")
-    hDb3.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;ReadOnly=0;Dbq=" + test_log;
+    hDb3.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;ReadOnly=0;Dbq=" + xls_log;
+
+    //hDb3.dbName = "DRIVER={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};HDR=yes;ReadOnly=0;Dbq=" + test_log;
 
     if (hDb3.open()) {
         if (!hDb3.exec(query1)) {

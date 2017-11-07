@@ -546,6 +546,55 @@ function auto_mode_check() {
     }
 }
 
+function get_xls_log_name()
+{   
+    var date_xls_init = new Date();
+    var xls_log_date = date_xls_init.mmyy().toString();
+    var try_xls_log = new File(xls_log_loc + "_" + xls_log_date + ".xls");
+    
+   // print("File exists: " + try_xls_log.exists + ".xls");
+    if(try_xls_log.exists){
+        return try_xls_log;
+    }
+    else{
+        var new_xls_log = "";
+        new_xls_log = xls_log_create();
+        if(new_xls_log != "failed")
+        {
+            return new_xls_log;
+        }
+        else
+        {
+            write_log("Failed to retrieve xls_log name");
+        }
+    }
+}
+
+function xls_log_create()
+{
+    var date_xls_init = new Date();
+    var xls_log_date = date_xls_init.mmyy().toString();
+    //var clean_xls_log = new File(drive_loc + "\\LASER_IMP_SINEL\\skripta\\res\\tabela_log_empty.xls");
+    var clean_xls_log = new File(drive_loc + "\\LASER_IMP_SINEL\\tabela_log.xls");
+   // created_xls_log = xls_log_loc + "_" + xls_log_date + ".xls";
+    //var created_xls_log = "";
+ 
+    print(clean_xls_log.copy(xls_log_loc + "_" + xls_log_date + ".xls"));
+    created_xls_log = new File(xls_log_loc + "_" + xls_log_date + ".xls");
+
+
+    if(created_xls_log.exists)
+    {        
+        write_log("New xls log : "+ created_xls_log +" created")
+        return created_xls_log;
+    }
+    else
+    {
+       write_log("Error while creating xls log");
+       return "failed";
+    }
+}
+
 function log_creator() {
     var date_init = new Date();
     var timestamp = gen_timestamp();

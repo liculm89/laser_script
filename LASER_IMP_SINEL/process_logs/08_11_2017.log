@@ -1,0 +1,210 @@
+=================================================== 
+
+08/11/2017-00:00:42 *** Process logging started *** 
+
+=================================================== 
+
+=================================================== 
+
+08/11/2017-00:00:42 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-00:00:42-659 --- Error while creating xls log
+
+
+08/11/2017-00:00:42-663 --- Failed to retrieve xls_log name
+
+
+08/11/2017-00:01:35-144 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-00:01:35 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-00:01:35-151 --- Error while creating xls log
+
+
+08/11/2017-00:01:35-151 --- Failed to retrieve xls_log name
+
+
+08/11/2017-00:02:20-693 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-00:02:20 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-00:02:20-712 --- Error while creating xls log
+
+
+08/11/2017-00:02:20-714 --- Failed to retrieve xls_log name
+
+
+08/11/2017-00:03:46-936 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-00:03:46 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-00:03:46-940 --- New xls log : QSFile(name = "") created
+
+
+08/11/2017-00:04:00-900 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-00:04:00 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-00:05:40-168 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-00:05:40 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-00:05:40-172 --- New xls log : QSFile(name = "") created
+
+
+08/11/2017-00:06:10-391 --- Automatic barrier rising
+
+
+08/11/2017-00:06:10-394 --- Auto mode started
+
+
+08/11/2017-00:06:10-396 --- Automatic laser referencing initiated
+
+
+08/11/2017-00:06:10-399 --- Connected timer: 21,to func: wait_for_pump_sim
+
+
+08/11/2017-00:06:16-200 --- Automatic laser referencing initiated
+
+
+08/11/2017-00:06:16-206 --- Automatic barrier rising
+
+
+08/11/2017-00:06:16-784 --- Automatic barrier rising
+
+
+08/11/2017-00:06:16-787 --- Auto mode started
+
+
+08/11/2017-00:06:16-791 --- Automatic laser referencing initiated
+
+
+08/11/2017-00:06:16-793 --- Connected timer: 251658263,to func: wait_for_pump_sim
+
+
+08/11/2017-00:06:18-543 --- pump counter:1
+
+
+08/11/2017-00:06:18-644 --- Killed timer: 251658263,that was connected to func: wait_for_pump_sim
+
+
+08/11/2017-00:06:18-651 --- Simulation - new pump has arrived, barrier going down ...
+
+
+08/11/2017-00:06:18-657 --- Automatic barrier lowering
+
+
+08/11/2017-00:06:18-661 --- Connected timer: 704643095,to func: wait_for_barrier_sim
+
+
+08/11/2017-00:06:19-179 --- Killed timer: 704643095,that was connected to func: wait_for_barrier_sim
+
+
+08/11/2017-00:06:19-188 --- Simulation - Barrier is lowered, searching for pump...
+
+
+08/11/2017-00:06:19-193 --- Laser is moving into working position, searching for pump...
+
+
+08/11/2017-00:06:19-199 --- Connected timer: 1207959575,to func: stop_search_auto_sim
+
+
+08/11/2017-00:06:19-258 --- Pump in laser focus
+
+
+08/11/2017-00:06:19-259 --- Killed timer: 1207959575,that was connected to func: stop_search_auto_sim
+
+
+08/11/2017-00:06:19-260 --- Connected timer: 1241514007,to func: compensation
+
+
+08/11/2017-00:06:19-718 --- Killed timer: 1241514007,that was connected to func: compensation
+
+
+08/11/2017-00:06:19-723 --- Connected timer: 1291845655,to func: automatic_marking
+
+
+08/11/2017-00:06:20-495 --- Killed timer: 1291845655,that was connected to func: automatic_marking
+
+
+08/11/2017-00:06:20-501 --- Laser in position, starts marking...
+
+
+08/11/2017-00:06:20-557 --- simulation auto marking started
+
+
+08/11/2017-00:06:20-557 --- Connected timer: 1358954519,to func: check_marking_sim
+
+
+08/11/2017-00:07:06-566 --- Killed timer: 1358954519,that was connected to func: check_marking_sim
+
+
+08/11/2017-00:07:06-568 --- Automatic barrier rising
+
+
+08/11/2017-00:07:06-569 --- Connected timer: 2030043159,to func: send_signal_done
+
+
+08/11/2017-00:07:07-168 --- Killed timer: 2030043159,that was connected to func: send_signal_done
+
+
+08/11/2017-00:07:07-175 --- Connected timer: 1711276055,to func: reset_signal_done
+
+
+08/11/2017-00:07:07-182 --- Signal DONE set
+
+
+08/11/2017-00:07:07-609 --- Signal DONE reseted
+
+
+08/11/2017-00:07:07-617 --- Killed timer: 1711276055,that was connected to func: reset_signal_done
+
+
+08/11/2017-00:07:13-168 --- First stop auto mode!
+
+
+08/11/2017-00:07:13-696 --- Automatic laser referencing initiated
+
+
+08/11/2017-00:07:13-702 --- Automatic barrier rising
+
+
+08/11/2017-00:07:14-316 ---  *** Script Shutting down *** 
+
+
+08/11/2017-00:07:24-206 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-00:07:24 *** Process logging started *** 
+
+=================================================== 
+

@@ -1,0 +1,216 @@
+=================================================== 
+
+07/11/2017-21:20:02 *** Process logging started *** 
+
+=================================================== 
+
+=================================================== 
+
+07/11/2017-21:20:02 *** Process logging started *** 
+
+=================================================== 
+
+07/11/2017-21:20:09-807 ---  *** Script Shutting down *** 
+
+
+07/11/2017-21:20:39-332 --- Init passed
+
+
+=================================================== 
+
+07/11/2017-21:20:39 *** Process logging started *** 
+
+=================================================== 
+
+07/11/2017-21:20:44-666 --- Automatic barrier rising
+
+
+07/11/2017-21:20:44-667 --- Auto mode started
+
+
+07/11/2017-21:20:44-668 --- Automatic laser referencing initiated
+
+
+07/11/2017-21:20:44-669 --- Connected timer: 1677721622,to func: wait_for_pump_sim
+
+
+07/11/2017-21:20:46-208 --- pump counter:1
+
+
+07/11/2017-21:20:46-283 --- Killed timer: 1677721622,that was connected to func: wait_for_pump_sim
+
+
+07/11/2017-21:20:46-283 --- Simulation - new pump has arrived, barrier going down ...
+
+
+07/11/2017-21:20:46-283 --- Automatic barrier lowering
+
+
+07/11/2017-21:20:46-283 --- Connected timer: 83886102,to func: wait_for_barrier_sim
+
+
+07/11/2017-21:20:46-804 --- Killed timer: 83886102,that was connected to func: wait_for_barrier_sim
+
+
+07/11/2017-21:20:46-804 --- Simulation - Barrier is lowered, searching for pump...
+
+
+07/11/2017-21:20:46-804 --- Laser is moving into working position, searching for pump...
+
+
+07/11/2017-21:20:46-804 --- Connected timer: 939524118,to func: stop_search_auto_sim
+
+
+07/11/2017-21:20:47-502 --- Pump in laser focus
+
+
+07/11/2017-21:20:47-507 --- Killed timer: 939524118,that was connected to func: stop_search_auto_sim
+
+
+07/11/2017-21:20:47-513 --- Connected timer: 1711276054,to func: compensation
+
+
+07/11/2017-21:20:47-962 --- Killed timer: 1711276054,that was connected to func: compensation
+
+
+07/11/2017-21:20:48-135 --- Laser doc has been updated
+
+
+07/11/2017-21:20:48-135 --- Connected timer: 1761607702,to func: automatic_marking
+
+
+07/11/2017-21:20:48-873 --- Killed timer: 1761607702,that was connected to func: automatic_marking
+
+
+07/11/2017-21:20:48-874 --- Laser in position, starts marking...
+
+
+07/11/2017-21:20:48-953 --- simulation auto marking started
+
+
+07/11/2017-21:20:48-954 --- Connected timer: 1862270998,to func: check_marking_sim
+
+
+07/11/2017-21:21:41-565 --- Killed timer: 1862270998,that was connected to func: check_marking_sim
+
+
+07/11/2017-21:21:41-570 --- Automatic barrier rising
+
+
+07/11/2017-21:21:41-571 --- Connected timer: 1241514006,to func: send_signal_done
+
+
+07/11/2017-21:21:41-573 --- Appending .xls log table
+
+
+07/11/2017-21:21:41-584 ---  
+
+
+07/11/2017-21:21:41-628 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+07/11/2017-21:21:41-630 --- Connected timer: 1258291224,to func: reset_laser_marking_sim
+
+
+07/11/2017-21:21:42-139 --- Killed timer: 1241514006,that was connected to func: send_signal_done
+
+
+07/11/2017-21:21:42-141 --- Connected timer: 1291845654,to func: reset_signal_done
+
+
+07/11/2017-21:21:42-142 --- Signal DONE set
+
+
+07/11/2017-21:21:42-560 --- Signal DONE reseted
+
+
+07/11/2017-21:21:42-571 --- Killed timer: 1291845654,that was connected to func: reset_signal_done
+
+
+07/11/2017-21:22:06-33 --- First stop auto mode!
+
+
+07/11/2017-23:12:59-128 --- Init passed
+
+
+=================================================== 
+
+07/11/2017-23:12:59 *** Process logging started *** 
+
+=================================================== 
+
+07/11/2017-23:13:10-335 --- Init passed
+
+
+=================================================== 
+
+07/11/2017-23:13:10 *** Process logging started *** 
+
+=================================================== 
+
+07/11/2017-23:46:45-143 --- Init passed
+
+
+=================================================== 
+
+07/11/2017-23:46:45 *** Process logging started *** 
+
+=================================================== 
+
+07/11/2017-23:46:45-143 --- Error while creating xls log
+
+
+07/11/2017-23:47:56-317 --- Init passed
+
+
+=================================================== 
+
+07/11/2017-23:47:56 *** Process logging started *** 
+
+=================================================== 
+
+07/11/2017-23:47:56-322 --- Error while creating xls log
+
+
+07/11/2017-23:47:56-322 --- Failed to retrieve xls_log name
+
+
+07/11/2017-23:53:20-343 --- Init passed
+
+
+=================================================== 
+
+07/11/2017-23:53:20 *** Process logging started *** 
+
+=================================================== 
+
+07/11/2017-23:53:20-350 --- Error while creating xls log
+
+
+07/11/2017-23:53:20-352 --- Failed to retrieve xls_log name
+
+
+07/11/2017-23:57:12-237 --- Init passed
+
+
+=================================================== 
+
+07/11/2017-23:57:12 *** Process logging started *** 
+
+=================================================== 
+
+07/11/2017-23:57:41-613 --- Init passed
+
+
+=================================================== 
+
+07/11/2017-23:57:41 *** Process logging started *** 
+
+=================================================== 
+
+07/11/2017-23:57:41-619 --- Error while creating xls log
+
+
+07/11/2017-23:57:41-620 --- Failed to retrieve xls_log name
+
+
