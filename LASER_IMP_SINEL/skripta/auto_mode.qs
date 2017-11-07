@@ -74,7 +74,7 @@ function laser_move_timed() {
 	}
 	else {
 		write_log("Laser already in position, initiating marking process...");
-		 prepare_layout();
+		prepare_layout();
 		gen_timer(12, automatic_marking);
 	}
 }

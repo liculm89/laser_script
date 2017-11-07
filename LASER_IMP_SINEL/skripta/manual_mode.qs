@@ -55,44 +55,18 @@ function mark_manual() {
 
 //
 function check_marking_manual(ID) {
-    /*  if (timers[11] == ID) {
-          if (simulation_mode == 1) {
-              if ((chkb_barriera.checked) && !(laser_status == "Marking is active")) {
-                  barrier_up_afer_marking_m();
-                  disconnect_func(check_marking);
-              }
-              else if ((laser_status = "Marking is active") && !(chkb_barriera.checked)) {
-                  System.stopLaser();
-                  laser_marking = 0;
-                  nom = 0;
-                  disconnect_timers();
-              }
-          }
-          else {
-              if ((IoPort.getPort(0) & I_PIN_11) && !(laser_status == "Marking is active")) {
-                  barrier_up_afer_marking_m();
-                  disconnect_func(check_marking);
-              }
-              else if ((laser_status = "Marking is active") && !(IoPort.getPort(0) & I_PIN_11)) {
-                  System.stopLaser();
-                  laser_marking = 0;
-                  nom = 0;
-                  disconnect_timers();
-              }
-          }
-      }*/
+
     if (timers[11] == ID) {
+        check_laser_state(System.getDeviceStatus());
         if ((IoPort.getPort(0) & I_PIN_11) && !(laser_status == "Marking is active")) {
-            //disconnect_func(check_marking_manual);
             disconnect_func(check_marking_manual, ID);
-            //barrier_up_after_marking();
+
         }
         else if ((laser_status = "Marking is active") && !(IoPort.getPort(0) & I_PIN_11)) {
             //disconnect_func(check_marking_manual);
             disconnect_func(check_marking_manual, ID);
             System.stopLaser();
             laser_marking = 0; laser_in_working_pos = 0;
-
             laser_ref_auto();
         }
     }
