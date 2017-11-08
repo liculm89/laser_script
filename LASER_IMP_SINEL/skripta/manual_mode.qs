@@ -47,9 +47,8 @@ function mark_manual() {
         log_arr.push(columns_dict[dict_keys[i]]);
     }
     write_log("Manual layout updated, marking is starting...");
-    timers[11] = System.setTimer(times[11]);
-    start_timer(timers[11], check_marking_manual);
 
+    gen_timer(11, check_marking_manual);
     h_Doc_new.execute();
 }
 
@@ -58,17 +57,27 @@ function check_marking_manual(ID) {
 
     if (timers[11] == ID) {
         check_laser_state(System.getDeviceStatus());
-        if ((IoPort.getPort(0) & I_PIN_11) && !(laser_status == "Marking is active")) {
+        /* if ((IoPort.getPort(0) & I_PIN_11) && !(laser_status == "Marking is active")) {
+              
+             disconnect_func(check_marking_manual, ID);
+             write_log("Manual mode marking complete, raising barrier up"); 
+             barrier_up();
+             xls_log();
+              
+         }*/
+        if (!(laser_status == "Marking is active")) {
             disconnect_func(check_marking_manual, ID);
-
+            write_log("Manual mode marking complete, raising barrier up");
+            barrier_up();
+            xls_log();
         }
-        else if ((laser_status = "Marking is active") && !(IoPort.getPort(0) & I_PIN_11)) {
-            //disconnect_func(check_marking_manual);
-            disconnect_func(check_marking_manual, ID);
-            System.stopLaser();
-            laser_marking = 0; laser_in_working_pos = 0;
-            laser_ref_auto();
-        }
+        /* else if ((laser_status == "Marking is active") && !(IoPort.getPort(0) & I_PIN_11)) {
+             //disconnect_func(check_marking_manual);
+             disconnect_func(check_marking_manual, ID);
+             System.stopLaser();
+             laser_marking = 0; laser_in_working_pos = 0;
+             laser_ref_auto();
+         }*/
     }
 }
 

@@ -208,3 +208,1047 @@
 
 =================================================== 
 
+08/11/2017-07:49:15-862 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-07:49:15 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-07:49:15-862 --- Error while creating xls log
+
+
+08/11/2017-07:49:15-862 --- Failed to retrieve xls_log name
+
+
+08/11/2017-07:49:32-74 ---  *** Script Shutting down *** 
+
+
+08/11/2017-07:51:44-999 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-07:51:44 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-07:51:44-999 --- Error while creating xls log
+
+
+08/11/2017-07:51:44-999 --- Failed to retrieve xls_log name
+
+
+08/11/2017-07:53:51-712 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-07:53:51 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-07:53:51-758 --- New xls log : QSFile(name = "") created
+
+
+08/11/2017-07:54:30-600 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-07:54:30 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-07:56:56-799 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-07:56:56 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-07:57:05-739 ---  *** Script Shutting down *** 
+
+
+08/11/2017-07:58:31-236 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-07:58:31 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-07:58:31-236 --- New xls log : QSFile(name = "") created
+
+
+08/11/2017-07:58:44-128 --- Automatic barrier rising
+
+
+08/11/2017-07:58:44-131 --- Auto mode started
+
+
+08/11/2017-07:58:44-135 --- Automatic laser referencing initiated
+
+
+08/11/2017-07:58:44-139 --- Connected timer: 1811939350,to func: wait_for_pump_sim
+
+
+08/11/2017-07:58:50-121 --- pump counter:1
+
+
+08/11/2017-07:58:50-444 --- Killed timer: 1811939350,that was connected to func: wait_for_pump_sim
+
+
+08/11/2017-07:58:50-453 --- Simulation - new pump has arrived, barrier going down ...
+
+
+08/11/2017-07:58:50-457 --- Automatic barrier lowering
+
+
+08/11/2017-07:58:50-459 --- Connected timer: 352321558,to func: wait_for_barrier_sim
+
+
+08/11/2017-07:58:51-67 --- Killed timer: 352321558,that was connected to func: wait_for_barrier_sim
+
+
+08/11/2017-07:58:51-74 --- Simulation - Barrier is lowered, searching for pump...
+
+
+08/11/2017-07:58:51-78 --- Laser is moving into working position, searching for pump...
+
+
+08/11/2017-07:58:51-82 --- Connected timer: 1056964630,to func: stop_search_auto_sim
+
+
+08/11/2017-07:58:51-817 --- Pump in laser focus
+
+
+08/11/2017-07:58:51-823 --- Killed timer: 1056964630,that was connected to func: stop_search_auto_sim
+
+
+08/11/2017-07:58:51-828 --- Connected timer: 1291845654,to func: compensation
+
+
+08/11/2017-07:58:52-358 --- Killed timer: 1291845654,that was connected to func: compensation
+
+
+08/11/2017-07:58:52-697 --- Laser doc has been updated
+
+
+08/11/2017-07:58:52-702 --- Connected timer: 486539286,to func: automatic_marking
+
+
+08/11/2017-07:58:53-528 --- Killed timer: 486539286,that was connected to func: automatic_marking
+
+
+08/11/2017-07:58:53-535 --- Laser in position, starts marking...
+
+
+08/11/2017-07:58:53-642 --- simulation auto marking started
+
+
+08/11/2017-07:58:53-647 --- Connected timer: 855638038,to func: check_marking_sim
+
+
+08/11/2017-07:59:58-164 --- Killed timer: 855638038,that was connected to func: check_marking_sim
+
+
+08/11/2017-07:59:58-171 --- Automatic barrier rising
+
+
+08/11/2017-07:59:58-175 --- Connected timer: 956301334,to func: send_signal_done
+
+
+08/11/2017-07:59:58-180 --- Appending .xls log table
+
+
+08/11/2017-07:59:58-207 ---  
+
+
+08/11/2017-07:59:58-261 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+08/11/2017-07:59:58-266 --- Connected timer: 973078549,to func: reset_laser_marking_sim
+
+
+08/11/2017-07:59:58-730 --- Killed timer: 956301334,that was connected to func: send_signal_done
+
+
+08/11/2017-07:59:58-737 --- Connected timer: 1006632982,to func: reset_signal_done
+
+
+08/11/2017-07:59:58-742 --- Signal DONE set
+
+
+08/11/2017-07:59:59-149 --- Signal DONE reseted
+
+
+08/11/2017-07:59:59-155 --- Killed timer: 1006632982,that was connected to func: reset_signal_done
+
+
+08/11/2017-08:00:06-601 --- pump left
+
+
+08/11/2017-08:00:06-734 --- Killed timer: 973078549,that was connected to func: reset_laser_marking_sim
+
+
+08/11/2017-08:00:06-744 --- Marking successful, incrementing serial number and setting signal done
+
+
+08/11/2017-08:00:06-748 --- starting wait_for_pump_sim from reset_laser marking
+
+
+08/11/2017-08:00:06-753 --- Connected timer: 1862270997,to func: wait_for_pump_sim
+
+
+08/11/2017-08:00:07-491 --- pump counter:2
+
+
+08/11/2017-08:00:07-669 --- Killed timer: 1862270997,that was connected to func: wait_for_pump_sim
+
+
+08/11/2017-08:00:07-679 --- Simulation - new pump has arrived, barrier going down ...
+
+
+08/11/2017-08:00:07-684 --- Automatic barrier lowering
+
+
+08/11/2017-08:00:07-687 --- Connected timer: 251658261,to func: wait_for_barrier_sim
+
+
+08/11/2017-08:00:08-231 --- Killed timer: 251658261,that was connected to func: wait_for_barrier_sim
+
+
+08/11/2017-08:00:08-239 --- Simulation - Barrier is lowered, searching for pump...
+
+
+08/11/2017-08:00:08-243 --- Laser already in position, initiating marking process...
+
+
+08/11/2017-08:00:08-560 --- Laser doc has been updated
+
+
+08/11/2017-08:00:08-560 --- Connected timer: 889192469,to func: automatic_marking
+
+
+08/11/2017-08:00:09-253 --- Killed timer: 889192469,that was connected to func: automatic_marking
+
+
+08/11/2017-08:00:09-261 --- Laser in position, starts marking...
+
+
+08/11/2017-08:00:09-266 --- Optical sensor is not seeing pump, laser goes in reference position
+
+
+08/11/2017-08:00:09-268 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:00:09-272 --- Connected timer: 1996488725,to func: reset_auto_func_sim
+
+
+08/11/2017-08:00:09-316 --- Resetting auto mode! Simulation mode *****************
+
+
+08/11/2017-08:00:09-323 --- Killed timer: 1996488725,that was connected to func: reset_auto_func_sim
+
+
+08/11/2017-08:00:09-328 --- Automatic barrier rising
+
+
+08/11/2017-08:00:12-860 --- No pressed, continuing onto next pump...
+
+
+08/11/2017-08:00:12-864 --- Automatic barrier rising
+
+
+08/11/2017-08:00:12-868 --- Connected timer: 1493172245,to func: send_signal_done
+
+
+08/11/2017-08:00:12-874 --- Appending .xls log table
+
+
+08/11/2017-08:00:12-902 ---  
+
+
+08/11/2017-08:00:12-956 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+08/11/2017-08:00:12-956 --- Connected timer: 1509949462,to func: reset_laser_marking_sim
+
+
+08/11/2017-08:00:13-355 --- Killed timer: 1493172245,that was connected to func: send_signal_done
+
+
+08/11/2017-08:00:13-355 --- Connected timer: 704643093,to func: reset_signal_done
+
+
+08/11/2017-08:00:13-355 --- Signal DONE set
+
+
+08/11/2017-08:00:13-706 --- Signal DONE reseted
+
+
+08/11/2017-08:00:13-713 --- Killed timer: 704643093,that was connected to func: reset_signal_done
+
+
+08/11/2017-08:00:15-546 --- pump left
+
+
+08/11/2017-08:00:15-638 --- Killed timer: 1509949462,that was connected to func: reset_laser_marking_sim
+
+
+08/11/2017-08:00:15-646 --- Marking successful, incrementing serial number and setting signal done
+
+
+08/11/2017-08:00:15-651 --- starting wait_for_pump_sim from reset_laser marking
+
+
+08/11/2017-08:00:15-654 --- Connected timer: 1476395030,to func: wait_for_pump_sim
+
+
+08/11/2017-08:00:16-76 --- pump counter:3
+
+
+08/11/2017-08:00:16-189 --- Killed timer: 1476395030,that was connected to func: wait_for_pump_sim
+
+
+08/11/2017-08:00:16-196 --- Simulation - new pump has arrived, barrier going down ...
+
+
+08/11/2017-08:00:16-200 --- Automatic barrier lowering
+
+
+08/11/2017-08:00:16-204 --- Connected timer: 1593835542,to func: wait_for_barrier_sim
+
+
+08/11/2017-08:00:16-720 --- Killed timer: 1593835542,that was connected to func: wait_for_barrier_sim
+
+
+08/11/2017-08:00:16-727 --- Simulation - Barrier is lowered, searching for pump...
+
+
+08/11/2017-08:00:16-730 --- Laser is moving into working position, searching for pump...
+
+
+08/11/2017-08:00:16-733 --- Connected timer: 1644167190,to func: stop_search_auto_sim
+
+
+08/11/2017-08:00:16-815 --- Pump in laser focus
+
+
+08/11/2017-08:00:16-815 --- Killed timer: 1644167190,that was connected to func: stop_search_auto_sim
+
+
+08/11/2017-08:00:16-815 --- Connected timer: 1677721622,to func: compensation
+
+
+08/11/2017-08:00:17-188 --- Killed timer: 1677721622,that was connected to func: compensation
+
+
+08/11/2017-08:00:17-521 --- Laser doc has been updated
+
+
+08/11/2017-08:00:17-521 --- Connected timer: 1711276054,to func: automatic_marking
+
+
+08/11/2017-08:00:18-96 --- Killed timer: 1711276054,that was connected to func: automatic_marking
+
+
+08/11/2017-08:00:18-104 --- Laser in position, starts marking...
+
+
+08/11/2017-08:00:18-211 --- simulation auto marking started
+
+
+08/11/2017-08:00:18-211 --- Connected timer: 1442840598,to func: check_marking_sim
+
+
+08/11/2017-08:01:10-917 --- Killed timer: 1442840598,that was connected to func: check_marking_sim
+
+
+08/11/2017-08:01:10-925 --- Automatic barrier rising
+
+
+08/11/2017-08:01:10-928 --- Connected timer: 2097152022,to func: send_signal_done
+
+
+08/11/2017-08:01:10-932 --- Appending .xls log table
+
+
+08/11/2017-08:01:10-958 ---  
+
+
+08/11/2017-08:01:11-14 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+08/11/2017-08:01:11-20 --- Connected timer: 2113929237,to func: reset_laser_marking_sim
+
+
+08/11/2017-08:01:11-639 --- Killed timer: 2097152022,that was connected to func: send_signal_done
+
+
+08/11/2017-08:01:11-647 --- Connected timer: 22,to func: reset_signal_done
+
+
+08/11/2017-08:01:11-653 --- Signal DONE set
+
+
+08/11/2017-08:01:12-121 --- Signal DONE reseted
+
+
+08/11/2017-08:01:12-159 --- Killed timer: 22,that was connected to func: reset_signal_done
+
+
+08/11/2017-08:03:39-191 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-08:03:39 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-08:04:47-339 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-08:04:47 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-08:04:47-339 --- Tabela_log : F:\LASER_IMP_SINEL\ARHIVA\tabela_log_11_17.xls
+
+
+08/11/2017-08:05:47-428 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-08:05:47 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-08:05:47-550 --- New xls log : QSFile(name = "") created
+
+
+08/11/2017-08:05:47-551 --- Tabela_log : F:\LASER_IMP_SINEL\ARHIVA\tabela_log_11_17.xls
+
+
+08/11/2017-08:06:15-991 --- Automatic barrier rising
+
+
+08/11/2017-08:06:15-996 --- Auto mode started
+
+
+08/11/2017-08:06:15-999 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:06:16-2 --- Connected timer: 369098776,to func: wait_for_pump_sim
+
+
+08/11/2017-08:06:20-943 --- pump counter:1
+
+
+08/11/2017-08:06:21-71 --- Killed timer: 369098776,that was connected to func: wait_for_pump_sim
+
+
+08/11/2017-08:06:21-78 --- Simulation - new pump has arrived, barrier going down ...
+
+
+08/11/2017-08:06:21-82 --- Automatic barrier lowering
+
+
+08/11/2017-08:06:21-84 --- Connected timer: 1644167192,to func: wait_for_barrier_sim
+
+
+08/11/2017-08:06:21-747 --- Killed timer: 1644167192,that was connected to func: wait_for_barrier_sim
+
+
+08/11/2017-08:06:21-752 --- Simulation - Barrier is lowered, searching for pump...
+
+
+08/11/2017-08:06:21-756 --- Laser is moving into working position, searching for pump...
+
+
+08/11/2017-08:06:21-761 --- Connected timer: 1358954520,to func: stop_search_auto_sim
+
+
+08/11/2017-08:06:22-365 --- Pump in laser focus
+
+
+08/11/2017-08:06:22-369 --- Killed timer: 1358954520,that was connected to func: stop_search_auto_sim
+
+
+08/11/2017-08:06:22-376 --- Connected timer: 1811939352,to func: compensation
+
+
+08/11/2017-08:06:22-928 --- Killed timer: 1811939352,that was connected to func: compensation
+
+
+08/11/2017-08:06:23-228 --- Laser doc has been updated
+
+
+08/11/2017-08:06:23-228 --- Connected timer: 1862271000,to func: automatic_marking
+
+
+08/11/2017-08:06:24-33 --- Killed timer: 1862271000,that was connected to func: automatic_marking
+
+
+08/11/2017-08:06:24-39 --- Laser in position, starts marking...
+
+
+08/11/2017-08:06:24-137 --- simulation auto marking started
+
+
+08/11/2017-08:06:24-137 --- Connected timer: 1962934296,to func: check_marking_sim
+
+
+08/11/2017-08:07:15-234 --- Killed timer: 1962934296,that was connected to func: check_marking_sim
+
+
+08/11/2017-08:07:15-242 --- Automatic barrier rising
+
+
+08/11/2017-08:07:15-245 --- Connected timer: 788529176,to func: send_signal_done
+
+
+08/11/2017-08:07:15-249 --- Appending .xls log table
+
+
+08/11/2017-08:07:15-272 ---  
+
+
+08/11/2017-08:07:15-323 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+08/11/2017-08:07:15-328 --- Connected timer: 805306390,to func: reset_laser_marking_sim
+
+
+08/11/2017-08:07:15-804 --- Killed timer: 788529176,that was connected to func: send_signal_done
+
+
+08/11/2017-08:07:15-810 --- Connected timer: 838860824,to func: reset_signal_done
+
+
+08/11/2017-08:07:15-816 --- Signal DONE set
+
+
+08/11/2017-08:07:16-191 --- Signal DONE reseted
+
+
+08/11/2017-08:07:16-191 --- Killed timer: 838860824,that was connected to func: reset_signal_done
+
+
+08/11/2017-08:16:25-858 --- pump left
+
+
+08/11/2017-08:16:26-233 --- Killed timer: 805306390,that was connected to func: reset_laser_marking_sim
+
+
+08/11/2017-08:16:26-240 --- Marking successful, incrementing serial number and setting signal done
+
+
+08/11/2017-08:16:26-242 --- starting wait_for_pump_sim from reset_laser marking
+
+
+08/11/2017-08:16:26-244 --- Connected timer: 452984854,to func: wait_for_pump_sim
+
+
+08/11/2017-08:16:26-559 --- pump counter:2
+
+
+08/11/2017-08:16:26-689 --- Killed timer: 452984854,that was connected to func: wait_for_pump_sim
+
+
+08/11/2017-08:16:26-695 --- Simulation - new pump has arrived, barrier going down ...
+
+
+08/11/2017-08:16:26-699 --- Automatic barrier lowering
+
+
+08/11/2017-08:16:26-701 --- Connected timer: 654311446,to func: wait_for_barrier_sim
+
+
+08/11/2017-08:16:27-141 --- Killed timer: 654311446,that was connected to func: wait_for_barrier_sim
+
+
+08/11/2017-08:16:27-146 --- Simulation - Barrier is lowered, searching for pump...
+
+
+08/11/2017-08:16:27-151 --- Laser already in position, initiating marking process...
+
+
+08/11/2017-08:16:27-445 --- Laser doc has been updated
+
+
+08/11/2017-08:16:27-445 --- Connected timer: 1828716566,to func: automatic_marking
+
+
+08/11/2017-08:16:27-961 --- Killed timer: 1828716566,that was connected to func: automatic_marking
+
+
+08/11/2017-08:16:27-966 --- Laser in position, starts marking...
+
+
+08/11/2017-08:16:28-71 --- simulation auto marking started
+
+
+08/11/2017-08:16:28-71 --- Connected timer: 1258291222,to func: check_marking_sim
+
+
+08/11/2017-08:17:24-856 --- Killed timer: 1258291222,that was connected to func: check_marking_sim
+
+
+08/11/2017-08:17:24-864 --- Automatic barrier rising
+
+
+08/11/2017-08:17:24-867 --- Connected timer: 1862270998,to func: send_signal_done
+
+
+08/11/2017-08:17:24-870 --- Appending .xls log table
+
+
+08/11/2017-08:17:24-893 ---  
+
+
+08/11/2017-08:17:24-993 --- Marking successful, raising barrier up and setting signal DONE..
+
+
+08/11/2017-08:17:24-997 --- Connected timer: 1879048195,to func: reset_laser_marking_sim
+
+
+08/11/2017-08:17:25-594 --- Killed timer: 1862270998,that was connected to func: send_signal_done
+
+
+08/11/2017-08:17:25-600 --- Connected timer: 1912602646,to func: reset_signal_done
+
+
+08/11/2017-08:17:25-635 --- Signal DONE set
+
+
+08/11/2017-08:17:26-152 --- Signal DONE reseted
+
+
+08/11/2017-08:17:26-156 --- Killed timer: 1912602646,that was connected to func: reset_signal_done
+
+
+08/11/2017-08:19:50-526 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-08:19:50 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-08:19:50-526 --- Tabela_log : F:\LASER_IMP_SINEL\ARHIVA\tabela_log_11_17.xls
+
+
+08/11/2017-08:19:58-153 --- Manual marking : Read file started
+
+
+08/11/2017-08:19:58-460 --- Laser doc has been updated
+
+
+08/11/2017-08:19:58-462 --- Manual layout updated, marking is starting...
+
+
+08/11/2017-08:20:51-376 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-08:20:51 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-08:20:51-438 --- Tabela_log : F:\LASER_IMP_SINEL\ARHIVA\tabela_log_11_17.xls
+
+
+08/11/2017-08:21:04-865 --- Manual marking : Read file started
+
+
+08/11/2017-08:21:05-174 --- Laser doc has been updated
+
+
+08/11/2017-08:21:05-174 --- Manual layout updated, marking is starting...
+
+
+08/11/2017-08:21:35-596 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-08:21:35 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-08:21:35-596 --- Tabela_log : F:\LASER_IMP_SINEL\ARHIVA\tabela_log_11_17.xls
+
+
+08/11/2017-08:21:40-210 --- Automatic barrier rising
+
+
+08/11/2017-08:21:40-210 --- Auto mode started
+
+
+08/11/2017-08:21:40-210 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:21:40-210 --- Connected timer: 1644167190,to func: wait_for_pump_sim
+
+
+08/11/2017-08:21:42-725 --- First stop auto mode!
+
+
+08/11/2017-08:21:43-754 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:21:43-757 --- Automatic barrier rising
+
+
+08/11/2017-08:21:45-580 --- Manual marking : Read file started
+
+
+08/11/2017-08:21:45-753 --- Laser doc has been updated
+
+
+08/11/2017-08:21:45-755 --- Manual layout updated, marking is starting...
+
+
+08/11/2017-08:22:58-853 --- pump counter:1
+
+
+08/11/2017-08:22:59-86 --- pump left
+
+
+08/11/2017-08:23:01-560 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-565 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-582 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-584 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-589 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-592 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-601 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-604 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-642 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-644 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-653 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-657 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-662 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-665 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-671 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-674 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-684 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-688 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-695 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-699 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-702 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-705 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-713 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-724 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-761 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-764 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-767 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-771 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-778 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-781 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-787 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-790 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-798 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-800 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-806 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-808 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-820 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-822 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-827 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-830 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-839 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-875 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-879 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-882 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-894 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-898 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-901 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-903 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-911 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-918 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-922 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-925 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-931 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-937 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-942 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-945 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-952 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-955 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:01-997 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:01-999 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:02-5 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:02-8 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:02-16 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:02-18 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:02-26 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:02-29 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:02-37 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:02-41 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:02-46 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:02-50 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:02-56 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:02-59 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:02-70 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:02-81 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:23:02-121 --- Reset button pressed while not in Auto mode
+
+
+08/11/2017-08:23:02-127 --- Automatic laser referencing initiated
+
+
+08/11/2017-08:24:35-417 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-08:24:35 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-08:24:35-417 --- Tabela_log : F:\LASER_IMP_SINEL\ARHIVA\tabela_log_11_17.xls
+
+
+08/11/2017-08:24:40-966 --- Manual marking : Read file started
+
+
+08/11/2017-08:24:40-966 --- Laser doc has been updated
+
+
+08/11/2017-08:24:40-966 --- Manual layout updated, marking is starting...
+
+
+08/11/2017-08:24:42-224 --- Reset key sequence
+
+
+08/11/2017-08:56:51-719 --- Manual marking : Read file started
+
+
+08/11/2017-08:56:52-74 --- Laser doc has been updated
+
+
+08/11/2017-08:56:52-74 --- Manual layout updated, marking is starting...
+
+
+08/11/2017-08:57:18-177 --- Init passed
+
+
+=================================================== 
+
+08/11/2017-08:57:18 *** Process logging started *** 
+
+=================================================== 
+
+08/11/2017-08:57:18-177 --- Tabela_log : F:\LASER_IMP_SINEL\ARHIVA\tabela_log_11_17.xls
+
+
+08/11/2017-08:57:24-848 --- Manual marking : Read file started
+
+
+08/11/2017-08:57:25-145 --- Laser doc has been updated
+
+
+08/11/2017-08:57:25-145 --- Manual layout updated, marking is starting...
+
+
+08/11/2017-08:57:25-145 --- Connected timer: 1946157078,to func: check_marking_manual
+
+
+08/11/2017-08:58:22-829 --- Killed timer: 1946157078,that was connected to func: check_marking_manual
+
+
+08/11/2017-08:58:22-836 --- Manual mode marking complete, raising barrier up
+
+
+08/11/2017-08:58:22-841 --- Appending .xls log table
+
+
+08/11/2017-08:58:22-869 ---  
+
+
+08/11/2017-08:58:29-712 --- Manual marking : Read file started
+
+
+08/11/2017-08:58:30-20 --- Laser doc has been updated
+
+
+08/11/2017-08:58:30-169 --- Manual layout updated, marking is starting...
+
+
+08/11/2017-08:58:30-174 --- Connected timer: 1207959576,to func: check_marking_manual
+
+
+08/11/2017-08:59:35-850 --- Killed timer: 1207959576,that was connected to func: check_marking_manual
+
+
+08/11/2017-08:59:35-858 --- Manual mode marking complete, raising barrier up
+
+
+08/11/2017-08:59:35-861 --- Appending .xls log table
+
+
+08/11/2017-08:59:35-888 ---  
+
+
+08/11/2017-08:59:43-42 ---  *** Script Shutting down *** 
+
+

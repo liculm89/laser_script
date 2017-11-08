@@ -6,7 +6,7 @@ var enable_existing_sn_marking = 1;
 
 //sets debugging(on=1 and off=0)
 
-var simulation_mode =1;
+var simulation_mode =0;
 var debug_mode = 1;
 
 var compensation_enabled = 1;
@@ -74,8 +74,8 @@ var laser_barrier_down = 0;
 ////////////////////////////
 //File locations
 if (simulation_mode == 1) {
-	drive_loc = "H:";
-	//drive_loc = "F:";
+	//drive_loc = "H:";
+	drive_loc = "F:";
 }
 else {
 	drive_loc = "D:";
@@ -96,7 +96,7 @@ var logosPath = drive_loc + "\\LASER_IMP_SINEL\\LOGOTIP\\XLP-LOGOTIPI\\";
 var znakiPath = drive_loc + "\\LASER_IMP_SINEL\\ZNAKI\\XLP - ZNAKI\\";
 
 var test_log = drive_loc + "\\LASER_IMP_SINEL\\tabela_log.xls";
-var xls_log = "";
+var xls_log_name = "";
 
 var date = new Date();
 

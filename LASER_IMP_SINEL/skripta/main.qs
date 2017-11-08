@@ -151,7 +151,8 @@ function main() {
         }
 
         log_creator();
-        xls_log = get_xls_log_name();
+	  get_xls_log_name();
+	  write_log("Tabela_log : " + xls_log_name);
         //Start GUI generation
         gen_dialog(part_list);
     }

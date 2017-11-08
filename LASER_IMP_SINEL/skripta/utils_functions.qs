@@ -13,6 +13,18 @@ Date.prototype.mmyy = function () {
     ].join('');
 };
 
+Date.prototype.mmyy_xls = function () {
+    var mm = this.getMonth() + 1;
+    var yy = this.getFullYear();
+    yy = yy.toString();
+    yy = yy.slice(2);
+
+    return [(mm > 9 ? '' : '0') + mm,
+        "_",
+        yy,
+    ].join('');
+};
+
 Date.prototype.ddmmyy = function () {
     var mm = this.getMonth() + 1;
     var yy = this.getFullYear();
@@ -73,8 +85,8 @@ Date.prototype.ddmmyytime_ms = function () {
     (min > 9 ? '' : '0') + min,
         ":",
     (sec > 9 ? '' : '0') + sec,
-    "-",
-    mss,
+        "-",
+        mss,
     ].join('');
 };
 
@@ -258,7 +270,7 @@ function searching_error(fail_code, t_ID) {
     else {
         disconnect_func(stop_search_auto, t_ID);
     }
-  
+
     Axis.stop(2);
     laser_ref_auto(); barrier_up_auto();
     retry_stop_choice();
@@ -284,16 +296,16 @@ function marking_failed(fail_code) {
         write_log("Optical sensor error during marking, laser goes in reference position");
     }
     //disconnect_timers();
-    
+
     /*try { disconnect_func(check_marking); }
     catch (e) {
 	write_log("Exception: " + e);
     }
     */
-    
+
     System.stopLaser();
     laser_marking = 0; laser_in_working_pos = 0;
-   
+
     laser_ref_auto();
     if (simulation_mode) {
         gen_timer(13, reset_auto_func_sim);
@@ -311,19 +323,21 @@ function serial_choice_stop() {
         write_log("Yes pressed, repeating marking with S.N." + year + "-" + leftPad((curr_sn), 6));
         reset_auto = 0;
         if (auto_mode == "ON") {
-            stop_auto();}
+            stop_auto();
+        }
     }
     else {
         write_log("No pressed, continuing onto next pump...");
-		numWC++;
-		xls_log();
-		//write_log("Marking successful, raising barrier up and setting signal DONE..");
-		chk_and_increment_sn();
+        numWC++;
+        xls_log();
+        //write_log("Marking successful, raising barrier up and setting signal DONE..");
+        chk_and_increment_sn();
         reset_auto = 1;
         if (auto_mode == "ON") {
-            stop_auto();}
+            stop_auto();
+        }
     }
-     try {
+    try {
         delete ra_dialog;
         System.collectGarbage();
     }
@@ -335,7 +349,7 @@ function serial_choice_stop() {
 
 function serial_choice() {
     var ra_dialog = gen_sc_dialog();
-    
+
     if (ra_dialog.exec()) {
         write_log("Yes pressed, repeating marking with S.N." + year + "-" + leftPad((curr_sn), 6));
         barrier_down_auto();
@@ -351,8 +365,7 @@ function serial_choice() {
         barrier_up_after_marking();
     }
 
-    if(reset_pressed)
-    {reset_pressed = 0;}
+    if (reset_pressed) { reset_pressed = 0; }
     try {
         delete ra_dialog;
         System.collectGarbage();
@@ -380,8 +393,7 @@ function without_serial_choice() {
         barrier_up_after_marking();
     }
 
-    if(reset_pressed)
-    {reset_pressed = 0;}
+    if (reset_pressed) { reset_pressed = 0; }
     try {
         delete wos_dialog;
         System.collectGarbage();
@@ -430,7 +442,7 @@ function laser_ref_auto() {
 //Automatic marking starts, sets timer for barrier rising
 //////////////////////////////////////////////////////////////////////////////////////
 function readFile_auto() {
-     prepare_layout();
+    prepare_layout();
     mark_auto();
 }
 
@@ -438,17 +450,18 @@ function readFile_auto() {
 //Automatic barrirer up
 ///////////////////////////////////
 function barrier_up_auto() {
-    
-    if(!(laser_status == "Marking is active")){
-    IoPort.resetPort(0, O_PIN_23);
-    bar_dolje = 0;
-    write_log("Automatic barrier rising");
-    IoPort.setPort(0, O_PIN_5);
-    bar_gore = 1;}
-    else{
-	write_log("Barrier can't go up during laser marking is active!!!");
+
+    if (!(laser_status == "Marking is active")) {
+        IoPort.resetPort(0, O_PIN_23);
+        bar_dolje = 0;
+        write_log("Automatic barrier rising");
+        IoPort.setPort(0, O_PIN_5);
+        bar_gore = 1;
     }
-    
+    else {
+        write_log("Barrier can't go up during laser marking is active!!!");
+    }
+
 }
 
 ////////////////////////////////////////
@@ -486,10 +499,10 @@ function total_stop_func() {
 ///////////////////////////////////////////////////////////////////////////
 function reset_button_func() {
     if (total_stop == 0) {
- 
+
         if (!reset_pressed) {
             if (auto_mode == "ON") {
-		     reset_pressed = 1;
+                reset_pressed = 1;
                 write_log("Reset button pressed during Auto mode");
                 System.stopLaser();
                 laser_marking = 0;
@@ -507,10 +520,10 @@ function reset_button_func() {
                 write_log("Reset button pressed while not in Auto mode");
                 System.stopLaser();
                 laser_ref_auto();
-				
+
             }
         }
-        
+
     }
     else {
         error_total_stop();
@@ -546,52 +559,36 @@ function auto_mode_check() {
     }
 }
 
-function get_xls_log_name()
-{   
+function get_xls_log_name() {
     var date_xls_init = new Date();
-    var xls_log_date = date_xls_init.mmyy().toString();
-    var try_xls_log = new File(xls_log_loc + "_" + xls_log_date + ".xls");
-    
-   // print("File exists: " + try_xls_log.exists + ".xls");
-    if(try_xls_log.exists){
-        return try_xls_log;
+    var xls_log_date = date_xls_init.mmyy_xls().toString();
+    var new_log_str = xls_log_loc + "tabela_log_" + xls_log_date + ".xls";
+    var try_xls_log = new File(new_log_str);
+
+    if (try_xls_log.exists) {
+        xls_log_name = new_log_str;
     }
-    else{
+    else {
         var new_xls_log = "";
-        new_xls_log = xls_log_create();
-        if(new_xls_log != "failed")
-        {
-            return new_xls_log;
-        }
-        else
-        {
-            write_log("Failed to retrieve xls_log name");
-        }
+        xls_log_create();
     }
 }
 
-function xls_log_create()
-{
+function xls_log_create() {
     var date_xls_init = new Date();
-    var xls_log_date = date_xls_init.mmyy().toString();
-    //var clean_xls_log = new File(drive_loc + "\\LASER_IMP_SINEL\\skripta\\res\\tabela_log_empty.xls");
-    var clean_xls_log = new File(drive_loc + "\\LASER_IMP_SINEL\\tabela_log.xls");
-   // created_xls_log = xls_log_loc + "_" + xls_log_date + ".xls";
-    //var created_xls_log = "";
- 
-    print(clean_xls_log.copy(xls_log_loc + "_" + xls_log_date + ".xls"));
-    created_xls_log = new File(xls_log_loc + "_" + xls_log_date + ".xls");
+    var xls_log_date = date_xls_init.mmyy_xls().toString();
+    var clean_xls_log = new File(drive_loc + "\\LASER_IMP_SINEL\\skripta\\res\\tabela_log_empty.xls");
+    var new_log_str = xls_log_loc + "tabela_log_" + xls_log_date + ".xls";
+    clean_xls_log.copy(new_log_str);
+    created_xls_log = new File(new_log_str);
 
-
-    if(created_xls_log.exists)
-    {        
-        write_log("New xls log : "+ created_xls_log +" created")
-        return created_xls_log;
+    if (created_xls_log.exists) {
+        write_log("New xls log : " + new_log_str + " created");
+        xls_log_name = new_log_str;
     }
-    else
-    {
-       write_log("Error while creating xls log");
-       return "failed";
+    else {
+        write_log("Error while creating xls log");
+        return "failed";
     }
 }
 
